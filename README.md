@@ -23,4 +23,4 @@ Here are the main Classes used.
 
 ### Support or Contact
 
-[contact support](email:support@culturecreates.com) and we’ll help you sort it out.
+[contact support](mailto:support@culturecreates.com) and we’ll help you sort it out.
