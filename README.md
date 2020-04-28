@@ -12,7 +12,6 @@ Here are the main Classes used.
 ### Classes
 
 1. Event
-2. Event
 3. Place
 4. Person
 5. Organization
