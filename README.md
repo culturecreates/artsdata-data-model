@@ -6,7 +6,7 @@ Here are the main Classes used.
 
 ![Image](images/artsdata_event_model-3.png)
 
-[Open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/0b09f57a9eedb32a8ca7c1081cb13cb3/raw/ba5848461df12c4655b3f4ca4e7ea0d60588e153/Artsdata_Event_Model)
+[Open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/c1d9b2a3392a1e03c8a14d9fbc2ac5d6/artsdata_event_model)
 
 
 ### Classes
