@@ -1,8 +1,3 @@
----
-layout: page
-title: "Event Class Documentation"
----
-
 # Event - [http://schema.org/Event](http://schema.org/Event)
 
 Thing > Event
