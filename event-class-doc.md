@@ -29,7 +29,17 @@ sameAs |	URL | URL of a reference Web page that unambiguously indicates the item
 alternateName | Text| 	An alias for the item.	| Thing
 
 
+
+
 ### More Specific Types
 
 ### Examples
+
+### Generated Doc
+
+Property | Expected Type | Description | From Class
+:--- | :--- | :--- | :---
+{% for member in site.data.schema-event.results.bindings %}
+{{ member }} |  | | 
+{% endfor %}
 
