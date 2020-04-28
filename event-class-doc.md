@@ -38,8 +38,6 @@ alternateName | Text| 	An alias for the item.	| Thing
 ### Generated Doc
 
 Property | Expected Type | Description | From Class
-:--- | :--- | :--- | :---
-{% for member in site.data.schema-event.results.bindings %}
-{{ member.label.value }} |  | {{ member.comment.value }} | {{ member.classes.value }}
-{% endfor %}
+:--- | :--- | :--- | :--- 
+{% for member in site.data.schema-event.results.bindings %} {{ member.label.value }} |  | {{ member.comment.value }} | {{ member.classes.value }} {% endfor %}
 
