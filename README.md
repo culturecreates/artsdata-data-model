@@ -1,6 +1,6 @@
 ## Artsdata Data Model Documentation
 
-A simple data model based on Performing Arts Events.
+A simple data model for Performing Arts Events and related Places, People and Organizations.
 
 Here are the main Classes used.
 
