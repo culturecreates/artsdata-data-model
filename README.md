@@ -11,8 +11,8 @@ Here are the main Classes used.
 ### Classes
 
 1. [Event](event-class-doc.md)
-3. Place
-4. Person
+3. [Place](place-class-doc.md)
+4. [Person](person-class-doc.md)
 5. Organization
 6. Webpage
 7. Offer

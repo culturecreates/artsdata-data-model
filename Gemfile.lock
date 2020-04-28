@@ -84,6 +84,8 @@ GEM
       activesupport (>= 2)
       nokogiri (>= 1.4)
     http_parser.rb (0.6.0)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jekyll (3.8.5)
@@ -203,6 +205,7 @@ GEM
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     minitest (5.14.0)
+    multi_xml (0.6.0)
     multipart-post (2.1.1)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
@@ -244,6 +247,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   github-pages
+  httparty
   jekyll
 
 BUNDLED WITH

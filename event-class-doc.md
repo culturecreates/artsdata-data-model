@@ -12,14 +12,11 @@ An event happening at a certain time and location, such as a concert, lecture, o
 
 Property | Expected Type | Description | From Class
 :--- | :--- | :--- | :--- 
-{% for member in site.data.schema-event.results.bindings %} [{{ member.label.value }}]({{ member.property.value }}) |  | {{ member.comment.value }} | {{ member.classes.value }}
+{% for member in site.data.Event-properties.results.bindings %} [{{ member.label.value }}]({{ member.property.value }}) |  | {{ member.comment.value }} | {{ member.classes.value }}
 {% endfor %}
 
 
 ### More Specific Types
 
 ### Examples
-
-
-
 

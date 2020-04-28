@@ -1,0 +1,38 @@
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema:  <http://schema.org/>
+
+select distinct ?property 
+                ?comment 
+                ?label 
+                ?classes 
+where 
+{ 
+    #sub query to get class inheritance tree
+    { 
+        select ?classes 
+        where 
+        { 
+            schema:Event rdfs:subClassOf+ ?classes .
+        } 
+    }
+
+	?property   a rdf:Property ; 
+                rdfs:label ?label ; 
+                schema:domainIncludes ?classes ; 
+                rdfs:comment ?comment .
+
+    #only use properties that are actually used in the following graphs
+    values ?g   {   
+                    <http://kg.artsdata.ca> 
+                    <http://kg.artsdata.ca/Organization> 
+                    <http://kg.artsdata.ca/Person> 
+                    <http://kg.artsdata.ca/Place>
+                }
+    { 
+        graph ?g    {
+                        ?s ?property ?o . 
+                    } 
+    }
+} 
+limit 100
