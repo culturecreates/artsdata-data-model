@@ -2,14 +2,10 @@
 
 Thing > Event
 
-
-
-
 An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.
 
 * [Open Issues](#)
 * [Leave Feedback](#)
-
 
 
 ## Properties
@@ -30,7 +26,7 @@ url |	URL | URL of the item.|	Thing
 description | Text | 	A description of the item.|	Thing
 image	| URL | An image of the item. This can be a URL or a fully described ImageObject.|	Thing
 sameAs |	URL | URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website. |	Thing
-alternateName	An alias for the item.	| Thing
+alternateName | Text| 	An alias for the item.	| Thing
 
 
 ### More Specific Types
