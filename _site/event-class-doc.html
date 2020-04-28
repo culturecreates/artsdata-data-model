@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=8480d418a737011ceb937dcc520256894a91c978">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Event - http://schema.org/Event | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Event - http://schema.org/Event" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://localhost:4000/event-class-doc.html" />
+<meta property="og:url" content="http://localhost:4000/event-class-doc.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"headline":"Event - http://schema.org/Event","url":"http://localhost:4000/event-class-doc.html","description":"Overview of how data is modelled in Artsdata.ca.","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="event---httpschemaorgevent">Event - <a href="http://schema.org/Event">http://schema.org/Event</a></h1>
+
+<p>Thing &gt; Event</p>
+
+<p>An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.</p>
+
+<ul>
+  <li><a href="#">Open Issues</a></li>
+  <li><a href="#">Leave Feedback</a></li>
+</ul>
+
+<h2 id="properties">Properties</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Property</th>
+      <th style="text-align: left">Expected Type</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">From Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/location">location</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">The location of for example where the event is happening, an organization is located, or where an action takes place.</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/offers">offers</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="http://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="http://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/startDate">startDate</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/endDate">endDate</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/superEvent">superEvent</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/performer">performer</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">A performer at the event—for example, a presenter, musician, musical group or actor.</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/duration">duration</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/eventStatus">eventStatus</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/organizer">organizer</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">An organizer of an Event.</td>
+      <td style="text-align: left">http://schema.org/Event</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/name">name</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">The name of the item.</td>
+      <td style="text-align: left">http://schema.org/Thing</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/url">url</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">URL of the item.</td>
+      <td style="text-align: left">http://schema.org/Thing</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/description">description</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">A description of the item.</td>
+      <td style="text-align: left">http://schema.org/Thing</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/image">image</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">An image of the item. This can be a <a class="localLink" href="http://schema.org/URL">URL</a> or a fully described <a class="localLink" href="http://schema.org/ImageObject">ImageObject</a>.</td>
+      <td style="text-align: left">http://schema.org/Thing</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/sameAs">sameAs</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">URL of a reference Web page that unambiguously indicates the item’s identity. E.g. the URL of the item’s Wikipedia page, Wikidata entry, or official website.</td>
+      <td style="text-align: left">http://schema.org/Thing</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="http://schema.org/alternateName">alternateName</a></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">An alias for the item.</td>
+      <td style="text-align: left">http://schema.org/Thing</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="more-specific-types">More Specific Types</h3>
+
+<h3 id="examples">Examples</h3>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
