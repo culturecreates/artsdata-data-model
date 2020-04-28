@@ -11,7 +11,7 @@ Here are the main Classes used.
 
 ### Classes
 
-1. Event
+1. [Event](event_class_doc.dm)
 3. Place
 4. Person
 5. Organization
