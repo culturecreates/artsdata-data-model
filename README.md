@@ -1,6 +1,14 @@
-## Welcome to Artsdata Data Model Documentation
+## Artsdata Data Model Documentation
 
-Overview of [Classes](classes.md)
+A simple data model based on Performing Arts Events.
+
+Here are the main Classes used.
+
+
+
+[Open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/0b09f57a9eedb32a8ca7c1081cb13cb3/raw/ba5848461df12c4655b3f4ca4e7ea0d60588e153/Artsdata_Event_Model)
+
+
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
