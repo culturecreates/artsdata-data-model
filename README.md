@@ -4,7 +4,22 @@ This is the Artsdata.ca Data Model project repository. It contains all the schem
 
 Issues and proposals are managed with GitHub issues.
 
-Most of the documentation is generated. To generate documentation run the generate.rb file locally.
---
-ruby generate.rb
---
+Most of the documentation is generated. 
+
+To generate documentation:
+
+    % cd _generators
+    % ruby generate.rb
+
+
+### Classes
+
+<ol>
+{% for class in site.classes %}
+<li>
+    <a href="{{ class.url }}">
+        {{ class.class_name }}
+    </a>
+</li>
+{% endfor %}
+</ol>

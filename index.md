@@ -1,3 +1,7 @@
+---
+permalink: temp
+---
+
 ## Artsdata Data Model v{{ site.data.versions.schemaVersion}}
 
 A simple data model for Performing Arts Events and related Places, People and Organizations. 
@@ -13,8 +17,8 @@ Here are the main Classes used in the date we collect.
 <ol>
 {% for class in site.classes %}
 <li>
-    <a href="{{site.url}}{{ class.url }}">
-        {{ class.class_name }}  - {{site.url}}
+    <a href="{{ class.url }}">
+        {{ class.class_name }}
     </a>
 </li>
 {% endfor %}
