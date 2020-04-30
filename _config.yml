@@ -4,5 +4,3 @@ collections_dir: doc
 collections:
   classes:
     output: true
-
-destination: artsdata-data-model

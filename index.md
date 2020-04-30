@@ -1,6 +1,4 @@
----
-permalink: temp
----
+{% include base.html %}
 
 ## Artsdata Data Model v{{ site.data.versions.schemaVersion}}
 
@@ -17,7 +15,7 @@ Here are the main Classes used in the date we collect.
 <ol>
 {% for class in site.classes %}
 <li>
-    <a href="{{ class.url }}">
+    <a href="{{ base }}{{ class.url }}">
         {{ class.class_name }}
     </a>
 </li>
