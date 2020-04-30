@@ -14,7 +14,7 @@ Here are the main Classes used in the date we collect.
 {% for class in site.classes %}
 <li>
     <a href="{{site.url}}{{ class.url }}">
-        {{ class.class_name }}
+        {{ class.class_name }}  - {{site.url}}
     </a>
 </li>
 {% endfor %}
