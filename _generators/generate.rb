@@ -52,7 +52,8 @@ class GenerateData
       { headers: { 'Accept' => 'application/json' } }
     )
     if response.code == 200
-      File.write("_data/generated/#{name}.json", response.body)
+      File.write("../_data/generated/#{name}.json", response.body)
+      puts "Genreated file #{name}.json"
     else
       puts "#{name} error code: #{response.code}"
     end
