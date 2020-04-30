@@ -46,15 +46,25 @@ class GenerateData
   end
 
   def self.sparql(name)
-    event_sparql = ERB::Util.url_encode(
-      File.read("_sparql/event-properties.sparql").sub('schema:Event', "schema:#{name}")
-    )
+    event_sparql = ERB::Util.url_encode(sparql_template(name))
     response = HTTParty.get(
       "http://db.artsdata.ca/repositories/artsdata?query=#{event_sparql}",
       { headers: { 'Accept' => 'application/json' } }
     )
+    if response.code == 200
+      File.write("_data/generated/#{name}.json", response.body)
+    else
+      puts "#{name} error code: #{response.code}"
+    end
+  end
 
-    File.write("_data/generated/#{name}.json", response.body)
+  def self.sparql_template(name)
+    filename = File.join(
+      File.dirname(__FILE__),
+      '/sparql/event-properties.sparql'
+    )
+    File.read(filename)
+        .sub('schema:Event', "schema:#{name}") # replace main class name
   end
 end
 

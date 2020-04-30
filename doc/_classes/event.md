@@ -1,4 +1,4 @@
 ---
 class_name: Event
-layout: class
+layout: class-doc
 ---

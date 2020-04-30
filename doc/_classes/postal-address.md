@@ -1,4 +1,4 @@
 ---
 class_name: PostalAddress
-layout: class
+layout: class-doc
 ---

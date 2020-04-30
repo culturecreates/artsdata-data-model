@@ -1,4 +1,4 @@
 ---
 class_name: Organization
-layout: class
+layout: class-doc
 ---

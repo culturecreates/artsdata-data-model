@@ -1,4 +1,4 @@
 ---
 class_name: Offer
-layout: class
+layout: class-doc
 ---

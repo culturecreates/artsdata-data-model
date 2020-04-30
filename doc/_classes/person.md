@@ -1,4 +1,4 @@
 ---
 class_name: Person
-layout: class
+layout: class-doc
 ---
