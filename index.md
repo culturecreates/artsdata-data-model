@@ -13,7 +13,7 @@ Here are the main Classes used in the date we collect.
 <ol>
 {% for class in site.classes %}
 <li>
-    <a href="{{ class.url }}">
+    <a href="{{site.url}}{{ class.url }}">
         {{ class.class_name }}
     </a>
 </li>
