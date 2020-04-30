@@ -1,4 +1,4 @@
-## Artsdata Data Model v{{ site.data.versions.schemaVersion}}
+## Artsdata Data Model v{{ site.data.versions.schemaVersion }}
 
 This is the Artsdata.ca Data Model project repository. It contains all the schemas, examples and software used to publish the Artsdata.ca Data Model Documentation. For the site itself, please see [artsdata.ca](http://artsdata.ca) instead.
 
