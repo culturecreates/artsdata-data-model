@@ -6,7 +6,7 @@ Issues and proposals are managed with GitHub issues.
 
 Most of the documentation is generated using the vocabulary from the original ontology (rdfs:label, rdfs:comment).
 
-Examples are manually edited in the doc folder of this repository usign Markdown.
+Examples are manually edited in the doc folder of this repository using Markdown.
 
 To do: Add SHACL shapes for each class.
 
