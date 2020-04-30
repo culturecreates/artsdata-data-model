@@ -1,8 +1,8 @@
-## Artsdata Data Model Documentation
+## Artsdata Data Model v{{ site.data.versions.schemaVersion}}
 
-A simple data model for Performing Arts Events and related Places, People and Organizations.
+A simple data model for Performing Arts Events and related Places, People and Organizations. 
 
-Here are the main Classes used.
+Here are the main Classes used in the date we collect.
 
 ![Image](images/artsdata_event_model-3.png)
 

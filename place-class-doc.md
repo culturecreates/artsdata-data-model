@@ -10,9 +10,9 @@ Entities that have a somewhat fixed, physical extension.
 
 ## Properties
 
-Property | Expected Type | Description | From Class
+Property | Expected Type | Description 
 :--- | :--- | :--- | :--- 
-{% for member in site.data.Place-properties.results.bindings %} [{{ member.label.value }}]({{ member.property.value }}) |  | {{ member.comment.value }} | {{ member.classes.value }}
+{% for member in site.data.Place-properties.results.bindings %} [{{ member.label.value }}]({{ member.property.value }}) |  | {{ member.comment.value }} 
 {% endfor %}
 
 

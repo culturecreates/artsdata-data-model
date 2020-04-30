@@ -1,7 +1,8 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll"
-gem "bundler"
+source 'https://rubygems.org'
 
-gem "httparty"
+gem 'bundler'
+gem 'github-pages', group: :jekyll_plugins
+gem 'httparty'
+gem 'jekyll'

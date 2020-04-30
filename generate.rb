@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require 'HTTParty'
 require 'erb'
@@ -9,19 +10,18 @@ class GenerateData
   def initialize; end
 
   def self.event
-    sparql 'event'
+    sparql 'Event'
   end
 
   def self.person
-    sparql 'person'
+    sparql 'Person'
   end
 
   def self.place
-    sparql 'place'
+    sparql 'Place'
   end
 
   def self.sparql(name)
-    name.capitalize!
     event_sparql = ERB::Util.url_encode(
       File.read("sparql/event-properties.sparql").sub('schema:Event', "schema:#{name}")
     )
