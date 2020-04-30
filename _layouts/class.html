@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<a onclick="goBack()"> &lt;  Back</a>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<h1>{{ page.class_name }}</h1>
+
+{{ content | markdownify }}
+
+<a href='#'>Open Issues</a>
+<br>
+<a href='#'>Leave Feedback</a>
+
+<h2>Properties</h2>
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    {% for member in site.data.generated[page.class_name].results.bindings %}
+    <tr>
+        <td>
+           <a href='{{ member.property.value }}'> {{ member.label.value }} </a>
+        </td>
+        <td>
+            {{ member.comment.value }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+<a href='#'>More Specific Types</a>
+[To do: Add the subclasses here.]
+
+

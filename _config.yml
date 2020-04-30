@@ -1,4 +1,5 @@
 theme: jekyll-theme-slate
+
 collections_dir: doc
 collections:
   classes:

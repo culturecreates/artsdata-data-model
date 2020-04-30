@@ -1,0 +1,212 @@
+{
+  "head" : {
+    "vars" : [
+      "property",
+      "comment",
+      "label",
+      "classes"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/PostalAddress"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/addressCountry"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The country. For example, USA. You can also provide the two-letter <a href=\"http://en.wikipedia.org/wiki/ISO_3166-1\">ISO 3166-1 alpha-2 country code</a>."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "addressCountry"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/PostalAddress"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/addressLocality"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The locality in which the street address is, and which is in the region. For example, Mountain View."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "addressLocality"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/PostalAddress"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/addressRegion"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level <a href=\"https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country\">Administrative division</a>"
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "addressRegion"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/PostalAddress"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/postalCode"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The postal code. For example, 94043."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "postalCode"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/PostalAddress"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/streetAddress"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The street address. For example, 1600 Amphitheatre Pkwy."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "streetAddress"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/name"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The name of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "name"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/url"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "URL of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "url"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/description"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A description of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "description"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/image"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "image"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/sameAs"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "sameAs"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/alternateName"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An alias for the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "alternateName"
+        }
+      }
+    ]
+  }
+}
