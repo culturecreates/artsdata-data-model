@@ -1,0 +1,13 @@
+{
+  "head" : {
+    "vars" : [
+      "property",
+      "comment",
+      "label",
+      "classes"
+    ]
+  },
+  "results" : {
+    "bindings" : [ ]
+  }
+}

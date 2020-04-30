@@ -1,0 +1,158 @@
+{
+  "head" : {
+    "vars" : [
+      "property",
+      "comment",
+      "label",
+      "classes"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Organization"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/location"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The location of for example where the event is happening, an organization is located, or where an action takes place."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "location"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Organization"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/address"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "Physical address of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "address"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/name"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The name of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "name"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/url"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "URL of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "url"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/description"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A description of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "description"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/image"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "image"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/sameAs"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "sameAs"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/alternateName"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An alias for the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "alternateName"
+        }
+      }
+    ]
+  }
+}
