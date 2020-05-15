@@ -1,0 +1,28 @@
+{
+  "head" : {
+    "vars" : [
+      "comment",
+      "equivalent",
+      "label",
+      "subClassOf"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "comment" : {
+          "type" : "literal",
+          "value" : "An organization such as a school, NGO, corporation, club, etc."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "Organization"
+        },
+        "subClassOf" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        }
+      }
+    ]
+  }
+}

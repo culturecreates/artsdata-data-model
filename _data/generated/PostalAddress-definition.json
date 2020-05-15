@@ -1,0 +1,28 @@
+{
+  "head" : {
+    "vars" : [
+      "comment",
+      "equivalent",
+      "label",
+      "subClassOf"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "comment" : {
+          "type" : "literal",
+          "value" : "The mailing address."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "PostalAddress"
+        },
+        "subClassOf" : {
+          "type" : "uri",
+          "value" : "http://schema.org/ContactPoint"
+        }
+      }
+    ]
+  }
+}

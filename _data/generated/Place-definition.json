@@ -1,0 +1,28 @@
+{
+  "head" : {
+    "vars" : [
+      "comment",
+      "equivalent",
+      "label",
+      "subClassOf"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "comment" : {
+          "type" : "literal",
+          "value" : "Entities that have a somewhat fixed, physical extension."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "Place"
+        },
+        "subClassOf" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        }
+      }
+    ]
+  }
+}

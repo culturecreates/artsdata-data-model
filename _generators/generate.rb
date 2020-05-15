@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'HTTParty'
 require 'erb'
 
@@ -46,26 +44,32 @@ class GenerateData
   end
 
   def self.sparql(name)
-    event_sparql = ERB::Util.url_encode(sparql_template(name))
+    call_sparql name, 'properties'
+    call_sparql name, 'definition'
+  end
+
+  def self.call_sparql(name, template)
+    sparql = ERB::Util.url_encode(sparql_template(name, template))
     response = HTTParty.get(
-      "http://db.artsdata.ca/repositories/artsdata?query=#{event_sparql}",
+      "http://db.artsdata.ca/repositories/artsdata?query=#{sparql}",
       { headers: { 'Accept' => 'application/json' } }
     )
     if response.code == 200
-      File.write("../_data/generated/#{name}.json", response.body)
-      puts "Genreated file #{name}.json"
+      File.write("../_data/generated/#{name}-#{template}.json", response.body)
+      puts "Generated #{name} with template #{template}."
     else
       puts "#{name} error code: #{response.code}"
     end
   end
 
-  def self.sparql_template(name)
+  def self.sparql_template(name, template)
     filename = File.join(
       File.dirname(__FILE__),
-      '/sparql/event-properties.sparql'
+      "/sparql/#{template}.sparql"
     )
     File.read(filename)
-        .sub('schema:Event', "schema:#{name}") # replace main class name
+        .gsub('schema:Event', "schema:#{name}") # replace main class name
+     
   end
 end
 

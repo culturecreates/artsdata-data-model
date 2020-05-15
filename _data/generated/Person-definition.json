@@ -1,0 +1,32 @@
+{
+  "head" : {
+    "vars" : [
+      "comment",
+      "equivalent",
+      "label",
+      "subClassOf"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "equivalent" : {
+          "type" : "uri",
+          "value" : "http://xmlns.com/foaf/0.1/Person"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A person (alive, dead, undead, or fictional)."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "Person"
+        },
+        "subClassOf" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        }
+      }
+    ]
+  }
+}

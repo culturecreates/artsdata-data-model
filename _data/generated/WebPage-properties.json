@@ -170,6 +170,42 @@
           "type" : "literal",
           "value" : "offers"
         }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/CreativeWork"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/keywords"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "keywords"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/CreativeWork"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/video"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An embedded video object."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "video"
+        }
       }
     ]
   }

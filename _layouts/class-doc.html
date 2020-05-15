@@ -1,9 +1,21 @@
 ---
 layout: default
 ---
+{% assign class_definition_json = page.class_name | append: '-definition' %}
+{% assign class_definition = site.data.generated[class_definition_json].results.bindings[0] %}
+
 {% include back-button.html %}
 
-<h1>{{ page.class_name }}</h1>
+<h1><a href="{{class_definition.label.value | prepend: 'http://schema.org/'}}">{{ page.class_name }}</a></h1>
+<p>
+    {{ class_definition.comment.value}}
+</p>
+<p>
+    Equivalent classes:  <a href="{{ class_definition.equivalent.value }}">{{ class_definition.equivalent.value }} </a>
+</p>
+<p>
+    Subclass Of: <a href="{{ class_definition.subClassOf.value}}">{{ class_definition.subClassOf.value}} </a> 
+</p>
 
 {{ content | markdownify }}
 
@@ -17,13 +29,16 @@ layout: default
         <th>Property</th>
         <th>Description</th>
     </tr>
-    {% for member in site.data.generated[page.class_name].results.bindings %}
+    {% assign class_properties_json = page.class_name | append: '-properties' %}
+    {% for member in site.data.generated[class_properties_json].results.bindings %}
     <tr>
         <td>
            <a href='{{ member.property.value }}'> {{ member.label.value }} </a>
         </td>
         <td>
             {{ member.comment.value }}
+            <br>
+            From class {{ member.classes.value }}
         </td>
     </tr>
     {% endfor %}
