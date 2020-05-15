@@ -29,7 +29,9 @@ Here are the main Classes used in Artsdata.
 {% endfor %}
 </ol>
 
+### Ontologies
 
+Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called **OWL-Horst (optimized)**. The main vocabulary used in Artsdata.ca is Schema.org. The current version of both OWL-Horst and Schema.org are located in this GitHub repository under "_triples". 
 
 ### Support or Contact
 
