@@ -68,8 +68,7 @@ class GenerateData
       "/sparql/#{template}.sparql"
     )
     File.read(filename)
-        .gsub('schema:Event', "schema:#{name}") # replace main class name
-     
+        .gsub('schema:Event', "schema:#{name}") # replace hard coded class
   end
 end
 
