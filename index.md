@@ -6,7 +6,7 @@ A simple data model for Performing Arts Events and related Places, People and Or
 
 You are welcome to give feedback and review current issues with [GitHub Issues](https://github.com/culturecreates/artsdata-data-model/issues). 
 
-There is also a [PDF](https://drive.google.com/open?id=10-bnlDKv7w7LREakZ9b40BajbY39gbhJ) of the data that [Footlight](https://www.culturecreates.com/en/index.html#vision) feeds into Artsdata.  At the moment, the data that Footlight published on the websites of arts organizations and the data in Artsdata are very similar, but as more and more sources feed into Artsdata, the shape of the data between Footlight and Artsdata may diverge, with Footlight being a subset of classes and properties collected in Artsdata.
+There is also a [PDF](https://drive.google.com/open?id=10-bnlDKv7w7LREakZ9b40BajbY39gbhJ) of the data that [Footlight](https://www.culturecreates.com/en/index.html#vision) feeds into Artsdata.  At the moment, the data that Footlight publishes on websites of arts organizations and data in Artsdata are very similar, but as more and more sources feed into Artsdata, the shape of the data between Footlight and Artsdata may diverge, with Footlight being a subset of classes and properties collected in Artsdata.
 
 The classes and properties used in Artsdata represent a “thin” layer of data
 roughly specified by [Google Event Structured Data](https://developers.google.com/search/docs/data-types/event).  The main difference is that Artsdata enforces links between entities within Artsdata and interlinks URIs outside of Artsdata including links to Wikidata and other LOD sources.  Artsdata also generates unique global identifiers (IRIs also called URIs) for classes such as Event, Person, Place, and Organization.
@@ -35,9 +35,9 @@ Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable 
 
 ### Provenance
 
-Data is great, but it is not the ultimate truth, and without context it can quickly lose our trust.  To maintain trust   the provenance of the data is important. For example, data on a specific performing arts event has a specific date. But what if that date changes, and how can the data source be verified? 
+Data is great, but it is not the ultimate truth, and without context it can quickly lose our trust.  To maintain trust it is important that we track provenance. For example, data on a specific performing arts event has a specific date. But what if that date changes, and how can the data source be verified? 
 
-To track provenance Artsdata.ca uses metadata attached to Named Graphs. Each data source is stored in a seperate graph with its metadata.  This approach to track provenance is generally called **Named Graph IDs**, and is used in place of reification or N-ary relationships.  Each graph has metadata about provenance including dates when the data was collected.  In addition, data collected from a web page is grouped under the schema:WebPage and includes the date when the the web page was cralwed. 
+To track provenance Artsdata.ca uses metadata attached to Named Graphs. Each data source is stored in a seperate graph with its metadata.  This approach to track provenance is generally called **Named Graph IDs**, and is used in place of reification or N-ary relationships.  Each graph has metadata about provenance including dates when the data was collected. Each web site used to extract data will be stored in seperate graph. Direct imports from spreadsheets or existing triple stores are also stored in seperate graphs. In addition, when data collected from a web page, the schema:WebPage includes the date when the web page was last crawled. 
 
 In the future we will likely switch to RDF\*/SPARQL\* inorder to have more granular provenance data on individual statements.
 
