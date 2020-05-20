@@ -35,11 +35,11 @@ Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable 
 
 ### Provenance
 
-Data is great, but it is not the ultimate truth, and without context it can quickly lose our trust.  To maintain trust it is important that we track provenance. For example, data on a specific performing arts event has a specific date. But what if that date changes, and how can the data source be verified? 
+Data is great, but it is not the ultimate truth, and without traceability it can lose our trust.  To maintain trust it is important that we track provenance. For example, what if two web pages have different dates for the same performing arts event. Which source is more trust worthy? How can we follow the data back to the source to decide for ourselves? 
 
-To track provenance Artsdata.ca uses metadata attached to Named Graphs. Each data source is stored in a separate graph with its metadata.  This approach to track provenance is generally called **Named Graph IDs**, and is used instead of reification or N-ary relationships.  Each graph has metadata about provenance including dates when the data was collected. Each web site used to extract data is stored in a separate graph. Direct imports from spreadsheets or existing triple stores are also stored in separate graphs. In addition, when data is collected from a web page, the schema:WebPage includes the date when the web page was last crawled. 
+To track provenance Artsdata.ca uses metadata attached to named graphs. Each data source in Artsdata.ca is stored in a separate named graph. The graph's URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the **Named Graphs** approach, and is used instead of reification, N-ary relationships, singleton properties or context objects (see [video](https://www.youtube.com/watch?v=Vt8spQDNotc)).  Each named graph URI is linked to provenance metadata including dates when the data was loaded, the activity used to collect it and by whom. Each time data is imported,  whether from a web site, spreadsheet or existing triple store, the graphs provenance metadata is updated. In addition, when the data source is directly from a crawled web page, the schema:WebPage entity includes the date when the individual web pages were crawled. 
 
-In the future we will likely switch to RDF\*/ (pronounced "RDF star") inorder to have more granular provenance data on individual statements.
+In the future we will likely switch to RDF\* (pronounced "RDF star") inorder to have more granular provenance data on individual statements.
 
 ### Support or Contact
 
