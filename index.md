@@ -39,7 +39,7 @@ Data is great, but it is not the ultimate truth, and without context it can quic
 
 To track provenance Artsdata.ca uses metadata attached to Named Graphs. Each data source is stored in a seperate graph with its metadata.  This approach to track provenance is generally called **Named Graph IDs**, and is used in place of reification or N-ary relationships.  Each graph has metadata about provenance including dates when the data was collected.  In addition, data collected from a web page is grouped under the schema:WebPage and includes the date when the the web page was cralwed. 
 
-In the future we will likely switch to RDF*/SPARQL* inorder to have more granular provence data on individual statements.
+In the future we will likely switch to RDF*/SPARQL* inorder to have more granular provenance data on individual statements.
 
 ### Support or Contact
 
