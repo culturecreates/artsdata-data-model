@@ -31,7 +31,7 @@ Here are the main Classes used in Artsdata.
 
 ### Ontologies
 
-Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called **OWL-Horst (optimized)**. The main vocabulary used in Artsdata.ca is Schema.org. The current version of both OWL-Horst and Schema.org are located in this GitHub repository under "_triples". 
+Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called **OWL-Horst (optimized)**. The main ontology used in Artsdata.ca is Schema.org. The current version of both OWL-Horst and Schema.org are located in this GitHub repository under "_triples". 
 
 ### Provenance
 
@@ -39,7 +39,7 @@ Data is great, but it is not the ultimate truth, and without context it can quic
 
 To track provenance Artsdata.ca uses metadata attached to Named Graphs. Each data source is stored in a separate graph with its metadata.  This approach to track provenance is generally called **Named Graph IDs**, and is used instead of reification or N-ary relationships.  Each graph has metadata about provenance including dates when the data was collected. Each web site used to extract data is stored in a separate graph. Direct imports from spreadsheets or existing triple stores are also stored in separate graphs. In addition, when data is collected from a web page, the schema:WebPage includes the date when the web page was last crawled. 
 
-In the future we will likely switch to RDF\*/SPARQL\* inorder to have more granular provenance data on individual statements.
+In the future we will likely switch to RDF\*/ (pronounced "RDF star") inorder to have more granular provenance data on individual statements.
 
 ### Support or Contact
 
