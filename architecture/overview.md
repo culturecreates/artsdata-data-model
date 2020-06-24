@@ -1,0 +1,3 @@
+
+
+{% include architecture-diagram.html %}
