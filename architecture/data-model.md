@@ -1,4 +1,5 @@
 
+{% include base.html %}
 {% include architecture-diagram.html %}
 
 Artsdata Data Model & Ontology
