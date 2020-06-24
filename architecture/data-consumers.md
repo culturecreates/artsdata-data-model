@@ -2,14 +2,14 @@
 {% include base.html %}
 {% include architecture-diagram.html %}
 
-Data Clients
+Data Consumers
 --------------
 
-Data Clients use the data in Artsdata.ca to create listing sites, enrich data in their CMS, or build recommendation engines and intelligent assistants.
+Data Consumers use the data in Artsdata.ca to create listing sites, enrich data in their CMS, or build recommendation engines and intelligent assistants.
 
 Currently Google is the main data client using distributed graphs of Artsdata.ca on individiual web sites published as JSON-LD by Footlight. Artsdata.ca maps to Schema.org vocabularies for this reason. In the future we anticipate a point in time where Google and other search engines will want to work directly with Artsdata.ca.
 
-As regions of Canada are included in Artsdata.ca and reach critical mass, we hope to see more data clients appear.
+As regions of Canada are included in Artsdata.ca and reach critical mass, we hope to see more data consumers appear.
 
 
 ##### City of Laval

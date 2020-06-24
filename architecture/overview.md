@@ -12,4 +12,4 @@
 * [Triplestore]({{ base }}/architecture/triple-store.html) 
 * [Graph-store API]({{ base }}/architecture/graph-store-api.html)
 * [Query API]({{ base }}/architecture/query-api.html)
-* [Data Clients]({{ base }}/architecture/data-clients.html)
+* [Data Consumers]({{ base }}/architecture/data-consumers.html)
