@@ -7,7 +7,7 @@ Graph-store API
 
 The Graph-store API is an API server (built with RAILS) that acts as a gateway between the ouside world and the Artsdata Triplestore.
 
-It offers SPARQL and traditional RESTful POSTs (and GraphQL in the works). 
+It offers SPARQL and traditional RESTful POSTs. 
 
 The main goal of the Graph-store API is to defend the Artsdata.ca data model.  All data sent to Artsdata.ca must meet certain constraints. Data that does not meet these contrains are rejected and errors are reported back to the client.
 
