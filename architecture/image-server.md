@@ -1,8 +1,11 @@
+---
+title: Artsdata Image Server (IIIF)
+---
 
 {% include base.html %}
-{% include architecture-diagram.html %}
+{% include back-button.html %}
 
-Artsdata Image Server (IIIF)
+{{ page.title }}
 --------------
 
 Server for images using the International Image Interoperability Framework - [https://iiif.io](https://iiif.io)

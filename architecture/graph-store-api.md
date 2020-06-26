@@ -1,8 +1,11 @@
+---
+title: Graph-store API
+---
 
 {% include base.html %}
-{% include architecture-diagram.html %}
+{% include back-button.html %}
 
-Graph-store API
+{{ page.title }}
 --------------
 
 The Graph-store API is an API server (built with RAILS) that acts as a gateway between the ouside world and the Artsdata Triplestore.

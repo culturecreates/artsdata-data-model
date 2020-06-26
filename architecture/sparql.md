@@ -1,8 +1,11 @@
+---
+title: SPARQL Endpoint & Federation
+---
 
 {% include base.html %}
-{% include architecture-diagram.html %}
+{% include back-button.html %}
 
-SPARQL Endpoint & Federation
+{{ page.title }}
 --------------
 
 The Artsdata.ca SPARQL endpoint is mainly used internally due to the complexity of writting SPARQLs. 

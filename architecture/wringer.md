@@ -1,8 +1,11 @@
+---
+title: Culture Creates Wringer
+---
 
 {% include base.html %}
-{% include architecture-diagram.html %}
+{% include back-button.html %}
 
-Culture Creates Wringer
+{{ page.title }}
 --------------
 
 Wringer (code name) is a tool & service developed by Culture Creates to extract web pages with existing JSON-LD event data into Artsdata.ca.

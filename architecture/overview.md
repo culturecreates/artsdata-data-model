@@ -1,3 +1,6 @@
+---
+title: Architecture Overview
+---
 
 {% include base.html %}
 {% include architecture-diagram.html %}

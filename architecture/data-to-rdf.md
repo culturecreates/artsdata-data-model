@@ -1,8 +1,11 @@
+---
+title: Google Spreadsheets & Data-to-RDF
+---
 
 {% include base.html %}
-{% include architecture-diagram.html %}
+{% include back-button.html %}
 
-Google Spreadsheets & Data-to-RDF
+{{ page.title }}
 --------------
 
 Data-to-RDF Plugin is a tool developed by Culture Creates to convert Google spreadsheets into RDF data.  

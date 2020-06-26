@@ -1,8 +1,11 @@
+---
+title: Data Consumers
+---
 
 {% include base.html %}
-{% include architecture-diagram.html %}
+{% include back-button.html %}
 
-Data Consumers
+{{ page.title }}
 --------------
 
 Data Consumers use the data in Artsdata.ca to create listing sites, enrich data in their CMS, or build recommendation engines and intelligent assistants.
