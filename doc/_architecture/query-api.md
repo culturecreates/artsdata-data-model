@@ -1,12 +1,7 @@
 ---
 title: Query API
+layout: architecture-doc
 ---
-
-{% include base.html %}
-{% include back-button.html %}
-
-{{ page.title }}
---------------
 
 The Query API is an API server (built with RAILS) that acts as a gateway between the ouside world and the Artsdata Triplestore.
 
