@@ -3,6 +3,8 @@ title: Culture Creates Footlight
 layout: architecture-doc
 ---
 
+{% include base.html %}
+
 Footlight is a tool & service developed by Culture Creates to convert web pages with events into structured and linked data.  Footlight started in 2018 and is in closed beta with 25 arts organizations in Canada.
 
 The goal of Footlight is to have a one hour learning curve.  For this reason, Culture Creates built the Footlight Console, an easy to use UI for arts organizations to review their event data. Culture Creates accompanies arts organizations by configuring the back end (Condenser - very technical and scary) so that all the heavy lifting is done and the arts organization only has to review the results using the Footlight Console (friendly).
