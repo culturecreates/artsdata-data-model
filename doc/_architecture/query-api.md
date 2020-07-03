@@ -3,7 +3,7 @@ title: Query API
 layout: architecture-doc
 ---
 
-The Query API is an API server (built with RAILS) that acts as a gateway between the ouside world and the Artsdata Triplestore.
+The Query API is an API server (built with RAILS) that acts as a gateway between the outside world and the Artsdata Triplestore.
 
 It offers SPARQL and traditional RESTful GETs (and GraphQL in the works). 
 
