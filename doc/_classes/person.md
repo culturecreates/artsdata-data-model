@@ -4,20 +4,22 @@ layout: class-doc
 shex: person
 ---
 
-Adding people
-=============
+## Adding people
 
-To add a performing arts person please create the person in Wikidata and fill in the fields required by Artsdata:
-* given name
-* family name
-* occupation (one or more occipations but atlease one of "actor" or "stage director"
-* instance of human
-* gender (male, female, intersex, transgender female, transgender male, non-binary)
+To add a performing arts person please create the person in Wikidata and fill in the following fields.
+* Given name
+* Family name
+* Occupation (one or more occipations but atlease one of "actor" or "stage director"
+* Instance of human
+* Gender (male, female, intersex, transgender female, transgender male, non-binary)
 
 
-If the artist data passes this ShEx validator, it will be added to Artsdata.ca.
+If the artist data passes this ShEx validator, it will be automatically be added to Artsdata.ca in a couple of days.
 [Online Validator](https://shex-simple.toolforge.org/wikidata/packages/shex-webapp/doc/shex-simple.html?data=Endpoint:%20https://query.wikidata.org/sparql&hideData&manifest=[]&textMapIsSparqlQuery&schemaURL=%2F%2Fwww.wikidata.org%2Fwiki%2FSpecial%3AEntitySchemaText%2FE25)
 
+
+###  ShExC Validator 
+TODO: Load shex file dynamically from shex folder
 ```ShEx
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX wd: <http://www.wikidata.org/entity/>
