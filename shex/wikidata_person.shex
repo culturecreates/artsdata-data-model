@@ -1,3 +1,5 @@
+# ShExC to validate persons in Wikidata meet Artsdata.ca data model contraints.
+
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>

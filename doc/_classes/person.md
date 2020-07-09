@@ -15,7 +15,7 @@ To add a performing arts person please create the person in Wikidata and fill in
 
 
 If the artist data passes this ShEx validator, it will be automatically be added to Artsdata.ca in a couple of days.
-[Online Validator](https://shex-simple.toolforge.org/wikidata/packages/shex-webapp/doc/shex-simple.html?data=Endpoint:%20https://query.wikidata.org/sparql&hideData&manifest=[]&textMapIsSparqlQuery&schemaURL=%2F%2Fwww.wikidata.org%2Fwiki%2FSpecial%3AEntitySchemaText%2FE25)
+[Online Validator](https://shex-simple.toolforge.org/wikidata/packages/shex-webapp/doc/shex-simple.html?data=Endpoint:%20https://query.wikidata.org/sparql&hideData&manifest=[]&textMapIsSparqlQuery&schemaURL=https://raw.githubusercontent.com/culturecreates/artsdata-data-model/master/shex/wikidata_person.shex)
 
 
 ###  ShExC Validator 
