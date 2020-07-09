@@ -5,7 +5,7 @@ layout: architecture-doc
 
 [Here](https://culturecreates.github.io/artsdata-data-model/) is the website that documents the Artsdata.ca Data Model.
 
-The data model is evolving to include more information about productions and works, and will be alligned to the well established conceptual models of FRBR and CIDOC-CRM models with classes from FRBRoo and Schema.org and mappings to the Wikidata ontology.  
+The data model is evolving to include more information about productions and works, and will be aligned to the well established conceptual models of FRBR and CIDOC-CRM models with classes from FRBRoo and Schema.org, and mappings to the Wikidata ontology.  
 
 Related publications:
 * [Lier l’avenir numérique des arts de la scène](http://bit.ly/anl2019)
