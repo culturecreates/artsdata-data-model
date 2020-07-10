@@ -9,7 +9,7 @@ shex: person
 To add a performing arts person please create the person in Wikidata and fill in the following fields.
 * Given name
 * Family name
-* Occupation (one or more occipations but atlease one of "actor" or "stage director"
+* Occupation (one or more occupations but atleast one of "actor" or "stage director" or "musician"
 * Instance of human
 * Gender (male, female, intersex, transgender female, transgender male, non-binary)
 
@@ -33,6 +33,6 @@ start = @<artist>
         wdt:P735 . * ;  # given name
         wdt:P734 . * ;  # family name
         wdt:P106 . *  ; # has occupation
-  wdt:P106 [ wd:Q33999  wd:Q3387717 ]  # actors and stage directors
+  wdt:P106 [ wd:Q33999  wd:Q3387717 wd:Q639669]  # actors, stage directors and musicians
 }
 ```
