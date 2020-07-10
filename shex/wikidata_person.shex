@@ -12,5 +12,5 @@ start = @<artist>
         wdt:P735 . * ;  # given name
         wdt:P734 . * ;  # family name
         wdt:P106 . *  ; # has occupation
-  wdt:P106 [ wd:Q33999  wd:Q3387717 ]  # actors and stage directors
+  wdt:P106 [ wd:Q33999  wd:Q3387717 wd:Q639669]  # actors, stage directors, musicians
 }
