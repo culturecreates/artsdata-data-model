@@ -6,7 +6,7 @@ shex: person
 
 ## Adding people
 
-To add a performing arts person please create the person in Wikidata and fill in the following fields.
+To add a performing arts person please create the person in Wikidata and fill in the following required fields. Please add as much data as possible.  We recommend linking social media profiles, and external global IDs like ISNI, but these are not mandatory.
 * Given name
 * Family name
 * Occupation
