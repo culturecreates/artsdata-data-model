@@ -14,11 +14,11 @@ To add a performing arts person please create the person in Wikidata and fill in
 * Gender (male, female, intersex, transgender female, transgender male, non-binary)
 
 
-If the artist data passes this ShEx validator, it will be automatically be added to Artsdata.ca in a couple of days.
+If the artist data passes this [ShEx](https://shex.io) validator, it will be automatically be added to Artsdata.ca in a couple of days.
 [Online Validator](https://shex-simple.toolforge.org/wikidata/packages/shex-webapp/doc/shex-simple.html?data=Endpoint:%20https://query.wikidata.org/sparql&hideData&manifest=[]&textMapIsSparqlQuery&schemaURL=https://raw.githubusercontent.com/culturecreates/artsdata-data-model/master/shex/wikidata_person.shex)
 
 
-###  ShExC Validator 
+###  ShEx Validator 
 TODO: Load shex file dynamically from shex folder
 ```ShEx
 PREFIX p: <http://www.wikidata.org/prop/>
