@@ -33,9 +33,11 @@ Here are the main Classes used in Artsdata.
 
 Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called **OWL-Horst (optimized)**. The main ontology used in Artsdata.ca is Schema.org. The current version of both OWL-Horst and Schema.org are located in this GitHub repository under "_triples". 
 
+Current work into the next version of the Artsdata.ca ontology is being influenced by the work at CAPACOA's [Linked Digital Future](https://linkeddigitalfuture.ca) initiative and involves aligning the data model with data models used in cultural heritage including CIDOC-CRM, FRBRoo, PROV and RDA to mention a few. The data models will be futher specificed by a domain-specifc vocabulary to be released in the upcoming versions.
+
 ### Provenance
 
-Data is great, but it is not the ultimate truth, and without traceability it can lose our trust.  To maintain trust it is important that we track provenance. For example, what if two web pages have different dates for the same performing arts event. Which source is more trust worthy? How can we follow the data back to the source to decide for ourselves? 
+Data is great, but it is not the ultimate truth, and without traceability it can lose our trust. For example, what if two web pages have different dates for the same performing arts event. Which source is more trust worthy? How can we follow the data back to the source to decide for ourselves? 
 
 To track provenance Artsdata.ca uses metadata attached to named graphs. Each data source in Artsdata.ca is stored in a separate named graph. The graph's URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the **Named Graphs** approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data was loaded, the software used to collect it and the email of the contributing organization. Each time data is imported,  whether from a web site, spreadsheet or existing triple store, the graphs provenance metadata is updated. In addition, when the data source is directly from a crawled web page, the schema:WebPage entity includes the date when the web page was crawled. 
 
