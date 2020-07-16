@@ -17,9 +17,11 @@ layout: default
 
 Summary
 =========
-Artsdata is a LOD event aggregator and global ID (URI) provider specialized in the Canadian Arts Sector.   
+Artsdata is a knowledge graph specialized in the Canadian Arts Sector and focused on performing arts events. In other words, it is a [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) aggregator of events and global ID (URI) provider for linking events to artists, venues and arts organizations.
 
-Artsdata loads descriptive metadata related to cultural events (performing arts, galleries, museums) from multiple websites and external databases and, when needed, mints URIs for named entities. 
+Artsdata loads descriptive metadata related to cultural events (performing arts, and soon galleries and museums) from multiple websites and external databases and, when needed, mints URIs for named entities. 
+
+For an overview of knowledge graphs and why the arts sector in Canada should have one, take a look at this 6 minute [video](https://youtu.be/Brqa4T0JNMk) by Tammy Lee, CEO of Culture Creates. 
 
 The Artsdata data model is implemented using classic RDF ontologies and maps data to a multitude of other classic (i.e. FRBR) and non-classic (i.e. Wikidata) ontologies.
 
