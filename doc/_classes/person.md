@@ -6,7 +6,8 @@ shex: person
 
 ## Adding people
 
-To add a performing arts person please create the person in Wikidata and fill in the following required fields. Please add as much data as possible.  We recommend linking social media profiles, and external global IDs like ISNI, but these are not mandatory.
+To add a performing arts person please create the person in Wikidata and fill in the following required fields. Please add as much data as possible to help cases that require disambiguation.  We recommend linking social media profiles, and external global IDs like ISNI, but these are not mandatory. 
+
 * Given name
 * Family name
 * Occupation
@@ -21,6 +22,7 @@ To add a performing arts person please create the person in Wikidata and fill in
   * transgender female
   * transgender male
   * non-binary
+* Date of birth
 
 
 Artsdata uses [ShEx](https://shex.io) to validate data for import. If the data passes the ShEx validation, the person will automatically be added to Artsdata.ca in a couple of days.
