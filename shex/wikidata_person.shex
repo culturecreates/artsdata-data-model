@@ -16,7 +16,7 @@ start = @<artist>
         wdt:P21 [wd:Q6581097 wd:Q6581072 wd:Q1097630 wd:Q1052281 wd:Q2449503 wd:Q48270]? ;    # has a gender
         wdt:P735 IRI +  ;  # one or more given name
         wdt:P734 IRI + ;  # one or more family name
-        wdt:P106 IRI *  ; # has an occupation
-        wdt:P106 [ wd:Q33999  wd:Q3387717 wd:Q639669  wd:Q488205 wd:Q177220 ] ; # at least one occupation of actor, stage director, musician
+        wdt:P106 IRI *  ; # can have zero or more occupations
+        wdt:P106 [ wd:Q33999  wd:Q3387717 wd:Q639669  wd:Q488205 wd:Q177220 ] ; # but at least one of these occupations of artists in performing arts
         wdt:P19 .  # has date or birth 
 }
