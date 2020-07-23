@@ -1,4 +1,5 @@
 # ShExC to validate persons in Wikidata meet Artsdata.ca data model constraints.
+# example Query: SELECT ?id WHERE {values ?id {wd:Q46553540  wd:Q216924}}
 
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX wd: <http://www.wikidata.org/entity/>
