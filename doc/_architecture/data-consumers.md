@@ -5,7 +5,7 @@ layout: architecture-doc
 
 Data Consumers use the data in Artsdata.ca to create listing sites, enrich data in their CMS, or build recommendation engines and intelligent assistants.
 
-Google is an indirect main data consumer of the Event JSON-LD published on individual web sites with the Footlight code snippet. Artsdata.ca maps to Schema.org vocabularies for this reason. In the future we anticipate a point in time where Google and other search engines will want to work directly with Artsdata.ca.
+Google is an indirect data consumer of the Event JSON-LD published on individual web sites with the Footlight code snippet. Artsdata.ca maps to Schema.org vocabularies for this reason. In the future we anticipate a point in time where Google and other search engines will want to work directly with Artsdata.ca.
 
 Below are 2 examples of data consumers.  As more and more regions of Canada are included in Artsdata.ca, and the coverage of events increases, more data consumers will be able to use Artsdata,ca.
 
