@@ -47,6 +47,10 @@ In the future we will likely switch to RDF\* (pronounced "RDF star") inorder to 
 
 In principle anyone can add data to Artsdata.ca as long as certain data requirements are met.  Here is a [diagram]({{ base }}/architecture/overview.html) about how data flows in and out of Artsdata.ca.
 
+### Naming Conventions
+
+[Conventions]({{ base }}/naming_conventions.html) on how to name things when in doubt.
+
 ### Support or Contact
 
 [Contact support](mailto:support@culturecreates.com) and we’ll help you sort it out.
