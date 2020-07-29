@@ -3,10 +3,18 @@ Naming Conventions
 
 Conventions for naming things will be added here as needed.
 
-### Graph Names
-* use [valid URIs](https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph)
-* Use uppercase words seperated by "_"
+# Graph Names
+### Use
+* [Valid IRIs](https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph)
+* **For the path** use uppercase words seperated by "_" 
 
-Examples: 
+### Avoid
+* Uppercase characters in scheme names (http) and domain names (example.com)
+* Percent-encoding of characters where it is not required by IRI syntax
+* Explicitly stated HTTP default port (http://example.com:80/); http://example.com/ is preferable
+* Completely empty path in HTTP IRIs (http://example.com); http://example.com/ is preferable
+
+### Examples
+* http://example.com/
 * http://example.com/Graph
 * http://example.com/Another_Graph
