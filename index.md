@@ -32,7 +32,7 @@ Here are the main Classes used in Artsdata.
 
 Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called **OWL-Horst (optimized)**. 
 
-The main ontology used in Artsdata.ca is Schema.org. Artsdata.ca imports the core Schema.org schema and the pending Schema.org schema (to include schema:EventSeries which is a pending class).  In addition, Artsdata.ca imports the DBpedia core schema which includes class and property mappings between Schema.org and Wikidata.org.  *Note: in order to make use of the mappings in Artsdata.ca, we transform the domain wikidata.dbpedia.org/resource to match Wikidata's domain www.wikidata.org/entity.*
+The main ontology used in Artsdata.ca is **Schema.org**. Artsdata.ca imports the core Schema.org schema and the pending Schema.org schema (to include schema:EventSeries which is a pending class).  In addition, Artsdata.ca imports the DBpedia core schema which includes class and property mappings between Schema.org and Wikidata.org.  *Note: in order to make use of the mappings in Artsdata.ca, we transform the domain wikidata.dbpedia.org/resource to match Wikidata's domain www.wikidata.org/entity.*
 
 The versions of **OWL-Horst**, **Schema.org** schemas and **DBpedia** schema used by Artsdata.ca are located in this GitHub repository under "_triples". 
 
@@ -52,7 +52,7 @@ In the future we will likely switch to RDF\* (pronounced "RDF star") inorder to 
 
 In principle anyone can add data to Artsdata.ca as long as certain data requirements are met.  Here is a [diagram]({{ base }}/architecture/overview.html) about how data flows in and out of Artsdata.ca.
 
-## Caching LOD
+### Caching LOD
 
 Artsdata.ca loads LOD from Wikidata and DBpedia in order to cache it for performance reasons. The triples are obtained using content negotiation (instead of data dumps) and are cached unmodified in their respective named graphs. *Note: there is one notable exception, the Wikidata property **P31** (instance of) is transformed to **rdf:type**.  This same result could have been accomplished using owl:equivalentProperty but it was not selected for performance reasons.
 
