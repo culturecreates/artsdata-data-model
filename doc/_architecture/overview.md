@@ -34,11 +34,11 @@ The open data ecosystem is divided into 3 areas:
 
 ### Data providers
 
-For Data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of ETL tools are available (see Provence data for a listing of tools in action), as well as an API (Graph-store API) for 3rd party developers that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata.)  All data provided, either through one of the available tools or directly to the API, require a user account registered with artsdata.ca, and valid provenance data (also constrained by the Artsdata data model). All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.
+For Data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of ETL tools are available (see Provence data for a listing of tools in action), as well as an API (Graph-store API) for 3rd party developers that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata.)  All data submited to Artsdata.ca requires a user account registered with artsdata.ca, and valid provenance data (also constrained by the Artsdata data model), unless you are using the DBpedia Databus with WebID (PKCS12 Certificate) in which case no artsdata.ca account is needed. All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.
 
-Data from each source is loaded into its own graph within Artsdata.ca with provenance metadata including a contact point, contributor names and data related license agreements (CC0). 
+Data from each source is loaded into its own graph within Artsdata.ca with provenance metadata including a contact point, contributor names and data related license agreements. 
 
-3rd party tools are welcome and must also use the Artsdata Graph-store API to load data.  An OpenRefine plugin would be a great start!
+3rd party developers are welcome and can use the Artsdata Graph-store API to load data.  An OpenRefine plugin would be a great addition!
 
 **Update 03-SEP-2020**: Artsdata is now working with DBpedia Databus, and will accept data uploaded to the Databus. If you are developer you can get started with some resources here [https://github.com/culturecreates/dbpedia-databus-resources](https://github.com/culturecreates/dbpedia-databus-resources)
 
