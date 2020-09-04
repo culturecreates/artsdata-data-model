@@ -40,7 +40,7 @@ Data from each source is loaded into its own graph within Artsdata.ca with prove
 
 3rd party tools are welcome and must also use the Artsdata Graph-store API to load data.  An OpenRefine plugin would be a great start!
 
-**Update 03-SEP-2020**: Artsdata is now working with DBpedia Databus, and will accept data uploaded to the Databus. If you are developer you can get started with some resources here https://github.com/culturecreates/dbpedia-databus-resources
+**Update 03-SEP-2020**: Artsdata is now working with DBpedia Databus, and will accept data uploaded to the Databus. If you are developer you can get started with some resources here [https://github.com/culturecreates/dbpedia-databus-resources](https://github.com/culturecreates/dbpedia-databus-resources)
 
 
 ### Artsdata.ca
