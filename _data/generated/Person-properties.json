@@ -12,37 +12,37 @@
       {
         "classes" : {
           "type" : "uri",
-          "value" : "http://schema.org/Thing"
+          "value" : "http://schema.org/Person"
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/name"
+          "value" : "http://schema.org/address"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "The name of the item."
+          "value" : "Physical address of the item."
         },
         "label" : {
           "type" : "literal",
-          "value" : "name"
+          "value" : "address"
         }
       },
       {
         "classes" : {
           "type" : "uri",
-          "value" : "http://schema.org/Thing"
+          "value" : "http://schema.org/Person"
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/url"
+          "value" : "http://schema.org/jobTitle"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "URL of the item."
+          "value" : "The job title of the person (for example, Financial Manager)."
         },
         "label" : {
           "type" : "literal",
-          "value" : "url"
+          "value" : "jobTitle"
         }
       },
       {
@@ -88,6 +88,42 @@
         },
         "property" : {
           "type" : "uri",
+          "value" : "http://schema.org/name"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The name of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "name"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/url"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "URL of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "url"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
           "value" : "http://schema.org/sameAs"
         },
         "comment" : {
@@ -115,24 +151,6 @@
         "label" : {
           "type" : "literal",
           "value" : "alternateName"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Person"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/address"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "Physical address of the item."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "address"
         }
       }
     ]

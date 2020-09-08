@@ -34,42 +34,6 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/name"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "The name of the item."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "name"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Thing"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/url"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "URL of the item."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "url"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Thing"
-        },
-        "property" : {
-          "type" : "uri",
           "value" : "http://schema.org/description"
         },
         "comment" : {
@@ -97,6 +61,42 @@
         "label" : {
           "type" : "literal",
           "value" : "image"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/name"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The name of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "name"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/url"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "URL of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "url"
         }
       },
       {
