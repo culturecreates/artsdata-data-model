@@ -7,14 +7,14 @@ layout: class-doc
 
 ### Required
 
-* [name](https://schema.org/name) - indicate language @en, @fr
+* [name](https://schema.org/name) - Indicate language @en, @fr
 * [url](https://schema.org/url) - Official URL of the organization
 * [address](https://schema.org/address) - Use [PostalAddress](https://schema.org/PostalAddress)
 
 ### Recommended
 
-* [alternateName](https://schema.org/alternateName) - indicate language @en, @fr
-* [sameAs](https://schema.org/sameAs)
+* [alternateName](https://schema.org/alternateName) - Name typically found on websites. Indicate language @en, @fr
+* [sameAs](https://schema.org/sameAs) - social media profiles and external global IDs like ISNI.
 * [areaServed](https://schema.org/areaServed) (pending)
 * [contactPoint](https://schema.org/contactPoint) (pending)
 * [subOrganization](https://schema.org/subOrganization) (pending)
@@ -24,7 +24,3 @@ layout: class-doc
 * [leiCode](https://schema.org/leiCode) (pending)
 * [isicV4](https://schema.org/isicV4) (pending)
 * [naics](https://schema.org/naics) (pending)
-
-
- We recommend linking social media profiles with schema:sameAs, and external global IDs like ISNI, but these are not mandatory.
- 
