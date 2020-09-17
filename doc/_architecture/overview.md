@@ -2,8 +2,8 @@
 title: Architecture Overview
 layout: default
 ---
-{% include base.html %}
-{% include back-button.html %}
+<p>{% include back-button.html %}</p>
+
 {% include architecture-diagram.html %}
 
 ### Detailed sections

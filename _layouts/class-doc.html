@@ -5,7 +5,6 @@ layout: default
 {% assign class_definition = site.data.generated[class_definition_json].results.bindings[0] %}
 
 {% include back-button.html %}
-{% include base.html %}
 
 <h1><a href="{{class_definition.label.value | prepend: 'http://schema.org/'}}">{{ page.class_name }}</a></h1>
 <p>
