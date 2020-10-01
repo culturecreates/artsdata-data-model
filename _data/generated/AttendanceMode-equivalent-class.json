@@ -1,0 +1,12 @@
+{
+  "head" : {
+    "vars" : [
+      "graph",
+      "equivalentSub",
+      "equivalentObj"
+    ]
+  },
+  "results" : {
+    "bindings" : [ ]
+  }
+}

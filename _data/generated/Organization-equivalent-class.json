@@ -1,0 +1,55 @@
+{
+  "head" : {
+    "vars" : [
+      "graph",
+      "equivalentSub",
+      "equivalentObj"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Organization"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Organisation"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      },
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Organisation"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      },
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://www.wikidata.org/entity/Q43229"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Organisation"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "head" : {
+    "vars" : [
+      "graph",
+      "equivalentSub",
+      "equivalentObj"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://schema.org/WebPage"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Website"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      }
+    ]
+  }
+}

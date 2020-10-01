@@ -10,10 +10,6 @@
   "results" : {
     "bindings" : [
       {
-        "equivalent" : {
-          "type" : "uri",
-          "value" : "http://xmlns.com/foaf/0.1/Person"
-        },
         "comment" : {
           "type" : "literal",
           "value" : "A person (alive, dead, undead, or fictional)."

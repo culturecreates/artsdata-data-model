@@ -1,0 +1,69 @@
+{
+  "head" : {
+    "vars" : [
+      "graph",
+      "equivalentSub",
+      "equivalentObj"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://purl.org/dc/dcmitype/Event"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://schema.org/#8.0"
+        }
+      },
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Event"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      },
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Event"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      },
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://www.wikidata.org/entity/Q1656682"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Event"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      }
+    ]
+  }
+}

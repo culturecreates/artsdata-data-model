@@ -1,0 +1,15 @@
+PREFIX schema: <http://schema.org/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+select *
+where { 
+  graph ?graph {
+          ?equivalentSub owl:equivalentClass ?equivalentObj .
+  }
+  { #sub-query
+      select ?equivalentSub where {
+          schema:Event   owl:equivalentClass ?equivalentSub 
+      }
+  }
+} 
+  

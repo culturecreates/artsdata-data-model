@@ -46,6 +46,7 @@ class GenerateData
   def self.sparql(name)
     call_sparql name, 'properties'
     call_sparql name, 'definition'
+    call_sparql name, 'equivalent-class'
   end
 
   def self.call_sparql(name, template)

@@ -1,0 +1,41 @@
+{
+  "head" : {
+    "vars" : [
+      "graph",
+      "equivalentSub",
+      "equivalentObj"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Place"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Place"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      },
+      {
+        "equivalentObj" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Location"
+        },
+        "equivalentSub" : {
+          "type" : "uri",
+          "value" : "http://dbpedia.org/ontology/Place"
+        },
+        "graph" : {
+          "type" : "uri",
+          "value" : "http://kg.artsdata.ca/ontology/dbpedia_2016-10"
+        }
+      }
+    ]
+  }
+}
