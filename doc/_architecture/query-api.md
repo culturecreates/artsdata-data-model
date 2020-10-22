@@ -11,6 +11,8 @@ The Artsdata.ca Reconciliation Service API can be used to link entites to Artsda
 
 Reconciliation service endpoint: https://api.artsdata.ca/recon.
 
+Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/)! (click 'Test bench' tab and enter the endpoint)
+
 ## Other APIs coming soon
 The main goal of the Query API is to provide easy access to all data in Artsdata.ca. It offers SPARQL and traditional RESTful GETs (GraphQL in the works).
 Responses can be in JSON or JSON-LD.  A user account enables persisted configurations for ranking graphs or settings for an iCalendar feed. 
