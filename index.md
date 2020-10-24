@@ -1,6 +1,8 @@
 {% include base.html %}
+{% include last-modified.html %}
 
 ## Artsdata Data Model v{{ site.data.versions.schemaVersion}}
+[Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
 A simple data model for Performing Arts Events and related Places, People and Organizations. 
 

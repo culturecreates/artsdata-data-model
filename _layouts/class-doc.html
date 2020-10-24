@@ -8,15 +8,16 @@ layout: default
 
 {% include back-button.html %}
 
-<h1><a href="{{class_definition.label.value | prepend: 'http://schema.org/'}}">{{ page.class_name }}</a></h1>
-<p>
-    {{ class_definition.comment.value}}
-</p>
-&#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+{{ page.class_name }}">Check for open issues</a>
 
+
+<h1><a href="{{class_definition.label.value | prepend: 'http://schema.org/'}}">{{ page.class_name }}</a></h1>
+
+
+<p>
+    Schema.org says: {{ class_definition.comment.value}}
+</p>
 
  <h2>Equivalent classes</h2>   
-
 
  <table>
     <tr>
