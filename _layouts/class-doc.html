@@ -26,7 +26,7 @@ layout: default
     </tr>
     {% for member in site.data.generated[class_equivalent_class_json].results.bindings %} 
     <tr>
-        <td style="width:1rem"> <a href="{{ member.equivalentSub.value }}">{{ member.equivalentSub.value }} </a></td>
+        <td style="width:20%"> <a href="{{ member.equivalentSub.value }}">{{ member.equivalentSub.value }} </a></td>
         <td>  <a href="{{ member.equivalentObj.value }}">{{ member.equivalentObj.value }} </a> 
          <br>
          <span style="font-size: 0.75rem"> from graph <a href="{{ member.graph.value }}">{{ member.graph.value }} </a></span></td>
