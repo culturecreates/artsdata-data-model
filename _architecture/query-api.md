@@ -9,9 +9,9 @@ The Query API offers a collection of APIs that acts as a gateway between the out
 
 **NEW 22-OCT-2020**: The Artsdata.ca Reconciliation Service API can be used to link entites to Artsdata.ca IDs. Supported entites include People, Organizations, and Places. In the future Performing Arts Productions and Works will be added. This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). This API can be consumed by tools like [OpenRefine](https://openrefine.org) to add Artsdata.ca IDs (for example artists) to enrich an existing spreadsheet.
 
-Reconciliation service endpoint: https://api.artsdata.ca/recon.
+Reconciliation service endpoint: https://api.artsdata.ca/recon
 
-Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/)! (click 'Test bench' tab and enter the endpoint)
+Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/)! (click 'Test bench' tab and enter the endpoint). Or view this [screen recording](https://youtu.be/VkOncek9iuY).
 
 ## Preview API
 
