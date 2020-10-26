@@ -1,5 +1,8 @@
+{% include last-modified.html %}
+ 
 Naming Conventions
 ===================
+[Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
 Conventions for naming things will be added here as needed.
 
