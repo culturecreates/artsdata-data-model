@@ -34,13 +34,16 @@ Here are the main Classes used in Artsdata.
 
 Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called **OWL-Horst (optimized)**. 
 
-The main ontology used in Artsdata.ca is **Schema.org**. Artsdata.ca imports the core Schema.org schema and the pending Schema.org schema (to include schema:EventSeries which is a pending class).  In addition, Artsdata.ca imports the DBpedia core schema which includes class and property mappings between Schema.org and Wikidata.org.  *Note: in order to make use of the mappings in Artsdata.ca, we transform the domain wikidata.dbpedia.org/resource to match Wikidata's domain www.wikidata.org/entity.*
+The main ontology used in Artsdata.ca is **Schema.org**. Artsdata.ca imports the core Schema.org schema and the pending Schema.org schema (to include schema:EventSeries which is a pending class).  
 
-The versions of **OWL-Horst**, **Schema.org** schemas and **DBpedia** schema used by Artsdata.ca are located in this GitHub repository under "_triples". 
-
-Artsdata.ca has a large number of class and property mappings between Schema.org, Wikidata.org, DBpedia.org, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns) using owl:equivalentClass and owl:equivalentProperty. The majority of mappings come prebuilt from external ontologies (see above) with some additional Artsdata.ca specific mappings to Wikidata. 
+Artsdata.ca has a large number of class and property mappings between Schema.org, Wikidata.org, DBpedia.org, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns) using owl:equivalentClass and owl:equivalentProperty. The majority of mappings come prebuilt from external ontologies with some additional [Artsdata.ca specific mappings](http://kg.artsdata.ca/Wikidata_Mapping) to Wikidata. 
 
 Current work into the next version of the Artsdata.ca ontology is being influenced by the work at CAPACOA's [Linked Digital Future](https://linkeddigitalfuture.ca) initiative and involves aligning the data model with data models used in cultural heritage including CIDOC-CRM, FRBRoo, PROV and RDA to mention a few. The data models will be futher specificed by a domain-specifc vocabulary to be released in the upcoming versions.
+
+#### Ontologies loaded into Artsdata
+* https://github.com/culturecreates/artsdata-data-model/tree/master/_triples
+* https://www.w3.org/2000/01/rdf-schema
+
 
 ### Provenance
 
