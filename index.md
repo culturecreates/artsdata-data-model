@@ -41,8 +41,8 @@ Artsdata.ca has a large number of class and property mappings between Schema.org
 Current work into the next version of the Artsdata.ca ontology is being influenced by the work at CAPACOA's [Linked Digital Future](https://linkeddigitalfuture.ca) initiative and involves aligning the data model with data models used in cultural heritage including CIDOC-CRM, FRBRoo, PROV and RDA to mention a few. The data models will be futher specificed by a domain-specifc vocabulary to be released in the upcoming versions.
 
 #### Ontologies loaded into Artsdata
-* https://github.com/culturecreates/artsdata-data-model/tree/master/_triples
-* https://www.w3.org/2000/01/rdf-schema
+* [https://github.com/culturecreates/artsdata-data-model/tree/master/_triples](https://github.com/culturecreates/artsdata-data-model/tree/master/_triples)
+* [https://www.w3.org/2000/01/rdf-schema](https://www.w3.org/2000/01/rdf-schema)
 
 
 ### Provenance
