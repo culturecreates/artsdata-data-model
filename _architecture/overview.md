@@ -17,7 +17,7 @@ layout: default
 
 Summary
 =========
-Artsdata is a knowledge graph specialized in the Canadian Arts Sector and focused on performing arts events. 
+Artsdata is a knowledge graph specialized in the Canadian Arts Sector, currently focused on performing arts events. 
 
 Artsdata aggregates descriptive metadata related to cultural events (performing arts, and soon galleries and museums) from multiple websites and external databases and, when needed, mints URIs for named entities. Data is published as [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) with URIs that can be used to link events to artists, venues and arts organizations.
 
@@ -25,7 +25,7 @@ For an overview of knowledge graphs and why the arts sector in Canada should hav
 
 The Artsdata data model is implemented using classic RDF ontologies and maps data to a multitude of other classic (i.e. FRBR) and non-classic (i.e. Wikidata) ontologies.
 
-The long term goal of Artsdata is to have the most complete and highest quality descriptive metadata on cultural events in Canada, including productions and artists from around the world being presented in Canada. And at a later stage all events of Canadian artists performing abroad.
+The long term goal of Artsdata is to have the most complete and highest quality descriptive metadata on cultural events in Canada, including productions and artists from around the world being presented in Canada. And, at a later stage, all events of Canadian artists performing abroad.
 
 The open data ecosystem is divided into 3 areas:
 * Data providers
@@ -49,6 +49,6 @@ Data from each source is loaded into its own graph within Artsdata.ca with prove
 
 ### Data consumers
 
-Data consumers, such as listing sites, search engines, government bodies and Arts Organizations wanting to use the data, can call the Artsdata Query API that provides several methods available from an iCalendar feed to a RESTful API, to a SPARQL endpoint (read only) or obtain a triples data dump serialized as N-Quads. An account is required and used to store personal configurations if desired. The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
+Data consumers, such as listing sites, search engines, government bodies and Arts Organizations wanting to use the data, can call the Artsdata Query API that makes several methods available, from an iCalendar feed to a RESTful API, to a SPARQL endpoint (read only). Or they can obtain a triples data dump serialized as N-Quads. An account is required and used to store personal configurations if desired. The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
 
 
