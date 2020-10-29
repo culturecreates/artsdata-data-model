@@ -14,7 +14,7 @@ Below are 2 examples of data consumers.  As more and more regions of Canada are 
 
 * The city of Laval in Quebec was the first data client with their own [http://laval.footlight.io](http://laval.footlight.io) knowledge graph built using Footlight on two principle websites: co-motion.ca and laval.ca. 
 * The website called [Signé Laval](https://signelaval.com/fr/evenements) is a cultural calendar that displays event data from Laval's knowledge graph.  The calendar uses a CMS that refreshes its data from the knowledge graph weekly.  In the CMS, the event data is manually tagged with categories which are then published in the Signé Laval cultural calendar.  
-* A future project was documented [here](https://linkeddigitalfuture.ca/2020/04/03/interlinking-datasets-to-build-better-listings/) that describes how the auto-assembling of additional data sources could further improve the categories in the cultural calendar.
+* A future project was documented [here](https://linkeddigitalfuture.ca/fr/2020/04/02/lier-des-jeux-de-donnees-afin-dameliorer-les-calendriers-culturels/) that describes how the auto-assembling of additional data sources could further improve the categories in the cultural calendar.
 
 ##### Culture inTime Demo
 
