@@ -7,7 +7,7 @@
 
 schema:EventShape
     a sh:NodeShape ;
-     sh:targetClass [ schema:MusicEvent schema:Event ];
+     sh:targetClass schema:MusicEvent ;
   
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
