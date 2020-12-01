@@ -4,12 +4,19 @@
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ads: <http://kg.artsdata.ca/shacl/> .
 
-schema:EventShape
+
+ads:EventSeriesShape
+    # TODO: Add constraint for 2 or more subEvents
+    a sh:NodeShape ;
+    sh:targetClass schema:EventSeries ;
+    sh:node ads:EventShape .
+
+ads:EventShape
     a sh:NodeShape ;
     sh:closed true ;
     sh:targetClass schema:Event ;
-    sh:targetClass schema:EventSeries ;
     sh:targetClass schema:MusicEvent ;
     sh:targetClass schema:TheaterEvent ;
     sh:targetClass schema:ComedyEvent ;
@@ -27,8 +34,13 @@ schema:EventShape
     sh:targetClass schema:SocialEvent ;
     sh:targetClass schema:SportsEvent ;
     sh:targetClass schema:VisualArtsEvent ;
+
+
     sh:ignoredProperties ( rdf:type ) ;
 
+    # TODO: Check that Event ID ends with #Event
+   
+    
     # name 
     sh:property [
         sh:path schema:name ;
@@ -64,14 +76,14 @@ schema:EventShape
     sh:property [
         sh:path schema:location ;
         sh:maxCount 1 ;
-        sh:node schema:PlaceShape ;
+        sh:node ads:PlaceShape ;
     ] ;
 
     # subEvent
     sh:property [
         sh:path schema:subEvent ;
         sh:minCount 0 ;
-        sh:node schema:EventShape ;
+        sh:node ads:EventShape ;
     ] ;
 
     # eventStatus
@@ -110,8 +122,11 @@ schema:EventShape
 
     # mainEntityOfPage
     sh:property [
+        # TODO: Check that WebPage ID ends with #WebPage
         sh:path schema:mainEntityOfPage ;
-        sh:node schema:WebPageShape ;
+        sh:pattern "#WebPage$" ;
+        sh:node ads:WebPageShape ;
+
     ] ;
     sh:property [
         sh:path schema:mainEntityOfPage ;
@@ -130,8 +145,8 @@ schema:EventShape
     sh:property [
         sh:path schema:performer ;
         sh:or (
-            [ sh:node schema:PersonShape ; ]
-            [ sh:node schema:OrganizationShape ; ]
+            [ sh:node ads:PersonShape ; ]
+            [ sh:node ads:OrganizationShape ; ]
         ) ;
         sh:message "performer is not a valid Person or Organizatinon." ;
     ] ;
@@ -146,8 +161,8 @@ schema:EventShape
      sh:property [
         sh:path schema:organizer ;
         sh:or (
-            [ sh:node schema:PersonShape ; ]
-            [ sh:node schema:OrganizationShape ; ]
+            [ sh:node ads:PersonShape ; ]
+            [ sh:node ads:OrganizationShape ; ]
         ) ;
         sh:message "organizer is not a valid Person or Organizatinon." ;
     ] ;
@@ -169,7 +184,7 @@ schema:EventShape
 
 # Node Shapes
 
-schema:WebPageShape
+ads:WebPageShape
     a sh:NodeShape ;
     sh:targetClass schema:WebPage ;
     sh:property [
@@ -177,7 +192,7 @@ schema:WebPageShape
         sh:minCount 1 ;
     ] .
 
-schema:PersonShape
+ads:PersonShape
     a sh:NodeShape ;
     sh:targetClass schema:Person ;
     sh:property [
@@ -191,7 +206,7 @@ schema:PersonShape
     ] .
 
 
-schema:OrganizationShape
+ads:OrganizationShape
     a sh:NodeShape ;
     sh:targetClass schema:Orgnanization ;
     sh:property [
@@ -206,7 +221,7 @@ schema:OrganizationShape
    
 
 
-schema:PlaceShape
+ads:PlaceShape
     a sh:NodeShape ;
     sh:targetClass schema:Place ;
     sh:closed true ;
@@ -222,7 +237,7 @@ schema:PlaceShape
      sh:node schema:PostalAddressShape ;
    ] .
 
-schema:PostalAddressShape
+ads:PostalAddressShape
     a sh:NodeShape ;
     sh:targetClass schema:PostalAddress ;
     sh:closed true ;

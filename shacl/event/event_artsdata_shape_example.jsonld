@@ -42,7 +42,7 @@
     "performer": {
       "@id": "http://capacitor.com/a7c47681-6692-424c-a529-e30c63275289",
       "@type": "Person",
-     "sameAs": "one",
+     "sameAs": "http://one.com",
       "url": null,
       "jobTitle": "",
    "name": "Max"
