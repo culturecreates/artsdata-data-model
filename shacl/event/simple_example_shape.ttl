@@ -7,31 +7,49 @@
 
 schema:EventShape
     a sh:NodeShape ;
-     sh:targetClass schema:MusicEvent ;
-  
-    sh:closed true ;
+    sh:targetClass schema:Event ;
+    sh:targetClass schema:EventSeries ;
+    sh:targetClass schema:MusicEvent ;
+    sh:targetClass schema:TheaterEvent ;
+    sh:targetClass schema:ComedyEvent ;
+    sh:targetClass schema:DanceEvent ;
+    sh:targetClass schema:ExhibitionEvent ;
+    sh:targetClass schema:Festival ;
+    sh:targetClass schema:ChildrensEvent ;
+    sh:targetClass schema:ScreeningEvent ;
+    sh:targetClass schema:EducationEvent ;
+    sh:targetClass schema:FoodEvent ;
+    sh:targetClass schema:Hackathon ;
+    sh:targetClass schema:LiteraryEvent ;
+    sh:targetClass schema:PublicationEvent ;
+    sh:targetClass schema:SaleEvent ;
+    sh:targetClass schema:SocialEvent ;
+    sh:targetClass schema:SportsEvent ;
+    sh:targetClass schema:VisualArtsEvent ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [
         sh:path schema:name ;
         sh:languageIn ( "en" "fr" ) ;
         sh:uniqueLang true ;
         sh:name "Name of event" ;
-       sh:minCount 1 ;
+        sh:minCount 1 ;
     ] ;
     sh:property [
         sh:path schema:startDate ;
         sh:datatype xsd:dateTime ;
         sh:maxCount 1 ;
-       sh:minCount 1 ;
-       sh:name "Start date and time of Event" ;
+        sh:minCount 1 ;
+        sh:name "Start date and time of Event" ;
     ] ;
     sh:property [
         sh:path schema:location ;
+        sh:maxCount 1 ;
         sh:node schema:PlaceShape ;
     ] ;
-  sh:property [
-     sh:path schema:subEvent ;
-    sh:node schema:EventShape ;
+    sh:property [
+        sh:path schema:subEvent ;
+        sh:minCount 0 ;
+        sh:node schema:EventShape ;
 ] .
 
 schema:PlaceShape
