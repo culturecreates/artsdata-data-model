@@ -1,0 +1,73 @@
+[
+  {
+    "@context": {
+      "@vocab": "http://schema.org/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "startDate": {
+        "@type": "xsd:dateTime"
+      },
+    "endDate": {
+        "@type": "xsd:dateTime"
+      },
+      "nameEn": {
+        "@id": "name",
+        "@language": "en"
+      },
+      "nameFr": {
+        "@id": "name",
+        "@language": "fr"
+      },
+      "descriptionEn": {
+        "@id": "description",
+        "@language": "en"
+      },
+      "descriptionFr": {
+        "@id": "description",
+        "@language": "fr"
+      }
+    },
+    "@id": "https://www.almaspectacles.com/spectacles?r=Harry%20Manx%20(report%C3%A9)#Event",
+    "@type": "MusicEvent",
+    "url": "https://www.almaspectacles.com/spectacles?r=Harry%20Manx%20(report%C3%A9)",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.almaspectacles.com/spectacles?r=Harry%20Manx%20(report%C3%A9)#WebPage",
+      "inLanguage": "fr"
+    },
+    "eventStatus": {
+      "@id": "http://schema.org/EventRescheduled",
+      "@type": "EventStatusType"
+    },
+    "image": "www.almaspectacles.com/donnees/protected/spectacle/imageHorz/Manx_Horizontale.jpg",
+    "performer": {
+      "@id": "http://capacitor.com/a7c47681-6692-424c-a529-e30c63275289",
+      "@type": "Person",
+     "sameAs": "one",
+      "url": null,
+      "jobTitle": "",
+   "name": "Max"
+    },
+    "location": {
+      "@id": "http://capacitor.com/380d570b-fc68-4de4-9249-b60e0d80a0c9",
+      "@type": "Place",
+      "sameAs": null,
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "",
+        "postalCode": "G8B 2X6",
+        "addressLocality": "Alma",
+        "addressRegion": "Québec",
+        "streetAddress": "850 Avenue Bégin"
+      },
+      "nameFr": "Salle Michel-Côté"
+    },
+    "name": "Harry Manx (reporté)",
+    "descriptionFr": "Description in French",
+    "eventAttendanceMode": {
+      "@id": "http://schema.org/OfflineEventAttendanceMode",
+      "@type": "EventAttendanceModeEnumeration"
+    },
+    "startDate": "2020-11-27T00:00:00.000Z",
+    "endDate": ""
+  }
+]

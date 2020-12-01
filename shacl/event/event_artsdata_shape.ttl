@@ -1,0 +1,268 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema:EventShape
+    a sh:NodeShape ;
+    sh:closed true ;
+    sh:targetClass schema:Event ;
+    sh:targetClass schema:EventSeries ;
+    sh:targetClass schema:MusicEvent ;
+    sh:targetClass schema:TheaterEvent ;
+    sh:targetClass schema:ComedyEvent ;
+    sh:targetClass schema:DanceEvent ;
+    sh:targetClass schema:ExhibitionEvent ;
+    sh:targetClass schema:Festival ;
+    sh:targetClass schema:ChildrensEvent ;
+    sh:targetClass schema:ScreeningEvent ;
+    sh:targetClass schema:EducationEvent ;
+    sh:targetClass schema:FoodEvent ;
+    sh:targetClass schema:Hackathon ;
+    sh:targetClass schema:LiteraryEvent ;
+    sh:targetClass schema:PublicationEvent ;
+    sh:targetClass schema:SaleEvent ;
+    sh:targetClass schema:SocialEvent ;
+    sh:targetClass schema:SportsEvent ;
+    sh:targetClass schema:VisualArtsEvent ;
+    sh:ignoredProperties ( rdf:type ) ;
+
+    # name 
+    sh:property [
+        sh:path schema:name ;
+        sh:datatype xsd:string ;
+        sh:name "Name of event" ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:name ;
+        sh:severity sh:Warning ;
+        sh:languageIn ( "en" "fr" ) ;
+        sh:uniqueLang true ;
+    ] ;
+
+    # startDate
+    sh:property [
+        sh:path schema:startDate ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:name "Start date and time of Event" ;
+    ] ;
+
+    # endDate
+    sh:property [
+        sh:path schema:endDate ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        sh:minCount 0 ;
+    ] ;
+
+    # location
+    sh:property [
+        sh:path schema:location ;
+        sh:maxCount 1 ;
+        sh:node schema:PlaceShape ;
+    ] ;
+
+    # subEvent
+    sh:property [
+        sh:path schema:subEvent ;
+        sh:minCount 0 ;
+        sh:node schema:EventShape ;
+    ] ;
+
+    # eventStatus
+    sh:property [
+        sh:path schema:eventStatus ;
+        sh:maxCount  1 ;
+        sh:order 19 ;
+        sh:class schema:EventStatusType ;
+        sh:in  ( schema:EventPostponed  schema:EventScheduled  schema:EventCancelled  schema:EventRescheduled  schema:EventMovedOnline )  ;
+    ] ;
+    sh:property [
+        sh:path schema:eventStatus ;
+        sh:severity sh:Warning ;
+        sh:minCount  1 ;
+    ] ;
+
+    # eventAttendanceMode
+    sh:property [
+        sh:path schema:eventAttendanceMode ;
+        sh:maxCount  1 ;
+        sh:class schema:EventAttendanceModeEnumeration ;
+        sh:in  ( schema:OfflineEventAttendanceMode  schema:OnlineEventAttendanceMode schema:MixedEventAttendanceMode)  ;
+    ] ;
+    sh:property [
+        sh:path schema:eventAttendanceMode ;
+        sh:severity sh:Warning ;
+        sh:minCount  1 ;
+    ] ;
+
+    # url
+     sh:property [
+        sh:path schema:url ;
+        sh:severity sh:Warning ;
+        sh:minCount  1 ;
+    ] ;
+
+    # mainEntityOfPage
+    sh:property [
+        sh:path schema:mainEntityOfPage ;
+        sh:node schema:WebPageShape ;
+    ] ;
+    sh:property [
+        sh:path schema:mainEntityOfPage ;
+        sh:severity sh:Warning ;
+        sh:minCount  1 ;
+    ] ;   
+
+    # image
+    sh:property [
+        sh:path schema:image ;
+        sh:severity sh:Warning ;
+        sh:minCount  1 ;
+    ] ;
+
+    # performer
+    sh:property [
+        sh:path schema:performer ;
+        sh:or (
+            [ sh:node schema:PersonShape ; ]
+            [ sh:node schema:OrganizationShape ; ]
+        ) ;
+        sh:message "performer is not a valid Person or Organizatinon." ;
+    ] ;
+    sh:property [
+        sh:path schema:performer ;
+        sh:severity sh:Warning ;
+        sh:minCount  1 ;
+    ] ;
+
+
+    # organizer
+     sh:property [
+        sh:path schema:organizer ;
+        sh:or (
+            [ sh:node schema:PersonShape ; ]
+            [ sh:node schema:OrganizationShape ; ]
+        ) ;
+        sh:message "organizer is not a valid Person or Organizatinon." ;
+    ] ;
+    sh:property [
+        sh:path schema:organizer ;
+        sh:severity sh:Warning ;
+        sh:minCount  1 ;
+    ] ;
+
+    # description
+     sh:property [
+        sh:path schema:description ;
+        sh:severity sh:Warning ;
+        sh:languageIn ( "en" "fr" ) ;
+        sh:uniqueLang true ;
+        sh:minCount  1 ;
+    ] .
+
+
+# Node Shapes
+
+schema:WebPageShape
+    a sh:NodeShape ;
+    sh:targetClass schema:WebPage ;
+    sh:property [
+        sh:path schema:inLanguage ;
+        sh:minCount 1 ;
+    ] .
+
+schema:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Person ;
+    sh:property [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:sameAs ;
+        sh:pattern "^http" ;
+        sh:description "sameAs properties must have URIs" ;
+    ] .
+
+
+schema:OrganizationShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Orgnanization ;
+    sh:property [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+    ] ;
+        sh:property [
+        sh:path schema:sameAs ;
+        sh:pattern "^http" ;
+        sh:description "sameAs properties must have URIs" ;
+    ] .
+   
+
+
+schema:PlaceShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Place ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path schema:name ;
+	    sh:languageIn ( "en" "fr" ) ;
+        sh:uniqueLang true ;
+        sh:minCount 1 ;
+    ] ;
+   sh:property [
+      sh:path schema:address ;
+     sh:node schema:PostalAddressShape ;
+   ] .
+
+schema:PostalAddressShape
+    a sh:NodeShape ;
+    sh:targetClass schema:PostalAddress ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+   sh:property [
+        sh:path schema:streetAddress ;
+        sh:maxCount 1 ;
+       sh:minCount 1 ;
+       sh:datatype xsd:string ;
+  ] ;
+   sh:property [
+        sh:path schema:streetAddress ;
+        sh:maxCount 1 ;
+       sh:minCount 1 ;
+       sh:datatype xsd:string ;
+  ] ;
+   sh:property [    
+        sh:path schema:addressCountry ;
+        sh:maxCount 1 ;
+       sh:minCount 1 ;
+       sh:datatype xsd:string ;
+  ] ;
+   sh:property [
+        sh:path schema:addressRegion ;
+        sh:maxCount 1 ;
+       sh:minCount 1 ;
+       sh:datatype xsd:string ;
+  ] ;
+   sh:property [
+        sh:path schema:postalCode ;
+        sh:maxCount 1 ;
+       sh:minCount 1 ;
+       sh:datatype xsd:string ;
+  ] ;
+   sh:property [
+        sh:path schema:addressLocality ;
+        sh:maxCount 1 ;
+       sh:minCount 1 ;
+       sh:datatype xsd:string ;
+  ] .
+
+   
+
