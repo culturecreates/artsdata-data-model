@@ -44,7 +44,6 @@ ads:EventShape
     # name 
     sh:property [
         sh:path schema:name ;
-        sh:datatype xsd:string ;
         sh:name "Name of event" ;
         sh:minCount 1 ;
     ] ;
