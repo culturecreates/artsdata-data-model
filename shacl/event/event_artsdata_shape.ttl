@@ -8,177 +8,159 @@
 
 
 ads:EventSeriesShape
-    # TODO: Add constraint for 2 or more subEvents
     a sh:NodeShape ;
     sh:targetClass schema:EventSeries ;
-    sh:node ads:EventShape .
+    sh:property ads:subEventPropertySh .
+
+ads:subEventPropertySh
+    a sh:PropertyShape ;
+    sh:path schema:subEvent ;
+    sh:minCount 1 .
+    
 
 ads:EventShape
     a sh:NodeShape ;
     sh:closed true ;
-    sh:targetClass schema:Event ;
-    sh:targetClass schema:MusicEvent ;
-    sh:targetClass schema:TheaterEvent ;
-    sh:targetClass schema:ComedyEvent ;
-    sh:targetClass schema:DanceEvent ;
-    sh:targetClass schema:ExhibitionEvent ;
-    sh:targetClass schema:Festival ;
-    sh:targetClass schema:ChildrensEvent ;
-    sh:targetClass schema:ScreeningEvent ;
-    sh:targetClass schema:EducationEvent ;
-    sh:targetClass schema:FoodEvent ;
-    sh:targetClass schema:Hackathon ;
-    sh:targetClass schema:LiteraryEvent ;
-    sh:targetClass schema:PublicationEvent ;
-    sh:targetClass schema:SaleEvent ;
-    sh:targetClass schema:SocialEvent ;
-    sh:targetClass schema:SportsEvent ;
-    sh:targetClass schema:VisualArtsEvent ;
 
+    # Sub-types of Event
+    sh:targetClass schema:Event, schema:EventSeries, schema:MusicEventm, schema:TheaterEvent, schema:ComedyEvent ;
+    sh:targetClass schema:DanceEvent, schema:ExhibitionEvent, schema:Festival, schema:ChildrensEvent, schema:ScreeningEvent;
+    sh:targetClass schema:EducationEvent, schema:FoodEvent, schema:Hackathon, schema:LiteraryEvent, schema:PublicationEvent ;
+    sh:targetClass schema:SaleEvent, schema:SocialEvent, schema:SportsEvent, schema:VisualArtsEvent ;
 
     sh:ignoredProperties ( rdf:type ) ;
 
     # TODO: Check that Event ID ends with #Event
+
+    # Required Properties
+    sh:property ads:NameSh, ads:LocationSh, ads:StartDateSh, ads:MainEntityOfPageSh ; 
+
+    # Check optional properties
+    sh:property ads:OrganizerSh, ads:PerformerSh, ads:EventAttendanceModeSh ;
+    sh:property ads:EventStatusSh, ads:SubEventSh, ads:EndDateSh ;
+
+    # Warnings for recommended properties
+    # sh:property ads:DescriptionWarningSh, ads:OrganizerWarningSh, ads:PerformerWarningSh, ads:ImageWarningSh, ads:NameWarningSh ;
+    # sh:property ads:MainEntityOfPageWarningSh, ads:UrlWarningSh, ads:EventAttendanceModeWarningSh, ads:EventStatusWarningSh ;
+   .
+
+# Event's Property Shapes
+
+ads:NameSh
+    sh:path schema:name ;
+    sh:name "Name of event" ;
+    sh:minCount 1 .
+
+ads:NameWarningSh
+    sh:path schema:name ;
+    sh:severity sh:Warning ;
+    sh:languageIn ( "en" "fr" ) ;
+    sh:uniqueLang true .
+
+ads:StartDateSh
+    sh:path schema:startDate ;
+    sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Start date and time of Event" .
+
+ads:EndDateSh
+    sh:path schema:endDate ;
+    sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 0 .
+
+ads:LocationSh
+    sh:path schema:location ;
+    sh:maxCount 1 ;
+    sh:node ads:PlaceShape .
+
+ads:SubEventSh
+    sh:path schema:subEvent ;
+    sh:minCount 0 ;
+    sh:node ads:EventShape .
+
+ads:EventStatusSh
+    sh:path schema:eventStatus ;
+    sh:maxCount  1 ;
+    sh:order 19 ;
+    sh:class schema:EventStatusType ;
+    sh:in  ( schema:EventPostponed  schema:EventScheduled  schema:EventCancelled  schema:EventRescheduled  schema:EventMovedOnline )  .
+
+ads:EventStatusWarningSh
+    sh:path schema:eventStatus ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
+
+ads:EventAttendanceModeSh
+    sh:path schema:eventAttendanceMode ;
+    sh:maxCount  1 ;
+    sh:class schema:EventAttendanceModeEnumeration ;
+    sh:in  ( schema:OfflineEventAttendanceMode  schema:OnlineEventAttendanceMode schema:MixedEventAttendanceMode)  .
+
+
+ads:EventAttendanceModeWarningSh
+    sh:path schema:eventAttendanceMode ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
+
+ads:UrlWarningSh
+   sh:path schema:url ;
+        sh:severity sh:Warning ;
+        sh:minCount  1 .
+
+
    
-    
-    # name 
-    sh:property [
-        sh:path schema:name ;
-        sh:name "Name of event" ;
-        sh:minCount 1 ;
-    ] ;
-    sh:property [
-        sh:path schema:name ;
+ads:MainEntityOfPageSh
+    sh:path schema:mainEntityOfPage ;
+    sh:pattern "#WebPage$" ;
+    sh:node ads:WebPageShape .
+
+ads:MainEntityOfPageWarningSh
+    sh:path schema:mainEntityOfPage ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
+
+
+ads:DescriptionWarningSh
+    sh:path schema:description ;
+    sh:severity sh:Warning ;
+    sh:languageIn ( "en" "fr" ) ;
+    sh:uniqueLang true ;
+    sh:minCount  1 .
+
+ads:OrganizerSh
+    sh:path schema:organizer ;
+    sh:or (
+        [ sh:node ads:PersonShape ; ]
+        [ sh:node ads:OrganizationShape ; ]
+    ) ;
+    sh:message "organizer is not a valid Person or Organizatinon." .
+
+ads:OrganizerWarningSh
+    sh:path schema:performer ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
+
+ads:PerformerSh
+    sh:path schema:performer ;
+    sh:or (
+        [ sh:node ads:PersonShape ; ]
+        [ sh:node ads:OrganizationShape ; ]
+    ) ;
+    sh:message "performer is not a valid Person or Organizatinon." .
+
+ads:PerformerWarningSh
+    sh:path schema:organizer ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
+
+ads:ImageWarningSh
+   sh:path schema:image ;
         sh:severity sh:Warning ;
-        sh:languageIn ( "en" "fr" ) ;
-        sh:uniqueLang true ;
-    ] ;
-
-    # startDate
-    sh:property [
-        sh:path schema:startDate ;
-        sh:datatype xsd:dateTime ;
-        sh:maxCount 1 ;
-        sh:minCount 1 ;
-        sh:name "Start date and time of Event" ;
-    ] ;
-
-    # endDate
-    sh:property [
-        sh:path schema:endDate ;
-        sh:datatype xsd:dateTime ;
-        sh:maxCount 1 ;
-        sh:minCount 0 ;
-    ] ;
-
-    # location
-    sh:property [
-        sh:path schema:location ;
-        sh:maxCount 1 ;
-        sh:node ads:PlaceShape ;
-    ] ;
-
-    # subEvent
-    sh:property [
-        sh:path schema:subEvent ;
-        sh:minCount 0 ;
-        sh:node ads:EventShape ;
-    ] ;
-
-    # eventStatus
-    sh:property [
-        sh:path schema:eventStatus ;
-        sh:maxCount  1 ;
-        sh:order 19 ;
-        sh:class schema:EventStatusType ;
-        sh:in  ( schema:EventPostponed  schema:EventScheduled  schema:EventCancelled  schema:EventRescheduled  schema:EventMovedOnline )  ;
-    ] ;
-    sh:property [
-        sh:path schema:eventStatus ;
-        sh:severity sh:Warning ;
-        sh:minCount  1 ;
-    ] ;
-
-    # eventAttendanceMode
-    sh:property [
-        sh:path schema:eventAttendanceMode ;
-        sh:maxCount  1 ;
-        sh:class schema:EventAttendanceModeEnumeration ;
-        sh:in  ( schema:OfflineEventAttendanceMode  schema:OnlineEventAttendanceMode schema:MixedEventAttendanceMode)  ;
-    ] ;
-    sh:property [
-        sh:path schema:eventAttendanceMode ;
-        sh:severity sh:Warning ;
-        sh:minCount  1 ;
-    ] ;
-
-    # url
-     sh:property [
-        sh:path schema:url ;
-        sh:severity sh:Warning ;
-        sh:minCount  1 ;
-    ] ;
-
-    # mainEntityOfPage
-    sh:property [
-        # TODO: Check that WebPage ID ends with #WebPage
-        sh:path schema:mainEntityOfPage ;
-        sh:pattern "#WebPage$" ;
-        sh:node ads:WebPageShape ;
-
-    ] ;
-    sh:property [
-        sh:path schema:mainEntityOfPage ;
-        sh:severity sh:Warning ;
-        sh:minCount  1 ;
-    ] ;   
-
-    # image
-    sh:property [
-        sh:path schema:image ;
-        sh:severity sh:Warning ;
-        sh:minCount  1 ;
-    ] ;
-
-    # performer
-    sh:property [
-        sh:path schema:performer ;
-        sh:or (
-            [ sh:node ads:PersonShape ; ]
-            [ sh:node ads:OrganizationShape ; ]
-        ) ;
-        sh:message "performer is not a valid Person or Organizatinon." ;
-    ] ;
-    sh:property [
-        sh:path schema:performer ;
-        sh:severity sh:Warning ;
-        sh:minCount  1 ;
-    ] ;
+        sh:minCount  1 .
 
 
-    # organizer
-     sh:property [
-        sh:path schema:organizer ;
-        sh:or (
-            [ sh:node ads:PersonShape ; ]
-            [ sh:node ads:OrganizationShape ; ]
-        ) ;
-        sh:message "organizer is not a valid Person or Organizatinon." ;
-    ] ;
-    sh:property [
-        sh:path schema:organizer ;
-        sh:severity sh:Warning ;
-        sh:minCount  1 ;
-    ] ;
-
-    # description
-     sh:property [
-        sh:path schema:description ;
-        sh:severity sh:Warning ;
-        sh:languageIn ( "en" "fr" ) ;
-        sh:uniqueLang true ;
-        sh:minCount  1 ;
-    ] .
 
 
 # Node Shapes
@@ -221,6 +203,7 @@ ads:OrganizationShape
 
 
 ads:PlaceShape
+    # TODO: Allow Postal Address OR Virtual Location
     a sh:NodeShape ;
     sh:targetClass schema:Place ;
     sh:closed true ;
