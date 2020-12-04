@@ -5,130 +5,106 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ads: <http://kg.artsdata.ca/shacl/> .
-
-
 ads:EventSeriesShape
     a sh:NodeShape ;
     sh:targetClass schema:EventSeries ;
     sh:property ads:subEventPropertySh .
-
 ads:subEventPropertySh
     a sh:PropertyShape ;
     sh:path schema:subEvent ;
     sh:minCount 1 .
     
-
 ads:EventShape
     a sh:NodeShape ;
     sh:closed true ;
-
     # Sub-types of Event
-    sh:targetClass schema:Event, schema:EventSeries, schema:MusicEventm, schema:TheaterEvent, schema:ComedyEvent ;
+    sh:targetClass schema:Event, schema:EventSeries, schema:MusicEvent, schema:TheaterEvent, schema:ComedyEvent ;
     sh:targetClass schema:DanceEvent, schema:ExhibitionEvent, schema:Festival, schema:ChildrensEvent, schema:ScreeningEvent;
     sh:targetClass schema:EducationEvent, schema:FoodEvent, schema:Hackathon, schema:LiteraryEvent, schema:PublicationEvent ;
     sh:targetClass schema:SaleEvent, schema:SocialEvent, schema:SportsEvent, schema:VisualArtsEvent ;
-
     sh:ignoredProperties ( rdf:type ) ;
-
     # TODO: Check that Event ID ends with #Event
-
     # Required Properties
     sh:property ads:NameSh, ads:LocationSh, ads:StartDateSh, ads:MainEntityOfPageSh ; 
-
     # Check optional properties
     sh:property ads:OrganizerSh, ads:PerformerSh, ads:EventAttendanceModeSh ;
     sh:property ads:EventStatusSh, ads:SubEventSh, ads:EndDateSh ;
-
     # Warnings for recommended properties
-    # sh:property ads:DescriptionWarningSh, ads:OrganizerWarningSh, ads:PerformerWarningSh, ads:ImageWarningSh, ads:NameWarningSh ;
-    # sh:property ads:MainEntityOfPageWarningSh, ads:UrlWarningSh, ads:EventAttendanceModeWarningSh, ads:EventStatusWarningSh ;
+    sh:property ads:DescriptionWarningSh, ads:OrganizerWarningSh, ads:PerformerWarningSh, ads:ImageWarningSh, ads:NameWarningSh ;
+    sh:property ads:MainEntityOfPageWarningSh, ads:UrlWarningSh, ads:EventAttendanceModeWarningSh, ads:EventStatusWarningSh, ads:SDDatePublishedSh ;
    .
-
 # Event's Property Shapes
-
 ads:NameSh
     sh:path schema:name ;
     sh:name "Name of event" ;
     sh:minCount 1 .
-
 ads:NameWarningSh
     sh:path schema:name ;
     sh:severity sh:Warning ;
     sh:languageIn ( "en" "fr" ) ;
     sh:uniqueLang true .
-
 ads:StartDateSh
     sh:path schema:startDate ;
     sh:datatype xsd:dateTime ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "Start date and time of Event" .
-
 ads:EndDateSh
     sh:path schema:endDate ;
     sh:datatype xsd:dateTime ;
     sh:maxCount 1 ;
     sh:minCount 0 .
-
+ads:SDDatePublishedSh
+    sh:path schema:sdDatePublished ;
+    sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 0 .
 ads:LocationSh
     sh:path schema:location ;
     sh:maxCount 1 ;
     sh:node ads:PlaceShape .
-
 ads:SubEventSh
     sh:path schema:subEvent ;
     sh:minCount 0 ;
     sh:node ads:EventShape .
-
 ads:EventStatusSh
     sh:path schema:eventStatus ;
     sh:maxCount  1 ;
     sh:order 19 ;
     sh:class schema:EventStatusType ;
     sh:in  ( schema:EventPostponed  schema:EventScheduled  schema:EventCancelled  schema:EventRescheduled  schema:EventMovedOnline )  .
-
 ads:EventStatusWarningSh
     sh:path schema:eventStatus ;
     sh:severity sh:Warning ;
     sh:minCount  1 .
-
 ads:EventAttendanceModeSh
     sh:path schema:eventAttendanceMode ;
     sh:maxCount  1 ;
     sh:class schema:EventAttendanceModeEnumeration ;
     sh:in  ( schema:OfflineEventAttendanceMode  schema:OnlineEventAttendanceMode schema:MixedEventAttendanceMode)  .
-
-
 ads:EventAttendanceModeWarningSh
     sh:path schema:eventAttendanceMode ;
     sh:severity sh:Warning ;
     sh:minCount  1 .
-
 ads:UrlWarningSh
    sh:path schema:url ;
         sh:severity sh:Warning ;
         sh:minCount  1 .
-
-
    
 ads:MainEntityOfPageSh
     sh:path schema:mainEntityOfPage ;
     sh:pattern "#WebPage$" ;
     sh:node ads:WebPageShape .
-
 ads:MainEntityOfPageWarningSh
     sh:path schema:mainEntityOfPage ;
     sh:severity sh:Warning ;
     sh:minCount  1 .
-
-
 ads:DescriptionWarningSh
     sh:path schema:description ;
     sh:severity sh:Warning ;
     sh:languageIn ( "en" "fr" ) ;
     sh:uniqueLang true ;
     sh:minCount  1 .
-
 ads:OrganizerSh
     sh:path schema:organizer ;
     sh:or (
@@ -136,12 +112,10 @@ ads:OrganizerSh
         [ sh:node ads:OrganizationShape ; ]
     ) ;
     sh:message "organizer is not a valid Person or Organizatinon." .
-
 ads:OrganizerWarningSh
     sh:path schema:performer ;
     sh:severity sh:Warning ;
     sh:minCount  1 .
-
 ads:PerformerSh
     sh:path schema:performer ;
     sh:or (
@@ -149,22 +123,15 @@ ads:PerformerSh
         [ sh:node ads:OrganizationShape ; ]
     ) ;
     sh:message "performer is not a valid Person or Organizatinon." .
-
 ads:PerformerWarningSh
     sh:path schema:organizer ;
     sh:severity sh:Warning ;
     sh:minCount  1 .
-
 ads:ImageWarningSh
    sh:path schema:image ;
         sh:severity sh:Warning ;
         sh:minCount  1 .
-
-
-
-
 # Node Shapes
-
 ads:WebPageShape
     a sh:NodeShape ;
     sh:targetClass schema:WebPage ;
@@ -172,7 +139,6 @@ ads:WebPageShape
         sh:path schema:inLanguage ;
         sh:minCount 1 ;
     ] .
-
 ads:PersonShape
     a sh:NodeShape ;
     sh:targetClass schema:Person ;
@@ -185,8 +151,6 @@ ads:PersonShape
         sh:pattern "^http" ;
         sh:description "sameAs properties must have URIs" ;
     ] .
-
-
 ads:OrganizationShape
     a sh:NodeShape ;
     sh:targetClass schema:Orgnanization ;
@@ -200,8 +164,6 @@ ads:OrganizationShape
         sh:description "sameAs properties must have URIs" ;
     ] .
    
-
-
 ads:PlaceShape
     # TODO: Allow Postal Address OR Virtual Location
     a sh:NodeShape ;
@@ -210,7 +172,7 @@ ads:PlaceShape
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [
         sh:path schema:name ;
-	    sh:languageIn ( "en" "fr" ) ;
+        sh:languageIn ( "en" "fr" ) ;
         sh:uniqueLang true ;
         sh:minCount 1 ;
     ] ;
@@ -218,7 +180,6 @@ ads:PlaceShape
       sh:path schema:address ;
      sh:node schema:PostalAddressShape ;
    ] .
-
 ads:PostalAddressShape
     a sh:NodeShape ;
     sh:targetClass schema:PostalAddress ;
@@ -260,6 +221,3 @@ ads:PostalAddressShape
        sh:minCount 1 ;
        sh:datatype xsd:string ;
   ] .
-
-   
-
