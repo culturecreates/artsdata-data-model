@@ -87,10 +87,9 @@ ads:EventAttendanceModeWarningSh
     sh:severity sh:Warning ;
     sh:minCount  1 .
 ads:UrlWarningSh
-   sh:path schema:url ;
-        sh:severity sh:Warning ;
-        sh:minCount  1 .
-   
+    sh:path schema:url ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
 ads:MainEntityOfPageSh
     sh:path schema:mainEntityOfPage ;
     sh:pattern "#WebPage$" ;
