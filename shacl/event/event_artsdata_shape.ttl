@@ -6,12 +6,22 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ads: <http://kg.artsdata.ca/shacl/> .
 
+# Super Property Shapes used by than one shape class
+
+ads:SameAsShape
+    sh:path schema:sameAs ;
+    sh:minCount 0 ;
+    sh:pattern "^http" ;
+    sh:description "sameAs properties must have URIs" .
+
 # Event Shapes
+
 ads:EventSeriesShape
     a sh:NodeShape ;
     sh:targetClass schema:EventSeries ;
     sh:node ads:EventShape ;
     sh:property ads:subEventPropertySh .
+
 ads:subEventPropertySh
     a sh:PropertyShape ;
     sh:path schema:subEvent ;
@@ -39,7 +49,6 @@ ads:EventShape
     sh:property ads:OffersWarningSh ;
     .
 
-# Event's Properties
 ads:NameSh
     sh:path schema:name ;
     sh:name "Name of event" ;
@@ -71,7 +80,6 @@ ads:SubEventSh
 ads:EventStatusSh
     sh:path schema:eventStatus ;
     sh:maxCount  1 ;
-    sh:order 19 ;
     sh:class schema:EventStatusType ;
     sh:in  ( schema:EventPostponed  schema:EventScheduled  schema:EventCancelled  schema:EventRescheduled  schema:EventMovedOnline )  .
 ads:EventStatusWarningSh
@@ -159,7 +167,7 @@ ads:SDDatePublishedSh
     sh:minCount 0 .
 
 
-# Peson Shape
+# Person Shape
 
 ads:PersonShape
     a sh:NodeShape ;
@@ -199,7 +207,6 @@ ads:PlaceShape
     sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:PlaceNameSh, ads:PlaceAddressSh, ads:SameAsShape .
 
-# Place's Property Shapes
 ads:PlaceNameSh
     sh:path schema:name ;
     sh:languageIn ( "en" "fr" ) ;
@@ -211,11 +218,7 @@ ads:PlaceAddressSh
     sh:path schema:address ;
     sh:node schema:PostalAddressShape .
 
-ads:SameAsShape
-    sh:path schema:sameAs ;
-    sh:minCount 0 ;
-    sh:pattern "^http" ;
-    sh:description "sameAs properties must have URIs" .
+# PostalAddress Shape 
 
 ads:PostalAddressShape
     a sh:NodeShape ;
@@ -258,3 +261,5 @@ ads:PostalAddressShape
        sh:minCount 1 ;
        sh:datatype xsd:string ;
   ] .
+
+
