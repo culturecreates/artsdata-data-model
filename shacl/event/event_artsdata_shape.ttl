@@ -10,11 +10,13 @@
 ads:EventSeriesShape
     a sh:NodeShape ;
     sh:targetClass schema:EventSeries ;
+    sh:node ads:EventShape ;
     sh:property ads:subEventPropertySh .
 ads:subEventPropertySh
     a sh:PropertyShape ;
     sh:path schema:subEvent ;
-    sh:minCount 1 .
+    sh:minCount 1 ;
+    sh:message "EventSeries must have alteast one subEvent property." .
     
 ads:EventShape
     a sh:NodeShape ;
