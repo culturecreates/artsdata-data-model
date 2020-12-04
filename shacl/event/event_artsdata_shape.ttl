@@ -5,6 +5,8 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ads: <http://kg.artsdata.ca/shacl/> .
+
+# Event Shapes
 ads:EventSeriesShape
     a sh:NodeShape ;
     sh:targetClass schema:EventSeries ;
@@ -28,12 +30,14 @@ ads:EventShape
     sh:property ads:NameSh, ads:LocationSh, ads:StartDateSh, ads:MainEntityOfPageSh ; 
     # Check optional properties
     sh:property ads:OrganizerSh, ads:PerformerSh, ads:EventAttendanceModeSh ;
-    sh:property ads:EventStatusSh, ads:SubEventSh, ads:EndDateSh ;
+    sh:property ads:EventStatusSh, ads:SubEventSh, ads:EndDateSh, ads:OffersSh ;
     # Warnings for recommended properties
     sh:property ads:DescriptionWarningSh, ads:OrganizerWarningSh, ads:PerformerWarningSh, ads:ImageWarningSh, ads:NameWarningSh ;
-    sh:property ads:MainEntityOfPageWarningSh, ads:UrlWarningSh, ads:EventAttendanceModeWarningSh, ads:EventStatusWarningSh, ads:SDDatePublishedSh ;
-   .
-# Event's Property Shapes
+    sh:property ads:MainEntityOfPageWarningSh, ads:UrlWarningSh, ads:EventAttendanceModeWarningSh, ads:EventStatusWarningSh ;
+    sh:property ads:OffersWarningSh ;
+    .
+
+# Event's Properties
 ads:NameSh
     sh:path schema:name ;
     sh:name "Name of event" ;
@@ -51,11 +55,6 @@ ads:StartDateSh
     sh:name "Start date and time of Event" .
 ads:EndDateSh
     sh:path schema:endDate ;
-    sh:datatype xsd:dateTime ;
-    sh:maxCount 1 ;
-    sh:minCount 0 .
-ads:SDDatePublishedSh
-    sh:path schema:sdDatePublished ;
     sh:datatype xsd:dateTime ;
     sh:maxCount 1 ;
     sh:minCount 0 .
@@ -98,6 +97,14 @@ ads:MainEntityOfPageWarningSh
     sh:path schema:mainEntityOfPage ;
     sh:severity sh:Warning ;
     sh:minCount  1 .
+ads:OffersSh
+    # TODO: Add Offer node shape
+    sh:path schema:offers ;
+    sh:minCount  0 .
+ads:OffersWarningSh
+    sh:path schema:offers ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
 ads:DescriptionWarningSh
     sh:path schema:description ;
     sh:severity sh:Warning ;
@@ -130,14 +137,28 @@ ads:ImageWarningSh
    sh:path schema:image ;
         sh:severity sh:Warning ;
         sh:minCount  1 .
-# Node Shapes
+
+
+# WebPage Shape
+
 ads:WebPageShape
     a sh:NodeShape ;
     sh:targetClass schema:WebPage ;
+    sh:property ads:SDDatePublishedSh ;
     sh:property [
         sh:path schema:inLanguage ;
         sh:minCount 1 ;
     ] .
+
+ads:SDDatePublishedSh
+    sh:path schema:sdDatePublished ;
+    sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 0 .
+
+
+# Peson Shape
+
 ads:PersonShape
     a sh:NodeShape ;
     sh:targetClass schema:Person ;
@@ -150,6 +171,9 @@ ads:PersonShape
         sh:pattern "^http" ;
         sh:description "sameAs properties must have URIs" ;
     ] .
+
+# Organization Shape
+
 ads:OrganizationShape
     a sh:NodeShape ;
     sh:targetClass schema:Orgnanization ;
@@ -163,13 +187,15 @@ ads:OrganizationShape
         sh:description "sameAs properties must have URIs" ;
     ] .
    
+# Place Shape 
+
 ads:PlaceShape
-    
+    # TODO: Allow Postal Address OR Virtual Location
     a sh:NodeShape ;
     sh:targetClass schema:Place ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property ads:PlaceNameSh, ads:PlaceAddressSh .
+    sh:property ads:PlaceNameSh, ads:PlaceAddressSh, ads:SameAsShape .
 
 # Place's Property Shapes
 ads:PlaceNameSh
@@ -182,6 +208,13 @@ ads:PlaceAddressSh
     # TODO: Allow Postal Address OR Virtual Location
     sh:path schema:address ;
     sh:node schema:PostalAddressShape .
+
+ads:SameAsShape
+    sh:path schema:sameAs ;
+    sh:minCount 0 .
+    sh:pattern "^http" ;
+    sh:description "sameAs properties must have URIs" .
+
 ads:PostalAddressShape
     a sh:NodeShape ;
     sh:targetClass schema:PostalAddress ;
