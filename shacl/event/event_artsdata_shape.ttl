@@ -211,7 +211,7 @@ ads:PlaceAddressSh
 
 ads:SameAsShape
     sh:path schema:sameAs ;
-    sh:minCount 0 .
+    sh:minCount 0 ;
     sh:pattern "^http" ;
     sh:description "sameAs properties must have URIs" .
 
