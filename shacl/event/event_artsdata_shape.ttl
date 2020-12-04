@@ -164,21 +164,24 @@ ads:OrganizationShape
     ] .
    
 ads:PlaceShape
-    # TODO: Allow Postal Address OR Virtual Location
+    
     a sh:NodeShape ;
     sh:targetClass schema:Place ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [
-        sh:path schema:name ;
-        sh:languageIn ( "en" "fr" ) ;
-        sh:uniqueLang true ;
-        sh:minCount 1 ;
-    ] ;
-   sh:property [
-      sh:path schema:address ;
-     sh:node schema:PostalAddressShape ;
-   ] .
+    sh:property ads:PlaceNameSh, ads:PlaceAddressSh .
+
+# Place's Property Shapes
+ads:PlaceNameSh
+    sh:path schema:name ;
+    sh:languageIn ( "en" "fr" ) ;
+    sh:uniqueLang true ;
+    sh:minCount 0 .
+
+ads:PlaceAddressSh
+    # TODO: Allow Postal Address OR Virtual Location
+    sh:path schema:address ;
+    sh:node schema:PostalAddressShape .
 ads:PostalAddressShape
     a sh:NodeShape ;
     sh:targetClass schema:PostalAddress ;
