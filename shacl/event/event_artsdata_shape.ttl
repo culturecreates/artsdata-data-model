@@ -26,8 +26,8 @@ ads:NameWarningSh
     sh:path schema:name ;
     sh:severity sh:Warning ;
     sh:languageIn ( "en" "fr" ) ;
-    sh:uniqueLang true .
-
+    sh:uniqueLang true ;
+    sh:message "Lanague should be @en or @fr." .
 
 ################
 # Event Shapes
@@ -193,7 +193,13 @@ ads:OrganizerSh
 ads:OrganizerWarningSh
     sh:path schema:performer ;
     sh:severity sh:Warning ;
+    sh:node ads:AgentNameLanguageShape ;
     sh:minCount  1 .
+
+ads:AgentNameLanguageShape
+    a sh:NodeShape ;
+    sh:property ads:NameWarningSh ;
+    sh:message "Language of Agent (Person, Organization) missing @en or @fr." .
 
 ads:PerformerSh
     sh:path schema:performer ;
@@ -206,6 +212,7 @@ ads:PerformerSh
 ads:PerformerWarningSh
     sh:path schema:organizer ;
     sh:severity sh:Warning ;
+    sh:node ads:AgentNameLanguageShape ;
     sh:minCount  1 .
 
 ads:ImageWarningSh
@@ -243,8 +250,10 @@ ads:SdDatePublishedSh
 ads:PersonShape
     a sh:NodeShape ;
     sh:targetClass schema:Person ;
+    # Super Shapes
     sh:property ads:NameSh, 
                 ads:SameAsSh .
+
 
 ################    
 # Organization Shape
@@ -252,6 +261,7 @@ ads:PersonShape
 ads:OrganizationShape
     a sh:NodeShape ;
     sh:targetClass schema:Orgnanization ;
+    # Super Shapes
     sh:property ads:NameSh, 
                 ads:SameAsSh .
 
