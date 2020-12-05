@@ -17,6 +17,18 @@ ads:SameAsShape
     sh:pattern "^http" ;
     sh:description "sameAs properties must have URIs" .
 
+ads:NameSh
+    sh:path schema:name ;
+    sh:name "Name of event" ;
+    sh:minCount 1 .
+
+ads:NameWarningSh
+    sh:path schema:name ;
+    sh:severity sh:Warning ;
+    sh:languageIn ( "en" "fr" ) ;
+    sh:uniqueLang true .
+
+
 ################
 # Event Shapes
 ################
@@ -86,17 +98,6 @@ ads:EventShape
                 ads:EventAttendanceModeWarningSh, 
                 ads:EventStatusWarningSh,
                 ads:OffersWarningSh .
-
-ads:NameSh
-    sh:path schema:name ;
-    sh:name "Name of event" ;
-    sh:minCount 1 .
-
-ads:NameWarningSh
-    sh:path schema:name ;
-    sh:severity sh:Warning ;
-    sh:languageIn ( "en" "fr" ) ;
-    sh:uniqueLang true .
 
 ads:StartDateSh
     sh:path schema:startDate ;
@@ -242,12 +243,8 @@ ads:SdDatePublishedSh
 ads:PersonShape
     a sh:NodeShape ;
     sh:targetClass schema:Person ;
-    sh:property ads:PersonNameSh, 
+    sh:property ads:NameSh, 
                 ads:SameAsSh .
-
-ads:PersonNameSh
-    sh:path schema:name ;
-    sh:minCount 1 .
 
 ################    
 # Organization Shape
@@ -255,12 +252,9 @@ ads:PersonNameSh
 ads:OrganizationShape
     a sh:NodeShape ;
     sh:targetClass schema:Orgnanization ;
-    sh:property ads:OrganizationNameSh, 
+    sh:property ads:NameSh, 
                 ads:SameAsSh .
 
-ads:OrganizationNameSh
-    sh:path schema:name ;
-    sh:minCount 1 .
 
 ################
 # Place Shape 
@@ -294,9 +288,9 @@ ads:PlaceAddressSh
 ads:VirtualLocationShape
     a sh:NodeShape ;
     sh:targetClass schema:VirtualLocation ;
-    sh:property ads:UrlSh .
+    sh:property ads:VirtualLocationUrlSh .
 
-ads:UrlSh
+ads:VirtualLocationUrlSh
     sh:path schema:url ;
     sh:pattern "^http" ;
     sh:minCount 1 .
@@ -315,7 +309,6 @@ ads:PostalAddressShape
                 ads:postalCodeSh, 
                 ads:addressLocalitySh .
     
-
 ads:StreetAddressSh
     sh:path schema:streetAddress ;
     sh:maxCount 1 ;
@@ -345,5 +338,3 @@ ads:addressLocalitySh
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:datatype xsd:string .
-
-
