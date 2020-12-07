@@ -260,7 +260,7 @@ ads:PersonShape
 ################
 ads:OrganizationShape
     a sh:NodeShape ;
-    sh:targetClass schema:Orgnanization ;
+    sh:targetClass schema:Organization ;
     # Super Shapes
     sh:property ads:NameSh, 
                 ads:SameAsSh .
