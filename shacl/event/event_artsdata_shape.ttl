@@ -75,8 +75,7 @@ ads:EventShape
     # Required Properties
     sh:property ads:NameSh, 
                 ads:LocationSh, 
-                ads:StartDateSh, 
-                ads:MainEntityOfPageSh ; 
+                ads:StartDateSh ; 
 
     # Check optional properties
     sh:property ads:OrganizerSh, 
@@ -85,15 +84,16 @@ ads:EventShape
                 ads:EventStatusSh, 
                 ads:SubEventSh, 
                 ads:EndDateSh, 
+                ads:MainEntityOfPageSh, 
                 ads:OffersSh ;
 
     # Warnings for recommended properties
     sh:property ads:DescriptionWarningSh, 
-                ads:OrganizerWarningSh, 
-                ads:PerformerWarningSh, 
+    #            ads:OrganizerWarningSh, 
+    #            ads:PerformerWarningSh, 
                 ads:ImageWarningSh, 
                 ads:NameWarningSh,
-                ads:MainEntityOfPageWarningSh, 
+    #            ads:MainEntityOfPageWarningSh, 
                 ads:UrlWarningSh, 
                 ads:EventAttendanceModeWarningSh, 
                 ads:EventStatusWarningSh,
