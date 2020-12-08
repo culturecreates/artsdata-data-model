@@ -191,7 +191,7 @@ ads:OrganizerSh
     sh:message "organizer is not a valid Person or Organizatinon." .
 
 ads:OrganizerWarningSh
-    sh:path schema:performer ;
+    sh:path schema:organizer ;
     sh:severity sh:Warning ;
     sh:node ads:AgentNameLanguageShape ;
     sh:minCount  1 .
@@ -210,7 +210,7 @@ ads:PerformerSh
     sh:message "performer is not a valid Person or Organizatinon." .
 
 ads:PerformerWarningSh
-    sh:path schema:organizer ;
+    sh:path schema:performer ;
     sh:severity sh:Warning ;
     sh:node ads:AgentNameLanguageShape ;
     sh:minCount  1 .
