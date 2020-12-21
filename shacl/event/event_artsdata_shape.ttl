@@ -321,15 +321,8 @@ ads:PostalAddressShape
     
 ads:StreetAddressSh
     sh:path schema:streetAddress ;
-    sh:maxCount 2 ;
-    sh:minCount 1 .
- 
-ads:StreetAddressWarningSh
-    sh:path schema:streetAddress ;
-    sh:severity sh:Warning ;
-    sh:languageIn ( "en" "fr" ) ;
     sh:uniqueLang true ;
-    sh:message "Lanague should be @en or @fr." .
+    sh:minCount 1 .
 
 ads:addressCountrySh
     sh:path schema:addressCountry ;
