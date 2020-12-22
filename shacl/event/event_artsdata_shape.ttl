@@ -321,10 +321,9 @@ ads:PostalAddressShape
     
 ads:StreetAddressSh
     sh:path schema:streetAddress ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:datatype xsd:string .
- 
+    sh:uniqueLang true ;
+    sh:minCount 1 .
+
 ads:addressCountrySh
     sh:path schema:addressCountry ;
     sh:maxCount 1 ;
@@ -348,3 +347,4 @@ ads:addressLocalitySh
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:datatype xsd:string .
+    
