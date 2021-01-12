@@ -1,0 +1,23 @@
+<http://schema.org/Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/EventTypeEnumeration> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/ChildrensEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/EventTypeEnumeration> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/ComedyEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/EventTypeEnumeration> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/DanceEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/EventTypeEnumeration> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/MusicEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/EventTypeEnumeration> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/TheaterEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/EventTypeEnumeration> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event"@en <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/ChildrensEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Jeune public"@fr <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/ChildrensEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Young public"@en <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/ComedyEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Humour"@fr <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/ComedyEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Comedy"@en <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/DanceEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Danse"@fr <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/DanceEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Dance"@en <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/MusicEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Musique"@fr <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/MusicEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Music"@en <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/TheaterEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Théâtre"@fr <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://schema.org/TheaterEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Theatre"@en <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> <http://www.w3.org/2000/01/rdf-schema#label> "Event Types for Footlight" <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> <http://www.w3.org/ns/prov#wasAttributedTo> <http://kg.artsdata.ca/resource/K1-5> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> <http://www.w3.org/ns/prov#wasAttributedTo> <http://kg.artsdata.ca/resource/K1-8> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> <http://www.w3.org/ns/prov#generatedAtTime> "2021-01-03T20:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
+<http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> <http://www.w3.org/ns/prov#wasDerivedFrom> <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/master/_triples/statements-event-types-footlight.nq> <http://kg.artsdata.ca/artsdata_extension/EventTypeEnumeration> .
