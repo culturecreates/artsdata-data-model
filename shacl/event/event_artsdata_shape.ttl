@@ -113,6 +113,7 @@ ads:EndDateSh
     sh:minCount 0 .
 
 ads:LocationSh
+    # TODO: Check that location can be inferred if using subEvents 
     sh:path schema:location ;
     sh:maxCount 1 ;
     sh:node ads:PlaceShape .
