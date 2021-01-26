@@ -86,8 +86,7 @@ ads:EventShape
                 ads:ImageWarningSh, 
                 ads:UrlWarningSh, 
                 ads:EventAttendanceModeWarningSh, 
-                ads:EventStatusWarningSh,
-                ads:OffersWarningSh .
+                ads:EventStatusWarningSh .
 
 ads:StartDateSh
     sh:path schema:startDate ;
@@ -160,11 +159,6 @@ ads:OffersSh
     # TODO: Add Offer node shape
     sh:path schema:offers ;
     sh:minCount  0 .
-
-ads:OffersWarningSh
-    sh:path schema:offers ;
-    sh:severity sh:Warning ;
-    sh:minCount  1 .
 
 ads:DescriptionWarningSh
     sh:path schema:description ;
@@ -251,7 +245,8 @@ ads:PlaceShape
     sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:PlaceNameSh, 
                 ads:PlaceAddressSh, 
-                ads:SameAsShape .
+                ads:SameAsShape,
+                ads:PlaceUrlSh .
 
 ads:PlaceNameSh
     sh:path schema:name ;
@@ -262,6 +257,10 @@ ads:PlaceNameSh
 ads:PlaceAddressSh
     sh:path schema:address ;
     sh:node ads:PostalAddressShape .
+
+ads:PlaceUrlSh
+    sh:path schema:url ;
+    sh:minCount 0 .
 
 ################
 # VirtualLocation Shape
