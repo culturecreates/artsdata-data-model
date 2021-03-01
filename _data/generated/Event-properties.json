@@ -12,186 +12,6 @@
       {
         "classes" : {
           "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/endDate"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "The end date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>)."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "endDate"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/location"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "The location of for example where the event is happening, an organization is located, or where an action takes place."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "location"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/startDate"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>)."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "startDate"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/superEvent"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "superEvent"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/offers"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class=\"localLink\" href=\"http://schema.org/businessFunction\">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class=\"localLink\" href=\"http://schema.org/Demand\">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "offers"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/duration"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "duration"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/organizer"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An organizer of an Event."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "organizer"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/performer"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "performer"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/eventStatus"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "eventStatus"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/workPerformed"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "A work performed in some event, for example a play performed in a TheaterEvent."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "workPerformed"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
           "value" : "http://schema.org/Thing"
         },
         "property" : {
@@ -295,6 +115,240 @@
         "label" : {
           "type" : "literal",
           "value" : "alternateName"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/mainEntityOfPage"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "mainEntityOfPage"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/location"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The location of for example where the event is happening, an organization is located, or where an action takes place."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "location"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/duration"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "duration"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/endDate"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The end date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>)."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "endDate"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/eventStatus"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "eventStatus"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/offers"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class=\"localLink\" href=\"http://schema.org/businessFunction\">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class=\"localLink\" href=\"http://schema.org/Demand\">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "offers"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/organizer"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An organizer of an Event."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "organizer"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/performer"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "performer"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/startDate"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>)."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "startDate"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/superEvent"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "superEvent"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/workPerformed"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A work performed in some event, for example a play performed in a TheaterEvent."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "workPerformed"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/eventAttendanceMode"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "eventAttendanceMode"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/inLanguage"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The language of the content or performance or used in an action. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/availableLanguage\">availableLanguage</a>."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "inLanguage"
         }
       }
     ]

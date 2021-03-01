@@ -12,42 +12,6 @@
       {
         "classes" : {
           "type" : "uri",
-          "value" : "http://schema.org/Organization"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/location"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "The location of for example where the event is happening, an organization is located, or where an action takes place."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "location"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Organization"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/address"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "Physical address of the item."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "address"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
           "value" : "http://schema.org/Thing"
         },
         "property" : {
@@ -151,6 +115,60 @@
         "label" : {
           "type" : "literal",
           "value" : "alternateName"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/mainEntityOfPage"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "mainEntityOfPage"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Organization"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/location"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The location of for example where the event is happening, an organization is located, or where an action takes place."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "location"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Organization"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/address"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "Physical address of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "address"
         }
       }
     ]

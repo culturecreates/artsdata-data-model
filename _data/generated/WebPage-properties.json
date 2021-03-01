@@ -138,6 +138,42 @@
       {
         "classes" : {
           "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/mainEntityOfPage"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "mainEntityOfPage"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/CreativeWork"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/keywords"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "keywords"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
           "value" : "http://schema.org/CreativeWork"
         },
         "property" : {
@@ -178,24 +214,6 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/keywords"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "keywords"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/CreativeWork"
-        },
-        "property" : {
-          "type" : "uri",
           "value" : "http://schema.org/video"
         },
         "comment" : {
@@ -205,6 +223,42 @@
         "label" : {
           "type" : "literal",
           "value" : "video"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/CreativeWork"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/inLanguage"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The language of the content or performance or used in an action. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/availableLanguage\">availableLanguage</a>."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "inLanguage"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/CreativeWork"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/sdDatePublished"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "Indicates the date on which the current structured data was generated / published. Typically used alongside <a class=\"localLink\" href=\"http://schema.org/sdPublisher\">sdPublisher</a>"
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "sdDatePublished"
         }
       }
     ]

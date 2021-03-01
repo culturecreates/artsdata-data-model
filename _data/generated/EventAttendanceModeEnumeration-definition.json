@@ -1,0 +1,28 @@
+{
+  "head" : {
+    "vars" : [
+      "comment",
+      "equivalent",
+      "label",
+      "subClassOf"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "comment" : {
+          "type" : "literal",
+          "value" : "An EventAttendanceModeEnumeration value is one of potentially several modes of organising an event, relating to whether it is online or offline."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "EventAttendanceModeEnumeration"
+        },
+        "subClassOf" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Enumeration"
+        }
+      }
+    ]
+  }
+}

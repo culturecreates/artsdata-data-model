@@ -19,6 +19,10 @@ class GenerateData
     sparql 'Place'
   end
 
+  def self.virtual_location
+    sparql 'VirtualLocation'
+  end
+
   def self.organization
     sparql 'Organization'
   end
@@ -35,12 +39,12 @@ class GenerateData
     sparql 'PostalAddress'
   end
 
-  def self.event_status
-    sparql 'EventStatus'
+  def self.event_status_type
+    sparql 'EventStatusType'
   end
 
-  def self.attendance_mode
-    sparql 'AttendanceMode'
+  def self.event_attendance_mode_enumeration
+    sparql 'EventAttendanceModeEnumeration'
   end
 
   def self.sparql(name)
@@ -76,9 +80,10 @@ end
 GenerateData.event
 GenerateData.person
 GenerateData.place
+GenerateData.virtual_location
 GenerateData.organization
 GenerateData.web_page
 GenerateData.offer
 GenerateData.postal_address
-GenerateData.event_status
-GenerateData.attendance_mode
+GenerateData.event_status_type
+GenerateData.event_attendance_mode_enumeration

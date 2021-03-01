@@ -7,7 +7,8 @@ select  ?comment
         ?label 
         ?subClassOf 
 
-from <http://schema.org/#8.0>
+from <http://schema.org/#8.0> 
+from <http://kg.artsdata.ca/ontology/schema_8_pending>
 
 where { 
     OPTIONAL {schema:Event    rdfs:comment        ?comment .} 

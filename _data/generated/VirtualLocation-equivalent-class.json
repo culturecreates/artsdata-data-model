@@ -1,10 +1,9 @@
 {
   "head" : {
     "vars" : [
-      "property",
-      "comment",
-      "label",
-      "classes"
+      "graph",
+      "equivalentSub",
+      "equivalentObj"
     ]
   },
   "results" : {

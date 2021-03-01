@@ -1,0 +1,28 @@
+{
+  "head" : {
+    "vars" : [
+      "comment",
+      "equivalent",
+      "label",
+      "subClassOf"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "comment" : {
+          "type" : "literal",
+          "value" : "EventStatusType is an enumeration type whose instances represent several states that an Event may be in."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "EventStatusType"
+        },
+        "subClassOf" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Enumeration"
+        }
+      }
+    ]
+  }
+}
