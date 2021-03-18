@@ -7,7 +7,7 @@ The Artsdata triplestore is a standard (compliant with W3C Standards) RDF triple
 
 GraphDB uses RDF4J as a library, taking advantage of its APIs for storage and querying, as well as the support for SPARQL 1.1 and RDF syntaxes (e.g., RDF/XML, N3, Turtle).
 
-The [Docker Image](https://hub.docker.com/r/saumier/graphdb) created by Culture Creates can be installed with `docker pull culturecreatesorg/graphdb:latest`
+The [Docker Image](https://hub.docker.com/repository/docker/culturecreatesorg/graphdb) created by Culture Creates can be installed with `docker pull culturecreatesorg/graphdb:latest`
 
 The triplestore is hosted on AWS with an NGINX server infront to manage SSL with a reverse-proxy. 
 
