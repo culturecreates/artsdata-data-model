@@ -16,9 +16,9 @@ Notable configurations
 
 NGINX
 ------
-Maximum data post size 10M (client_max_body_size 10M)
+* Maximum data post size 10M (client_max_body_size 10M)
 
 GraphDB
 ------
-RAM Memory 4G (-Xms4g)
-CORS enabled (-Dgraphdb.workbench.cors.enable=true)
+* RAM Memory 4G `-Xms4g`
+* CORS enabled `-Dgraphdb.workbench.cors.enable=true`
