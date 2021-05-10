@@ -13,8 +13,7 @@ Artsdata Databus Service
 
 The Artsdata Databus is primarily used to store metadata on RDF files hosted by 3rd parties so they can be automatically loaded into the Artsdata.ca triple store.
 
-For documentation on the Artsdata Databus see:
-https://documenter.getpostman.com/view/3157443/TVep7mv3
+See documentation on the [Artsdata Databus API](https://documenter.getpostman.com/view/3157443/TVep7mv3)
 
 
 Graph-store Services
