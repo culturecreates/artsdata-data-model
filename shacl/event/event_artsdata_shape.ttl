@@ -41,7 +41,7 @@ ads:subEventPropertySh
 ads:EventShape
     # TODO: Check that Event ID ends with #Event
     a sh:NodeShape ;
-    sh:closed true ;
+   # sh:closed true ;
 
     # Sub-types of Event
     sh:targetClass  schema:Event, 
@@ -79,14 +79,7 @@ ads:EventShape
                 ads:SubEventSh, 
                 ads:EndDateSh, 
                 ads:MainEntityOfPageSh, 
-                ads:OffersSh ;
-
-    # Warnings for recommended properties
-    sh:property ads:DescriptionWarningSh, 
-                ads:ImageWarningSh, 
-                ads:UrlWarningSh, 
-                ads:EventAttendanceModeWarningSh, 
-                ads:EventStatusWarningSh .
+                ads:OffersSh  .
 
 ads:StartDateSh
     sh:path schema:startDate ;
