@@ -41,7 +41,7 @@ ads:subEventPropertySh
 ads:EventShape
     # TODO: Check that Event ID ends with #Event
     a sh:NodeShape ;
-   # sh:closed true ;
+    # sh:closed true ;
 
     # Sub-types of Event
     sh:targetClass  schema:Event, 
@@ -234,7 +234,7 @@ ads:PlaceShape
     # TODO: Allow Postal Address OR Virtual Location
     a sh:NodeShape ;
     sh:targetClass schema:Place ;
-    sh:closed true ;
+    # sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:PlaceNameSh, 
                 ads:PlaceAddressSh, 
@@ -274,7 +274,7 @@ ads:VirtualLocationUrlSh
 ads:PostalAddressShape
     a sh:NodeShape ;
     sh:targetClass schema:PostalAddress ;
-    sh:closed true ;
+    # sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:StreetAddressSh, 
                 ads:addressCountrySh, 
