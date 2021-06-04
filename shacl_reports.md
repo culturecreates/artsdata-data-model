@@ -1,13 +1,14 @@
-{% include base.html %} {% include last-modified.html %}
+{% include base.html %} 
+{% include last-modified.html %}
 
 SHACL Reports
 =============
 
 The Artsdata.ca Databus uses SHACL shapes to validate input data.
 
-It is possible to pass in the name of a SHACL shape to use, but the default shape is [`shacl_events_shape.ttl`]({{ base }}/shacl/event/)
+It is possible to pass in the name of a SHACL shape to use, but the default shape is `shacl_events_shape.ttl` located in Github [here] (https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/event/)
 
-Sample event JSON-LD files to test are located in [/samples]({{ base }}/shacl/event/samples/)
+Sample event JSON-LD files to play around with are located in the samples directory.
 
 Playground
 ===========
