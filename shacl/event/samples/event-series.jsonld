@@ -1,0 +1,119 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sdDatePublished": {
+      "@type": "xsd:dateTime"
+    },
+    "startDate": {
+      "@type": "xsd:dateTime"
+    },
+    "endDate": {
+      "@type": "xsd:dateTime"
+    },
+    "nameEn": {
+      "@id": "name",
+      "@language": "en"
+    },
+    "nameFr": {
+      "@id": "name",
+      "@language": "fr"
+    },
+    "descriptionEn": {
+      "@id": "description",
+      "@language": "en"
+    },
+    "descriptionFr": {
+      "@id": "description",
+      "@language": "fr"
+    }
+  },
+  "@id": "https://www.osm.ca/en/concerts/losm-recoit-alexandra-streliski/#Event",
+  "@type": [
+    "MusicEvent",
+    "EventSeries"
+  ],
+  "url": "https://www.osm.ca/en/concerts/losm-recoit-alexandra-streliski/",
+  "mainEntityOfPage": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.osm.ca/fr/concerts/losm-recoit-alexandra-streliski/#WebPage",
+      "inLanguage": "fr",
+      "url": "https://www.osm.ca/fr/concerts/losm-recoit-alexandra-streliski/",
+      "sdDatePublished": "2021-02-09T20:09:35.436Z"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.osm.ca/en/concerts/losm-recoit-alexandra-streliski/#WebPage",
+      "inLanguage": "en",
+      "url": "https://www.osm.ca/en/concerts/losm-recoit-alexandra-streliski/",
+      "sdDatePublished": "2021-02-09T20:09:35.436Z"
+    }
+  ],
+  "organizer": [
+    {
+      "@id": "http://capacitor.culturecreates.com/59c3ff20-19ba-4cf1-a8c3-6e0a7ae0c7d5",
+      "@type": "Organization",
+      "url": "https://www.osm.ca/",
+      "nameEn": "Orchestre symphonique de Montréal"
+    }
+  ],
+  "eventStatus": {
+    "@id": "http://schema.org/EventScheduled",
+    "@type": "EventStatusType"
+  },
+  "image": [
+    "https://www.osm.ca/wp-content/uploads/Alex-Cover2.jpg"
+  ],
+  "performer": [
+    {
+      "@id": "http://capacitor.culturecreates.com/3b050925-bd74-4fc5-a8f1-c20bd62f6685",
+      "@type": "Person",
+      "sameAs": [
+        "http://kg.artsdata.ca/resource/K12-273"
+      ],
+      "name": "Alexandra Stréliski"
+    }
+  ],
+  "location": {
+    "@id": "http://capacitor.culturecreates.com/146375c4-9f55-4e54-b13f-7da214bc1387",
+    "@type": "Place",
+    "nameFr": "Maison symphonique de Montréal",
+    "sameAs": "http://kg.artsdata.ca/resource/K11-23",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CA",
+      "postalCode": "H2X 0S1",
+      "addressLocality": "Montreal",
+      "addressRegion": "Québec",
+      "streetAddress": "1600 St Urbain St"
+    }
+  },
+  "nameFr": "L’OSM reçoit : Alexandra StréliskiL’OSM reçoit : Alexandra Stréliski",
+  "nameEn": "The OSM Welcomes: Alexandra StréliskiThe OSM Welcomes: Alexandra Stréliski",
+  "descriptionEn": "Pianist and composer Alexandra Stréliski wrote and performed the albums Pianoscope and Inscape for which she won five ADISQ Félix Awards as well as a Juno Award. Her sensitive, accessible music gently evokes “inner landscapes” transformed by the colours of the orchestra. Discover the hushed sounds of the world of Alexandra Stréliski in the company of the OSM.",
+  "descriptionFr": "Compositrice et interprète des albums Pianoscope et Inscape, la pianiste et compositrice Alexandra Stréliski a remporté cinq Félix à l’ADISQ ainsi qu’un Juno. Sa musique, sensible et accessible, évoque avec douceur des « paysages intérieurs » qui se métamorphosent au contact des couleurs de l’orchestre. Découvrez l’univers sonore feutré d’Alexandra Stréliski en compagnie de l’OSM.",
+  "startDate": "2021-04-07T00:00:00.000Z",
+  "subEvent": [
+    {
+      "@type": "MusicEvent",
+      "@id": "https://www.osm.ca/en/concerts/losm-recoit-alexandra-streliski/#Event2021-04-07-0000",
+      "nameEn": "The OSM Welcomes: Alexandra StréliskiThe OSM Welcomes: Alexandra Stréliski",
+      "nameFr": "L’OSM reçoit : Alexandra StréliskiL’OSM reçoit : Alexandra Stréliski",
+      "location": {
+        "@id": "http://capacitor.culturecreates.com/146375c4-9f55-4e54-b13f-7da214bc1387"
+      },
+      "startDate": "2021-04-07T00:00:00.000Z"
+    },
+    {
+      "@type": "MusicEvent",
+      "@id": "https://www.osm.ca/en/concerts/losm-recoit-alexandra-streliski/#Event2021-04-08-0000",
+      "nameEn": "The OSM Welcomes: Alexandra StréliskiThe OSM Welcomes: Alexandra Stréliski",
+      "nameFr": "L’OSM reçoit : Alexandra StréliskiL’OSM reçoit : Alexandra Stréliski",
+      "location": {
+        "@id": "http://capacitor.culturecreates.com/146375c4-9f55-4e54-b13f-7da214bc1387"
+      },
+      "startDate": "2021-04-08T00:00:00.000Z"
+    }
+  ]
+}
