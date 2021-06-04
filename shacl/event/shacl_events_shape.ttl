@@ -7,11 +7,15 @@
 @prefix ads: <http://kg.artsdata.ca/shacl/> .
 
 
+####################################################
+# Artsdata Events SHACL v2
+####################################################
+
 ################
 # Super Property Shapes
 #   - used by more than one shape class
 ################
-ads:SameAsShape
+ads:SameAsSh
     sh:path schema:sameAs ;
     sh:minCount 0 ;
     sh:pattern "^http" ;
@@ -144,8 +148,7 @@ ads:UrlWarningSh
 
 ads:MainEntityOfPageSh
     sh:path schema:mainEntityOfPage ;
-    sh:pattern "#WebPage$" ;
-    sh:minCount  1 ;
+    sh:minCount  0;
     sh:node ads:WebPageShape .
 
 ads:OffersSh
@@ -238,7 +241,7 @@ ads:PlaceShape
     sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:PlaceNameSh, 
                 ads:PlaceAddressSh, 
-                ads:SameAsShape,
+                ads:SameAsSh,
                 ads:PlaceUrlSh .
 
 ads:PlaceNameSh
