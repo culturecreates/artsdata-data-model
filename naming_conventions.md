@@ -9,7 +9,7 @@ Conventions for naming things will be added here as needed.
 # Graph Names
 ### Use
 * [Valid IRIs](https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph)
-* **For the path** after the last front slash, use uppercase words seperated by "_" 
+* **For the path** after the last front slash, use lowercase letters seperated by dash "-" 
 
 ### Avoid
 * Uppercase characters in scheme names (http) and domain names (example.com)
@@ -19,6 +19,6 @@ Conventions for naming things will be added here as needed.
 
 ### Examples
 * http://example.com/
-* http://example.com/Graph
-* http://example.com/Another_Graph
-* http://example.com/resource/Named_Entity
+* http://example.com/grap
+* http://example.com/another-graph
+* http://example.com/resource/named-entity-id
