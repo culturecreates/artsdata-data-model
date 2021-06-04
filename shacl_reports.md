@@ -1,8 +1,8 @@
-{% include base.html %} 
+{% include base.html %}
 {% include last-modified.html %}
 
-SHACL Reports
-=============
+## SHACL Reports
+[Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
 The Artsdata.ca Databus uses SHACL shapes to validate input data.
 
