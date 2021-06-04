@@ -1,4 +1,4 @@
-{% include last-modified.html %}
+{% include base.html %} {% include last-modified.html %}
 
 SHACL Reports
 =============
