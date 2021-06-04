@@ -1,3 +1,5 @@
+{% include last-modified.html %}
+
 SHACL Reports
 =============
 
