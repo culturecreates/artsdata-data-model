@@ -30,6 +30,10 @@ Here are the main Classes used in Artsdata.
 {% endfor %}
 </ol>
 
+### SHACL Validation Reports
+
+[SHACL]({{ base }}/shacl_reports.html) shapes are used to validate data before importing.
+
 ### Ontologies & Inferencing
 
 Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called **OWL-Horst (optimized)**. 
