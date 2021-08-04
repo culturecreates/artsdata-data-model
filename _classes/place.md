@@ -15,3 +15,6 @@ This property is favoured over adding explicit longitude and latuitude because t
 
 This property can satisfy the SHACL validation for Places, removing the absolute requirement of a Place to have a PostalAddress.
 
+Related issues: https://github.com/culturecreates/artsdata-data-model/issues/20
+
+
