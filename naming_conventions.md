@@ -17,9 +17,9 @@ Conventions for naming things will be added here as needed.
 * Do not use uppercase in the part that is replaced by the prefix (http://example.com/resource/Place#Montreal)
 
 ### Examples
-* http://example.com/resource/ClassName
-* http://example.com/resource/ontology#EventClass
-* http://example.com/resource/ontology#propertyName
+* http://example.com/resource/ClassName or ex:ClassName
+* http://example.com/resource/ontology#EventClass or exo:EventClass
+* http://example.com/resource/ontology#propertyName or exo:propertyName
 
 # Graph Names
 ### Use
