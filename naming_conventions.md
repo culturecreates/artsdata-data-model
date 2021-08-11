@@ -6,10 +6,25 @@ Naming Conventions
 
 Conventions for naming things will be added here as needed.
 
+# Resource Names
+### Use
+* lowercase starting at http and until reaching the name of the class or property.  This part is interchangeable with a short lowercase prefix.
+* following the last '/' please use camelCase. For properties the first letter is lowercase. For Classes the first letter is uppercase.
+* When using # everything before the hash is interchangeable with the prefix and should be lower case. After the # please use camelCase.
+
+### Avoid
+* Do not use snakecase (this_is_snake_case)
+* Do not use uppercase in the part that is replaced by the prefix (http://example.com/resource/Place#Montreal)
+
+### Examples
+* http://example.com/resource/ClassName
+* http://example.com/resource/ontology#EventClass
+* http://example.com/resource/ontology#propertyName
+
 # Graph Names
 ### Use
 * [Valid IRIs](https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph)
-* **For the path** after the last front slash, use lowercase letters seperated by dash "-" 
+* **For the path** after the last '/' (front slash), use lowercase letters seperated by dash "-" 
 
 ### Avoid
 * Uppercase characters in scheme names (http) and domain names (example.com)
@@ -19,6 +34,6 @@ Conventions for naming things will be added here as needed.
 
 ### Examples
 * http://example.com/
-* http://example.com/grap
+* http://example.com/graph
 * http://example.com/another-graph
 * http://example.com/resource/named-entity-id
