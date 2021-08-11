@@ -10,16 +10,17 @@ Conventions for naming things will be added here as needed.
 ### Use
 * lowercase starting at http and until reaching the name of the class or property.  This part is interchangeable with a short lowercase prefix.
 * following the last '/' please use camelCase. For properties the first letter is lowercase. For Classes the first letter is uppercase.
-* When using # everything before the hash is interchangeable with the prefix and should be lower case. After the # please use camelCase.
+* When using # (hash) everything before the hash is interchangeable with the prefix and should be lower case. After the # please use camelCase.
 
 ### Avoid
 * Do not use snakecase (this_is_snake_case)
-* Do not use uppercase in the part that is replaced by the prefix (http://example.com/resource/Place#Montreal)
+* Do not use uppercase in the part that is replaced by the prefix (bad: http://example.com/resource/Place#Montreal)
 
 ### Examples
 * http://example.com/resource/ClassName or ex:ClassName
 * http://example.com/resource/ontology#EventClass or exo:EventClass
 * http://example.com/resource/ontology#propertyName or exo:propertyName
+* http://example.com/extra-words/in-path#ClassName or exwp:ClassName
 
 # Graph Names
 ### Use
