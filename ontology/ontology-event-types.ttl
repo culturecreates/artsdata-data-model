@@ -1,29 +1,33 @@
-@prefix ado: <http://kg.artsdata.ca/ontology#> .
+@prefix ado: <http://kg.artsdata.ca/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://kg.artsdata.ca/ontology/event-types>  .
 
 <> 
-    rdf:type owl:Ontology ;
-    rdfs:label "Artsdata controlled vocabulary for Events" ;
-    owl:imports <http://www.w3.org/2004/02/skos/core> .
-
+  rdf:type owl:Ontology, schema:CreativeWork ;
+  rdfs:label "Artsdata controlled vocabulary for Events" ;
+  vann:preferredNamespacePrefix "ado" ;
+  vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
+  schema:creator  adr:K1-5 ;
+  vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  vann:example ado:PerformanceEvent .
 
 ado:ArtsdataEventTypes rdf:type owl:NamedIndividual ,
   skos:ConceptScheme ;
   rdfs:label "Artsdata Event Types" ;
-  rdfs:description "This controlled vocabulary includes all the subtypes of schema:Event except: schema:BusinessEvent, schema:CourseInstance, schema:DeliveryEvent, schema:EducationEvent, schema:FoodEvent, schema:Hackathon, schema:PublicationEvent, schema:SaleEvent, schema:SportsEvent" ;
+  rdfs:description "This skos:ConceptScheme includes all the sub-types of schema:Event except: schema:BusinessEvent, schema:CourseInstance, schema:DeliveryEvent, schema:EducationEvent, schema:FoodEvent, schema:Hackathon, schema:PublicationEvent, schema:SaleEvent, schema:SportsEvent" ;
   skos:hasTopConcept schema:Event . 
 
 schema:Event rdf:type owl:NamedIndividual ,
   skos:Concept ;
   rdfs:label "Event"@en ;
   skos:topConceptOf ado:ArtsdataEventTypes .
-
 
 ado:PerformanceEvent rdf:type owl:NamedIndividual ,
   skos:Concept ;
@@ -70,7 +74,6 @@ ado:TalkEvent rdf:type owl:NamedIndividual ,
   skos:broader ado:PerformanceEvent ;
   skos:inScheme ado:ArtsdataEventTypes .
 
-
 ado:SpokenWordEvent rdf:type owl:NamedIndividual ,
   skos:Concept ;
   skos:broader ado:PerformanceEvent ;
@@ -84,12 +87,10 @@ schema:EventSeries rdf:type owl:NamedIndividual ,
   skos:broader schema:Event ;
   skos:inScheme ado:ArtsdataEventTypes .
 
-
 schema:ScreeningEvent  rdf:type owl:NamedIndividual ,
   skos:Concept ;
   skos:broader schema:Event ;
   skos:inScheme ado:ArtsdataEventTypes .
-
 
 schema:Festival rdf:type owl:NamedIndividual ,
   skos:Concept ;
@@ -101,13 +102,10 @@ schema:ExhibitionEvent  rdf:type owl:NamedIndividual ,
   skos:broader schema:Event ;
   skos:inScheme ado:ArtsdataEventTypes .
 
-
-
 schema:VisualArtsEvent rdf:type owl:NamedIndividual ,
   skos:Concept ;
   skos:broader schema:Event ;
   skos:inScheme ado:ArtsdataEventTypes .
-
 
 ado:PerformanceArt rdf:type owl:NamedIndividual ,
   skos:Concept ;
@@ -129,7 +127,6 @@ schema:ChildrensEvent  rdf:type owl:NamedIndividual ,
   skos:broader schema:VisualArtsEvent ;
   skos:inScheme ado:ArtsdataEventTypes .
 
-
 ado:WorkshopEvent rdf:type owl:NamedIndividual ,
   skos:Concept ;
   skos:broader schema:Event ;
@@ -139,7 +136,6 @@ ado:PreshowTalkEvent rdf:type owl:NamedIndividual ,
   skos:Concept ;
   skos:broader schema:Event ;
   skos:inScheme ado:ArtsdataEventTypes .
-
 
 ado:PostshowTalkEvent rdf:type owl:NamedIndividual ,
   skos:Concept ;
@@ -165,8 +161,3 @@ ado:MasterclassEvent rdf:type owl:NamedIndividual ,
   skos:Concept ;
   skos:broader schema:Event ;
   skos:inScheme ado:ArtsdataEventTypes .
-
-
-
-
-
