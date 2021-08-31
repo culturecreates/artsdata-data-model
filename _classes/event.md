@@ -5,7 +5,7 @@ layout: class-doc
 
 Event Types Controlled Vocabulary
 ==========
-All of the Artsdata controlled vocabularies are located [here](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology).
+Artsdata controlled vocabularies are located [here](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology).
 
 The controlled vocabulary is loaded into Artsdata using the Databus and the resulting graph can be viewed [here](http://kg.artsdata.ca/ontology/event-types).
 
