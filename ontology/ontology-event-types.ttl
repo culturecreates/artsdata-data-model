@@ -16,7 +16,8 @@
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  vann:example ado:PerformanceEvent .
+  vann:example ado:PerformanceEvent ;
+  schema:version "1.0" .
 
 ado:ArtsdataEventTypes rdf:type owl:NamedIndividual ,
   skos:ConceptScheme ;
