@@ -3,7 +3,7 @@ class_name: Event
 layout: class-doc
 ---
 
-Event Types Controlled Vocabulary 
+Event Types Controlled Vocabulary (pending)
 ==========
 The Artsdata controlled vocabulary for event types in RDF is located [here](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology).
 
