@@ -17,8 +17,8 @@
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   vann:example ado:PerformanceEvent ;
-  schema:version "1.0.1" ;
-  vann:changes <https://github.com/culturecreates/artsdata-data-model/commit/23ffed8dd690e1ce01abc57397ea8299e4795056#diff-3e9d6b4bd0c9616c17f8901c5f04269e617fe83e54d5ecac1bc24b3621f9debd> .
+  schema:version "1.0.2" ;
+  vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/ontology-event-types.ttl> .
 
 ado:ArtsdataEventTypes rdf:type owl:NamedIndividual ,
   skos:ConceptScheme ;
