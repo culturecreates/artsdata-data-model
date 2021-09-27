@@ -153,4 +153,4 @@ Artsdata.ca charge les données ouvertes et liées de Wikidata et DBpedia afin d
 
 ### Assistance ou contact
 
-[Contactez notre support](mailto:support@culturecreates.com).
+[Contactez nous](mailto:support@culturecreates.com).
