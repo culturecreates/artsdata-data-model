@@ -2,6 +2,9 @@
 {% include last-modified.html %}
 
 ## Artsdata Data Model v{{ site.data.versions.schemaVersion}}
+
+[Faites défiler la page vers le bas pour le français]
+
 [Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
 A simple data model for Performing Arts Events and related Places, People and Organizations. 
@@ -74,3 +77,80 @@ Artsdata.ca loads LOD from Wikidata and DBpedia in order to cache it for perform
 ### Support or Contact
 
 [Contact support](mailto:support@culturecreates.com) and we’ll help you sort it out.
+
+
+### Français
+
+## Modèle de données Artsdata v{{ site.data.versions.schemaVersion}}
+[Modifier la page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
+
+Un modèle de données simple pour les événements dans les arts de la scène ainsi que pour les lieux, les personnes et les organismes connexes. 
+
+Vous êtes invités à faire part de vos commentaires et à examiner les problèmes actuels dans [GitHub](https://github.com/culturecreates/artsdata-data-model/issues). 
+
+Il existe également un fichier [PDF](https://drive.google.com/file/d/19UDRPTyuFTfWzn4f0n6qm73e235o5uAL/view?usp=sharing) des données que [Footlight](https://console.artsdata.ca) alimente dans Artsdata. À l’heure actuelle, les données que Footlight publie sur les sites Web des organismes culturels et les données d’Artsdata sont très similaires. Alors que de plus en plus de sources alimentent Artsdata, la forme des données entre Footlight et Artsdata peut diverger, Footlight étant un sous-ensemble de classes et de propriétés collectées dans Artsdata.
+
+Les classes et propriétés utilisées dans Artsdata représentent une couche « fine » de données spécifiées par [Google Event Structured Data](https://developers.google.com/search/docs/data-types/event). La différence est qu’Artsdata applique des liens entre les entités au sein d’Artsdata et relie les URI en dehors d’Artsdata, y compris des liens vers Wikidata et d’autres sources LOD (Linked Open Data). Artsdata génère également des identifiants globaux uniques pour des classes telles que Événement, Personne, Lieu et Organisation.
+
+Voici les Classes utilisées dans Artsdata.
+
+![Image](images/artsdata-event-model.png)
+
+[[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/9450de6c42ed8ceed27f0e4374d4e986/raw/0f15244c4f04486e237a8138e9132ed1aae96a66/artsdata_event_model)]
+
+### Classes
+
+<ol>
+{% for class in site.classes %}
+<li>
+    <a href="{{ base }}{{ class.url }}">
+        {{ class.class_name }}
+    </a>
+</li>
+{% endfor %}
+</ol>
+
+### Rapports de validation SHACL
+
+Les formes [SHACL]({{ base }}/shacl_reports.html) sont utilisées pour valider les données avant l’importation.
+
+### Ontologies et inférences
+
+Artsdata.ca utilise un ensemble de bases d’implications RDFS et OWL afin de permettre une inférence simple, appelé **OWL-Horst (optimized)**. 
+
+La principale ontologie utilisée dans Artsdata.ca est **Schema.org**. Artsdata.ca importe le schéma de base Schema.org et le schéma Schema.org en attente (pour inclure schema:EventSeries qui est une classe en attente).  
+
+Artsdata.ca a un grand nombre de mappages de classes et de propriétés entre Schema.org, Wikidata.org, DBpedia.org, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns) en utilisant owl:equivalentClass and owl:equivalentProperty. La majorité des mappages sont préconstruits à partir d’ontologies externes avec quelques mappages supplémentaires spécifiques à [Artsdata.ca](http://kg.artsdata.ca/Wikidata_Mapping) à Wikidata. 
+
+Les travaux en cours sur la prochaine version de l’ontologie Artsdata.ca sont influencés par les travaux de l’initiative [Un avenir numérique lié](https://linkeddigitalfuture.ca/fr/accueil/) de CAPACOA et impliquent l’alignement du modèle de données avec les modèles de données utilisés dans le patrimoine culturel, y compris, mais sans s’y limiter, CIDOC-CRM, FRBRoo, PROV et RDA. Les modèles de données seront en outre spécifiés par un vocabulaire spécifique au domaine qui sera publié dans les prochaines versions.
+
+#### Ontologies chargées dans Artsdata
+* [https://www.w3.org/2000/01/rdf-schema](https://www.w3.org/2000/01/rdf-schema)
+* [Ontologies externes](https://github.com/culturecreates/artsdata-data-model/tree/master/_triples)
+* [Vocabulaires contrôlés par Artsdata](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology)
+
+### Provenance
+
+Les données sont excellentes, mais ce n’est pas la vérité ultime, et sans traçabilité, elles peuvent perdre notre confiance. Par exemple, que se passe-t-il si deux pages Web ont des dates différentes pour le même événement des arts de la scène ? Quelle source est la plus digne de confiance ? Comment pouvons-nous suivre les données jusqu’à la source pour décider nous-mêmes ? 
+
+Afin de suivre la provenance, Artsdata.ca utilise des métadonnées attachées à des graphes nommés. Chaque source de données dans Artsdata.ca est stockée dans un graphe nommé distinct. L’URI du graphe est utilisé comme sujet des métadonnées de provenance.  Cette technique de suivi de la provenance est généralement appelée approche des **Graphes nommés (Named Graph)**. Chaque URI de graphe nommé est une prov:Entity et est lié à des métadonnées de provenance, y compris la date à laquelle les données ont été chargées, le logiciel utilisé pour les collecter et le courriel de l’organisation contributrice. Chaque fois que des données sont importées, que ce soit à partir d’un site Web, d’une feuille de calcul ou d’un triple magasin existant, les métadonnées de provenance des graphes sont mises à jour. De plus, lorsque la source de données provient directement d’une page Web analysée, l’entité schema:WebPage inclut la date à laquelle la page Web a été analysée. 
+
+À l’avenir, nous passerons probablement à RDF\* (prononcé « étoile RDF ») afin d’avoir des données de provenance plus granulaires sur les déclarations individuelles.
+
+### Architecture de flux de données
+
+En principe, n’importe qui peut ajouter des données à Artsdata.ca pourvu que certaines exigences en matière de données soient respectées. Voici un [diagramme]({{ base }}/architecture/overview.html) sur la façon dont les données entrent et sortent d’Artsdata.ca.
+
+### Données ouvertes et liées, mise en cache
+
+Artsdata.ca charge les données ouvertes et liées de Wikidata et DBpedia afin de les mettre en cache pour des raisons de performances. Les triplets sont obtenus en utilisant la négociation de contenu (au lieu de vidages de données) et sont mis en cache sans modification dans leurs graphes nommés respectifs. 
+
+**Remarque:** il existe une exception notable, la propriété Wikidata **P31** (instance de) est transformée en **rdf:type**.  Ce même résultat aurait pu être obtenu en utilisant owl:equivalentProperty mais il n’a pas été sélectionné pour des raisons de performances.
+
+### Conventions de nommage
+
+[Conventions]({{ base }}/naming_conventions.html) sur la façon de nommer les choses en cas de doute.
+
+### Assistance ou contact
+
+[Contactez notre support](mailto:support@culturecreates.com).
