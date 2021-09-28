@@ -1,11 +1,10 @@
 {% include base.html %}
 {% include last-modified.html %}
 
-## Artsdata Data Model v{{ site.data.versions.schemaVersion}}
+## Artsdata Data Model v{{ site.data.versions.schemaVersion }}
+[Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
 [Faites défiler la page vers le bas pour le français]
-
-[Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
 A simple data model for Performing Arts Events and related Places, People and Organizations. 
 
@@ -79,10 +78,10 @@ Artsdata.ca loads LOD from Wikidata and DBpedia in order to cache it for perform
 [Contact support](mailto:support@culturecreates.com) and we’ll help you sort it out.
 
 
-### Français
+# Français
 
-## Modèle de données Artsdata v{{ site.data.versions.schemaVersion}}
-[Modifier la page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
+## Modèle de données Artsdata v{{ site.data.versions.schemaVersion }}
+
 
 Un modèle de données simple pour les événements dans les arts de la scène ainsi que pour les lieux, les personnes et les organismes connexes. 
 
