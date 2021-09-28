@@ -78,7 +78,8 @@ Artsdata.ca loads LOD from Wikidata and DBpedia in order to cache it for perform
 [Contact support](mailto:support@culturecreates.com) and we’ll help you sort it out.
 
 
-# Français
+#
+#
 
 ## Modèle de données Artsdata v{{ site.data.versions.schemaVersion }}
 
