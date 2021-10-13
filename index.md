@@ -1,7 +1,7 @@
 {% include base.html %}
 {% include last-modified.html %}
 
-## [SCROLL DOWN FOR ENGLISH VERSION]
+[SCROLL DOWN FOR ENGLISH VERSION]
 
 ## Modèle de données Artsdata v{{ site.data.versions.schemaVersion }}
 
