@@ -12,15 +12,16 @@ ado:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event types in performing arts." ;
   vann:preferredNamespacePrefix "ado" ;
   vann:preferredNamespaceUri ado: ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  dct:created "2021-08-10"^^xsd:date ;
+  dct:modified "2021-10-18"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example ado:PerformanceEvent ;
   owl:versionInfo "1.0.3";
   vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/1/artsdata-event-types.ttl> ; 
   skos:hasTopConcept schema:Event . 
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  dct:created "2021-08-10"^^xsd:date;
-  dct:modified "2021-08-10"^^xsd:date .
+
 
 schema:Event rdf:type owl:NamedIndividual ,
   skos:Concept ;
