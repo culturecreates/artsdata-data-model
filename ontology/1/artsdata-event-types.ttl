@@ -1,4 +1,4 @@
-@prefix ado: <http://kg.artsdata.ca/ontology/> .
+@prefix ado: <http://kg.artsdata.ca/ontology/1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -6,24 +6,17 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@base <http://kg.artsdata.ca/ontology/event-types>  .
 
-<> 
-  rdf:type owl:Ontology, schema:CreativeWork ;
-  rdfs:label "Artsdata controlled vocabulary for Events" ;
+ado:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
+  rdfs:label "Artsdata Event Type Controlled Vocabulary" ;
+  rdfs:description "This SKOS Concept Scheme is a controlled vocabulary for event types in performing arts." ;
   vann:preferredNamespacePrefix "ado" ;
-  vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
+  vann:preferredNamespaceUri ado: ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   vann:example ado:PerformanceEvent ;
-  schema:version "1.0.2" ;
-  vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/ontology-event-types.ttl> .
-
-ado:ArtsdataEventTypes rdf:type owl:NamedIndividual ,
-  skos:ConceptScheme ;
-  rdfs:label "Artsdata Event Types" ;
-  rdfs:description "This skos:ConceptScheme includes all the sub-types of schema:Event except: schema:BusinessEvent, schema:CourseInstance, schema:DeliveryEvent, schema:EducationEvent, schema:FoodEvent, schema:Hackathon, schema:PublicationEvent, schema:SaleEvent, schema:SportsEvent" ;
+  schema:version "1.0.3" ;
+  vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/1/artsdata-event-types.ttl> ; 
   skos:hasTopConcept schema:Event . 
 
 schema:Event rdf:type owl:NamedIndividual ,
