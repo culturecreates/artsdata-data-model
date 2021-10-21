@@ -1,3 +1,4 @@
+
 @prefix ado: <http://kg.artsdata.ca/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -6,6 +7,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix adr: <http://kg.artsdata.ca/> .
+@prefix schema: <http://schema.org/> .
 
 ado:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   rdfs:label "Artsdata Event Type Controlled Vocabulary" ;
@@ -14,8 +18,8 @@ ado:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   vann:preferredNamespaceUri ado: ;
   owl:versionIRI ado: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  dct:created "2021-08-10"^^xsd:date ;
-  dct:modified "2021-10-18"^^xsd:date ;
+  dcterms:created "2021-08-10"^^xsd:date ;
+  dcterms:modified "2021-10-18"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example ado:PerformanceEvent ;
