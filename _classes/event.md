@@ -9,7 +9,7 @@ The Artsdata controlled vocabulary for event types in RDF is located [here](http
 
 [v1](https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/ontology-event-types.ttl) is the first published version. It replaces the previous placeholder [<http://ontology.artsdata.ca/Performance>](http://ontology.artsdata.ca/Performance).
 
-The controlled vocabulary is loaded into Artsdata using the [Artsdata Databus API](https://documenter.getpostman.com/view/3157443/TVep7mv3) and the resulting graph can be viewed [here](http://kg.artsdata.ca/ontology/event-types) along with an example [PerformanceEvent](http://kg.artsdata.ca/ontology/PerformanceEvent) type showing narrower and broader concepts using SKOS.
+The controlled vocabulary is loaded into Artsdata using the [Artsdata Databus API](https://documenter.getpostman.com/view/3157443/TVep7mv3) and the resulting graph can be viewed by looking at [PerformanceEvent](http://kg.artsdata.ca/ontology/PerformanceEvent) type showing narrower and broader concepts using SKOS.
 
 This is a WIP - work in progress. For the latest changes and edits visit [Google Sheet](https://docs.google.com/spreadsheets/d/1ud_kVTE8C97ZMoe1uYGQ6rW_dodKqsbqiCutLLHO9jo/edit?usp=sharing) to view the pending (not yet published) version of the Artsdata controlled vocabulary and mapping to other vocabularies. 
 
