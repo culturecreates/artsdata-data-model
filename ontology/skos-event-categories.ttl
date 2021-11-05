@@ -13,7 +13,6 @@ ado:ArtsdataEventCategories rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event categories (types, disciplines) in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's categories so events can be reused in event calendars." ;
   vann:preferredNamespacePrefix "ado" ;
   vann:preferredNamespaceUri ado: ;
-  owl:versionIRI ado: ;
   dct:created "2021-08-10"^^xsd:date ;
   dct:modified "2021-11-05"^^xsd:date ;
   schema:creator  adr:K1-5 ;
