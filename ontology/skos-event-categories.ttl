@@ -14,7 +14,6 @@ ado:ArtsdataEventCategories rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   vann:preferredNamespacePrefix "ado" ;
   vann:preferredNamespaceUri ado: ;
   owl:versionIRI ado: ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   dct:created "2021-08-10"^^xsd:date ;
   dct:modified "2021-11-05"^^xsd:date ;
   schema:creator  adr:K1-5 ;
