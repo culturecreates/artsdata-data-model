@@ -1,0 +1,53 @@
+@prefix ado: <http://kg.artsdata.ca/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+ado:ArtsdataEventCategories rdf:type owl:NamedIndividual, skos:ConceptScheme ;
+  skos:prefLabel "Controlled Vocabulary for event categories" ;
+  rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event categories (types, disciplines) in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's categories so events can be reused in event calendars." ;
+  vann:preferredNamespacePrefix "ado" ;
+  vann:preferredNamespaceUri ado: ;
+  owl:versionIRI ado: ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  dct:created "2021-08-10"^^xsd:date ;
+  dct:modified "2021-11-05"^^xsd:date ;
+  schema:creator  adr:K1-5 ;
+  vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
+  vann:example ado:PerformingArtsEvent ;
+  owl:versionInfo "2.0.0";
+  vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-categories.ttl> ; 
+  skos:hasTopConcept ado:Event . 
+
+ado:ChildrensEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Children's Event"@en ; skos:prefLabel "Événement pour enfants"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:ChildrensEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:Event  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:prefLabel "Event"@en ; skos:prefLabel "Événement"@fr ; skos:Note "https://github.com/culturecreates/artsdata-data-model/issues/16" ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:Event  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:EventSeries  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Event Series"@en ; skos:prefLabel "Série d'événements"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:EventSeries  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:ExhibitionEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Exhibition"@en ; skos:prefLabel "Exposition"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:ExhibitionEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:Festival  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Festival"@en ; skos:prefLabel "Festival"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:Festival  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:MasterclassEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Masterclass"@en ; skos:prefLabel "Cours de maître"@fr ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:PerformingArtsEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Performing Arts Event"@en ; skos:prefLabel "Événement des arts de la scène"@fr ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:PublicationEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Publication Event"@en ; skos:prefLabel "Événement de publication"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:PublicationEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:RehearsalEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Rehearsal"@en ; skos:prefLabel "Répétition"@fr ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:ResidencyActivity  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Residency"@en ; skos:prefLabel "Résidence"@fr ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:ScreeningEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Screening"@en ; skos:prefLabel "Projection"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:ScreeningEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:SocialEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Social Event"@en ; skos:prefLabel "Événement social"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:SocialEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:VisualArtsEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Visual Arts Event"@en ; skos:prefLabel "Événement d'arts visuels"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:VisualArtsEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:WorkshopEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Workshop"@en ; skos:prefLabel "Atelier"@fr ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:CircusPerformance  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PerformingArtsEvent; skos:prefLabel "Circus"@en ; skos:prefLabel "Cirque"@fr ; skos:Note "https://github.com/culturecreates/artsdata-data-model/issues/7" ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:ComedyPerformance  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PerformingArtsEvent; skos:prefLabel "Comedy"@en ; skos:prefLabel "Humour "@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:ComedyEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:DancePerformance  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PerformingArtsEvent; skos:prefLabel "Dance"@en ; skos:prefLabel "Danse"@fr ; skos:Note "https://github.com/culturecreates/artsdata-data-model/issues/23" ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:DanceEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:MusicalTheatrePerformance  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PerformingArtsEvent; skos:prefLabel "Musical Theatre"@en ; skos:prefLabel "Théâtre musical"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:TheaterEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:MusicPerformance  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PerformingArtsEvent; skos:prefLabel "Music"@en ; skos:prefLabel "Musique"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:MusicEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:OperaPerformance  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PerformingArtsEvent; skos:prefLabel "Opera"@en ; skos:prefLabel "Opéra"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:MusicEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:SpokenWordPerformance  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PerformingArtsEvent; skos:prefLabel "Spoken Word"@en ; skos:prefLabel "Mot parlé"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:TheaterEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:TheatrePerformance  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PerformingArtsEvent; skos:prefLabel "Theatre"@en ; skos:prefLabel "Théâtre"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:TheaterEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:BroadcastEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PublicationEvent; skos:prefLabel "Broadcast"@en ; skos:prefLabel "Diffusion"@fr ; skos:Note "https://github.com/culturecreates/artsdata-data-model/issues/30" ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:BroadcastEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:LiveBroadcastEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:BroadcastEvent; skos:prefLabel "Live Stream"@en ; skos:prefLabel "Diffusion end direct"@fr ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:OnDemand  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:PublicationEvent; skos:prefLabel "On Demand"@en ; skos:prefLabel "Sur demande"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:OnDemandEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:PostshowTalk  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Postshow Talk"@en ; skos:prefLabel "Conférence après-spectacle"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:Event  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:PreshowTalk  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:Event; skos:prefLabel "Preshow Talk"@en ; skos:prefLabel "Conférence avant-spectacle"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:Event  ] ; skos:inScheme ado:ArtsdataEventCategories   .
+ado:PerformanceArt  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader ado:VisualArtsEvent; skos:prefLabel "Performance Art"@en ; skos:prefLabel "Art performance"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:VisualArtsEvent  ] ; skos:inScheme ado:ArtsdataEventCategories   .
