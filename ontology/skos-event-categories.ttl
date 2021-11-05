@@ -7,14 +7,15 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema:  <http://schema.org/> .
+@prefix adr:  <http://kg.artsdata.ca/resource/> .
 
 ado:ArtsdataEventCategories rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   skos:prefLabel "Controlled Vocabulary for event categories" ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event categories (types, disciplines) in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's categories so events can be reused in event calendars." ;
   vann:preferredNamespacePrefix "ado" ;
   vann:preferredNamespaceUri ado: ;
-  dct:created "2021-08-10"^^xsd:date ;
-  dct:modified "2021-11-05"^^xsd:date ;
+  schema:dateCreated "2021-08-10"^^xsd:date ;
+  schema:dateModified "2021-11-05"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example ado:PerformingArtsEvent ;
