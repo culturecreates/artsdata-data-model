@@ -20,7 +20,7 @@ ado:ArtsdataEventCategories rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example ado:PerformingArtsEvent ;
-  owl:versionInfo "2.0.1";
+  owl:versionInfo "2.0.2";
   vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-categories.ttl> ; 
   skos:hasTopConcept ado:Event . 
 
