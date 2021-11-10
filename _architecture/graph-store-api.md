@@ -1,11 +1,9 @@
 ---
-title: Graph-store API
+title: Databus and Graph-store API
 layout: architecture-doc
 ---
 
 An API server (built with RAILS) that acts as a gateway between the outside world and the Artsdata Triplestore.
-
-It offers SPARQL and traditional RESTful POSTs. 
 
 
 Artsdata Databus Service
