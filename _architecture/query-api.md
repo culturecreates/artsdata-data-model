@@ -27,8 +27,7 @@ Example: List of upcoming events from the OSM website in Montreal: http://api.ar
 ### Source parameter
 Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI.
 
-Here is a list of imdividual datasets that can be used as the source parameter: https://s.zazuko.com/2owq14
-And here is an example of a catalog of datasets: http://kg.artsdata.ca/resource/LaVitrineSources
+Here is a list of imdividual datasets that can be used as the source parameter: https://s.zazuko.com/2owq14. And here is an example of a catalog of datasets: http://kg.artsdata.ca/resource/LaVitrineSources
 
 It is possible to create your own catalog of datasets as well.
 
