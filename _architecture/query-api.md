@@ -24,7 +24,7 @@ The Artsdata Events API provides an easy way to get a iist of events in json or 
 
 Example: List of upcoming events from the OSM website in Montreal: http://api.artsdata.ca/events?format=json&source=http://kg.artsdata.ca/culture-creates/footlight/osm-ca
 
-### source parameter
+### Source parameter
 Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI.
 
 Here is a list of imdividual datasets that can be used as the source parameter: https://s.zazuko.com/2owq14
