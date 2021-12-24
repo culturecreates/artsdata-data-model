@@ -7,7 +7,7 @@ The Query API offers a collection of APIs that acts as a gateway between the out
 
 ## Reconciliation Service
 
-**NEW 22-OCT-2020**: The Artsdata.ca Reconciliation Service can be used to link entites to Artsdata.ca IDs. Supported entites include People, Organizations, and Places. In the future Performing Arts Productions and Works will be added. This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). This API can be consumed by tools like [OpenRefine](https://openrefine.org) to add Artsdata.ca IDs (for example artists) to enrich an existing spreadsheet.
+The Artsdata.ca Reconciliation Service can be used to link entites to Artsdata.ca IDs. Supported entites include People, Organizations, and Places. In the future Performing Arts Productions and Works will be added. This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). This API can be consumed by tools like [OpenRefine](https://openrefine.org) to add Artsdata.ca IDs (for example artists) to enrich an existing spreadsheet.
 
 Reconciliation service endpoint: https://api.artsdata.ca/recon
 
@@ -18,11 +18,11 @@ Give it a try using the [Test bench](https://reconciliation-api.github.io/testbe
 Artsdata Preview Service provides embeddable HTML previews of entities (for example artists) directly in a user interface. This API is consumed along with the Reconciliation Service, by tools like [OpenRefine](https://openrefine.org) where you can roll-over Artsdata.ca IDs (for example artists) and get a preview of information (photo, occupation, nationality, ISNI) to help with disambiguation. Documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/).
 
 
-## Events BETA
+## Events Query API BETA
 
-The Artsdata Events API provides an easy way to get a iist of events in json or json-ld. Documentation WIP.
+**NEW 15-SEP-2021**: The Artsdata Events Query API provides an easy way to get a list of events in json or json-ld. The "frame" parameter enables the user to select different output properties and structures. The "format" parameter selects between json and json-ld. And the "source" parameter selects the graph or calatog of graphs. Documentation WIP.
 
-Example: List of upcoming events from the OSM website in Montreal: http://api.artsdata.ca/events?format=json&source=http://kg.artsdata.ca/culture-creates/footlight/osm-ca
+Example: List of upcoming events from the OSM website in Montreal: http://api.artsdata.ca/events?format=json&frame=event_bn&source=http://kg.artsdata.ca/culture-creates/footlight/osm-ca
 
 ### Source parameter
 Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI.
@@ -33,7 +33,7 @@ It is possible to create your own catalog of datasets as well.
 
 ### Events demo
 
-Here is a [demo website in Github](https://github.com/culturecreates/artsdata-demo-upcoming-events-api) that lists upcoming events in Quebec using the Artsdata API.
+**NEW 12-NOV-2020** Here is a [demo website in Github](https://github.com/culturecreates/artsdata-demo-upcoming-events-api) that lists upcoming events in Quebec using the Artsdata API.
 
 
 ## Other APIs coming soon
