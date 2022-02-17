@@ -33,12 +33,9 @@ Footlight provides a generic Javascript "code snippet" that can be placed on the
 
 Once published on the web site, search engines like Google are immediately able to use this data to create rich snippets and add events to the Google Knowledge Graph.  The Google Search Console generates reports on which pages have Event data and their status inside Google.
 
-* Example live webpage with JSON-LD: [Les Morissette II](https://spec.qc.ca/spectacle/les-morissette-ii)
-* Example Google's SDTT: [Les Morissette II](https://search.google.com/structured-data/testing-tool/u/0/#url=https%3A%2F%2Fspec.qc.ca%2Fspectacle%2Fles-morissette-ii)
 
 ##### 2. Artsdata.ca
 Footlight publishes RDF to Artsdata.ca for each event that is reviewed in the Footlight Console. 
 
-Note: EventSeries and Events are linked using superEvent property. Individual Events have no URI and use blank nodes. So to traverse the graph using URIs from the EventSeries to related Events, you need to pass through the WebPage URI.
+Note: EventSeries and Events are linked using schema:subEvent property. 
 
-* Example Artsdata.ca resource: [Les Morissette II](http://kg.artsdata.ca/resource/spec-qc-ca_les-morissette-ii)
