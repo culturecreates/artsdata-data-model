@@ -1,9 +1,19 @@
+---
+title: Gabarits de données structurées
+layout: gabarits-doc
+---
+
+
 Gabarits de données structurées
 =========================
 
 Gabarits de données structurées au format JSON-LD s'appuyant sur le vocabulaire Schema.org.
 
 Base on: [Gabarits de données structurées de La danse sur les routes du Québec](https://github.com/a10s-ca/ladsr-ds/blob/main/README.md)
+
+## Accès aux gabarits
+
+* [Event](Event/README.html), pour les représentations
 
 ## Conventions
 
@@ -22,6 +32,4 @@ Une fois le gabarit utilisé et rempli avec des données, il ne devrait plus con
 ```
 "url": "https://ladansesurlesroutes.com/"
 ```
-## Accès aux gabarits
 
-* [Event](/Event), pour les représentations

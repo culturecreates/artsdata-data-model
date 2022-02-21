@@ -1,3 +1,8 @@
+---
+title: Gabarit Event
+layout: gabarits-doc
+---
+
 # Gabarit _Event_
 
 Le gabarit _Event_ est utilisé pour les représentations des oeuvres.
