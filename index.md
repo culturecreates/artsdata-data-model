@@ -32,7 +32,7 @@ Voici les Classes utilisées dans Artsdata.
 </ol>
 
 ### Gabarits
-[Gabarits de données structurées]({{ base }}/gabarits-jsonld/overview.html)
+[Gabarits de données structurées]({{ base }}/gabarits-jsonld/readme.html)
 
 ### Rapports de validation SHACL
 
