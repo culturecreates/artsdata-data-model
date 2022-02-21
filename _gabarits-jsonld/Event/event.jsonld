@@ -1,12 +1,12 @@
 {
    "@context":"http://schema.org/",
    "@type":"Event",
-   "@id":"{{URI constituant un identifiant unique de la représentation}}",
+   "@id":"--URI constituant un identifiant unique de la représentation--",
    "additionalType": "http://ontology.artsdata.ca/Performance",
-   "name":"{{Titre de l'oeuvre}}",
-   "startDate":"{{Date et heure du début de la représentation, au format ISO 8601, par exemple 2016-03-31T08:00:00+08:00}}",
-   "endDate":"{{Date et heure de fin de la représentation, au format ISO 8601, par exemple 2016-03-31T08:00:00+08:00}}",
+   "name":"--Titre de l'oeuvre--",
+   "startDate":"--Date et heure du début de la représentation, au format ISO 8601, par exemple 2016-03-31T08:00:00:00+08:00--",
+   "endDate":"--Date et heure de fin de la représentation, au format ISO 8601, par exemple 2016-03-31T08:00:00:00+08:00--",
    "eventStatus":"https://schema.org/EventScheduled",
    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
-   "description":"{{Description de la représentation ou de l'oeuvre}}"
+   "description":"--Description de la représentation ou de l'oeuvre--"
 }
