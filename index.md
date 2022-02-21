@@ -31,6 +31,9 @@ Voici les Classes utilisées dans Artsdata.
 {% endfor %}
 </ol>
 
+### Gabarits
+[Gabarits de données structurées]({{ base }}/gabarits-jsonld/overview.html)
+
 ### Rapports de validation SHACL
 
 Les formes [SHACL]({{ base }}/shacl_reports.html) sont utilisées pour valider les données avant l’importation.
