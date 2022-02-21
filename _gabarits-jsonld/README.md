@@ -20,13 +20,13 @@ Les gabarits sont rendus disponibles sous forme de fichier contenant des donnée
 Pour faciliter leur compréhension, des notes ou des explications ont été incluses comme valeur pour certaines clés. Lorsque c'est le cas, elles ont été placées entre de doubles tirets. Par exemple:
 
 ```
-"url": "--url complète vers la page Web concernée--"
+"url": "--URL complète vers la page Web concernée--"
 ```
 
 Une fois le gabarit utilisé et rempli avec des données, il ne devrait plus contenir de doubles tirets. Par exemple:
 
 ```
-"url": "https://exemple.com/"
+"url": "https://placedesarts.com"
 ```
 
 ## Gabarit _Event_
