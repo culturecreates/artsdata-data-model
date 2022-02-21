@@ -11,25 +11,30 @@ Gabarits de données structurées au format JSON-LD s'appuyant sur le vocabulair
 
 Base on: [Gabarits de données structurées de La danse sur les routes du Québec](https://github.com/a10s-ca/ladsr-ds/blob/main/README.md)
 
-## Accès aux gabarits
-
-* [Event](Event/README.html), pour les représentations
-
 ## Conventions
 
 ### Identification des valeurs à modifier dans le gabarit
 
 Les gabarits sont rendus disponibles sous forme de fichier contenant des données au format JSON-LD.
 
-Pour faciliter leur compréhension, des notes ou des explications ont été incluses comme valeur pour certaines clés. Lorsque c'est le cas, elles ont été placées entre crochets doubles (`{{}}`). Par exemple:
+Pour faciliter leur compréhension, des notes ou des explications ont été incluses comme valeur pour certaines clés. Lorsque c'est le cas, elles ont été placées entre --. Par exemple:
 
 ```
-"url": "{{url complète vers la page web concernée}}"
+"url": "--url complète vers la page web concernée--"
 ```
 
 Une fois le gabarit utilisé et rempli avec des données, il ne devrait plus contenir de crochets doubles. Par exemple:
 
 ```
-"url": "https://ladansesurlesroutes.com/"
+"url": "https://exemple.com/"
 ```
+
+## Gabarit _Event_
+
+Le gabarit _Event_ est utilisé pour les représentations des oeuvres.
+
+[Voir le gabarit]({{ base }}/gabarits-jsonld/Event/event.jsonld)
+
+
+
 
