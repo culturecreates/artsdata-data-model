@@ -5,3 +5,5 @@ collections:
     output: true
   architecture:
     output: true
+  gabarits-jsonld:
+    output: true
