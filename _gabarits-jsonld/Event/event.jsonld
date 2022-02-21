@@ -1,5 +1,5 @@
 {
-   "@context":"http://schema.org",
+   "@context":"http://schema.org/",
    "@type":"Event",
    "@id":"{{URI constituant un identifiant unique de la représentation}}",
    "additionalType": "http://ontology.artsdata.ca/Performance",
