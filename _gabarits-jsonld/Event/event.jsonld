@@ -18,9 +18,9 @@
       "name":"--Nom du diffuseur--",
       "url":"--URL de la page officiel du diffuseur--",
       "sameAs":[
-         "{{lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible}}",
-         "{{URI Artsdata.ca, si disponible}}",
-         "{{URI wikidata, si disponible}}"]
+         "--lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible--",
+         "--URI Artsdata.ca, si disponible--",
+         "--URI wikidata, si disponible--"]
       },
    "performer":[{
       "@type":"Organization",
@@ -28,18 +28,18 @@
       "name":"--Nom de la compagnie--",
       "url":"--URL de la page de la compagnie--",
       "sameAs":[
-         "{{lien vers un ou des comptes de réseaux sociaux, si disponible}}",
-         "{{URI Artsdata.ca, si disponible}}",
-         "{{URI wikidata, si disponible}}"]
+         "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
+         "--URI Artsdata.ca, si disponible--",
+         "--URI wikidata, si disponible--"]
    },{
       "@type":"Person",
       "@id":"--URI constituant un identifiant unique de l'artiste--",
       "name":"--Nom de l'artiste--",
       "url":"--URL de la page Web de l'artiste--",
       "sameAs":[
-         "{{lien vers un ou des comptes de réseaux sociaux, si disponible}}",
-         "{{URI Artsdata.ca, si disponible}}",
-         "{{URI wikidata, si disponible}}"]
+         "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
+         "--URI Artsdata.ca, si disponible--",
+         "--URI wikidata, si disponible--"]
    }],
    "location":[
          {
@@ -54,9 +54,9 @@
                "addressCountry":"CA"
             },
             "sameAs":[
-               "{{lien vers un ou des comptes de réseaux sociaux, si disponible}}",
-               "{{URI Artsdata.ca, si disponible}}",
-               "{{URI wikidata, si disponible}}"]
+               "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
+               "--URI Artsdata.ca, si disponible--",
+               "--URI wikidata, si disponible--"]
          },{
             "@type":"VirtualLocation",
             "@id":"--URI constituant un identifiant unique de lieu virtuelle--",
