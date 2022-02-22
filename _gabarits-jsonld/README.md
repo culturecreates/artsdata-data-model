@@ -46,7 +46,7 @@ Signifie le titre de l'événement.
 ### Propriété _eventStatus_
 L'événement est-il programmé (avec date), reporté (date à confirmer), reprogrammé (avec nouvelle date) ou annulé ?
 
-### Propriété _eventAtttendanceMode_
+### Propriété _eventAttendanceMode_
 Indique si un événement se produit en ligne, hors ligne en personne ou se produit comme un hybride des deux.
 
 ### Propriété _organizer_
