@@ -35,27 +35,27 @@ Le gabarit _Event_ est utilisé pour les événements.
 
 [Voir le gabarit](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld)
 
-## Précisions
+## Détails sur les propriétés clés
 
-### Propriété _additionalType_
+### _additionalType_
 Entrer types suppementaires d’événements dans les arts de la scène. Faites référence à la vocabulaire contrôlé Artsdata pour les types d’événements dans les arts de la scène. Pouvoir ajouter plusieurs Propriétés _additionalType_.
 
-### Propriété _name_
+### _name_
 Entrer le titre de l’événement.
 
-### Propriété _eventStatus_
+### _eventStatus_
 Indiquer si un événement est-il programmé (avec date), reporté (date à confirmer), reprogrammé (avec nouvelle date) ou annulé.
 
-### Propriété _eventAttendanceMode_
+### _eventAttendanceMode_
 Indiquer si un événement se produit en ligne, hors ligne en personne ou se produit comme un hybride des deux.
 
-### Propriété _organizer_
+### _organizer_
 Entrer le nom de diffuseur. Cette propriété est un @type Organization.  On peut ajouter plusieurs _organizer(s)_.
 
-### Propriété _performer_
+### _performer_
 Entrer le nom de la compagnie ou personne qui fait la performance pendant l'événement.  Cette propriété peut être @type Organization ou @type Person. On peut ajouter plusieurs _performer(s)_. 
 
-### Propriété _location_
+### _location_
 Entrer le nom de lieu ou la salle d'événement. Propriété_location_ peut être un @type Place (un lieu physique) ou @type VirtualLocation (un lieu virtuel).
 
 
