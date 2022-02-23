@@ -50,7 +50,7 @@ Indiquer si un événement est-il programmé (avec date), reporté (date à conf
 Indiquer si un événement se produit en ligne, hors ligne en personne ou se produit comme un hybride des deux.
 
 ### Propriété _organizer_
-Entrer le nom de diffuseur. Cette propriété est un @type Organization  On peut ajouter plusieurs _organizer(s)_.
+Entrer le nom de diffuseur. Cette propriété est un @type Organization.  On peut ajouter plusieurs _organizer(s)_.
 
 ### Propriété _performer_
 Entrer le nom de la compagnie ou personne qui fait la performance pendant l'événement.  Cette propriété peut être @type Organization ou @type Person. On peut ajouter plusieurs _performer(s)_. 
