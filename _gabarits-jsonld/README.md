@@ -53,7 +53,7 @@ Indiquer si un événement se produit en ligne, hors ligne en personne ou se pro
 Entrer le nom de diffuseur. Cette propriété est un @type [Organization](https://schema.org/Organization).  On peut ajouter plusieurs _organizer(s)_.
 
 ### _performer_
-Entrer le nom de la compagnie ou personne qui fait la performance pendant l'événement.  Cette propriété peut être @type [Organization](https://schema.org/Organization) ou @type [Person](https://schema.org/Person). On peut ajouter plusieurs _performer(s)_. 
+Entrer le nom de la compagnie ou personne qui fait la performance pendant l'événement.  Cette propriété peut être @type [PerformingGroup](https://schema.org/PerformingGroup) ou @type [Person](https://schema.org/Person). On peut ajouter plusieurs _performer(s)_. 
 
 ### _location_
 Entrer le nom de lieu ou la salle d'événement. Propriété _location_ peut être un @type [Place](https://schema.org/Place) (un lieu physique) ou @type [VirtualLocation](https://schema.org/VirtualLocation) (un lieu virtuel).
