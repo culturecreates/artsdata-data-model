@@ -35,7 +35,7 @@ Le gabarit _Event_ est utilisé pour les événements.
 
 [Voir le gabarit](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld)
 
-## Détails sur les propriétés clés
+## Détails sur certaines propriétés clés
 
 ### [_additionalType_](https://schema.org/additionalType)
 Entrer types suppementaires d’événements dans les arts de la scène. Faites référence à la [vocabulaire contrôlé Artsdata](http://kg.artsdata.ca/ontology/ArtsdataEventCategories) pour les types d’événements dans les arts de la scène. Pouvoir ajouter plusieurs Propriétés [_additionalType_](https://schema.org/additionalType).
