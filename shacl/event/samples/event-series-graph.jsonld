@@ -1,0 +1,331 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "http://schema.org/",
+    "adr":"http://kg.artsdata.ca/resource/"
+  },
+  "@graph": [
+    {
+      "@id": "adr:spec-qc-ca_mariana-mazza",
+      "@type": "schema:EventSeries",
+      "schema:additionalType": [
+        {
+          "@id": "schema:ComedyEvent"
+        },
+        {
+          "@id": "http://ontology.artsdata.ca/Performance"
+        }
+      ],
+      "schema:description": {
+        "@language": "fr",
+        "@value": "Impolie Mariana Mazza? Jugez par vous-même avec son nouveau spectacle d’humour présenté au Théâtre des Deux Rives. Billets en vente à la SPEC du Haut-Richelieu."
+      },
+      "schema:eventAttendanceMode": {
+        "@id": "schema:OfflineEventAttendanceMode"
+      },
+      "schema:eventStatus": {
+        "@id": "schema:EventScheduled"
+      },
+      "schema:image": "https://spec.qc.ca/uploads/spectacles/mariana-mazza.jpg",
+      "schema:location": {
+        "@id": "http://kg.artsdata.ca/resource/K11-189"
+      },
+      "schema:mainEntityOfPage": {
+        "@id": "https://spec.qc.ca/spectacle/mariana-mazza#WebPage"
+      },
+      "schema:name": {
+        "@language": "fr",
+        "@value": "Mariana Mazza - Spectacle - Saint-Jean-sur-Richelieu"
+      },
+      "schema:offers": {
+        "@id": "http://kg.artsdata.ca/resource/spec-qc-ca_mariana-mazza#Offer"
+      },
+      "schema:organizer": {
+        "@id": "http://kg.artsdata.ca/resource/K10-440"
+      },
+      "schema:performer": {
+        "@id": "http://kg.artsdata.ca/resource/K12-382"
+      },
+      "schema:startDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2022-04-22T20:00:00-04:00"
+      },
+      "schema:subEvent": [
+        {
+          "@id": "http://kg.artsdata.ca/resource/spec-qc-ca_mariana-mazza2022-04-22T200000-0400"
+        },
+        {
+          "@id": "http://kg.artsdata.ca/resource/spec-qc-ca_mariana-mazza2022-04-23T200000-0400"
+        }
+      ],
+      "schema:url": "https://spec.qc.ca/spectacle/mariana-mazza"
+    },
+    {
+      "@id": "http://kg.artsdata.ca/resource/spec-qc-ca_mariana-mazza2022-04-22T200000-0400",
+      "@type": "schema:Event",
+      "schema:location": {
+        "@id": "http://kg.artsdata.ca/resource/K11-189"
+      },
+      "schema:name": {
+        "@language": "fr",
+        "@value": "Mariana Mazza - Spectacle - Saint-Jean-sur-Richelieu"
+      },
+      "schema:startDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2022-04-22T20:00:00-04:00"
+      }
+    },
+    {
+      "@id": "http://kg.artsdata.ca/resource/spec-qc-ca_mariana-mazza2022-04-23T200000-0400",
+      "@type": "schema:Event",
+      "schema:location": {
+        "@id": "http://kg.artsdata.ca/resource/K11-189"
+      },
+      "schema:name": {
+        "@language": "fr",
+        "@value": "Mariana Mazza - Spectacle - Saint-Jean-sur-Richelieu"
+      },
+      "schema:startDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2022-04-23T20:00:00-04:00"
+      }
+    }, {
+    "@id": "http://kg.artsdata.ca/resource/K11-189",
+    "http://schema.org/sameAs": [
+      {
+        "@value": "https://www.facebook.com/theatredesdeuxrives"
+      }
+    ],
+    "http://schema.org/alternateName": [
+      {
+        "@value": "Théatre des Deux Rives",
+        "@language": "fr"
+      }
+    ],
+    "@type": [
+      "http://schema.org/PerformingArtsTheater",
+      "http://schema.org/Place"
+    ],
+    "http://schema.org/name": [
+      {
+        "@value": "Théâtre des Deux Rives",
+        "@language": "fr"
+      },
+      {
+        "@value": "Théâtre des Deux Rives",
+        "@language": "en"
+      },
+      {
+        "@value": "Théâtre des Deux Rives"
+      }
+    ],
+    "http://schema.org/address": [
+      {
+        "@id": "_:node1546539"
+      }
+    ],
+    "http://schema.org/url": [
+      {
+        "@value": "https://spec.qc.ca/salle/theatre-des-deux-rives"
+      }
+    ]
+  },
+  {
+    "@id": "_:node1546539",
+    "@type": [
+      "http://schema.org/PostalAddress"
+    ],
+    "http://schema.org/addressRegion": [
+      {
+        "@value": "QC"
+      }
+    ],
+    "http://schema.org/addressLocality": [
+      {
+        "@value": "Saint-Jean-sur-Richelieu"
+      }
+    ],
+    "http://schema.org/streetAddress": [
+      {
+        "@value": "30, boulevard du Séminaire Nord"
+      }
+    ],
+    "http://schema.org/addressCountry": [
+      {
+        "@value": "CA"
+      }
+    ],
+    "http://schema.org/postalCode": [
+      {
+        "@value": "J3B 5J4"
+      }
+    ]
+  },{
+    "@id": "https://spec.qc.ca/spectacle/mariana-mazza#WebPage",
+    "http://schema.org/lastReviewed": [
+      {
+        "@value": "2022-03-08T19:28:14.059-05:00",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "@type": [
+      "http://schema.org/WebPage"
+    ],
+    "http://schema.org/url": [
+      {
+        "@value": "https://spec.qc.ca/spectacle/mariana-mazza"
+      }
+    ],
+    "http://schema.org/inLanguage": [
+      {
+        "@value": "fr"
+      }
+    ]
+  },{
+    "@id": "http://kg.artsdata.ca/resource/K12-382",
+    "http://schema.org/sameAs": [
+      {
+        "@value": "https://www.youtube.com/channel/UCLfW9MGD7xX2a8MqaFr0rLQ"
+      },
+      {
+        "@value": "https://www.instagram.com/marianacherie/"
+      },
+      {
+        "@value": "https://twitter.com/marianacherie"
+      },
+      {
+        "@value": "http://www.wikidata.org/entity/Q20139916"
+      },
+      {
+        "@value": "https://www.facebook.com/MarianaMazzaCherie/"
+      },
+      {
+        "@value": "https://fr.wikipedia.org/wiki/Mariana_Mazza"
+      }
+    ],
+    "http://schema.org/hasOccupation": [
+      {
+        "@value": "Humoriste"
+      }
+    ],
+    "@type": [
+      "http://schema.org/Person"
+    ],
+    "http://schema.org/name": [
+      {
+        "@value": "Mariana Mazza"
+      }
+    ],
+    "http://schema.org/url": [
+      {
+        "@value": "https://marianamazza.com"
+      }
+    ]
+  },
+  {
+    "@id": "http://kg.artsdata.ca/resource/spec-qc-ca_mariana-mazza#Offer",
+    "@type": [
+      "http://schema.org/Offer"
+    ],
+    "http://schema.org/url": [
+      {
+        "@value": "https://spec.tuxedobillet.com/main/mariana-mazza-2/20220422200000"
+      },
+      {
+        "@value": "https://spec.tuxedobillet.com/main/mariana-mazza-2/20220423200000"
+      }
+    ]
+  },{
+    "@id": "http://kg.artsdata.ca/resource/K10-440",
+    "http://schema.org/sameAs": [
+      {
+        "@value": "https://www.youtube.com/user/SPECduHautRichelieu"
+      },
+      {
+        "@value": "https://www.instagram.com/specduhautrichelieu/"
+      },
+      {
+        "@value": "https://twitter.com/spechr"
+      }
+    ],
+    "http://schema.org/alternateName": [
+      {
+        "@value": "La SPEC du Haut-Richelieu",
+        "@language": "en"
+      },
+      {
+        "@value": "La SPEC du Haut-Richelieu",
+        "@language": "fr"
+      }
+    ],
+    "http://www.wikidata.org/prop/direct/P2003": [
+      {
+        "@value": "specduhautrichelieu/"
+      }
+    ],
+    "@type": [
+      "http://schema.org/Organization"
+    ],
+    "http://www.wikidata.org/prop/direct/P2002": [
+      {
+        "@value": "spechr"
+      }
+    ],
+    "http://schema.org/name": [
+      {
+        "@value": "SPEC du Haut-Richelieu",
+        "@language": "en"
+      },
+      {
+        "@value": "SPEC du Haut-Richelieu",
+        "@language": "fr"
+      },
+      {
+        "@value": "SPEC du Haut-Richelieu"
+      }
+    ],
+    "http://schema.org/address": [
+      {
+        "@id": "_:node1707911"
+      }
+    ],
+    "http://schema.org/url": [
+      {
+        "@value": "https://spec.qc.ca"
+      }
+    ]
+  }, {
+    "@id": "_:node1707911",
+    "@type": [
+      "http://schema.org/PostalAddress"
+    ],
+    "http://schema.org/addressRegion": [
+      {
+        "@value": "QC"
+      }
+    ],
+    "http://schema.org/addressLocality": [
+      {
+        "@value": "Saint-Jean-sur-Richelieu "
+      }
+    ],
+    "http://schema.org/streetAddress": [
+      {
+        "@value": "30 boul. du Séminaire Nord"
+      }
+    ],
+    "http://schema.org/addressCountry": [
+      {
+        "@value": "CA"
+      }
+    ],
+    "http://schema.org/postalCode": [
+      {
+        "@value": "J3B 5J4"
+      }
+    ]
+  }
+  ]
+}
