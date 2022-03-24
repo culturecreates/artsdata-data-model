@@ -2,7 +2,7 @@
    "@context":"http://schema.org/",
    "@type":"Event",
    "@id":"--URI constituant un identifiant unique de l'événement. Optionnel--",
-   "additionalType":"--URI constituant un identifiant du catégorie/discipline ou autre. Par exemple http://ontology.artsdata.ca/Performance--",
+   "additionalType":"--URI constituant un identifiant du catégorie. Voir la liste des catégorie sur http://kg.artsdata.ca/ontology/ArtsdataEventCategories--",
    "name":"--Titre de l'événement--",
    "startDate":"--Date et heure du début de l'événement, en format ISO 8601, par exemple 2022-03-15T08:30:00:00-05:00--",
    "endDate":"--Date et heure de fin de l'événement, en format ISO 8601. Si l'heure n'est pas connue, mettez  seulement la date, par exemple 2022-03-15--",
