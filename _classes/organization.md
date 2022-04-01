@@ -5,7 +5,7 @@ layout: class-doc
 
 ## Controlled vocabulary
 
-[Artsdata Organization Types](http://kg.artsdata.ca/ontology/ArtsdataOrganizationTypes) is a controlled vocabulary established by Artsdata.ca.  The controlled vocabulary is implemented in SKOS and mapped to Wikidata classes using intermediary SKOS Concepts with skos:closeMatch. 
+[Artsdata Organization Types](http://kg.artsdata.ca/ontology/ArtsdataOrganizationTypes) is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language.  The controlled vocabulary is implemented in SKOS and mapped to Wikidata classes using intermediary SKOS Concepts with skos:closeMatch. 
 
 To use the Artsdata Organization Types please use the schema:additionalType propery on a schema:Organization class.
 
