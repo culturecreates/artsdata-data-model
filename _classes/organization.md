@@ -31,7 +31,7 @@ To use the Artsdata Organization Types please use the schema:additionalType prop
 * [naics](https://schema.org/naics) 
 
 ### Mapping to Wikidata
-Social media URLs in schema:sameAs and identifiers are also mapped to Wikidata properites.
+Social media URLs in schema:sameAs and identifiers are automatically mapped to Wikidata properties.
 * Facebook ID ([wdt:P2013](http://www.wikidata.org/entity/P2013))
 * Twitter username ([wdt:P2002](http://www.wikidata.org/entity/P2002))
 * Instagram username ([wdt:P2003](http://www.wikidata.org/entity/P2003))
