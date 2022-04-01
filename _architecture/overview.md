@@ -34,13 +34,13 @@ The open data ecosystem is divided into 3 areas:
 
 ### Data providers
 
-For Data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of ETL tools are available (see Provenance data for a listing of tools in action), as well as an API (Graph-store API) for 3rd party developers that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata.)  All data submited to Artsdata.ca requires a user account registered with artsdata.ca, and valid provenance data (also constrained by the Artsdata data model), unless you are using the DBpedia Databus with [WebID (PKCS12 Certificate)](https://github.com/dbpedia/webid#why-webid) in which case no artsdata.ca account is needed. All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.
+For Data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of ETL tools are available (see Provenance data for a listing of tools in action), as well as an API (Graph-store API) for 3rd party developers that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata.)  All data submited to Artsdata.ca requires a user account registered with artsdata.ca. 
+
+All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.
 
 Data from each source is loaded into its own graph within Artsdata.ca with provenance metadata including a contact point, contributor names and data related license agreements. 
 
-3rd party developers are welcome and can use the Artsdata Graph-store API to load data.  An OpenRefine plugin would be a great addition!
-
-**Update 03-SEP-2020**: Artsdata is now working with DBpedia Databus, and will accept data uploaded to the Databus. If you are a developer you can get started with some resources here [https://github.com/culturecreates/dbpedia-databus-resources](https://github.com/culturecreates/dbpedia-databus-resources)
+3rd party developers are welcome and can use the Artsdata Databus API to load data.
 
 
 ### Artsdata.ca
@@ -49,6 +49,6 @@ Data from each source is loaded into its own graph within Artsdata.ca with prove
 
 ### Data consumers
 
-Data consumers, such as listing sites, search engines, government bodies and Arts Organizations wanting to use the data, can call the Artsdata Query API that makes several methods available, from an iCalendar feed to a RESTful API, to a SPARQL endpoint (read only). Or they can obtain a triples data dump serialized as N-Quads. An account is required and used to store personal configurations if desired. The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
+Data consumers, such as listing sites, search engines, government bodies and Arts Organizations wanting to use the data, can call the Artsdata Query API that makes several methods available, from an iCalendar feed to a RESTful API, to a SPARQL endpoint (read only). Or they can obtain a triples data dump serialized in a variety of formats such as JSON-LD or N-Quads. The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
 
 

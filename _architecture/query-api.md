@@ -9,6 +9,8 @@ The Query API offers a collection of APIs that acts as a gateway between the out
 
 The Artsdata.ca Reconciliation Service can be used to link entites to Artsdata.ca IDs. Supported entites include People, Organizations, and Places. In the future Performing Arts Productions and Works will be added. This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). This API can be consumed by tools like [OpenRefine](https://openrefine.org) to add Artsdata.ca IDs (for example artists) to enrich an existing spreadsheet.
 
+API documentation: [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/)
+
 Reconciliation service endpoint: https://api.artsdata.ca/recon
 
 Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/)! (click 'Test bench' tab and enter the endpoint). Or view this [screen recording](https://youtu.be/VkOncek9iuY).
@@ -27,7 +29,7 @@ Example: List of upcoming events from the OSM website in Montreal: http://api.ar
 ### Source parameter
 Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI.
 
-Here is a list of [individual datasets](https://s.zazuko.com/2owq14) that can be used as the source parameter. And here is an example of a [catalog of datasets]( http://kg.artsdata.ca/resource/LaVitrineSources).
+Here is a list of [individual datasets](https://s.zazuko.com/2owq14) that can be used as the source parameter. And here is a list of [catalogs of datasets]( https://s.zazuko.com/5hG5Cc) that can also be used as the source parameter.
 
 It is possible to create your own catalog of datasets as well.
 

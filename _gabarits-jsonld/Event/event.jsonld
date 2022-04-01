@@ -1,8 +1,8 @@
 {
    "@context":"http://schema.org/",
    "@type":"Event",
-   "@id":"--URI constituant un identifiant unique de l'événement--",
-   "additionalType":"--URI constituant un identifiant du catégorie/discipline ou autre. Par exemple http://ontology.artsdata.ca/Performance",
+   "@id":"--URI constituant un identifiant unique de l'événement. Optionnel--",
+   "additionalType":"--URI constituant un identifiant du catégorie. Voir la liste des catégories sur http://kg.artsdata.ca/ontology/ArtsdataEventCategories--",
    "name":"--Titre de l'événement--",
    "startDate":"--Date et heure du début de l'événement, en format ISO 8601, par exemple 2022-03-15T08:30:00:00-05:00--",
    "endDate":"--Date et heure de fin de l'événement, en format ISO 8601. Si l'heure n'est pas connue, mettez  seulement la date, par exemple 2022-03-15--",
@@ -14,37 +14,36 @@
    "image":"--URL de l'image--",
    "organizer":{
       "@type":"Organization",
-      "@id":"--URI constituant un identifiant unique du diffuseur--",
       "name":"--Nom du diffuseur--",
       "url":"--URL de la page officiel du diffuseur--",
       "sameAs":[
-         "{{lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible}}",
-         "{{URI Artsdata.ca, si disponible}}",
-         "{{URI wikidata, si disponible}}"]
+         "--lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible--",
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
+         "--URI Wikidata.org, si disponible--"]
       },
    "performer":[{
       "@type":"Organization",
-      "@id":"--URI constituant un identifiant unique de la compagnie--",
+      "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel--",
       "name":"--Nom de la compagnie--",
       "url":"--URL de la page de la compagnie--",
       "sameAs":[
-         "{{lien vers un ou des comptes de réseaux sociaux, si disponible}}",
-         "{{URI Artsdata.ca, si disponible}}",
-         "{{URI wikidata, si disponible}}"]
+         "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
+         "--URI wikidata, si disponible--"]
    },{
       "@type":"Person",
-      "@id":"--URI constituant un identifiant unique de l'artiste--",
+      "@id":"--URI constituant un identifiant unique de l'artiste. Optionnel--",
       "name":"--Nom de l'artiste--",
       "url":"--URL de la page Web de l'artiste--",
       "sameAs":[
-         "{{lien vers un ou des comptes de réseaux sociaux, si disponible}}",
-         "{{URI Artsdata.ca, si disponible}}",
-         "{{URI wikidata, si disponible}}"]
+         "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
+         "--URI wikidata, si disponible--"]
    }],
    "location":[
          {
             "@type":"Place",
-            "@id":"--URI constituant un identifiant unique du lieu--",
+            "@id":"--URI constituant un identifiant unique du lieu. Optionnel--",
             "address":{
                "@type":"PostalAddress",
                "addressLocality":"--Nom de la ville--",
@@ -54,12 +53,12 @@
                "addressCountry":"CA"
             },
             "sameAs":[
-               "{{lien vers un ou des comptes de réseaux sociaux, si disponible}}",
-               "{{URI Artsdata.ca, si disponible}}",
-               "{{URI wikidata, si disponible}}"]
+               "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
+               "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
+               "--URI wikidata, si disponible--"]
          },{
             "@type":"VirtualLocation",
-            "@id":"--URI constituant un identifiant unique de lieu virtuelle--",
+            "@id":"--URI constituant un identifiant unique de lieu virtuelle. Optionnel--",
             "url":"--URL vers le lieu virtuelle--"
    }],
    "offers":{
@@ -73,7 +72,7 @@
    },
    "mainEntityOfPage":[{
       "@type":"WebPage",
-      "@id":"--URI constituant un identifiant unique de la page Web--",
+      "@id":"--URI constituant un identifiant unique de la page Web. Optionnel--",
       "inLanguage":"fr",
       "url":"URL de la page Web",
       "lastReviewed":"--Date et heure de la dernière révision--"
