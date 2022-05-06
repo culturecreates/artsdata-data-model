@@ -23,6 +23,11 @@ Rules when using the Databus service:
 * URIs with domain kg.artsdata.ca are not allowed as a triple subject unless the URI already exists in Artsdata. This is to prevent mistakenly minting  new URIs. If you wish to mint new Artsdata URIs please use the provided Artsdata service API that takes extra steps to prevent duplicates by requesting additional metadata.
 * Ontologies are not allowed to be uploaded. If you wish to upload an ontology please contact the stewards of Artsdata.
 
+Artsdata Databus SHACL validation reports
+-----------
+
+A SHACL validation service is available to test datasets prior to upload to the Artsdata Databus. This RESTful API service receives parameters for the SHACL file to apply and the data graph to test.  Contact [Culture Creates](mailto:info@culturecreates.com) for access to this service.
+
 Graph-store Services
 --------
 The main goal of the Graph-store API is to defend the Artsdata.ca data model.  All data loaded to Artsdata.ca must meet certain constraints. Data that does not meet these constrains is rejected and errors are reported back to the client.
