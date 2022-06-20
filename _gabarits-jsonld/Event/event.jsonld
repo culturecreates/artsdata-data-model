@@ -65,8 +65,7 @@
       "@type":"Offer",
       "availability":"http://schema.org/InStock",
       "url":"--URL vers la page d'achat de billets--",
-      "availabilityStarts":"--Date et heure du début de la disponibilité, au format ISO 8601, par exemple 2016-03-31T08:00:00+08:00--",
-      "availabilityEnds":"--Date et heure de fin de la disponibilité, au format ISO 8601, par exemple 2016-03-31T08:00:00+08:00--",
+      "validFrom":"--Date et heure du début de la disponibilité, au format ISO 8601, par exemple 2016-03-31T08:00:00+08:00--",
       "price":"--Prix au format 9.99--",
       "priceCurrency":"CAD"
    },
