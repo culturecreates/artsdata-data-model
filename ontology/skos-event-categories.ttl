@@ -11,14 +11,14 @@
 adr:ArtsdataEventCategories rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   skos:prefLabel "Controlled Vocabulary for event types" ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event types (types, categories, disciplines) in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars." ;
-  owl:versionInfo "3.0.0";
+  owl:versionInfo "3.0.1";
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2021-08-10"^^xsd:date ;
   schema:dateModified "2022-08-01"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
-  vann:example ado:PerformingArtsEvent ;
+  vann:example adr:PerformingArtsEvent ;
   vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-categories.ttl> ; 
   skos:hasTopConcept ado:Event . 
 
