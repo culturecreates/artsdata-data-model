@@ -5,22 +5,26 @@ layout: class-doc
 
 Controlled Vocabulary v2
 ==========
-The Artsdata controlled vocabulary for event categories in RDF using SKOS.
+The Artsdata controlled vocabulary for event types in RDF using SKOS.
 
-The categories can be viewed here [ArtsdataEventCategories](http://kg.artsdata.ca/ontology/ArtsdataEventCategories).
+The categories can be viewed here [ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes).
 
-For example an Event can be assigned the category [http://kg.artsdata.ca/ontology/PerformingArtsEvent](http://kg.artsdata.ca/ontology/PerformingArtsEvent) showing narrower and broader concepts using SKOS.
+For example, an Event can be assigned the type [http://kg.artsdata.ca/resource/PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent) showing narrower and broader concepts using SKOS.
 
 This is a WIP - work in progress. For the latest changes and edits visit [Google Sheet](https://docs.google.com/spreadsheets/d/1ud_kVTE8C97ZMoe1uYGQ6rW_dodKqsbqiCutLLHO9jo/edit?usp=sharing) to view the pending (not yet published) version of the Artsdata controlled vocabulary and mapping to other vocabularies. 
 
-The release history is located [here](https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-categories.ttl).
-
-Your input is welcome. Please click the link above to open an issue.
+Your input is welcome. Please click the link in the top nav bar to open an issue.
 
 ### How to use
 
 The Artsdata Event Controlled Vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (schema:Event or schema:EventSeries) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the schema:additionalType property.
 
-For example: `ex:Event1 a schema:Event ; schema:additionalType <http://kg.artsdata.ca/ontology/PerformingArtsEvent> .`
+For example: `ex:Event1 a schema:Event ; schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .`
 
-The [preferred namespace prefix](vann:preferredNamespacePrefix) is "ado" so <http://kg.artsdata.ca/ontology/PerformingArtsEvent> can also be written as ado:PerformingArtsEvent
+You can reconcile event types using the Artsdata Reconciliation Service. 
+
+To give it a try:
+1. Go to the [W3C entity reconciliation test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)
+2. Select the type "Concept" (optional)
+3. Enter the name of an event type, such as Circus
+4. Click the Reconcile button
