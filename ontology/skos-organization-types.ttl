@@ -15,7 +15,7 @@ adr:ArtsdataOrganizationTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2022-04-01"^^xsd:date ;
-  schema:dateModified "2022-04-01"^^xsd:date ;
+  schema:dateModified "2022-08-01"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/organization.html> ;
   vann:example adr:PerformingGroup ;
