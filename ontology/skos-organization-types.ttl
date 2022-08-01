@@ -11,7 +11,7 @@
 adr:ArtsdataOrganizationTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   skos:prefLabel "Controlled Vocabulary for organization types" ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language." ;
-  owl:versionInfo "1.0.0";
+  owl:versionInfo "2.0.0";
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2022-04-01"^^xsd:date ;
