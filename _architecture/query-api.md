@@ -13,7 +13,7 @@ API documentation: [W3C Entity Reconciliation Community Group](https://reconcili
 
 Reconciliation service endpoint: https://api.artsdata.ca/recon
 
-Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/)! (click 'Test bench' tab and enter the endpoint). Or view this [screen recording](https://youtu.be/VkOncek9iuY).
+Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! Or view this [screen recording](https://youtu.be/VkOncek9iuY).
 
 ## Preview Service
 
