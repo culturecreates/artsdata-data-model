@@ -9,7 +9,7 @@ The Artsdata controlled vocabulary for event types in RDF using SKOS.
 
 The categories can be viewed here [ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes).
 
-For example, an Event can be assigned the type [http://kg.artsdata.ca/resource/PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent) showing narrower and broader concepts using SKOS.
+For example, an Event can be assigned the type [http://kg.artsdata.ca/resource/PerformingArtsEvent](http://kg.artsdata.ca/resource/CircusPerformance) showing narrower and broader concepts using SKOS.
 
 This is a WIP - work in progress. For the latest changes and edits visit [Google Sheet](https://docs.google.com/spreadsheets/d/1ud_kVTE8C97ZMoe1uYGQ6rW_dodKqsbqiCutLLHO9jo/edit?usp=sharing) to view the pending (not yet published) version of the Artsdata controlled vocabulary and mapping to other vocabularies. 
 
@@ -22,6 +22,7 @@ The Artsdata Event Controlled Vocabulary is used along with the schema.org Event
 For example: `ex:Event1 a schema:Event ; schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .`
 
 You can reconcile event types using the Artsdata Reconciliation Service. 
+<img width="1280" alt="Screen Shot 2022-08-14 at 9 53 10 PM" src="https://user-images.githubusercontent.com/419491/184564852-ed5baeb8-952d-43c7-b8a1-b06b6ba65152.png">
 
 To give it a try:
 1. Go to the [W3C entity reconciliation test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)
@@ -30,3 +31,5 @@ To give it a try:
 4. Enter the Property ID "skos:inScheme" and the value "adr:ArtsdataEventTypes"
 5. Enter the name of an event type, such as Circus
 6. Click the Reconcile button
+
+
