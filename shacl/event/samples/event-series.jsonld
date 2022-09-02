@@ -89,8 +89,8 @@
       "streetAddress": "1600 St Urbain St"
     }
   },
-  "nameFr": "L’OSM reçoit : Alexandra StréliskiL’OSM reçoit : Alexandra Stréliski",
-  "nameEn": "The OSM Welcomes: Alexandra StréliskiThe OSM Welcomes: Alexandra Stréliski",
+  "nameFr": "L’OSM reçoit : Alexandra Stréliski",
+  "nameEn": "The OSM Welcomes: Alexandra Stréliski",
   "descriptionEn": "Pianist and composer Alexandra Stréliski wrote and performed the albums Pianoscope and Inscape for which she won five ADISQ Félix Awards as well as a Juno Award. Her sensitive, accessible music gently evokes “inner landscapes” transformed by the colours of the orchestra. Discover the hushed sounds of the world of Alexandra Stréliski in the company of the OSM.",
   "descriptionFr": "Compositrice et interprète des albums Pianoscope et Inscape, la pianiste et compositrice Alexandra Stréliski a remporté cinq Félix à l’ADISQ ainsi qu’un Juno. Sa musique, sensible et accessible, évoque avec douceur des « paysages intérieurs » qui se métamorphosent au contact des couleurs de l’orchestre. Découvrez l’univers sonore feutré d’Alexandra Stréliski en compagnie de l’OSM.",
   "startDate": "2021-04-07T00:00:00.000Z",
@@ -98,8 +98,8 @@
     {
       "@type": "MusicEvent",
       "@id": "https://www.osm.ca/en/concerts/losm-recoit-alexandra-streliski/#Event2021-04-07-0000",
-      "nameEn": "The OSM Welcomes: Alexandra StréliskiThe OSM Welcomes: Alexandra Stréliski",
-      "nameFr": "L’OSM reçoit : Alexandra StréliskiL’OSM reçoit : Alexandra Stréliski",
+      "nameEn": "The OSM Welcomes: Alexandra Stréliski",
+      "nameFr": "L’OSM reçoit : Alexandra Stréliski",
       "location": {
         "@id": "http://capacitor.culturecreates.com/146375c4-9f55-4e54-b13f-7da214bc1387"
       },
@@ -108,8 +108,8 @@
     {
       "@type": "MusicEvent",
       "@id": "https://www.osm.ca/en/concerts/losm-recoit-alexandra-streliski/#Event2021-04-08-0000",
-      "nameEn": "The OSM Welcomes: Alexandra StréliskiThe OSM Welcomes: Alexandra Stréliski",
-      "nameFr": "L’OSM reçoit : Alexandra StréliskiL’OSM reçoit : Alexandra Stréliski",
+      "nameEn": "The OSM Welcomes: Alexandra Stréliski",
+      "nameFr": "L’OSM reçoit : Alexandra Stréliski",
       "location": {
         "@id": "http://capacitor.culturecreates.com/146375c4-9f55-4e54-b13f-7da214bc1387"
       },
