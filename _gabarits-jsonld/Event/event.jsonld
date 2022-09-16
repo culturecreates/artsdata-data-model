@@ -2,7 +2,7 @@
    "@context":"http://schema.org/",
    "@type":"Event",
    "@id":"--URI constituant un identifiant unique de l'événement. Optionnel--",
-   "additionalType":"--URI constituant un identifiant du catégorie. Voir la liste des catégories sur http://kg.artsdata.ca/ontology/ArtsdataEventCategories--",
+   "additionalType":"--URI d'une catégorie correspondant au type particulier de l'événement, par exemple http://kg.artsdata.ca/resource/PerformingArtsEvent. Voir la liste des catégories sur http://kg.artsdata.ca/resource/ArtsdataEventTypes--",
    "name":"--Titre de l'événement--",
    "startDate":"--Date et heure du début de l'événement, en format ISO 8601, par exemple 2022-03-15T08:30:00:00-05:00--",
    "endDate":"--Date et heure de fin de l'événement, en format ISO 8601. Si l'heure n'est pas connue, mettez  seulement la date, par exemple 2022-03-15--",
@@ -10,31 +10,31 @@
    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
    "description":"--Description de l'événement--",
    "url":"--URL de la page Web de l'événement--",
-   "duration":"--durée de l'événement en format ISO 8601, par exemple : PT1H30M --",
+   "duration":"--Durée de l'événement en format ISO 8601, par exemple : PT1H30M --",
    "image":"--URL de l'image--",
    "organizer":{
       "@type":"Organization",
       "name":"--Nom du diffuseur--",
-      "url":"--URL de la page officiel du diffuseur--",
+      "url":"--URL de site ou de la page officielle du diffuseur--",
       "sameAs":[
          "--lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible--",
          "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
          "--URI Wikidata.org, si disponible--"]
       },
    "performer":[{
-      "@type":"Organization",
+      "@type":"--Utiliser le type 'Organization' si l'interprète est une compagnie ou un groupe--",
       "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel--",
       "name":"--Nom de la compagnie--",
-      "url":"--URL de la page de la compagnie--",
+      "url":"--URL du site officiel de la compagnie--",
       "sameAs":[
          "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
          "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
          "--URI wikidata, si disponible--"]
    },{
-      "@type":"Person",
+      "@type":"--Utiliser le type 'Person' si l'interprète est un ou des artistes--",
       "@id":"--URI constituant un identifiant unique de l'artiste. Optionnel--",
       "name":"--Nom de l'artiste--",
-      "url":"--URL de la page Web de l'artiste--",
+      "url":"--URL du site officiel de l'artiste--",
       "sameAs":[
          "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
          "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
