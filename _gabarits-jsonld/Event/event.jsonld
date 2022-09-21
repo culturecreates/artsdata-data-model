@@ -1,80 +1,80 @@
 {
    "@context":"http://schema.org/",
    "@type":"Event",
-   "@id":"--URI constituant un identifiant unique de l'événement. Optionnel--",
-   "additionalType":"--URI d'une catégorie correspondant au type particulier de l'événement, par exemple http://kg.artsdata.ca/resource/PerformingArtsEvent. Voir la liste des catégories sur http://kg.artsdata.ca/resource/ArtsdataEventTypes--",
-   "name":"--Titre de l'événement--",
-   "startDate":"--Date et heure du début de l'événement, en format ISO 8601, par exemple 2022-03-15T08:30:00:00-05:00--",
-   "endDate":"--Date et heure de fin de l'événement, en format ISO 8601. Si l'heure n'est pas connue, mettez  seulement la date, par exemple 2022-03-15--",
+   "@id":"--URI constituant un identifiant unique de l'événement. Optionnel : URI constituting a unique identifier of the event. Optional--",
+   "additionalType":"--URI d'une catégorie correspondant au type particulier de l'événement, par exemple http://kg.artsdata.ca/resource/PerformingArtsEvent. Voir la liste des catégories sur http://kg.artsdata.ca/resource/ArtsdataEventTypes : URI of a category corresponding to the particular type of event, for example http://kg.artsdata.ca/resource/PerformingArtsEvent. See list of categories at http://kg.artsdata.ca/resource/ArtsdataEventTypes--",
+   "name":"--Titre de l'événement : Title of event--",
+   "startDate":"--Date et heure du début de l'événement, en format ISO 8601, par exemple 2022-03-15T08:30:00:00-05:00 : Date and time of the start of the event, in ISO 8601 format, for example 2022-03-15T08:30:00:00-05:00--",
+   "endDate":"--Date et heure de fin de l'événement, en format ISO 8601. Si l'heure n'est pas connue, mettez seulement la date, par exemple 2022-03-15 : End date and time of the event, in ISO 8601 format. If the time is not known, put only         the date, for example 2022-03-15--",
    "eventStatus":"https://schema.org/EventScheduled",
    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
-   "description":"--Description de l'événement--",
-   "url":"--URL de la page Web de l'événement--",
-   "duration":"--Durée de l'événement en format ISO 8601, par exemple : PT1H30M --",
-   "image":"--URL de l'image--",
+   "description":"--Description de l'événement : Description of the event--",
+   "url":"--URL de la page Web de l'événement : URL of event webpage--",
+   "duration":"--Durée de l'événement en format ISO 8601, par exemple : PT1H30M : Duration of the event in ISO 8601 format, for example: PT1H30M--",
+   "image":"--URL de l'image : URL of image--",
    "organizer":{
       "@type":"Organization",
-      "name":"--Nom du diffuseur--",
-      "url":"--URL de site ou de la page officielle du diffuseur--",
+      "name":"--Nom du diffuseur : Name of the presenter--",
+      "url":"--URL de site ou de la page officielle du diffuseur : URL of presenter's official website--",
       "sameAs":[
-         "--lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible--",
-         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
-         "--URI Wikidata.org, si disponible--"]
+         "--lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible : link to one or more social media accounts of the presenter, if available--",
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
+         "--URI Wikidata.org, si disponible : Wikidata.org URI, if available--"]
       },
    "performer":[{
-      "@type":"--Utiliser le type 'Organization' si l'interprète est une compagnie ou un groupe--",
-      "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel--",
-      "name":"--Nom de la compagnie--",
-      "url":"--URL du site officiel de la compagnie--",
+      "@type":"--Utiliser le type 'Organization' si l'interprète est une compagnie ou un groupe : Use type 'Organization' if the performer is a company or a group--",
+      "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel : URI constituting a unique identifier of the company. Optional--",
+      "name":"--Nom de la compagnie : Name of the company or organization--",
+      "url":"--URL du site officiel de la compagnie : URL of the company's official website--",
       "sameAs":[
-         "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
-         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
-         "--URI wikidata, si disponible--"]
+         "--lien vers un ou des comptes de réseaux sociaux, si disponible si disponible : link to one or more social media accounts of the presenter, if available--",
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
+         "--URI wikidata, si disponible : Wikidata.org URI, if available--"]
    },{
-      "@type":"--Utiliser le type 'Person' si l'interprète est un ou des artistes--",
-      "@id":"--URI constituant un identifiant unique de l'artiste. Optionnel--",
-      "name":"--Nom de l'artiste--",
-      "url":"--URL du site officiel de l'artiste--",
+      "@type":"--Utiliser le type 'Person' si l'interprète est un ou des artistes : Use the 'Person' type if the performer is an artist(s)--",
+      "@id":"--URI constituant un identifiant unique de l'artiste. Optionnel : URI constituting a unique identifier of the artist. Optional--",
+      "name":"--Nom de l'artiste : Name of artist--",
+      "url":"--URL du site officiel de l'artiste : URL of the artist's official website--",
       "sameAs":[
-         "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
-         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
-         "--URI wikidata, si disponible--"]
+         "--lien vers un ou des comptes de réseaux sociaux, si disponible : link to social media account(s), if available--",
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
+         "--URI wikidata, si disponible : Wikidata.org URI, if available--"]
    }],
    "location":[
          {
             "@type":"Place",
-            "@id":"--URI constituant un identifiant unique du lieu. Optionnel--",
+            "@id":"--URI constituant un identifiant unique du lieu. Optionnel : URI constituting a unique identifier of the place. Optional--",
             "address":{
                "@type":"PostalAddress",
-               "addressLocality":"--Nom de la ville--",
-               "addressRegion":"--Nom de la province--",
-               "postalCode":"--Code postal--",
-               "streetAddress":"--Numéro civique et rue--",
+               "addressLocality":"--Nom de la ville : Name of the City--",
+               "addressRegion":"--Nom de la province : Name of the province--",
+               "postalCode":"--Code postal : postal code--",
+               "streetAddress":"--Numéro civique et rue : Civic number and street--",
                "addressCountry":"CA"
             },
             "sameAs":[
-               "--lien vers un ou des comptes de réseaux sociaux, si disponible--",
-               "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata--",
-               "--URI wikidata, si disponible--"]
+               "--lien vers un ou des comptes de réseaux sociaux, si disponible : link to social media account(s), if available--",
+               "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
+               "--URI wikidata, si disponible : Wikidata.org URI, if available--"]
          },{
             "@type":"VirtualLocation",
-            "@id":"--URI constituant un identifiant unique de lieu virtuelle. Optionnel--",
-            "url":"--URL vers le lieu virtuelle--"
+            "@id":"--URI constituant un identifiant unique de lieu virtuelle. Optionnel : URI constituting a unique virtual location identifier. Optional--",
+            "url":"--URL vers le lieu virtuelle : URL to the virtual place--"
    }],
    "offers":{
       "@type":"Offer",
       "availability":"http://schema.org/InStock",
-      "url":"--URL vers la page d'achat de billets--",
-      "validFrom":"--Date et heure du début de la disponibilité, au format ISO 8601, par exemple 2016-03-31T08:00:00+08:00--",
-      "price":"--Prix au format 9.99--",
+      "url":"--URL vers la page d'achat de billets : URL to the ticket purchase page--",
+      "validFrom":"--Date et heure du début de la disponibilité, au format ISO 8601, par exemple 2016-03-31T08:00:00+08:00 : Availability start date and time, in ISO 8601 format, for example 2016-03-31T08:00:00+08:00--",
+      "price":"--Prix au format 9.99 : Price in format 9.99--",
       "priceCurrency":"CAD"
    },
    "mainEntityOfPage":[{
       "@type":"WebPage",
-      "@id":"--URI constituant un identifiant unique de la page Web. Optionnel--",
+      "@id":"--URI constituant un identifiant unique de la page Web. Optionnel : URI constituting a unique identifier of the web page. Optional--",
       "inLanguage":"fr",
-      "url":"URL de la page Web",
-      "lastReviewed":"--Date et heure de la dernière révision--"
+      "url":"URL de la page Web : Webpage URL",
+      "lastReviewed":"--Date et heure de la dernière révision : Date and time of last revision--"
    }]
 
 }
