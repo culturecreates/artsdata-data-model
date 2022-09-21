@@ -20,7 +20,7 @@ Inspiré par le projet Gabarits de données structurées de [La danse sur les ro
 
 Les gabarits sont rendus disponibles sous forme de fichier contenant des données au format JSON-LD.
 
-Afin de faciliter la compréhension et l'utilisation, des notes explicatives ont été incluses à propos des valeurs attendues et du format dans lequel elles devraient être saisie. Ces notes ont été placées entre de doubles tirets. Par exemple:
+Afin de faciliter la compréhension et l'utilisation, des notes explicatives ont été incluses à propos des valeurs attendues et du format dans lequel elles devraient être saisie. Ces notes ont été placées entre de doubles tirets en français et anglais. Par exemple:
 
 ```
 "url": "--URL complète vers la page Web concernée--"
@@ -79,7 +79,7 @@ Inspired by the Structured Data Templates project of [La danse sur les routes du
 
 Templates are made available as a file containing data in JSON-LD format.
 
-To facilitate understanding and use, explanatory notes have been included about the expected values and the format in which they should be entered. These notes have been placed between double dashes. For instance:
+To facilitate understanding and use, explanatory notes have been included about the expected values and the format in which they should be entered. These notes have been placed between double dashes in French and in English. For example:
 
 ```
 "url": "--URL complète vers la page Web concernée--"
