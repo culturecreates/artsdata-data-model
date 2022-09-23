@@ -3,10 +3,10 @@ title: Gabarits de données structurées - Structured Data Templates
 layout: gabarits-doc
 ---
 
-scroll down for English - Structured Data Templates
+SCROLL DOWN FOR ENGLISH VERSION
 ==================================================
 
-Français - Gabarits de données structurées
+Version français - Gabarits de données structurées
 ============================================
 
 Gabarits de données structurées au format JSON-LD s'appuyant sur le vocabulaire Schema.org.
@@ -63,7 +63,7 @@ Saisissez les informations identifiant et décrivant l'endroit où est présent�
 ### [_offers_](https://schema.org/offers)
 Saisissez les informations à propos de la disponibilité des billets et de la page Web où l'on peut se les procurer.
 
-English - Structured Data Templates
+English Version - Structured Data Templates
 =====================================
 
 Structured data templates in JSON-LD format based on the Schema.org vocabulary.
@@ -94,7 +94,7 @@ The _Event_ template is intended to represent information about single events, i
 
 [See the template](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld)
 
-## Details on some key properties
+## Details on key properties
 
 ### [_additionalType_](https://schema.org/additionalType)
 Enter additional types corresponding to the particular type of event. Refer to the [Artsdata controlled vocabulary](http://kg.artsdata.ca/resource/ArtsdataEventTypes) to identify the most appropriate type(s) of all performing arts event types. You can add as many _additionalType_ properties as needed to properly describe the event. As a default, we recommend the type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), which denotes « a performing arts work performed for an audience ».
