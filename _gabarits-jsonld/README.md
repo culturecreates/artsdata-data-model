@@ -3,12 +3,11 @@ title: Gabarits de données structurées - Structured Data Templates
 layout: gabarits-doc
 ---
 
-scroll down for english
-========================
+scroll down for English - Structured Data Templates
+==================================================
 
-Français
-==========
-# Gabarits de données structurées
+Français - Gabarits de données structurées
+============================================
 
 Gabarits de données structurées au format JSON-LD s'appuyant sur le vocabulaire Schema.org.
 
@@ -23,7 +22,7 @@ Les gabarits sont rendus disponibles sous forme de fichier contenant des donnée
 Afin de faciliter la compréhension et l'utilisation, des notes explicatives ont été incluses à propos des valeurs attendues et du format dans lequel elles devraient être saisie. Ces notes ont été placées entre de doubles tirets en français et anglais. Par exemple:
 
 ```
-"url": "--URL complète vers la page Web concernée--"
+"url": "--URL complète vers la page Web concernée : Full URL to the relevant webpage--"
 ```
 
 Une fois le gabarit utilisé et rempli avec des données, il ne devrait plus contenir de doubles tirets. Par exemple:
@@ -64,10 +63,8 @@ Saisissez les informations identifiant et décrivant l'endroit où est présent�
 ### [_offers_](https://schema.org/offers)
 Saisissez les informations à propos de la disponibilité des billets et de la page Web où l'on peut se les procurer.
 
-English
-========
-
-# Structured Data Templates
+English - Structured Data Templates
+=====================================
 
 Structured data templates in JSON-LD format based on the Schema.org vocabulary.
 
@@ -82,7 +79,7 @@ Templates are made available as a file containing data in JSON-LD format.
 To facilitate understanding and use, explanatory notes have been included about the expected values and the format in which they should be entered. These notes have been placed between double dashes in French and in English. For example:
 
 ```
-"url": "--URL complète vers la page Web concernée--"
+"url": "--URL complète vers la page Web concernée : Full URL to the relevant webpage--"
 ```
 
 Once the template is used and filled with data, it should no longer contain double dashes. For instance:
