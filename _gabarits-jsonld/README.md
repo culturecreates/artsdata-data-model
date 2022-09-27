@@ -6,6 +6,8 @@ layout: gabarits-doc
 SCROLL DOWN FOR ENGLISH VERSION
 ==================================================
 
+[Link to English](#english-version---structured-data-templates)
+
 Version français - Gabarits de données structurées
 ============================================
 
@@ -62,6 +64,7 @@ Saisissez les informations identifiant et décrivant l'endroit où est présent�
 
 ### [_offers_](https://schema.org/offers)
 Saisissez les informations à propos de la disponibilité des billets et de la page Web où l'on peut se les procurer.
+
 
 English Version - Structured Data Templates
 =====================================
