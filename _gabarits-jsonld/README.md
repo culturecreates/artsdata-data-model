@@ -3,10 +3,8 @@ title: Gabarits de données structurées - Structured Data Templates
 layout: gabarits-doc
 ---
 
-SCROLL DOWN FOR ENGLISH VERSION
-==================================================
-
 [Link to English](#english-version---structured-data-templates)
+================================================================
 
 Version français - Gabarits de données structurées
 ============================================
