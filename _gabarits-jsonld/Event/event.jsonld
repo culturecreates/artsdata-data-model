@@ -12,31 +12,23 @@
    "url":"--URL de la page Web de l'événement : URL of event webpage--",
    "duration":"--Durée de l'événement en format ISO 8601, par exemple : PT1H30M : Duration of the event in ISO 8601 format, for example: PT1H30M--",
    "image":"--URL de l'image : URL of image--",
-   "organizer":{
-      "@type":"Organization",
+   "organizer":[{
+      "@type":"--Utiliser le type 'Organization' si le diffuseur est une compagnie ou un groupe : Use type 'Organization' if the presenter is a company or a group--,
+      "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel : URI constituting a unique identifier of the company. Optional--",
       "name":"--Nom du diffuseur : Name of the presenter--",
       "url":"--URL de site ou de la page officielle du diffuseur : URL of presenter's official website--",
       "sameAs":[
          "--lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible : link to one or more social media accounts of the presenter, if available--",
          "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
          "--URI Wikidata.org, si disponible : Wikidata.org URI, if available--"]
-      },
+      }],
    "performer":[{
-      "@type":"--Utiliser le type 'Organization' si l'interprète est une compagnie ou un groupe : Use type 'Organization' if the performer is a company or a group--",
+      "@type":"--Utiliser le type 'Organization' si l'interprète est une compagnie ou un groupe, ou 'Person' si l'interprète est un ou des artistes : Use type 'Organization' if the performer is a company or a group, or 'Person' type if the performer is an artist(s)--",
       "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel : URI constituting a unique identifier of the company. Optional--",
       "name":"--Nom de la compagnie : Name of the company or organization--",
       "url":"--URL du site officiel de la compagnie : URL of the company's official website--",
       "sameAs":[
          "--lien vers un ou des comptes de réseaux sociaux, si disponible si disponible : link to one or more social media accounts of the presenter, if available--",
-         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
-         "--URI wikidata, si disponible : Wikidata.org URI, if available--"]
-   },{
-      "@type":"--Utiliser le type 'Person' si l'interprète est un ou des artistes : Use the 'Person' type if the performer is an artist(s)--",
-      "@id":"--URI constituant un identifiant unique de l'artiste. Optionnel : URI constituting a unique identifier of the artist. Optional--",
-      "name":"--Nom de l'artiste : Name of artist--",
-      "url":"--URL du site officiel de l'artiste : URL of the artist's official website--",
-      "sameAs":[
-         "--lien vers un ou des comptes de réseaux sociaux, si disponible : link to social media account(s), if available--",
          "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
          "--URI wikidata, si disponible : Wikidata.org URI, if available--"]
    }],
@@ -61,14 +53,14 @@
             "@id":"--URI constituant un identifiant unique de lieu virtuelle. Optionnel : URI constituting a unique virtual location identifier. Optional--",
             "url":"--URL vers le lieu virtuelle : URL to the virtual place--"
    }],
-   "offers":{
+   "offers":[{
       "@type":"Offer",
       "availability":"http://schema.org/InStock",
       "url":"--URL vers la page d'achat de billets : URL to the ticket purchase page--",
       "validFrom":"--Date et heure du début de la disponibilité, au format ISO 8601, par exemple 2016-03-31T08:00:00+08:00 : Availability start date and time, in ISO 8601 format, for example 2016-03-31T08:00:00+08:00--",
       "price":"--Prix au format 9.99 : Price in format 9.99--",
       "priceCurrency":"CAD"
-   },
+   }],
    "mainEntityOfPage":[{
       "@type":"WebPage",
       "@id":"--URI constituant un identifiant unique de la page Web. Optionnel : URI constituting a unique identifier of the web page. Optional--",
@@ -76,5 +68,4 @@
       "url":"URL de la page Web : Webpage URL",
       "lastReviewed":"--Date et heure de la dernière révision : Date and time of last revision--"
    }]
-
 }
