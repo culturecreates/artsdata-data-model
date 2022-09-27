@@ -93,9 +93,11 @@ Once the template is used and filled with data, it should no longer contain doub
 
 ## Template _Event_
 
-The _Event_ template is intended to represent information about single events, ie a show having a single representation. A template for series of performances of the same show will soon be published.
+The _Event_ template is intended to represent information about single events, ie a show having a single representation. If your event has a series of performances of the same show, please *add* the _Event Series_ template to the _Event_ template.
 
-[See the template](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld)
+- [Event template](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld) - single events
+
+- [Addon for Event Series](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld) - addon to Event template to include a series of performances of the same show
 
 ## Details on key properties
 
