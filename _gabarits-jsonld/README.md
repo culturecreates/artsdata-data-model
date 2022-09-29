@@ -6,7 +6,7 @@ layout: gabarits-doc
 [Link to English](#english-version---structured-data-templates)
 ================================================================
 
-Version français - Gabarits de données structurées
+Version française - Gabarits de données structurées
 ============================================
 
 Gabarits de données structurées au format JSON-LD s'appuyant sur le vocabulaire Schema.org.
@@ -31,11 +31,13 @@ Une fois le gabarit utilisé et rempli avec des données, il ne devrait plus con
 "url": "https://placedesarts.com"
 ```
 
-## Gabarit _Event_
+## Gabarit
 
-Le gabarit _Event_ est destiné à représenter les informations à propos d'événements uniques, c'est-à-dire un spectacle ayant une seule représentation. Un gabarit pour les séries de représentations d'un même spectacle sera bientôt publié.
+Le gabarit _Événement_ est destiné à représenter les informations à propos d'événements uniques, c'est-à-dire un spectacle ayant une seule représentation. Si votre événement comporte une série de représentations d'un même spectacle, veuillez *ajouter* l'extension _Série d'événements_ au gabarit _Événement_ afin de décrire chaque représentation comme un ['subEvent'](https://schema.org/subEvent), puis changez le type de l'événement principal pour ['EventSeries'](https://schema.org/EventSeries).
 
-[Voir le gabarit](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld)
+- [Gabarit Événement](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld) : événement unique (avec une seule représentation).
+
+- [Extension pour les Séries d'événements](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld) : extension du gabarit _Événement_ pour décrire chaque représentation d'un même spectacle.
 
 ## Détails sur certaines propriétés clés
 
@@ -89,9 +91,9 @@ Once the template is used and filled with data, it should no longer contain doub
 "url": "https://placedesarts.com"
 ```
 
-## Template _Event_
+## Template
 
-The _Event_ template is intended to represent information about single events, ie a show having a single representation. If your event has a series of performances of the same show, please *add* the _Event Series_ template to the _Event_ template, and change the top _Event_ type to 'EventSeries'.
+The _Event_ template is intended to represent information about single events, ie a show having a single representation. If your event has a series of performances of the same show, please *add* the _Event Series_ template to the _Event_ template to describe each individual performance as a ['subEvent'](https://schema.org/subEvent), and then change the top _Event_ type to ['EventSeries'](https://schema.org/EventSeries).
 
 - [Event template](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld) - single events
 
