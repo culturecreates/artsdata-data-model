@@ -3,7 +3,7 @@ class_name: Event
 layout: class-doc
 ---
 
-Controlled Vocabulary v2
+Controlled Vocabulary v3
 ==========
 The Artsdata controlled vocabulary for event types in RDF using SKOS.
 
