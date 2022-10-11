@@ -9,7 +9,7 @@ The Artsdata controlled vocabulary for event types in RDF using SKOS.
 
 The categories can be viewed here [ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes).
 
-For example, an Event can be assigned the type [http://kg.artsdata.ca/resource/PerformingArtsEvent](http://kg.artsdata.ca/resource/CircusPerformance) showing narrower and broader concepts using SKOS.
+For example, an Event can be assigned the type [http://kg.artsdata.ca/resource/PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent) showing narrower and broader concepts using SKOS.
 
 This is a WIP - work in progress. For the latest changes and edits visit [Google Sheet](https://docs.google.com/spreadsheets/d/1ud_kVTE8C97ZMoe1uYGQ6rW_dodKqsbqiCutLLHO9jo/edit?usp=sharing) to view the pending (not yet published) version of the Artsdata controlled vocabulary and mapping to other vocabularies. 
 
