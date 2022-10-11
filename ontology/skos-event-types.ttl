@@ -11,11 +11,11 @@
 adr:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   skos:prefLabel "Controlled Vocabulary for event types" ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event types (types, categories, disciplines) in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars." ;
-  owl:versionInfo "3.0.1";
+  owl:versionInfo "3.1.0";
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2021-08-10"^^xsd:date ;
-  schema:dateModified "2022-08-01"^^xsd:date ;
+  schema:dateModified "2022-10-11"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example adr:PerformingArtsEvent ;
@@ -50,3 +50,4 @@ adr:OnDemand  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader adr:Pu
 adr:PostshowTalk  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader adr:Event; skos:prefLabel "Postshow Talk"@en ; skos:prefLabel "Conférence après-spectacle"@fr ; skos:definition "An informative talk with an audience after a performance"@en ; skos:definition "Une discussion informative avec un public après une représentation"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:Event  ] ; skos:inScheme adr:ArtsdataEventTypes   .
 adr:PreshowTalk  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader adr:Event; skos:prefLabel "Preshow Talk"@en ; skos:prefLabel "Conférence avant-spectacle"@fr ; skos:definition "An informative talk with an audience before a performance"@en ; skos:definition "Une discussion informative avec un public avant une représentation"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:Event  ] ; skos:inScheme adr:ArtsdataEventTypes   .
 adr:PerformanceArt  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader adr:VisualArtsEvent; skos:prefLabel "Performance Art"@en ; skos:prefLabel "Art performance"@fr ; skos:definition "An art form that combines visual art with dramatic performance."@en ; skos:definition "Une forme d'art qui combine l'art visuel avec la performance dramatique."@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:VisualArtsEvent  ] ; skos:inScheme adr:ArtsdataEventTypes   .
+adr:Conference  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader adr:Event; skos:prefLabel "Conference"@en ; skos:prefLabel "Conférence"@fr ; skos:definition "A live speaking activity such as a talk and or speech."@en ; skos:definition "Une activité de prise de parole en direct telle qu'une conférence ou un discours."@fr ; skos:Note "https://github.com/culturecreates/artsdata-data-model/issues/48" ; skos:inScheme adr:ArtsdataEventTypes   .
