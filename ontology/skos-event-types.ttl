@@ -19,7 +19,7 @@ adr:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example adr:PerformingArtsEvent ;
-  vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-categories.ttl> ; 
+  vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-types.ttl> ; 
   skos:hasTopConcept ado:Event . 
 
 adr:ChildrensEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader adr:Event; skos:prefLabel "Children's Event"@en ; skos:prefLabel "Événement pour enfants"@fr ; skos:definition "Event type for children."@en ; skos:definition "Type d'événement : Événement pour enfants"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:ChildrensEvent  ] ; skos:inScheme adr:ArtsdataEventTypes   .
