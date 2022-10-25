@@ -4,7 +4,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> . 
 @prefix spt: <http://www.scenepro.ca/taxonomie/#> . 
 
-spt:SceneProTaxonomy rdf:type  skos:ConceptScheme; skos:prefLabel "Taxonomie de scène Pro"@fr; vann:example spt:Cirque; owl:versionInfo "v1.0.0". 
+spt:SceneProTaxonomy rdf:type  skos:ConceptScheme; skos:prefLabel "Taxonomie de Scène Pro"@fr; vann:example spt:Cirque; owl:versionInfo "v1.0.0". 
 spt:Cirque rdf:type  skos:Concept; skos:topConceptOf spt:SceneProTaxonomy; skos:prefLabel "Cirque"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Musique rdf:type  skos:Concept; skos:topConceptOf spt:SceneProTaxonomy; skos:prefLabel "Musique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Danse rdf:type  skos:Concept; skos:topConceptOf spt:SceneProTaxonomy; skos:prefLabel "Danse"@fr ; skos:inScheme spt:SceneProTaxonomy. 
