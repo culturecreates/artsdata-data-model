@@ -44,22 +44,22 @@ spt:SmoothJazz rdf:type  skos:Concept; skos:broader spt:Jazz; skos:prefLabel "Sm
 spt:AcidJazz rdf:type  skos:Concept; skos:broader spt:Jazz; skos:prefLabel "Acid jazz"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Populaire rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Populaire"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:AvantGarde rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Avant-Garde"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Experimentale rdf:type  skos:Concept; skos:broader spt:AvantGarde; skos:prefLabel "Expérimentale"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Electroacoustique rdf:type  skos:Concept; skos:broader spt:AvantGarde; skos:prefLabel "Électroacoustique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Contemporaine rdf:type  skos:Concept; skos:broader spt:AvantGarde; skos:prefLabel "Contemporaine"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:AvantGardeExperimentale rdf:type  skos:Concept; skos:broader spt:AvantGarde; skos:prefLabel "Expérimentale"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:AvantGardeElectroacoustique rdf:type  skos:Concept; skos:broader spt:AvantGarde; skos:prefLabel "Électroacoustique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:AvantGardeContemporaine rdf:type  skos:Concept; skos:broader spt:AvantGarde; skos:prefLabel "Contemporaine"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Rock rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Rock"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:PopRock rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Pop-rock"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Indie rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Indie"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Trap rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Trap"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Opera rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Opéra"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Contemporaine rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Contemporaine"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Experimentale rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Expérimentale"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:MusiqueContemporaine rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Contemporaine"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:MusiqueExperimentale rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Expérimentale"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Electroacoustique rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Électroacoustique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Blues rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Blues"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:MusiqueBlues rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Blues"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Country rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Country"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:TraditionsDuMonde rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Traditions du monde"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Folk rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Folk"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:HipHop rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Hip-hop"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:MusiqueHipHop rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Hip-hop"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Latino rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Latino"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Metal rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Métal"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Punk rdf:type  skos:Concept; skos:broader spt:Musique; skos:prefLabel "Punk"@fr ; skos:inScheme spt:SceneProTaxonomy. 
@@ -94,7 +94,7 @@ spt:Claquettes rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; 
 spt:Moderne rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; skos:prefLabel "Moderne"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:HabiletesDiversifiees rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; skos:prefLabel "Habiletés diversifiées"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Lyrique rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; skos:prefLabel "Lyrique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Jazz rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; skos:prefLabel "Jazz"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:ContemporaineEtModerneJazz rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; skos:prefLabel "Jazz"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Experimentale rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; skos:prefLabel "Expérimentale"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Contemporaine rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; skos:prefLabel "Contemporaine"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:ContactImprovisation rdf:type  skos:Concept; skos:broader spt:ContemporaineEtModerne; skos:prefLabel "Contact-improvisation"@fr ; skos:inScheme spt:SceneProTaxonomy. 
@@ -144,7 +144,7 @@ spt:Reggaeton rdf:type  skos:Concept; skos:broader spt:Urbaine; skos:prefLabel "
 spt:Popping rdf:type  skos:Concept; skos:broader spt:Urbaine; skos:prefLabel "Popping"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Locking rdf:type  skos:Concept; skos:broader spt:Urbaine; skos:prefLabel "Locking"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:House rdf:type  skos:Concept; skos:broader spt:Urbaine; skos:prefLabel "House"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:UrbaineHiphop rdf:type  skos:Concept; skos:broader spt:Urbaine; skos:prefLabel "Hip hop"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:Hiphop rdf:type  skos:Concept; skos:broader spt:Urbaine; skos:prefLabel "Hip hop"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Dancehall rdf:type  skos:Concept; skos:broader spt:Urbaine; skos:prefLabel "Dancehall"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:BBoyingOrBGirling rdf:type  skos:Concept; skos:broader spt:Urbaine; skos:prefLabel "B-boying / B-girling"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Autochtone rdf:type  skos:Concept; skos:broader spt:Danse; skos:prefLabel "Autochtone"@fr ; skos:inScheme spt:SceneProTaxonomy. 
@@ -163,8 +163,8 @@ spt:Bollywood rdf:type  skos:Concept; skos:broader spt:Asiatique; skos:prefLabel
 spt:Bharatanatyam rdf:type  skos:Concept; skos:broader spt:Asiatique; skos:prefLabel "Bharatanatyam"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Bhangra rdf:type  skos:Concept; skos:broader spt:Asiatique; skos:prefLabel "Bhangra"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Ballet rdf:type  skos:Concept; skos:broader spt:Danse; skos:prefLabel "Ballet"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Classique rdf:type  skos:Concept; skos:broader spt:Ballet; skos:prefLabel "Classique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Jazz rdf:type  skos:Concept; skos:broader spt:Ballet; skos:prefLabel "Jazz"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:BalletClassique rdf:type  skos:Concept; skos:broader spt:Ballet; skos:prefLabel "Classique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:BalletJazz rdf:type  skos:Concept; skos:broader spt:Ballet; skos:prefLabel "Jazz"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Contemporain rdf:type  skos:Concept; skos:broader spt:Ballet; skos:prefLabel "Contemporain"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Sociale rdf:type  skos:Concept; skos:broader spt:Danse; skos:prefLabel "Sociale"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Valse rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Valse"@fr ; skos:inScheme spt:SceneProTaxonomy. 
@@ -177,14 +177,14 @@ spt:LindyHop rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "L
 spt:Jive rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Jive"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Hustle rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Hustle"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Foxtrot rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Foxtrot"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Dansesportive rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Danse sportive"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:DanseSportive rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Danse sportive"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Charleston rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Charleston"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:ChaChaCha rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Cha-cha-cha"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Blues rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Blues"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:DeSalon rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "De salon"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Balboa rdf:type  skos:Concept; skos:broader spt:Sociale; skos:prefLabel "Balboa"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Anticipation rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Anticipation"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Cabaret rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Cabaret"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:TheatreCabaret rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Cabaret"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Comedie rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Comédie"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:ComedieDramatique rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Comédie dramatique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:CommediaDellArte rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Commedia dell' arte"@fr ; skos:inScheme spt:SceneProTaxonomy. 
@@ -196,7 +196,7 @@ spt:DOmbres rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "D'
 spt:Drame rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Drame"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Experimental rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Expérimental"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Futuriste rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Futuriste"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:LecturePublique rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Lecture publique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:TheatreLecturePublique rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Lecture publique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Marionnettes rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Marionnettes"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:MarionnettesGeantes rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Marionnettes géantes"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Masque rdf:type  skos:Concept; skos:broader spt:Theatre; skos:prefLabel "Masqué"@fr ; skos:inScheme spt:SceneProTaxonomy. 
@@ -224,4 +224,4 @@ spt:Ventriloquie rdf:type  skos:Concept; skos:broader spt:Variete; skos:prefLabe
 spt:Conte rdf:type  skos:Concept; skos:broader spt:ArtDeLaParole; skos:prefLabel "Conte"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:LecturePublique rdf:type  skos:Concept; skos:broader spt:ArtDeLaParole; skos:prefLabel "Lecture publique"@fr ; skos:inScheme spt:SceneProTaxonomy. 
 spt:Poesie rdf:type  skos:Concept; skos:broader spt:ArtDeLaParole; skos:prefLabel "Poésie"@fr ; skos:inScheme spt:SceneProTaxonomy. 
-spt:Slam rdf:type  skos:Concept; skos:broader spt:ArtDeLaParole; skos:prefLabel "Slam"@fr ; skos:inScheme spt:SceneProTaxonomy. 
+spt:Slam rdf:type  skos:Concept; skos:broader spt:ArtDeLaParole; skos:prefLabel "Slam"@fr ; skos:inScheme spt:SceneProTaxonomy.  
