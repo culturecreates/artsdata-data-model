@@ -47,6 +47,10 @@ Saisissez des types supplémentaires correspondant au type particulier de l’é
 ### [_name_](https://schema.org/name)
 Saisissez le titre de l’événement.
 
+### [_url_](https://schema.org/url)
+Saisissez l'URL de la page web de l'événement sur le site de l'organisateur. 
+Dans le cas de séries de représentations, en plus de l'URL de la page web de la série, une URL distincte devrait être assignée à chaque représentation à l'aide de l'[Extension pour les Séries d'événements](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld). Si les différentes représentations ne disposent pas de leurs propres page web (en sus de la page de la série), il est tout de même possible de leur assigner des URL ajoutant des ancres # suivies de la date de chaque représentation.
+
 ### [_eventStatus_](https://schema.org/eventStatus)
 Indiquez si un événement est [programmé](https://schema.org/EventScheduled) (avec date), [reporté](https://schema.org/EventPostponed) (date à confirmer), [reprogrammé](https://schema.org/EventRescheduled) (avec nouvelle date) ou [annulé](https://schema.org/EventCancelled).
 
@@ -106,6 +110,10 @@ Enter additional types corresponding to the particular type of event. Refer to t
 
 ### [_name_](https://schema.org/name)
 Enter the title of the event.
+
+### [_url_](https://schema.org/url)
+Enter the URL of the event webpage on the organizer's website. 
+For series of performances, in addition to the URL of the series webpage, a distinct URL should be assigned to each performance using the [Add-on for Event Series](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld). If individual performances in the series do not have their own stand-alone webpages, unique URLs can be created by appending # anchors followed by the date of each performance.
 
 ### [_eventStatus_](https://schema.org/eventStatus)
 Indicate whether an event is [scheduled](https://schema.org/EventScheduled) (with date), [postponed](https://schema.org/EventPostponed) (date to be confirmed), [rescheduled](https://schema.org/EventRescheduled) (with new date) or [cancelled](https://schema.org/EventCancelled).
