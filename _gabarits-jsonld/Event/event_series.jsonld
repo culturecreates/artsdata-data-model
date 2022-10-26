@@ -4,6 +4,7 @@
     "@type":"Event",
     "startDate":"--Date et heure du début de l'événement, en format ISO 8601, par exemple 2022-03-15T08:30:00:00-05:00 : Date and time of the start of the event, in ISO 8601 format, for example 2022-03-15T08:30:00:00-05:00--",
     "name":"--Titre de l'événement : Title of event--",
+    "url":"--URL de la page Web de l'événement avec la date et heure : URL of event webpage with date and time--",
     "location": {
       "@id":"--URI constituant un identifiant unique du lieu. : URI constituting a unique identifier of the place.--"
     }
