@@ -24,7 +24,8 @@ Artsdata Preview Service provides embeddable HTML previews of entities (for exam
 
 **NEW 15-SEP-2021**: The Artsdata Events Query API provides an easy way to get a list of events in json or json-ld. The "frame" parameter enables the user to select different output properties and structures. The "format" parameter selects between json and json-ld. And the "source" parameter selects the graph or calatog of graphs. Documentation WIP.
 
-Example: List of upcoming events from the OSM website in Montreal: http://api.artsdata.ca/events?format=json&frame=event_bn&source=http://kg.artsdata.ca/culture-creates/footlight/osm-ca
+Example: List of upcoming events from the OSM website in Montreal: 
+http://api.artsdata.ca/events?format=json&frame=event_bn&source=http://kg.artsdata.ca/culture-creates/capacitor/Osm
 
 ### Source parameter
 Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI.
