@@ -3,9 +3,9 @@ class_name: Event
 layout: class-doc
 ---
 
-Event Types - Controlled Vocabulary v3
+Event Types
 ==========
-The Artsdata controlled vocabulary for event types in RDF using SKOS.
+The Artsdata controlled vocabulary for event types.
 
 The categories can be viewed here [ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes).
 
