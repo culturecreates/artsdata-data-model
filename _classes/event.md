@@ -3,7 +3,7 @@ class_name: Event
 layout: class-doc
 ---
 
-Controlled Vocabulary v3
+Event Types - Controlled Vocabulary v3
 ==========
 The Artsdata controlled vocabulary for event types in RDF using SKOS.
 
@@ -32,4 +32,6 @@ To give it a try:
 5. Enter the name of an event type, such as Circus
 6. Click the Reconcile button
 
+### Dereferencing
 
+Each URI can be dereferenced with the common RDF formats or html. To cache all of the statements of the controlled vocabulary into your own graph, you can download the RDF artsdata graph https://db.artsdata.ca/repositories/artsdata/statements?context=%3Chttp://kg.artsdata.ca/culture-creates/ontology/artsdata-event-types%3E.
