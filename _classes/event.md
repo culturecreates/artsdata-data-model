@@ -21,6 +21,8 @@ The Artsdata Event Controlled Vocabulary is used along with the schema.org Event
 
 For example: `ex:Event1 a schema:Event ; schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .`
 
+### Reconciling
+
 You can reconcile event types using the Artsdata Reconciliation Service. 
 <img width="1280" alt="Screen Shot 2022-08-14 at 9 53 10 PM" src="https://user-images.githubusercontent.com/419491/184564852-ed5baeb8-952d-43c7-b8a1-b06b6ba65152.png">
 
