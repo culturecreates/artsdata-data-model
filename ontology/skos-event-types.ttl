@@ -20,7 +20,7 @@ adr:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example adr:PerformingArtsEvent ;
   vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-types.ttl> ; 
-  skos:hasTopConcept ado:Event . 
+  skos:hasTopConcept adr:Event . 
 
 adr:ChildrensEvent  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader adr:Event; skos:prefLabel "Children's Event"@en ; skos:prefLabel "Événement pour enfants"@fr ; skos:definition "Event type for children."@en ; skos:definition "Type d'événement : Événement pour enfants"@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:ChildrensEvent  ] ; skos:inScheme adr:ArtsdataEventTypes   .
 adr:Event  rdf:type owl:NamedIndividual ,  skos:Concept ; skos:broader adr:Event; skos:prefLabel "Event"@en ; skos:prefLabel "Événement"@fr ; skos:definition "An event is a happening that occurs at a certain time and location. Examples include and are not limited to a: performance, concert, conference, festival, exhibition and/or social gathering."@en ; skos:definition "Un événement est un événement qui se produit à un certain moment et à un certain endroit. Les exemples incluent, sans s'y limiter : une performance, un concert, une conférence, un festival, une exposition et/ou un événement social."@fr ; skos:Note "https://github.com/culturecreates/artsdata-data-model/issues/16" ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:Event  ] ; skos:inScheme adr:ArtsdataEventTypes   .
