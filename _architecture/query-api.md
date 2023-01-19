@@ -3,7 +3,7 @@ title: Query API
 layout: architecture-doc
 ---
 
-The Query API offers a collection of APIs that acts as a gateway between the outside world and the Artsdata Triplestore.
+An API enabling direct consumption of data in the Artsdata triplestore.
 
 ## Reconciliation Service
 
