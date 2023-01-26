@@ -23,6 +23,25 @@ Conventions for naming things will be added here as needed.
 * http://example.com/extra-words/in-path#ClassName or exwp:ClassName
 
 # Graph Names
+
+### Reserved
+The following graph names are reserved:
+* http://kg.artsdata.ca/minted/
+* http://kg.artsdata.ca/ontology/
+* http://kg.artsdata.ca/databus
+* http://kg.artdata.ca/graph-ranking
+
+### Artsdata Databus
+All data must be imported using the Artsdata Databus. When data in imported using the databus, the graphs are automatically names as follows:
+* http://kg.artsdata.ca/[account]/[group]/[artifact]/[version]
+
+Parameters:
+* account is a free Artsdata account setup for a specific user to upload data
+* group is the general grouping of articats usually around a project or software that produces datasets
+* artifact is the dataset name
+* version is the version of the dataset
+
+
 ### Use
 * [Valid IRIs](https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph)
 * **For the path** after the last '/' (front slash), use lowercase letters seperated by dash "-" 
