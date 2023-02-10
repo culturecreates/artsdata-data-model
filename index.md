@@ -15,7 +15,7 @@ Les classes et propriétés utilisées dans Artsdata représentent une couche «
 
 Voici les Classes utilisées dans Artsdata.
 
-![Image](images/artsdata-event-model.png)
+![Image](images/artsdata_event_model-2.png)
 
 [[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/9450de6c42ed8ceed27f0e4374d4e986/raw/0f15244c4f04486e237a8138e9132ed1aae96a66/artsdata_event_model)]
 
@@ -95,7 +95,7 @@ The classes and properties used in Artsdata represent a “thin” layer of data
 
 Here are the main Classes used in Artsdata.
 
-![Image](images/artsdata-event-model.png)
+![Image](images/artsdata_event_model-2.png)
 
 [[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/9450de6c42ed8ceed27f0e4374d4e986/raw/0f15244c4f04486e237a8138e9132ed1aae96a66/artsdata_event_model)]
 
