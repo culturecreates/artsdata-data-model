@@ -11,7 +11,7 @@ To use the Artsdata Organization Types please use the schema:additionalType prop
 
 You can download the complete controlled vocabulary with this [download link](https://db.artsdata.ca/repositories/artsdata/statements?context=%3Chttp://kg.artsdata.ca/culture-creates/ontology/artsdata-organization-types%3E).
 
-WIP - here is the Google [spreadsheet](https://docs.google.com/spreadsheets/d/1z_-7oVZJ1zu61nXa7HzQIHQeYugRGewBSM2VPgfC_NA/edit#gid=0)
+WIP - here is the Google [spreadsheet](https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit#gid=1933025380)
 
 ## Adding organizations to Artsdata.ca
 
