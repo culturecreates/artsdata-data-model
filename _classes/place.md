@@ -3,6 +3,12 @@ class_name: Place
 layout: class-doc
 ---
 
+Types of Places 
+====
+The following types of places have been designed by the LDFI project led by CAPACOA. 
+
+https://m.wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues/Typology
+
 Proposed additions
 =========
 
