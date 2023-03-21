@@ -9,6 +9,10 @@ The following types of places have been designed by the LDFI project led by CAPA
 
 https://m.wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues/Typology
 
+Artsdata highly recommends using the Wikidata type URI as schema:additionalType. 
+
+Artsdata also takes advantage of the schema:placeContainedIn to create links between rooms/halls and buildings. Also between buildings and encompassing places such as city. This automatically situated event venues in a city, region, province and country. Linking increases the ability for reconciling places when only a name and postal address is available. 
+
 Proposed additions
 =========
 
