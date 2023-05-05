@@ -40,4 +40,4 @@ Social media URLs in schema:sameAs and identifiers are automatically mapped to W
 * Twitter username ([wdt:P2002](http://www.wikidata.org/entity/P2002))
 * Instagram username ([wdt:P2003](http://www.wikidata.org/entity/P2003))
 * Canadian business number ([wdt:P8860](http://www.wikidata.org/entity/P8860))
-* Numéoro d'entreprise du Québec ([wdt:P10503](http://www.wikidata.org/entity/P10503))
+* Numéro d'entreprise du Québec ([wdt:P10503](http://www.wikidata.org/entity/P10503))
