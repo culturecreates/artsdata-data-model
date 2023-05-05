@@ -5,9 +5,11 @@ layout: class-doc
 
 ## Controlled vocabulary
 
-[Artsdata Organization Types](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes) is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language.  The controlled vocabulary is implemented in SKOS and mapped to Wikidata classes using intermediary SKOS Concepts with skos:closeMatch. 
+[Artsdata Organization Types](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes) is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language. In this vocabulary, the parent concept "organization" is defined as "A structured group of people, united by a common purpose - this includes both groups that are formally structured as a legal body (e.g., a not-for-profit corporation) as well as those that are informally structured, but otherwise act together."
 
-To use the Artsdata Organization Types please use the schema:additionalType propery on a schema:Organization class.
+The controlled vocabulary is implemented in SKOS and mapped to Wikidata classes using intermediary SKOS Concepts with skos:closeMatch. 
+
+To use the Artsdata Organization Types please use the schema:additionalType property on a schema:Organization class.
 
 WIP - here is the Google [spreadsheet](https://docs.google.com/spreadsheets/d/1z_-7oVZJ1zu61nXa7HzQIHQeYugRGewBSM2VPgfC_NA/edit#gid=0)
 
@@ -38,3 +40,4 @@ Social media URLs in schema:sameAs and identifiers are automatically mapped to W
 * Twitter username ([wdt:P2002](http://www.wikidata.org/entity/P2002))
 * Instagram username ([wdt:P2003](http://www.wikidata.org/entity/P2003))
 * Canadian business number ([wdt:P8860](http://www.wikidata.org/entity/P8860))
+* Numéoro d'entreprise du Québec ([wdt:P10503](http://www.wikidata.org/entity/P10503))
