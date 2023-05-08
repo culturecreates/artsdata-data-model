@@ -8,11 +8,12 @@
 @prefix schema:  <http://schema.org/> .
 @prefix adr:  <http://kg.artsdata.ca/resource/> .
 @prefix ado:  <http://kg.artsdata.ca/ontology/> .
+@prefix spt: <http://scenepro.ca/taxonomies/disciplines-asq#> . 
 
 adr:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   skos:prefLabel "Controlled Vocabulary for event types" ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event types (types, categories, disciplines) in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars." ;
-  owl:versionInfo "3.3.0";
+  owl:versionInfo "3.3.1";
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2021-08-10"^^xsd:date ;
