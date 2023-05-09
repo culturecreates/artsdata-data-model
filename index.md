@@ -152,6 +152,10 @@ Artsdata.ca loads LOD from Wikidata and DBpedia in order to cache it for perform
 
 [Conventions]({{ base }}/naming_conventions.html) on how to name things when in doubt.
 
+### Related Documents
+
+1. [LDF/ANL Recommended identifiers](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit#gid=0): spreadsheet with guidelines on using identifiers. This document may eventually be converted into an Artsdata official recommendation.
+
 ### Support or Contact
 
 [Contact support](mailto:support@culturecreates.com) and we’ll help you sort it out.
