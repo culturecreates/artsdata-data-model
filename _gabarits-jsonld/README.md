@@ -3,11 +3,6 @@ title: Gabarits de données structurées - Structured Data Templates
 layout: gabarits-doc
 ---
 
-[![en](https://img.shields.io/badge/lang-en-blue.svg)]({{ base }}/artsdata-data-model/gabarits-jsonld/README.html)
-[![fr](https://img.shields.io/badge/lang-fr-green.svg)]({{ base }}/artsdata-data-model/gabarits-jsonld/README.fr.html)
-
-
-
 Structured Data Templates
 =====================================
 
