@@ -2,8 +2,9 @@
 title: Gabarits de données structurées - Structured Data Templates
 layout: gabarits-doc
 ---
-[![en](https://img.shields.io/badge/lang-en-blue.svg)]({{ base }}/gabarits-jsonld/README.html)
-[![fr](https://img.shields.io/badge/lang-fr-green.svg)]({{ base }}/gabarits-jsonld/README.fr.html)
+
+[![en](https://img.shields.io/badge/lang-en-blue.svg)]({{ base }}/artsdata-data-model/gabarits-jsonld/README.html)
+[![fr](https://img.shields.io/badge/lang-fr-green.svg)]({{ base }}/artsdata-data-model/gabarits-jsonld/README.fr.html)
 
 
 [Link to English Version](#english-version---structured-data-templates)
