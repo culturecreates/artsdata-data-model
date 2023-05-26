@@ -47,7 +47,7 @@ Saisissez des types supplémentaires correspondant au type particulier de l’é
 ### [_name_](https://schema.org/name)
 Saisissez le titre de l’événement.
 
-### @id
+### _@id_
 Saisissez une URL canonique pour cet événement, c'est-à-dire une URI (Uniform Resource Identifier) constituant un identifiant unique pour cet événement. L'URI de l'événement devrait idéalement être différente de l'URL de la page web de l'événement, puisqu'il s'agit de deux [_choses_](https://schema.org/Thing) (ou _entités_) distinctes dans le contexte des données structurées Schema.
 
 > Une façon simple de générer une URI distincte pour chaque événement consiste à ajouter à la suite de l'URL de la page web une ancre ***#*** suivie d'une chaîne de caractère servant d'identifiant unique d'événement. Voici un exemple fictif : `https://diffuseurdespectacles.ca/evenements/nomduspectacle/#1324`. Dans cet exemple, l'URL de la page web est `https://diffuseurdespectacles.ca/evenements/nomduspectacle/`, alors que la chaîne de caractères `1324` représenterait l'identifiant unique de l'événement. N'importe quelle chaîne de caractères peut convenir du moment où elle constitue une ancre unique à l'intérieur de la page web de l'événement. Ce pourrait être un identifiant local propre au CMS du site web et désignant l'événement dans la base de données du système. Ce pourrait aussi être la date et l'heure de la représentation. Il n'est pas nécessaire qu'un point d'ancrage soit réellement présent dans le corps de la page web : du moment où le symbole dièse et une chaîne de caractères unique est ajoutée à l'URL de la page web, cela satisfait à l'exigence d'une URL canonique dans le contexte de Schema.org.
