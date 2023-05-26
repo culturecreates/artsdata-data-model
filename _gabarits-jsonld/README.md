@@ -1,9 +1,9 @@
-[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/README.md)
-[![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/README.fr.md)
 ---
 title: Gabarits de données structurées - Structured Data Templates
 layout: gabarits-doc
 ---
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/README.md)
+[![fr](https://img.shields.io/badge/lang-fr-green.svg)](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/README.fr.md)
 
 [Link to English Version](#english-version---structured-data-templates)
 ================================================================
