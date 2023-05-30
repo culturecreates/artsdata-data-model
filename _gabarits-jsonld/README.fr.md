@@ -40,20 +40,20 @@ Le gabarit _Événement_ est destiné à représenter les informations à propos
 
 ## Détails sur certaines propriétés clés
 
-### [_additionalType_](https://schema.org/additionalType)
-Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au la [vocabulaire contrôlé Artsdata](http://kg.artsdata.ca/resource/ArtsdataEventTypes) pour identifier le ou les types les mieux appropriés parmi tous les types d'événements des arts de la scène. Vous pouvez ajouter autant de propriétés _additionalType_ que nécessaire pour bien décrire l'événement. En guise de valeur par défaut, nous recommandons le type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), qui désigne « une œuvre des arts de la scène exécutée pour un public ».
-
-### [_name_](https://schema.org/name)
-Saisissez le titre de l’événement.
-
 ### _@id_
 Saisissez une URI (Uniform Resource Identifier) constituant un identifiant unique pour cet événement à l'intérieur du domaine du site web. L'URI de l'événement doit être différente de l'URL de la page web de l'événement, puisqu'il s'agit de deux [_choses_](https://schema.org/Thing) (ou _entités_) distinctes dans le contexte des données structurées Schema.org. 
 
 Dans le cas d'une série de représentations d'un même spectacle, en plus de l'URI de la série, une URI distincte devrait être assignée à chaque représentation à l'aide de l'[Extension pour les Séries d'événements](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld). Assurez-vous qu'aucun sous-événement ne se voit assigner la même l'URI que l'objet de type _EventSeries_.
 
-Si vous n'êtes pas en mesure d'attribuer une URI pérenne à chaque événement, incluant chaque représentation d'une série de représentations, alors il est préférable de ne pas utiliser la propriété _@id_.[^2]
+Si vous n'êtes pas en mesure d'attribuer une URI à chaque événement, incluant chaque représentation d'une série de représentations, alors il est préférable de ne pas utiliser la propriété _@id_.[^2]
 
-[^2]:Il est possible de générer une URI fonctionnelle en ajoutant à la suite de l'URL de la page web un carré (le symbole `#`) suivie d'une chaîne de caractère faisant office d'identifiant unique d'événement (on appelle cette chaîne de caractères un « [identificateur de fragment](https://fr.wikipedia.org/wiki/Identificateur_de_fragment) »). Voici un exemple fictif : `https://diffuseurdespectacles.ca/evenements/nomduspectacle/#e1324`. Dans cet exemple, l'URL de la page web est `https://diffuseurdespectacles.ca/evenements/nomduspectacle/`, alors que la chaîne de caractères `e1324` représente l'identifiant unique d'une représentation du spectacle dans le calendrier du site web. N'importe quelle chaîne de caractères peut convenir du moment où elle est unique à l'intérieur du domaine du site web. Ce pourrait être un identifiant local propre au CMS du site web et désignant la représentation dans la base de données du système. Ce pourrait aussi être la date et l'heure de la représentation. Il n'est pas nécessaire qu'un point d'ancrage soit réellement présent dans le corps de la page web : du moment où le carré et une chaîne de caractères unique est ajoutée à l'URL de la page web, cela satisfait à l'exigence d'une URL canonique dans le contexte de Schema.org.
+[^2]:Il est possible de générer une URI fonctionnelle en ajoutant à la suite de l'URL de la page web un carré (le symbole `#`) suivie d'une chaîne de caractère faisant office d'identifiant unique d'événement (on appelle cette chaîne de caractères un « [identificateur de fragment](https://fr.wikipedia.org/wiki/Identificateur_de_fragment) »). Voici un exemple fictif : `https://diffuseurdespectacles.ca/evenements/nomduspectacle/#e1324`. Dans cet exemple, l'URL de la page web est `https://diffuseurdespectacles.ca/evenements/nomduspectacle/`, alors que la chaîne de caractères `e1324` représente l'identifiant unique d'une représentation du spectacle dans le calendrier du site web. N'importe quelle chaîne de caractères peut convenir du moment où elle est unique à l'intérieur du domaine du site web. Ce pourrait être un identifiant local propre au CMS du site web et désignant la représentation dans la base de données du système. Ce pourrait aussi être la date et l'heure de la représentation. Il n'est pas nécessaire qu'un point d'ancrage soit réellement présent dans le corps de la page web : du moment où le carré et une chaîne de caractères unique sont ajoutés à l'URL de la page web, cela satisfait à l'exigence d'une URL canonique dans le contexte de Schema.org.
+
+### [_additionalType_](https://schema.org/additionalType)
+Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au la [vocabulaire contrôlé Artsdata](http://kg.artsdata.ca/resource/ArtsdataEventTypes) pour identifier le ou les types les mieux appropriés parmi tous les types d'événements des arts de la scène. Vous pouvez ajouter autant de propriétés _additionalType_ que nécessaire pour bien décrire l'événement. En guise de valeur par défaut, nous recommandons le type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), qui désigne « une œuvre des arts de la scène exécutée pour un public ».
+
+### [_name_](https://schema.org/name)
+Saisissez le titre de l’événement.
 
 ### [_url_](https://schema.org/url)
 Saisissez l'URL canonique désignant la page web de l'événement sur le site de l'organisateur. 
