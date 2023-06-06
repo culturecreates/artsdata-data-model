@@ -3,10 +3,6 @@ title: Search API
 layout: architecture-doc
 ---
 
-A Search API enabling direct consumption of data in the Artsdata triplestore.
-
-## Search API
-
 A RESTful API to query anything in Artsdata. 
 
 ### Examples
