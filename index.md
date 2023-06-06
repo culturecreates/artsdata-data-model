@@ -111,6 +111,9 @@ Here are the main Classes used in Artsdata.
 {% endfor %}
 </ol>
 
+### Templates
+[Structured data templates]({{ base }}/gabarits-jsonld/README.html)
+
 ### SHACL Validation Reports
 
 [SHACL]({{ base }}/shacl_reports.html) shapes are used to validate data before importing.
