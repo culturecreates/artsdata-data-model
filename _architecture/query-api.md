@@ -1,28 +1,34 @@
 ---
-title: Query API
+title: Search API
 layout: architecture-doc
 ---
 
-An API enabling direct consumption of data in the Artsdata triplestore.
+A Search API enabling direct consumption of data in the Artsdata triplestore.
 
-## Reconciliation Service
+## Query API
 
-The Artsdata.ca Reconciliation Service can be used to link entites to Artsdata.ca IDs. Supported entites include People, Organizations, and Places. In the future Performing Arts Productions and Works will be added. This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). This API can be consumed by tools like [OpenRefine](https://openrefine.org) to add Artsdata.ca IDs (for example artists) to enrich an existing spreadsheet.
+A RESTful API to query anything in Artsdata. 
 
-API documentation: [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/)
+### Examples
 
-Reconciliation service endpoint: https://api.artsdata.ca/recon
+#### Place: Cabaret La Basoche
+http://api.artsdata.ca/query?adid=K5-7&format=json&frame=ranked_place_footlight&sparql=ranked_place_footlight
 
-Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! Or view this [screen recording](https://youtu.be/VkOncek9iuY).
+#### Person: Étienne Coppée
+http://api.artsdata.ca/query?adid=K5-21&format=json&frame=ranked_org_person_footlight&sparql=ranked_org_person_footlight
 
-## Preview Service
+#### Organization: Société de musique de chambre de Gatineau
+https://api.artsdata.ca/query?adid=K5-3&format=json&frame=ranked_org_person_footlight&sparql=ranked_org_person_footlight
 
-Artsdata Preview Service provides embeddable HTML previews of entities (for example artists) directly in a user interface. This API is consumed along with the Reconciliation Service, by tools like [OpenRefine](https://openrefine.org) where you can roll-over Artsdata.ca IDs (for example artists) and get a preview of information (photo, occupation, nationality, ISNI) to help with disambiguation. Documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/).
+#### Events: co-motion
+http://api.artsdata.ca/query?limit=100&sparql=query_footlight_events&frame=event_footlight&format=json&source=http://kg.artsdata.ca/culture-creates/footlight/co-motion-ca
 
 
-## Events Query API BETA
 
-**NEW 15-SEP-2021**: The Artsdata Events Query API provides an easy way to get a list of events in json or json-ld. The "frame" parameter enables the user to select different output properties and structures. The "format" parameter selects between json and json-ld. And the "source" parameter selects the graph or calatog of graphs. Documentation WIP.
+
+## Event Search API BETA
+
+The Event Search API is an alternate endpoint to the general search API and provides an easy way to get a list of events in json or json-ld. The "frame" parameter enables the user to select different output properties and structures. The "format" parameter selects between json and json-ld. And the "source" parameter selects the graph or calatog of graphs. Documentation WIP.
 
 Example: List of upcoming events from the OSM website in Montreal: 
 http://api.artsdata.ca/events?format=json&frame=event_bn&source=http://kg.artsdata.ca/culture-creates/capacitor/Osm
@@ -36,11 +42,11 @@ It is possible to create your own catalog of datasets as well.
 
 ### Events demo
 
-**NEW 12-NOV-2020** Here is a [demo website in Github](https://github.com/culturecreates/artsdata-demo-upcoming-events-api) that lists upcoming events in Quebec using the Artsdata API.
+Here is a [demo website in Github](https://github.com/culturecreates/artsdata-demo-upcoming-events-api) that lists upcoming events in Quebec using the Artsdata API.
 
 
 ## Other APIs coming soon
-The main goal of the Query API is to provide easy access to all data in Artsdata.ca. It offers SPARQL and traditional RESTful GETs (GraphQL in the works).
+The main goal of the Search API is to provide easy access to all data in Artsdata.ca. It offers SPARQL and traditional RESTful GETs.
 Responses can be in JSON or JSON-LD.  A user account enables persisted configurations for ranking graphs or settings for an iCalendar feed. 
 
 Documentation coming.
