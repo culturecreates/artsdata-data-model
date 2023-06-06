@@ -3,9 +3,12 @@ title: Search API
 layout: architecture-doc
 ---
 
-A RESTful API to query anything in Artsdata. 
+A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies...
 
 ### Examples
+
+#### Any Artsdata ID: K2-197
+https://api.artsdata.ca/query?adid=K2-197&format=json&sparql=query_adid
 
 #### Place: Cabaret La Basoche
 http://api.artsdata.ca/query?adid=K5-7&format=json&frame=ranked_place_footlight&sparql=ranked_place_footlight
@@ -24,7 +27,7 @@ http://api.artsdata.ca/query?limit=100&sparql=query_footlight_events&frame=event
 
 ## Event Search API BETA
 
-The Event Search API is an alternate endpoint to the general search API and provides an easy way to get a list of events in json or json-ld. The "frame" parameter enables the user to select different output properties and structures. The "format" parameter selects between json and json-ld. And the "source" parameter selects the graph or calatog of graphs. Documentation WIP.
+The Event Search API is a dedicated endpoint for events and provides an easy way to get a list of events in json or json-ld. The "frame" parameter enables the user to select different output properties and structures. The "format" parameter selects between json and json-ld. And the "source" parameter selects the graph or calatog of graphs. Documentation WIP.
 
 Example: List of upcoming events from the OSM website in Montreal: 
 http://api.artsdata.ca/events?format=json&frame=event_bn&source=http://kg.artsdata.ca/culture-creates/capacitor/Osm
