@@ -1,5 +1,5 @@
 ---
-title: ID Minting API
+title: Minting API
 layout: architecture-doc
 ---
 

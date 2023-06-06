@@ -5,7 +5,7 @@ layout: architecture-doc
 
 A Search API enabling direct consumption of data in the Artsdata triplestore.
 
-## Query API
+## Search API
 
 A RESTful API to query anything in Artsdata. 
 
@@ -20,7 +20,7 @@ http://api.artsdata.ca/query?adid=K5-21&format=json&frame=ranked_org_person_foot
 #### Organization: Société de musique de chambre de Gatineau
 https://api.artsdata.ca/query?adid=K5-3&format=json&frame=ranked_org_person_footlight&sparql=ranked_org_person_footlight
 
-#### Events: co-motion
+#### Events: Co-motion
 http://api.artsdata.ca/query?limit=100&sparql=query_footlight_events&frame=event_footlight&format=json&source=http://kg.artsdata.ca/culture-creates/footlight/co-motion-ca
 
 
