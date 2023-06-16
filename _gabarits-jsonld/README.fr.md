@@ -96,7 +96,7 @@ Voici un exemple de code JSON-LD imbriquant une entité personne décrite avec l
    "@id":"https://somesite.ca/events/elisapie-isaac#2023-06-16T20:00:00",
    "name":"The Ballad of the Runaway Girl",
    "startDate":"2023-06-16T20:00:00-04:00",
-   <!--...-->
+   <!-- ... -->
    "performer":{
       "@type":"Person",
       "name":"Elisapie",
@@ -107,6 +107,6 @@ Voici un exemple de code JSON-LD imbriquant une entité personne décrite avec l
          "http://www.wikidata.org/entity/Q596774",
          "https://music.apple.com/artist/440813872"]
    }],
-   <!--...-->
+   <!-- ... -->
 }
 ```
