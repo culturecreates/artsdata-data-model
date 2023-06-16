@@ -58,7 +58,7 @@ Saisissez le titre de l’événement.
 ### [_url_](https://schema.org/url)
 Saisissez l'URL canonique désignant la page web de l'événement sur le site de l'organisateur. 
 
-Dans le cas de séries de représentations, saisissez l'URL de la page web de chaque représentation si elle existe. Sinon saisissez, l'URL de la page web de la série de représentation.
+Dans le cas de séries de représentations, saisissez l'URL de la page web de chaque représentation si elle existe. Sinon saisissez, l'URL de la page web de la série de représentations.
 
 ### [_eventStatus_](https://schema.org/eventStatus)
 Indiquez si un événement est [programmé](https://schema.org/EventScheduled) (avec date), [reporté](https://schema.org/EventPostponed) (date à confirmer), [reprogrammé](https://schema.org/EventRescheduled) (avec nouvelle date) ou [annulé](https://schema.org/EventCancelled).
@@ -83,4 +83,30 @@ Saisissez les URIs d'_identifiants passerelles_[^3] permettant d'identifier sans
 
 [^3]: Un __« identifiant passerelle »__ est un identifiant pérenne (c.-à-d. exprimé sous forme d'une URI permanente et résolvable) globalement unique qui est utilisé par plusieurs systèmes d'informations et qui facilite ainsi la réconciliation des entités (et, par le fait même, la circulation des données) entre ces systèmes. Les identifiants ISNI, Wikidata et Artsdata sont particulièrement pertinents dans le domaine du spectacle. Les URIs de ces identifiants sont résolvables vers des pages web et vers des métadonnées descriptives accessibles tant aux humains qu'aux machines. Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
 
-Saississez toujours l'URI complète de l'identifiant (plutôt que de saisir uniquement l'identifiant lui-même). Par exemple, pour l'identifiant Wikidata `Q596774` correspond l'URI http://www.wikidata.org/entity/Q596774 (prenez note que le format de l'URI diffère de l'URL de la page). Tant Wikidata, qu'ISNI et Artsdata ont des interfaces permettant une recherche par nom d'entité. La méthode pour récupérer l'URI associée à l'entité recherchée diffère cependant un peu dans chaque interface. Pour Wikidata, cliquez à droite sur le lien « Concept URI » dans le menu de gauche (sous la rubrique « Tools »), puis cliquez sur « copier l'adresse du lien ». Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing). 
+Saississez toujours l'URI complète de l'identifiant (plutôt que de saisir uniquement l'identifiant lui-même). Par exemple, pour l'identifiant Wikidata `Q596774` correspond l'URI http://www.wikidata.org/entity/Q596774 (prenez note que le format de l'URI diffère de l'URL de la page). Tant Wikidata, qu'ISNI et Artsdata ont des interfaces permettant une recherche par nom d'entité. La méthode pour récupérer l'URI associée à l'entité recherchée diffère cependant un peu dans chaque interface. Pour Wikidata, cliquez à droite sur le lien « Concept URI » dans le menu de gauche (sous la rubrique « Tools »), puis cliquez sur « copier l'adresse du lien ». Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
+
+La propriété sameAs peut aussi être employée afin de saisir les URLs des comptes de médias sociaux associés à une entité.
+
+Voici un exemple de code JSON-LD imbriquant une entité personne décrite avec la propriété sameAs. Prenez note que, pour des fins de concisions, plusieurs propriétés pertinentes ont été exclues de cet exemple.
+
+```
+{
+   "@context":"http://schema.org/",
+   "@type":"Event",
+   "@id":"https://somesite.ca/events/elisapie-isaac#2023-06-16T20:00:00",
+   "name":"The Ballad of the Runaway Girl",
+   "startDate":"2023-06-16T20:00:00-04:00",
+   <!--...-->
+   "performer":{
+      "@type":"Person",
+      "name":"Elisapie",
+      "url":"https://www.elisapie.com",
+      "sameAs":[
+         "http://kg.artsdata.ca/resource/K12-438",
+         "https://isni.org/isni/0000000002492038",
+         "http://www.wikidata.org/entity/Q596774",
+         "https://music.apple.com/artist/440813872"]
+   }],
+   <!--...-->
+}
+```
