@@ -87,7 +87,7 @@ Saississez toujours l'URI complète de l'identifiant (plutôt que de saisir uniq
 
 La propriété sameAs peut aussi être employée afin de saisir les URLs des comptes de médias sociaux associés à une entité.
 
-Voici un exemple de code JSON-LD imbriquant une entité personne décrite avec la propriété sameAs. Prenez note que, pour des fins de concisions, plusieurs propriétés pertinentes ont été exclues de cet exemple.
+Voici un exemple de code JSON-LD imbriquant une entité de @type [Person](https://schema.org/Person)personne décrite avec la propriété _sameAs_. Prenez note que, pour des fins de concisions, plusieurs propriétés pertinentes ont été exclues de cet exemple.
 
 ```
 {
