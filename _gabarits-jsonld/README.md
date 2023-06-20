@@ -83,3 +83,29 @@ Enter the URIs of _bridge identifiers_[^3] that identify without any ambiguity t
 [^3]: A __bridge identifier__ is a globally unique _persistent identifier_ (i.e., an identifier expressed as a permanent and dereferenceable URI) that is used by several information systems and can thus help reconcile entities across systems. Bridge identifier therefore play a crucial role in enabling data sharing across systems. The ISNI, the Wikidata ID and the Artsdata ID are relevant bridge identifiers in the performing arts domain. The URIs of these bridge identifiers can resolve to either a web page (readable by humans) or RDF data (readable by machines) that provide descriptive information about the entity. For more information, consult these [Recommendations Regarding Unique Persistent Identifiers in the Performing Arts](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
 
 Always enter bridge identifiers in full URI format (rather than entering just the identifier's string). For example, for the Wikidata ID `Q596774`, the matching URI is http://www.wikidata.org/entity/Q596774 (note that the URI format is different from the web page URL format). ISNI, Wikidata and Artsdata all have their own user interface with their respective processes for searching an entity and retrieving its URI. Wikidata is particularly intricate in this regard: in order to retrieve an item's URI, the user must right click on "Concept URI" in the left menu (within the "Tools" section), and then select "Copy link address". For more information, consult these [Recommendations Regarding Unique Persistent Identifiers in the Performing Arts](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
+
+The _sameAs_ property can also be used to list social media and streaming platform accounts associated with an entity.
+
+Here is a JSON-LD example of a nested @type [Person](https://schema.org/Person)Person entity described with the _sameAs_ property. Please note that, for consision's sake, several relevant properties were excluded from this example.
+
+```
+{
+   "@context":"http://schema.org/",
+   "@type":"Event",
+   "@id":"https://somesite.ca/events/elisapie-isaac#2023-06-16T20:00:00",
+   "name":"The Ballad of the Runaway Girl",
+   "startDate":"2023-06-16T20:00:00-04:00",
+   <!-- ... -->
+   "performer":{
+      "@type":"Person",
+      "name":"Elisapie",
+      "url":"https://www.elisapie.com",
+      "sameAs":[
+         "http://kg.artsdata.ca/resource/K12-438",
+         "https://isni.org/isni/0000000002492038",
+         "http://www.wikidata.org/entity/Q596774",
+         "https://music.apple.com/artist/440813872"]
+      },
+   <!-- ... -->
+}
+```
