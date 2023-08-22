@@ -17,7 +17,7 @@ adr:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2021-08-10"^^xsd:date ;
-  schema:dateModified "2023-05-08"^^xsd:date ;
+  schema:dateModified "2023-08-22"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example adr:PerformingArtsEvent ;
