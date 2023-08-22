@@ -32,10 +32,7 @@ To give it a try:
 3. Click the Reconcile button
 
 To limit the results only to the controlled vocabulary:
-1. Select the type "Concept" (optional)
-5. Click the button "Add property"
-6. Enter the Property ID "skos:inScheme" and the value "adr:ArtsdataEventTypes"
-7. Enter the name of an event type, such as Circus
+1. Select the "types" radio button "Event Type"
 8. Click the Reconcile button
 
 ### Dereferencing
