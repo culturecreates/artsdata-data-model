@@ -32,7 +32,7 @@ To give it a try:
 3. Click the Reconcile button
 
 To limit the results only to the controlled vocabulary:
-1. Select the "types" radio button "Event Type"
+1. Select the "type" radio button "Artsdata Event Type"
 8. Click the Reconcile button
 
 ### Dereferencing
