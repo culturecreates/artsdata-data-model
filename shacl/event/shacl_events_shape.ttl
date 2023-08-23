@@ -13,7 +13,7 @@
 
 ################
 # Super Property Shapes
-#   - used by more than one shape class
+# used by more than one shape class
 ################
 ads:SameAsSh
     sh:path schema:sameAs ;
@@ -43,11 +43,9 @@ ads:subEventPropertySh
     sh:message "EventSeries must have alteast one subEvent property." .
     
 ads:EventShape
-    # TODO: Check that Event ID ends with #Event
     a sh:NodeShape ;
-    # sh:closed true ;
 
-    # Sub-types of Event
+    # types of Event
     sh:targetClass  schema:Event, 
                     schema:EventSeries, 
                     schema:MusicEvent, 
@@ -78,9 +76,10 @@ ads:EventShape
     # Check optional properties
     sh:property ads:OrganizerSh, 
                 ads:PerformerSh, 
+				ads:PerformerWarningSh,
                 ads:EventAttendanceModeSh, 
                 ads:EventStatusSh, 
-                ads:SubEventSh, 
+              ads:SubEventSh, 
                 ads:EndDateSh, 
                 ads:MainEntityOfPageSh, 
                 ads:OffersSh  .
@@ -102,6 +101,7 @@ ads:LocationSh
     # TODO: Check that location can be inferred if using subEvents 
     sh:path schema:location ;
     sh:maxCount 1 ;
+ 	sh:minCount 1 ;
      sh:or (
         [ sh:node ads:PlaceShape ; ]
         [ sh:node ads:VirtualLocationShape ; ]
@@ -111,12 +111,16 @@ ads:LocationSh
 ads:SubEventSh
     sh:path schema:subEvent ;
     sh:minCount 0 ;
-    sh:node ads:EventShape .
+    sh:or (
+        [ sh:node ads:EventShape ; ]
+       
+        [ sh:node ads:IdSh ; ]
+    ) .
 
 ads:EventStatusSh
     sh:path schema:eventStatus ;
     sh:maxCount  1 ;
-    sh:class schema:EventStatusType ;
+   # sh:class schema:EventStatusType ;
     sh:in  (    schema:EventPostponed  
                 schema:EventScheduled  
                 schema:EventCancelled  
@@ -131,7 +135,7 @@ ads:EventStatusWarningSh
 ads:EventAttendanceModeSh
     sh:path schema:eventAttendanceMode ;
     sh:maxCount  1 ;
-    sh:class schema:EventAttendanceModeEnumeration ;
+  # sh:class schema:EventAttendanceModeEnumeration ;
     sh:in  (    schema:OfflineEventAttendanceMode  
                 schema:OnlineEventAttendanceMode 
                 schema:MixedEventAttendanceMode )  .
@@ -179,6 +183,11 @@ ads:PerformerSh
     ) ;
     sh:message "performer is not a valid Person or Organizatinon." .
 
+ads:PerformerWarningSh
+	sh:path schema:performer ;
+ 	sh:severity sh:Warning ;
+	sh:minCount  1 .
+
 ads:ImageWarningSh
    sh:path schema:image ;
     sh:severity sh:Warning ;
@@ -205,8 +214,7 @@ ads:InLanguageSh
 ads:SdDatePublishedSh
     sh:path schema:sdDatePublished ;
     sh:datatype xsd:dateTime ;
-    sh:maxCount 1 ;
-    sh:minCount 1 .
+    sh:maxCount 1  .
 
 ################
 # Person Shape
@@ -234,7 +242,6 @@ ads:OrganizationShape
 # Place Shape 
 ################
 ads:PlaceShape
-    # TODO: Allow Postal Address OR Virtual Location
     a sh:NodeShape ;
     sh:targetClass schema:Place ;
     # sh:closed true ;
@@ -246,7 +253,6 @@ ads:PlaceShape
 
 ads:PlaceNameSh
     sh:path schema:name ;
-    sh:languageIn ( "en" "fr" ) ;
     sh:uniqueLang true ;
     sh:minCount 0 .
 
@@ -314,3 +320,11 @@ ads:addressLocalitySh
     sh:minCount 1 ;
     sh:datatype xsd:string .
     
+
+################
+# Id Shape for properties using URI 
+################
+ads:IdSh
+   	a sh:NodeShape ;
+	# sh:targetObjectsOf schema:performer, schema:organizer ;
+	sh:nodeKind sh:IRI .
