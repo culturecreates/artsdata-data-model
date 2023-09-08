@@ -5,7 +5,16 @@ layout: architecture-doc
 
 The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data. 
 
-Supported entity types include: Event, Person, Organization, Place and Artsdata Event Type. In the future Performing Arts Productions and Works will be added. 
+Supported entity types include: 
+* Event
+* Person
+* Organization
+* Place
+* Artsdata Event Type
+
+In the future we are planning to add Performing Arts Productions and Works. Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! 
+
+This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). 
 
 ## Manual reconciliation
 To manually add Artsdata IDs to your structured data:
@@ -49,6 +58,3 @@ To batch reconcile, use tools like [OpenRefine](https://openrefine.org) and poin
 
 Reconciliation service endpoint: https://api.artsdata.ca/recon
 
-This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). 
-
-Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! 
