@@ -9,7 +9,7 @@
    "eventStatus":"https://schema.org/EventScheduled",
    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
    "description":"--Description de l'événement : Description of the event--",
-   "url":"--URL de la page Web de l'événement : URL of event webpage--",
+   "url":"--URL officiel de la page Web de l'événement : Official URL of event webpage--",
    "duration":"--Durée de l'événement en format ISO 8601, par exemple : PT1H30M : Duration of the event in ISO 8601 format, for example: PT1H30M--",
    "image":"--URL de l'image : URL of image--",
    "organizer":[{
@@ -64,7 +64,7 @@
    "mainEntityOfPage":[{
       "@type":"WebPage",
       "@id":"--URI constituant un identifiant unique de la page Web. Optionnel : URI constituting a unique identifier of the web page. Optional--",
-      "inLanguage":"fr",
+      "inLanguage":"--fr pour français : en for English",
       "url":"URL de la page Web : Webpage URL",
       "lastReviewed":"--Date et heure de la dernière révision : Date and time of last revision--"
    }]
