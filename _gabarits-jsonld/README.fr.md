@@ -74,6 +74,9 @@ Saisissez les informations identifiant et décrivant la compagnie, le groupe ou 
 
 ### [_location_](https://schema.org/location)
 Saisissez les informations identifiant et décrivant l'endroit où est présenté l'événement. L'entité imbriquée sous la propriété _location_ peut être de @type [Place](https://schema.org/Place) (un lieu physique) ou de @type [VirtualLocation](https://schema.org/VirtualLocation) (un lieu virtuel).
+Dans le cas des lieux physiques : 
+- il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située);
+- il est fortement recommandé de renseigner l'identifiant Wikidata du lieu à l'aide de la propriété _sameAs_;
 
 ### [_offers_](https://schema.org/offers)
 Saisissez les informations à propos de la disponibilité des billets et de la page Web où l'on peut se les procurer.
@@ -87,7 +90,7 @@ Saississez toujours l'URI complète de l'identifiant (plutôt que de saisir uniq
 
 La propriété sameAs peut aussi être employée afin de saisir les URLs des comptes de médias sociaux associés à une entité.
 
-Voici un exemple de code JSON-LD imbriquant une entité de @type [Person](https://schema.org/Person)personne décrite avec la propriété _sameAs_. Prenez note que, pour des fins de concisions, plusieurs propriétés pertinentes ont été exclues de cet exemple.
+Voici un exemple de code JSON-LD imbriquant une entité de @type [Person](https://schema.org/Person) décrite avec la propriété _sameAs_. Prenez note que, pour des fins de concisions, plusieurs propriétés pertinentes ont été exclues de cet exemple.
 
 ```
 {
@@ -106,7 +109,7 @@ Voici un exemple de code JSON-LD imbriquant une entité de @type [Person](https:
          "https://isni.org/isni/0000000002492038",
          "http://www.wikidata.org/entity/Q596774",
          "https://music.apple.com/artist/440813872"]
-   }],
+         },
    <!-- ... -->
 }
 ```
