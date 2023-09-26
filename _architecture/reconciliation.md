@@ -58,3 +58,6 @@ To batch reconcile, use tools like [OpenRefine](https://openrefine.org) and poin
 
 Reconciliation service endpoint: https://api.artsdata.ca/recon
 
+## Upcoming tools
+
+Here is a sneek video preview of a prototype plug-in to Airtable https://youtu.be/ngX-EHipKDU
