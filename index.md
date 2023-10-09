@@ -31,6 +31,11 @@ Voici les Classes utilisées dans Artsdata.
 {% endfor %}
 </ol>
 
+### Identifiants passerelles
+En plus de l'identifiant Artsdata, le graphe de connaissance Artsdata s'appuie sur d'autres identifiants uniques pérennes, comme l'identifiant Wikidata et l'ISNI, afin de reconnaître et de réconcilier les entités nommées des classes [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) et [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
+
+[Recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit#gid=1000818759)
+
 ### Gabarits
 [Gabarits de données structurées]({{ base }}/gabarits-jsonld/README.fr.html)
 
@@ -111,6 +116,10 @@ Here are the main Classes used in Artsdata.
 {% endfor %}
 </ol>
 
+### Bridge Identifiers
+In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other persistent and unique identifiers, like wikidata and ISNI, to recognize and reconcile entites of type [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) and [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
+
+[Recommendations on using persistent identifiers in the performing arts](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit#gid=1000818759)
 ### Templates
 [Structured data templates]({{ base }}/gabarits-jsonld/README.html)
 
