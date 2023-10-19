@@ -21,6 +21,8 @@ The Artsdata Event Type controlled vocabulary is used along with the schema.org 
 
 For example: `ex:Event1 a schema:Event ; schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .`
 
+To implement schema:Event and schema:additionalType properties in your structured data, please consult Artsdata's [structured data templates](https://culturecreates.github.io/artsdata-data-model/gabarits-jsonld/README.html).
+
 ### Reconciling
 
 You can reconcile event types using the Artsdata Reconciliation Service. 
