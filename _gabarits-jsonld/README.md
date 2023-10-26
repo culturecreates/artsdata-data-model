@@ -1,5 +1,5 @@
 ---
-title: Structured Data Templates
+title: Event Structured Data Templates
 layout: gabarits-doc
 ---
 
@@ -50,13 +50,13 @@ If you are unable to assign a distinct URI to each event, including each perform
 [^2]:It is possible to generate a  fonctional URI by appending a hash (`#`) at the end of the web page URL, followed by a string of characters that acts as a unique identifier for an event entity on the page (this string is called a [_fragment identifier_]([https://fr.wikipedia.org/wiki/Identificateur_de_fragment](https://en.wikipedia.org/wiki/URI_fragment)). Let's take this fictional example: `https://mypresentingorg.ca/events/eventname/#e1324`. In this exemple, the web page's URL (and URI) is `https://mypresentingorg.ca/events/eventname/`, while the string `e1324` is an identifier that uniquely identifies an event in the websites events listing. Any character string is fine, as long as it is unique within the website's domain. For example, it could be a local identifier in the website's database. It could also be the date and time of the performance. It is not necessary for the fragment identifier to point to a tail anchor within the page's body (for example, an `id` or `name` attribute): as long as the character string that follows the hash is unique, this satisfies the requirement of a canonical URL in the context of Schema.org. [More information](https://www.w3.org/TR/cooluris/).
 
 ### [_additionalType_](https://schema.org/additionalType)
-Enter additional types corresponding to the particular type of event. Refer to the [Artsdata controlled vocabulary](http://kg.artsdata.ca/resource/ArtsdataEventTypes) to identify the most appropriate type(s) of all performing arts event types. You can add as many _additionalType_ properties as needed to properly describe the event. As a default, we recommend the type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), which denotes « a performing arts work performed for an audience ».
+Enter additional types corresponding to the particular type of event. Refer to the [Artsdata controlled vocabulary](http://kg.artsdata.ca/resource/ArtsdataEventTypes) to identify the most appropriate type(s) of all performing arts event types. You can add as many _additionalType_ properties as needed to properly describe the event. As a default, we recommend the type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), which denotes "a performing arts work performed for an audience".
 
 ### [_name_](https://schema.org/name)
-Enter the title of the event.
+Enter the just the title of the event. Do not append a separator with the name of the venue (as you would for a webpage's "title" tag) or any other extraneous information.
 
 ### [_url_](https://schema.org/url)
-Enter the canonic URL of the event web page on the organizer's website. 
+Enter the canonic URL (i.e. "official URL") of the event web page on the organizer's website. 
 For series of performances, if each peformance has its own web page, enter each performance's unique URL. Otherwise, enter the URL of the event series' web page. Sinon saisissez, l'URL de la page web de la série de représentation.
 
 ### [_eventStatus_](https://schema.org/eventStatus)
@@ -66,16 +66,20 @@ Indicate whether an event is [scheduled](https://schema.org/EventScheduled) (wit
 Indicate if an event occurs [in person](https://schema.org/OfflineEventAttendanceMode), [online](https://schema.org/OnlineEventAttendanceMode), or is [hybrid](https://schema.org/MixedEventAttendanceMode), meaning both on and offline.
 
 ### [_organizer_](https://schema.org/organizer)
-Enter information identifying and describing the organization that is responsible for presenting the show. It can be a presenter or a self-presenting company. You can add multiple _organizer(s)_. Entities _nested_[^1] under this property are typically of @type [Organization](https://schema.org/Organization).
+Enter information identifying and describing the organization that is responsible for presenting the show. It can be a presenting organization or a company self-presenting its own production (in which case, the same value would be entered under the performer property). You can add multiple _organizer(s)_. Entities _nested_[^1] under this property are typically of @type [Organization](https://schema.org/Organization). Recommended properties for the nested entity include: _name_, _url_, and _sameAs_ (with link pointing to a Wikidata or Artsdata URI).
 
 ### [_performer_](https://schema.org/performer)
-Enter information identifying and describing the company, group or person(s) who is(are) responsible for performing the performance. It is possible to add several _performer(s)_. The entities _nested_ under this property can be of @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) or [Person](https://schema.org/Person). 
+Enter information identifying and describing the company, group or person(s) who is(are) responsible for performing the performance. It is possible to add several _performer(s)_. The entities _nested_ under this property can be of @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) or [Person](https://schema.org/Person). Recommended properties for the nested entity include: _name_, _url_, and _sameAs_ (with link pointing to an ISNI, Wikidata or Artsdata URI).
 
 ### [_location_](https://schema.org/location)
-Enter the information identifying and describing the place where the event is presented (is happening). The entity _nested_ under the _location_ property can be @type [Place](https://schema.org/Place) (a physical space) or @type [VirtualLocation](https://schema.org/VirtualLocation) (a virtural space).
+Enter the information identifying and describing the place where the event is presented (is happening). The entity _nested_ under the _location_ property can be @type [Place](https://schema.org/Place) (a physical space) or @type [VirtualLocation](https://schema.org/VirtualLocation) (an online space).
+In the case of a physical space: 
+- The value should be as precise as possible (for example, the performance hall inside the building instead of the building itself).
+- For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place's Wikidata or Artsdata URI.
+- Google requires the _address_ property with nested _PostalAddress_ entity. As a matter of fact, a complete PostalAddress entity, including the postal code, can help with disambiguation.
 
 ### [_offers_](https://schema.org/offers)
-Enter information about ticket availability and the webpage where tickets can be purchased.
+Enter at least one @type _Offer_ entity, including the URL of the event's ticketing page. For more information about how to describe _Offer_ type entities, consult [Google's documentation](https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions)
 
 ### [_sameAs_](https://schema.org/sameAs) _(for embeded entities)_
 Enter the URIs of _bridge identifiers_[^3] that identify without any ambiguity the entities nested within the _Event_ type entity. When there are multiple values, list them within square brackets, one URI per line.
