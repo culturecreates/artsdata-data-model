@@ -41,7 +41,7 @@ To limit the results only to the controlled vocabulary:
 
 Each SKOS Concept or ConceptScheme URI can be dereferenced individually. Or you can download the entire vocabulary using this [download link](https://db.artsdata.ca/repositories/artsdata/statements?context=%3Chttp://kg.artsdata.ca/culture-creates/ontology/artsdata-event-types%3E).
 
-### Minting Artsdata IDs for Events
+## Minting Artsdata IDs for Events
 
 In order for Artsdata to automatically create a unique ID for a performing arts event, the event must minimally have these three attribute–value pairs:
 
