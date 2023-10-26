@@ -1,5 +1,5 @@
 ---
-title: Gabarits de données structurées
+title: Gabarits de données structurées d'événement
 layout: gabarits-doc
 ---
 
@@ -56,7 +56,7 @@ Saisissez des types supplémentaires correspondant au type particulier de l’é
 Saisissez le titre de l’événement.
 
 ### [_url_](https://schema.org/url)
-Saisissez l'URL canonique désignant la page web de l'événement sur le site de l'organisateur. 
+Saisissez l'URL canonique (c.-à-d. « officielle ») désignant la page web de l'événement sur le site de l'organisateur. 
 
 Dans le cas de séries de représentations, saisissez l'URL de la page web de chaque représentation si elle existe. Sinon saisissez, l'URL de la page web de la série de représentations.
 
@@ -67,24 +67,25 @@ Indiquez si un événement est [programmé](https://schema.org/EventScheduled) (
 Indiquez si un événement se produit [en personne](https://schema.org/OfflineEventAttendanceMode), [en ligne](https://schema.org/OnlineEventAttendanceMode), ou format [hybride](https://schema.org/MixedEventAttendanceMode).
 
 ### [_organizer_](https://schema.org/organizer)
-Saisissez les informations identifiant et décrivant l'organisme qui est responsable de la présentation du spectacle. Il peut s'agir d'un organisme diffuseur ou d'une compagnie qui présente sa propre production. On peut ajouter plusieurs _organizer(s)_. Les _entitées imbriquées_[^1] sous cette propriété sont généralement de @type [Organization](https://schema.org/Organization).
+Saisissez les informations identifiant et décrivant l'organisme qui est responsable de la présentation du spectacle. Il peut s'agir d'un organisme diffuseur ou d'une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignées sous la propriété _performer_). On peut ajouter plusieurs _organizer(s)_. Les _entitées imbriquées_[^1] sous cette propriété sont généralement de @type [Organization](https://schema.org/Organization). Les propriétés recommandées pour l'entité imbriquée incluent : _name_, _URL_ et _sameAs_ (pointant vers un identifiant Artsdata et/ou Wikidata).
 
 ### [_performer_](https://schema.org/performer)
-Saisissez les informations identifiant et décrivant la compagnie, le groupe ou la (des) personne(s) qui est(sont) responsable de l'exécution de la représentation. Il est possible d'ajouter plusieurs _performer(s)_. Les entités imbriquées sous cette propriété peuvent être de @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) ou [Person](https://schema.org/Person). 
+Saisissez les informations identifiant et décrivant la compagnie, le groupe ou la (des) personne(s) qui est(sont) responsable de l'exécution de la représentation. Il est possible d'ajouter plusieurs _performer(s)_. Les entités imbriquées sous cette propriété peuvent être de @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) ou [Person](https://schema.org/Person). Les propriétés recommandées pour l'entité imbriquée incluent : _name_, _URL_ et _sameAs_ (pointant vers un identifiant ISNI, Artsdata et/ou Wikidata).
 
 ### [_location_](https://schema.org/location)
 Saisissez les informations identifiant et décrivant l'endroit où est présenté l'événement. L'entité imbriquée sous la propriété _location_ peut être de @type [Place](https://schema.org/Place) (un lieu physique) ou de @type [VirtualLocation](https://schema.org/VirtualLocation) (un lieu virtuel).
 Dans le cas des lieux physiques : 
-- il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située);
-- il est fortement recommandé de renseigner l'identifiant Wikidata du lieu à l'aide de la propriété _sameAs_;
+- Il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).
+- Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété sameAs.
+- Google requiert la propriété _adress_ avec une entité de type _PostalAddess_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
 
 ### [_offers_](https://schema.org/offers)
-Saisissez les informations à propos de la disponibilité des billets et de la page Web où l'on peut se les procurer.
+Saississez au moins une entité de type _Offer_ avec l'URL de la page où l'on peut se procurer les billets. Pour plus d'informations sur la façon de renseigner les offres, consultez la [documentation de Google](https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions). 
 
 ### [_sameAs_](https://schema.org/sameAs) (pour les entités imbriquées)
 Saisissez les URIs d'_identifiants passerelles_[^3] permettant d'identifier sans ambiguité les entitées imbriquées dans l'entité de type _Event_. 
 
-[^3]: Un __« identifiant passerelle »__ est un identifiant pérenne (c.-à-d. exprimé sous forme d'une URI permanente et résolvable) globalement unique qui est utilisé par plusieurs systèmes d'informations et qui facilite ainsi la réconciliation des entités (et, par le fait même, la circulation des données) entre ces systèmes. Les identifiants ISNI, Wikidata et Artsdata sont particulièrement pertinents dans le domaine du spectacle. Les URIs de ces identifiants sont résolvables vers des pages web et vers des métadonnées descriptives accessibles tant aux humains qu'aux machines. Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
+[^3]: Un __« identifiant passerelle »__ est un identifiant pérenne (c.-à-d., exprimé sous forme d'une URI permanente et résolvable) globalement unique qui est utilisé par plusieurs systèmes d'informations et qui facilite ainsi la réconciliation des entités (et, par le fait même, la circulation des données) entre ces systèmes. Les identifiants ISNI, Wikidata et Artsdata sont particulièrement pertinents dans le domaine du spectacle. Les URIs de ces identifiants sont résolvables vers des pages web et vers des métadonnées descriptives accessibles tant aux humains qu'aux machines. Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
 
 Saississez toujours l'URI complète de l'identifiant (plutôt que de saisir uniquement l'identifiant lui-même). Par exemple, pour l'identifiant Wikidata `Q596774` correspond l'URI http://www.wikidata.org/entity/Q596774 (prenez note que le format de l'URI diffère de l'URL de la page). Tant Wikidata, qu'ISNI et Artsdata ont des interfaces permettant une recherche par nom d'entité. La méthode pour récupérer l'URI associée à l'entité recherchée diffère cependant un peu dans chaque interface. Pour Wikidata, cliquez à droite sur le lien « Concept URI » dans le menu de gauche (sous la rubrique « Tools »), puis cliquez sur « copier l'adresse du lien ». Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
 
