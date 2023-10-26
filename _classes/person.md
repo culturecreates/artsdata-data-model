@@ -25,7 +25,7 @@ To add a performing arts person please create the person in Wikidata and fill in
 * Date of birth
 
 
-Artsdata uses [ShEx](https://shex.io) to validate data for import. If the data passes the ShEx validation, the person will automatically be added to Artsdata.ca in a couple of days.
+Wikidata uses [ShEx](https://shex.io) to validate data. 
 
 ###  ShEx Validator 
 
