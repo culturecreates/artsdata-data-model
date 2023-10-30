@@ -8,7 +8,7 @@
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 
 ####################################################
-# Artsdata Events SHACL v4
+# Artsdata Events SHACL v4.1
 ####################################################
 
 ################
@@ -19,16 +19,8 @@ ads:SameAsSh
     sh:path schema:sameAs ;
     sh:minCount 0 ;
     sh:pattern "^http" ;
-    sh:not ads:containsSpaces ;
-    sh:not ads:containsAtSign ;
-    sh:description "sameAs properties must be URIs and start with http and not contain spaces or @" ;
+    sh:description "sameAs properties must be URIs and start with http" ;
     sh:nodeKind sh:IRI .
-
-ads:containsSpaces sh:pattern " "  ;
-    sh:description "String contains spaces which should not be allowed for URIs" .
-
-ads:containsAtSign sh:pattern "@"  ;
-    sh:description "String contains at sign which should not be allowed for URIs" .
 
 ads:NameSh
     sh:path schema:name ;
