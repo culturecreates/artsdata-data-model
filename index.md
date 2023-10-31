@@ -148,7 +148,7 @@ Data is great, but it is not the ultimate truth, and without traceability it can
 
 To track provenance, Artsdata.ca uses metadata attached to named graphs. Each data source in Artsdata.ca is stored in a separate named graph. The graph's URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the **Named Graphs** approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data was loaded, the software used to collect it and the email of the contributing organization. Each time data is imported,  whether from a web site, spreadsheet or existing triple store, the graphs provenance metadata is updated. In addition, when the data source is directly from a crawled web page, the schema:WebPage entity includes the date when the web page was crawled. 
 
-In the future, we will likely switch to RDF\* (pronounced "RDF star") in order to have more granular provenance data on individual statements.
+Minted entities in Artsdata.ca is master data and is therefore not from an external source. To track provenance metadata on minted entity master data, RDF-star is used to quote triples as provenance entities using the provenance ontology. 
 
 ### Data Flow Architecture
 
