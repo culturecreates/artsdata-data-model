@@ -8,7 +8,7 @@
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 
 ####################################################
-# Artsdata Events SHACL v4.1
+# Artsdata Events SHACL v4.2
 ####################################################
 
 ################
@@ -73,7 +73,7 @@ ads:EventShape
                     schema:SportsEvent, 
                     schema:VisualArtsEvent ;
 
-    sh:ignoredProperties ( rdf:type ) ;
+    # sh:ignoredProperties ( rdf:type ) ;
     
     # Required Properties
     sh:property ads:NameSh, 
