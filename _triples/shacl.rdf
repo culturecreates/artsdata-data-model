@@ -1,0 +1,1452 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sh="http://www.w3.org/ns/shacl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://www.w3.org/ns/shacl#">
+  <owl:Ontology rdf:about="#">
+    <sh:suggestedShapesGraph rdf:resource="http://www.w3.org/ns/shacl-shacl#"/>
+    <sh:declare rdf:parseType="Resource">
+      <sh:namespace>http://www.w3.org/ns/shacl#</sh:namespace>
+      <sh:prefix>sh</sh:prefix>
+    </sh:declare>
+    <rdfs:comment xml:lang="en">This vocabulary defines terms used in SHACL, the W3C Shapes Constraint Language.</rdfs:comment>
+    <rdfs:label xml:lang="en">W3C Shapes Constraint Language (SHACL) Vocabulary</rdfs:label>
+  </owl:Ontology>
+  <rdfs:Class rdf:ID="SPARQLTargetType">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="SPARQLSelectExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="SPARQLAskExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="TargetType"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">The (meta) class for parameterizable targets that are based on SPARQL queries.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL target type</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="JSFunction">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="JSExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="Function"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">The class of SHACL functions that execute a JavaScript function when called.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript function</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="NodeKind">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The class of all node kinds, including sh:BlankNode, sh:IRI, sh:Literal or the combinations of these: sh:BlankNodeOrIRI, sh:BlankNodeOrLiteral, sh:IRIOrLiteral.</rdfs:comment>
+    <rdfs:label xml:lang="en">Node kind</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="TripleRule">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="Rule"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">A rule based on triple (subject, predicate, object) pattern.</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLExecutable">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The class of resources that encapsulate a SPARQL query.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL executable</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="AbstractResult">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The base class of validation results, typically not instantiated directly.</rdfs:comment>
+    <rdfs:label xml:lang="en">Abstract result</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="JSRule">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#Rule"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#JSExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">The class of SHACL rules expressed using JavaScript.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript rule</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLTarget">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#SPARQLSelectExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#SPARQLAskExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="Target"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">The class of targets that are based on SPARQL queries.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL target</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLConstraint">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#SPARQLSelectExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">The class of constraints based on SPARQL SELECT queries.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL constraint</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Shape">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">A shape is a collection of constraints that may be targeted for certain nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Shape</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Parameterizable">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Superclass of components that can take parameters, especially functions and constraint components.</rdfs:comment>
+    <rdfs:label xml:lang="en">Parameterizable</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#Rule">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The class of SHACL rules. Never instantiated directly.</rdfs:comment>
+    <rdfs:label xml:lang="en">Rule</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="PropertyShape">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">A property shape is a shape that specifies constraints on the values of a focus node for a given property or path.</rdfs:comment>
+    <rdfs:label xml:lang="en">Property shape</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="JSConstraint">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#JSExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">The class of constraints backed by a JavaScript function.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript-based constraint</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLConstructExecutable">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#SPARQLExecutable"/>
+    <rdfs:comment xml:lang="en">The class of SPARQL executables that are based on a CONSTRUCT query.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL CONSTRUCT executable</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLFunction">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#SPARQLSelectExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#SPARQLAskExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#Function"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">A function backed by a SPARQL query - either ASK or SELECT.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL function</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Validator">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The class of validators, which provide instructions on how to process a constraint definition. This class serves as base class for the SPARQL-based validators and other possible implementations.</rdfs:comment>
+    <rdfs:label xml:lang="en">Validator</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#Function">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#Parameterizable"/>
+    <rdfs:comment xml:lang="en">The class of SHACL functions.</rdfs:comment>
+    <rdfs:label xml:lang="en">Function</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#Parameterizable"/>
+    <rdfs:comment xml:lang="en">The class of constraint components.</rdfs:comment>
+    <rdfs:label xml:lang="en">Constraint component</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="PropertyGroup">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Instances of this class represent groups of property shapes that belong together.</rdfs:comment>
+    <rdfs:label xml:lang="en">Property group</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="JSTarget">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#JSExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#Target"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">The class of targets that are based on JavaScript functions.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript target</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#Target">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The base class of targets such as those based on SPARQL queries.</rdfs:comment>
+    <rdfs:label xml:lang="en">Target</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLAskValidator">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#SPARQLAskExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Validator"/>
+    <rdfs:comment xml:lang="en">The class of validators based on SPARQL ASK queries. The queries are evaluated for each value node and are supposed to return true if the given node conforms.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL ASK validator</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLUpdateExecutable">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#SPARQLExecutable"/>
+    <rdfs:comment xml:lang="en">The class of SPARQL executables based on a SPARQL UPDATE.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL UPDATE executable</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="JSTargetType">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#JSExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#TargetType"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">The (meta) class for parameterizable targets that are based on JavaScript functions.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript target type</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="NodeShape">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">A node shape is a shape that specifies constraint that need to be met with respect to focus nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Node shape</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ResultAnnotation">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">A class of result annotations, which define the rules to derive the values of a given annotation property as extra values for a validation result.</rdfs:comment>
+    <rdfs:label xml:lang="en">Result annotation</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ValidationResult">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">The class of validation results.</rdfs:comment>
+    <rdfs:label xml:lang="en">Validation result</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLRule">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#SPARQLConstructExecutable"/>
+    <rdfs:subClassOf rdf:resource="#Rule"/>
+    <rdfs:comment xml:lang="en">The class of SHACL rules based on SPARQL CONSTRUCT queries.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL CONSTRUCT rule</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#SPARQLAskExecutable">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#SPARQLExecutable"/>
+    <rdfs:comment xml:lang="en">The class of SPARQL executables that are based on an ASK query.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL ASK executable</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Parameter">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#PropertyShape"/>
+    <rdfs:comment xml:lang="en">The class of parameter declarations, consisting of a path predicate and (possibly) information about allowed value type, cardinality and other characteristics.</rdfs:comment>
+    <rdfs:label xml:lang="en">Parameter</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="JSValidator">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#Validator"/>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#JSExecutable"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">A SHACL validator based on JavaScript. This can be used to declare SHACL constraint components that perform JavaScript-based validation when used.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript validator</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ValidationReport">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The class of SHACL validation reports.</rdfs:comment>
+    <rdfs:label xml:lang="en">Validation report</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#SPARQLSelectExecutable">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#SPARQLExecutable"/>
+    <rdfs:comment xml:lang="en">The class of SPARQL executables based on a SELECT query.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL SELECT executable</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Severity">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The class of validation result severity levels, including violation and warning levels.</rdfs:comment>
+    <rdfs:label xml:lang="en">Severity</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="PrefixDeclaration">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The class of prefix declarations, consisting of pairs of a prefix with a namespace.</rdfs:comment>
+    <rdfs:label xml:lang="en">Prefix declaration</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#JSExecutable">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Abstract base class of resources that declare an executable JavaScript.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript executable</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="SPARQLSelectValidator">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#SPARQLSelectExecutable"/>
+    <rdfs:subClassOf rdf:resource="#Validator"/>
+    <rdfs:comment xml:lang="en">The class of validators based on SPARQL SELECT queries. The queries are evaluated for each focus node and are supposed to produce bindings for all focus nodes that do not conform.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL SELECT validator</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="JSLibrary">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Represents a JavaScript library, typically identified by one or more URLs of files to include.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript library</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#TargetType">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:subClassOf rdf:resource="#Parameterizable"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment xml:lang="en">The (meta) class for parameterizable targets.	Instances of this are instantiated as values of the sh:target property.</rdfs:comment>
+    <rdfs:label xml:lang="en">Target type</rdfs:label>
+  </rdfs:Class>
+  <rdf:Property rdf:ID="condition">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Shape"/>
+    <rdfs:domain rdf:resource="#Rule"/>
+    <rdfs:comment xml:lang="en">The shapes that the focus nodes need to conform to before a rule is executed on them.</rdfs:comment>
+    <rdfs:label xml:lang="en">condition</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="order">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">Specifies the relative order of this compared to its siblings. For example use 0 for the first, 1 for the second.</rdfs:comment>
+    <rdfs:label xml:lang="en">order</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="optional">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Parameter"/>
+    <rdfs:comment xml:lang="en">Indicates whether a parameter is optional.</rdfs:comment>
+    <rdfs:label xml:lang="en">optional</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="equals">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">Specifies a property that must have the same values as the value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">equals</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="jsLibraryURL">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#JSLibrary"/>
+    <rdfs:comment xml:lang="en">Declares the URLs of a JavaScript library. This should be the absolute URL of a JavaScript file. Implementations may redirect those to local files.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript library URL</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="minCount">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">Specifies the minimum number of values in the set of value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">min count</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="class">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment xml:lang="en">The type that all value nodes must have.</rdfs:comment>
+    <rdfs:label xml:lang="en">class</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="name">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#PropertyShape"/>
+    <rdfs:comment xml:lang="en">Human-readable labels for the property in the context of the surrounding shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">name</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="alternativePath">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">The (single) value of this property must be a list of path elements, representing the elements of alternative paths.</rdfs:comment>
+    <rdfs:label xml:lang="en">alternative path</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="description">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#PropertyShape"/>
+    <rdfs:comment xml:lang="en">Human-readable descriptions for the property in the context of the surrounding shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">description</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="and">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">RDF list of shapes to validate the value nodes against.</rdfs:comment>
+    <rdfs:label xml:lang="en">and</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="select">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#SPARQLSelectExecutable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The SPARQL SELECT query to execute.</rdfs:comment>
+    <rdfs:label xml:lang="en">select</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="qualifiedMaxCount">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The maximum number of value nodes that can conform to the shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">qualified max count</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="nodeKind">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#NodeKind"/>
+    <rdfs:comment xml:lang="en">Specifies the node kind (e.g. IRI or literal) each value node.</rdfs:comment>
+    <rdfs:label xml:lang="en">node kind</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="or">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Specifies a list of shapes so that the value nodes must conform to at least one of the shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">or</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="value">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">An RDF node that has caused the result.</rdfs:comment>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="in">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Specifies a list of allowed values so that each value node must be among the members of the given list.</rdfs:comment>
+    <rdfs:label xml:lang="en">in</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="nodeValidator">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Validator"/>
+    <rdfs:domain rdf:resource="#ConstraintComponent"/>
+    <rdfs:comment xml:lang="en">The validator(s) used to evaluate a constraint in the context of a node shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">shape validator</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="sourceConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#ConstraintComponent"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">The constraint component that is the source of the result.</rdfs:comment>
+    <rdfs:label xml:lang="en">source constraint component</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="object">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#TripleRule"/>
+    <rdfs:comment xml:lang="en">An expression producing the nodes that shall be inferred as objects.</rdfs:comment>
+    <rdfs:label xml:lang="en">object</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="resultAnnotation">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#ResultAnnotation"/>
+    <rdfs:domain rdf:resource="#SPARQLSelectValidator"/>
+    <rdfs:comment xml:lang="en">Links a SPARQL validator with zero or more sh:ResultAnnotation instances, defining how to derive additional result properties based on the variables of the SELECT query.</rdfs:comment>
+    <rdfs:label xml:lang="en">result annotation</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="qualifiedValueShapesDisjoint">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">Can be used to mark the qualified value shape to be disjoint with its sibling shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">qualified value shapes disjoint</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="suggestedShapesGraph">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:comment xml:lang="en">Suggested shapes graphs for this ontology. The values of this property may be used in the absence of specific sh:shapesGraph statements.</rdfs:comment>
+    <rdfs:label xml:lang="en">suggested shapes graph</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="xone">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Specifies a list of shapes so that the value nodes must conform to exactly one of the shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">exactly one</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="result">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#ValidationResult"/>
+    <rdfs:domain rdf:resource="#ValidationReport"/>
+    <rdfs:comment xml:lang="en">The validation results contained in a validation report.</rdfs:comment>
+    <rdfs:label xml:lang="en">result</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="targetClass">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Links a shape to a class, indicating that all instances of the class must conform to the shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">target class</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="jsFunctionName">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#JSExecutable"/>
+    <rdfs:comment xml:lang="en">The name of the JavaScript function to execute.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript function name</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="detail">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#AbstractResult"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">Links a result with other results that provide more details, for example to describe violations against nested shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">detail</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="parameter">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Parameter"/>
+    <rdfs:domain rdf:resource="#Parameterizable"/>
+    <rdfs:comment xml:lang="en">The parameters of a function or constraint component.</rdfs:comment>
+    <rdfs:label xml:lang="en">parameter</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="zeroOrOnePath">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The (single) value of this property represents a path that is matched zero or one times.</rdfs:comment>
+    <rdfs:label xml:lang="en">zero or one path</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="conforms">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#ValidationReport"/>
+    <rdfs:comment xml:lang="en">True if the validation did not produce any validation results, and false otherwise.</rdfs:comment>
+    <rdfs:label xml:lang="en">conforms</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="returnType">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:domain rdf:resource="#Function"/>
+    <rdfs:comment xml:lang="en">The expected type of values returned by the associated function.</rdfs:comment>
+    <rdfs:label xml:lang="en">return type</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="prefix">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#PrefixDeclaration"/>
+    <rdfs:comment xml:lang="en">The prefix of a prefix declaration.</rdfs:comment>
+    <rdfs:label xml:lang="en">prefix</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="resultPath">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">The path of a validation result, based on the path of the validated property shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">result path</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="subject">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#TripleRule"/>
+    <rdfs:comment xml:lang="en">An expression producing the resources that shall be inferred as subjects.</rdfs:comment>
+    <rdfs:label xml:lang="en">subject</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="construct">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SPARQLConstructExecutable"/>
+    <rdfs:comment xml:lang="en">The SPARQL CONSTRUCT query to execute.</rdfs:comment>
+    <rdfs:label xml:lang="en">construct</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="path">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:domain rdf:resource="#PropertyShape"/>
+    <rdfs:comment xml:lang="en">Specifies the property path of a property shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">path</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="oneOrMorePath">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The (single) value of this property represents a path that is matched one or more times.</rdfs:comment>
+    <rdfs:label xml:lang="en">one or more path</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="closed">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">If set to true then the shape is closed.</rdfs:comment>
+    <rdfs:label xml:lang="en">closed</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="hasValue">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">Specifies a value that must be among the value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">has value</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="labelTemplate">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#Parameterizable"/>
+    <rdfs:comment xml:lang="en">Outlines how human-readable labels of instances of the associated Parameterizable shall be produced. The values can contain {?paramName} as placeholders for the actual values of the given parameter.</rdfs:comment>
+    <rdfs:label xml:lang="en">label template</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="disjoint">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">Specifies a property where the set of values must be disjoint with the value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">disjoint</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="shapesGraph">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:comment xml:lang="en">Shapes graphs that should be used when validating this data graph.</rdfs:comment>
+    <rdfs:label xml:lang="en">shapes graph</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="datatype">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:comment xml:lang="en">Specifies an RDF datatype that all value nodes must have.</rdfs:comment>
+    <rdfs:label xml:lang="en">datatype</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="severity">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Severity"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Defines the severity that validation results produced by a shape must have. Defaults to sh:Violation.</rdfs:comment>
+    <rdfs:label xml:lang="en">severity</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="ask">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SPARQLAskExecutable"/>
+    <rdfs:comment xml:lang="en">The SPARQL ASK query to execute.</rdfs:comment>
+    <rdfs:label xml:lang="en">ask</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="zeroOrMorePath">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The (single) value of this property represents a path that is matched zero or more times.</rdfs:comment>
+    <rdfs:label xml:lang="en">zero or more path</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="focusNode">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">The focus node that was validated when the result was produced.</rdfs:comment>
+    <rdfs:label xml:lang="en">focus node</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="flags">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">An optional flag to be used with regular expression pattern matching.</rdfs:comment>
+    <rdfs:label xml:lang="en">flags</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="union">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">A list of node expressions that shall be used together.</rdfs:comment>
+    <rdfs:label xml:lang="en">union</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="annotationValue">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#ResultAnnotation"/>
+    <rdfs:comment xml:lang="en">The (default) values of the annotation property.</rdfs:comment>
+    <rdfs:label xml:lang="en">annotation value</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="targetSubjectsOf">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Links a shape to a property, indicating that all subjects of triples that have the given property as their predicate must conform to the shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">target subjects of</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="prefixes">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:domain rdf:resource="#SPARQLExecutable"/>
+    <rdfs:comment xml:lang="en">The prefixes that shall be applied before parsing the associated SPARQL query.</rdfs:comment>
+    <rdfs:label xml:lang="en">prefixes</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="maxInclusive">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">Specifies the maximum inclusive value of each value node.</rdfs:comment>
+    <rdfs:label xml:lang="en">max inclusive</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="namespace">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#PrefixDeclaration"/>
+    <rdfs:comment xml:lang="en">The namespace associated with a prefix in a prefix declaration.</rdfs:comment>
+    <rdfs:label xml:lang="en">namespace</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="js">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#JSConstraint"/>
+    <rdfs:comment>Constraints expressed in JavaScript.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript constraint</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="target">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Target"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Links a shape to a target specified by an extension language, for example instances of sh:SPARQLTarget.</rdfs:comment>
+    <rdfs:label xml:lang="en">target</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="update">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SPARQLUpdateExecutable"/>
+    <rdfs:comment xml:lang="en">The SPARQL UPDATE to execute.</rdfs:comment>
+    <rdfs:label xml:lang="en">update</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="entailment">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:comment xml:lang="en">An entailment regime that indicates what kind of inferencing is required by a shapes graph.</rdfs:comment>
+    <rdfs:label xml:lang="en">entailment</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="minExclusive">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">Specifies the minimum exclusive value of each value node.</rdfs:comment>
+    <rdfs:label xml:lang="en">min exclusive</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="maxLength">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">Specifies the maximum string length of each value node.</rdfs:comment>
+    <rdfs:label xml:lang="en">max length</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="pattern">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">Specifies a regular expression pattern that the string representations of the value nodes must match.</rdfs:comment>
+    <rdfs:label xml:lang="en">pattern</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="minInclusive">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">Specifies the minimum inclusive value of each value node.</rdfs:comment>
+    <rdfs:label xml:lang="en">min inclusive</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="filterShape">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">The shape that all input nodes of the expression need to conform to.</rdfs:comment>
+    <rdfs:label xml:lang="en">filter shape</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="rule">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Rule"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">The rules linked to a shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">rule</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="declare">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#PrefixDeclaration"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:comment xml:lang="en">Links a resource with its namespace prefix declarations.</rdfs:comment>
+    <rdfs:label xml:lang="en">declare</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="qualifiedMinCount">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The minimum number of value nodes that must conform to the shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">qualified min count</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="maxExclusive">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">Specifies the maximum exclusive value of each value node.</rdfs:comment>
+    <rdfs:label xml:lang="en">max exclusive</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="sourceConstraint">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">The constraint that was validated when the result was produced.</rdfs:comment>
+    <rdfs:label xml:lang="en">source constraint</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="group">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#PropertyGroup"/>
+    <rdfs:domain rdf:resource="#PropertyShape"/>
+    <rdfs:comment xml:lang="en">Can be used to link to a property group to indicate that a property shape belongs to a group of related property shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">group</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="property">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#PropertyShape"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Links a shape to its property shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">property</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="not">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Specifies a shape that the value nodes must not conform to.</rdfs:comment>
+    <rdfs:label xml:lang="en">not</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="intersection">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">A list of node expressions that shall be intersected.</rdfs:comment>
+    <rdfs:label xml:lang="en">intersection</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="validator">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Validator"/>
+    <rdfs:domain rdf:resource="#ConstraintComponent"/>
+    <rdfs:comment xml:lang="en">The validator(s) used to evaluate constraints of either node or property shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">validator</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="node">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#NodeShape"/>
+    <rdfs:comment xml:lang="en">Specifies the node shape that all value nodes must conform to.</rdfs:comment>
+    <rdfs:label xml:lang="en">node</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="targetNode">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Links a shape to individual nodes, indicating that these nodes must conform to the shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">target node</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="maxCount">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">Specifies the maximum number of values in the set of value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">max count</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="lessThanOrEquals">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">Specifies a property that must have smaller or equal values than the value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">less than or equals</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="annotationVarName">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#ResultAnnotation"/>
+    <rdfs:comment xml:lang="en">The name of the SPARQL variable from the SELECT clause that shall be used for the values.</rdfs:comment>
+    <rdfs:label xml:lang="en">annotation variable name</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="qualifiedValueShape">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">The shape that a specified number of values must conform to.</rdfs:comment>
+    <rdfs:label xml:lang="en">qualified value shape</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="resultSeverity">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Severity"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">The severity of the result, e.g. warning.</rdfs:comment>
+    <rdfs:label xml:lang="en">result severity</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="predicate">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#TripleRule"/>
+    <rdfs:comment xml:lang="en">An expression producing the properties that shall be inferred as predicates.</rdfs:comment>
+    <rdfs:label xml:lang="en">predicate</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="resultMessage">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">Human-readable messages explaining the cause of the result.</rdfs:comment>
+    <rdfs:label xml:lang="en">result message</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="message">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">A human-readable message (possibly with placeholders for variables) explaining the cause of the result.</rdfs:comment>
+    <rdfs:label xml:lang="en">message</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="sourceShape">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Shape"/>
+    <rdfs:domain rdf:resource="#AbstractResult"/>
+    <rdfs:comment xml:lang="en">The shape that is was validated when the result was produced.</rdfs:comment>
+    <rdfs:label xml:lang="en">source shape</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="lessThan">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">Specifies a property that must have smaller values than the value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">less than</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="inversePath">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">The (single) value of this property represents an inverse path (object to subject).</rdfs:comment>
+    <rdfs:label xml:lang="en">inverse path</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="propertyValidator">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#Validator"/>
+    <rdfs:domain rdf:resource="#ConstraintComponent"/>
+    <rdfs:comment xml:lang="en">The validator(s) used to evaluate a constraint in the context of a property shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">property validator</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="uniqueLang">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">Specifies whether all node values must have a unique (or no) language tag.</rdfs:comment>
+    <rdfs:label xml:lang="en">unique languages</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="shapesGraphWellFormed">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#ValidationReport"/>
+    <rdfs:comment xml:lang="en">If true then the validation engine was certain that the shapes graph has passed all SHACL syntax requirements during the validation process.</rdfs:comment>
+    <rdfs:label xml:lang="en">shapes graph well-formed</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="defaultValue">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:domain rdf:resource="#PropertyShape"/>
+    <rdfs:comment xml:lang="en">A default value for a property, for example for user interface tools to pre-populate input fields.</rdfs:comment>
+    <rdfs:label xml:lang="en">default value</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="nodes">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">The node expression producing the input nodes of a filter shape expression.</rdfs:comment>
+    <rdfs:label xml:lang="en">nodes</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="sparql">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#SPARQLConstraint"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Links a shape with SPARQL constraints.</rdfs:comment>
+    <rdfs:label xml:lang="en">constraint (in SPARQL)</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="deactivated">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">If set to true then all nodes conform to this.</rdfs:comment>
+    <rdfs:label xml:lang="en">deactivated</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="expression">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">The node expression that must return true for the value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">expression</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="ignoredProperties">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">An optional RDF list of properties that are also permitted in addition to those explicitly enumerated via sh:property/sh:path.</rdfs:comment>
+    <rdfs:label xml:lang="en">ignored properties</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="annotationProperty">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:domain rdf:resource="#ResultAnnotation"/>
+    <rdfs:comment xml:lang="en">The annotation property that shall be set.</rdfs:comment>
+    <rdfs:label xml:lang="en">annotation property</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="languageIn">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Specifies a list of language tags that all value nodes must have.</rdfs:comment>
+    <rdfs:label xml:lang="en">language in</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="minLength">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">Specifies the minimum string length of each value node.</rdfs:comment>
+    <rdfs:label xml:lang="en">min length</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="jsLibrary">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="#JSLibrary"/>
+    <rdfs:comment xml:lang="en">Declares which JavaScript libraries are needed to execute this.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript library</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="targetObjectsOf">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment xml:lang="en">Links a shape to a property, indicating that all all objects of triples that have the given property as their predicate must conform to the shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">target objects of</rdfs:label>
+  </rdf:Property>
+  <sh:ConstraintComponent rdf:ID="DatatypeConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="DatatypeConstraintComponent-datatype">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:nodeKind>
+          <sh:NodeKind rdf:ID="IRI">
+            <rdfs:isDefinedBy rdf:resource="#"/>
+            <rdfs:comment xml:lang="en">The node kind of all IRIs.</rdfs:comment>
+            <rdfs:label xml:lang="en">IRI</rdfs:label>
+          </sh:NodeKind>
+        </sh:nodeKind>
+        <sh:path rdf:resource="#datatype"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the datatype of all value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Datatype constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="NotConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="NotConstraintComponent-not">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#not"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that value nodes do not conform to a given shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">Not constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="NodeConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="NodeConstraintComponent-node">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#node"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that all value nodes conform to the given node shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">Node constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="MinLengthConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="MinLengthConstraintComponent-minLength">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <sh:path rdf:resource="#minLength"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the minimum string length of value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Min-length constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="XoneConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="XoneConstraintComponent-xone">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#xone"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the value nodes so that they conform to exactly one out of several provided shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Exactly one constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="LanguageInConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="LanguageInConstraintComponent-languageIn">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:path rdf:resource="#languageIn"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to enumerate language tags that all value nodes must have.</rdfs:comment>
+    <rdfs:label xml:lang="en">Language-in constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="MaxLengthConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="MaxLengthConstraintComponent-maxLength">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <sh:path rdf:resource="#maxLength"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the maximum string length of value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Max-length constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="LessThanConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="LessThanConstraintComponent-lessThan">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind rdf:resource="#IRI"/>
+        <sh:path rdf:resource="#lessThan"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that each value node is smaller than all the nodes that have the focus node as subject and the value of a given property as predicate.</rdfs:comment>
+    <rdfs:label xml:lang="en">Less-than constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="MinExclusiveConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="MinExclusiveConstraintComponent-minExclusive">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind>
+          <sh:NodeKind rdf:ID="Literal">
+            <rdfs:isDefinedBy rdf:resource="#"/>
+            <rdfs:comment xml:lang="en">The node kind of all literals.</rdfs:comment>
+            <rdfs:label xml:lang="en">Literal</rdfs:label>
+          </sh:NodeKind>
+        </sh:nodeKind>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:path rdf:resource="#minExclusive"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the range of value nodes with a minimum exclusive value.</rdfs:comment>
+    <rdfs:label xml:lang="en">Min-exclusive constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="ExpressionConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="ExpressionConstraintComponent-expression">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#expression"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that a given node expression produces true for all value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Expression constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="QualifiedMaxCountConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="QualifiedMaxCountConstraintComponent-qualifiedValueShapesDisjoint">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</sh:optional>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <sh:path rdf:resource="#qualifiedValueShapesDisjoint"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="QualifiedMaxCountConstraintComponent-qualifiedValueShape">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#qualifiedValueShape"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="QualifiedMaxCountConstraintComponent-qualifiedMaxCount">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <sh:path rdf:resource="#qualifiedMaxCount"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that a specified maximum number of value nodes conforms to a given shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">Qualified-max-count constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="JSConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="JSConstraint-js">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#js"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component with the parameter sh:js linking to a sh:JSConstraint containing a sh:script.</rdfs:comment>
+    <rdfs:label xml:lang="en">JavaScript constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="InConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="InConstraintComponent-in">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:path rdf:resource="#in"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to exclusively enumerate the permitted value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">In constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="PatternConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="PatternConstraintComponent-flags">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</sh:optional>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <sh:path rdf:resource="#flags"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="PatternConstraintComponent-pattern">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <sh:path rdf:resource="#pattern"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that every value node matches a given regular expression.</rdfs:comment>
+    <rdfs:label xml:lang="en">Pattern constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="HasValueConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="HasValueConstraintComponent-hasValue">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#hasValue"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that one of the value nodes is a given RDF node.</rdfs:comment>
+    <rdfs:label xml:lang="en">Has-value constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:Severity rdf:ID="Violation">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">The severity for a violation validation result.</rdfs:comment>
+    <rdfs:label xml:lang="en">Violation</rdfs:label>
+  </sh:Severity>
+  <sh:ConstraintComponent rdf:ID="MaxCountConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="MaxCountConstraintComponent-maxCount">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <sh:path rdf:resource="#maxCount"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the maximum number of value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Max-count constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:Severity rdf:ID="Info">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">The severity for an informational validation result.</rdfs:comment>
+    <rdfs:label xml:lang="en">Info</rdfs:label>
+  </sh:Severity>
+  <sh:ConstraintComponent rdf:ID="PropertyConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="PropertyConstraintComponent-property">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#property"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that all value nodes conform to the given property shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">Property constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:Severity rdf:ID="Warning">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">The severity for a warning validation result.</rdfs:comment>
+    <rdfs:label xml:lang="en">Warning</rdfs:label>
+  </sh:Severity>
+  <sh:ConstraintComponent rdf:ID="ClassConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="ClassConstraintComponent-class">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind rdf:resource="#IRI"/>
+        <sh:path rdf:resource="#class"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that each value node is an instance of a given type.</rdfs:comment>
+    <rdfs:label xml:lang="en">Class constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="OrConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="OrConstraintComponent-or">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#or"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the value nodes so that they conform to at least one out of several provided shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Or constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="UniqueLangConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="UniqueLangConstraintComponent-uniqueLang">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <sh:path rdf:resource="#uniqueLang"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to specify that no pair of value nodes may use the same language tag.</rdfs:comment>
+    <rdfs:label xml:lang="en">Unique-languages constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="MaxExclusiveConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="MaxExclusiveConstraintComponent-maxExclusive">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind rdf:resource="#Literal"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:path rdf:resource="#maxExclusive"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the range of value nodes with a maximum exclusive value.</rdfs:comment>
+    <rdfs:label xml:lang="en">Max-exclusive constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="NodeKindConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="NodeKindConstraintComponent-nodeKind">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:in rdf:parseType="Collection">
+          <sh:NodeKind rdf:ID="BlankNode">
+            <rdfs:isDefinedBy rdf:resource="#"/>
+            <rdfs:comment xml:lang="en">The node kind of all blank nodes.</rdfs:comment>
+            <rdfs:label xml:lang="en">Blank node</rdfs:label>
+          </sh:NodeKind>
+          <sh:NodeKind rdf:about="#IRI"/>
+          <sh:NodeKind rdf:about="#Literal"/>
+          <sh:NodeKind rdf:ID="BlankNodeOrIRI">
+            <rdfs:isDefinedBy rdf:resource="#"/>
+            <rdfs:comment xml:lang="en">The node kind of all blank nodes or IRIs.</rdfs:comment>
+            <rdfs:label xml:lang="en">Blank node or IRI</rdfs:label>
+          </sh:NodeKind>
+          <sh:NodeKind rdf:ID="BlankNodeOrLiteral">
+            <rdfs:isDefinedBy rdf:resource="#"/>
+            <rdfs:comment xml:lang="en">The node kind of all blank nodes or literals.</rdfs:comment>
+            <rdfs:label xml:lang="en">Blank node or literal</rdfs:label>
+          </sh:NodeKind>
+          <sh:NodeKind rdf:ID="IRIOrLiteral">
+            <rdfs:isDefinedBy rdf:resource="#"/>
+            <rdfs:comment xml:lang="en">The node kind of all IRIs or literals.</rdfs:comment>
+            <rdfs:label xml:lang="en">IRI or literal</rdfs:label>
+          </sh:NodeKind>
+        </sh:in>
+        <sh:path rdf:resource="#nodeKind"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the RDF node kind of each value node.</rdfs:comment>
+    <rdfs:label xml:lang="en">Node-kind constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <rdfs:Resource rdf:ID="this">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <rdfs:comment xml:lang="en">A node expression that represents the current focus node.</rdfs:comment>
+    <rdfs:label xml:lang="en">this</rdfs:label>
+  </rdfs:Resource>
+  <sh:ConstraintComponent rdf:ID="QualifiedMinCountConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="QualifiedMinCountConstraintComponent-qualifiedValueShapesDisjoint">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</sh:optional>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <sh:path rdf:resource="#qualifiedValueShapesDisjoint"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="QualifiedMinCountConstraintComponent-qualifiedValueShape">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#qualifiedValueShape"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="QualifiedMinCountConstraintComponent-qualifiedMinCount">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <sh:path rdf:resource="#qualifiedMinCount"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that a specified minimum number of value nodes conforms to a given shape.</rdfs:comment>
+    <rdfs:label xml:lang="en">Qualified-min-count constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="SPARQLConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="SPARQLConstraintComponent-sparql">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#sparql"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to define constraints based on SPARQL queries.</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="MaxInclusiveConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="MaxInclusiveConstraintComponent-maxInclusive">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind rdf:resource="#Literal"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:path rdf:resource="#maxInclusive"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the range of value nodes with a maximum inclusive value.</rdfs:comment>
+    <rdfs:label xml:lang="en">Max-inclusive constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="EqualsConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="EqualsConstraintComponent-equals">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind rdf:resource="#IRI"/>
+        <sh:path rdf:resource="#equals"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that the set of value nodes is equal to the set of nodes that have the focus node as subject and the value of a given property as predicate.</rdfs:comment>
+    <rdfs:label xml:lang="en">Equals constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="DisjointConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="DisjointConstraintComponent-disjoint">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind rdf:resource="#IRI"/>
+        <sh:path rdf:resource="#disjoint"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that the set of value nodes is disjoint with the the set of nodes that have the focus node as subject and the value of a given property as predicate.</rdfs:comment>
+    <rdfs:label xml:lang="en">Disjoint constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="AndConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="AndConstraintComponent-and">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:path rdf:resource="#and"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to test whether a value node conforms to all members of a provided list of shapes.</rdfs:comment>
+    <rdfs:label xml:lang="en">And constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="ClosedConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="ClosedConstraintComponent-ignoredProperties">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</sh:optional>
+        <sh:path rdf:resource="#ignoredProperties"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="ClosedConstraintComponent-closed">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <sh:path rdf:resource="#closed"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to indicate that focus nodes must only have values for those properties that have been explicitly enumerated via sh:property/sh:path.</rdfs:comment>
+    <rdfs:label xml:lang="en">Closed constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="LessThanOrEqualsConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="LessThanOrEqualsConstraintComponent-lessThanOrEquals">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind rdf:resource="#IRI"/>
+        <sh:path rdf:resource="#lessThanOrEquals"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to verify that every value node is smaller than all the nodes that have the focus node as subject and the value of a given property as predicate.</rdfs:comment>
+    <rdfs:label xml:lang="en">less-than-or-equals constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="MinCountConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="MinCountConstraintComponent-minCount">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <sh:path rdf:resource="#minCount"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the minimum number of value nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">Min-count constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+  <sh:ConstraintComponent rdf:ID="MinInclusiveConstraintComponent">
+    <rdfs:isDefinedBy rdf:resource="#"/>
+    <sh:parameter>
+      <sh:Parameter rdf:ID="MinInclusiveConstraintComponent-minInclusive">
+        <rdfs:isDefinedBy rdf:resource="#"/>
+        <sh:nodeKind rdf:resource="#Literal"/>
+        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</sh:maxCount>
+        <sh:path rdf:resource="#minInclusive"/>
+      </sh:Parameter>
+    </sh:parameter>
+    <rdfs:comment xml:lang="en">A constraint component that can be used to restrict the range of value nodes with a minimum inclusive value.</rdfs:comment>
+    <rdfs:label xml:lang="en">Min-inclusive constraint component</rdfs:label>
+  </sh:ConstraintComponent>
+</rdf:RDF>
