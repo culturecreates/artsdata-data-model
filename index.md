@@ -60,11 +60,7 @@ Les travaux en cours sur la prochaine version de l’ontologie Artsdata.ca sont 
 
 ### Provenance
 
-Les données sont excellentes, mais ce n’est pas la vérité ultime, et sans traçabilité, elles peuvent perdre notre confiance. Par exemple, que se passe-t-il si deux pages Web ont des dates différentes pour le même événement des arts de la scène ? Quelle source est la plus digne de confiance ? Comment pouvons-nous suivre les données jusqu’à la source pour décider nous-mêmes ? 
-
-Afin de suivre la provenance, Artsdata.ca utilise des métadonnées attachées à des graphes nommés. Chaque source de données dans Artsdata.ca est stockée dans un graphe nommé distinct. L’URI du graphe est utilisé comme sujet des métadonnées de provenance.  Cette technique de suivi de la provenance est généralement appelée approche des **Graphes nommés (Named Graph)**. Chaque URI de graphe nommé est une prov:Entity et est lié à des métadonnées de provenance, y compris la date à laquelle les données ont été chargées, le logiciel utilisé pour les collecter et le courriel de l’organisation contributrice. Chaque fois que des données sont importées, que ce soit à partir d’un site Web, d’une feuille de calcul ou d’un triple magasin existant, les métadonnées de provenance des graphes sont mises à jour. De plus, lorsque la source de données provient directement d’une page Web analysée, l’entité schema:WebPage inclut la date à laquelle la page Web a été analysée. 
-
-À l’avenir, nous passerons probablement à RDF\* (prononcé « étoile RDF ») afin d’avoir des données de provenance plus granulaires sur les déclarations individuelles.
+Voir la section plus bas en anglais.
 
 ### Architecture de flux de données
 
