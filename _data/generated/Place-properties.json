@@ -30,6 +30,60 @@
       {
         "classes" : {
           "type" : "uri",
+          "value" : "http://schema.org/Place"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/containedInPlace"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The basic containment relation between a place and one that contains it."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "containedInPlace"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Place"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/latitude"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The latitude of a location. For example <code>37.42242</code> (<a href=\"https://en.wikipedia.org/wiki/World_Geodetic_System\">WGS 84</a>)."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "latitude"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Place"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/longitude"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The longitude of a location. For example <code>-122.08585</code> (<a href=\"https://en.wikipedia.org/wiki/World_Geodetic_System\">WGS 84</a>)."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "longitude"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
           "value" : "http://schema.org/Thing"
         },
         "property" : {
@@ -133,6 +187,60 @@
         "label" : {
           "type" : "literal",
           "value" : "image"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/identifier"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "identifier"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/additionalType"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "additionalType"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/disambiguatingDescription"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "disambiguatingDescription"
         }
       },
       {
