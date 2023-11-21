@@ -1,0 +1,170 @@
+[
+ {
+   "Order": 1,
+   "Schema Property": "startDate",
+   "Status": "Required",
+   "Original Schema Definition": "The start date and time of the item (in ISO 8601 date format).",
+   "Artsdata-specific Note EN": "Enter the date and time when the event begins, in ISO 8601 date format. Be sure to specify the time zone, including the number of hours offset from Coordinated Universal Time (UTC).",
+   "Artsdata-specific Note FR": "Saisissez la date et l'heure de début de l'événement, au format ISO 8601. Assurez-vous de préciser le fuseau horaire en incluant le nombre d'heures de décalage avec le temps universel coordonné (UTC)."
+ },
+ {
+   "Order": 2,
+   "Schema Property": "location",
+   "Status": "Required",
+   "Original Schema Definition": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+   "Artsdata-specific Note EN": "Enter the place where the event takes place. In the case of a physical venue, the value should be as precise as possible (for example, the performance hall inside the building instead of the building itself). For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place's Wikidata or Artsdata URI. Otherwise, a complete PostalAddress entity, including the postal code, can help with disambiguation.",
+   "Artsdata-specific Note FR": "Saisissez les informations identifiant et décrivant le lieu où l'événement se déroule. Dans le cas d'un lieu physique, la valeur devrait préférablement être l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située). Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété sameAs. À défaut d'identifiants, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation."
+ },
+ {
+   "Order": 3,
+   "Schema Property": "name",
+   "Status": "Required",
+   "Original Schema Definition": "The name of the item. ",
+   "Artsdata-specific Note EN": "Enter the just the title of the event. Do not append a separator with the name of the venue (as you would for a webpage's \"title\" tag) or any other extraneous information.",
+   "Artsdata-specific Note FR": "Saisissez uniquement le titre de l’événement. N'ajoutez pas de séparateur suivi du nom lieu (comme on retrouve souvent dans des balises \"title\") ou d'autres informations complémentaires."
+ },
+ {
+   "Order": 4,
+   "Schema Property": "additionalType",
+   "Status": "Recommended",
+   "Original Schema Definition": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax.",
+   "Artsdata-specific Note EN": "Enter additional types corresponding to the particular type of event. Refer to the Artsdata controlled vocabulary to identify the most appropriate type(s) of all performing arts event types. As a default, we recommend the type ado:PerformingArtsEvent, which denotes « a performing arts work performed for an audience ».",
+   "Artsdata-specific Note FR": "Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au vocabulaire contrôlé Artsdata pour identifier le ou les types les mieux appropriés parmi tous les types d’événements des arts de la scène. En guise de valeur par défaut, nous recommandons le type ado:PerformingArtsEvent, qui désigne « une œuvre des arts de la scène exécutée pour un public »."
+ },
+ {
+   "Order": 5,
+   "Schema Property": "url",
+   "Status": "Recommended",
+   "Original Schema Definition": "URL of the item",
+   "Artsdata-specific Note EN": "Enter the canonical (aka \"official\") URL of the event webpage on the organizer's website.",
+   "Artsdata-specific Note FR": "Saisissez l’URL canonique (c.-à-d. « officielle ») désignant la page web de l’événement sur le site de l’organisateur."
+ },
+ {
+   "Order": 6,
+   "Schema Property": "description",
+   "Status": "Recommended",
+   "Original Schema Definition": "A description of the item. \n",
+   "Artsdata-specific Note EN": "Enter a short description of the event.",
+   "Artsdata-specific Note FR": "Saisissez une courte description d'un événement."
+ },
+ {
+   "Order": 7,
+   "Schema Property": "organizer",
+   "Status": "Recommended",
+   "Original Schema Definition": "An organizer of an Event.",
+   "Artsdata-specific Note EN": "Enter information identifying and describing the organization or person who presents the event. For an organization, this can be a presenting organization or even a company presenting its own production (in which case, the same value would be entered under the performer property). Recommended properties for the nested entity include: name, url, and sameAs (with link pointing to a Wikidata or Artsdata URI).",
+   "Artsdata-specific Note FR": "Saisissez les informations identifiant et décrivant l’organisme qui est responsable de la présentation du spectacle. Il peut s’agir d’un organisme diffuseur ou alors d’une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignées sous la propriété performer). Les propriétés recommandées pour l'entité imbriquée incluent : name, URL et sameAs (pointant vers un identifiant Artsdata et/ou Wikidata)."
+ },
+ {
+   "Order": 8,
+   "Schema Property": "sameAs",
+   "Status": "Recommended",
+   "Original Schema Definition": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website. ",
+   "Artsdata-specific Note EN": "Enter the URIs of persistent identifiers (Wikidata, Artsdata, ISNI, etc.) that unambiguously identify the nested entities under the Event type (including location, organizer and performer). Always add each identifier's complete URI (instead of entering just the ID itself).",
+   "Artsdata-specific Note FR": "Saisissez les URIs d’identifiants pérennes (Artsdata, Wikidata, ISNI, etc.) permettant d’identifier sans ambiguité les entitées imbriquées dans l’entité de type Event (tel que location, organizer et performer). Saississez toujours l’URI complète de l’identifiant (plutôt que de saisir uniquement l’identifiant lui-même)."
+ },
+ {
+   "Order": 9,
+   "Schema Property": "inLanguage",
+   "Status": "Optional",
+   "Original Schema Definition": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
+   "Artsdata-specific Note EN": "Identify the language of the content or performance of the event. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.",
+   "Artsdata-specific Note FR": "Identifiez la langue du contenu ou du déroulement de l'événement. Veuillez utiliser l'un des codes de langue de la norme IETF BCP 47. Voir aussi availableLanguage."
+ },
+ {
+   "Order": 10,
+   "Schema Property": "image",
+   "Status": "Optional",
+   "Original Schema Definition": "An image of the item. This can be a URL or a fully described ImageObject. \n",
+   "Artsdata-specific Note EN": "Identify the main image for the event page. This can be a URL or a fully described ImageObject. Recommend properties for the nested ImageObject include: creator, creditText, copyrightNotice.",
+   "Artsdata-specific Note FR": "Identifiez l'image principale de la page d'événement. Elle peut s'agir d'une URL ou d'un ImageObject entièrement décrit. Les propriétés recommandées pour un ImageObject imbriqué incluent : creator, creditText, copyrightNotice."
+ },
+ {
+   "Order": 11,
+   "Schema Property": "endDate",
+   "Status": "Optional",
+   "Original Schema Definition": "The end date and time of the item (in ISO 8601 date format).",
+   "Artsdata-specific Note EN": "Enter the date and time when the event ends, in ISO 8601 date format. Be sure to specify the time zone, including the number of hours offset from Coordinated Universal Time (UTC).",
+   "Artsdata-specific Note FR": "Saisissez la date et l'heure de fin de l'événement, au format ISO 8601. Assurez-vous de préciser le fuseau horaire en incluant le nombre d'heures de décalage avec le temps universel coordonné (UTC)."
+ },
+ {
+   "Order": 12,
+   "Schema Property": "duration",
+   "Status": "Optional",
+   "Original Schema Definition": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+   "Artsdata-specific Note EN": "Enter the length from the startDate to the endDate of the event, in ISO 8601 date format.",
+   "Artsdata-specific Note FR": "Saisissez la durée entre la date de début et la date de fin de l'événement, au format ISO 8601."
+ },
+ {
+   "Order": 13,
+   "Schema Property": "eventAttendanceMode",
+   "Status": "Optional",
+   "Original Schema Definition": "The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.",
+   "Artsdata-specific Note EN": "Identify the manner in which audiences attend the event, such as online, offline, or mixed.",
+   "Artsdata-specific Note FR": "Identifiez la manière dont les publics assistent à l'événement, telle qu'en ligne, hors ligne ou hybride."
+ },
+ {
+   "Order": 14,
+   "Schema Property": "eventStatus",
+   "Status": "Optional",
+   "Original Schema Definition": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
+   "Artsdata-specific Note EN": "Identify the current programming status of the event, such as scheduled, cancelled or rescheduled.",
+   "Artsdata-specific Note FR": "Identifiez l'état actuel de la programmation de l'événement, tel que programmé, annulé ou reprogrammé."
+ },
+ {
+   "Order": 15,
+   "Schema Property": "offers",
+   "Status": "Optional",
+   "Original Schema Definition": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
+   "Artsdata-specific Note EN": "Enter at least one Offer type entity, including the URL of the event's ticketing page. For more information about how to describe Offer type entities, consult the Artsdata event structured data template and Google's documentation: https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions",
+   "Artsdata-specific Note FR": "Saississez au moins une entité de type Offer avec l'URL de la page où l'on peut se procurer les billets. Pour plus d'informations sur la façon de renseigner les offres, consultez le gabarit de données structurées d'événements Artsdata et la documentation de Google: https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions"
+ },
+ {
+   "Order": 16,
+   "Schema Property": "performer",
+   "Status": "Optional",
+   "Original Schema Definition": "A performer at the event—for example, a presenter, musician, musical group or actor.",
+   "Artsdata-specific Note EN": "Enter information identifying and describing the company, group or person(s) delivering the performance. Recommended properties for the nested entity include: name, url, and sameAs (with link pointing to an ISNI, Wikidata or Artsdata URI).",
+   "Artsdata-specific Note FR": "Saisissez les informations identifiant et décrivant la compagnie, le groupe ou la (les) personne(s) qui est(sont) responsable de l’exécution de la représentation. Il est possible d’ajouter plusieurs performer(s). Les propriétés recommandées pour l'entité imbriquées incluent : name, URL et sameAs (pointant vers un identifiant ISNI, Artsdata et/ou Wikidata)."
+ },
+ {
+   "Order": 17,
+   "Schema Property": "workPerformed",
+   "Status": "Optional",
+   "Original Schema Definition": "A work performed in some event, for example a play performed in a TheaterEvent.",
+   "Artsdata-specific Note EN": "Enter information identifying and describing the performance work performed at the event, or the musical, dramatic or music-dramatic work(s) integrated into the performance work.",
+   "Artsdata-specific Note FR": "Saisissez les informations identifiant et décrivant l'oeuvre-spectacle exécutée lors de la représentation ou alors décrivant la ou des oeuvres musicales, dramatiques, musicodramatiques intégrées à l'oeuvre-spectacle."
+ },
+ {
+   "Order": 18,
+   "Schema Property": "alternateName",
+   "Status": "Optional",
+   "Original Schema Definition": "An alias for the item.",
+   "Artsdata-specific Note EN": "Enter an alias for the event title (for example, a subtitle or an alternative title), if applicable.",
+   "Artsdata-specific Note FR": "Saisissez un alias du titre de l'événement (par exemple, ou sous-titre ou un titre alternatif), le cas échéant."
+ },
+ {
+   "Order": 19,
+   "Schema Property": "mainEntityOfPage",
+   "Status": "Optional",
+   "Original Schema Definition": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details. ",
+   "Artsdata-specific Note EN": "Enter the URL of a page on another website other than organizer's that describes the same event as the canonical URL.",
+   "Artsdata-specific Note FR": "Saisissez l'URL d'une page d'un autre site web que celui de l'organisateur qui décrit le même événement que l'URL canonique."
+ },
+ {
+   "Order": 20,
+   "Schema Property": "superEvent",
+   "Status": "Optional",
+   "Original Schema Definition": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
+   "Artsdata-specific Note EN": "If your event is part of a larger event, such as a festival, enter information identifying and describing the larger event.",
+   "Artsdata-specific Note FR": "Si votre événement fait partie d'un événement plus grand, tel qu'un festival, saisissez les informations identifiant et décrivant l'événement plus grand."
+ },
+ {
+   "Order": 21,
+   "Schema Property": "subEvent",
+   "Status": "Optional",
+   "Original Schema Definition": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
+   "Artsdata-specific Note EN": "If your event is of @type EventSeries and consists of a series of performances of the same performance work, please describe each performance as a nested entity under the subEvent property.\nIf your event is of @type Festival and a single web page describes both the festival edition and individual performances presented at the festival, please describe each performance as a nested entity under the subEvent property. ",
+   "Artsdata-specific Note FR": "Si votre événement est de type EventSeries et comporte une série de représentations d’un même spectacle, veuillez décrire chaque représentation comme une entité imbriquée sous la propriété ‘subEvent’. \nSi votre événement est de type Festival et que la page web canonique décrivant l'édition du festival sert aussi de page web canonique des spectacles qui y sont présentés (c.-à-d. que l'édition du festival et les représentations sont décrite sur une même page), veuillez décrire chaque représentation de spectacle en tant qu'entité imbriquée sous la propriété ‘subEvent’."
+ }
+]
