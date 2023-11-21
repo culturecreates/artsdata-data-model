@@ -30,19 +30,37 @@
       {
         "classes" : {
           "type" : "uri",
-          "value" : "http://schema.org/Place"
+          "value" : "http://schema.org/Thing"
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/containedInPlace"
+          "value" : "http://schema.org/sameAs"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "The basic containment relation between a place and one that contains it."
+          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
         },
         "label" : {
           "type" : "literal",
-          "value" : "containedInPlace"
+          "value" : "sameAs"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/alternateName"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An alias for the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "alternateName"
         }
       },
       {
@@ -61,24 +79,6 @@
         "label" : {
           "type" : "literal",
           "value" : "description"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Thing"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/image"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "image"
         }
       },
       {
@@ -124,33 +124,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/sameAs"
+          "value" : "http://schema.org/image"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
         },
         "label" : {
           "type" : "literal",
-          "value" : "sameAs"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Thing"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/alternateName"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An alias for the item."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "alternateName"
+          "value" : "image"
         }
       },
       {

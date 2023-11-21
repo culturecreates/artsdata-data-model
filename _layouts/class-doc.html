@@ -31,6 +31,7 @@ layout: default
         <th>Description</th>
     </tr>
     {% assign class_properties_json = page.class_name | append: '-properties' %}
+    {% assign specific_instructions_json = page.class_name | append: '-specific-instructions' %}
     {% for member in site.data.generated[class_properties_json].results.bindings %}
     <tr>
         <td>
@@ -40,6 +41,13 @@ layout: default
             {{ member.comment.value }}
             <br>
             <span style="font-size: 0.75rem">from class {{ member.classes.value }}</span> 
+            <br>
+            {% for instruct in site.data[specific_instructions_json] %}
+                {% if  instruct["Schema Property"] ==  member.label.value %}
+                    <h4>Artsdata specific</h4>
+                    {{ instruct["Artsdata-specific Note EN"] }}
+                {% endif %}
+            {% endfor %}
         </td>
     </tr>
     {% endfor %}

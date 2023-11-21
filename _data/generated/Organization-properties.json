@@ -16,15 +16,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/description"
+          "value" : "http://schema.org/sameAs"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "A description of the item."
+          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
         },
         "label" : {
           "type" : "literal",
-          "value" : "description"
+          "value" : "sameAs"
         }
       },
       {
@@ -34,15 +34,33 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/image"
+          "value" : "http://schema.org/alternateName"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
+          "value" : "An alias for the item."
         },
         "label" : {
           "type" : "literal",
-          "value" : "image"
+          "value" : "alternateName"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/description"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A description of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "description"
         }
       },
       {
@@ -88,33 +106,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/sameAs"
+          "value" : "http://schema.org/image"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
         },
         "label" : {
           "type" : "literal",
-          "value" : "sameAs"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Thing"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/alternateName"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An alias for the item."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "alternateName"
+          "value" : "image"
         }
       },
       {
@@ -142,24 +142,6 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/location"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "The location of for example where the event is happening, an organization is located, or where an action takes place."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "location"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Organization"
-        },
-        "property" : {
-          "type" : "uri",
           "value" : "http://schema.org/address"
         },
         "comment" : {
@@ -169,6 +151,24 @@
         "label" : {
           "type" : "literal",
           "value" : "address"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Organization"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/location"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The location of for example where the event is happening, an organization is located, or where an action takes place."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "location"
         }
       }
     ]

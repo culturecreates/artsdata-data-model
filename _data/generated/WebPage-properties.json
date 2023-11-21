@@ -34,15 +34,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/description"
+          "value" : "http://schema.org/sameAs"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "A description of the item."
+          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
         },
         "label" : {
           "type" : "literal",
-          "value" : "description"
+          "value" : "sameAs"
         }
       },
       {
@@ -52,15 +52,33 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/image"
+          "value" : "http://schema.org/alternateName"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
+          "value" : "An alias for the item."
         },
         "label" : {
           "type" : "literal",
-          "value" : "image"
+          "value" : "alternateName"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/description"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A description of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "description"
         }
       },
       {
@@ -106,33 +124,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/sameAs"
+          "value" : "http://schema.org/image"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
         },
         "label" : {
           "type" : "literal",
-          "value" : "sameAs"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Thing"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/alternateName"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An alias for the item."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "alternateName"
+          "value" : "image"
         }
       },
       {
@@ -160,15 +160,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/keywords"
+          "value" : "http://schema.org/hasPart"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."
+          "value" : "Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense)."
         },
         "label" : {
           "type" : "literal",
-          "value" : "keywords"
+          "value" : "hasPart"
         }
       },
       {
@@ -178,51 +178,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/mentions"
+          "value" : "http://schema.org/dateModified"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept."
+          "value" : "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."
         },
         "label" : {
           "type" : "literal",
-          "value" : "mentions"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/CreativeWork"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/offers"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class=\"localLink\" href=\"http://schema.org/businessFunction\">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class=\"localLink\" href=\"http://schema.org/Demand\">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "offers"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/CreativeWork"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/video"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "An embedded video object."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "video"
+          "value" : "dateModified"
         }
       },
       {
@@ -241,24 +205,6 @@
         "label" : {
           "type" : "literal",
           "value" : "inLanguage"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/CreativeWork"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/sdDatePublished"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "Indicates the date on which the current structured data was generated / published. Typically used alongside <a class=\"localLink\" href=\"http://schema.org/sdPublisher\">sdPublisher</a>"
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "sdDatePublished"
         }
       }
     ]
