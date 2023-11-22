@@ -27,8 +27,8 @@ where
                     <http://kg.artsdata.ca> 
                     <http://kg.artsdata.ca/Organization> 
                     <http://kg.artsdata.ca/Person> 
-                    <http://kg.artsdata.ca/Place>
-                    <http://kg.artsdata.ca/culture-creates/capacitor/AlmaSpectacles>
+                    <http://kg.artsdata.ca/culture-creates/footlight/placedesarts-com>
+                    <http://kg.artsdata.ca/culture-creates/footlight/co-motion-ca>
                 }
     { 
         graph ?g    {

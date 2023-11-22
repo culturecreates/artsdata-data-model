@@ -16,15 +16,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/description"
+          "value" : "http://schema.org/sameAs"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "A description of the item."
+          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
         },
         "label" : {
           "type" : "literal",
-          "value" : "description"
+          "value" : "sameAs"
         }
       },
       {
@@ -34,15 +34,33 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/image"
+          "value" : "http://schema.org/alternateName"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
+          "value" : "An alias for the item."
         },
         "label" : {
           "type" : "literal",
-          "value" : "image"
+          "value" : "alternateName"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/description"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A description of the item."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "description"
         }
       },
       {
@@ -88,15 +106,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/sameAs"
+          "value" : "http://schema.org/image"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+          "value" : "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>."
         },
         "label" : {
           "type" : "literal",
-          "value" : "sameAs"
+          "value" : "image"
         }
       },
       {
@@ -106,15 +124,51 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/alternateName"
+          "value" : "http://schema.org/identifier"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "An alias for the item."
+          "value" : "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details."
         },
         "label" : {
           "type" : "literal",
-          "value" : "alternateName"
+          "value" : "identifier"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/additionalType"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "additionalType"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Thing"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/disambiguatingDescription"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "disambiguatingDescription"
         }
       },
       {
@@ -128,11 +182,29 @@
         },
         "comment" : {
           "type" : "literal",
-          "value" : "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"https://schema.org/docs/datamodel.html#mainEntityBackground\">background notes</a> for details."
+          "value" : "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details."
         },
         "label" : {
           "type" : "literal",
           "value" : "mainEntityOfPage"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
+          "value" : "http://schema.org/audience"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "An intended audience, i.e. a group for whom something was created."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "audience"
         }
       },
       {
@@ -214,6 +286,24 @@
         },
         "property" : {
           "type" : "uri",
+          "value" : "http://schema.org/inLanguage"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The language of the content or performance or used in an action. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/availableLanguage\">availableLanguage</a>."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "inLanguage"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
           "value" : "http://schema.org/offers"
         },
         "comment" : {
@@ -268,6 +358,24 @@
         },
         "property" : {
           "type" : "uri",
+          "value" : "http://schema.org/recordedIn"
+        },
+        "comment" : {
+          "type" : "literal",
+          "value" : "The CreativeWork that captured all or part of this Event."
+        },
+        "label" : {
+          "type" : "literal",
+          "value" : "recordedIn"
+        }
+      },
+      {
+        "classes" : {
+          "type" : "uri",
+          "value" : "http://schema.org/Event"
+        },
+        "property" : {
+          "type" : "uri",
           "value" : "http://schema.org/startDate"
         },
         "comment" : {
@@ -286,33 +394,15 @@
         },
         "property" : {
           "type" : "uri",
-          "value" : "http://schema.org/superEvent"
+          "value" : "http://schema.org/subEvent"
         },
         "comment" : {
           "type" : "literal",
-          "value" : "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent."
+          "value" : "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference."
         },
         "label" : {
           "type" : "literal",
-          "value" : "superEvent"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/workPerformed"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "A work performed in some event, for example a play performed in a TheaterEvent."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "workPerformed"
+          "value" : "subEvent"
         }
       },
       {
@@ -331,24 +421,6 @@
         "label" : {
           "type" : "literal",
           "value" : "eventAttendanceMode"
-        }
-      },
-      {
-        "classes" : {
-          "type" : "uri",
-          "value" : "http://schema.org/Event"
-        },
-        "property" : {
-          "type" : "uri",
-          "value" : "http://schema.org/inLanguage"
-        },
-        "comment" : {
-          "type" : "literal",
-          "value" : "The language of the content or performance or used in an action. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/availableLanguage\">availableLanguage</a>."
-        },
-        "label" : {
-          "type" : "literal",
-          "value" : "inLanguage"
         }
       }
     ]

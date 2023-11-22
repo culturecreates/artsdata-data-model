@@ -19,8 +19,8 @@
       "url":"--URL de site ou de la page officielle du diffuseur : URL of presenter's official website--",
       "sameAs":[
          "--lien vers un ou des comptes de réseaux sociaux du diffuseur, si disponible : link to one or more social media accounts of the presenter, if available--",
-         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
-         "--URI Wikidata.org, si disponible : Wikidata.org URI, if available--"]
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
+         "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"]
       }],
    "performer":[{
       "@type":"--Utiliser le type 'Organization' si l'interprète est une compagnie ou un groupe, ou 'Person' si l'interprète est un ou des artistes : Use type 'Organization' if the performer is a company or a group, or 'Person' type if the performer is an artist(s)--",
@@ -29,8 +29,8 @@
       "url":"--URL du site officiel de la compagnie : URL of the company's official website--",
       "sameAs":[
          "--lien vers un ou des comptes de réseaux sociaux, si disponible si disponible : link to one or more social media accounts of the presenter, if available--",
-         "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
-         "--URI wikidata, si disponible : Wikidata.org URI, if available--"]
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
+         "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"]
    }],
    "location":[
          {
@@ -46,8 +46,8 @@
             },
             "sameAs":[
                "--lien vers un ou des comptes de réseaux sociaux, si disponible : link to social media account(s), if available--",
-               "--URI Artsdata.ca, obtenu avec l'API de réconciliation Artsdata : Artsdata.ca URI, obtained with the Artsdata Reconciliation API--",
-               "--URI wikidata, si disponible : Wikidata.org URI, if available--"]
+               "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
+               "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"]
          },{
             "@type":"VirtualLocation",
             "@id":"--URI constituant un identifiant unique de lieu virtuelle. Optionnel : URI constituting a unique virtual location identifier. Optional--",

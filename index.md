@@ -7,6 +7,8 @@
 
 Un modèle de données simple pour les événements dans les arts de la scène ainsi que pour les lieux, les personnes et les organismes connexes. 
 
+Le modèle de données (ontologie) d’Artsdata est un sous-ensemble de Schema.org avec quelques vocabulaires contrôlés additionnels. Le modèle local de Artsdata.ca est représenté formellement avec SHACL [ici](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/shacl_artsdata.ttl).
+
 Vous êtes invités à faire part de vos commentaires et à examiner les problèmes actuels dans [GitHub](https://github.com/culturecreates/artsdata-data-model/issues). 
 
 Il existe également un fichier [PDF](https://drive.google.com/file/d/19UDRPTyuFTfWzn4f0n6qm73e235o5uAL/view?usp=sharing) des données que [Footlight](https://console.artsdata.ca) alimente dans Artsdata. À l’heure actuelle, les données que Footlight publie sur les sites Web des organismes culturels et les données d’Artsdata sont très similaires. Alors que de plus en plus de sources alimentent Artsdata, la forme des données entre Footlight et Artsdata peut diverger, Footlight étant un sous-ensemble de classes et de propriétés collectées dans Artsdata.
@@ -31,8 +33,14 @@ Voici les Classes utilisées dans Artsdata.
 {% endfor %}
 </ol>
 
-### Gabarits
-[Gabarits de données structurées]({{ base }}/gabarits-jsonld/README.html)
+### Identifiants passerelles
+En plus de l'identifiant Artsdata, le graphe de connaissance Artsdata s'appuie sur d'autres identifiants uniques pérennes, comme l'identifiant Wikidata et l'ISNI, afin de reconnaître et de réconcilier les entités nommées des classes [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) et [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
+
+[Recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit#gid=1000818759)
+
+### Gabarits de données structurées
+[Gabarits pour les événements]({{ base }}/gabarits-jsonld/README.fr.html)
+[Gabarits pour les personnes](https://docs.google.com/document/d/e/2PACX-1vRorpIgx1arsAqGuiR428j74uxk5K2V63f9yHgWn1C4CyqxH3mMk_Hw92JsGJBh4CKprGc9rG85Gfcn/pub)
 
 ### Rapports de validation SHACL
 
@@ -55,11 +63,7 @@ Les travaux en cours sur la prochaine version de l’ontologie Artsdata.ca sont 
 
 ### Provenance
 
-Les données sont excellentes, mais ce n’est pas la vérité ultime, et sans traçabilité, elles peuvent perdre notre confiance. Par exemple, que se passe-t-il si deux pages Web ont des dates différentes pour le même événement des arts de la scène ? Quelle source est la plus digne de confiance ? Comment pouvons-nous suivre les données jusqu’à la source pour décider nous-mêmes ? 
-
-Afin de suivre la provenance, Artsdata.ca utilise des métadonnées attachées à des graphes nommés. Chaque source de données dans Artsdata.ca est stockée dans un graphe nommé distinct. L’URI du graphe est utilisé comme sujet des métadonnées de provenance.  Cette technique de suivi de la provenance est généralement appelée approche des **Graphes nommés (Named Graph)**. Chaque URI de graphe nommé est une prov:Entity et est lié à des métadonnées de provenance, y compris la date à laquelle les données ont été chargées, le logiciel utilisé pour les collecter et le courriel de l’organisation contributrice. Chaque fois que des données sont importées, que ce soit à partir d’un site Web, d’une feuille de calcul ou d’un triple magasin existant, les métadonnées de provenance des graphes sont mises à jour. De plus, lorsque la source de données provient directement d’une page Web analysée, l’entité schema:WebPage inclut la date à laquelle la page Web a été analysée. 
-
-À l’avenir, nous passerons probablement à RDF\* (prononcé « étoile RDF ») afin d’avoir des données de provenance plus granulaires sur les déclarations individuelles.
+Voir la section plus bas en anglais.
 
 ### Architecture de flux de données
 
@@ -87,9 +91,9 @@ Artsdata.ca charge les données ouvertes et liées de Wikidata et DBpedia afin d
 
 A simple data model for Performing Arts Events and related Places, People and Organizations. 
 
-You are welcome to give feedback and review current issues with [GitHub Issues](https://github.com/culturecreates/artsdata-data-model/issues). 
+The Artsdata data model (ontology) is a sub-set of Schema.org along with a few controlled vocabularies specific to Artsdata. The data mode is formally represented in SHACL [here](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/shacl_artsdata.ttl).
 
-There is also a [PDF](https://drive.google.com/file/d/19UDRPTyuFTfWzn4f0n6qm73e235o5uAL/view?usp=sharing) of the data that [Footlight](https://console.artsdata.ca) feeds into Artsdata.  At the moment, the data that Footlight publishes on the websites of arts organizations and the data in Artsdata are very similar. As more and more sources feed into Artsdata, the shape of the data between Footlight and Artsdata may diverge, with Footlight being a subset of classes and properties collected in Artsdata.
+There is also an older [PDF](https://drive.google.com/file/d/19UDRPTyuFTfWzn4f0n6qm73e235o5uAL/view?usp=sharing) of the data that [Footlight](https://console.artsdata.ca) feeds into Artsdata.  At the moment, the data that Footlight publishes on the websites of arts organizations and the data in Artsdata are very similar. As more and more sources feed into Artsdata, the shape of the data between Footlight and Artsdata may diverge, with Footlight being a subset of classes and properties collected in Artsdata.
 
 The classes and properties used in Artsdata represent a “thin” layer of data roughly specified by [Google Event Structured Data](https://developers.google.com/search/docs/data-types/event).  The main difference is that Artsdata enforces links between entities within Artsdata and interlinks URIs outside of Artsdata including links to Wikidata and other LOD (Linked Open Data) sources.  Artsdata also generates unique global identifiers (IRIs also called URIs) for classes such as Event, Person, Place, and Organization.
 
@@ -110,6 +114,15 @@ Here are the main Classes used in Artsdata.
 </li>
 {% endfor %}
 </ol>
+
+### Bridge Identifiers
+In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other persistent and unique identifiers, like wikidata and ISNI, to recognize and reconcile entites of type [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) and [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
+
+[Recommendations on using persistent identifiers in the performing arts](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit#gid=1000818759)
+
+### Structured Data Templates
+[Event templates]({{ base }}/gabarits-jsonld/README.html)
+[Person templates](https://docs.google.com/document/d/e/2PACX-1vRdOlvKHAEP-4MEUyt3Y4BhyfGn8Ki4Nu40vw_JlaCYDZ1hEHnloH-qGyBcrjXXBbjCz1InKYz3lKw2/pub)
 
 ### SHACL Validation Reports
 
@@ -136,7 +149,7 @@ Data is great, but it is not the ultimate truth, and without traceability it can
 
 To track provenance, Artsdata.ca uses metadata attached to named graphs. Each data source in Artsdata.ca is stored in a separate named graph. The graph's URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the **Named Graphs** approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data was loaded, the software used to collect it and the email of the contributing organization. Each time data is imported,  whether from a web site, spreadsheet or existing triple store, the graphs provenance metadata is updated. In addition, when the data source is directly from a crawled web page, the schema:WebPage entity includes the date when the web page was crawled. 
 
-In the future, we will likely switch to RDF\* (pronounced "RDF star") in order to have more granular provenance data on individual statements.
+Minted entities in Artsdata.ca is master data and is therefore not from an external source. To track provenance metadata on minted entity master data, RDF-star is used to quote triples as provenance entities using the provenance ontology. 
 
 ### Data Flow Architecture
 

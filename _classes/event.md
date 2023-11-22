@@ -11,15 +11,17 @@ The list of types (SKOS concepts) and the concept scheme can be viewed here [Art
 
 For example, an Event can be assigned the type [http://kg.artsdata.ca/resource/PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent) showing narrower and broader SKOS concepts.
 
-This is a WIP - work in progress. For the latest changes and edits visit [Google Sheet](https://docs.google.com/spreadsheets/d/1ud_kVTE8C97ZMoe1uYGQ6rW_dodKqsbqiCutLLHO9jo/edit?usp=sharing) to view the pending (not yet published) version of the Artsdata controlled vocabulary and mapping to other vocabularies. 
+To suggest edits visit [Google Sheet](https://docs.google.com/spreadsheets/d/1ud_kVTE8C97ZMoe1uYGQ6rW_dodKqsbqiCutLLHO9jo/edit?usp=sharing) to view the version of the Artsdata controlled vocabulary and mapping to other vocabularies. 
 
 Your input is welcome. Please click the link in the top nav bar to open an issue.
 
 ### How to use
 
-The Artsdata Event Controlled Vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (schema:Event or schema:EventSeries) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the schema:additionalType property.
+The Artsdata Event Type controlled vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (schema:Event or schema:EventSeries) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the schema:additionalType property.
 
 For example: `ex:Event1 a schema:Event ; schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .`
+
+To implement schema:Event and schema:additionalType properties in your structured data, please consult Artsdata's [structured data templates](https://culturecreates.github.io/artsdata-data-model/gabarits-jsonld/README.html).
 
 ### Reconciling
 
@@ -32,12 +34,24 @@ To give it a try:
 3. Click the Reconcile button
 
 To limit the results only to the controlled vocabulary:
-1. Select the type "Concept" (optional)
-5. Click the button "Add property"
-6. Enter the Property ID "skos:inScheme" and the value "adr:ArtsdataEventTypes"
-7. Enter the name of an event type, such as Circus
+1. Select the "type" radio button "Artsdata Event Type"
 8. Click the Reconcile button
 
 ### Dereferencing
 
 Each SKOS Concept or ConceptScheme URI can be dereferenced individually. Or you can download the entire vocabulary using this [download link](https://db.artsdata.ca/repositories/artsdata/statements?context=%3Chttp://kg.artsdata.ca/culture-creates/ontology/artsdata-event-types%3E).
+
+## Minting Artsdata IDs for Events
+
+In order for Artsdata to automatically create a unique ID for a performing arts event, the event must minimally have these three attribute–value pairs:
+
+- @Type: Event (or an Event sub-type);
+- startTime: dateTime value with a time zone offset;
+- location: Place with a sameAs link to a Wikidata or Artsdata URI.
+
+If the startTime value is incomplete or if the Place entity does not have a sameAs link to an identifier, it is still possible to manually assign an ID, as long as at least one of the following properties is used:
+- name;
+- description;
+- url.
+
+In the absence of a Place URI, a postal code can be useful to identify potential duplicate event records.

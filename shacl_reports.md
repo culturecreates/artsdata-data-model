@@ -6,7 +6,7 @@
 
 The Artsdata.ca Databus uses SHACL shapes to validate input data. A report is generated with each call to the Databus. The SHACL report is a summary of data graph nodes in violation and the related shapes.  The URIs of the nodes and shapes in the report are dereferencable and can be looked up to help debug the violation.
 
-The default SHACL shape that validates all data graphs is `shacl_events_shape.ttl` located in this [Github repository](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/event/).
+The default SHACL shape that validates all data graphs is `shacl_artsdata.ttl` located in this [Github repository](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/).
 
 Sample event JSON-LD files are available in the samples directory. You can play around with these sample events in the SHACL Playground. 
 

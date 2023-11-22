@@ -6,7 +6,9 @@ shex: person
 
 ## Adding people
 
-To add a performing arts person, please create the person in Wikidata and fill in the following required fields. Please add as much data as possible to help cases that require disambiguation. We recommend linking social media profiles, and external global IDs like ISNI, but these are not mandatory. 
+Here is a [preliminary document](https://docs.google.com/document/d/1GsMstjpbTYBqVtbR8bM5fHmJpz4yL7PIQxrixcxlSPo/edit) (French only) on a template to add People.
+
+Another way is to add a performing arts person in Wikidata and fill in the following required fields. Please add as much data as possible to help cases that require disambiguation.  We recommend linking social media profiles, and external global IDs like ISNI, but these are not mandatory. 
 
 * Given name
 * Family name
@@ -29,6 +31,7 @@ To add a performing arts person, please create the person in Wikidata and fill i
 This [evolving document](https://docs.google.com/document/d/1izeqwhezGme0kE_Q0wLN16C6wVrWQtRym6-7zqvaTeA/edit?usp=sharing) contains our latest structured data templates for artists. Aside from the standard JSON-LD format, there are also three different templates in Microdata format.
 
 Le document est disponible également [en français](https://docs.google.com/document/d/1GsMstjpbTYBqVtbR8bM5fHmJpz4yL7PIQxrixcxlSPo/edit?usp=sharing).
+
 
 ###  ShEx Validator 
 
