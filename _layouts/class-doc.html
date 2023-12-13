@@ -44,7 +44,7 @@ layout: default
             <br>
             {% for instruct in site.data[specific_instructions_json] %}
                 {% if  instruct["Schema Property"] ==  member.label.value %}
-                    <h4>Artsdata specific</h4>
+                    <h5>Artsdata instructions</h5>
                     {{ instruct["Artsdata-specific Note EN"] }}
                 {% endif %}
             {% endfor %}
