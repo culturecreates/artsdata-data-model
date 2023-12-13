@@ -26,10 +26,16 @@ Another way is to add a performing arts person in Wikidata and fill in the follo
   * non-binary
 * Date of birth
 
+### Structured data templates
 
-Wikidata uses [ShEx](https://shex.io) to validate data. 
+This [evolving document](https://docs.google.com/document/d/1izeqwhezGme0kE_Q0wLN16C6wVrWQtRym6-7zqvaTeA/edit?usp=sharing) contains our latest structured data templates for artists. Aside from the standard JSON-LD format, there are also three different templates in Microdata format.
+
+Le document est disponible également [en français](https://docs.google.com/document/d/1GsMstjpbTYBqVtbR8bM5fHmJpz4yL7PIQxrixcxlSPo/edit?usp=sharing).
+
 
 ###  ShEx Validator 
+
+Artsdata uses [ShEx](https://shex.io) to validate data for import. If the data passes the ShEx validation, the person will automatically be added to Artsdata.ca in a couple of days.
 
 Test using this [Online Validator](https://shex-simple.toolforge.org/wikidata/packages/shex-webapp/doc/shex-simple.html?data=Endpoint:%20https://query.wikidata.org/sparql&hideData&manifest=[]&textMapIsSparqlQuery&schemaURL=https://raw.githubusercontent.com/culturecreates/artsdata-data-model/master/shex/wikidata_person.shex)
 
