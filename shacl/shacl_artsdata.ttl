@@ -8,7 +8,7 @@
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 
 ####################################################
-# Artsdata Events SHACL v4.2
+# Artsdata Events SHACL v4.3
 ####################################################
 
 ################
@@ -192,7 +192,7 @@ ads:ImageWarningSh
 ################
 ads:WebPageShape
     a sh:NodeShape ;
-    sh:ignoredProperties ( rdf:type ) ;
+ #   sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass schema:WebPage ;
   #  sh:closed true ;
     sh:property ads:LastReviewedSh,
@@ -266,7 +266,7 @@ ads:CanadianBusinessNumberSh
 ads:PlaceShape
     a sh:NodeShape ;
     sh:targetClass schema:Place ;
-    sh:ignoredProperties ( rdf:type ) ;
+#    sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:PlaceNameSh, 
                 ads:SameAsSh,
                 ads:PlaceUrlSh ;
@@ -326,7 +326,7 @@ ads:PostalAddressShape
     a sh:NodeShape ;
     sh:targetClass schema:PostalAddress ;
     # sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
+  #  sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:StreetAddressSh, 
                 ads:addressCountrySh, 
                 ads:addressRegionSh, 
