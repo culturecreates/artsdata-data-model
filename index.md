@@ -138,6 +138,13 @@ Artsdata.ca has a large number of class and property mappings between Schema.org
 
 Current work into the next version of the Artsdata.ca ontology is being influenced by the work at CAPACOA's [Linked Digital Future](https://linkeddigitalfuture.ca) initiative and involves aligning the data model with data models used in cultural heritage including, but not limited to, CIDOC-CRM, FRBRoo, PROV and RDA. The data models will be futher specificed by a domain-specifc vocabulary to be released in the upcoming versions.
 
+#### Exceptions handling schema.org in Artsdata
+Artsdata converts all schema.org **https** URIs to **http** URIs, and also makes the following transformations:
+1. schema:eventStatus and schema:eventAttendanceMode objects are converted to URIs in Artsdata, whereas @context "http://schema.org" sets them to Literals.
+3. schema:url objects are converted to Literals in Artsdata, whereas @context "http://schema.org" sets them to URIs.
+4. All Literals with datatype schema:DateTime are converted to xsd:dateTime to enable SPARQL to handle time.
+5. All Literals with datatype schema:Date are converted to xsd:date to enable SPARQL to handle time.
+ 
 #### Ontologies loaded into Artsdata
 * [https://www.w3.org/2000/01/rdf-schema](https://www.w3.org/2000/01/rdf-schema)
 * [External ontologies](https://github.com/culturecreates/artsdata-data-model/tree/master/_triples)
