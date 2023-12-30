@@ -140,10 +140,10 @@ Current work into the next version of the Artsdata.ca ontology is being influenc
 
 #### Exceptions handling schema.org in Artsdata
 Artsdata converts all schema.org **https** URIs to **http** URIs, and also makes the following transformations:
-1. schema:eventStatus and schema:eventAttendanceMode objects are converted to URIs in Artsdata, whereas @context "http://schema.org" sets them to Literals.
-3. schema:url objects are converted to Literals in Artsdata, whereas @context "http://schema.org" sets them to URIs.
-4. All Literals with datatype schema:DateTime are converted to xsd:dateTime to enable SPARQL to handle time.
-5. All Literals with datatype schema:Date are converted to xsd:date to enable SPARQL to handle time.
+1. schema:eventStatus and schema:eventAttendanceMode objects are converted to URIs in Artsdata, whereas the schema.org @context sets them to Literals.
+1. schema:url objects are converted to Literals in Artsdata, whereas the schema.org @context sets them to URIs.
+1. datatype schema:DateTime is converted to xsd:dateTime to enable SPARQL to handle time.
+1. datatype schema:Date is converted to xsd:date to enable SPARQL to handle time.
  
 #### Ontologies loaded into Artsdata
 * [https://www.w3.org/2000/01/rdf-schema](https://www.w3.org/2000/01/rdf-schema)
