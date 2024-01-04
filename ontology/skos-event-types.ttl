@@ -13,11 +13,11 @@
 adr:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   skos:prefLabel "Controlled Vocabulary for event types" ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event types (types, categories, disciplines) in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars." ;
-  owl:versionInfo "3.4.0";
+  owl:versionInfo "3.4.1";
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2021-08-10"^^xsd:date ;
-  schema:dateModified "2023-12-21"^^xsd:date ;
+  schema:dateModified "2024-01-04"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example adr:PerformingArtsEvent ;
@@ -69,4 +69,4 @@ adr:ClassicalMusicPerformance  rdf:type owl:NamedIndividual , skos:Concept , ado
 adr:RockMusicShow  rdf:type owl:NamedIndividual , skos:Concept , ado:EventType ; skos:broader  adr:MusicPerformance ; skos:prefLabel "Rock Music Show"@en ; skos:prefLabel "Spectacle de musique rock"@fr ; skos:definition "A rock music show"@en ; skos:definition "Un spectacle de musique rock"@fr ;  skos:exactMatch spt:Rock ;   skos:broadMatch spt:Musique ;  skos:inScheme adr:ArtsdataEventTypes   .
 adr:AcappellaMusicPerformance  rdf:type owl:NamedIndividual , skos:Concept , ado:EventType ; skos:broader  adr:MusicPerformance ; skos:prefLabel "A Cappella Music Show"@en ; skos:prefLabel "Spectacle de musique a capella"@fr ; skos:definition "A performance of a cappella music "@en ; skos:definition "Un spectacle de musique a cappella "@fr ;  skos:broadMatch spt:Musical ;  skos:inScheme adr:ArtsdataEventTypes   .
 adr:VarietyShow  rdf:type owl:NamedIndividual , skos:Concept , ado:EventType ; skos:broader  adr:PerformingArtsEvent ; skos:prefLabel "Variety Show"@en ; skos:prefLabel "Spectacle variété"@fr ; skos:definition "Variety show is made up of a variety of acts."@en ; skos:definition "Le spectacle de variétés est composé d'une variété de numéros."@fr ;  skos:exactMatch spt:Variete ;  skos:inScheme adr:ArtsdataEventTypes   .
-adr:Classes  rdf:type owl:NamedIndividual , skos:Concept , ado:EventType ; skos:broader  adr:Event ; skos:prefLabel "Classes"@en ; skos:prefLabel "Cours"@fr ; skos:definition "A specialized type of event that is designed for the purpose of providing structured learning experiences offered at speciffic times and locations."@en ; skos:definition "Un type d'événement spécialisé qui est conçu dans le but de fournir des expériences d'apprentissage structurées offertes à des moments et dans des lieux spécifiques."@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:CourseInstance  ] ; skos:inScheme adr:ArtsdataEventTypes   .
+adr:Classes  rdf:type owl:NamedIndividual , skos:Concept , ado:EventType ; skos:broader  adr:Event ; skos:prefLabel "Classes"@en ; skos:prefLabel "Cours"@fr ; skos:definition "A specialized type of event that is designed for the purpose of providing structured learning experiences offered at specific times and locations."@en ; skos:definition "Un type d'événement spécialisé qui est conçu dans le but de fournir des expériences d'apprentissage structurées offertes à des moments et dans des lieux spécifiques."@fr ;schema:about [ a schema:ItemList ; schema:name "Matching Schema.org event type" ; schema:itemListElement  schema:CourseInstance  ] ; skos:inScheme adr:ArtsdataEventTypes   .
