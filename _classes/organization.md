@@ -28,13 +28,14 @@ WIP - here is the Google [spreadsheet](https://docs.google.com/spreadsheets/d/1w
 * [sameAs](https://schema.org/sameAs) - Please use an Artsdata ID obtained from the Artsdata Reconciliation Service API, and optionally other social media profiles and external global IDs like Wikidata and ISNI.
 * [alternateName](https://schema.org/alternateName) - Name typically found on websites. Indicate language @en, @fr
 
-* [areaServed](https://schema.org/areaServed) (pending)
-* [contactPoint](https://schema.org/contactPoint) (pending)
-* [subOrganization](https://schema.org/subOrganization) (pending)
-* [parentOrganization](https://schema.org/parentOrganization) (pending)
-* [legalName](https://schema.org/legalName) (pending) - indicate language @en, @fr
-* [identifier](https://schema.org/identifier) - Established identifiers like the Canadian Business Number. For example: ({ "@type": "PropertyValue", "propertyID": "BN", "value":  "801228875"})
-* [naics](https://schema.org/naics) 
+* [areaServed](http://schema.org/areaServed) (pending)
+* [contactPoint](http://schema.org/contactPoint) (pending)
+* [subOrganization](http://schema.org/subOrganization) (pending)
+* [parentOrganization](http://schema.org/parentOrganization) (pending)
+* [legalName](http://schema.org/legalName) (pending) - indicate language @en, @fr
+* [identifier](http://schema.org/identifier) - Established identifiers like the Canadian Business Number. For example: ({ "@type": "PropertyValue", "propertyID": "BN", "value":  "801228875"})
+* [naics](htp://schema.org/naics) 
+* [department](http://schema.org/department) (pending)
 
 ### Mapping to Wikidata
 Social media URLs in schema:sameAs and identifiers are automatically mapped to Wikidata properties.
