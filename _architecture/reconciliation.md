@@ -67,8 +67,8 @@ Example for an event's location linked to an Artdata URI. The `"sameAs": "http:/
 
 To batch reconcile, use tools like [OpenRefine](https://openrefine.org) and point the reconilication tool to the Artsdata reconciliation endpoint. View this [screen recording](https://youtu.be/VkOncek9iuY).
 
-Reconciliation service endpoint: https://api.artsdata.ca/recon
+Reconciliation service endpoint: [https://api.artsdata.ca/recon](https://api.artsdata.ca/recon)
 
 ## Upcoming tools
 
-Here is a sneek video preview of a prototype plug-in to Airtable https://youtu.be/ngX-EHipKDU
+Here is a sneek video preview of a prototype plug-in to Airtable [https://youtu.be/ngX-EHipKDU](https://youtu.be/ngX-EHipKDU)
