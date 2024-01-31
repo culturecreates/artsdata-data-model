@@ -12,9 +12,11 @@ Supported entity types include:
 * Place
 * Artsdata Event Type
 
-In the future we are planning to add Performing Arts Productions and Works. Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! 
+Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! 
 
 This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). 
+
+The reconciliation service endpoint is `https://api.artsdata.ca/recon`.
 
 ## Manual reconciliation
 To manually add Artsdata IDs to your structured data:
