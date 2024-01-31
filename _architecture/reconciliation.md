@@ -25,7 +25,16 @@ To manually add Artsdata IDs to your structured data:
 5. Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211
 6. Add the URI to your structured data using 'sameAs'.
 
-Example for an event's location linked to an Artdata URI.
+
+## Adding additional properties
+In addition to "type", you can add additional properties to improve the accuracy of the reconiliation.
+
+For example to add a postal code when reconiling places, add the property id "schema:address/schema:postalCode" and the postal code.
+<img width="564" alt="Screenshot 2024-01-31 at 4 02 49 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/1944952b-de90-4a86-a097-a06a8185a5bf">
+<img width="607" alt="Screenshot 2024-01-31 at 4 02 38 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/33b1974c-bf06-4d86-b659-2490e769aebf">
+
+## Example of structred data with added 'sameAs'
+Example for an event's location linked to an Artdata URI. The `"sameAs": "http://kg.artsdata.ca/resource/K11-211"` has been added.
 ```
 {
   "@context": "https://schema.org",
