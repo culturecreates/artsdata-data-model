@@ -27,7 +27,7 @@ To manually add Artsdata IDs to your structured data:
 
 
 ## Adding additional properties
-In addition to "type", you can add additional properties to improve the accuracy of the reconiliation.
+In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation.
 
 For example to add a postal code when reconiling places, add the property id "schema:address/schema:postalCode" and the postal code.
 <img width="564" alt="Screenshot 2024-01-31 at 4 02 49 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/1944952b-de90-4a86-a097-a06a8185a5bf">
