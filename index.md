@@ -13,7 +13,7 @@ Vous êtes invités à faire part de vos commentaires et à examiner les problè
 
 Il existe également un fichier [PDF](https://drive.google.com/file/d/19UDRPTyuFTfWzn4f0n6qm73e235o5uAL/view?usp=sharing) des données que [Footlight](https://console.artsdata.ca) alimente dans Artsdata. À l’heure actuelle, les données que Footlight publie sur les sites Web des organismes culturels et les données d’Artsdata sont très similaires. Alors que de plus en plus de sources alimentent Artsdata, la forme des données entre Footlight et Artsdata peut diverger, Footlight étant un sous-ensemble de classes et de propriétés collectées dans Artsdata.
 
-Les classes et propriétés utilisées dans Artsdata représentent une couche « fine » de données spécifiées par [Google Event Structured Data](https://developers.google.com/search/docs/data-types/event). La différence est qu’Artsdata applique des liens entre les entités au sein d’Artsdata et relie les URI en dehors d’Artsdata, y compris des liens vers Wikidata et d’autres sources LOD (Linked Open Data). Artsdata génère également des identifiants globaux uniques pour des classes telles que Événement, Personne, Lieu et Organisation.
+Les classes et propriétés utilisées dans Artsdata représentent une couche « fine » de données spécifiées par [Google Event Structured Data](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr). La différence est qu’Artsdata applique des liens entre les entités au sein d’Artsdata et relie les URI en dehors d’Artsdata, y compris des liens vers Wikidata et d’autres sources LOD (Linked Open Data). Artsdata génère également des identifiants globaux uniques pour des classes telles que Événement, Personne, Lieu et Organisation.
 
 Voici les Classes utilisées dans Artsdata.
 
