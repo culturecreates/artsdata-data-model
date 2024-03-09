@@ -6,10 +6,10 @@ Naming Conventions
 
 Conventions for naming things. 
 
-# Controlled Vocabularies and Ontologies
+# URIs in Controlled Vocabularies and Ontologies
 ### Use
-* lowercase starting at http and until reaching the name of the class or property.  This part is interchangeable with a short lowercase prefix.
-* following the last '/' please use camelCase. For properties the first letter is lowercase. For Classes the first letter is uppercase.
+* lowercase starting at http and until reaching the name of the class, named entity or property.  This part is interchangeable with a short lowercase prefix.
+* following the last '/' please use camelCase. For properties the first letter is lowercase. For Classes and named entities the first letter is uppercase.
 * When using # (hash) everything before the hash is interchangeable with the prefix and should be lower case. After the # please use camelCase.
 
 ### Avoid
