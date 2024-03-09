@@ -4,9 +4,9 @@ Naming Conventions
 ===================
 [Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
-Conventions for naming things will be added here as needed.
+Conventions for naming things. 
 
-# Resource Names
+# Controlled Vocabularies and Ontologies
 ### Use
 * lowercase starting at http and until reaching the name of the class or property.  This part is interchangeable with a short lowercase prefix.
 * following the last '/' please use camelCase. For properties the first letter is lowercase. For Classes the first letter is uppercase.
