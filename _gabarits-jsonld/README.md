@@ -64,7 +64,7 @@ Enter additional types corresponding to the particular type of event. Refer to t
 ### [_name_](https://schema.org/name)
 Enter a title by which the event is most likely to be searched and recognized. This could be the same value as the name of the main artist (_performer.name_) and/or the name of the show (_workPerformed.name_), depending on the popularity of each. Try not to exceed a length of 60 characters (for full display in results pages and calendars). Do not add any other information (such as location or date). Instead, enter this information using the appropriate properties. 
 
-For festival editions, include the year in the title, and for festival days, include the date or numbered day (e.g. Day 1). Do not append a separator with the name of the venue (as you would for a webpage's "title" tag) or any other extraneous information.
+For festival editions, include the year in the title, and for festival days, include the date or numbered day (e.g. Day 1).
 
 ### [_startDate_](https://schema.org/startDate)
 Enter the date and time when the event begins, in [ISO 8601 date format](https://en.wikipedia.org/wiki/ISO_8601).
