@@ -5,6 +5,27 @@
    "additionalType":"--URI d'une catégorie correspondant au type particulier de l'événement, par exemple http://kg.artsdata.ca/resource/PerformingArtsEvent. Voir la liste des catégories sur http://kg.artsdata.ca/resource/ArtsdataEventTypes : URI of a category corresponding to the particular type of event, for example http://kg.artsdata.ca/resource/PerformingArtsEvent. See list of categories at http://kg.artsdata.ca/resource/ArtsdataEventTypes--",
    "name":"--Titre de l'événement : Title of event--",
    "startDate":"--Date et heure du début de l'événement, en format ISO 8601, par exemple 2022-03-15T08:30:00:00-05:00 : Date and time of the start of the event, in ISO 8601 format, for example 2022-03-15T08:30:00:00-05:00--",
+   "location":[
+         {
+            "@type":"Place",
+            "@id":"--URI constituant un identifiant unique du lieu. Optionnel : URI constituting a unique identifier of the place. Optional--",
+            "address":{
+               "@type":"PostalAddress",
+               "addressLocality":"--Nom de la ville : Name of the City--",
+               "addressRegion":"--Nom de la province : Name of the province--",
+               "postalCode":"--Code postal : postal code--",
+               "streetAddress":"--Numéro civique et rue : Civic number and street--",
+               "addressCountry":"CA"
+            },
+            "sameAs":[
+               "--lien vers un ou des comptes de réseaux sociaux, si disponible : link to social media account(s), if available--",
+               "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
+               "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"]
+         },{
+            "@type":"VirtualLocation",
+            "@id":"--URI constituant un identifiant unique de lieu virtuelle. Optionnel : URI constituting a unique virtual location identifier. Optional--",
+            "url":"--URL vers le lieu virtuelle : URL to the virtual place--"
+   }],
    "endDate":"--Date et heure de fin de l'événement, en format ISO 8601. Si l'heure n'est pas connue, mettez seulement la date, par exemple 2022-03-15 : End date and time of the event, in ISO 8601 format. If the time is not known, put only         the date, for example 2022-03-15--",
    "eventStatus":"https://schema.org/EventScheduled",
    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
@@ -31,27 +52,6 @@
          "--lien vers un ou des comptes de réseaux sociaux, si disponible si disponible : link to one or more social media accounts of the presenter, if available--",
          "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
          "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"]
-   }],
-   "location":[
-         {
-            "@type":"Place",
-            "@id":"--URI constituant un identifiant unique du lieu. Optionnel : URI constituting a unique identifier of the place. Optional--",
-            "address":{
-               "@type":"PostalAddress",
-               "addressLocality":"--Nom de la ville : Name of the City--",
-               "addressRegion":"--Nom de la province : Name of the province--",
-               "postalCode":"--Code postal : postal code--",
-               "streetAddress":"--Numéro civique et rue : Civic number and street--",
-               "addressCountry":"CA"
-            },
-            "sameAs":[
-               "--lien vers un ou des comptes de réseaux sociaux, si disponible : link to social media account(s), if available--",
-               "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
-               "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"]
-         },{
-            "@type":"VirtualLocation",
-            "@id":"--URI constituant un identifiant unique de lieu virtuelle. Optionnel : URI constituting a unique virtual location identifier. Optional--",
-            "url":"--URL vers le lieu virtuelle : URL to the virtual place--"
    }],
    "offers":[{
       "@type":"Offer",
