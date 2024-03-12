@@ -62,7 +62,17 @@ If you are unable to assign a distinct URI to each event, including each perform
 Enter additional types corresponding to the particular type of event. Refer to the [Artsdata controlled vocabulary](http://kg.artsdata.ca/resource/ArtsdataEventTypes) to identify the most appropriate type(s) of all performing arts event types. You can add as many _additionalType_ properties as needed to properly describe the event. As a default, we recommend the type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), which denotes "a performing arts work performed for an audience".
 
 ### [_name_](https://schema.org/name)
-For individual events, enter the just the title of the event. For festival editions, include the year in the title, and for festival days, include the date or numbered day (e.g. Day 1). Do not append a separator with the name of the venue (as you would for a webpage's "title" tag) or any other extraneous information.
+Enter a title by which the event is most likely to be searched and recognized. This could be the same value as the name of the main artist (_performer.name_) and/or the name of the show (_workPerformed.name_), depending on the popularity of each. Try not to exceed a length of 60 characters (for full display in results pages and calendars). Do not add any other information (such as location or date). Instead, enter this information using the appropriate properties. 
+
+For festival editions, include the year in the title, and for festival days, include the date or numbered day (e.g. Day 1). Do not append a separator with the name of the venue (as you would for a webpage's "title" tag) or any other extraneous information.
+
+### [_startDate_](https://schema.org/startDate)
+Enter the date and time when the event begins, in [ISO 8601 date format](https://en.wikipedia.org/wiki/ISO_8601).
+
+If possible, specify the timezone, including the number of hours offset from Coordinated Universal Time (UTC): https://nrc.canada.ca/en/web-clock/ . If you are not able to enter a timezone, then it is preferable not to enter any timezone value at all, rather than entering a dummy value (such as `+00:00`) or a default value that would not take into account changes between Standard and Daylight Savings Time. If no timezone value is specified, the time is assumed to be in local time.
+- Tip: Timezone information is sometimes inherited from a website's general settings. If your timezone value appears as `+00:00`, but you did not populate this value yourself, check your website's settings.
+
+If the event start time is unknown, or if the event is a full-day event, do not enter a time value or a time zone value.
 
 ### [_url_](https://schema.org/url)
 Enter the canonic URL (i.e. "official URL") of the event web page on the organizer's website. 
@@ -90,10 +100,10 @@ In the case of a physical space:
 - For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place's Wikidata or Artsdata URI.
 - Google requires the _address_ property with nested _PostalAddress_ entity. As a matter of fact, a complete PostalAddress entity, including the postal code, can help with disambiguation.
 
-For festivals, if the festival day and/or festival edition occurs in multiple venues across a locality (i.e. a town, city or region), it is recommended to use the “address” property without the “postalCode” and “streetAddress” subproperties.
+For festivals, if the festival day and/or festival edition occurs in multiple venues across a locality (i.e. a town, city or region), it is recommended to use the _location.address_ property without the _postalCode_ and _streetAddress_ subproperties.
 
 ### [_offers_](https://schema.org/offers)
-Enter at least one @type _Offer_ entity, including the URL of the event's ticketing page. For more information about how to describe _Offer_ type entities, consult [Google's documentation](https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions)
+Enter at least one _Offer_ or _AggregateOffer_ type entity, including the URL of the event's ticketing page.  For more information about how to describe _Offer_ type entities, consult [Google's documentation](https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions)
 
 ### [_doorTime_](https://schema.org/doorTime)
 
