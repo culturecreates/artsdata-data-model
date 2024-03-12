@@ -62,7 +62,17 @@ Si vous n'êtes pas en mesure d'attribuer une URI à chaque événement, incluan
 Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au [vocabulaire contrôlé Artsdata](http://kg.artsdata.ca/resource/ArtsdataEventTypes) pour identifier le ou les types les mieux appropriés parmi tous les types d'événements des arts de la scène. Vous pouvez ajouter autant de propriétés _additionalType_ que nécessaire pour bien décrire l'événement. En guise de valeur par défaut, nous recommandons le type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), qui désigne « une œuvre des arts de la scène exécutée pour un public ».
 
 ### [_name_](https://schema.org/name)
-Dans le cas des événements individuels, saisissez uniquement le titre de l’événement. Dans le cas des éditions des festivals, indiquez l’année dans le titre, et dans le cas des jours des festivals, indiquez la date ou le jour numéroté (par exemple, Jour 1). N'ajoutez pas de séparateur suivi du nom lieu (comme on retrouve souvent dans des balises "title") ou d'autres informations complémentaires.
+Saississez une appellation par laquelle l'événement est susceptible d'être recherché et reconnu. Il peut s'agir de la même valeur que le nom de l'artiste principal (_performer.name_) et/ou le nom de l'œuvre-spectacle (_workPerformed.name_), selon la notoriété de chacun. Tâchez de ne pas excéder une longueur de 60 caractères (pour des fins d'affichage dans les pages de résultats et dans les calendriers). N'ajoutez pas d'autres informations (comme le lieu ou la date). Au lieu, saisissez ces autres informations à l'aide des propriétés appropriées.
+
+Dans le cas des éditions des festivals, indiquez l’année dans le titre, et dans le cas des jours des festivals, indiquez la date ou le jour numéroté (par exemple, Jour 1).
+
+### [_startDate_](https://schema.org/startDate)
+Saisissez la date et l'heure de début de l'événement, au format [ISO 8601](https://fr.wikipedia.org/wiki/ISO_8601). 
+
+Si possible, précisez le fuseau horaire en incluant le [nombre d'heures de décalage avec le temps universel coordonné (UTC)](https://nrc.canada.ca/fr/horloge-web/). Si ce n'est pas possible, alors il est préférable de ne saisir aucune valeur de fuseau horaire plutôt que de saisir une valeur factice (comme `+00:00`) ou une valeur par défaut qui ne tiendrait pas compte des changements entre l'heure normale et l'heure avancée. En l'absence d'une valeur, le fuseau horaire présumé est l'heure locale.
+- Conseil : Le fuseau horaire est parfois hérité des paramètres généraux du site web. Si votre fuseau horaire apparaît comme `+00:00` sans que vous n'ayez vous-même renseigné cette valeur, vérifiez les paramètres de votre site web.
+
+Si l'heure de début de l'événement est inconnue ou s'il s'agit d'un événement d'une journée entière, ne saisissez pas de valeur d'heure ni de valeur de fuseau horaire.
 
 ### [_url_](https://schema.org/url)
 Saisissez l'URL canonique (c.-à-d. l'URL « officielle ») désignant la page web de l'événement sur le site de l'organisateur. Dans le cas de séries de représentations, saisissez l'URL de la page web de chaque représentation si elle existe. Sinon saisissez, l'URL de la page web de la série de représentations.
@@ -76,7 +86,7 @@ Indiquez si un événement est [programmé](https://schema.org/EventScheduled) (
 Indiquez si un événement se produit [en personne](https://schema.org/OfflineEventAttendanceMode), [en ligne](https://schema.org/OnlineEventAttendanceMode), ou format [hybride](https://schema.org/MixedEventAttendanceMode).
 
 ### [_organizer_](https://schema.org/organizer)
-Saisissez les informations identifiant et décrivant l'organisme qui est responsable de la présentation du spectacle ou du festival. Il peut s'agir d'un organisme diffuseur ou d'une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignées sous la propriété _performer_). On peut ajouter plusieurs _organizer(s)_. Les _entitées imbriquées_[^1] sous cette propriété sont généralement de @type [Organization](https://schema.org/Organization). Les propriétés recommandées pour l'entité imbriquée incluent : _name_, _URL_ et _sameAs_ (pointant vers un identifiant Artsdata et/ou Wikidata).
+Saisissez les informations identifiant et décrivant l'organisme qui est responsable de la présentation du spectacle ou du festival. Il peut s'agir d'un organisme diffuseur ou d'une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignée sous la propriété _performer_). On peut ajouter plusieurs _organizer(s)_. Les _entitées imbriquées_[^1] sous cette propriété sont généralement de @type [Organization](https://schema.org/Organization). Les propriétés recommandées pour l'entité imbriquée incluent : _name_, _URL_ et _sameAs_ (pointant vers un identifiant Artsdata et/ou Wikidata).
 
 ### [_performer_](https://schema.org/performer)
 Saisissez les informations identifiant et décrivant la compagnie, le groupe ou la (des) personne(s) qui est(sont) responsable de l'exécution de la représentation. Il est possible d'ajouter plusieurs _performer(s)_. Les entités imbriquées sous cette propriété peuvent être de @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) ou [Person](https://schema.org/Person). Les propriétés recommandées pour l'entité imbriquée incluent : _name_, _URL_ et _sameAs_ (pointant vers un identifiant ISNI, Artsdata et/ou Wikidata).
@@ -85,17 +95,17 @@ Saisissez les informations identifiant et décrivant la compagnie, le groupe ou 
 Saisissez les informations identifiant et décrivant l'endroit où est présenté l'événement. L'entité imbriquée sous la propriété _location_ peut être de @type [Place](https://schema.org/Place) (un lieu physique) ou de @type [VirtualLocation](https://schema.org/VirtualLocation) (un lieu virtuel).
 Dans le cas des lieux physiques : 
 - Il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).
-- Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété sameAs.
-- Google requiert la propriété _adress_ avec une entité de type _PostalAddess_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
+- Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété _location.sameAs_.
+- Google requiert la propriété _location.adress_ avec une entité de type _PostalAddess_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
 
-Dans le cas des festivals, si le jour du festival et/ou l’édition du festival se déroule dans plusieurs lieux au sein d'une localité (c.-à-d. une ville ou une région), il est recommandé de saisir la propriété « address » en omettant les sous-propriétés « postalCode » et « streetAddress ». 
+Dans le cas des festivals, si le jour du festival et/ou l’édition du festival se déroule dans plusieurs lieux au sein d'une localité (c.-à-d. une ville ou une région), il est recommandé de renseigner la propriété _location.address_ en omettant les sous-propriétés _postalCode_ et _streetAddress_. 
 
 ### [_doorTime_](https://schema.org/doorTime)
 
-Dans le cas des festivals, indiquez l'heure à laquelle commence l'admission au jour du festival et/ou à l'édition du festival, au format ISO 8601. Cette propriété est destinée à être utilisée lorsque l'ouverture des portes (doorTime) est différente de l'heure de début (startTime) du premier événement du programme du festival.
+Dans le cas des festivals, indiquez l'heure à laquelle commence l'admission au jour du festival et/ou à l'édition du festival, au format ISO 8601. Cette propriété est destinée à être utilisée lorsque l'ouverture des portes (_doorTime_) est différente de l'heure de début (_startTime_) du premier événement du programme du festival.
 
 ### [_offers_](https://schema.org/offers)
-Saississez au moins une entité de type _Offer_ avec l'URL de la page où l'on peut se procurer les billets. Pour plus d'informations sur la façon de renseigner les offres, consultez la [documentation de Google](https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions). 
+Saississez au moins une entité de type Offer ou AggregateOffer avec l'URL de la page où l'on peut se procurer les billets. Pour plus d'informations sur la façon de renseigner les offres, consultez la [documentation de Google](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr#structured-data-type-definitions).
 
 ### [_sameAs_](https://schema.org/sameAs) (pour les entités imbriquées)
 Saisissez les URIs d'_identifiants passerelles_[^3] permettant d'identifier sans ambiguité les entitées imbriquées dans l'entité de type _Event_. 
