@@ -74,6 +74,15 @@ Si possible, précisez le fuseau horaire en incluant le [nombre d'heures de déc
 
 Si l'heure de début de l'événement est inconnue ou s'il s'agit d'un événement d'une journée entière, ne saisissez pas de valeur d'heure ni de valeur de fuseau horaire.
 
+### [_location_](https://schema.org/location)
+Saisissez les informations identifiant et décrivant l'endroit où est présenté l'événement. L'entité imbriquée sous la propriété _location_ peut être de @type [Place](https://schema.org/Place) (un lieu physique) ou de @type [VirtualLocation](https://schema.org/VirtualLocation) (un lieu virtuel).
+Dans le cas des lieux physiques : 
+- Il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).
+- Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété _location.sameAs_.
+- Google requiert la propriété _location.adress_ avec une entité de type _PostalAddess_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
+
+Dans le cas des festivals, si le jour du festival et/ou l’édition du festival se déroule dans plusieurs lieux au sein d'une localité (c.-à-d. une ville ou une région), il est recommandé de renseigner la propriété _location.address_ en omettant les sous-propriétés _postalCode_ et _streetAddress_. 
+
 ### [_url_](https://schema.org/url)
 Saisissez l'URL canonique (c.-à-d. l'URL « officielle ») désignant la page web de l'événement sur le site de l'organisateur. Dans le cas de séries de représentations, saisissez l'URL de la page web de chaque représentation si elle existe. Sinon saisissez, l'URL de la page web de la série de représentations.
 
@@ -90,15 +99,6 @@ Saisissez les informations identifiant et décrivant l'organisme qui est respons
 
 ### [_performer_](https://schema.org/performer)
 Saisissez les informations identifiant et décrivant la compagnie, le groupe ou la (des) personne(s) qui est(sont) responsable de l'exécution de la représentation. Il est possible d'ajouter plusieurs _performer(s)_. Les entités imbriquées sous cette propriété peuvent être de @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) ou [Person](https://schema.org/Person). Les propriétés recommandées pour l'entité imbriquée incluent : _name_, _URL_ et _sameAs_ (pointant vers un identifiant ISNI, Artsdata et/ou Wikidata).
-
-### [_location_](https://schema.org/location)
-Saisissez les informations identifiant et décrivant l'endroit où est présenté l'événement. L'entité imbriquée sous la propriété _location_ peut être de @type [Place](https://schema.org/Place) (un lieu physique) ou de @type [VirtualLocation](https://schema.org/VirtualLocation) (un lieu virtuel).
-Dans le cas des lieux physiques : 
-- Il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).
-- Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété _location.sameAs_.
-- Google requiert la propriété _location.adress_ avec une entité de type _PostalAddess_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
-
-Dans le cas des festivals, si le jour du festival et/ou l’édition du festival se déroule dans plusieurs lieux au sein d'une localité (c.-à-d. une ville ou une région), il est recommandé de renseigner la propriété _location.address_ en omettant les sous-propriétés _postalCode_ et _streetAddress_. 
 
 ### [_doorTime_](https://schema.org/doorTime)
 
