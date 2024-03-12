@@ -64,7 +64,7 @@ Saisissez des types supplémentaires correspondant au type particulier de l’é
 ### [_name_](https://schema.org/name)
 Saississez une appellation par laquelle l'événement est susceptible d'être recherché et reconnu. Il peut s'agir de la même valeur que le nom de l'artiste principal (_performer.name_) et/ou le nom de l'œuvre-spectacle (_workPerformed.name_), selon la notoriété de chacun. Tâchez de ne pas excéder une longueur de 60 caractères (pour des fins d'affichage dans les pages de résultats et dans les calendriers). N'ajoutez pas d'autres informations (comme le lieu ou la date). Au lieu, saisissez ces autres informations à l'aide des propriétés appropriées.
 
-Dans le cas des éditions des festivals, indiquez l’année dans le titre, et dans le cas des jours des festivals, indiquez la date ou le jour numéroté (par exemple, Jour 1). N'ajoutez pas de séparateur suivi du nom lieu (comme on retrouve souvent dans des balises "title") ou d'autres informations complémentaires.
+Dans le cas des éditions des festivals, indiquez l’année dans le titre, et dans le cas des jours des festivals, indiquez la date ou le jour numéroté (par exemple, Jour 1).
 
 ### [_startDate_](https://schema.org/startDate)
 Saisissez la date et l'heure de début de l'événement, au format [ISO 8601](https://fr.wikipedia.org/wiki/ISO_8601). 
