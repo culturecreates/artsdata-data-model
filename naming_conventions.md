@@ -11,9 +11,9 @@ Conventions for naming things.
 * Use [Valid IRIs](https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph)
 * Use lowercase protocol http and domain name
 * Prefer http instead of https when both are available.
-* **For the path** before the last '/' (front slash) or '#' (hash), use lowercase letters seperated by dash "-"
+* **For the path** before the last '/' or '#', use lowercase letters seperated by dash "-"
 * Always add a path if possible. This makes it easier to write server rules to manage dereferencing (like in nginx) and content negotiation.
-* After the last '/' (front slash) or '#' (hash) please use camelCase.
+* After the last '/' or '#' please use camelCase.
 * For properties (predicates) the first letter is lowercase.
 * For classes and named entities, the first letter is uppercase.
   
@@ -38,7 +38,7 @@ The following graph names are reserved:
 * http://kg.artsdata.ca/minted/
 * http://kg.artsdata.ca/ontology/
 * http://kg.artsdata.ca/databus
-* http://kg.artdata.ca/graph-ranking
+* http://kg.artsdata.ca/graph-ranking
 
 ### Artsdata Databus
 All data must be imported using the Artsdata Databus. When data in imported using the databus, each version is named as follows:
