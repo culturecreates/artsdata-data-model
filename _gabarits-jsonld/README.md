@@ -74,6 +74,15 @@ If possible, specify the timezone, including the number of hours offset from Coo
 
 If the event start time is unknown, or if the event is a full-day event, do not enter a time value or a time zone value.
 
+### [_location_](https://schema.org/location)
+Enter the information identifying and describing the place where the event is presented (is happening). The entity _nested_ under the _location_ property can be @type [Place](https://schema.org/Place) (a physical space) or @type [VirtualLocation](https://schema.org/VirtualLocation) (an online space).
+In the case of a physical space: 
+- The value should be as precise as possible (for example, the performance hall inside the building instead of the building itself).
+- For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place's Wikidata or Artsdata URI.
+- Google requires the _address_ property with nested _PostalAddress_ entity. As a matter of fact, a complete PostalAddress entity, including the postal code, can help with disambiguation.
+
+For festivals, if the festival day and/or festival edition occurs in multiple venues across a locality (i.e. a town, city or region), it is recommended to use the _location.address_ property without the _postalCode_ and _streetAddress_ subproperties.
+
 ### [_url_](https://schema.org/url)
 Enter the canonic URL (i.e. "official URL") of the event web page on the organizer's website. 
 
@@ -92,15 +101,6 @@ Enter information identifying and describing the organization that is responsibl
 
 ### [_performer_](https://schema.org/performer)
 Enter information identifying and describing the company, group or person(s) who is(are) responsible for performing the performance. It is possible to add several _performer(s)_. The entities _nested_ under this property can be of @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) or [Person](https://schema.org/Person). Recommended properties for the nested entity include: _name_, _url_, and _sameAs_ (with link pointing to an ISNI, Wikidata or Artsdata URI).
-
-### [_location_](https://schema.org/location)
-Enter the information identifying and describing the place where the event is presented (is happening). The entity _nested_ under the _location_ property can be @type [Place](https://schema.org/Place) (a physical space) or @type [VirtualLocation](https://schema.org/VirtualLocation) (an online space).
-In the case of a physical space: 
-- The value should be as precise as possible (for example, the performance hall inside the building instead of the building itself).
-- For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place's Wikidata or Artsdata URI.
-- Google requires the _address_ property with nested _PostalAddress_ entity. As a matter of fact, a complete PostalAddress entity, including the postal code, can help with disambiguation.
-
-For festivals, if the festival day and/or festival edition occurs in multiple venues across a locality (i.e. a town, city or region), it is recommended to use the _location.address_ property without the _postalCode_ and _streetAddress_ subproperties.
 
 ### [_offers_](https://schema.org/offers)
 Enter at least one _Offer_ or _AggregateOffer_ type entity, including the URL of the event's ticketing page.  For more information about how to describe _Offer_ type entities, consult [Google's documentation](https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions)
