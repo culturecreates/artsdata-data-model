@@ -60,6 +60,8 @@ Les travaux en cours sur la prochaine version de l’ontologie Artsdata.ca sont 
 * [https://www.w3.org/2000/01/rdf-schema](https://www.w3.org/2000/01/rdf-schema)
 * [Ontologies externes](https://github.com/culturecreates/artsdata-data-model/tree/master/_triples)
 * [Vocabulaires contrôlés par Artsdata](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology)
+    * http://kg.artsdata.ca/resource/ArtsdataEventTypes
+    * http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes
 
 ### Provenance
 
@@ -149,6 +151,8 @@ Artsdata converts all schema.org **https** URIs to **http** URIs, and also makes
 * [https://www.w3.org/2000/01/rdf-schema](https://www.w3.org/2000/01/rdf-schema)
 * [External ontologies](https://github.com/culturecreates/artsdata-data-model/tree/master/_triples)
 * [Artsdata controlled vocabularies](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology)
+    * http://kg.artsdata.ca/resource/ArtsdataEventTypes
+    * http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes
 
 ### Provenance
 
