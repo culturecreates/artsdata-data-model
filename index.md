@@ -7,19 +7,15 @@
 
 Un modèle de données simple pour les événements dans les arts de la scène ainsi que pour les lieux, les personnes et les organismes connexes. 
 
-Le modèle de données (ontologie) d’Artsdata est un sous-ensemble de Schema.org avec quelques vocabulaires contrôlés additionnels. Le modèle local de Artsdata.ca est représenté formellement avec SHACL [ici](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/shacl_artsdata.ttl).
+Le modèle de données (ontologie) d’Artsdata est un sous-ensemble de Schema.org avec quelques vocabulaires contrôlés additionnels. Le modèle d'Artsdata.ca est représenté formellement avec le language SHACL [ici](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/shacl_artsdata.ttl).
 
-Vous êtes invités à faire part de vos commentaires et à examiner les problèmes actuels dans [GitHub](https://github.com/culturecreates/artsdata-data-model/issues). 
-
-Il existe également un fichier [PDF](https://drive.google.com/file/d/19UDRPTyuFTfWzn4f0n6qm73e235o5uAL/view?usp=sharing) des données que [Footlight](https://console.artsdata.ca) alimente dans Artsdata. À l’heure actuelle, les données que Footlight publie sur les sites Web des organismes culturels et les données d’Artsdata sont très similaires. Alors que de plus en plus de sources alimentent Artsdata, la forme des données entre Footlight et Artsdata peut diverger, Footlight étant un sous-ensemble de classes et de propriétés collectées dans Artsdata.
-
-Les classes et propriétés utilisées dans Artsdata représentent une couche « fine » de données spécifiées par [Google Event Structured Data](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr). La différence est qu’Artsdata applique des liens entre les entités au sein d’Artsdata et relie les URI en dehors d’Artsdata, y compris des liens vers Wikidata et d’autres sources LOD (Linked Open Data). Artsdata génère également des identifiants globaux uniques pour des classes telles que Événement, Personne, Lieu et Organisation.
+Les classes et propriétés utilisées dans Artsdata sont similaires au modele de [Google Event Structured Data](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr). La différence est qu’Artsdata applique des liens URI entre les entités et relie les URI en dehors d’Artsdata, y compris des liens vers Wikidata et d’autres sources LOD (Linked Open Data). Artsdata génère également des URI (identifiants globaux uniques et perennes) pour les  Événements, Personnes, Lieux et Organisations.
 
 Voici les Classes utilisées dans Artsdata.
 
 ![Image](images/artsdata_event_model-2.png)
 
-[[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/9450de6c42ed8ceed27f0e4374d4e986/raw/0f15244c4f04486e237a8138e9132ed1aae96a66/artsdata_event_model)]
+[[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/14853e227545829793582942280edd7d/raw/36db1e80498e5799026893feda0c0951e9c7e174/artsdata_event_model)]
 
 ### Classes
 
