@@ -16,7 +16,7 @@ Voici les Classes utilisées dans Artsdata.
 
 ![Image](images/data-model-image.png)
 
-[[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/14853e227545829793582942280edd7d/raw/36db1e80498e5799026893feda0c0951e9c7e174/artsdata_event_model)]
+[[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/499adb05caf71d67a85f70796e2ca9b7/raw/9f6b51cc36c6df3c9265e42fd5f241741f67a93e/artsdata_event_model)]
 
 ### Classes
 
