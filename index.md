@@ -13,7 +13,7 @@ Les classes et propriétés utilisées dans Artsdata sont similaires au modele d
 
 Voici les Classes utilisées dans Artsdata.
 
-![Image](images/artsdata_event_model-2.png)
+![Image](images/data-model-image.png)
 
 [[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/14853e227545829793582942280edd7d/raw/36db1e80498e5799026893feda0c0951e9c7e174/artsdata_event_model)]
 
@@ -89,15 +89,13 @@ Artsdata.ca charge les données ouvertes et liées de Wikidata et DBpedia afin d
 
 A simple data model for Performing Arts Events and related Places, People and Organizations. 
 
-The Artsdata data model (ontology) is a sub-set of Schema.org along with a few controlled vocabularies specific to Artsdata. The data mode is formally represented in SHACL [here](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/shacl_artsdata.ttl).
+The Artsdata data model (ontology) is a sub-set of Schema.org along with a few controlled vocabularies specific to Artsdata. The data mode is formally represented using the language SHACL [here](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/shacl_artsdata.ttl).
 
-There is also an older [PDF](https://drive.google.com/file/d/19UDRPTyuFTfWzn4f0n6qm73e235o5uAL/view?usp=sharing) of the data that [Footlight](https://console.artsdata.ca) feeds into Artsdata.  At the moment, the data that Footlight publishes on the websites of arts organizations and the data in Artsdata are very similar. As more and more sources feed into Artsdata, the shape of the data between Footlight and Artsdata may diverge, with Footlight being a subset of classes and properties collected in Artsdata.
-
-The classes and properties used in Artsdata represent a “thin” layer of data roughly specified by [Google Event Structured Data](https://developers.google.com/search/docs/data-types/event).  The main difference is that Artsdata enforces links between entities within Artsdata and interlinks URIs outside of Artsdata including links to Wikidata and other LOD (Linked Open Data) sources.  Artsdata also generates unique global identifiers (IRIs also called URIs) for classes such as Event, Person, Place, and Organization.
+The classes and properties used in Artsdata resemble [Google Event Structured Data](https://developers.google.com/search/docs/data-types/event).  The main difference is that Artsdata creates links between entities within Artsdata and interlinks URIs outside of Artsdata including links to Wikidata and other LOD (Linked Open Data) sources.  Artsdata also generates unique global identifiers (IRIs also called URIs) for classes such as Events, Persons, Places, and Organizations.
 
 Here are the main Classes used in Artsdata.
 
-![Image](images/artsdata_event_model-2.png)
+![Image](images/data-model-image.png)
 
 [[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/9450de6c42ed8ceed27f0e4374d4e986/raw/0f15244c4f04486e237a8138e9132ed1aae96a66/artsdata_event_model)]
 
