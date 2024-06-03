@@ -59,9 +59,9 @@
    "Order": 8,
    "Schema Property": "sameAs",
    "Status": "Recommended",
-   "Original Schema Definition": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website. ",
-   "Artsdata-specific Note EN": "Enter the URIs of persistent identifiers (Wikidata, Artsdata, ISNI, etc.) that unambiguously identify the nested entities under the Event type (including location, organizer and performer). Always add each identifier's complete URI (instead of entering just the ID itself).",
-   "Artsdata-specific Note FR": "Saisissez les URIs d’identifiants pérennes (Artsdata, Wikidata, ISNI, etc.) permettant d’identifier sans ambiguité les entitées imbriquées dans l’entité de type Event (tel que location, organizer et performer). Saississez toujours l’URI complète de l’identifiant (plutôt que de saisir uniquement l’identifiant lui-même)."
+   "Original Schema Definition": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+   "Artsdata-specific Note EN": "Enter the URIs of persistent identifiers (Wikidata, Artsdata, ISNI, etc.) and social media urls that unambiguously identify the event. Always add each identifier's complete URI (instead of entering just the ID itself).",
+   "Artsdata-specific Note FR": "Saisissez les URI des identifiants persistants (Wikidata, Artsdata, ISNI, etc.) et les URL des réseaux sociaux qui identifient sans ambiguïté l'événement. Saississez toujours l’URI complète de l’identifiant (plutôt que de saisir uniquement l’identifiant lui-même."
  },
  {
    "Order": 9,
