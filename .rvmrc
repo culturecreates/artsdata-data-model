@@ -1,1 +1,1 @@
-rvm use 2.7.6@artsdata-data-model --create
+rvm use 3.0.2
