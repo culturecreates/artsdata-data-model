@@ -116,7 +116,7 @@ Enter the URIs of _bridge identifiers_[^3] that identify without any ambiguity t
 
 Always enter bridge identifiers in full URI format (rather than entering just the identifier's string). For example, for the Wikidata ID `Q596774`, the matching URI is http://www.wikidata.org/entity/Q596774 (note that the URI format is different from the web page URL format). ISNI, Wikidata and Artsdata all have their own user interface with their respective processes for searching an entity and retrieving its URI. Wikidata is particularly intricate in this regard: in order to retrieve an item's URI, the user must right click on "Concept URI" in the left menu (within the "Tools" section), and then select "Copy link address". For more information, consult these [Recommendations Regarding Unique Persistent Identifiers in the Performing Arts](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
 
-The _sameAs_ property can also be used to list social media event pages, and social media and streaming platform accounts associated with an entity.
+The _sameAs_ property can also be used to list social media event pages associated with the event, and social media and streaming platform accounts associated with a nested entity.
 
 Here is a JSON-LD example of a nested @type [Person](https://schema.org/Person)Person entity described with the _sameAs_ property. Please note that, for consision's sake, several relevant properties were excluded from this example.
 
