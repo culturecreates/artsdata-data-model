@@ -26,3 +26,5 @@ using an online CSV to JSON tool called [convertcsv](https://www.convertcsv.com/
 ## Test on local machine
 1. `bundle install`
 2. `JEKYLL_GITHUB_TOKEN=123 jekyll serve`
+
+more info: http://jekyll.github.io/github-metadata/authentication/
