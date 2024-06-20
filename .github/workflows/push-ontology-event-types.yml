@@ -18,7 +18,7 @@ jobs:
                     "publisher": "${{ secrets.PUBLISHER_URI_GREGORY }}",
                     "group": "${{ github.event.repository.name }}",
                     "version": "${{ steps.version.outputs.dumpdate }}",
-                    "downloadUrl": "https://raw.githubusercontent.com/culturecreates/artsdata-data-model/4a95946660af7dcf6d39234f5f8bccb7c7bafdfc/ontology/skos-event-types.ttl",
+                    "downloadUrl": "https://raw.githubusercontent.com/culturecreates/artsdata-data-model/master/ontology/skos-event-types.ttl",
                     "downloadFile": "skos-event-types.ttl",
                     "shacl": "skos",
                     "reportCallbackUrl": "https://huginn-staging.herokuapp.com/users/1/web_requests/273/databus"
