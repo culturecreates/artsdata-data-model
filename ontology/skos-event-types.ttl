@@ -9,16 +9,16 @@
 @prefix adr:  <http://kg.artsdata.ca/resource/> .
 @prefix ado:  <http://kg.artsdata.ca/ontology/> .
 @prefix spt: <http://scenepro.ca/taxonomies/disciplines-asq#> . 
-@prefix footlight: <http://api.footlight.io/concepts/> .
+@prefix footlight: <http://lod.footlight.io/resource/> .
 
 adr:ArtsdataEventTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
   skos:prefLabel "Controlled Vocabulary for event types" ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for event types (types, categories, disciplines) in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars." ;
-  owl:versionInfo "3.4.3";
+  owl:versionInfo "3.4.4";
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2021-08-10"^^xsd:date ;
-  schema:dateModified "2024-06-20"^^xsd:date ;
+  schema:dateModified "2024-06-26"^^xsd:date ;
   schema:creator  adr:K1-5 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
   vann:example adr:PerformingArtsEvent ;
