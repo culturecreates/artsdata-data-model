@@ -4,11 +4,15 @@
    "@id":"--URI constituant un identifiant unique de l'événement. Optionnel : URI constituting a unique identifier of the event. Optional--",
    "additionalType":"--URI d'une catégorie correspondant au type particulier de l'événement, par exemple http://kg.artsdata.ca/resource/PerformingArtsEvent. Voir la liste des catégories sur http://kg.artsdata.ca/resource/ArtsdataEventTypes : URI of a category corresponding to the particular type of event, for example http://kg.artsdata.ca/resource/PerformingArtsEvent. See list of categories at http://kg.artsdata.ca/resource/ArtsdataEventTypes--",
    "name":"--Titre de l'événement : Title of event--",
+   "sameAs":[
+      "--lien vers une page sur un réseau social, si disponible : link to a social media page, if available--",
+      "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--"],
    "startDate":"--Date et heure du début de l'événement, en format ISO 8601, par exemple 2022-03-15T08:30:00:00-05:00 : Date and time of the start of the event, in ISO 8601 format, for example 2022-03-15T08:30:00:00-05:00--",
    "location":[
          {
             "@type":"Place",
             "@id":"--URI constituant un identifiant unique du lieu. Optionnel : URI constituting a unique identifier of the place. Optional--",
+            "name":"--Nom du lieu : Name of the venue--",
             "address":{
                "@type":"PostalAddress",
                "addressLocality":"--Nom de la ville : Name of the City--",
