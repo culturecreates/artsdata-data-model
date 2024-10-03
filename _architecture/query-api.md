@@ -25,7 +25,7 @@ https://api.artsdata.ca/query?adid=K5-3&format=json&frame=ranked_org_person_foot
 
 The Event Search API is a dedicated endpoint for events and provides an easy way to get a list of events in json or json-ld. The "frame" parameter enables the user to select different output properties and structures. The "format" parameter selects between json and json-ld. And the "source" parameter selects the graph or calatog of graphs. Documentation WIP.
 
-Example: List of upcoming events from the OSM website in Montreal: 
+Example: List of upcoming events from the placedesarts.com website in Montreal: 
 http://api.artsdata.ca/events?format=json&frame=event_bn&source=http://kg.artsdata.ca/culture-creates/footlight/placedesarts-com
 
 ### Source parameter
