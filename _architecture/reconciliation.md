@@ -7,9 +7,11 @@ The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your s
 
 Supported entity types include: 
 * Event
+* Place
 * Person
 * Organization
-* Place
+* Agent (Person or Organization/Group)
+* Concept
 * Artsdata Event Type
 
 Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! 
