@@ -79,7 +79,8 @@ Saisissez les informations identifiant et décrivant l'endroit où est présent�
 Dans le cas des lieux physiques : 
 - Il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).
 - Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété _location.sameAs_.
-- Google requiert la propriété _location.adress_ avec une entité de type _PostalAddess_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
+- Google requiert la propriété _location.address_ avec une entité de type _PostalAddress_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
+- Pour une entité de type _PostalAddress_, il est préférable d'utiliser les abréviations postales de deux lettres pour les valeurs _addressRegion_ et _addressCountry_.
 
 Dans le cas des festivals, si le jour du festival et/ou l’édition du festival se déroule dans plusieurs lieux au sein d'une localité (c.-à-d. une ville ou une région), il est recommandé de renseigner la propriété _location.address_ en omettant les sous-propriétés _postalCode_ et _streetAddress_. 
 
