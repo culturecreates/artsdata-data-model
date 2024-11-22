@@ -80,6 +80,7 @@ In the case of a physical space:
 - The value should be as precise as possible (for example, the performance hall inside the building instead of the building itself).
 - For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place's Wikidata or Artsdata URI.
 - Google requires the _address_ property with nested _PostalAddress_ entity. As a matter of fact, a complete PostalAddress entity, including the postal code, can help with disambiguation.
+- For a _PostalAddress_ entity, it is better to use the two-letter postal abbreviations for _addressRegion_ and _addressCountry_ values.
 
 For festivals, if the festival day and/or festival edition occurs in multiple venues across a locality (i.e. a town, city or region), it is recommended to use the _location.address_ property without the _postalCode_ and _streetAddress_ subproperties.
 
