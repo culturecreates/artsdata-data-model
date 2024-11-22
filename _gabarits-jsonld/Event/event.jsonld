@@ -16,7 +16,7 @@
             "address":{
                "@type":"PostalAddress",
                "addressLocality":"--Nom de la ville : Name of the City--",
-               "addressRegion":"--Nom de la province : Name of the province--",
+               "addressRegion":"--Abréviation postale à deux lettres de la province : Two-letter postal abbreviation of the province--",
                "postalCode":"--Code postal : postal code--",
                "streetAddress":"--Numéro civique et rue : Civic number and street--",
                "addressCountry":"CA"
