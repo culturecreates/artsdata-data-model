@@ -37,6 +37,7 @@
    "url":"--URL officiel de la page Web de l'événement : Official URL of event webpage--",
    "duration":"--Durée de l'événement en format ISO 8601, par exemple : PT1H30M : Duration of the event in ISO 8601 format, for example: PT1H30M--",
    "image":"--URL de l'image : URL of image--",
+   "keywords":"--Mots-clés liés à l'événement : Keywords related to the event--",
    "organizer":[{
       "@type":"--Utiliser le type 'Organization' si le diffuseur est une compagnie ou un groupe : Use type 'Organization' if the presenter is a company or a group--",
       "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel : URI constituting a unique identifier of the company. Optional--",
