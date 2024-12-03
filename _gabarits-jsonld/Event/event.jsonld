@@ -1,5 +1,5 @@
 {
-   "@context":"http://schema.org/",
+   "@context":"http://schema.org",
    "@type":"Event",
    "@id":"--URI constituant un identifiant unique de l'événement. Optionnel : URI constituting a unique identifier of the event. Optional--",
    "additionalType":"--URI d'une catégorie correspondant au type particulier de l'événement, par exemple http://kg.artsdata.ca/resource/PerformingArtsEvent. Voir la liste des catégories sur http://kg.artsdata.ca/resource/ArtsdataEventTypes : URI of a category corresponding to the particular type of event, for example http://kg.artsdata.ca/resource/PerformingArtsEvent. See list of categories at http://kg.artsdata.ca/resource/ArtsdataEventTypes--",
