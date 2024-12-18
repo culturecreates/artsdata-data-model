@@ -1,0 +1,8 @@
+<http://dbpedia.org/ontology/Agent> <http://www.w3.org/2002/07/owl#equivalentClass>  <http://www.wikidata.org/entity/Q24229398> <http://kg.artsdata.ca/ontology/dbpedia_agent> .
+<http://dbpedia.org/ontology/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "agent" <http://kg.artsdata.ca/ontology/dbpedia_agent> <http://kg.artsdata.ca/ontology/dbpedia_agent> .
+  
+<http://dbpedia.org/ontology/Organisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://dbpedia.org/ontology/Agent> <http://kg.artsdata.ca/ontology/dbpedia_agent> .
+<http://dbpedia.org/ontology/Organisation> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Organization> <http://kg.artsdata.ca/ontology/dbpedia_agent> .
+
+<http://dbpedia.org/ontology/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://dbpedia.org/ontology/Agent> <http://kg.artsdata.ca/ontology/dbpedia_agent> .
+<http://dbpedia.org/ontology/Person> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Person> <http://kg.artsdata.ca/ontology/dbpedia_agent> .
