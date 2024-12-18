@@ -79,7 +79,8 @@ Saisissez les informations identifiant et décrivant l'endroit où est présent�
 Dans le cas des lieux physiques : 
 - Il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).
 - Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété _location.sameAs_.
-- Google requiert la propriété _location.adress_ avec une entité de type _PostalAddess_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
+- Google requiert la propriété _location.address_ avec une entité de type _PostalAddress_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
+- Pour une entité de type _PostalAddress_, il est préférable d'utiliser les abréviations postales de deux lettres pour les valeurs _addressRegion_ et _addressCountry_.
 
 Dans le cas des festivals, si le jour du festival et/ou l’édition du festival se déroule dans plusieurs lieux au sein d'une localité (c.-à-d. une ville ou une région), il est recommandé de renseigner la propriété _location.address_ en omettant les sous-propriétés _postalCode_ et _streetAddress_. 
 
@@ -107,14 +108,14 @@ Dans le cas des festivals, indiquez l'heure à laquelle commence l'admission au 
 ### [_offers_](https://schema.org/offers)
 Saississez au moins une entité de type Offer ou AggregateOffer avec l'URL de la page où l'on peut se procurer les billets. Pour plus d'informations sur la façon de renseigner les offres, consultez la [documentation de Google](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr#structured-data-type-definitions).
 
-### [_sameAs_](https://schema.org/sameAs) (pour les entités imbriquées)
-Saisissez les URIs d'_identifiants passerelles_[^3] permettant d'identifier sans ambiguité les entitées imbriquées dans l'entité de type _Event_. 
+### [_sameAs_](https://schema.org/sameAs)
+Saisissez les URIs d'_identifiants passerelles_[^3] permettant d'identifier sans ambiguité l'événement et/ou les entitées imbriquées dans l'entité de type _Event_. 
 
 [^3]: Un __« identifiant passerelle »__ est un identifiant pérenne (c.-à-d., exprimé sous forme d'une URI permanente et résolvable) globalement unique qui est utilisé par plusieurs systèmes d'informations et qui facilite ainsi la réconciliation des entités (et, par le fait même, la circulation des données) entre ces systèmes. Les identifiants ISNI, Wikidata et Artsdata sont particulièrement pertinents dans le domaine du spectacle. Les URIs de ces identifiants sont résolvables vers des pages web et vers des métadonnées descriptives accessibles tant aux humains qu'aux machines. Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
 
 Saississez toujours l'URI complète de l'identifiant (plutôt que de saisir uniquement l'identifiant lui-même). Par exemple, pour l'identifiant Wikidata `Q596774` correspond l'URI http://www.wikidata.org/entity/Q596774 (prenez note que le format de l'URI diffère de l'URL de la page). Tant Wikidata, qu'ISNI et Artsdata ont des interfaces permettant une recherche par nom d'entité. La méthode pour récupérer l'URI associée à l'entité recherchée diffère cependant un peu dans chaque interface. Pour Wikidata, cliquez à droite sur le lien « Concept URI » dans le menu de gauche (sous la rubrique « Tools »), puis cliquez sur « copier l'adresse du lien ». Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
 
-La propriété sameAs peut aussi être employée afin de saisir les URLs des comptes de médias sociaux associés à une entité.
+La propriété sameAs peut aussi être employée afin de saisir les URLs des pages d'événements associés à l'événement, et les URLs des comptes de médias sociaux associés à une entité.
 
 Voici un exemple de code JSON-LD imbriquant une entité de @type [Person](https://schema.org/Person) décrite avec la propriété _sameAs_. Prenez note que, pour des fins de concisions, plusieurs propriétés pertinentes ont été exclues de cet exemple.
 
