@@ -6,9 +6,9 @@ layout: default
 
 <p>{% include architecture-languages.html %}</p>
 
-Architecture Overview
+Architecture Overview 
 ====================
-How data flows in and out of Artsdata.ca. 
+**French coming soon:** How data flows in and out of Artsdata.ca. 
 Click a circle in the image to learn more about it.
 
 {% include architecture-diagram.html %}
