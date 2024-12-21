@@ -1,5 +1,4 @@
-{% include base.html %}
-{% include last-modified.html %}
+<p>{% include back-button.html %}</p>
 {% include identifier-recommendations-languages.html %}
 
 ## Identifier Recommendations (français)

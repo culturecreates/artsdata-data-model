@@ -1,5 +1,4 @@
-{% include base.html %}
-{% include last-modified.html %}
+<p>{% include back-button.html %}</p>
 {% include event-type-languages.html %}
 
 ## Artsdata Event Types
@@ -16,7 +15,11 @@ Your input is welcome. Please click the link in the top nav bar to open an issue
 
 The Artsdata Event Type controlled vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (schema:Event or schema:EventSeries) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the schema:additionalType property.
 
-For example: `ex:Event1 a schema:Event ; schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .`
+For example: 
+```
+ex:Event1 a schema:Event ; 
+schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .
+```
 
 To implement schema:Event and schema:additionalType properties in your structured data, please consult Artsdata's [structured data templates](https://culturecreates.github.io/artsdata-data-model/gabarits-jsonld/README.html).
 

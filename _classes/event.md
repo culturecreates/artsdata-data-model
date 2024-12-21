@@ -5,7 +5,7 @@ layout: class-doc
 
 ## Event Types
 
-The [Artsdata controlled vocabulary]({{ base }}/eventtype.html)  for event types.
+The [Artsdata controlled vocabulary](../event-type.html)  for event types.
 
 ## Minting Artsdata IDs for Events
 
