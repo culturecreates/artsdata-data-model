@@ -1,3 +1,8 @@
+---
+title: Architecture Sommaire
+layout: default
+---
+
 Sommaire
 =========
 
