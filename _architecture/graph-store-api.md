@@ -1,5 +1,5 @@
 ---
-title: Artsdata Databus API
+title: Databus API
 layout: architecture-doc
 ---
 
