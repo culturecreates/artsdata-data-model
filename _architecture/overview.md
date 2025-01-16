@@ -74,4 +74,4 @@ Data consumers wanting to use the data can access it in a number of ways:
 
 The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
 
-Artsdata data consumers include listing sites, industry platforms, arts service organizations, destination marketing organizations, government bodies and search engines ([see the list](https://kg.artsdata.ca/doc/data_consumers)). For an overview of use cases, check our user stories<--! HYPERLINK TO CORPORATE WEBISTE-->.
+Artsdata data consumers include listing sites, industry platforms, arts service organizations, destination marketing organizations, government bodies and search engines ([see the list](https://kg.artsdata.ca/doc/data-consumers)). For an overview of use cases, check our user stories<--! HYPERLINK TO CORPORATE WEBISTE-->.
