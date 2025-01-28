@@ -3,6 +3,9 @@ title: Gabarits de données structurées d'événement
 layout: gabarits-doc
 ---
 
+
+{% include gabarit-languages.html %}
+
 Gabarits de données structurées
 ============================================
 
