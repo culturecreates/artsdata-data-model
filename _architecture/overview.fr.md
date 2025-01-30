@@ -66,8 +66,8 @@ Artsdata offre plusieurs modes d’accès pour les consommateurs de données dé
 * Appeler l’[API de réconciliation](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) pour récupérer les identifiants pérennes ;
 * Déréférencer les identifiants pérennes pour récupérer les métadonnées associées au format JSON-LD ;
 * Appeler l’[API de requête](https://culturecreates.github.io/artsdata-data-model/architecture/query-api.html) RESTfull d’Artsdata ; 
-* S’abonner à un flux iCalendar personnalisé ;
-* Effectuer une requête sur le terminal SPARQL d’Artsdata ;
+* S’abonner à un [flux iCalendar](https://kg.artsdata.ca/ical) personnalisé ;
+* Effectuer une requête sur le [terminal SPARQL](https://culturecreates.github.io/artsdata-data-model/architecture/sparql.html) d’Artsdata ;
 * Télécharger un fichier cliché (c.-à-d., un “dump”) sérialisé dans divers formats tels que JSON-LD ou N-Quads.
 
 Les données déposées sur Artsdata sont sous licence CC0 et peuvent être utilisées dans d’autres applications sans restriction.
