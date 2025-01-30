@@ -3,6 +3,10 @@ title: Architecture Sommaire
 layout: default
 ---
 
+<p>{% include back-button.html %}</p>
+
+<p>{% include architecture-languages.html %}</p>
+
 Sommaire
 =========
 
@@ -11,6 +15,18 @@ L'écosystème de données ouvertes et liées d'Artsdata est composée de plusie
 * Graphe de connaissances Artsdata ;
 * Consommateurs de données.
 
+Voici un schéma illustrant cette architecture ainsi que les flux de données entre les différents ensembles.
+
+{% include architecture-diagram.html %}
+
+### Detail des éléments de l'architecture
+<ul>
+{% for page in site.architecture %}
+  {% if page.layout == "architecture-doc" %}
+   <li> <a href="{{ base }}{{ page.url }}"> {{ page.title}}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
 
 ### Fournisseurs de données
 
