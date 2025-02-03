@@ -63,7 +63,7 @@ If you try out this JSON-LD template please contact CAPACOA to let us know. We w
 # Add-Ons
 
 ## member/memberOf
-member can be a helpful Schema property for performing groups who wish to connect data about each individual artist in their organizational structured data. If you decide to use this add-on, please insert it directly above the "isicV4" line.
+member can be a helpful Schema property for performing groups who wish to connect data about each individual artist in their organizational structured data. If you decide to use this add-on, please insert it directly above the "naics" line.
 
 ```
 "member": {
@@ -78,7 +78,7 @@ member can be a helpful Schema property for performing groups who wish to connec
                      },	
 ```
 
-Similarly, memberOf can be a helpful Schema property for any type of group or organization who is a member of an arts service organization. If you decide to use this add-on, please insert it directly above the "isicV4" line.
+Similarly, memberOf can be a helpful Schema property for any type of group or organization who is a member of an arts service organization. If you decide to use this add-on, please insert it directly above the "naics" line.
 
 ```
 "memberOf": {
@@ -95,7 +95,7 @@ Similarly, memberOf can be a helpful Schema property for any type of group or or
 
 ## parentOrganization/subOrganization
 
-These two properties may be used to designate a larger organization that your organization is a division of (parentOrganization) and a smaller division within your organization (subOrganization), respectively. If you decide to use either of these add-ons, please insert them directly above the "isicV4" line.
+These two properties may be used to designate a larger organization that your organization is a division of (parentOrganization) and a smaller division within your organization (subOrganization), respectively. If you decide to use either of these add-ons, please insert them directly above the "naics" line.
 
 ```
 "parentOrganization":	{
