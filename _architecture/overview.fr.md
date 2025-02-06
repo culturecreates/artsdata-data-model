@@ -63,10 +63,10 @@ Le [triplestore d’Artsdata](https://culturecreates.github.io/artsdata-data-mod
 
 Artsdata offre plusieurs modes d’accès pour les consommateurs de données désirant utiliser les données exposées par le biais d’Artsdata : 
 * Naviguer l’interface du graphe de connaissances à [kg.artsdata.ca](https://kg.artsdata.ca/) ;
-* Appeler l’[API de réconciliation](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) pour récupérer les identifiants pérennes ;
+* Appeler l’[API de réconciliation](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) pour récupérer les identifiants pérennes&nbsp;;
 * Déréférencer les identifiants pérennes pour récupérer les métadonnées associées au format JSON-LD ;
 * Appeler l’[API de requête](https://culturecreates.github.io/artsdata-data-model/architecture/query-api.html) RESTfull d’Artsdata ; 
-* S’abonner à un [flux iCalendar](https://kg.artsdata.ca/ical) personnalisé par l'entremise du [serveur iCal](https://culturecreates.github.io/artsdata-data-model/architecture/ical.html);
+* S’abonner à un [flux iCalendar](https://kg.artsdata.ca/ical) personnalisé par l'entremise du [serveur iCal](https://culturecreates.github.io/artsdata-data-model/architecture/ical.html)&nbsp;;
 * Effectuer une requête sur le [terminal SPARQL](https://culturecreates.github.io/artsdata-data-model/architecture/sparql.html) d’Artsdata ;
 * Télécharger un fichier cliché (c.-à-d., un “dump”) sérialisé dans divers formats tels que JSON-LD ou N-Quads.
 
