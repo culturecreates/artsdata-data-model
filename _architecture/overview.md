@@ -68,7 +68,7 @@ Data consumers wanting to use the data can access it in a number of ways:
 * Call the [Artsdata Reconciliation API](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) to retrieve persistent identifiers;
 * Crawl persistent identifiers to access the associated metadata in JSON-LD format;
 * Call the RESTfull [Artsdata Query API](https://culturecreates.github.io/artsdata-data-model/architecture/query-api.html);
-* Subscribe to a custom iCalendar subscription feed;
+* Subscribe to a custom iCalendar subscription feed via the [iCal Server](https://culturecreates.github.io/artsdata-data-model/architecture/ical.html);
 * Call the [Artsdata SPARQL endpoint](https://culturecreates.github.io/artsdata-data-model/architecture/sparql.html).;
 * Download a data dump of triples serialized in a variety of formats such as JSON-LD or N-Quads. 
 
