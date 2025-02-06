@@ -32,7 +32,7 @@ Voici un schéma illustrant cette architecture ainsi que les flux de données en
 
 Artsdata propose aux fournisseurs de données une diversité de processus et d’outils pour l’extraction-transformation-chargement (ETC) de leurs données :
 * Moissonnage de données structurées JSON-LD ;
-* Extraction frontale combinant moissonnage de JSON-LD et reconnaissance naturelle du langage ; 
+* Extraction frontale combinant moissonnage de JSON-LD et reconnaissance naturelle du langage&nbsp;; 
 * ETC par le biais de terminaux (APIs, JSON-LD) ;
 * Google Sheet vers Artsdata (outil de conversion de données de chiffrier);
 * Console Footlight (logiciel de gestion de données événementielles pour un seul site web) ;
@@ -66,7 +66,7 @@ Artsdata offre plusieurs modes d’accès pour les consommateurs de données dé
 * Appeler l’[API de réconciliation](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) pour récupérer les identifiants pérennes ;
 * Déréférencer les identifiants pérennes pour récupérer les métadonnées associées au format JSON-LD ;
 * Appeler l’[API de requête](https://culturecreates.github.io/artsdata-data-model/architecture/query-api.html) RESTfull d’Artsdata ; 
-* S’abonner à un [flux iCalendar](https://kg.artsdata.ca/ical) personnalisé ;
+* S’abonner à un [flux iCalendar](https://kg.artsdata.ca/ical) personnalisé par l'entremise du [serveur iCal](https://culturecreates.github.io/artsdata-data-model/architecture/ical.html);
 * Effectuer une requête sur le [terminal SPARQL](https://culturecreates.github.io/artsdata-data-model/architecture/sparql.html) d’Artsdata ;
 * Télécharger un fichier cliché (c.-à-d., un “dump”) sérialisé dans divers formats tels que JSON-LD ou N-Quads.
 
