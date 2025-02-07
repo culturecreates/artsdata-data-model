@@ -16,21 +16,29 @@ To create a new iCal Feed, add a CONSTRUCT SPARQL to the artsdata-stewards <a hr
 The CONSTRUCT SPARQL must have the following minimum data:
 
 Events of type schema:Event with properties:
+```
 schema:name
 schema:startDate
 schema:endDate
 schema:location
 schema:description
 schema:url
+```
+
 Nested location of type schema:Place with properties:
+```
 schema:name
 schema:address
+```
+
 Nested address of type schema:PostalAddress with properties:
+```
 schema:streetAddress
 schema:addressRegion
 schema:addressCountry
 schema:postalCode
 schema:addressLocality
+```
 
 ## Examples
 
