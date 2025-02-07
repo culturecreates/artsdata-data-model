@@ -5,7 +5,7 @@ layout: architecture-doc
 
 Artsdata's iCal Server makes it possible to configure a custom iCal feed and to import Artsdata events into any calendar application supporting the iCal standard (ex., Google Calendar, Outlook, and many website plugins).
 
-The iCal feed is serialized following the [RFC 5545](https://datatracker.ietf.org/doc/html/rfc5545) specification. The [`DATE-TIME`](https://www.kanzaki.com/docs/ical/dateTime.html) value is serialized in form #3: date with local time zone and time zone reference.
+The iCal feed is serialized following the [RFC 5545](https://datatracker.ietf.org/doc/html/rfc5545) specification. The [`DATE-TIME`](https://www.kanzaki.com/docs/ical/dateTime.html) value is serialized in form #3:date with local time zone and time zone reference.
 
 Support for later specifications could be provided, as needed.
 
@@ -15,7 +15,7 @@ To create a new iCal Feed, add a CONSTRUCT SPARQL to the artsdata-stewards <a hr
 
 The CONSTRUCT SPARQL must have the following minimum data:
 
-Events of type schema:Event with properties:
+Events of type `schema:Event` with properties:
 ```
 schema:name
 schema:startDate
@@ -25,13 +25,13 @@ schema:description
 schema:url
 ```
 
-Nested location of type schema:Place with properties:
+Nested location of type `schema:Place` with properties:
 ```
 schema:name
 schema:address
 ```
 
-Nested address of type schema:PostalAddress with properties:
+Nested address of type `schema:PostalAddress` with properties:
 ```
 schema:streetAddress
 schema:addressRegion
