@@ -1,5 +1,5 @@
 ---
-title: Culture Creates Footlight
+title: Footlight Console
 layout: architecture-doc
 ---
 

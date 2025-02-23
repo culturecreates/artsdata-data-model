@@ -9,7 +9,6 @@ layout: default
 Architecture Overview
 ====================
 How data flows in and out of Artsdata.ca. 
-Click a circle in the image to learn more about it.
 
 {% include architecture-diagram.html %}
 
@@ -24,38 +23,55 @@ Click a circle in the image to learn more about it.
 
 Summary
 =========
-Artsdata is a knowledge graph specialized in the Canadian Arts Sector, currently focused on performing arts events. 
 
-Artsdata aggregates descriptive metadata related to cultural events (performing arts, and soon galleries and museums) from multiple websites and external databases and, when needed, mints URIs for named entities. Data is published as [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) with URIs that can be used to link events to artists, venues and arts organizations.
-
-For an overview of knowledge graphs and why the arts sector in Canada should have one, take a look at this 6 minute [video](https://youtu.be/Brqa4T0JNMk) by Tammy Lee, CEO of Culture Creates. 
-
-The Artsdata data model is implemented using classic RDF ontologies and maps data to a multitude of other classic (i.e. FRBR) and non-classic (i.e. Wikidata) ontologies.
-
-The long term goal of Artsdata is to have the most complete and highest quality descriptive metadata on cultural events in Canada, including productions and artists from around the world being presented in Canada. And, at a later stage, all events of Canadian artists performing abroad.
-
-The open data ecosystem is divided into 3 areas:
+The Artsdata linked open data ecosystem is divided into 3 areas:
 * Data providers
-* Artsdata.ca
+* Artsdata knowledge graph
 * Data consumers
 
 ### Data providers
 
-For Data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of ETL tools are available (see Provenance data for a listing of tools in action), as well as an API (Graph-store API) for 3rd party developers that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata.)  All data submited to Artsdata.ca requires a user account registered with artsdata.ca. 
+For data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of Extract-Transform-Load (ETL) processes and tools are available:
+* JSON-LD scraping;
+* Front-end ETL combining JSON-LD scraping and natural language processing;
+* ETL via endpoints (APIs, JSON-LD endpoint);
+* Google Sheet to Artsdata (a tool to convert spreadsheet information into linked open data);
+* Footlight Console (event information management software for a single site);
+* Footlight CMS (event information management software for multiple sites);
+* Artsdata Load API (Graph-store API) that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata). 
+
+All data submitted to Artsdata.ca requires a user account registered with artsdata.ca.
 
 All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.
 
-Data from each source is loaded into its own graph within Artsdata.ca with provenance metadata including a contact point, contributor names and data related license agreements. 
+Data from each source is loaded into its own graph within Artsdata.ca with provenance metadata including a contact point, contributor names and data related license agreements.
 
-3rd party developers are welcome and can use the Artsdata Databus API to load data.
+Third-party developers are welcome and can use the [Artsdata Databus API](https://culturecreates.github.io/artsdata-data-model/architecture/graph-store-api.html) to load data.
+ 
+Artsdata data providers include associations, unions, industry platforms, ticketing services, and individual arts organizations ([see the list](https://kg.artsdata.ca/fr/query/show?sparql=feeds_all&title=Data+Feeds)).
 
 
-### Artsdata.ca
+### Artsdata knowledge graph (kg.artsdata.ca)
 
- All services are open and freely accessible, except for loading data into Artsdata, which requires a user account.  In principle, anyone can load data using the Load API as long as they meet the Artsdata data model requirements outlined in the [Artsdata data model documentation](https://culturecreates.github.io/artsdata-data-model).
+Artsdata aggregates and shares descriptive metadata related to cultural events (and related entities) from/with multiple websites and external databases. Data is published as [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) with persistent identifiers (i.e. URIs) that can be used to link events to artists, venues and arts organizations.
+
+The [Artsdata data model](https://culturecreates.github.io/artsdata-data-model) is implemented using classic RDF ontologies. It is a sub-set of Schema.org and maps data to a multitude of other classic (i.e. LRMoo, DBpedia) and non-classic (i.e. Wikidata) ontologies. 
+
+Artsdata mints its own Artsdata persistent identifiers (URIs) for named entities when they meet minimal requirements for minting. Registered users can mint an Artsdata URI from a Wikidata URI. Artsdata also uses external URIs (Wikidata, VIAF) for named entities and concepts.
+
+The Artsdata triplestore is a standard (compliant with W3C Standards) RDF triplestore using the “GraphDB Free” product by OntoText.
 
 ### Data consumers
 
-Data consumers, such as listing sites, search engines, government bodies and Arts Organizations wanting to use the data, can call the Artsdata Query API that makes several methods available, from an iCalendar feed to a RESTful API, to a SPARQL endpoint (read only). Or they can obtain a triples data dump serialized in a variety of formats such as JSON-LD or N-Quads. The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
+Data consumers wanting to use the data can access it in a number of ways: 
+* Browse the knowledge graph interface at [kg.artsdata.ca](https://kg.artsdata.ca/);
+* Call the [Artsdata Reconciliation API](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) to retrieve persistent identifiers;
+* Crawl persistent identifiers to access the associated metadata in JSON-LD format;
+* Call the RESTfull [Artsdata Query API](https://culturecreates.github.io/artsdata-data-model/architecture/query-api.html);
+* Subscribe to a custom iCalendar subscription feed via the [iCal Server](https://culturecreates.github.io/artsdata-data-model/architecture/ical.html);
+* Call the [Artsdata SPARQL endpoint](https://culturecreates.github.io/artsdata-data-model/architecture/sparql.html).;
+* Download a data dump of triples serialized in a variety of formats such as JSON-LD or N-Quads. 
 
+The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
 
+Artsdata data consumers include listing sites, industry platforms, arts service organizations, destination marketing organizations, government bodies and search engines ([see the list](https://kg.artsdata.ca/doc/data-consumers)). For an overview of use cases, check our user stories<--! HYPERLINK TO CORPORATE WEBISTE-->.

@@ -1,5 +1,5 @@
 ---
-title: Search API
+title: Query API
 layout: architecture-doc
 ---
 

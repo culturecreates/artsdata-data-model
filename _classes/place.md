@@ -16,6 +16,10 @@ Artsdata also takes advantage of the schema:placeContainedIn to create links bet
 Proposed additions
 =========
 
+[maximumAttendeeCapacity](http://schema.org/maximumAttendeeCapacity)
+-----------------
+This is a recommended property. Systems like scenepro.ca and Wikidata can feed this information to Artsdata. When multiple plans are available, only the maximum value should be selected.
+
 geo property
 ------------
 
