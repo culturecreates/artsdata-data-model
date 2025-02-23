@@ -7,7 +7,7 @@
 
 Un modèle de données simple pour les événements dans les arts de la scène ainsi que pour les lieux, les personnes et les organismes connexes. 
 
-Le modèle de données (ontologie) d’Artsdata est un sous-ensemble de Schema.org avec quelques vocabulaires contrôlés additionnels. Le modèle d'Artsdata.ca est représenté formellement avec le language SHACL [ici](https://github.com/culturecreates/artsdata-data-model/blob/master/shacl/shacl_artsdata.ttl).
+Le modèle de données (ontologie) d’Artsdata est un sous-ensemble de Schema.org avec quelques vocabulaires contrôlés additionnels. Le modèle d'Artsdata.ca est représenté formellement avec le language SHACL [ici](https://kg.artsdata.ca/query/show?sparql=https://raw.githubusercontent.com/artsdata-stewards/artsdata-actions/main/queries/artsdata_SHACL_validation_rules.sparql).
 
 Les classes et propriétés utilisées dans Artsdata sont similaires au modèle de [Google Event Structured Data](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr). En particulier, les propriétés obligatoires pour les événements dans la documentation de Google sont aussi des propriétés obligatoires dans Artsdata.  La différence principale est qu’Artsdata enrichit les données structurées avec des URIs et relie les URIs vers Wikidata et d’autres sources LOD (Linked Open Data). Artsdata génère également des URI (identifiants globaux uniques et pérennes) pour les événements, personnes, lieux, organisations et aussi pour quelques vocabulaires contrôlés comme des types d'événements spécifiques aux arts de la scène. Ces URIs peuvent être utilisés en dehors d'Artsdata.
 
