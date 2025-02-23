@@ -11,7 +11,7 @@ Support for later specifications could be provided, as needed.
 
 ## How to create an iCal Feed
 
-To create a new iCal Feed, add a CONSTRUCT SPARQL to the artsdata-stewards <a href='https://github.com/artsdata-stewards/artsdata-actions/tree/main/ical'>iCal Github repository</a>. Then visit  http://kg.artsdata.ca, sign-in, and use the menu to navigate to the iCal Feeds. You CONSTRUCT SPARQL will appear in the list of iCal Feeds. The iCal Feed URL can be used with the Calendar iCal/ICS plugin of your choice. To test an iCal Feed, copy the iCal Feed URL and paste it into this free Wordpress calendar plugin: <a href='https://icscalendar.com/preview/'>ICS Calendar</a>.</p>
+To create a new iCal Feed, add a CONSTRUCT SPARQL to the artsdata-stewards <a href='https://github.com/artsdata-stewards/artsdata-actions/tree/main/ical'>iCal Github repository</a>. Then visit  http://kg.artsdata.ca, sign-in, and use the menu to navigate to the iCal Feeds. Your CONSTRUCT SPARQL will appear in the list of iCal Feeds. The iCal Feed URL can be used with the Calendar iCal/ICS plugin of your choice. To test an iCal Feed, copy the iCal Feed URL and paste it into this free Wordpress calendar plugin: <a href='https://icscalendar.com/preview/'>ICS Calendar</a>.</p>
 
 The CONSTRUCT SPARQL must have the following minimum data:
 
