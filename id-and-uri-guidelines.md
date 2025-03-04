@@ -34,9 +34,9 @@ For the purpose of identifying a Thing, a URI is functional if it uniquely ident
 * It is possible to generate a functional URI by appending a hash (#) at the end of an existing webpage URL, followed by a string of characters that acts as a unique identifier for a Thing described on the page (an event, a place or a performer). This string is called a fragment identifier.
 * The fragment identifier should preferably be unique within the website domain. At a minimum, it should be unique within the page.
 * Only append fragment identifiers to canonical URLs. If a given Thing is described across several webpages, it must always have the same URI, no matter where it is referenced on your website.
-* It is not necessary for the fragment identifier to point to a tail anchor within the page’s body (for example, an id or name attribute). As a matter of fact, it is not even necessary for the hashURI to resolve to a webpage.
+* It is not necessary for the fragment identifier to point to a tail anchor within the page’s body (for example, an id or name attribute). As a matter of fact, it is not even necessary for the HashURI to resolve to a webpage.
 
-# Examples of webpage-based hashURIs
+# Examples of webpage-based HashURIs
 
 Here are a few examples of improper and proper uses of URIs derived from webpage URLs:
 
@@ -56,9 +56,9 @@ If you can’t base your fragment identifier on database keys, we recommend usin
 
 HashURIs based on existing webpage URLs, as described above, are only one of many ways of generating functional URIs to identify the things described on your website. Here are other strategies for generating flexible, stable and persistent URIs:
 
-* HashURIs can be based on a URL path that is independent of any existing webpage. URIs that are independent from the website’s structure are more stable over time than webpage-based hashURIs. In other words, if the site structure changes, you can still continue to use the same naming convention. 
+* HashURIs can be based on a URL path that is independent of any existing webpage. URIs that are independent from the website’s structure are more stable over time than webpage-based HashURIs. In other words, if the site structure changes, you can still continue to use the same naming convention. 
   Example: "<span>https://</span>someorg.ca/id/#123456" 
-  (Reminder: This hashURI is functional even if it does not resolve to any resource.)
+  (Reminder: This HashURI is functional even if it does not resolve to any resource.)
 * For websites with dynamic content, you may use rewrite rules to ensure the URI is independent from the site’s current implementation. 
   Example: "<span>https://</span>someorg.ca/event/123456" rewritten to "<span>https://</span>someorg.ca/index.php?event=123456"
 * Redirection rules are commonly used to generate [303 URIs](https://en.wikipedia.org/wiki/HTTP_303). The 303 server response signals that the URI does not identify a regular web document and then redirects the request to another URI, usually with content negotiation.
