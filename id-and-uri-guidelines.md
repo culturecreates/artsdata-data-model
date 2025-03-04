@@ -27,16 +27,16 @@ Scroll down to learn how to generate functional URIs.
 
 For the purpose of identifying a Thing, a URI is functional if it uniquely identifies a single real-world object AND if this real-world object is assigned a single URI within the web domain. In other words, the cardinality must be one-to-one. While it is preferable that the URI resolves to some representation (HTML, JSON-LD or other) of the Thing, Artsdata can use any type of functional URI to refer to external Things, even if these URIs lead to "404 Not Found" responses.
 
-## Webpage-based Hash URIs
+## Webpage-based HashURIs
 
 *Note: This method may not be suitable for websites with language negotiation or with dynamic content.*
 
 * It is possible to generate a functional URI by appending a hash (#) at the end of an existing webpage URL, followed by a string of characters that acts as a unique identifier for a Thing described on the page (an event, a place or a performer). This string is called a fragment identifier.
 * The fragment identifier should preferably be unique within the website domain. At a minimum, it should be unique within the page.
 * Only append fragment identifiers to canonical URLs. If a given Thing is described across several webpages, it must always have the same URI, no matter where it is referenced on your website.
-* It is not necessary for the fragment identifier to point to a tail anchor within the page’s body (for example, an id or name attribute). As a matter of fact, it is not even necessary for the hash URI to resolve to a webpage.
+* It is not necessary for the fragment identifier to point to a tail anchor within the page’s body (for example, an id or name attribute). As a matter of fact, it is not even necessary for the hashURI to resolve to a webpage.
 
-# Examples of webpage-based hash URIs
+# Examples of webpage-based hashURIs
 
 Here are a few examples of improper and proper uses of URIs derived from webpage URLs:
 
@@ -54,11 +54,11 @@ If you can’t base your fragment identifier on database keys, we recommend usin
 
 ## Other strategies to generate URIs
 
-Hash URIs based on existing webpage URLs, as described above, are only one of many ways of generating functional URIs to identify the things described on your website. Here are other strategies for generating flexible, stable and persistent URIs:
+HashURIs based on existing webpage URLs, as described above, are only one of many ways of generating functional URIs to identify the things described on your website. Here are other strategies for generating flexible, stable and persistent URIs:
 
-* Hash URIs can be based on a URL path that is independent of any existing webpage. URIs that are independent from the website’s structure are more stable over time than webpage-based hash URIs. In other words, if the site structure changes, you can still continue to use the same naming convention. 
+* HashURIs can be based on a URL path that is independent of any existing webpage. URIs that are independent from the website’s structure are more stable over time than webpage-based hashURIs. In other words, if the site structure changes, you can still continue to use the same naming convention. 
   Example: "<span>https://</span>someorg.ca/id/#123456" 
-  (Reminder: This hash URI is functional even if it does not resolve to any resource.)
+  (Reminder: This hashURI is functional even if it does not resolve to any resource.)
 * For websites with dynamic content, you may use rewrite rules to ensure the URI is independent from the site’s current implementation. 
   Example: "<span>https://</span>someorg.ca/event/123456" rewritten to "<span>https://</span>someorg.ca/index.php?event=123456"
 * Redirection rules are commonly used to generate [303 URIs](https://en.wikipedia.org/wiki/HTTP_303). The 303 server response signals that the URI does not identify a regular web document and then redirects the request to another URI, usually with content negotiation.
@@ -67,7 +67,8 @@ Hash URIs based on existing webpage URLs, as described above, are only one of ma
 
 ## External resources on URIs
 * [Cool URIs for the Semantic Web](https://www.w3.org/TR/cooluris/), W3C Interest Group Note 03 December 2008
-* [Identifiants pérennes pour les ressources culturelles : Vade-mecum pour les producteurs de données, Version 1.0](https://www.culture.gouv.fr/Espace-documentation/Publications-revues/Identifiants-perennes-pour-les-ressources-numeriques), 2015.You can find useful W3C guidelines on 303 URIs here: 
+* [Identifiants pérennes pour les ressources culturelles : Vade-mecum pour les producteurs de données](https://www.culture.gouv.fr/Espace-documentation/Publications-revues/Identifiants-perennes-pour-les-ressources-numeriques), Version 1.0, 2015.
+* You can find useful W3C guidelines on [303 URIs](https://www.w3.org/TR/cooluris/) here.
 
 
 ### If you are unable to generate your own URIs…
