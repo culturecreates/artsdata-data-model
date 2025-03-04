@@ -68,7 +68,6 @@ HashURIs based on existing webpage URLs, as described above, are only one of man
 ## External resources on URIs
 * [Cool URIs for the Semantic Web](https://www.w3.org/TR/cooluris/), W3C Interest Group Note 03 December 2008
 * [Identifiants pérennes pour les ressources culturelles : Vade-mecum pour les producteurs de données](https://www.culture.gouv.fr/Espace-documentation/Publications-revues/Identifiants-perennes-pour-les-ressources-numeriques), Version 1.0, 2015.
-* You can find useful W3C guidelines on [303 URIs](https://www.w3.org/TR/cooluris/) here.
 
 
 ### If you are unable to generate your own URIs…
