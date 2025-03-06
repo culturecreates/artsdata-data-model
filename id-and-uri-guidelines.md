@@ -10,7 +10,7 @@ In these guidelines, the word “Thing” is borrowed from the Schema terminolog
 | ---------- | --------------------------------- |
 | Data type | [xsd:anyURI](https://www.datypic.com/sc/xsd/t-xsd_anyURI.html) |
 | Instructions | The value should be a URI constituting a unique persistent identifier for the Thing (for example, an Event or Place entity) within the website domain. |
-| Note | Do not populate the same URI under both "@id" and "url".<br>A webpage URL is the unique persistent identifier for that webpage, and nothing else. It should not be used to identify any of the things described on that webpage. In Schema structured data (and in any other RDF-based ontologies), a “real-world object” (such as an Event or Place entity) and the web document describing it are two distinct things: they each deserve their own URI. |
+| Note | Do not populate the same URI under both `@id` and `url`.<br>A webpage URL is the unique persistent identifier for that webpage, and nothing else. It should not be used to identify any of the things described on that webpage. In Schema structured data (and in any other RDF-based ontologies), a “real-world object” (such as an Event or Place entity) and the web document describing it are two distinct things: they each deserve their own URI. |
  
 Scroll down to learn how to generate functional URIs.
 
