@@ -7,7 +7,7 @@ layout: default
 
 <p>{% include architecture-languages.html %}</p>
 
-Sommaire
+Architecture des flux de données
 =========
 
 L'écosystème de données ouvertes et liées d'Artsdata est composée de plusieurs parties que l'on peut regrouper en trois ensembles : 
