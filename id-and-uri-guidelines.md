@@ -40,7 +40,7 @@ Here are a few examples of improper and proper uses of URIs derived from webpage
 | Example | Suitability as URI |
 | - | - |
 | <br>`"@id": "https://someorg.ca/events/eventname/"`<br>(Where the value is the same as the page URL, without a fragment identifier) | <span style="color:red">**Critical Error**</span><br>The `"@id"` and `"url"` values should not be the same. |
-| <br>`"@id": "https://someorg.ca/events/eventname/#event"`<br>(Where the same fragment identifier is used for all entities of the same type.) | <span style="color:orange">**Good**</span><br>Note: This naming convention won’t work if more than one event is listed on the same page, because multiple events would be assigned the same URI. |
+| <br>`"@id": "https://someorg.ca/events/eventname/#event"`<br><br>(Where the same fragment identifier is used for all entities of the same type.) | <span style="color:orange">**Good**</span><br>Note: This naming convention won’t work if more than one event is listed on the same page, because multiple events would be assigned the same URI. |
 | <br>`"@id": "https://someorg.ca/events/eventname/#123abc"`<br><br>(Where the fragment identifier `123abc` follows a naming convention that guarantees  uniqueness within the webpage.) | <br><span style="color:green">**Better!**</span> |
 | <br>`"@id": "https://someorg.ca/events/eventname/#key"`<br><br><small>(Where `key` is the primary key identifying the event entity in your local database.)</small> | <br><span style="color:green">**Even better!**</span> |
 
