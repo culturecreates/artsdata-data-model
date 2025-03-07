@@ -1,4 +1,4 @@
-# Artsdata Guidelines about the @id property and URIs
+## Artsdata Guidelines about the @id property and URIs
 
 The Schema.org documentation does not, unfortunately, say much about the `"@id"` property, nor how to generate URIs for them. In order to make up for these shortfalls, Artsdata prepared the following guidelines. These guidelines are intended primarily for web developers.
 
@@ -39,10 +39,10 @@ Here are a few examples of improper and proper uses of URIs derived from webpage
 
 | Example | Suitability as URI |
 | - | - |
-| `"@id": "https://someorg.ca/events/eventname/"`<br>(Where the value is the same as the page URL, without a fragment identifier) | <span style="color:red">**Critical Error**</span><br>The `"@id"` and `"url"` values should not be the same  |
-| `"@id": "https://someorg.ca/events/eventname/#event"`<br>(Where the same fragment identifier is used for all entities of the same type) | <span style="color:orange">**Good**</span><br>Note: This naming convention won’t work if more than one event is listed on the same page, because multiple events would be assigned the same URI.
-| `"@id": "https://someorg.ca/events/eventname/#123abc"`<br><p class="small-text">(Where the fragment identifier `123abc` follows a naming convention that guarantees  uniqueness within the webpage.)</p> | <span style="color:green">**Better!**</span> |
-| <br>`"@id": "https://</span>someorg.ca/events/eventname/#key"`<br><br><small>(Where `key` is the primary key identifying the event entity in your local database.)</small> | <span style="color:green">**Even better!**</span> |
+| <br>`"@id": "https://someorg.ca/events/eventname/"`<br>(Where the value is the same as the page URL, without a fragment identifier) | <span style="color:red">**Critical Error**</span><br>The `"@id"` and `"url"` values should not be the same. |
+| <br>`"@id": "https://someorg.ca/events/eventname/#event"`<br>(Where the same fragment identifier is used for all entities of the same type.) | <span style="color:orange">**Good**</span><br>Note: This naming convention won’t work if more than one event is listed on the same page, because multiple events would be assigned the same URI. |
+| <br>`"@id": "https://someorg.ca/events/eventname/#123abc"`<br><br>(Where the fragment identifier `123abc` follows a naming convention that guarantees  uniqueness within the webpage.) | <br><span style="color:green">**Better!**</span> |
+| <br>`"@id": "https://someorg.ca/events/eventname/#key"`<br><br><small>(Where `key` is the primary key identifying the event entity in your local database.)</small> | <br><span style="color:green">**Even better!**</span> |
 
 Basing the fragment identifier on the Thing’s primary key in your database is a simple and efficient means of ensuring that the fragment identifier is unique within the site’s domain.
 
