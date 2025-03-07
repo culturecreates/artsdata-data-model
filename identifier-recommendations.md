@@ -21,15 +21,19 @@ In order to guide data providers and consumers in the adoption and implementatio
 | [schema:Event](https://schema.org/Event) | Recommended | Optional | Not a valid type for this ID | Optional |
 
 ### How to integrate local URIs to structured data
-See: Artsdata Guidelines regarding the @id property and URIs
+
+See: [Artsdata guidelines regarding the @id property and URIs](https://culturecreates.github.io/artsdata-data-model/id-and-uri-guidelines)
 
 ### How to integrate external URIs into structured data
-See: Artsdata guidelines regarding the sameAs property
+
+See: [Artsdata guidelines regarding the sameAs property](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines)
 
 ### How to store external URIs in a local database
+
 Coming soon.
 
 ### About the Artsdata Identifier
+
 The Artsdata ID is a globally-unique persistent identifier for any concept or named entity in the Artsdata knowledge graph. It can be assigned to performing arts entity types for which there exists at present no good persistent identifier (for example, an event). Any entity that meets minimal requirements and that passes SHACL validation can be minted an ID.
 
 Third parties are welcome to contribute to assigning Artsdata IDs. Registered users may:
