@@ -1,0 +1,3 @@
+## Ligne directrices d’Artsdata concernant la propriété @id et les URI locales
+
+À venir...
