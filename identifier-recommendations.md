@@ -15,10 +15,10 @@ In order to guide data providers and consumers in the adoption and implementatio
 
 | Type | Artsdata ID | Wikidata ID | ISNI | Local URI |
 | - | - | - | - | - |
-| [schema:Person](https://schema.org/Person) | <span style="color:green">Recommended</span> | Recommended | Recommended | Optional |
-| [schema:Organization](https://schema.org/Organization)<br>[schema:PerformingGroup](https://schema.org/PerformingGroup) | Recommended | Recommended | Optional | Optional |
-| [schema:Place](https://schema.org/Place) | Recommended | Recommended | Not a valid type for this ID | Optional |
-| [schema:Event](https://schema.org/Event) | Recommended | Optional | Not a valid type for this ID | Optional |
+| [schema:Person](https://schema.org/Person) | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | Optional |
+| [schema:Organization](https://schema.org/Organization)<br>[schema:PerformingGroup](https://schema.org/PerformingGroup) | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | Optional | Optional |
+| [schema:Place](https://schema.org/Place) | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | Not a valid type for this ID | Optional |
+| [schema:Event](https://schema.org/Event) | <span style="color:green">**Recommended**</span> | Optional | Not a valid type for this ID | Optional |
 
 ### How to integrate local URIs to structured data
 
