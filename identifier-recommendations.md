@@ -15,10 +15,10 @@ In order to guide data providers and consumers in the adoption and implementatio
 
 | Type | Artsdata ID | Wikidata ID | ISNI | Local URI |
 | - | - | - | - | - |
-| schema:Person | Recommended | Recommended | Recommended | Optional |
-| schema:Organization<br>schema:PerformingGroup | Recommended | Recommended | Optional | Optional |
-| schema:Place | Recommended | Recommended | Not a valid type for this ID | Optional |
-| schema:Event | Recommended | Optional | Not a valid type for this ID | Optional |
+| [schema:Person](https://schema.org/Person) | Recommended | Recommended | Recommended | Optional |
+| [schema:Organization](https://schema.org/Organization)<br>[schema:PerformingGroup](https://schema.org/PerformingGroup) | Recommended | Recommended | Optional | Optional |
+| [schema:Place](https://schema.org/Place) | Recommended | Recommended | Not a valid type for this ID | Optional |
+| [schema:Event](https://schema.org/Event) | Recommended | Optional | Not a valid type for this ID | Optional |
 
 ### How to integrate local URIs to structured data
 See: Artsdata Guidelines regarding the @id property and URIs
