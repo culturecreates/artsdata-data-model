@@ -1,7 +1,7 @@
 <p>{% include back-button.html %}</p>
 {% include identifier-recommendations-languages.html %}
 
-# Artsdata Guidelines regarding Persistent Identifiers
+## Artsdata Guidelines regarding Persistent Identifiers
 
 As per the W3C’s RDF specifications for linked open data, each named entity (for example, an event, a place or a person), class and property loaded in the Artsdata triple store must be denoted by a persistent identifier, represented as a URI ([see this article](https://www.artsdata.ca/en/resources/identifiable-and-findable) to learn more about persistent identifiers).
 
@@ -15,7 +15,7 @@ In order to guide data providers and consumers in the adoption and implementatio
 
 | Type | Artsdata ID | Wikidata ID | ISNI | Local URI |
 | - | - | - | - | - |
-| [schema:Person](https://schema.org/Person) | Recommended | Recommended | Recommended | Optional |
+| [schema:Person](https://schema.org/Person) | <span style="color:green">Recommended</span> | Recommended | Recommended | Optional |
 | [schema:Organization](https://schema.org/Organization)<br>[schema:PerformingGroup](https://schema.org/PerformingGroup) | Recommended | Recommended | Optional | Optional |
 | [schema:Place](https://schema.org/Place) | Recommended | Recommended | Not a valid type for this ID | Optional |
 | [schema:Event](https://schema.org/Event) | Recommended | Optional | Not a valid type for this ID | Optional |
