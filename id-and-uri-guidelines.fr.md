@@ -1,6 +1,6 @@
 ## Ligne directrices d’Artsdata concernant la propriété @id et les URI locales
 
-Malheureusement, la documentation Schema.org ne dit pas grand-chose sur la propriété « @id », ni sur la manière de générer des URI pour eux. Afin de combler ces lacunes, Artsdata a préparé les lignes directrices suivantes. Ces lignes directrices s'adressent principalement aux développeurs web.
+Malheureusement, la documentation Schema.org ne dit pas grand-chose sur la propriété `« @id »`, ni sur la manière de générer des URI pour eux. Afin de combler ces lacunes, Artsdata a préparé les lignes directrices suivantes. Ces lignes directrices s'adressent principalement aux développeurs web.
 
 Dans ces lignes directrices, le mot « Chose » est emprunté à la terminologie Schema ([schema:Thing](https://schema.org/Thing)) afin de désigner n'importe quel objet du monde réel, tel qu'un événement, un lieu ou une personne spécifique. Il est synonyme du terme entité ( fréquemment utilisé dans la documentation d'Artsdata), dans le sens d'un objet ayant une identité.
 
@@ -10,8 +10,7 @@ Dans ces lignes directrices, le mot « Chose » est emprunté à la terminologie
 | ---------- | --------------------------------- |
 | Type de données | [xsd:anyURI](https://www.datypic.com/sc/xsd/t-xsd_anyURI.html) |
 | Instructions | La valeur doit être une URI constituant un identifiant unique pérenne pour la Chose (par exemple, une entité Event ou Place) dans le domaine du site web. |
-| Remarque | Ne renseignez pas la même URI sous « @id » et « url ». <br>L'URL d'une page web est l'identifiant unique pérenne de cette page web, et rien d'autre. Elle ne doit pas être utilisée pour identifier les éléments décrits sur cette page web. Dans les données structurées Schema (et dans toute autre ontologie basée sur le RDF), un « objet du monde réel » (tel qu'un événement ou un lieu) et le document web qui le décrit sont deux choses distinctes : elles méritent chacune leur propre URI. 
- |
+| Remarque | Ne renseignez pas la même URI sous `@id` et `url`. <br>L'URL d'une page web est l'identifiant unique pérenne de cette page web, et rien d'autre. Elle ne doit pas être utilisée pour identifier les éléments décrits sur cette page web. Dans les données structurées Schema (et dans toute autre ontologie basée sur le RDF), un « objet du monde réel » (tel qu'un événement ou un lieu) et le document web qui le décrit sont deux choses distinctes : elles méritent chacune leur propre URI. |
  
  Faites défiler vers le bas afin d'apprendre comment générer des URI fonctionnels.
 
@@ -35,13 +34,13 @@ Aux fins de l'identification d'une Chose, une URI est fonctionnelle si elle iden
 
 ### Exemples d’URI croisillons basées sur une page web
 *Voici quelques exemples d’utilisations incorrectes et correctes d’URI dérivées d’URL de pages webs :*
-* « @id » : « <-- même valeur que l'URL de la page, sans identificateur de fragment --> » = $${\color{red}erreur \space critique}$$
-* « @id » : « https://example.org/events/eventname/#event » = $${\color{orange}bon}$$ 
-  * Remarque : cette convention de nommage est simple et facile à mettre en œuvre. Cependant, elle ne fonctionnera pas si plusieurs événements sont répertoriés sur la même page, car plusieurs événements se verraient attribuer la même URI.
-* « @id » : « https://example.org/events/eventname/#123abc »
-(où l'identificateur de fragment « 123abc » suit une convention de nommage qui garantit la singularité au sein de la page web) = $${\color{green}mieux \space !}$$
-* « @id » : « https://example.org/events/eventname/#key » 
-(où « key » est la clé primaire de l'événement dans votre base de données locale) = $${\color{green}encore \space mieux \space !}$$
+
+| Exemple | Adéquation en tant qu'URI |
+| - | - |
+| `"@id": "https://someorg.ca/events/eventname/"`<br>(Où la valeur est la même que celle de la page URL, sans identificateur de fragment) | <span style="color:red">**Erreur critique**</span><br>Les valeurs `« @id »` et `« url »` ne devraient pas être pareils  |
+| `"@id": "https://someorg.ca/events/eventname/#event"`<br>(Où le même identificateur de fragment est utilisé pour toutes entités du même type) | <span style="color:orange">**Bon**</span><br>Remarque : cette convention de nommage est simple et facile à mettre en œuvre. Cependant, elle ne fonctionnera pas si plusieurs événements sont répertoriés sur la même page, car plusieurs événements se verraient attribuer la même URI.
+| `"@id": "https://someorg.ca/events/eventname/#123abc"`<br><p class="small-text">(Où l'indentificateur de fragment `123abc` suit une convention de nommage qui garantit l'unicité au sein de la page web.)</p> | <span style="color:green">**Mieux !**</span> |
+| <br>`"@id": "https://</span>someorg.ca/events/eventname/#key"`<br><br><small>(Où `key` est la clé primaire de l'événement dans votre base de données locale)</small> | <span style="color:green">**Tant mieux !**</span> |
 
 Utiliser la clé primaire de la Chose dans votre base de données pour l'identificateur de fragment est un moyen simple et efficace de garantir l’unicité de l'identificateur de fragment au sein du domaine du site.
 
@@ -52,10 +51,10 @@ Si vous ne pouvez pas utiliser les clés de la base de données comme nom pour l
 Les URI croisillons basées sur les URL de pages web existantes, telles que décrites ci-dessus, ne sont qu'une des nombreuses façons de générer des URI fonctionnelles afin d'identifier les entités décrites sur votre site web. Voici d'autres stratégies pour générer des URI flexibles, stables et pérennes :
 
 * L'URI croisillon peut être basée sur un chemin d'URL qui est indépendant de toute page web existante. Les URI indépendants de la structure du site web sont plus stables dans le temps que les URI croisillons basées sur une page web. En effet, même si la structure du site devait changer, la convention de nommage, elle, peut demeurer inchangée. 
- Exemple : « `https://</span>example.org/id/#123456` » 
+ Exemple : « `<span>https://</span>example.org/id/#123456` » 
  (Rappel : Cet URI croisillon est fonctionnelle même si elle ne mène à aucune ressource).
 * Pour les sites web avec un contenu dynamique, vous pouvez utiliser des règles de réécriture pour vous assurer que l'URI est indépendante de l'implémentation actuelle du site. 
- Exemple : « `https:</span>//example.org/event/123456` » réécrit comme « `https://</span>example.org/index.php?event=123456` »
+ Exemple : « `<span>https:</span>//example.org/event/123456` » réécrit comme « `<span>https://</span>example.org/index.php?event=123456` »
 * Les règles de redirection sont fréquemment utilisées afin de générer des [URI 303](https://en.wikipedia.org/wiki/HTTP_303). La réponse du serveur 303 indique que l'URI n'identifie pas un document web ordinaire et redirige la requête vers une autre URI, généralement avec une négociation de contenu.
 * Vous pouvez mettre en œuvre de la négociation de contenu afin de diriger une requête vers différentes représentations HTML, JSON-LD et/ou RDF de la même Chose, selon les préférences du client.
 * Vous pouvez également utiliser un service externe afin de générer des URI sur un autre domaine et les rediriger vers votre domaine web. Ces services comprennent les [Digital Object Identifiers](https://www.doi.org/) (DOI), les [Archival Resource Keys](https://arks.org/) (ARK) et les [PURL](https://purl.archive.org/).
@@ -67,7 +66,7 @@ Les URI croisillons basées sur les URL de pages web existantes, telles que déc
 ## Si vous ne pouvez pas générer votre propre URI...
 Ne vous inquiétez pas. Artsdata peut gérer des données sans URI.
 
-Comme alternative (ou en complément de « @id “), envisagez d'utiliser la propriété ” sameAs » pour assigner un identifiant pérenne externe à vos entités Place, Person et Organization. Il s'agit d'un moyen simple et très efficace d'identifier une Chose, et de fournir un lien vers plus de données à son sujet.
+Comme alternative (ou en complément de `« @id “`), envisagez d'utiliser la propriété `” sameAs »` pour assigner un identifiant pérenne externe à vos entités Place, Person et Organization. Il s'agit d'un moyen simple et très efficace d'identifier une Chose, et de fournir un lien vers plus de données à son sujet.
 
 
 Lisez-en plus
