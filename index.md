@@ -29,14 +29,19 @@ Here are the main Classes used in Artsdata.
 {% endfor %}
 </ol>
 
-### Bridge Identifiers
-In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other persistent and unique identifiers, like wikidata and ISNI, to recognize and reconcile entites of type [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) and [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
+### Persistent Identifiers
 
-[Recommendations on using persistent identifiers in the performing arts](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit#gid=1000818759)
+In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other unique persistent identifiers, like Wikidata and ISNI, to recognize and reconcile entities of type [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) and [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
+
+[Guidelines regarding persistent identifiers for data providers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations)
 
 ### Structured Data Templates
-[Event templates]({{ base }}/gabarits-jsonld/README.html)
-[Person templates](https://docs.google.com/document/d/e/2PACX-1vRdOlvKHAEP-4MEUyt3Y4BhyfGn8Ki4Nu40vw_JlaCYDZ1hEHnloH-qGyBcrjXXBbjCz1InKYz3lKw2/pub)
+
+- [Event templates]({{ base }}/gabarits-jsonld/README.html)
+
+- [Person templates](https://docs.google.com/document/d/e/2PACX-1vRdOlvKHAEP-4MEUyt3Y4BhyfGn8Ki4Nu40vw_JlaCYDZ1hEHnloH-qGyBcrjXXBbjCz1InKYz3lKw2/pub)
+
+- [Organization templates]({{ base }}/gabarits-jsonld/organization) 
 
 ### SHACL Validation Reports
 
@@ -87,10 +92,6 @@ Artsdata.ca loads LOD from Wikidata and DBpedia in order to cache it for perform
 ### Naming Conventions
 
 [Conventions]({{ base }}/naming_conventions.html) on how to name things when in doubt.
-
-### Related Documents
-
-1. [LDF/ANL Recommended identifiers](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit#gid=0): spreadsheet with guidelines on using identifiers. This document may eventually be converted into an Artsdata official recommendation.
 
 ### Support or Contact
 
