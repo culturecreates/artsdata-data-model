@@ -22,11 +22,11 @@ Afin d’aider les fournisseurs de données dans l’adoption et la mise en œuv
 
 ### Comment intégrer une URI locale à des données structurées
 
-Voir : [Lignes directrices concernant la propriété @id et les URI locales](https://culturecreates.github.io/artsdata-data-model/id-and-uri-guidelines) [anglais seulement]
+Voir : [Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id-and-uri-guidelines.fr)
 
 ### Comment intégrer des URI externes à des données structurées
 
-Voir : [Lignes directrices concernant la propriété sameAs et les URI](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines) [anglais seulement]
+Voir : [Lignes directrices concernant la propriété sameAs et les URI]({{ base }}/sameas-guidelines.fr)
 
 ### Comment entreposer des URI externes dans une base de données
 
