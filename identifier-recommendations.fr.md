@@ -14,10 +14,10 @@ Afin d’aider les fournisseurs de données dans l’adoption et la mise en œuv
 
 | Type | ID Artsdata | ID Wikidata | ISNI | URI locale |
 | - | - | - | - | - |
-| [schema:Person](https://schema.org/Person) | Recommandé | Recommandé | Recommandé | Optionnel |
-| [schema:Organization](https://schema.org/Organization)<br>[schema:PerformingGroup]([url](https://schema.org/PerformingGroup)) | Recommandé | Recommandé | Optionnel | Optionnel |
-| [schema:Place](https://schema.org/Place) | Recommandé | Recommandé | Non-valide pour ce type | Optionnel |
-| [schema:Event](https://schema.org/Event) | Recommandé | Optionnel | Non-valide pour ce type | Optionnel |
+| [schema:Person](https://schema.org/Person) | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | Optionnel |
+| [schema:Organization](https://schema.org/Organization)<br>[schema:PerformingGroup](https://schema.org/PerformingGroup) | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | Optionnel | Optionnel |
+| [schema:Place](https://schema.org/Place) | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | Non-valide pour ce type | Optionnel |
+| [schema:Event](https://schema.org/Event) | <span style="color:green">**Recommandé**</span> | Optionnel | Non-valide pour ce type | Optionnel |
 
 
 ### Comment intégrer une URI locale à des données structurées
