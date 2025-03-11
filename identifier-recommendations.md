@@ -9,7 +9,13 @@ As per the W3C’s RDF specifications for linked open data, each named entity (f
 
 Artsdata assigns its own persistent identifiers (URIs) to named entities that meet minimum requirements for ID minting. Registered users can use the “Minter” feature to link or mint a new Artsdata ID for entities that are already loaded to the knowledge graph. They can also use the “Mint using Wikidata” feature to load a Wikidata item and mint a new Artsdata ID.
 
-Artsdata also relies on external URIs. Artsdata supports all persistent identifiers from open knowledge bases, including Wikidata, ISNI, VIAF and Musicbrainz. Artsdata also accepts local URIS minted by data providers (read more below).
+Artsdata also relies on external URIs. Artsdata supports all persistent identifiers from open knowledge bases, including:
+- Wikidata;
+- ISNI;
+- VIAF;
+- Musicbrainz.
+
+Artsdata also accepts local URIS minted by data providers (read more below).
 
 In order to guide data providers and consumers in the adoption and implementation of persistent identifiers, here are recommended persistent identifiers according to the entity type.
 
