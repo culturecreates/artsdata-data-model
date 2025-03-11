@@ -8,7 +8,13 @@ Conformément aux spécifications du RDF pour les données ouvertes et liées, c
 ### Identifiants pérennes supportés et recommandés
 Artsdata attribue ses propres identifiants pérennes (URI) aux entités nommées lorsqu’elles satisfont aux exigences minimale pour l’attribution d’identifiants. Les utilisateurs enregistrés peuvent créer eux-mêmes des URI pour les entités déjà chargées dans Artsdata. Ils peuvent aussi créer une URI Artsdata à partir d’une URI Wikidata. 
 
-Artsdata s’appuie aussi sur des URI externes. Artsdata supporte tous les identifiants pérennes de base de connaissances ouvertes, incluant Wikidata, ISNI, VIAF et Musicbrainz. Artsdata accepte aussi les URI locales générées par un fournisseur de données (voir plus bas).
+Artsdata s’appuie aussi sur des URI externes. Artsdata supporte tous les identifiants pérennes de base de connaissances ouvertes, incluant :
+- Wikidata ;
+- ISNI ;
+- VIAF ;
+- Musicbrainz.
+
+Artsdata accepte aussi les URI locales générées par un fournisseur de données (voir plus bas).
 
 Afin d’aider les fournisseurs de données dans l’adoption et la mise en œuvre d’identifiants pérennes, voici quelques recommandations d’identifiants pérennes selon les classes d’entités.
 
