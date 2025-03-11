@@ -30,14 +30,18 @@ Voici les Classes utilisées dans Artsdata.
 {% endfor %}
 </ol>
 
-### Identifiants passerelles
-En plus de l'identifiant Artsdata, le graphe de connaissance Artsdata s'appuie sur d'autres identifiants uniques pérennes, comme l'identifiant Wikidata et l'ISNI, afin de reconnaître et de réconcilier les entités nommées des classes [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) et [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
+### Identifiants pérennes
+En plus de l'identifiant Artsdata, le graphe de connaissances Artsdata s'appuie sur d'autres [identifiants pérennes](https://www.artsdata.ca/fr/ressources/bien-identifie), comme l'identifiant Wikidata et l'ISNI, afin de reconnaître et de réconcilier les entités nommées des classes [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) et [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
 
-[Recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit#gid=1000818759)
+[Lignes directrices à propos des identifiants pérennes](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr)
 
 ### Gabarits de données structurées
-[Gabarits pour les événements]({{ base }}/gabarits-jsonld/README.fr.html)
-[Gabarits pour les personnes](https://docs.google.com/document/d/e/2PACX-1vRorpIgx1arsAqGuiR428j74uxk5K2V63f9yHgWn1C4CyqxH3mMk_Hw92JsGJBh4CKprGc9rG85Gfcn/pub)
+
+- [Gabarits pour les événements]({{ base }}/gabarits-jsonld/README.fr.html)
+
+- [Gabarits pour les organismes]({{ base }}/gabarits-jsonld/organization)
+
+- [Gabarits pour les personnes](https://docs.google.com/document/d/e/2PACX-1vRorpIgx1arsAqGuiR428j74uxk5K2V63f9yHgWn1C4CyqxH3mMk_Hw92JsGJBh4CKprGc9rG85Gfcn/pub)
 
 ### Rapports de validation SHACL
 
@@ -54,6 +58,7 @@ Artsdata.ca a un grand nombre de mappages de classes et de propriétés entre Sc
 Les travaux en cours sur la prochaine version de l’ontologie Artsdata.ca sont influencés par les travaux de l’initiative [Un avenir numérique lié](https://linkeddigitalfuture.ca/fr/accueil/) de CAPACOA et impliquent l’alignement du modèle de données avec les modèles de données utilisés dans le patrimoine culturel, y compris, mais sans s’y limiter, CIDOC-CRM, FRBRoo, PROV et RDA. Les modèles de données seront en outre spécifiés par un vocabulaire spécifique au domaine qui sera publié dans les prochaines versions.
 
 #### Ontologies chargées dans Artsdata
+
 * [https://www.w3.org/2000/01/rdf-schema](https://www.w3.org/2000/01/rdf-schema)
 * [Ontologies externes](https://github.com/culturecreates/artsdata-data-model/tree/master/_triples)
 * [Vocabulaires contrôlés par Artsdata](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology)
