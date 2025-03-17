@@ -1,12 +1,12 @@
 ---
-title: Architecture Overview
+title: Data Flow Architecture
 layout: default
 ---
 <p>{% include back-button.html %}</p>
 
 <p>{% include architecture-languages.html %}</p>
 
-Architecture Overview
+Data Flow Architecture
 ====================
 The Artsdata linked open data ecosystem is divided in three areas:
 * Data providers;
