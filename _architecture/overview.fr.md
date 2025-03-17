@@ -72,4 +72,4 @@ Artsdata offre plusieurs modes d’accès pour les consommateurs de données dé
 
 Les données déposées sur Artsdata sont sous licence CC0 et peuvent être utilisées dans d’autres applications sans restriction.
 
-Les consommateurs de données Artsdata comprennent des calendriers culturels, des plateformes qui soutiennent l’industrie des arts, des organismes de service aux arts, des gouvernements et des moteurs de recherche ([voir la liste](https://kg.artsdata.ca/fr/doc/data-consumers)). Pour un aperçu des cas d’usage, consultez nos récits utilisateur.<--! HYPERLIEN -->
+Les consommateurs de données Artsdata comprennent des calendriers culturels, des plateformes qui soutiennent l’industrie des arts, des organismes de service aux arts, des gouvernements et des moteurs de recherche ([voir la liste](https://kg.artsdata.ca/fr/doc/data-consumers)). Pour un aperçu des cas d’usage, consultez nos [récits utilisateur](https://www.artsdata.ca/fr/recits).
