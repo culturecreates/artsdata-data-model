@@ -8,11 +8,16 @@ layout: default
 
 Architecture Overview
 ====================
-How data flows in and out of Artsdata.ca. 
+The Artsdata linked open data ecosystem is divided in three areas:
+* Data providers;
+* Artsdata knowledge graph;
+* Data consumers.
+
+The following figure illustrates how data flows in and out of Artsdata.ca. 
 
 {% include architecture-diagram.html %}
 
-### Detailed sections
+### Breakdown of architecture
 <ul>
 {% for page in site.architecture %}
   {% if page.layout == "architecture-doc" %}
@@ -21,13 +26,7 @@ How data flows in and out of Artsdata.ca.
 {% endfor %}
 </ul>
 
-Summary
-=========
-
-The Artsdata linked open data ecosystem is divided into 3 areas:
-* Data providers
-* Artsdata knowledge graph
-* Data consumers
+## Detailed presentation of each area
 
 ### Data providers
 
@@ -74,4 +73,4 @@ Data consumers wanting to use the data can access it in a number of ways:
 
 The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
 
-Artsdata data consumers include listing sites, industry platforms, arts service organizations, destination marketing organizations, government bodies and search engines ([see the list](https://kg.artsdata.ca/doc/data-consumers)). For an overview of use cases, check our user stories<--! HYPERLINK TO CORPORATE WEBISTE-->.
+Artsdata data consumers include listing sites, industry platforms, arts service organizations, destination marketing organizations, government bodies and search engines ([see the list](https://kg.artsdata.ca/doc/data-consumers)). For an overview of use cases, check our [user stories](https://www.artsdata.ca/en/stories).
