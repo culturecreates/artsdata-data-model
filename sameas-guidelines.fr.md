@@ -1,5 +1,4 @@
-{% include back-button.html %}
-
+<p>{% include back-button.html %}</p>
 <a href='sameas-guidelines.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
 <a href='sameas-guidelines.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
 
