@@ -1,3 +1,8 @@
+
+<br>
+<a href='sameas-guidelines.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='sameas-guidelines.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+
 ## Artsdata Guidelines about the schema:sameAs property
 
 Along with `@id`, the [`schema:sameAs`](https://schema.org/sameAs) property offers another excellent means of unambiguously identifying Things in Schema structured data.
