@@ -1,3 +1,8 @@
+{% include back-button.html %}
+<br>
+<a href='sameas-guidelines.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='sameas-guidelines.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+
 ## Lignes directrices concernant la propriété sameAs et les URI
 
 Tout comme `@id`, la propriété [`schema:sameAs`](https://schema.org/sameAs) constitue un excellent moyen d’identifier sans ambiguïté toute _Chose_ dans les données structurées Schema.
