@@ -1,6 +1,6 @@
 ## Ligne directrices d’Artsdata concernant la propriété @id et les URI locales
 
-Malheureusement, la documentation Schema.org ne dit pas grand-chose sur la propriété `« @id »`, ni sur la manière de générer des URI pour eux. Afin de combler ces lacunes, Artsdata a préparé les lignes directrices suivantes. Ces lignes directrices s'adressent principalement aux développeurs web.
+Malheureusement, la documentation Schema.org ne dit pas grand-chose sur la propriété `"@id"`, ni sur la manière de générer des URI pour eux. Afin de combler ces lacunes, Artsdata a préparé les lignes directrices suivantes. Ces lignes directrices s'adressent principalement aux développeurs web.
 
 Dans ces lignes directrices, le mot « Chose » est emprunté à la terminologie Schema ([schema:Thing](https://schema.org/Thing)) afin de désigner n'importe quel objet du monde réel, tel qu'un événement, un lieu ou une personne spécifique. Il est synonyme du terme entité ( fréquemment utilisé dans la documentation d'Artsdata), dans le sens d'un objet ayant une identité.
 
