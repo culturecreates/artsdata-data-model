@@ -69,7 +69,7 @@ Les travaux en cours sur la prochaine version de l’ontologie Artsdata.ca sont 
 
 Voir la section plus bas en anglais.
 
-### Architecture de flux de données
+### Architecture des flux de données
 
 En principe, n’importe qui peut ajouter des données à Artsdata.ca pourvu que certaines exigences en matière de données soient respectées. Voici un [diagramme]({{ base }}/architecture/overview.html) sur la façon dont les données entrent et sortent d’Artsdata.ca.
 
