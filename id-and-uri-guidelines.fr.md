@@ -21,10 +21,10 @@ Dans ces lignes directrices, le mot « Chose » est emprunté à la terminologie
 ### Avantages d'utiliser @id pour attribuer des URI aux Choses
 
 * Les @ids avec les URI sont aux Choses ce que les URL canoniques sont aux pages web. Ils permettent d'identifier un objet unique, de localiser et de récupérer les ressources qui le décrivent (c'est-à-dire une représentation JSON-LD) et de s'y référer dans d'autres systèmes d'information (c'est-à-dire d'établir un « lien » avec lui).
-* Les URI facilitent la réconciliation des jeux de données. Une fois qu'une correspondance est trouvée entre l'URI locale d'une chose et l'identifiant Artsdata de cette Chose, nous pouvons écrire un lien [schema:sameAs](https://schema.org/sameAs) dans Artsdata et ne plus jamais avoir besoin de répéter ce processus de réconciliation.
-* Les URI peuvent garantir la pérennité des données. Même lorsqu'une page d'événement n'est plus publiée sur un site web, l'URI identifiant cet événement peut être conservée dans Artsdata et peut continuer à être consultée (ainsi que les données structurées associées).
+* Les URI facilitent la réconciliation des jeux de données. Une fois qu'une correspondance est trouvée entre l'URI locale d'une chose et l'identifiant Artsdata de cette Chose, nous pouvons écrire un lien [`schema:sameAs`](https://schema.org/sameAs) dans Artsdata et ne plus jamais avoir besoin de répéter ce processus de réconciliation.
+* Les URI peuvent garantir la pérennité des données. Même lorsqu'une page d'événement n'est plus publiée sur un site web, l'URI identifiant cet événement peut être conservée dans Artsdata et peut continuer à être consultée (ainsi que les données structurées qui y sont associées).
 
-## How to generate a functional URI
+## Comment générer une URI fonctionnelle
 
 Aux fins de l'identification d'une Chose, une URI est fonctionnelle si elle identifie de manière univoque un seul objet du monde réel ET si cet objet du monde réel n’est associé qu’à une seule URI au sein du domaine web. En d'autres termes, la cardinalité entre l’URI et la Chose doit être biunivoque (“one-to-one”). Bien qu'il soit préférable que l'URI renvoie à une représentation (HTML, JSON-LD ou autre) de la Chose qu’elle désigne, Artsdata peut utiliser n'importe quel type d'URI fonctionnelle pour se référer à des Choses externes, même si ces URI mènent à des réponses « 404 non-trouvé ».
 
@@ -41,15 +41,14 @@ Aux fins de l'identification d'une Chose, une URI est fonctionnelle si elle iden
 
 | Exemple | Adéquation en tant qu'URI |
 | - | - |
-| <br>`"@id": "https://someorg.ca/events/eventname/"`<br><br>(Où la valeur est la même que celle de la page URL, sans identificateur de fragment) | <span style="color:red">**Erreur critique**</span><br>Les valeurs `« @id »` et `« url »` ne devraient pas être pareils  |
-| <br>`"@id": "https://someorg.ca/events/eventname/"`<br>(Où la valeur est la même que celle de la page URL, sans identificateur de fragment) | <span style="color:red">**Erreur critique**</span><br>Les valeurs `« @id »` et `« url »` ne devraient pas être pareils  |
-| <br>`"@id": "https://someorg.ca/events/eventname/#event"`<br><br>(Où le même identificateur de fragment est utilisé pour toutes entités du même type.) | <span style="color:orange">**Bon**</span><br>Remarque : cette convention de nommage est simple et facile à mettre en œuvre. Cependant, elle ne fonctionnera pas si plusieurs événements sont répertoriés sur la même page, car plusieurs événements se verraient attribuer la même URI.
-| <br>`"@id": "https://someorg.ca/events/eventname/#123abc"`<br><br>(Où l'indentificateur de fragment `123abc` suit une convention de nommage qui garantit l'unicité au sein de la page web.)</p> | <span style="color:green">**Mieux !**</span> |
+| <br>`"@id": "https://someorg.ca/events/eventname/"`<br><br>(Où la valeur est la même que celle de la page URL, sans identificateur de fragment) | <span style="color:red">**Erreur critique**</span><br>Les valeurs `@id` et `url` ne devraient pas être les mêmes. |
+| <br>`"@id": "https://someorg.ca/events/eventname/#event"`<br><br>(Où le même identificateur de fragment est utilisé pour toutes entités du même type.) | <span style="color:orange">**Bien**</span><br>Remarque : cette convention de nommage est simple et facile à mettre en œuvre. Cependant, elle ne fonctionnera pas si plusieurs événements sont répertoriés sur la même page, car plusieurs événements se verraient attribuer la même URI.
+| <br>`"@id": "https://someorg.ca/events/eventname/#123abc"`<br><br>(Où l'indentificateur de fragment `123abc` suit une convention de nommage qui garantit l'unicité au sein de la page web.) | <span style="color:green">**Mieux !**</span> |
 | <br>`"@id": "https://someorg.ca/events/eventname/#key"`<br><br><small>(Où `key` est la clé primaire de l'événement dans votre base de données locale)</small> | <span style="color:green">**Encore mieux !**</span> |
 
 Utiliser la clé primaire de la Chose dans votre base de données pour l'identificateur de fragment est un moyen simple et efficace de garantir l’unicité de l'identificateur de fragment au sein du domaine du site.
 
-Si vous ne pouvez pas utiliser les clés de la base de données comme nom pour l'identificateur de fragment, nous vous recommandons de choisir une convention de nommage qui garantira le caractère unique de l'identificateur de fragment aujourd'hui et à l'avenir. Par exemple, vous pouvez baser votre identificateur de fragment sur la chaîne `startDate` et la chaîne `location.name`, comme dans cette convention de nommage : `YYMMDDHH-LIEU`.
+Si vous ne pouvez pas utiliser les clés de la base de données comme nom pour l'identificateur de fragment, vous pouvez opter pour une convention de nommage qui garantira le caractère univoque de l'identificateur de fragment aujourd'hui et à l'avenir. Par exemple, vous pouvez baser votre identificateur de fragment sur la chaîne `startDate` et la chaîne `location.name`, comme dans cette convention de nommage : `YYMMDDHH-LIEU` (Note : Si vous optez pour un identificateur de fragment basé sur des points de données, veillez à ce qu'il demeure stable même si les points de données sont édités : après l'avoir généré, entreposez l'identificateur de fragment dans un champ dédié).
 
 ### Autres stratégies pour générer des URI
 
@@ -65,13 +64,15 @@ Les URI croisillons basées sur les URL de pages web existantes, telles que déc
 * Vous pouvez également utiliser un service externe afin de générer des URI sur un autre domaine et les rediriger vers votre domaine web. Ces services comprennent les [Digital Object Identifiers](https://www.doi.org/) (DOI), les [Archival Resource Keys](https://arks.org/) (ARK) et les [PURL](https://purl.archive.org/).
 
 ### Ressources externes au sujet des URI
+
 * [Cool URI for the Semantic Web](https://www.w3.org/TR/cooluris/), W3C Interest Group Note 03 December 2008
 * [Identifiants pérennes pour les ressources culturelles : Vade-mecum pour les producteurs de données](https://www.culture.gouv.fr/Espace-documentation/Publications-revues/Identifiants-perennes-pour-les-ressources-numeriques), Version 1.0, 2015.
 
 ## Si vous ne pouvez pas générer votre propre URI...
-Ne vous inquiétez pas. Artsdata peut gérer des données sans URI.
 
-Comme alternative (ou en complément de `« @id “`), envisagez d'utiliser la propriété `” sameAs »` pour assigner un identifiant pérenne externe à vos entités Place, Person et Organization. Il s'agit d'un moyen simple et très efficace d'identifier une Chose, et de fournir un lien vers plus de données à son sujet.
+Ne vous inquiétez pas. Artsdata peut très bien gérer des données sans URI.
+
+Comme alternative (ou en complément de `@id`), envisagez d'utiliser la propriété `sameAs` pour assigner un identifiant pérenne externe à vos entités Place, Person et Organization. Il s'agit d'un moyen simple et très efficace d'identifier une Chose, et de fournir un lien vers davantage de données à son sujet.
 
 
-Lisez-en plus
+[En savoir plus]({{ base }}sameas-guidelines.fr)
