@@ -3,7 +3,7 @@
 
 # Lignes directrices d’Artsdata à propos des identifiants pérennes
 
-Conformément aux spécifications du RDF pour les données ouvertes et liées, chaque entité nommée (comme par exemple un événement, un lieu ou une personne), classe et propriété chargée dans le triple store d’Artsdata doit être désignée par un identifiant pérenne exprimé sous la forme d’une adresse URI (voir cet article pour en apprendre plus à propos des identifiants pérennes).
+Conformément aux spécifications du RDF pour les données ouvertes et liées, chaque entité nommée (comme par exemple un événement, un lieu ou une personne), classe et propriété chargée dans le triple store d’Artsdata doit être désignée par un identifiant pérenne exprimé sous la forme d’une adresse URI ([voir cet article](https://www.artsdata.ca/fr/ressources/bien-identifie) pour en apprendre plus à propos des identifiants pérennes).
 
 ### Identifiants pérennes supportés et recommandés
 Artsdata attribue ses propres identifiants pérennes (URI) aux entités nommées lorsqu’elles satisfont aux exigences minimale pour l’attribution d’identifiants. Les utilisateurs enregistrés peuvent créer eux-mêmes des URI pour les entités déjà chargées dans Artsdata. Ils peuvent aussi créer une URI Artsdata à partir d’une URI Wikidata. 
