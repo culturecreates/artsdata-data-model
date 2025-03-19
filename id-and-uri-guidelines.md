@@ -57,7 +57,7 @@ If you can’t base your fragment identifier on database keys, we recommend usin
 HashURIs based on existing webpage URLs, as described above, are only one of many ways of generating functional URIs to identify the things described on your website. Here are other strategies for generating flexible, stable and persistent URIs:
 
 * HashURIs can be based on a URL path that is independent of any existing webpage. URIs that are independent from the website’s structure are more stable over time than webpage-based HashURIs. In other words, if the site structure changes, you can still continue to use the same naming convention. 
-  Example: `"https://</span>someorg.ca/id/#123456"` 
+  Example: `"https://someorg.ca/id/#123456"` 
   (Reminder: This HashURI is functional even if it does not resolve to any resource.)
 * For websites with dynamic content, you may use rewrite rules to ensure the URI is independent from the site’s current implementation. 
   Example: `"https://someorg.ca/event/123456"` rewritten to `"https://someorg.ca/index.php?event=123456"`
