@@ -39,20 +39,20 @@ For data providers, such as arts organizations (producers, presenters, agents, v
 * Footlight CMS (event information management software for multiple sites);
 * Artsdata Load API (Graph-store API) that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata). 
 
-All data submitted to Artsdata.ca requires a user account registered with artsdata.ca.
-
-All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.
+Prior to being loaded to Artsata, data must meet minimal the requirements [Artsdata data model]({{ base }}) for the entity type. [SHACL shapes]({{ base }}/shacl_reports.html) are used to validate data before importing.
 
 Data from each source is loaded into its own graph within Artsdata.ca with provenance metadata including a contact point, contributor names and data related license agreements.
 
-Third-party developers are welcome and can use the [Artsdata Databus API](https://culturecreates.github.io/artsdata-data-model/architecture/graph-store-api.html) to load data.
+All data submitted to Artsdata.ca requires a user account registered with artsdata.ca. Third-party developers are welcome and can use the [Artsdata Databus API](https://culturecreates.github.io/artsdata-data-model/architecture/graph-store-api.html) to load data. If you wish to register with Artsdata or if you need assistance to load your data, please [contact the Artsdata team](https://www.artsdata.ca/en/contact-us).
+
+All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.
  
 Artsdata data providers include associations, unions, industry platforms, ticketing services, and individual arts organizations ([see the list](https://kg.artsdata.ca/fr/query/show?sparql=feeds_all&title=Data+Feeds)).
 
 
 ### Artsdata knowledge graph (kg.artsdata.ca)
 
-Artsdata aggregates and shares descriptive metadata related to cultural events (and related entities) from/with multiple websites and external databases. Data is published as [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) with persistent identifiers (i.e. URIs) that can be used to link events to artists, venues and arts organizations.
+Artsdata aggregates and shares descriptive metadata related to cultural events (and related entities) from/with multiple websites and external databases. Data is published as [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) with [persistent identifiers]({{ base }}/identifier-recommendations.html) (i.e. URIs) that can be used to link events to artists, venues and arts organizations.
 
 The [Artsdata data model](https://culturecreates.github.io/artsdata-data-model) is implemented using classic RDF ontologies. It is a sub-set of Schema.org and maps data to a multitude of other classic (i.e. LRMoo, DBpedia) and non-classic (i.e. Wikidata) ontologies. 
 
