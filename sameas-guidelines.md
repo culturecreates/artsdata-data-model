@@ -8,7 +8,7 @@ Along with `@id`, the [`schema:sameAs`](https://schema.org/sameAs) property offe
 
 Artsdata recommends populating the `sameAs` property with a [persistent identifier](https://www.artsdata.ca/en/resources/identifiable-and-findable), in URI format. Always enter persistent identifiers in full URI format (rather than entering just the identifier’s string). For example, for the short-form Wikidata ID `Q596774`, the matching URI is `http://www.wikidata.org/entity/Q596774`.
 
-Artsdata strongly recommends persistent identifiers from open knowledge bases and authority files (see the list of supported identifiers), because they are machine-actionable: Artsdata can dereference these URIs to access all available descriptive metadata about the entity they identify.
+Artsdata strongly recommends persistent identifiers from open knowledge bases and authority files (see the [list of supported identifiers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html)), because they are machine-actionable: Artsdata can dereference these URIs to access all available descriptive metadata about the entity they identify.
 
 The `sameAs` property can be used both on first-level objects and on nested entities, as in this example:
 
