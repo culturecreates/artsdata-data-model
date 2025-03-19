@@ -16,7 +16,7 @@ Dans ces lignes directrices, le mot « Chose » est emprunté à la terminologie
 | Instructions | La valeur doit être une URI constituant un identifiant unique pérenne pour la Chose (par exemple, une entité Event ou Place) dans le domaine du site web. |
 | Remarque | Ne renseignez pas la même URI sous `@id` et `url`. <br>L'URL d'une page web est l'identifiant unique pérenne de cette page web, et rien d'autre. Elle ne doit pas être utilisée pour identifier les éléments décrits sur cette page web. Dans les données structurées Schema (et dans toute autre ontologie basée sur le RDF), un « objet du monde réel » (tel qu'un événement ou un lieu) et le document web qui le décrit sont deux choses distinctes : elles méritent chacune leur propre URI. |
  
- Faites défiler vers le bas afin d'apprendre comment générer des URI fonctionnels.
+Faites défiler vers le bas afin d'apprendre comment générer des URI fonctionnels.
 
 ### Avantages d'utiliser @id pour attribuer des URI aux Choses
 
@@ -29,7 +29,7 @@ Dans ces lignes directrices, le mot « Chose » est emprunté à la terminologie
 Aux fins de l'identification d'une Chose, une URI est fonctionnelle si elle identifie de manière univoque un seul objet du monde réel ET si cet objet du monde réel n’est associé qu’à une seule URI au sein du domaine web. En d'autres termes, la cardinalité entre l’URI et la Chose doit être biunivoque (“one-to-one”). Bien qu'il soit préférable que l'URI renvoie à une représentation (HTML, JSON-LD ou autre) de la Chose qu’elle désigne, Artsdata peut utiliser n'importe quel type d'URI fonctionnelle pour se référer à des Choses externes, même si ces URI mènent à des réponses « 404 non-trouvé ».
 
 ### URI croisillons basées sur une page web
-*Remarque : cette méthode peut ne pas convenir aux sites web avec négociation linguistique ou avec un contenu dynamique.*
+*Remarque : cette méthode peut ne pas convenir aux sites web avec négociation linguistique, avec un contenu dynamique ou décrivant plusieurs entités sur une même page.*
 
 * Il est possible de générer une URI fonctionnelle en ajoutant un croisillon (#) à la fin de l'URL d'une page web existante, suivi d'une chaîne de caractères qui sert d'identifiant unique pour une Chose décrite sur la page (un événement, un lieu ou un interprète). Cette chaîne est appelée un [identificateur de fragment](https://fr.wikipedia.org/wiki/Identificateur_de_fragment).
 * L'identificateur de fragment doit préférablement être unique au sein du domaine du site web. Au minimum, il doit être unique au sein de la page.
@@ -37,7 +37,8 @@ Aux fins de l'identification d'une Chose, une URI est fonctionnelle si elle iden
 * Il n'est pas nécessaire que l'identificateur de fragment pointe vers un point d'ancrage dans le corps de la page (par exemple, un identifiant ou un attribut de nom). En fait, il n'est même pas nécessaire que l'URI renvoie à une page web (tel que mentionné plus haut).
 
 #### Exemples d’URI croisillons basées sur une page web
-*Voici quelques exemples d’utilisations incorrectes et correctes d’URI dérivées d’URL de pages webs :*
+
+Voici quelques exemples d’utilisations incorrectes et correctes d’URI dérivées d’URL de pages webs :
 
 | Exemple | Adéquation en tant qu'URI |
 | - | - |
@@ -48,7 +49,7 @@ Aux fins de l'identification d'une Chose, une URI est fonctionnelle si elle iden
 
 Utiliser la clé primaire de la Chose dans votre base de données pour l'identificateur de fragment est un moyen simple et efficace de garantir l’unicité de l'identificateur de fragment au sein du domaine du site.
 
-Si vous ne pouvez pas utiliser les clés de la base de données comme nom pour l'identificateur de fragment, vous pouvez opter pour une convention de nommage qui garantira le caractère univoque de l'identificateur de fragment aujourd'hui et à l'avenir. Par exemple, vous pouvez baser votre identificateur de fragment sur la chaîne `startDate` et la chaîne `location.name`, comme dans cette convention de nommage : `YYMMDDHH-LIEU` (Note : Si vous optez pour un identificateur de fragment basé sur des points de données, veillez à ce qu'il demeure stable même si les points de données sont édités : après l'avoir généré, entreposez l'identificateur de fragment dans un champ dédié).
+Si vous ne pouvez pas utiliser les clés de la base de données comme nom pour l'identificateur de fragment, vous pouvez opter pour une convention de nommage qui garantira le caractère univoque de l'identificateur de fragment aujourd'hui et à l'avenir. Par exemple, vous pouvez baser votre identificateur de fragment sur la chaîne `startDate` et la chaîne `location.name`, comme dans cette convention de nommage : `YYMMDDHH-LIEU` *(Remarque : Si vous optez pour un identificateur de fragment basé sur des points de données, veillez à ce qu'il demeure stable même si les points de données sont édités : après l'avoir généré, entreposez l'identificateur de fragment dans un champ dédié)*.
 
 ### Autres stratégies pour générer des URI
 
