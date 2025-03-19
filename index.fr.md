@@ -71,7 +71,7 @@ Voir la section plus bas en anglais.
 
 ### Architecture des flux de données
 
-En principe, n’importe qui peut ajouter des données à Artsdata.ca pourvu que certaines exigences en matière de données soient respectées. Voici un [diagramme]({{ base }}/architecture/overview.html) sur la façon dont les données entrent et sortent d’Artsdata.ca.
+En principe, n’importe qui peut ajouter des données à Artsdata.ca pourvu que certaines exigences en matière de données soient respectées. Voici un [diagramme]({{ base }}/architecture/overview.fr.html) sur la façon dont les données entrent et sortent d’Artsdata.ca.
 
 ### Données ouvertes et liées, mise en cache
 
