@@ -1,3 +1,7 @@
+<p>{% include back-button.html %}</p>
+<a href='id-and-uri-guidelines.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='id-and-uri-guidelines.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+
 ## Artsdata Guidelines about the @id property and URIs
 
 The Schema.org documentation does not, unfortunately, say much about the `"@id"` property, nor how to generate URIs for them. In order to make up for these shortfalls, Artsdata prepared the following guidelines. These guidelines are intended primarily for web developers.
