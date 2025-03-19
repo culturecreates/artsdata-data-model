@@ -51,15 +51,15 @@ Veuillez noter que les gabarits de festival sont destinés à représenter des i
 ## Détails sur certaines propriétés clés
 
 ### _@id_
-Saisissez une URI (Uniform Resource Identifier) constituant un identifiant unique pour cet événement à l'intérieur du domaine du site web. L'URI de l'événement doit être différente de l'URL de la page web de l'événement, puisqu'il s'agit de deux [_choses_](https://schema.org/Thing) (ou _entités_) distinctes dans le contexte des données structurées Schema.org. 
+Saisissez une URI (Uniform Resource Identifier) constituant un [identifiant pérenne](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr) pour cet événement à l'intérieur du domaine du site web. L'URI de l'événement doit être différente de l'URL de la page web de l'événement, puisqu'il s'agit de deux [_choses_](https://schema.org/Thing) (ou _entités_) distinctes dans le contexte des données structurées Schema.org. 
 
 Dans le cas d'une série de représentations d'un même spectacle, en plus de l'URI de la série, une URI distincte devrait être assignée à chaque représentation à l'aide de l'[Extension pour les Séries d'événements](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld). Assurez-vous qu'aucun sous-événement ne se voit assigner la même l'URI que l'objet de type _EventSeries_.
 
 Dans le cas des festivals, il est recommandé d'attribuer à chaque événement une URI unique si tous les événements sont énumérés sur la même page web. 
 
-Si vous n'êtes pas en mesure d'attribuer une URI à chaque événement, incluant chaque représentation d'une série de représentations, alors il est préférable de ne pas utiliser la propriété _@id_.[^2]
+Si vous n'êtes pas en mesure d'attribuer une URI à chaque événement, incluant chaque représentation d'une série de représentations, alors il est préférable de ne pas utiliser la propriété _@id_.
 
-[^2]:Il est possible de générer une URI fonctionnelle en ajoutant à la suite de l'URL de la page web un carré (le symbole `#`) suivie d'une chaîne de caractère faisant office d'identifiant unique d'événement (on appelle cette chaîne de caractères un « [identificateur de fragment](https://fr.wikipedia.org/wiki/Identificateur_de_fragment) »). Voici un exemple fictif : `https://diffuseurdespectacles.ca/evenements/nomduspectacle/#e1324`. Dans cet exemple, l'URL de la page web est `https://diffuseurdespectacles.ca/evenements/nomduspectacle/`, alors que la chaîne de caractères `e1324` représente l'identifiant unique d'une représentation du spectacle dans le calendrier du site web. N'importe quelle chaîne de caractères peut convenir du moment où elle est unique à l'intérieur du domaine du site web. Ce pourrait être un identifiant local propre au CMS du site web et désignant la représentation dans la base de données du système. Ce pourrait aussi être la date et l'heure de la représentation. Il n'est pas nécessaire qu'un point d'ancrage soit réellement présent dans le corps de la page web : du moment où le carré et une chaîne de caractères unique sont ajoutés à l'URL de la page web, cela satisfait à l'exigence d'une URL canonique dans le contexte de Schema.org.
+[En savoir plus à propos de la propriété @id et des URI locales](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines.fr)
 
 ### [_additionalType_](https://schema.org/additionalType)
 Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au [vocabulaire contrôlé Artsdata](http://kg.artsdata.ca/resource/ArtsdataEventTypes) pour identifier le ou les types les mieux appropriés parmi tous les types d'événements des arts de la scène. Vous pouvez ajouter autant de propriétés _additionalType_ que nécessaire pour bien décrire l'événement. En guise de valeur par défaut, nous recommandons le type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), qui désigne « une œuvre des arts de la scène exécutée pour un public ».
@@ -112,34 +112,6 @@ Dans le cas des festivals, indiquez l'heure à laquelle commence l'admission au 
 Saississez au moins une entité de type Offer ou AggregateOffer avec l'URL de la page où l'on peut se procurer les billets. Pour plus d'informations sur la façon de renseigner les offres, consultez la [documentation de Google](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr#structured-data-type-definitions).
 
 ### [_sameAs_](https://schema.org/sameAs)
-Saisissez les URIs d'_identifiants passerelles_[^3] permettant d'identifier sans ambiguité l'événement et/ou les entitées imbriquées dans l'entité de type _Event_. 
+Saisissez les URIs d'[identifiants pérennes](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr) permettant d'identifier sans ambiguité l'événement et/ou les entitées imbriquées[^1] dans l'entité de type _Event_. 
 
-[^3]: Un __« identifiant passerelle »__ est un identifiant pérenne (c.-à-d., exprimé sous forme d'une URI permanente et résolvable) globalement unique qui est utilisé par plusieurs systèmes d'informations et qui facilite ainsi la réconciliation des entités (et, par le fait même, la circulation des données) entre ces systèmes. Les identifiants ISNI, Wikidata et Artsdata sont particulièrement pertinents dans le domaine du spectacle. Les URIs de ces identifiants sont résolvables vers des pages web et vers des métadonnées descriptives accessibles tant aux humains qu'aux machines. Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
-
-Saississez toujours l'URI complète de l'identifiant (plutôt que de saisir uniquement l'identifiant lui-même). Par exemple, pour l'identifiant Wikidata `Q596774` correspond l'URI http://www.wikidata.org/entity/Q596774 (prenez note que le format de l'URI diffère de l'URL de la page). Tant Wikidata, qu'ISNI et Artsdata ont des interfaces permettant une recherche par nom d'entité. La méthode pour récupérer l'URI associée à l'entité recherchée diffère cependant un peu dans chaque interface. Pour Wikidata, cliquez à droite sur le lien « Concept URI » dans le menu de gauche (sous la rubrique « Tools »), puis cliquez sur « copier l'adresse du lien ». Pour de plus amples informations, consultez ces [recommandations à propos des identifiants pérennes dans les arts de la scène](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
-
-La propriété sameAs peut aussi être employée afin de saisir les URLs des pages d'événements associés à l'événement, et les URLs des comptes de médias sociaux associés à une entité.
-
-Voici un exemple de code JSON-LD imbriquant une entité de @type [Person](https://schema.org/Person) décrite avec la propriété _sameAs_. Prenez note que, pour des fins de concisions, plusieurs propriétés pertinentes ont été exclues de cet exemple.
-
-```
-{
-   "@context":"http://schema.org/",
-   "@type":"Event",
-   "@id":"https://somesite.ca/events/elisapie-isaac#2023-06-16T20:00:00",
-   "name":"The Ballad of the Runaway Girl",
-   "startDate":"2023-06-16T20:00:00-04:00",
-   <!-- ... -->
-   "performer":{
-      "@type":"Person",
-      "name":"Elisapie",
-      "url":"https://www.elisapie.com",
-      "sameAs":[
-         "http://kg.artsdata.ca/resource/K12-438",
-         "https://isni.org/isni/0000000002492038",
-         "http://www.wikidata.org/entity/Q596774",
-         "https://music.apple.com/artist/440813872"]
-         },
-   <!-- ... -->
-}
-```
+[En savoir plus à propos de la propriété sameAs](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines.fr)
