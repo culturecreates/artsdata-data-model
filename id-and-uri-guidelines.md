@@ -24,7 +24,7 @@ Scroll down to learn how to generate functional URIs.
 * URIs make it easier to reconcile datasets. Once a match is found between a Thing’s local URI and that Thing’s Artsdata ID, we can write a schema:sameAs link in Artsdata and never need to repeat this reconciliation process ever again.
 * URIs can ensure that data lasts over time. Even when an event page is unpublished from a website, the URI identifying this event can be preserved in Artsdata and continue to be accessed (along with the associated structured data).
   
-### How to generate a functional URI
+## How to generate a functional URI
 
 For the purpose of identifying a Thing, a URI is functional if it uniquely identifies a single real-world object AND if this real-world object is assigned a single URI within the web domain. In other words, the cardinality must be one-to-one. While it is preferable that the URI resolves to some representation (HTML, JSON-LD or other) of the Thing, Artsdata can use any type of functional URI to refer to external Things, even if these URIs lead to "404 Not Found" responses.
 
@@ -50,7 +50,7 @@ Here are a few examples of improper and proper uses of URIs derived from webpage
 
 Basing the fragment identifier on the Thing’s primary key in your database is a simple and efficient means of ensuring that the fragment identifier is unique within the site’s domain.
 
-If you can’t base your fragment identifier on database keys, we recommend using a naming convention that will ensure the uniqueness of the fragments identifier today and in the future. For example, you could base your fragment identifier on the `startDate` string and the `location.name` string, as in this naming convention: `YYMMDDHH-SOMEPLACE`.
+If you can’t base your fragment identifier on database keys, we recommend using a naming convention that will ensure the uniqueness of the fragments identifier today and in the future. For example, you could base your fragment identifier on the `startDate` string and the `location.name` string, as in this naming convention: `YYMMDDHH-SOMEPLACE` (Note: If you opt for a fragment identifier based on other data points, make sure the fragment identifier won't change along with edits to these data points : once it is dynamically generated, make it static by storing it in field where it won't change).
 
 ### Other strategies to generate URIs
 
