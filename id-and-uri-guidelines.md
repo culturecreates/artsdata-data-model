@@ -32,7 +32,7 @@ For the purpose of identifying a Thing, a URI is functional if it uniquely ident
 
 *Note: This method may not be suitable for websites with language negotiation, with dynamic content, or with multiple entities on the same webpage.*
 
-* It is possible to generate a functional URI by appending a hash (#) at the end of an existing webpage URL, followed by a string of characters that acts as a unique identifier for a Thing described on the page (an event, a place or a performer). This string is called a fragment identifier.
+* It is possible to generate a functional URI by appending a hash (`#`) at the end of an existing webpage URL, followed by a string of characters that acts as a unique identifier for a Thing described on the page (an event, a place or a performer). This string is called a fragment identifier.
 * The fragment identifier should preferably be unique within the website domain. At a minimum, it should be unique within the page.
 * Only append fragment identifiers to canonical URLs. If a given Thing is described across several webpages, it must always have the same URI, no matter where it is referenced on your website.
 * It is not necessary for the fragment identifier to point to a tail anchor within the page’s body (for example, an id or name attribute). As a matter of fact, it is not even necessary for the HashURI to resolve to a webpage.
