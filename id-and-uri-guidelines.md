@@ -30,7 +30,7 @@ For the purpose of identifying a Thing, a URI is functional if it uniquely ident
 
 ### Webpage-based HashURIs
 
-*Note: This method may not be suitable for websites with language negotiation or with dynamic content.*
+*Note: This method may not be suitable for websites with language negotiation, with dynamic content, or with multiple entities on the same webpage.*
 
 * It is possible to generate a functional URI by appending a hash (#) at the end of an existing webpage URL, followed by a string of characters that acts as a unique identifier for a Thing described on the page (an event, a place or a performer). This string is called a fragment identifier.
 * The fragment identifier should preferably be unique within the website domain. At a minimum, it should be unique within the page.
@@ -50,7 +50,7 @@ Here are a few examples of improper and proper uses of URIs derived from webpage
 
 Basing the fragment identifier on the Thing’s primary key in your database is a simple and efficient means of ensuring that the fragment identifier is unique within the site’s domain.
 
-If you can’t base your fragment identifier on database keys, we recommend using a naming convention that will ensure the uniqueness of the fragments identifier today and in the future. For example, you could base your fragment identifier on the `startDate` string and the `location.name` string, as in this naming convention: `YYMMDDHH-SOMEPLACE` (Note: If you opt for a fragment identifier based on other data points, make sure the fragment identifier won't change along with edits to these data points : once it is dynamically generated, make it static by storing it in field where it won't change).
+If you can’t base your fragment identifier on database keys, we recommend using a naming convention that will ensure the uniqueness of the fragments identifier today and in the future. For example, you could base your fragment identifier on the `startDate` string and the `location.name` string, as in this naming convention: `YYMMDDHH-SOMEPLACE` *(Note: If you opt for a fragment identifier based on data points, make sure it remains stable even if these data points are edited: once it is dynamically generated, make it static by storing it in field where it won't change)*.
 
 ### Other strategies to generate URIs
 
