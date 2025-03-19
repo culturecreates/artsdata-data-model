@@ -1,3 +1,7 @@
+<p>{% include back-button.html %}</p>
+<a href='id-and-uri-guidelines.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='id-and-uri-guidelines.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+
 ## Ligne directrices d’Artsdata concernant la propriété @id et les URI locales
 
 Malheureusement, la documentation Schema.org ne dit pas grand-chose sur la propriété `"@id"`, ni sur la manière de générer des URI pour eux. Afin de combler ces lacunes, Artsdata a préparé les lignes directrices suivantes. Ces lignes directrices s'adressent principalement aux développeurs web.
