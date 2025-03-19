@@ -51,15 +51,15 @@ Please note that the festival templates are intended to represent information ab
 ## Details on key properties
 
 ### _@id_
-Enter a URI constituting a unique identifier of the event within the website domain. The event's URI should be different from the web page's URI, because a "real-world object" and the web page describing it are two distinct [things](https://schema.org/Thing) (or _entities_) in Schema structured data.
+Enter a URI constituting a unique [persistent identifier](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html) of the event within the website domain. The event's URI should be different from the web page's URI, because a "real-world object" and the web page describing it are two distinct [things](https://schema.org/Thing) (or _entities_) in Schema structured data.
 
 For series of performances, in addition to the URI of the _EventSeries_ entity, a distinct URI should be assigned to each performance using the [Add-on for Event Series](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld). Make sure that no individual performance is assigned the same URI as the first-level _EventSeries_ entity.
 
 For festivals, it is recommended to assign each individual event a unique URI if they are all listed on the same webpage.
 
-If you are unable to assign a distinct URI to each event, including each performance of a series of performances, then it is preferable not to use the _@id_ property.[^2]
+If you are unable to assign a distinct URI to each event, including each performance of a series of performances, then it is preferable not to use the _@id_ property.
 
-[^2]:It is possible to generate a  fonctional URI by appending a hash (`#`) at the end of the web page URL, followed by a string of characters that acts as a unique identifier for an event entity on the page (this string is called a [_fragment identifier_]([https://fr.wikipedia.org/wiki/Identificateur_de_fragment](https://en.wikipedia.org/wiki/URI_fragment)). Let's take this fictional example: `https://mypresentingorg.ca/events/eventname/#e1324`. In this exemple, the web page's URL (and URI) is `https://mypresentingorg.ca/events/eventname/`, while the string `e1324` is an identifier that uniquely identifies an event in the websites events listing. Any character string is fine, as long as it is unique within the website's domain. For example, it could be a local identifier in the website's database. It could also be the date and time of the performance. It is not necessary for the fragment identifier to point to a tail anchor within the page's body (for example, an `id` or `name` attribute): as long as the character string that follows the hash is unique, this satisfies the requirement of a canonical URL in the context of Schema.org. [More information](https://www.w3.org/TR/cooluris/).
+[Read more about the @id property and local URIs](https://culturecreates.github.io/artsdata-data-model/id-and-uri-guidelines.html)
 
 ### [_additionalType_](https://schema.org/additionalType)
 Enter additional types corresponding to the particular type of event. Refer to the [Artsdata controlled vocabulary](http://kg.artsdata.ca/resource/ArtsdataEventTypes) to identify the most appropriate type(s) of all performing arts event types. You can add as many _additionalType_ properties as needed to properly describe the event. As a default, we recommend the type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), which denotes "a performing arts work performed for an audience".
@@ -107,41 +107,13 @@ Enter information identifying and describing the organization that is responsibl
 Enter information identifying and describing the company, group or person(s) who is(are) responsible for performing the performance. It is possible to add several _performer(s)_. The entities _nested_ under this property can be of @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) or [Person](https://schema.org/Person). Recommended properties for the nested entity include: _name_, _url_, and _sameAs_ (with link pointing to an ISNI, Wikidata or Artsdata URI).
 
 ### [_offers_](https://schema.org/offers)
-Enter at least one _Offer_ or _AggregateOffer_ type entity, including the URL of the event's ticketing page.  For more information about how to describe _Offer_ type entities, consult [Google's documentation](https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions)
+Enter at least one _Offer_ or _AggregateOffer_ type entity, including the URL of the event's ticketing page.  For more information about how to describe _Offer_ type entities, consult [Google's documentation].(https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions)
 
 ### [_doorTime_](https://schema.org/doorTime)
 
 For festivals, enter the time that admission to the festival day and/or festival edition begins, in ISO 8601 format. This property is intended to be used when the doorTime is different from the startTime of the first event within the festival schedule.
 
 ### [_sameAs_](https://schema.org/sameAs)
-Enter the URIs of _bridge identifiers_[^3] that identify without any ambiguity the event and/or the entities nested within the _Event_ type entity. When there are multiple values, list them within square brackets, one URI per line.
+Enter the URIs of [persistent identifiers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html) that identify without any ambiguity the event and/or the entities nested within the _Event_ type entity. When there are multiple values, list them within square brackets, one URI per line.
 
-[^3]: A __bridge identifier__ is a globally unique _persistent identifier_ (i.e., an identifier expressed as a permanent and dereferenceable URI) that is used by several information systems and can thus help reconcile entities across systems. Bridge identifiers therefore play a crucial role in enabling data sharing across systems. The ISNI, the Wikidata ID and the Artsdata ID are relevant bridge identifiers in the performing arts domain. The URIs of these bridge identifiers can resolve to either a web page (readable by humans) or RDF data (readable by machines) that provide descriptive information about the entity. For more information, consult these [Recommendations Regarding Unique Persistent Identifiers in the Performing Arts](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
-
-Always enter bridge identifiers in full URI format (rather than entering just the identifier's string). For example, for the Wikidata ID `Q596774`, the matching URI is http://www.wikidata.org/entity/Q596774 (note that the URI format is different from the web page URL format). ISNI, Wikidata and Artsdata all have their own user interface with their respective processes for searching an entity and retrieving its URI. Wikidata is particularly intricate in this regard: in order to retrieve an item's URI, the user must right click on "Concept URI" in the left menu (within the "Tools" section), and then select "Copy link address". For more information, consult these [Recommendations Regarding Unique Persistent Identifiers in the Performing Arts](https://docs.google.com/spreadsheets/d/1j2Be-KBZm4LioW3DH2NU7GR3m77boTeQcIHZe8OMK3U/edit?usp=sharing).
-
-The _sameAs_ property can also be used to list social media event pages associated with the event, and social media and streaming platform accounts associated with a nested entity.
-
-Here is a JSON-LD example of a nested @type [Person](https://schema.org/Person)Person entity described with the _sameAs_ property. Please note that, for consision's sake, several relevant properties were excluded from this example.
-
-```
-{
-   "@context":"http://schema.org/",
-   "@type":"Event",
-   "@id":"https://somesite.ca/events/elisapie-isaac#2023-06-16T20:00:00",
-   "name":"The Ballad of the Runaway Girl",
-   "startDate":"2023-06-16T20:00:00-04:00",
-   <!-- ... -->
-   "performer":{
-      "@type":"Person",
-      "name":"Elisapie",
-      "url":"https://www.elisapie.com",
-      "sameAs":[
-         "http://kg.artsdata.ca/resource/K12-438",
-         "https://isni.org/isni/0000000002492038",
-         "http://www.wikidata.org/entity/Q596774",
-         "https://music.apple.com/artist/440813872"]
-      },
-   <!-- ... -->
-}
-```
+[Read more about the sameAs property](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines)
