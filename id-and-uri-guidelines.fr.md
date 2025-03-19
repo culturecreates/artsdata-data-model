@@ -31,7 +31,7 @@ Aux fins de l'identification d'une Chose, une URI est fonctionnelle si elle iden
 ### URI croisillons basées sur une page web
 *Remarque : cette méthode peut ne pas convenir aux sites web avec négociation linguistique, avec un contenu dynamique ou décrivant plusieurs entités sur une même page.*
 
-* Il est possible de générer une URI fonctionnelle en ajoutant un croisillon (#) à la fin de l'URL d'une page web existante, suivi d'une chaîne de caractères qui sert d'identifiant unique pour une Chose décrite sur la page (un événement, un lieu ou un interprète). Cette chaîne est appelée un [identificateur de fragment](https://fr.wikipedia.org/wiki/Identificateur_de_fragment).
+* Il est possible de générer une URI fonctionnelle en ajoutant un croisillon (`#`) à la fin de l'URL d'une page web existante, suivi d'une chaîne de caractères qui sert d'identifiant unique pour une Chose décrite sur la page (un événement, un lieu ou un interprète). Cette chaîne est appelée un [identificateur de fragment](https://fr.wikipedia.org/wiki/Identificateur_de_fragment).
 * L'identificateur de fragment doit préférablement être unique au sein du domaine du site web. Au minimum, il doit être unique au sein de la page.
 * N'ajoutez les identificateurs de fragments qu'aux URL canoniques. Si une Chose est décrite sur plusieurs pages web, elle doit toujours avoir la même URI, quel que soit l'endroit où elle est référencée sur votre site web.
 * Il n'est pas nécessaire que l'identificateur de fragment pointe vers un point d'ancrage dans le corps de la page (par exemple, un identifiant ou un attribut de nom). En fait, il n'est même pas nécessaire que l'URI renvoie à une page web (tel que mentionné plus haut).
@@ -56,10 +56,10 @@ Si vous ne pouvez pas utiliser les clés de la base de données comme nom pour l
 Les URI croisillons basées sur les URL de pages web existantes, telles que décrites ci-dessus, ne sont qu'une des nombreuses façons de générer des URI fonctionnelles afin d'identifier les entités décrites sur votre site web. Voici d'autres stratégies pour générer des URI flexibles, stables et pérennes :
 
 * L'URI croisillon peut être basée sur un chemin d'URL qui est indépendant de toute page web existante. Les URI indépendants de la structure du site web sont plus stables dans le temps que les URI croisillons basées sur une page web. En effet, même si la structure du site devait changer, la convention de nommage, elle, peut demeurer inchangée. 
- Exemple : « `<span>https://</span>example.org/id/#123456` » 
+ Exemple : « `https://example.org/id/#123456` » 
  (Rappel : Cet URI croisillon est fonctionnelle même si elle ne mène à aucune ressource).
 * Pour les sites web avec un contenu dynamique, vous pouvez utiliser des règles de réécriture pour vous assurer que l'URI est indépendante de l'implémentation actuelle du site. 
- Exemple : « `<span>https:</span>//example.org/event/123456` » réécrit comme « `<span>https://</span>example.org/index.php?event=123456` »
+ Exemple : « `https://example.org/event/123456` » réécrit comme « `https://example.org/index.php?event=123456` »
 * Les règles de redirection sont fréquemment utilisées afin de générer des [URI 303](https://en.wikipedia.org/wiki/HTTP_303). La réponse du serveur 303 indique que l'URI n'identifie pas un document web ordinaire et redirige la requête vers une autre URI, généralement avec une négociation de contenu.
 * Vous pouvez mettre en œuvre de la négociation de contenu afin de diriger une requête vers différentes représentations HTML, JSON-LD et/ou RDF de la même Chose, selon les préférences du client.
 * Vous pouvez également utiliser un service externe afin de générer des URI sur un autre domaine et les rediriger vers votre domaine web. Ces services comprennent les [Digital Object Identifiers](https://www.doi.org/) (DOI), les [Archival Resource Keys](https://arks.org/) (ARK) et les [PURL](https://purl.archive.org/).
