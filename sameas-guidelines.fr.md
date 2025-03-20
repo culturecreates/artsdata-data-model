@@ -58,3 +58,7 @@ La propriété `sameAs` peut être utilisée autant pour des objets de premier n
 Il est possible de renseigner des plages de valeurs, mais cela n’est pas vraiment nécessaire. Une seule URI suffit, car elle peut être déréférencée afin de récupérer d’autres identifiants pérennes.
 
 Les comptes de médias sociaux peuvent aussi être saisis sous la propriété `sameAs`. Cependant, cela n’est pas nécessaire. Si l’entité est identifiée par une URI Wikidata (ou une URI Artsdata liée à Wikidata), n’importe quel robot peut référencer cette URI et récupérer tous les comptes de médias sociaux ou de plateforme de contenu associés avec cette entité dans Wikidata. Autrement dit, si ces comptes sont renseignés dans Wikidata, les énumérer sous la propriété `sameAs` serait redondant d’un point de vue machine.
+
+## Comment récupérer des URIs d'identifiants pérennes
+
+Les développeurs peuvent utiliser l'[API de réconciliation d'Artsdata]([url](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html)) pour récupérer des URI Artsdata ainsi que tout autre URI d'identifiant pérenne déjà renseignée dans Artsdata.
