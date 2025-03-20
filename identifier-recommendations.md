@@ -34,9 +34,15 @@ See: [Artsdata guidelines regarding the @id property and URIs](https://culturecr
 
 See: [Artsdata guidelines regarding the sameAs property](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines)
 
+### How to retrieve persistent identifiers' URIs
+
+Anyone can retrieve an Artsdata URI using the search box on the knowledge graph's interface. You can find step-by-step instructions in [this article](https://www.artsdata.ca/en/resources/identifiable-and-findable).
+
+Developers can also use the [Artsdata Reconciliation API](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) to retrieve Artsdata URIs as well as any other persistent identifier for which Artsdata has already established a `sameAs` link. 
+
 ### How to store external URIs in a local database
 
-Coming soon.
+Coming soon...
 
 ### About the Artsdata Identifier
 
