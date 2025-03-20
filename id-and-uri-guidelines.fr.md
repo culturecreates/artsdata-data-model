@@ -38,7 +38,7 @@ Aux fins de l'identification d'une Chose, une URI est fonctionnelle si elle iden
 
 #### Exemples d’URI croisillons basées sur une page web
 
-Voici quelques exemples d’utilisations incorrectes et correctes d’URI dérivées d’URL de pages webs :
+Voici quelques exemples d’utilisations incorrectes et correctes d’URI dérivées d’URL de pages web&nbsp;:
 
 | Exemple | Adéquation en tant qu'URI |
 | - | - |
