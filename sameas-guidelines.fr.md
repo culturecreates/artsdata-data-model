@@ -61,4 +61,4 @@ Les comptes de médias sociaux peuvent aussi être saisis sous la propriété `s
 
 ## Comment récupérer des URIs d'identifiants pérennes
 
-Les développeurs peuvent utiliser l'[API de réconciliation d'Artsdata]([url](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html)) pour récupérer des URI Artsdata ainsi que tout autre URI d'identifiant pérenne déjà renseignée dans Artsdata.
+Les développeurs peuvent utiliser l'[API de réconciliation d'Artsdata](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) pour récupérer des URI Artsdata ainsi que tout autre URI d'identifiant pérenne déjà renseignée dans Artsdata.
