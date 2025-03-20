@@ -34,6 +34,12 @@ Voir : [Lignes directrices concernant la propriété @id et les URI locales]({{ 
 
 Voir : [Lignes directrices concernant la propriété sameAs et les URI]({{ base }}/sameas-guidelines.fr)
 
+### Comment récupérer des URIs d'identifiants pérennes
+
+N'importe qui peut récupérer un identifiant Artsdata un utilisant la fonction recherche de l'interface du graphe de connaissances. [Cet article](https://www.artsdata.ca/fr/ressources/bien-identifie) contient des instructions étape-par-étape pour y arriver.
+
+Les développeurs peuvent aussi utiliser l'[API de réconciliation d'Artsdata](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) pour récupérer des URI Artsdata ainsi que tout autre URI d'identifiant pérenne pour laquelle un lien `sameAs` a été établi dans Artsdata.
+
 ### Comment entreposer des URI externes dans une base de données
 
 À venir...
