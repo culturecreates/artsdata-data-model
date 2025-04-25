@@ -38,7 +38,7 @@ See: [Artsdata guidelines regarding the sameAs property](https://culturecreates.
 
 **Option 1: Manual retrieval via the Artsdata interface**
 
-Anyone can use Artsdata's search tool on the [knowledge graph's interface]([url](https://kg.artsdata.ca/)) to find a entity and retrieve its Artsdata URI. You can find step-by-step instructions in [this article]([url](https://www.artsdata.ca/en/resources/identifiable-and-findable?anchor=retrieve)). Once you've become familiar with the process, it takes less than 10 seconds to retrieve an Artsdata URI.
+Anyone can use Artsdata's search tool on the [knowledge graph's interface](https://kg.artsdata.ca/) to find a entity and retrieve its Artsdata URI. You can find step-by-step instructions in [this article](https://www.artsdata.ca/en/resources/identifiable-and-findable?anchor=retrieve). Once you've become familiar with the process, it takes less than 10 seconds to retrieve an Artsdata URI.
 
 **Option 2: Automated retrieval via the Artsdata reconciliation service**
 
