@@ -57,5 +57,5 @@ The `sameAs` property can be used both on first-level objects and on nested enti
 
 Arrays of values are possible, although not entirely necessary. A single Wikidata or VIAF URI can be dereferenced to retrieve several other persistent identifiers.
 
-Social media accounts may also be populated under `sameAs`. Again, this may not be necessary: if the entity is already identified with a Wikidata URI (or an Artsdata URI linked with a Wikidata URI), any robot can dereference the Wikidata URI to retrieve all social media and streaming platform accounts associated with this entity in Wikidata. If these accounts are listed in Wikidata, listing them under sameAs would be redundant from a machine standpoint.
+Social media and streaming platforms' accounts may also be populated under `sameAs`. Again, this may not be necessary: if the entity is already identified with a Wikidata URI (or an Artsdata URI linked with a Wikidata URI), any robot can dereference the Wikidata URI to retrieve all social media and streaming platform accounts associated with this entity in Wikidata. In other words, if these accounts are listed in Wikidata, listing them under sameAs would be redundant from a machine standpoint.
 
