@@ -17,6 +17,9 @@ WIP - here is the Google [spreadsheet](https://docs.google.com/spreadsheets/d/1w
 
 ## Adding organizations to Artsdata.ca
 
+### Structured data template
+* [Arts Organization Structured Data Template](https://docs.google.com/document/d/1e_2pVYaGYkVxKtl6Y6btrHYrIyqoNf_6yeSl4dRJLbI/edit?tab=t.0#heading=h.fn96d7fxizbh)
+
 ### Required by the Artsdata SHACL validator
 
 * [name](https://schema.org/name) - Indicate language @en, @fr
