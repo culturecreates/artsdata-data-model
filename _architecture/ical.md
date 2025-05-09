@@ -61,32 +61,50 @@ VERSION:2.0
 PRODID:-//sebbo.net//ical-generator//EN
 NAME:artsdata-ical
 X-WR-CALNAME:artsdata-ical
+BEGIN:VTIMEZONE
+TZID:America/Toronto
+X-LIC-LOCATION:America/Toronto
+LAST-MODIFIED:20250101T220159Z
+X-LIC-LOCATION:America/Toronto
+BEGIN:DAYLIGHT
+TZNAME:EDT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:EST
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+TIMEZONE-ID:America/Toronto
+X-WR-TIMEZONE:America/Toronto
 BEGIN:VEVENT
-UID:b3ba75da0bf967b69ab277e745d4e68f471ccc5a70b27b4c1892de7a6c79612d
+UID:31dbda94d58362aefded6ff3f0c90f1372e2153fcb9cf9962f173534b19b3b34
 SEQUENCE:0
-DTSTAMP:20250506T050140Z
-DTSTART:20250512T200000
-DTEND:20250512T210000
-SUMMARY:Susan Aglukark: This Child 30th Anniversary Tour
-LOCATION:Labrador West Arts & Culture Centre\, 300 Hudson Drive\, Labrador
-  City\, NL\, Labrador City\, NL\, A2V 2K3\, CA
-DESCRIPTION:Susan Aglukark is Canada’s first Inuk artist to win a Juno (
- 4)\, a Governor General’s Performing Arts Award for lifetime artistic ac
- hievement\, and she is an officer of the Order of Canada. Susan holds seve
- ral Honourary Doctorate degrees and has held command performances. Her jou
- rney as a singer-songwriter began in the early 1990’s when she began her
-  writing and recording career. In Susan’s early reflections was the disc
- overy of the platform as learning\, sharing and healing\, this inspired he
- r major label debut album This Child\, released in January 1995. She has s
- ince written and recorded 10 albums\, founded the Arctic Rose Foundation\,
-  authored two children’s books and has a personal memoir in the works. H
- er writing of This Child brought her to a personal call to action\, get on
-  the platform and speak up\, learn\, heal\, share\, this has been her work
-  for these 30 years. Join us to celebrate 30 years of this amazing album w
- ith one of Canadia’s premier talents.
-URL;VALUE=URI:https://www.artsandculturecentre.com/labwest/Online/default.
- asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::a
- rticle_id=E51A1A5E-1E2B-4444-8C82-1DFD5E08E1A8
+DTSTAMP:20250509T163118
+DTSTART;TZID=America/Toronto:20250510T200000
+DTEND;TZID=America/Toronto:20250510T210000
+SUMMARY:Ivan Boivin-Flamand
+LOCATION:Espace Carole-Guérin\, 725 Bd Ducharme\, La Tuque\, QC\, G9X 3B4
+ \, CA
+DESCRIPTION:IBF Ivan Boivin Flamand Ivan Boivin Flamand est un auteur-comp
+ ositeur interprète et guitariste virtuose originaire de la Première Nati
+ on atikamekw de Manawan. Dans les dernières années\, il s’est démarqu
+ é par sa présence sur scène flamboyante aux côtés de Florent Vollant\
+ , Scott-Pien Picard\, Maten et PAKO\, ou encore Samian au Gala ADISQ 2022.
+  Son énergie contagieuse sur scène et ses solos de guitares épiques son
+ t acclamées par le public. Il est considéré comme une étoile montante 
+ et un modèle pour les jeunes des communautés autochtones. Ivan Boivin-Fl
+ amand lance maintenant son projet solo avec un premier EP Indie-Pop Rock e
+ n anglais\, à paraître en mars 2024. \n\nSpectacle de la série DÉCOUVE
+ RTE de la programmation 2024-2025 !\n \n <em>Mon Complexe a des étoiles d
+ ans les yeux depuis 25 ans ! #JYSERAI... et vous ?</em>
+URL;VALUE=URI:https://www.ovation.ca/00001Q/fr/Event/?eventId=1L00LU
 END:VEVENT
 END:VCALENDAR
 ```
