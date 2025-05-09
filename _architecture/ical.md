@@ -5,7 +5,7 @@ layout: architecture-doc
 
 Artsdata's iCal Server makes it possible to configure a custom iCal feed and to import Artsdata events into any calendar application supporting the iCal standard (ex., Google Calendar, Outlook, and many website plugins).
 
-The iCal feed is serialized following the [RFC 5545](https://datatracker.ietf.org/doc/html/rfc5545) specification. The [`DATE-TIME`](https://www.kanzaki.com/docs/ical/dateTime.html) value is serialized in form #3:date with local time zone and time zone reference.
+The iCal feed is serialized following the [RFC 5545](https://datatracker.ietf.org/doc/html/rfc5545) specification. The [`DATE-TIME`](https://www.kanzaki.com/docs/ical/dateTime.html) value is serialized with local time zone and time zone reference. The npm package used to add the VTIMEZONE component is [timezones-ical-library](https://tz.add-to-calendar-technology.com/).
 
 Support for later specifications could be provided, as needed.
 
