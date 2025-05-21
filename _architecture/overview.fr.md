@@ -31,13 +31,15 @@ Voici un schéma illustrant cette architecture ainsi que les flux de données en
 ### Fournisseurs de données
 
 Artsdata propose aux fournisseurs de données une diversité de processus et d’outils pour l’extraction-transformation-chargement (ETC) de leurs données :
-* Moissonnage de données structurées JSON-LD ;
+* Extraction frontale par moissonnage de données structurées JSON-LD (c.-à-d. explorer des pages web, y dénicher les données structurées et les copier)&nbsp;;
 * Extraction frontale combinant moissonnage de JSON-LD et reconnaissance naturelle du langage&nbsp;; 
 * ETC par le biais de terminaux (APIs, JSON-LD) ;
-* Google Sheet vers Artsdata (outil de conversion de données de chiffrier);
-* Console Footlight (logiciel de gestion de données événementielles pour un seul site web) ;
-* CMS Footlight (logiciel de gestion de données événementielles multisite) ;
+* [Google Sheet vers Artsdata](https://github.com/culturecreates/artsdata-data-model/blob/bee2019172794a5b87dfa378cc1d4062bfdbbc3d/_architecture/google-sheet-vers-artsdata.md) (outil de conversion de données de chiffrier)&nbsp;;
+* Console Footlight (logiciel de gestion de données événementielles pour un seul site web)&nbsp;;
+* CMS Footlight (logiciel de gestion de données événementielles multisite)&nbsp;;
 * API de chargement Artsdata (API graph-store) qui accepte de données RDF satisfaisant aux exigences minimales d’Artsdata et aux SHACL (ou ShEx lorsque les données proviennent de Wikidata).
+
+L'extraction frontale est exécutée par le robot Artsdata, un agent utilisateur qui fonctionne de la même manière que les robots d'indexation des moteurs de recherche. Certains site n'autorise pas les robots à explorer les pages web (ou en autorisent certains et bloquent les autres). Pour savoir comment autoriser le robot Artsdata, consultez cette [page de documentation](https://kg.artsdata.ca/doc/artsdata-crawler).
 
 Avant d'être déposées sur Artsdata, les données doivent satisfaire les exigences minimales du [modèle de données d’Artsdata]({{ base }}/index.fr.html). Les formes [SHACL]({{ base }}/shacl_reports.html) sont utilisées pour valider les données avant l’importation.
 
