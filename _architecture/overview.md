@@ -43,11 +43,13 @@ Front-end extraction is performed by the Artsdata crawler, a user agent that fun
 
 Prior to being loaded to Artsata, data must meet minimal the requirements [Artsdata data model]({{ base }}) for the entity type. [SHACL shapes]({{ base }}/shacl_reports.html) are used to validate data before importing.
 
-Data from each source is loaded into its own graph within Artsdata.ca with provenance metadata including a contact point, contributor names and data related license agreements.
+Consult the [Data Contributor Conditions](https://kg.artsdata.ca/doc/contributor-conditions) page to learn more about the extraction, transformation, loading and semantic enrichment processes.
 
 All data submitted to Artsdata.ca requires a user account registered with artsdata.ca. Third-party developers are welcome and can use the [Artsdata Databus API](https://culturecreates.github.io/artsdata-data-model/architecture/graph-store-api.html) to load data. If you wish to register with Artsdata or if you need assistance to load your data, please [contact the Artsdata team](https://www.artsdata.ca/en/contact-us).
 
-All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.
+All data submitted to artsdata.ca is agreed upon by the registered account to be CC0. 
+
+For more information, visit the [Data Contributor Conditions](https://kg.artsdata.ca/doc/contributor-conditions) page.
  
 Artsdata data providers include associations, unions, industry platforms, ticketing services, and individual arts organizations ([see the list](https://kg.artsdata.ca/fr/query/show?sparql=feeds_all&title=Data+Feeds)).
 
