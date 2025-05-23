@@ -43,11 +43,13 @@ L'extraction frontale est exécutée par le robot Artsdata, un agent utilisateur
 
 Avant d'être déposées sur Artsdata, les données doivent satisfaire les exigences minimales du [modèle de données d’Artsdata]({{ base }}/index.fr.html). Les formes [SHACL]({{ base }}/shacl_reports.html) sont utilisées pour valider les données avant l’importation.
 
-Les données de chaque source sont déposées dans leur propre instance de graphe dédiée. Des métadonnées de provenance sont associées à chaque source, incluant le nom de la source, le nom de l’entité qui gère la source, les coordonnées d’une personne ressource, une évaluation du niveau d’autorité de la source sur les données et la licence attribuée aux données. 
+Consultez la page [Conditions pour les fournisseurs de données](https://kg.artsdata.ca/fr/doc/contributor-conditions) pour en apprendre davantage sur le processus d'extraction, de transformation, de chargement et d'enrichissement sémantique.
 
 Le dépôt de données sur Artsdata exige un compte utilisateur Github enregistré auprès d’Artsdata. Nous encourageons les développeurs à s'enregistrer et à utiliser l’[API bus de données d’Artsdata]({{ base }}/architecture/graph-store-api.html) pour charger leurs données. Si vous souhaitez vous enregistrer auprès d'Artsdata ou avez besoin d'aide pour charger vos données, veuillez [contacter l'équipe d'Artsdata](https://www.artsdata.ca/fr/nous-joindre).
 
 Toutes les données déposées sur Artsdata sont par défaut publiées sous la licence CC0.
+
+Pour en savoir plus, visitez la page [Conditions pour les fournisseurs de données](https://kg.artsdata.ca/fr/doc/contributor-conditions).
 
 Les fournisseurs de données d’Artsdata comprennent des associations, des syndicats, des billetteries, ainsi que des organismes artistiques ([voir la liste](https://kg.artsdata.ca/fr/query/show?sparql=feeds_all&title=Data+Feeds)).
 
