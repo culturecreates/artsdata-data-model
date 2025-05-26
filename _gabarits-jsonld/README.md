@@ -107,7 +107,7 @@ Enter information identifying and describing the organization that is responsibl
 Enter information identifying and describing the company, group or person(s) who is(are) responsible for performing the performance. It is possible to add several _performer(s)_. The entities _nested_ under this property can be of @type [Organization](https://schema.org/Organization), [PerformingGroup](https://schema.org/PerformingGroup) or [Person](https://schema.org/Person). Recommended properties for the nested entity include: _name_, _url_, and _sameAs_ (with link pointing to an ISNI, Wikidata or Artsdata URI).
 
 ### [_offers_](https://schema.org/offers)
-Enter at least one _Offer_ or _AggregateOffer_ type entity, including the URL of the event's ticketing page.  For more information about how to describe _Offer_ type entities, consult [Google's documentation].(https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions)
+Enter at least one _Offer_ or _AggregateOffer_ type entity, including the URL of the event's ticketing page.  For more information about how to describe _Offer_ type entities, consult [Google's documentation](https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions).
 
 ### [_doorTime_](https://schema.org/doorTime)
 
