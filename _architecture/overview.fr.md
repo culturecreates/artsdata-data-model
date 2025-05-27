@@ -35,6 +35,7 @@ Artsdata propose aux fournisseurs de données une diversité de processus et d�
 * Extraction frontale combinant moissonnage de JSON-LD et reconnaissance naturelle du langage&nbsp;; 
 * ETC par le biais de terminaux (APIs, JSON-LD) ;
 * [Google Sheet vers Artsdata](https://github.com/culturecreates/artsdata-data-model/blob/bee2019172794a5b87dfa378cc1d4062bfdbbc3d/_architecture/google-sheet-vers-artsdata.md) (outil de conversion de données de chiffrier)&nbsp;;
+* Importation depuis Wikidata (un service permettant d'importer des éléments déjà chargés dans Wikidata)&nbsp;;
 * Console Footlight (logiciel de gestion de données événementielles pour un seul site web)&nbsp;;
 * CMS Footlight (logiciel de gestion de données événementielles multisite)&nbsp;;
 * API de chargement Artsdata (API graph-store) qui accepte de données RDF satisfaisant aux exigences minimales d’Artsdata et aux SHACL (ou ShEx lorsque les données proviennent de Wikidata).
