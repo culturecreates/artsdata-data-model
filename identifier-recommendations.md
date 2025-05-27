@@ -26,6 +26,12 @@ In order to guide data providers and consumers in the adoption and implementatio
 | [schema:Place](https://schema.org/Place) | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | Not a valid type for this ID | Optional |
 | [schema:Event](https://schema.org/Event) | <span style="color:green">**Recommended**</span> | Optional | Not a valid type for this ID | Optional |
 
+The Artsdata ID, the Wikidata ID and the ISNI are globally-unique persistent identifiers intended to be referenced across a wide range of information systems, outside of their own web domain. This explains why they are sometimes called “global” identifiers, “bridge” identifiers or “external” identifiers. In these guidelines, they are called _external URIs_.
+
+By contrast, “local” identifiers, for example database keys, are meant to be referenced internally, within the local information system. Local identifiers can also be expressed in the form of a URI within the web domain where the system – or the website – is hosted. These _local URIs_ can be reconciled (i.e. matched) with _external URIs_ to indicate that these URIs are identifying the same real-world entity (for example, a person, a place or an event)
+
+In Schema structured data and in the Artsdata data model, _local URIs_ are expected values for the `@id` property, whereas _external URIs_ are expected values for the `sameAs` property.
+
 ### How to integrate local URIs to structured data
 
 See: [Artsdata guidelines regarding the @id property and URIs](https://culturecreates.github.io/artsdata-data-model/id-and-uri-guidelines)
