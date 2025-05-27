@@ -35,6 +35,7 @@ For data providers, such as arts organizations (producers, presenters, agents, v
 * Front-end ETL combining JSON-LD scraping and natural language processing;
 * ETL via endpoints (APIs, JSON-LD endpoint);
 * Google Sheet to Artsdata (a tool to convert spreadsheet information into linked open data);
+* Mint from Wikidata (a service to import data previously loaded to Wikidata);
 * Footlight Console (event information management software for a single site);
 * Footlight CMS (event information management software for multiple sites);
 * Artsdata Load API (Graph-store API) that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata). 
