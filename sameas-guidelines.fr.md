@@ -4,11 +4,11 @@
 
 ## Lignes directrices concernant la propriété sameAs et les URI
 
-Tout comme `@id`, la propriété [`schema:sameAs`](https://schema.org/sameAs) constitue un excellent moyen d’identifier sans ambiguïté toute _Chose_ dans les données structurées Schema.
+Tout comme la [propriété `@id`]({{ base }}/id-and-uri-guidelines.fr), la propriété [`schema:sameAs`](https://schema.org/sameAs) constitue un excellent moyen d’identifier sans ambiguïté toute _Chose_ dans les données structurées Schema.
 
 Artsdata recommande de renseigner la propriété `sameAs` avec un identifiant pérenne. Veuillez toujours saisir l’identifiant sous forme d’URI complète plutôt qu’en forme courte. Par exemple, pour l’identifiant Wikidata `Q596774`, il faut saisir l’URI `http://www.wikidata.org/entity/Q596774`.
 
-Artsdata recommande fortement les identifiants pérennes des bases de connaissances et des fichiers d’autorité ouverts (voir la [liste des identifiants supportés](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr)), car ces identifiants sont exploitables par machine : Artsdata peut déréférencer ces URI afin d’accéder à toutes les métadonnées descriptives associées.
+Artsdata recommande fortement les identifiants pérennes des bases de connaissances et des fichiers d’autorité ouverts (voir la [liste des identifiants supportés]({{ base }}/identifier-recommendations.fr)), car ces identifiants sont exploitables par machine : Artsdata peut déréférencer ces URI afin d’accéder à toutes les métadonnées descriptives associées.
 
 La propriété `sameAs` peut être utilisée autant pour des objets de premier niveau que pour les entités imbriquées, comme dans l’exemple suivant : 
 
