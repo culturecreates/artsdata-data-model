@@ -34,11 +34,11 @@ In Schema structured data and in the Artsdata data model, _local URIs_ are expec
 
 ### How to integrate local URIs to structured data
 
-See: [Artsdata guidelines regarding the @id property and URIs](https://culturecreates.github.io/artsdata-data-model/id-and-uri-guidelines)
+See: [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id-and-uri-guidelines)
 
 ### How to integrate external URIs into structured data
 
-See: [Artsdata guidelines regarding the sameAs property](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines)
+See: [Artsdata guidelines regarding the sameAs property]({{ base }}/sameas-guidelines)
 
 ### How to retrieve persistent identifiers' URIs
 
