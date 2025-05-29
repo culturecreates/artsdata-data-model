@@ -10,7 +10,7 @@ Artsdata recommends populating the `sameAs` property with a [persistent identifi
 
 Artsdata strongly recommends persistent identifiers from open knowledge bases and authority files (see the [list of supported identifiers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html)), because they are machine-actionable: Artsdata can dereference these URIs to access all available descriptive metadata about the entity they identify.
 
-The `sameAs` property can be used on both top-level objects and nested entities. In the following example, the `sameAs` property is populated both for the top-level `Event` type entity, and for entities nested under the `location`, `organizer` and `performer` entities.
+The `sameAs` property can be used on both top-level objects and nested entities. In the following example, the `sameAs` property is populated both for the top-level `Event` type entity, and for entities nested under the `location`, `organizer` and `performer` properties.
 
 ```
 {
@@ -63,4 +63,3 @@ Social media and streaming platforms' accounts may also be populated under `same
 - [What are persistent identifiers and why do they matter?](https://www.artsdata.ca/en/resources/identifiable-and-findable)
 - [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifier-recommendations)
   - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id-and-uri-guidelines)
-
