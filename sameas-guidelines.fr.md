@@ -8,9 +8,9 @@ Tout comme la [propriété `@id`]({{ base }}/id-and-uri-guidelines.fr), la propr
 
 Artsdata recommande de renseigner la propriété `sameAs` avec un identifiant pérenne. Veuillez toujours saisir l’identifiant sous forme d’URI complète plutôt qu’en forme courte. Par exemple, pour l’identifiant Wikidata `Q596774`, il faut saisir l’URI `http://www.wikidata.org/entity/Q596774`.
 
-Artsdata recommande fortement les identifiants pérennes des bases de connaissances et des fichiers d’autorité ouverts (voir la [liste des identifiants supportés]({{ base }}/identifier-recommendations.fr)), car ces identifiants sont exploitables par machine : Artsdata peut déréférencer ces URI afin d’accéder à toutes les métadonnées descriptives associées.
+Artsdata recommande fortement les identifiants pérennes des bases de connaissances et des fichiers d’autorité ouverts (voir la [liste des identifiants supportés]({{ base }}/identifier-recommendations.fr)), car ces identifiants sont exploitables par machine : Artsdata peut déréférencer ces URI afin d’accéder à toutes les métadonnées descriptives qui y sont associées.
 
-La propriété `sameAs` peut être utilisée autant pour des objets de premier niveau que pour les entités imbriquées, comme dans l’exemple suivant : 
+La propriété `sameAs` peut être utilisée autant pour des objets de premier niveau que pour les entités imbriquées. Dans l'exemple qui suit, la propriété `sameAs` est renseignée autant pour l'entité principale de type `Event`, au premier niveau, que pour les entités secondaires imbriquées sous les propriétés `location`, `organizer` et `performer` : 
 
 ```
 {
@@ -42,7 +42,7 @@ La propriété `sameAs` peut être utilisée autant pour des objets de premier n
                 "@id": "https://scenesfrancophones.ca/id/37",
                 "name": "Carrefour communautaire Beausoleil",
                 "sameAs": "http://www.wikidata.org/entity/Q133105414"
-            },
+                },
     "performer": {
                 "@type": "PerformingGroup",
                 "@id": "https://scenesfrancophones.ca/id/6108",
@@ -58,3 +58,9 @@ La propriété `sameAs` peut être utilisée autant pour des objets de premier n
 Il est possible de renseigner plusieurs valeurs `sameAs` pour une même _Chose_, comme dans l'exemple précédent où l'on observe une plage de valeurs (délimitée par des crochets) pour l'entité "Maten" imbriquée sous la propriété `performer`. Cela n’est toutefois pas vraiment nécessaire. Une seule URI suffit, car elle peut être déréférencée afin de récupérer d’autres identifiants pérennes.
 
 Les comptes de médias sociaux peuvent aussi être saisis sous la propriété `sameAs`. Cependant, cela n’est pas nécessaire. Si l’entité est identifiée par une URI Wikidata (ou une URI Artsdata liée à Wikidata), n’importe quel robot peut référencer cette URI et récupérer tous les comptes de médias sociaux ou de plateforme de contenu associés avec cette entité dans Wikidata. Autrement dit, si ces comptes sont renseignés dans Wikidata, les énumérer sous la propriété `sameAs` serait redondant d’un point de vue machine.
+
+### Contenus complémentaires
+- [Que sont les identifiants pérennes et pourquoi sont-ils importants ?](https://www.artsdata.ca/fr/ressources/bien-identifie)
+- [Lignes directrices d’Artsdata à propos des identifiants pérennes]({{ base }}/identifier-recommendations.fr)
+  -[Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id-and-uri-guidelines.fr)
+  
