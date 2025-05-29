@@ -62,5 +62,5 @@ Les comptes de médias sociaux peuvent aussi être saisis sous la propriété `s
 ### Contenus complémentaires
 - [Que sont les identifiants pérennes et pourquoi sont-ils importants ?](https://www.artsdata.ca/fr/ressources/bien-identifie)
 - [Lignes directrices d’Artsdata à propos des identifiants pérennes]({{ base }}/identifier-recommendations.fr)
-  -[Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id-and-uri-guidelines.fr)
+  - [Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id-and-uri-guidelines.fr)
   
