@@ -6,12 +6,10 @@ layout: gabarits-doc
 
 {% include gabarit-languages.html %}
 
-Structured Data Templates
+Event Structured Data Templates
 =====================================
 
 Structured data templates in JSON-LD format based on the Schema.org vocabulary.
-
-Inspired by the Structured Data Templates project of [La danse sur les routes du Québec](https://github.com/a10s-ca/ladsr-ds/blob/main/README.md)
 
 ## Conventions
 
