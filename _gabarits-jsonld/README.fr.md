@@ -6,12 +6,10 @@ layout: gabarits-doc
 
 {% include gabarit-languages.html %}
 
-Gabarits de données structurées
+Gabarits de données structurées d'événement
 ============================================
 
 Gabarits de données structurées au format JSON-LD s'appuyant sur le vocabulaire Schema.org.
-
-Inspiré par le projet Gabarits de données structurées de [La danse sur les routes du Québec](https://github.com/a10s-ca/ladsr-ds/blob/main/README.md)
 
 ## Conventions
 
