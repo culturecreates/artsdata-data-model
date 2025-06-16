@@ -25,6 +25,11 @@ Afin d’aider les fournisseurs de données dans l’adoption et la mise en œuv
 | [schema:Place](https://schema.org/Place) | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | Non-valide pour ce type | Optionnel |
 | [schema:Event](https://schema.org/Event) | <span style="color:green">**Recommandé**</span> | Optionnel | Non-valide pour ce type | Optionnel |
 
+L'identifiant Artsdata, l'identifiant Wikidata et l'ISNI sont des identifiants pérennes globalement uniques : ils sont destinés à référencés dans plusieurs systèmes d'informations, hors de leurs domaine web. En ce sens, on les désigne parfois d'identifiants « globaux », identifiants « passerelles » ou identifiants « externes ». Dans ces lignes directrices, on les appelle _URI externes_. 
+
+Par opposition, les identifiants « locaux » (par exemple, les clés d'une base de données relationnelle), sont destinés à être référencés à l'interne, à l'intérieur d'un système d'information local. Les identifiants locaux peuvent aussi être exprimés sous la forme d'une URI à l'intérieur du domaine web ou le système d'information est hébergé. Ces _URI locales_ peuvent être réconciliées (c.-à-d. mises en correspondance ou _matchées_) avec des _URI externes_ afin de préciser que deux URI désignent la même entité du monde réel (par exemple, une personne, un lieu ou un événement).
+
+Dans les données structurées Schema et dans le [modèle de données Artsdata]({{ base }}), les URI locales sont la cible (c.-à-d. la valeur attendue) de la propriété `@id`, alors que les URI externes sont la cible de la propriété `sameAs`.
 
 ### Comment intégrer une URI locale à des données structurées
 
