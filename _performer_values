@@ -58,3 +58,69 @@ If more than one performer is relevant (e.g., headliner and opener), use [`schem
     }
   ]
 }
+
+### 4. Fallback for Single-Value Systems
+
+If your CMS or publishing tool only allows for a single `schema:performer` value:
+
+- Choose the entity with the most public recognition.
+- Prioritize names that are likely to be recognized by search engines and audiences.
+
+### 5. This is for Promotion, Not Archiving
+
+These guidelines are designed primarily for promotional and discoverability use cases.
+
+They may not be suitable for archival or casting contexts where detailed credits or full ensembles are needed.
+
+## Genre-Specific Recommendations
+
+### Dance Performances
+
+Acceptable `schema:performer` values may include:
+
+- The dance company (recommended default)
+- A solo or featured performer
+- Guest artist(s)
+- Principal dancer(s)
+- A list of individual dancers (if known and relevant)
+
+**When in doubt, list the dance company** — this helps identify the show's origin and is usually discoverable.
+
+### Orchestral Concerts
+
+Acceptable `schema:performer` values may include:
+
+- The orchestra (recommended default)
+- Soloist(s) (e.g., pianist, violinist)
+- Guest conductor(s)
+
+If only one value can be used, **choose the orchestra** for consistency and discoverability.
+
+## Genre-Specific Recommendations
+
+### Dance Performances
+
+Acceptable `schema:performer` values may include:
+
+- The dance company (recommended default)
+- A solo or featured performer
+- Guest artist(s)
+- Principal dancer(s)
+- A list of individual dancers (if known and relevant)
+
+**When in doubt, list the dance company** — this helps identify the show's origin and is usually discoverable.
+
+### Orchestral Concerts
+
+Acceptable `schema:performer` values may include:
+
+- The orchestra (recommended default)
+- Soloist(s) (e.g., pianist, violinist)
+- Guest conductor(s)
+
+If only one value can be used, **choose the orchestra** for consistency and discoverability.
+
+## Additional Notes
+
+- Use `sameAs` links (e.g., to Wikidata, ISNI, or Artsdata URIs) when identifying performer entities to enhance interoperability.
+- Developers building CMS or event tools should consider enabling dropdowns or suggestions for known artistic companies and performers.
