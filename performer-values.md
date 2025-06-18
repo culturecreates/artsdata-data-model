@@ -92,30 +92,6 @@ Acceptable `performer` values may include:
 
 If only one value can be used, **choose the orchestra** for consistency and discoverability.
 
-## Genre-Specific Recommendations
-
-### Dance Performances
-
-Acceptable `schema:performer` values may include:
-
-- The dance company (recommended default);
-- A solo or featured performer;
-- Guest artist(s);
-- Principal dancer(s);
-- A list of individual dancers (if known and relevant).
-
-**When in doubt, list the dance company** — this helps identify the show's origin and is usually discoverable.
-
-### Orchestral Concerts
-
-Acceptable `schema:performer` values may include:
-
-- The orchestra (recommended default);
-- Soloist(s) (e.g., pianist, violinist);
-- Guest conductor(s).
-
-If only one value can be used, **choose the orchestra** for consistency and discoverability.
-
 ## Additional Notes
 
 - Use `sameAs` links (e.g., to Wikidata, ISNI, or Artsdata URIs) when identifying performer entities to enhance interoperability.
