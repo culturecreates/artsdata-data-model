@@ -77,5 +77,5 @@ Don’t worry. Artsdata can handle data without URIs.
 
 As an alternative (or in complement to `"@id"`), consider using the `"sameAs"` property to assign an external persistent identifier to your Place, Person and Organization entities. This is a simple and highly effective way to identify a Thing, and to provide a link to more data about it.
 
-[Read more]({{ base }}/sameas-guidelines)
+See: [Artsdata guidelines regarding the sameAs property]({{ base }}/sameas-guidelines)
 
