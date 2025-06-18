@@ -2,11 +2,11 @@
 
 The `performer` property provides extremely valuable information about a performing arts event. For example, it can be used to retrieve other performances by the same performer entity or to filter events based on the origin of the performer.
 
-### Good practices for selecting `performer` values
+## Good practices for selecting `performer` values
 
 See: [Good Practices for Selecting performer Values]({{ base }}/artsdata-data-model/performer-values.html)
 
-### Good practices regarding performers' `@type`
+## Good practices regarding performers' `@type`
 
 Determining whether a performer should be assigned the [`Person`](https://schema.org/Person), [`PerformingGroup`](https://schema.org/PerformingGroup), or [`Organization`](https://schema.org/PerformingGroup) is not a always a straightforward task. 
 
@@ -42,6 +42,6 @@ Even though `Thing` is not an expected type for objects nested under the `perfor
 
 In conjunction with the use of `Thing` as a default broader type, we recommend providing a `sameAs` to an Artsdata ID. If the `performer` object has `Thing` as the default broader type, and it also has a `sameAs` to an Artsdata ID (where a narrower type is always stated), then search engines can compare the two data records and choose to use the narrower type for the performer entity.
 
-### Good practices regarding performers' `sameAs`
+## Good practices regarding performers' `sameAs`
 
 See: [How to retrieve persistent identifiers' URIs](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html#how-to-retrieve-persistent-identifiers-uris)
