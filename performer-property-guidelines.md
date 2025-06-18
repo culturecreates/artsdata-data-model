@@ -1,10 +1,10 @@
-# Artsdata guidelines regarding the `performer` property
+# Artsdata Guidelines Regarding the performer Property
 
 The `performer` property provides extremely valuable information about a performing arts event. For example, it can be used to retrieve other performances by the same performer entity or to filter events based on the origin of the performer.
 
 ### Good practices for selecting `performer` values
 
-See:  < hyperlink to a new guidelines page based on https://github.com/culturecreates/artsdata-data-model/discussions/142 >
+See: [Good Practices for Selecting performer Values]({{ base }}/artsdata-data-model/performer-values.html)
 
 ### Good practices regarding performers' `@type`
 
