@@ -78,7 +78,7 @@ Si l'heure de début de l'événement est inconnue ou s'il s'agit d'un événeme
 ### [_location_](https://schema.org/location)
 Saisissez les informations identifiant et décrivant l'endroit où est présenté l'événement. L'entité imbriquée sous la propriété _location_ peut être de @type [Place](https://schema.org/Place) (un lieu physique) ou de @type [VirtualLocation](https://schema.org/VirtualLocation) (un lieu virtuel).
 Dans le cas des lieux physiques : 
-- Il est préférable saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).
+- Il est préférable de saisir les valeurs désignant l'entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).
 - Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l'URI Wikidata et/ou Artsdata du lieu sous la propriété _location.sameAs_.
 - Google requiert la propriété _location.address_ avec une entité de type _PostalAddress_. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.
 - Pour une entité de type _PostalAddress_, il est préférable d'utiliser les abréviations postales de deux lettres pour les valeurs _addressRegion_ et _addressCountry_.
