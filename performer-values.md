@@ -35,12 +35,9 @@ As a general rule, `performer` should include the main entity or entities physic
 
 If more than one performer is relevant (e.g., headliner and opener), use [`Role`](https://schema.org/Role) to clarify their respective roles.
 
-#### JSON-LD Example:
+#### This is an example from a fictitious event in JSON-LD:
 
 ```
-<--This is an excerpt from a fictitious event in JSON-LD !-->
-
-{
   "performer": [
     {
       "type": "Role",
@@ -59,10 +56,7 @@ If more than one performer is relevant (e.g., headliner and opener), use [`Role`
       }
     }
   ]
-}
-
 ```
-
 ### 4. Fallback for Single-Value Systems
 
 If your CMS or publishing tool only allows for a single `performer` value:
