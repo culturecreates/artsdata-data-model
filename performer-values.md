@@ -37,7 +37,8 @@ If more than one performer is relevant (e.g., headliner and opener), use [`Role`
 
 #### JSON-LD Example:
 
-```<--This is an excerpt from a fictitious event in JSON-LD !-->
+```
+<--This is an excerpt from a fictitious event in JSON-LD !-->
 
 {
   "performer": [
