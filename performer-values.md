@@ -35,9 +35,9 @@ As a general rule, `schema:performer` should include the main entity or entities
 
 If more than one performer is relevant (e.g., headliner and opener), use [`schema:Role`](https://schema.org/Role) to clarify their respective roles.
 
-#### Example:
+#### JSON-LD Example:
 
-```json
+```<--This is an excerpt from a fictitious event in JSON-LD-->
 {
   "performer": [
     {
@@ -58,6 +58,7 @@ If more than one performer is relevant (e.g., headliner and opener), use [`schem
     }
   ]
 }
+```
 
 ### 4. Fallback for Single-Value Systems
 
@@ -123,4 +124,4 @@ If only one value can be used, **choose the orchestra** for consistency and disc
 ## Additional Notes
 
 - Use `sameAs` links (e.g., to Wikidata, ISNI, or Artsdata URIs) when identifying performer entities to enhance interoperability.
-- Developers building CMS or event tools should consider enabling dropdowns or suggestions for known artistic companies and performers.
+See: [Arsdata sameAs Guidelines]([url](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines))
