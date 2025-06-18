@@ -124,4 +124,5 @@ If only one value can be used, **choose the orchestra** for consistency and disc
 ## Additional Notes
 
 - Use `sameAs` links (e.g., to Wikidata, ISNI, or Artsdata URIs) when identifying performer entities to enhance interoperability.
-See: [Arsdata sameAs Guidelines]([url](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines))
+
+See: [Arsdata sameAs Guidelines](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines)
