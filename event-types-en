@@ -3,7 +3,7 @@
 
 Note: This is a proposed page for version 4.0 of Artsdata’s Event Types Vocabulary. Some of the concepts below have not yet been implemented in Artsdata. We anticipate that the roll out of version 4.0 will be completed by the end of August 2025.
 
-## Artsdata Event Types
+## Artsdata Controlled Vocabulary for Event Types
 
 This page outlines the controlled vocabulary used in the Artsdata knowledge graph to describe event types in the performing arts sector.
 
@@ -81,7 +81,7 @@ Similarly, all "skos:exactMatch" semantic relationships with the Scène Pro disc
 
 New types were added, including PowWow, Competition, SaleEvent, SocialDance, AwardsEvent, Live Film Concert, FestivalSeries and TalkEvent.
 
-URIs were changed for the following classes: “StorytellingPerformance” (from “Storytelling”), “VarietyPerformance” (from “VarietyShow”), “Class” (from “Classes”) and “ResidencyEvent” (from “ResidencyActivity”).
+URIs were changed for the following classes: “StorytellingPerformance” (from “Storytelling”), “VarietyPerformance” (from “VarietyShow”), “Class” (from “Classes”), "TalkEvent" (from "Conference) and “ResidencyEvent” (from “ResidencyActivity”).
 
 Due to confusion surrounding altLabels during community feedback, this overhaul added the skos:hiddenLabel property, and began using this property along with skos:altLabels.
 
