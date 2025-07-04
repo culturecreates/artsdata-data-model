@@ -1,9 +1,7 @@
 <p>{% include back-button.html %}</p>
 {% include event-type-languages.html %}
 
-Note: This is a proposed page for version 4.0 of Artsdata’s Event Types Vocabulary. Some of the concepts below have not yet been implemented in Artsdata. We anticipate that the roll out of version 4.0 will be completed by the end of August 2025.
-
-## Artsdata Controlled Vocabulary for Event Types
+# Artsdata Controlled Vocabulary for Event Types
 
 This page outlines the controlled vocabulary used in the Artsdata knowledge graph to describe event types in the performing arts sector.
 
@@ -77,11 +75,11 @@ Version 4.0 represents a significant overhaul compared to Version 3.4.5.
 
 Genre-based types were deprecated. Although certain Event types were deprecated, their URIs will remain accessible for users of Version 3.4.5. A few discipline-based types were grandfathered in version 4.0, but are now annotated as “proposed for deprecation” in a subsequent version of the vocabulary.
 
-Similarly, all "skos:exactMatch" semantic relationships with the Scène Pro discipline/genre taxonomy were removed.
+Similarly, all `skos:exactMatch` semantic relationships with the Scène Pro discipline/genre taxonomy were removed.
 
 New types were added, including PowWow, Competition, SaleEvent, SocialDance, AwardsEvent, Live Film Concert, FestivalSeries and TalkEvent.
 
-URIs were changed for the following classes: “StorytellingPerformance” (from “Storytelling”), “VarietyPerformance” (from “VarietyShow”), “Class” (from “Classes”), "TalkEvent" (from "Conference) and “ResidencyEvent” (from “ResidencyActivity”).
+URIs were changed for the following concepts: `adr:StorytellingPerformance` (from `Storytelling`), `adr:VarietyPerformance` (from `VarietyShow`), `adr:Class` (from `Classes`), `adr:TalkEvent` (from `Conference`) and `adr:ResidencyEvent` (from `ResidencyActivity`).
 
 Due to confusion surrounding altLabels during community feedback, this overhaul added the skos:hiddenLabel property, and began using this property along with skos:altLabels.
 
