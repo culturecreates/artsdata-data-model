@@ -3,7 +3,7 @@
 # Artsdata Guidelines for location Values
 
 
-## Good practices regarding Place granularity
+## Good practices regarding `place` granularity
 
 When a building contains multiple performance halls, Artsdata can run into reconciliation issues if the structured data describes the building rather than the performance hall. It may look like two performances are happening at the same time and in the same place, whereas these are, in fact, two different places.
 
