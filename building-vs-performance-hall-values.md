@@ -1,6 +1,6 @@
 <p>{% include back-button.html %}</p>
 
-# Artsdata Guidelines Regarding Building vs. Performance Hall Values in location entities
+# Artsdata Guidelines Regarding Building vs. Performance Hall Values in location Entities
 
 ### Overview
 
@@ -15,13 +15,13 @@ Here is the logic followed by Artsdata’s auto-minting process:
 
 As per [Artsdata's instructions](https://docs.google.com/spreadsheets/d/1zGMVtrMO6Ja82jblir2AUjzSYAciCXBwoNzi-pomGok/edit?gid=0#gid=0), it is preferable to be as precise as possible when entering a `location` nested entity under an `@type Event`. In other words, it is better to enter the `name` and `sameAs` values for the performance hall where the event is taking place rather than for the building as a whole. 
 
-However, an organization may prefer to enter the name of the building in their structured data – particularly if the building name is more well-known than the performance hall name, or if the performance hall shares its name with another performance hall in a different building. 
+However, an organization may prefer to enter the name of the building in their structured data – particularly if the building name is more well-known than the performance hall name, or if the performance hall shares its name with another hall in a different building. 
 
 In these instances, there are two potential solutions:
 
 #### 1. Enter different `name` and `sameAs` values
 
-Enter the building name under location `name`, but add a `sameAs` pointing to a URI describing the performance hall. This way, the building name value will be treated as the primary location label, but machines will still be able to recognize that the actual location is the performance hall rather than the building.
+Enter the building name under location `name`, but add a `sameAs` pointing to a URI describing the performance hall. This way, the building name will be treated as the primary location label. However, machines will still be able to recognize that the physical location is the performance hall contained within the building rather than the building itself.
    Example:
    ```
 "location":
@@ -45,7 +45,7 @@ Enter the building name under location `name`, but add a `sameAs` pointing to a 
 
 #### 2. Add a `containedinPlace` entity
 
-Enter the performance hall name under location `name`. Add a `containedinPlace` nested entity with the building name under `name` and `sameAs`value pointing to a URI describing the building. This way, machines will be able to recognize that the performance hall is a subentity of the building rather than a distinct location.
+Enter the performance hall name under location `name`. Add a `containedinPlace` nested entity with the building name under `name` and `sameAs`value pointing to a URI describing the building. This way, machines will be able to recognize that the performance hall is a part of the building rather than a separate location.
    Example:
 ```
  "location":
