@@ -3,11 +3,15 @@
 
 # Artsdata Controlled Vocabulary for Event Types
 
+Version 4.0. Released July 2025.
+
+_Note: This is a proposed page for version 4.0 of Artsdata’s Event Types Vocabulary. Some of the concepts below have not yet been implemented in Artsdata. We anticipate that the roll out of version 4.0 will be completed by the end of August 2025._
+
 This page outlines the controlled vocabulary used in the Artsdata knowledge graph to describe event types in the performing arts sector.
 
-The facets of an event which are considered in scope for differentiating event types in version 4.0 of this vocabulary are those facets which refer to the design, format, and/or functioning of a given performing arts event, rather than its artistic content.
+The facets of an event which are considered in scope for differentiating event types in version 4.0 of this vocabulary are those facets which refer to the design, format, and/or functioning of a given arts and culture event, rather than its artistic content.
 
-Facets that are deemed “out of scope” for the Event type Controlled Vocabulary (such as language, audience, time of year, etc.) should be represented through other means, such as: using existing Schema properties and concepts; using existing Wikidata properties and concepts; using external controlled vocabularies; and/or, creating additional Artsdata controlled vocabularies.
+Facets that are deemed “out of scope” for the Event Type Controlled Vocabulary (such as language, audience, time of year, etc.) should be represented through other means, such as: using existing Schema properties and concepts; using existing Wikidata properties and concepts; using external controlled vocabularies; and/or, creating additional Artsdata controlled vocabularies.
 
 ### Event Types
 
@@ -53,9 +57,10 @@ The list of types (SKOS concepts) and the concept scheme can be view in the tabl
 
 ### How to use
 
-The Artsdata Event Type controlled vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (schema:Event or schema:EventSeries) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the schema:additionalType property.
+The Artsdata Event Type controlled vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (`schema:Event` or `schema:EventSeries`) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the `schema:additionalType` property.
 
 For example: 
+
 ```
 ex:Event1 a schema:Event ; 
 schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .
@@ -81,7 +86,7 @@ New types were added, including PowWow, Competition, SaleEvent, SocialDance, Awa
 
 URIs were changed for the following concepts: `adr:StorytellingPerformance` (from `Storytelling`), `adr:VarietyPerformance` (from `VarietyShow`), `adr:Class` (from `Classes`), `adr:TalkEvent` (from `Conference`) and `adr:ResidencyEvent` (from `ResidencyActivity`).
 
-Due to confusion surrounding altLabels during community feedback, this overhaul added the skos:hiddenLabel property, and began using this property along with skos:altLabels.
+Due to confusion surrounding altLabels during community feedback, this overhaul added the `skos:hiddenLabel` property, and began using this property along with skos:altLabels.
 
 Labels and definitions were harmonized to make terminology and syntax consistent.
 
