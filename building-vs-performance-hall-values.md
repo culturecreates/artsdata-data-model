@@ -75,4 +75,4 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
 
 ### Good practices regarding location `sameAs`
 
-See: [How to retrieve persistent identifiers' URIs](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html#how-to-retrieve-persistent-identifiers-uris)
+See: [How to retrieve persistent identifiers' URIs]({{ base }}/how-to-retrieve-persistent-identifiers-uris)
