@@ -29,9 +29,15 @@ Here are the main Classes used in Artsdata.
 {% endfor %}
 </ol>
 
+### Controlled vocabularies
+
+- [Event types](../event-type.html)
+  
+- [Organization types](https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit?usp=sharing)
+
 ### Persistent Identifiers
 
-In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other unique persistent identifiers, like Wikidata and ISNI, to recognize and reconcile entities of type [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) and [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
+In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other unique persistent identifiers, like Wikidata and ISNI, to recognize and reconcile entities of type [Organization](../classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) and [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
 
 [Guidelines regarding persistent identifiers for data providers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations)
 
