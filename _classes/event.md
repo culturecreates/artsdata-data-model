@@ -9,7 +9,7 @@ Any single performance, run of performances, or festival edition is deemed an `E
 
 ## Event Types
 
-Event type entities can be assigned additional types from the [Artsdata controlled vocabulary for event types](../event-type.html), using the `additionalType` property.
+Event type entities can be assigned additional types from the [Artsdata controlled vocabulary for event types](../event-types.html), using the `additionalType` property.
 
 In addition to concepts from the Artsdata controlled vocabulary, Artsdata accepts Schema.org Event sub-types as well as Wikidata concepts as additional types.
 
