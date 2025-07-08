@@ -19,7 +19,7 @@ Facets that are deemed “out of scope” for the Event Type Controlled Vocabula
 
 ### Event Types
 
-The list of types (SKOS concepts) and the concept scheme can be view in the table below, or in the following [spreadsheet](https://docs.google.com/spreadsheets/d/1cwNQIHcU0iBUi2dLdh1tnOFDxrYCA-DKxnLiXrOXYug/edit?usp=sharing).
+The list of types (SKOS concepts) can be viewed in the [concept scheme](http://kg.artsdata.ca/resource/ArtsdataEventTypes), in this [spreadsheet](https://docs.google.com/spreadsheets/d/1cwNQIHcU0iBUi2dLdh1tnOFDxrYCA-DKxnLiXrOXYug/edit?usp=sharing), or in the table below.
 
 | CURI | Preferred label | Description |
 | - | - | - |
