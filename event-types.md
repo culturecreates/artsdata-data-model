@@ -3,7 +3,11 @@
 
 # Artsdata Controlled Vocabulary for Event Types
 
-Version 4.0. Released July 2025.
+| <!-- --> | <!-- --> |
+| - | - |
+| Concept scheme | [adr:ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes) |
+| Version | 4.0 |
+| Release date | July 2025 |
 
 _Note: This is a proposed page for version 4.0 of Artsdata’s Event Types Vocabulary. Some of the concepts below have not yet been implemented in Artsdata. We anticipate that the roll out of version 4.0 will be completed by the end of August 2025._
 
