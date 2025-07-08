@@ -11,19 +11,19 @@
 
 _Remarque : Ceci est une page proposée pour la version 4.0 du vocabulaire des types d'événements d'Artsdata. Certains des concepts ci-dessous n'ont pas encore été implémentés dans Artsdata. Le déploiement de la version 4.0 devrait être terminé d'ici fin août 2025._
 
-Cette page décrit le vocabulaire contrôlé utilisé dans le graphique de connaissances Artsdata pour décrire les types d'événements dans le secteur des arts et culture.
+Cette page décrit le vocabulaire contrôlé utilisé dans le graphe de connaissances Artsdata pour différencier les types d'événements dans le secteur des arts et culture.
 
-La version 4.0 représente une refonte significative par rapport à la version 3.4.5.
+La version 4.0 du vocabulaire contrôlé représente une refonte significative par rapport à la version 3.4.5.
 
 Les facettes d'un événement qui sont prises en compte dans la différenciation des types d'événements dans la version 4.0 de ce vocabulaire sont celles qui font référence à la conception, au format et/ou au fonctionnement d'un événement artistique donné, plutôt qu'à son contenu artistique.
 
-Les facettes considérées comme « hors de portée » du vocabulaire contrôlé de type événement (comme la langue, le public, la période de l'année, etc.) doivent être représentées par d'autres moyens, tels que : l'utilisation des propriétés et concepts Wikidata existants ; l'utilisation de vocabulaires contrôlés externes ; et/ou la création de vocabulaires contrôlés Artsdata supplémentaires.
+Les facettes considérées comme hors d'application du vocabulaire contrôlé de type événement (comme la langue, le public, la période de l'année, etc.) doivent être représentées par d'autres moyens, tels que : l'utilisation des propriétés et concepts Wikidata existants ; l'utilisation de vocabulaires contrôlés externes ; et/ou la création de vocabulaires contrôlés Artsdata supplémentaires.
 
 ### Types d'événements
 
-La liste des types (concepts SKOS) et le schéma conceptuel peuvent être consultés dans le tableau ci-dessous ou dans cette [feuille de calcul](https://docs.google.com/spreadsheets/d/1cwNQIHcU0iBUi2dLdh1tnOFDxrYCA-DKxnLiXrOXYug/edit?usp=sharing).
+La liste des types (concepts SKOS) peut être consultée dans le [schéma de concepts](http://kg.artsdata.ca/resource/ArtsdataEventTypes), dans cette [feuille de calcul](https://docs.google.com/spreadsheets/d/1cwNQIHcU0iBUi2dLdh1tnOFDxrYCA-DKxnLiXrOXYug/edit?usp=sharing), ou dans le dans le tableau ci-dessous .
 
-| CURI | Label préféré | Description |
+| CURI | Libellé préféré | Description |
 | - | - | - |
 | [adr:Event](http://kg.artsdata.ca/resource/Event) | Événement | Une activité organisée qui a lieu à une heure et un lieu précis. |
 | [adr:EventSeries](http://kg.artsdata.ca/resource/EventSeries) | Série d'événements | Une série cohérente d'événements individuels, de spectacles, de rassemblements et/ou de performances avec une continuité organisationnelle. |
