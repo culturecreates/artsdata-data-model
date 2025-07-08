@@ -35,6 +35,12 @@ En plus de l'identifiant Artsdata, le graphe de connaissances Artsdata s'appuie 
 
 [Lignes directrices à propos des identifiants pérennes](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr)
 
+### Vocabulaires contrôlés
+
+- [Types d'événements]({{ base }}/event-types.fr.html)
+  
+- [Types d'organismes](https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit?usp=sharing)
+
 ### Gabarits de données structurées
 
 - [Gabarits pour les événements]({{ base }}/gabarits-jsonld/README.fr.html)
@@ -85,4 +91,4 @@ Artsdata.ca charge les données ouvertes et liées de Wikidata et DBpedia afin d
 
 ### Assistance ou contact
 
-[Contactez nous](mailto:support@culturecreates.com).
+[Contactez nous](mailto:artsdata-support@capacoa.ca).
