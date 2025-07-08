@@ -3,7 +3,13 @@
 
 ## Vocabulaire contrôlé Artsdata pour les types d'événements
 
-Remarque : Ceci est une page proposée pour la version 4.0 du vocabulaire des types d'événements d'Artsdata. Certains des concepts ci-dessous n'ont pas encore été implémentés dans Artsdata. Le déploiement de la version 4.0 devrait être terminé d'ici fin août 2025.
+| <!-- --> | <!-- --> |
+| - | - |
+| Schéma de concepts | [adr:ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes) |
+| Version | 4.0 |
+| Date de modification | juillet 2025 |
+
+_Remarque : Ceci est une page proposée pour la version 4.0 du vocabulaire des types d'événements d'Artsdata. Certains des concepts ci-dessous n'ont pas encore été implémentés dans Artsdata. Le déploiement de la version 4.0 devrait être terminé d'ici fin août 2025._
 
 Cette page décrit le vocabulaire contrôlé utilisé dans le graphique de connaissances Artsdata pour décrire les types d'événements dans le secteur des arts et culture.
 
