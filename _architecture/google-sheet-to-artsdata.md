@@ -3,11 +3,7 @@ title: Google Sheet-to-Artsdata Tool
 layout: architecture-doc
 ---
 
-<p>{% include back-button.html %}</p>
-
 <p>{% include google-sheet-to-artsdata-languages.html %}</p>
-
-====================
 
 This [spreadsheet tool](https://docs.google.com/spreadsheets/d/1NacZsvFwahT3qbnksFcFEiBwK-ou5XJJzyrUyr7QUpc/edit?gid=444637066#gid=444637066) is designed to help performing arts organizations convert their event information into Schema structured data. This structured data can then be loaded to the Artsdata knowledge graph and even pasted on your own website. Structured data helps search engines and other recommendation tools to better understand your events, so that they can share them with potential audiences.  
 
