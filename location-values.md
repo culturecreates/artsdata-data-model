@@ -1,4 +1,5 @@
 <p>{% include back-button.html %}</p>
+{% include location-values-languages.html %}
 
 # Artsdata Guidelines for location Values
 
@@ -30,6 +31,9 @@ Enter the building name under location `name`, but add a `sameAs` pointing to a 
          {
             "@type":"Place",
             "name":"Centre des arts Juliette-Lassonde",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
             "address":{
                "@type":"PostalAddress",
                "addressLocality":"Saint-Hyacinthe",
@@ -37,15 +41,37 @@ Enter the building name under location `name`, but add a `sameAs` pointing to a 
                "postalCode":"J2S 9E2",
                "streetAddress":"1705 Rue Saint-Antoine",
                "addressCountry":"CA"
-            },
-            "sameAs":[
-               "http://kg.artsdata.ca/resource/K2-227",
-               "http://www.wikidata.org/entity/Q111668872"]
+            }
     },
 ```
 *Note that the Artsdata and Wikidata URIs under `sameAs` point to the Salle Desjardins performance hall inside Centre des arts Juliette-Lassonde.*
 
-#### 2. Add a `containedinPlace` entity
+#### 2. Add an `alternameName` value
+
+Enter the performance hall under location `name` and add the building name under `alternateName`, or vice versa, depending on which you would prefer to use as the primary location label.
+   Example:
+   ```
+"location":
+         {
+            "@type":"Place",
+            "name":"Salle Desjardins",
+            "alternateName":"Centre des arts Juliette-Lassonde",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
+            "address":{
+               "@type":"PostalAddress",
+               "addressLocality":"Saint-Hyacinthe",
+               "addressRegion":"QC",
+               "postalCode":"J2S 9E2",
+               "streetAddress":"1705 Rue Saint-Antoine",
+               "addressCountry":"CA"
+            }
+    },
+```
+*Note that the Artsdata and Wikidata URIs under `sameAs` point to the Salle Desjardins performance hall inside Centre des arts Juliette-Lassonde.*
+
+#### 3. Add a `containedinPlace` entity
 
 Enter the performance hall name under location `name`. Add a `containedinPlace` nested entity with the building name under `name` and `sameAs`value pointing to a URI describing the building. This way, machines will be able to recognize that the performance hall is a part of the building rather than a separate location.
    Example:
@@ -54,6 +80,9 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
          {
             "@type":"Place",
             "name":"Salle Desjardins",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
             "address":{
                "@type":"PostalAddress",
                "addressLocality":"Saint-Hyacinthe",
@@ -66,10 +95,7 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
                "@type":"Place",
                "name":"Centre des arts Juliette-Lassonde",
                "sameAs":"http://kg.artsdata.ca/resource/K5-796"
-            },
-            "sameAs":[
-               "http://kg.artsdata.ca/resource/K2-227",
-               "http://www.wikidata.org/entity/Q111668872"]
+            }
     },
 ```
 *Note that because the performance hall and building share the same address, it is not necessary to repeat the `address` nested entity within `containedinPlace`.*
@@ -77,4 +103,4 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
 
 ## Good practices regarding location `sameAs`
 
-See: [How to retrieve persistent identifiers' URIs](...identifier-recommendations.html#how-to-retrieve-persistent-identifiers-uris)
+See: [How to retrieve persistent identifiers' URIs](../identifier-recommendations#how-to-retrieve-persistent-identifiers-uris)
