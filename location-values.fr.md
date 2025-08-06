@@ -1,4 +1,5 @@
 <p>{% include back-button.html %}</p>
+{% include location-values-languages.html %}
 
 # Lignes directrices Artsdata pour les valeurs `location`
 
@@ -28,6 +29,9 @@ Indiquer le nom du bâtiment sous `name`, mais ajouter un champ `sameAs` qui poi
          {
             "@type":"Place",
             "name":"Centre des arts Juliette-Lassonde",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
             "address":{
                "@type":"PostalAddress",
                "addressLocality":"Saint-Hyacinthe",
@@ -35,15 +39,37 @@ Indiquer le nom du bâtiment sous `name`, mais ajouter un champ `sameAs` qui poi
                "postalCode":"J2S 9E2",
                "streetAddress":"1705 Rue Saint-Antoine",
                "addressCountry":"CA"
-            },
-            "sameAs":[
-               "http://kg.artsdata.ca/resource/K2-227",
-               "http://www.wikidata.org/entity/Q111668872"]
+            }
     },
 ```
 *Remarque : les URI d’Artsdata et de Wikidata sous `sameAs` pointent vers la salle Desjardins située à l’intérieur du Centre des arts Juliette-Lassonde.*
 
-#### 2. Ajouter une entité `containedinPlace`
+#### 2. Ajouter une valeur `alternateName`
+
+Indiquer le nom de la salle sous `name` et ajouter le nom du bâtiment sous `alternateName`, ou inversement, selon lequel vous préfériez utiliser en tant que libellé principal.
+   Exemple :
+   ```
+"location":
+         {
+            "@type":"Place",
+            "name":"Salle Desjardins",
+            "alternateName":"Centre des arts Juliette-Lassonde",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
+            "address":{
+               "@type":"PostalAddress",
+               "addressLocality":"Saint-Hyacinthe",
+               "addressRegion":"QC",
+               "postalCode":"J2S 9E2",
+               "streetAddress":"1705 Rue Saint-Antoine",
+               "addressCountry":"CA"
+            }
+    },
+```
+*Remarque : les URI d’Artsdata et de Wikidata sous `sameAs` pointent vers la salle Desjardins située à l’intérieur du Centre des arts Juliette-Lassonde.*
+
+#### 3. Ajouter une entité `containedinPlace`
 
 Indiquer le nom de la salle de spectacle sous `name`. Ajouter une entité imbriquée `containedinPlace` avec le nom du bâtiment sous `name`, ainsi qu’une valeur `sameAs`pointant vers une URI décrivant le bâtiment. Cela permet aux systèmes de reconnaître que la salle fait partie intégrante du bâtiment, et non qu’elle constitue un lieu distinct. 
 
@@ -53,6 +79,9 @@ Exemple :
          {
             "@type":"Place",
             "name":"Salle Desjardins",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
             "address":{
                "@type":"PostalAddress",
                "addressLocality":"Saint-Hyacinthe",
@@ -65,10 +94,7 @@ Exemple :
                "@type":"Place",
                "name":"Centre des arts Juliette-Lassonde",
                "sameAs":"http://kg.artsdata.ca/resource/K5-796"
-            },
-            "sameAs":[
-               "http://kg.artsdata.ca/resource/K2-227",
-               "http://www.wikidata.org/entity/Q111668872"]
+            }
     },
 ```
 *Remarque : comme la salle et le bâtiment partagent la même adresse, il n’est pas nécessaire de répéter les champs `address` dans `containedinPlace`.*
@@ -76,4 +102,4 @@ Exemple :
 
 ## Bonnes pratiques concernant le champ `sameAs`
 
-Voir : [Récupérer les URIs d’identifiants pérennes](...identifier-recommendations.html#how-to-retrieve-persistent-identifiers-uris)
+Voir : [Récupérer les URIs d’identifiants pérennes](..identifier-recommendations.html#how-to-retrieve-persistent-identifiers-uris)
