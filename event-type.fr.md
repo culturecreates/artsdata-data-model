@@ -1,5 +1,7 @@
 <p>{% include back-button.html %}</p>
 {% include event-type-languages.html %}
 
-## Artsdata Event Types (français)
+## Vocabulaire contrôlé d'Artsdata pour les types d'événements
+
+_En cours de traduction._
 
