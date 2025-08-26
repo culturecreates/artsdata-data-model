@@ -1,4 +1,4 @@
-name: Push Event Types to Artsdata
+name: Staging - Push Event Types to staging.api.artsdata.ca
 on:
   workflow_dispatch:
 jobs:
