@@ -15,9 +15,9 @@
 
 
 adr:ArtsdataEventTypes rdf:type skos:ConceptScheme ;
-    skos:prefLabel "Artsdata Event Types"@en ;
+    skos:prefLabel "Artsdata Event Types Controlled Vocabulary"@en ;
     skos:prefLabel "Vocabulaire contrôlé Artsdata pour les types d'événements"@fr ;
-    schema:creator adr:K1-5 ;
+    schema:creator adr:K1-5 , adr:K16-211;
     schema:dateCreated "2021-08-10"^^xsd:date ;
     dcterms:identifier "ArtsdataEventTypes" ;
     schema:dateModified "2025-08-25"^^xsd:date ;
