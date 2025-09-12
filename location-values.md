@@ -103,4 +103,4 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
 
 ## Good practices regarding location `sameAs`
 
-See: [How to retrieve persistent identifiers' URIs](../identifier-recommendations#how-to-retrieve-persistent-identifiers-uris)
+See: [How to retrieve persistent identifiers' URIs](../identifier-recommendations#how-to-retrieve-persistent-identifiers-uris.html)
