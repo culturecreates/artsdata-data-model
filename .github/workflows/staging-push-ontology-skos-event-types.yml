@@ -1,4 +1,4 @@
-name: Push Event Types to Artsdata
+name: Staging - Push SKOS Event Types to staging.api.artsdata.ca
 on:
   workflow_dispatch:
 jobs:
@@ -12,7 +12,7 @@ jobs:
         run: |
           curl \
           -H 'Content-Type: application/json' \
-          -X POST http://api.artsdata.ca/databus/  \
+          -X POST http://staging.api.artsdata.ca/databus/  \
           --data '{ "artifact": "skos-event-types",
                     "comment": "Artsdata Event Types",
                     "publisher": "${{ secrets.PUBLISHER_URI_GREGORY }}",
