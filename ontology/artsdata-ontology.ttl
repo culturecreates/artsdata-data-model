@@ -47,6 +47,6 @@ ado:Event rdf:type owl:Class ;
 # Properties
 ado:hasEventType rdf:type owl:ObjectProperty ;
     rdfs:label "has event type"@en ;
-    rdfs:comment "Links an event to its type."@en ;
+    rdfs:comment "Links an event to its Artsdata event type controlled vocabulary."@en ;
     rdfs:domain schema:Event ;
     rdfs:range ado:EventType .
