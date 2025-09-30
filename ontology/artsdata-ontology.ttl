@@ -26,8 +26,8 @@ ado: rdf:type owl:Ontology ;
 # Classes
 ado:Thing rdf:type owl:Class ;
     rdfs:label "Thing"@en ;
-    rdfs:subClassOf owl:Thing, schema:Thing ;
-    rdfs:comment "The most generic class of things."@en .
+    rdfs:subClassOf owl:Thing ;
+    rdfs:comment "The most generic class of things in Artsdata."@en .
 
 ado:LivePerformanceWork rdf:type owl:Class ;
     rdfs:label "Live Performance Work"@en ;
