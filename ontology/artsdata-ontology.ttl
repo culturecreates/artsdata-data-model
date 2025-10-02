@@ -33,27 +33,27 @@ ado:Thing rdf:type rdfs:Class ;
 ado:LivePerformanceWork rdf:type rdfs:Class ;
     rdfs:label "Live Performance Work"@en,  "Œuvre scénique"@fr;
     rdfs:comment "A work that is performed live, such as a play, concert, or dance performance."@en ;
-    rdfs:isDefinedBy ado: .
+    rdfs:isDefinedBy ado: ;
     rdfs:subClassOf ado:Thing ;
     schema:alternateName "show"@en, "spectacle"@fr .
 
 ado:EventType rdf:type rdfs:Class ;
     rdfs:label "Event Type"@en ;
     rdfs:comment "A class representing different types of events."@en ;
-    rdfs:isDefinedBy ado: .
+    rdfs:isDefinedBy ado: ;
     rdfs:subClassOf skos:Concept, ado:Thing .
 
 ado:Event rdf:type rdfs:Class ;
     rdfs:label "Event"@en ;
     rdfs:comment "An event is a happening that occurs at a certain time and location. Examples include and are not limited to a: performance, concert, conference, festival, exhibition and/or social gathering."@en ;
     rdfs:subClassOf schema:Event, ado:Thing ;
-    rdfs:isDefinedBy ado: .
+    rdfs:isDefinedBy ado: ;
     schema:alternateName "performance"@en, "représentation"@fr .
 
 # Properties
 ado:hasEventType rdf:type rdf:Property ;
     rdfs:label "has event type"@en ;
     rdfs:comment "Links an event to its Artsdata event type controlled vocabulary."@en ;
-    rdfs:isDefinedBy ado: .
+    rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Event ;
     rdfs:range ado:EventType .
