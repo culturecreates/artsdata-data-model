@@ -21,12 +21,12 @@ adr:ArtsdataEventTypes rdf:type skos:ConceptScheme ;
     schema:dateCreated "2021-08-10"^^xsd:date ;
     dcterms:identifier "ArtsdataEventTypes" ;
     schema:dateModified "2025-08-25"^^xsd:date ;
-    schema:version "4.0" ;
-    owl:versionInfo "4.0—Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated concepts (16), and better alignment with external vocabularies."@en ;
-    owl:versionInfo "4.0—Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de concepts obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
+    schema:version "4.0.1" ;
+    owl:versionInfo "4.0 — Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated concepts (16), and better alignment with external vocabularies."@en ;
+    owl:versionInfo "4.0 — Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de concepts obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
 
-    owl:priorVersion "3.4.5—First revised event type definitions: event types (43), and alignment with external vocabularies."@en ;
-    owl:priorVersion "3.4.5—Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
+    owl:priorVersion "3.4.5 — First revised event type definitions: event types (43), and alignment with external vocabularies."@en ;
+    owl:priorVersion "3.4.5 — Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
     rdfs:comment "Base controlled vocabulary for Artsdata Event Types. Serves as a persistent, version-independent reference for all specific version schemes. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars."@en ;
     rdfs:comment "Vocabulaire contrôlé de base pour les types d'événements Artsdata. Sert de référence permanente et indépendante de la version pour tous les schémas de version spécifiques. L'objectif de ce vocabulaire contrôlé est de servir de base pour cartographier les différents types d'événements organisés par les organisations artistiques, afin que ces événements puissent être réutilisés dans les calendriers d'événements."@fr ;
     vann:preferredNamespacePrefix "adr" ;
@@ -34,7 +34,8 @@ adr:ArtsdataEventTypes rdf:type skos:ConceptScheme ;
     vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html>  ;
     vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-types.ttl> ;
     vann:example adr:PerformingArtsEvent ;
-    skos:hasTopConcept adr:Event .
+    skos:hasTopConcept adr:Event ;
+    dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-event-types.ttl> .
 
 adr:ArtsdataEventTypes-Collection-3.4.5 a skos:Collection ;
     skos:prefLabel "Artsdata Event Types—Collection for Version 3.4.5"@en ;
@@ -42,8 +43,8 @@ adr:ArtsdataEventTypes-Collection-3.4.5 a skos:Collection ;
     rdfs:comment "All concepts that were present in vocabulary version 3.4.5"@en ;
     rdfs:comment "Tous les concepts présents dans la version 3.4.5 du vocabulaire."@fr ;
     schema:version "3.4.5" ;
-    owl:versionInfo "3.4.5—First revised event type definitions: event types (43), and alignment with external vocabularies."@en ;
-    owl:versionInfo "3.4.5—Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
+    owl:versionInfo "3.4.5 — First revised event type definitions: event types (43), and alignment with external vocabularies."@en ;
+    owl:versionInfo "3.4.5 — Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
     dcterms:isPartOf adr:ArtsdataEventTypes ;
     skos:member adr:Event, adr:EventSeries, adr:PerformingArtsEvent, adr:RehearsalEvent, adr:CircusPerformance, adr:ComedyPerformance, adr:DancePerformance, adr:MusicalTheatrePerformance, adr:OperaPerformance, adr:MusicPerformance, adr:SpokenWordPerformance, adr:TheatrePerformance, adr:PerformanceArt, adr:Festival, adr:ChildrensEvent, adr:ExhibitionEvent, adr:ScreeningEvent, adr:SocialEvent, adr:WorkshopEvent, adr:MasterclassEvent, adr:PostshowTalk, adr:PreshowTalk, adr:OnDemand, adr:PublicationEvent, adr:VisualArtsEvent, adr:ChansonPerformance, adr:Chansonfrancophone, adr:Chansonanglophone, adr:JazzPerformance, adr:WorldMusicPerformance, adr:RhythmAndBluesPerformance, adr:CountryMusicPerformance, adr:MusicalComedyPerformance, adr:ClassicalMusicPerformance, adr:RockMusicPerformance, adr:AcappellaMusicPerformance, adr:BroadcastEvent, adr:LiveBroadcastEvent, adr:Classes, adr:Conference, adr:Storytelling, adr:VarietyShow, adr:ResidencyActivity, adr:Chanson .
 
@@ -53,8 +54,8 @@ adr:ArtsdataEventTypes-Collection-4.0 a skos:Collection ;
     rdfs:comment "All Artsdata concepts that are part of vocabulary version 4.0 (including those carried forward, excluding those deprecated in 4.0)."@en ;
     rdfs:comment "Tous les concepts de Artsdata faisant partie de la version 4.0 (y compris ceux maintenus, à l’exclusion de ceux dépréciés en 4.0)."@fr ;
     schema:version "4.0" ;
-    owl:versionInfo "4.0—Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated concepts (16), and better alignment with external vocabularies."@en ;
-    owl:versionInfo "4.0—Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de concepts obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
+    owl:versionInfo "4.0 — Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated concepts (16), and better alignment with external vocabularies."@en ;
+    owl:versionInfo "4.0 — Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de concepts obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
     dcterms:isPartOf adr:ArtsdataEventTypes ;
     skos:member adr:Event, adr:EventSeries, adr:Class, adr:TalkEvent, adr:PerformingArtsEvent, adr:RehearsalEvent, adr:CircusPerformance, adr:ComedyPerformance, adr:DancePerformance, adr:MusicalTheatrePerformance, adr:OperaPerformance, adr:MusicPerformance, adr:SpokenWordPerformance, adr:TheatrePerformance, adr:StorytellingPerformance, adr:VarietyPerformance, adr:PerformanceArt, adr:Festival, adr:ChildrensEvent, adr:ExhibitionEvent, adr:ResidencyEvent, adr:ScreeningEvent, adr:SocialEvent, adr:WorkshopEvent, adr:MasterclassEvent, adr:PostshowTalk, adr:PreshowTalk, adr:PowWow, adr:Competition, adr:Convention, adr:SocialDance, adr:AwardsEvent, adr:LiveFilmConcert, adr:FestivalSeries, adr:SaleEvent .
 
