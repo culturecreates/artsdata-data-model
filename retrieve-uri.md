@@ -53,10 +53,8 @@ When you follow these steps, you’re not just grabbing any link — you’re id
 To confirm that it’s the right one:
 * Search accuracy: You’ve used specific input — name, website URL, or existing ID — to narrow results.
 * The correct entity: The record matches key traits:
-* Type: Is it an organization, person, place, or event?
+* Type: Does the entity have the right type? Sometimes, an organization (Organization type) and a venue (Place type) may have the same name. Similarly, many live performance events have (Event type) the same name as the main performer (Person or Organization type). 
 * Description: Does the location, occupation, or label match what you’re looking for?
-* Trusted source: You’re retrieving it from Artsdata’s authoritative database (kg.artsdata.ca).
-* The URI appears just below the title on the record page. This is the canonical identifier of that entity — not just a web page URL, but a stable reference used across systems.
 
 ## When and Why to Use URIs
 
