@@ -1,6 +1,5 @@
----
-class_name: Event (français)
-layout: class-doc
----
+{% include back-button.html %}
+
+{% include event-type-languages.html %}
 
 Enter French here.
