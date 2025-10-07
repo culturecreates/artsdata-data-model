@@ -1,5 +1,6 @@
-{% include back-button.html %}
-
-{% include event-type-languages.html %}
+---
+class_name: Event (fr)
+layout: class-doc
+---
 
 Enter French here.
