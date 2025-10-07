@@ -1,5 +1,5 @@
 ---
-class_name: Event
+class_name: Event (français)
 layout: class-doc
 ---
 
