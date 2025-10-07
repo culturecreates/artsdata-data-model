@@ -1,9 +1,7 @@
 ---
 class_name: Event (fr)
-layout: class-doc-reduced
+layout: class-event-doc
 ---
-<br>
-<a href='event.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
-<a href='event.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+# Représentation (Event)
 
 Enter French here.
