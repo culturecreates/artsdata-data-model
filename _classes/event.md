@@ -1,6 +1,6 @@
 ---
 class_name: Event
-layout: class-doc
+layout: class-doc-reduced
 ---
 
 An `Event` in Artsdata is defined as: “an organized activity that occurs at a specific time and location”. The [`adr:Event`](http://kg.artsdata.ca/resource/Event) is deemed an equivalent class to [`schema:Event`](https://schema.org/Event). 
