@@ -6,45 +6,41 @@ Artsdata provides Uniform Resource Identifiers (URIs) for cultural entities in C
 
 This page will show you how to find and use an Artsdata URI.
 
-## What is an Artsdata URI?
+## Retrieving Artsdata URIs
 
-A URI (Uniform Resource Identifier) is a stable web address that uniquely identifies a resource — even if the content or website changes. Unlike a simple URL, a URI is designed to be machine-readable, interoperable, and useful in structured data and linked open data applications.
+### Option 1: Manual Retrieval
 
-Each entity in Artsdata — such as an organization, venue, person, or event — has a unique URI.
+Anyone can use Artsdata’s search tool on the knowledge graph’s interface to find a entity and retrieve its Artsdata URI. Once you’ve become familiar with the process, it takes less than 10 seconds to retrieve an Artsdata URI.
 
-Example:
-
-**Short ID: K10-337
-Full URI: https://kg.artsdata.ca/resource/K10-337**
-
-Think of the ID as a shorthand, and the full URI as the authoritative reference link.
-
-## Watch the Tutorial Video
+#### Tutorial Video
 
 Watch “[How to Retrieve an Artsdata URI](https://youtu.be/HRv1GCegFws)” ([Version française](https://youtu.be/sICvNpBHroE)) 
 Video duration: 3.5 minutes. English and French subtitles available.
 
 In the video, we walk through an example: a cultural worker at Tangente (a Montreal-based dance presenter) is preparing event metadata and wants to clearly identify her organization as the official presenter of a dance series at the Édifice Wilder. She searches for Tangente’s URI in the Artsdata Knowledge Graph and copies the correct URI into her documentation.
 
-## How to Retrieve an Artsdata URI (Quick Steps)
+#### Quick Steps
 
-1) Go to kg.artsdata.ca
+1. Go to [kg.artsdata.ca](https://kg.artsdata.ca/)
+2. Search using:
+    - The name of the organization, venue, or person
+    - Their website URL
+    - An existing Artsdata ID (e.g. K10-337)
+3. Identify the correct entry by confirming:
+    - Type (Organization, Person, Place, Event)
+    - Description (e.g. city or occupation)
+4. Click the blue ID, e.g. ad:K10-337
+5. On the record page, look for the URI below the title:
+   - Example: https://kg.artsdata.ca/resource/K10-337
+6. Copy and paste this URI into your structured data, documentation, and metadata.
 
-2) Search using:
-* The name of the organization, venue, or person
-* Their website URL
-* An existing Artsdata ID (e.g. K10-337)
+### Option 2: Automated Retrieval via the Artsdata Reconciliation Service
 
-3) Identify the correct entry by confirming:
-* Type (Organization, Person, Place, Event)
-* Description (e.g. city or occupation)
+Developers can also call the Artsdata Reconciliation API to retrieve the Artsdata URIs. Depending on the application’s setting, this can work in a similar fashion as Google Search’s auto-suggestion feature: the user types in a performer name and the reconciliation service returns entities with similar names along with their Artsdata URI. When the user selects an entity, the full name and the Artsdata URI are automatically loaded in the application. Additional data points, including other persistent identifiers, can also be passed along with the Artsdata URI.
 
-4) Click the blue ID, e.g. ad:K10-337
+## Retrieving URIs from other Knowledge Bases
 
-5) On the record page, look for the URI below the title:
-* Example: https://kg.artsdata.ca/resource/K10-337
-
-6) Copy and paste this URI into your structured data, documentation, and metadata.
+To be completed...
 
 ## How Do You Know You’ve Found the Right URI?
 
@@ -55,20 +51,6 @@ To confirm that it’s the right one:
 * The correct entity: The record matches key traits:
 * Type: Does the entity have the right type? Sometimes, an organization (Organization type) and a venue (Place type) may have the same name. Similarly, many live performance events have (Event type) the same name as the main performer (Person or Organization type). 
 * Description: Does the location, occupation, or label match what you’re looking for?
-
-## When and Why to Use URIs
-
-Use Artsdata URIs when:
-* Publishing metadata on your website (e.g. schema.org)
-* Submitting event listings to platforms like the Canadian Arts Presentation Exchange (CAPE)
-* Documenting roles in Wikidata or other structured data projects
-* Connecting datasets across systems
-
-Using URIs contributes to making your data FAIR:
-* Findable: URIs are globally unique and indexed, making it easier for both humans and machines to locate your data.
-* Accessible: Artsdata URIs resolve to open, publicly available records through standard web protocols.
-* Interoperable: URIs can be used across different systems and datasets, thanks to linked open data standards like RDF and schema.org.
-* Reusable: Each URI provides clear provenance and is structured in a machine-readable way, enabling long-term use and integration.
 
 ## What if I can’t find my organization?
 
