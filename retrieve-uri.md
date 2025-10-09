@@ -1,4 +1,4 @@
-# How to Retrieve an Artsdata URI
+# How to Retrieve Persistent Identifiers' URIs
 
 When working with linked open data, it’s important to refer to cultural entities (like organizations, people, venues, and events) using stable identifiers.
 
