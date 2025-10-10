@@ -4,11 +4,11 @@
 
 ## Lignes directrices concernant la propriété sameAs et les URI
 
-Tout comme la [propriété `@id`]({{ base }}/id-and-uri-guidelines.fr), la propriété [`schema:sameAs`](https://schema.org/sameAs) constitue un excellent moyen d’identifier sans ambiguïté toute _Chose_ dans les données structurées Schema.
+Tout comme la [propriété `@id`]({{ base }}/id.fr.html), la propriété [`schema:sameAs`](https://schema.org/sameAs) constitue un excellent moyen d’identifier sans ambiguïté toute _Chose_ dans les données structurées Schema.
 
 Artsdata recommande de renseigner la propriété `sameAs` avec un identifiant pérenne. Veuillez toujours saisir l’identifiant sous forme d’URI complète plutôt qu’en forme courte. Par exemple, pour l’identifiant Wikidata `Q596774`, il faut saisir l’URI `http://www.wikidata.org/entity/Q596774`.
 
-Artsdata recommande fortement les identifiants pérennes des bases de connaissances et des fichiers d’autorité ouverts (voir la [liste des identifiants supportés]({{ base }}/identifier-recommendations.fr)), car ces identifiants sont exploitables par machine : Artsdata peut déréférencer ces URI afin d’accéder à toutes les métadonnées descriptives qui y sont associées.
+Artsdata recommande fortement les identifiants pérennes des bases de connaissances et des fichiers d’autorité ouverts (voir la [liste des identifiants supportés]({{ base }}/identifier-recommendations.fr.html)), car ces identifiants sont exploitables par machine : Artsdata peut déréférencer ces URI afin d’accéder à toutes les métadonnées descriptives qui y sont associées.
 
 La propriété `sameAs` peut être utilisée autant pour des objets de premier niveau que pour les entités imbriquées. Dans l'exemple qui suit, la propriété `sameAs` est renseignée autant pour l'entité principale de type `Event`, au premier niveau, que pour les entités secondaires imbriquées sous les propriétés `location`, `organizer` et `performer` : 
 
@@ -61,6 +61,6 @@ Les comptes de médias sociaux peuvent aussi être saisis sous la propriété `s
 
 ### Contenus complémentaires
 - [Que sont les identifiants pérennes et pourquoi sont-ils importants ?](https://www.artsdata.ca/fr/ressources/bien-identifie)
-- [Lignes directrices d’Artsdata à propos des identifiants pérennes]({{ base }}/identifier-recommendations.fr)
-  - [Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id-and-uri-guidelines.fr)
+- [Lignes directrices d’Artsdata à propos des identifiants pérennes]({{ base }}/identifier-recommendations.fr.html)
+  - [Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id.fr.html)
   
