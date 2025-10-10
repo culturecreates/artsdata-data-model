@@ -48,4 +48,5 @@ In conjunction with the use of `Thing` as a default broader type, we recommend p
 
 ### Good practices regarding performers' `sameAs`
 
-See: [How to retrieve persistent identifiers' URIs](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html#how-to-retrieve-persistent-identifiers-uris)
+- [Artsdata guidelines about the schema:sameAs property]({{ base }}/sameas.html)
+  - [How to retrieve persistent identifiers' URIs]({{ base }}/retrieve-uri.html)
