@@ -63,3 +63,4 @@ Social media and streaming platforms' accounts may also be populated under `same
 - [What are persistent identifiers and why do they matter?](https://www.artsdata.ca/en/resources/identifiable-and-findable)
 - [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifier-recommendations.html)
   - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id.html)
+  - [How to retrieve persistent identifiers' URIs]({{ base }}/retrieve-uri.html)
