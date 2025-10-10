@@ -1,6 +1,6 @@
 <p>{% include back-button.html %}</p>
-<a href='id-and-uri-guidelines.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
-<a href='id-and-uri-guidelines.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+<a href='id.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='id.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
 
 ## Ligne directrices d’Artsdata concernant la propriété @id et les URI locales
 
@@ -76,4 +76,4 @@ Ne vous inquiétez pas. Artsdata peut très bien gérer des données sans URI.
 Comme alternative (ou en complément de `@id`), envisagez d'utiliser la propriété `sameAs` pour assigner un identifiant pérenne externe à vos entités Place, Person et Organization. Il s'agit d'un moyen simple et très efficace d'identifier une Chose, et de fournir un lien vers davantage de données à son sujet.
 
 
-[En savoir plus]({{ base }}sameas-guidelines.fr)
+[En savoir plus]({{ base }}sameas.fr.html)
