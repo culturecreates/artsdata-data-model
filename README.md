@@ -18,10 +18,6 @@ To generate documentation:
     % ruby generate.rb
 
 
-## Event Specific Instructions
-The file [Event-specific-instructions.json](/_data/Event-specific-instructions.json) is generated from this [spreadsheet](https://docs.google.com/spreadsheets/d/1zGMVtrMO6Ja82jblir2AUjzSYAciCXBwoNzi-pomGok/edit#gid=0)
-using an online CSV to JSON tool called [convertcsv](https://www.convertcsv.com/csv-to-json.html).
-
 ## Test on local machine
 1. `bundle install`
 2. `source .github-token`
@@ -54,4 +50,3 @@ The naming convention for language versions of the same documentation page is :
 
 - English: No language subtag in the URL slug. Example: `index.md`.
 - Français: `.fr` language subtag inserted before the file extension. Example: `index.fr.md`.
-
