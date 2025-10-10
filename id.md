@@ -1,6 +1,6 @@
 <p>{% include back-button.html %}</p>
-<a href='id-and-uri-guidelines.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
-<a href='id-and-uri-guidelines.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+<a href='id.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='id.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
 
 ## Artsdata Guidelines about the @id property and URIs
 
