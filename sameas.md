@@ -1,6 +1,6 @@
 <p>{% include back-button.html %}</p>
-<a href='sameas-guidelines.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
-<a href='sameas-guidelines.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+<a href='sameas.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='sameas.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
 
 ## Artsdata Guidelines about the schema:sameAs property
 
@@ -61,5 +61,6 @@ Social media and streaming platforms' accounts may also be populated under `same
 
 ### Related contents
 - [What are persistent identifiers and why do they matter?](https://www.artsdata.ca/en/resources/identifiable-and-findable)
-- [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifier-recommendations)
-  - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id-and-uri-guidelines)
+- [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifier-recommendations.html)
+  - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id-and-uri-guidelines.html)
+  - [Artsdata Guidelines Regarding the performer Property]({{ base }}/performer.html)

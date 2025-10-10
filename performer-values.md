@@ -1,13 +1,20 @@
 <p>{% include back-button.html %}</p>
 # Good Practices for Selecting performer Values
 
+#### Table of Contents
+* [Overview](#overview)
+* [Why This Guidance is Needed](#why-this-guidance-is-needed)
+* [General Guidelines](#general-guidelines)
+* [Genre-Specific Recommendations](#genre-specific-recommendations)
+* [Additional Notes](#additional-notes)
+
 ## Overview
 
 These guidelines are designed primarily for promotional and discoverability use cases. They may not be suitable for archival or casting contexts where detailed credits or full ensembles are needed.
 
 This document presents a set of good practices for selecting values to populate the [`performer`](https://schema.org/performer) property in the context of performing arts event data. It is based on the Artsdata team’s ongoing work with cultural organizations and developers across the Canadian performing arts sector.
 
-## Why this guidance is needed
+## Why This Guidance is Needed
 
 While properties like `location` or `organizer` are relatively easy to populate—thanks to limited options and dropdowns—`performer` is more complex. It often requires a nuanced understanding of the performance and its structure, especially in multidisciplinary and ensemble-based genres like dance, orchestral music, or theatre.
 

@@ -7,7 +7,7 @@
 | - | - |
 | Concept scheme | [adr:ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes) |
 | Version | 4.0 |
-| Release date | September 2025 |
+| Release date | August 2025 |
 
 This page outlines the controlled vocabulary used in the Artsdata knowledge graph to describe event types in the performing arts sector.
 

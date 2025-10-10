@@ -29,3 +29,8 @@ using an online CSV to JSON tool called [convertcsv](https://www.convertcsv.com/
 2. `bundle exec jekyll serve` or manually set the token `JEKYLL_GITHUB_TOKEN=123 jekyll serve`
 
 more info: http://jekyll.github.io/github-metadata/authentication/
+
+## Formatting Controlled Vocabulary Turtle Files
+The controlled vocabularies and ontologies are writting using turtle syntax. The turtle is often created in a Google Sheet and then copy/pasted into a file with extenion `.ttl`. For example `skos-event-types.ttl`. 
+
+All turtle files should be automatically formatted using bjdmeest.ttlformatter plugin in Visual Studio Code before being committed. This helps see changes between versions and keeps a standardized layout.
