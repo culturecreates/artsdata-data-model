@@ -1,5 +1,5 @@
 <p>{% include back-button.html %}</p>
-{% include location-values-languages.html %}
+{% include location-languages.html %}
 
 # Artsdata Guidelines for location Values
 
