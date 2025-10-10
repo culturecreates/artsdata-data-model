@@ -1,6 +1,6 @@
 {% include back-button.html %}
 
-{% include location-languages.html %}
+{% include performer-languages.html %}
 
 # Lignes directrices pour la propriété `performer`
 
