@@ -16,7 +16,7 @@ Here is the logic followed by Artsdata’s auto-minting process:
 
 ### Recommendations
 
-As per [Artsdata's instructions](https://docs.google.com/spreadsheets/d/1zGMVtrMO6Ja82jblir2AUjzSYAciCXBwoNzi-pomGok/edit?gid=0#gid=0), it is preferable to be as precise as possible when entering a `location` nested entity under an `@type Event`. In other words, it is better to enter the `name` and `sameAs` values for the performance hall where the event is taking place rather than for the building as a whole. 
+As per [Artsdata's instructions](https://culturecreates.github.io/artsdata-data-model/classes/event.html#properties), it is preferable to be as precise as possible when entering a `location` nested entity under an `@type Event`. In other words, it is better to enter the `name` and `sameAs` values for the performance hall where the event is taking place rather than for the building as a whole. 
 
 However, an organization may prefer to enter the name of the building in their structured data – particularly if the building name is more well-known than the performance hall name, or if the performance hall shares its name with another hall in a different building. 
 
@@ -103,4 +103,5 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
 
 ## Good practices regarding location `sameAs`
 
-See: [How to retrieve persistent identifiers' URIs](../identifier-recommendations#how-to-retrieve-persistent-identifiers-uris.html)
+- [Artsdata guidelines about the schema:sameAs property]({{ base }}sames.html)
+  - [How to retrieve persistent identifiers' URIs]({{ base }}retrieve-uri.html)
