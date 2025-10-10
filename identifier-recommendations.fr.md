@@ -33,11 +33,11 @@ Dans les données structurées Schema et dans le [modèle de données Artsdata](
 
 ### Comment intégrer une URI locale à des données structurées
 
-Voir : [Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id-and-uri-guidelines.fr)
+Voir : [Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id.fr.html)
 
 ### Comment intégrer des URI externes à des données structurées
 
-Voir : [Lignes directrices concernant la propriété sameAs et les URI]({{ base }}/sameas-guidelines.fr)
+Voir : [Lignes directrices concernant la propriété sameAs et les URI]({{ base }}/sameas.fr.html)
 
 ### Comment récupérer des URI d'identifiants pérennes
 
