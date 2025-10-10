@@ -103,5 +103,5 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
 
 ## Good practices regarding location `sameAs`
 
-- [Artsdata guidelines about the schema:sameAs property]({{ base }}sames.html)
-  - [How to retrieve persistent identifiers' URIs]({{ base }}retrieve-uri.html)
+- [Artsdata guidelines about the schema:sameAs property]({{ base }}/sameas.html)
+  - [How to retrieve persistent identifiers' URIs]({{ base }}/retrieve-uri.html)
