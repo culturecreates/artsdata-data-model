@@ -4,7 +4,7 @@
 
 ## Artsdata Guidelines about the schema:sameAs property
 
-Along with [`@id` property]({{ base }}/id-and-uri-guidelines), the [`schema:sameAs`](https://schema.org/sameAs) property offers another excellent means of unambiguously identifying Things in Schema structured data.
+Along with [`@id` property]({{ base }}/id.html), the [`schema:sameAs`](https://schema.org/sameAs) property offers another excellent means of unambiguously identifying Things in Schema structured data.
 
 Artsdata recommends populating the `sameAs` property with a [persistent identifier](https://www.artsdata.ca/en/resources/identifiable-and-findable), in URI format. Always enter persistent identifiers in full URI format (rather than entering just the identifier’s string). For example, for the short-form Wikidata ID `Q596774`, the matching URI is `http://www.wikidata.org/entity/Q596774`.
 
@@ -62,5 +62,4 @@ Social media and streaming platforms' accounts may also be populated under `same
 ### Related contents
 - [What are persistent identifiers and why do they matter?](https://www.artsdata.ca/en/resources/identifiable-and-findable)
 - [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifier-recommendations.html)
-  - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id-and-uri-guidelines.html)
-  - [Artsdata Guidelines Regarding the performer Property]({{ base }}/performer.html)
+  - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id.html)
