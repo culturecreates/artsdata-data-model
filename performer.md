@@ -1,3 +1,7 @@
+{% include back-button.html %}
+
+{% include performer-languages.html %}
+
 # Artsdata Guidelines Regarding the performer Property
 
 The `performer` property provides extremely valuable information about a performing arts event. For example, it can be used to retrieve other performances by the same performer entity or to filter events based on the origin of the performer.
