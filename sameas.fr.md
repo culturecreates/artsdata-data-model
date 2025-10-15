@@ -6,7 +6,7 @@
 
 Tout comme la [propriété `@id`]({{ base }}/id.fr.html), la propriété [`schema:sameAs`](https://schema.org/sameAs) constitue un excellent moyen d’identifier sans ambiguïté toute _Chose_ dans les données structurées Schema.
 
-Artsdata recommande de renseigner la propriété `sameAs` avec un [identifiant pérenne](https://www.artsdata.ca/fr/ressources/bien-identifie). Voici des informations supplémentaires sur la façon de récupérer un URI : https://culturecreates.github.io/artsdata-data-model/retrieve-uri.fr.html.
+Artsdata recommande de renseigner la propriété `sameAs` avec un [identifiant pérenne](https://www.artsdata.ca/fr/ressources/bien-identifie). Voici des informations supplémentaires sur la façon de récupérer un URI : https://culturecreates.github.io/artsdata-data-model/retrieve-uri.fr 
 
 Veuillez toujours saisir l’identifiant sous forme d’URI complète plutôt qu’en forme courte. Par exemple, pour l’identifiant Wikidata `Q596774`, il faut saisir l’URI `http://www.wikidata.org/entity/Q596774`.
 
