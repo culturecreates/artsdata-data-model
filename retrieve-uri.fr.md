@@ -8,15 +8,11 @@ Lorsque vous travaillez avec des données ouvertes liées, il est important de r
 
 Artsdata fournit des identifiants uniformes de ressource (URI) pour les entités culturelles au Canada. Ces URI sont conçus pour être pérennes et interopérables sur le Web.
 
+Pour en savoir plus sur les URI, nous vous invitons à consulter notre aperçu des identifiants pérennes: https://www.artsdata.ca/fr/ressources/bien-identifie. 
+
+Vous pouvez également explorer nos recommandations sur les identifiants pour obtenir des conseils plus techniques: https://culturecreates.github.io/artsdata-data-model/identifier-recommendations. 
+
 Cette page vous montre comment trouver et utiliser un URI d’identifiant pérenne Artsdata.
-
-## Qu’est-ce qu’un URI d’identifiant pérenne Artsdata ?
-
-Un URI (Identifiant uniforme de ressource) est une adresse Web stable qui identifie de manière unique une ressource, comme une organisme, un lieu, une personne ou un événement.
-
-Plutôt que de répéter notre explication complète ici, nous vous invitons à consulter notre [aperçu des identifiants pérennes](https://www.artsdata.ca/fr/ressources/bien-identifie).
-
-Vous pouvez également explorer nos [recommandations sur les identifiants](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations) pour des conseils plus techniques.
 
 ## Récupérer des URI Artsdata
 
