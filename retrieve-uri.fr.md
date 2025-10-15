@@ -59,9 +59,9 @@ Exemples :
 - **MusicBrainz** (pour les artistes et enregistrements) : https://musicbrainz.org
 
 Pour récupérer un identifiant :
-1. Recherchez l’entité par nom ou autre information connue.
-2. Vérifiez que la fiche correspond (type, lieu, description).
-3. Copiez l’URI ou l’identifiant permanent affiché.
+1. Recherchez l’entité par nom ou autre information connue ;
+2. Vérifiez que la fiche correspond (type, lieu, description) ;
+3. Copiez l’URI ou l’identifiant permanent affiché ;
 4. Optionnellement, intégrez-le à vos métadonnées à l’aide de schema.org ou JSON-LD.
 
 ## Comment savoir si vous avez trouvé le bon URI ?
