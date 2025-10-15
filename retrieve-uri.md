@@ -27,12 +27,12 @@ This video walks through a real example: a cultural worker at Tangente (a Montre
 
 1. Go to [kg.artsdata.ca](https://kg.artsdata.ca/)
 2. Search using:
-    - The name of the organization, venue, or person
-    - Their website URL
-    - An existing Artsdata ID (e.g. K10-337)
+    - The name of the organization, venue, or person;
+    - Their website URL;
+    - An existing Artsdata ID (e.g. K10-337).
 3. Identify the correct entry by confirming:
-    - Type (Organization, Person, Place, Event)
-    - Description (e.g. city or occupation)
+    - Type (Organization, Person, Place, Event);
+    - Description (e.g. city or occupation).
 4. Click the blue ID, e.g. ad:K10-337
 5. On the record page, look for the URI below the title:
    - Example: https://kg.artsdata.ca/resource/K10-337
@@ -59,9 +59,9 @@ Examples include:
 - **MusicBrainz** (for performers and recordings): https://musicbrainz.org
 
 To retrieve an identifier:
-1. Search for the entity by name or other known details.
-2. Confirm that the record matches (type, location, description).
-3. Copy the URI or permanent ID shown on the page.
+1. Search for the entity by name or other known details;
+2. Confirm that the record matches (type, location, description);
+3. Copy the URI or permanent ID shown on the page;
 4. Optionally, include it in your metadata using schema.org or JSON-LD.
 
 ## How Do You Know You’ve Found the Right URI?
