@@ -8,10 +8,6 @@ When working with linked open data, it’s important to refer to cultural entiti
 
 Artsdata provides Uniform Resource Identifiers (URIs) for cultural entities in Canada. These URIs are designed to be persistent and interoperable across the web.
 
-To learn more about URIs, we encourage you to visit our overview on persistent identifiers: https://www.artsdata.ca/en/resources/identifiable-and-findable. 
-
-You can also explore our identifier recommendations for more technical guidance: https://culturecreates.github.io/artsdata-data-model/identifier-recommendations. 
-
 This page will show you how to find and use an Artsdata URI.
 
 ## Retrieving Artsdata URIs
@@ -55,7 +51,18 @@ Depending on the application’s setting, this can work in a similar fashion as 
 
 ## Retrieving URIs from other Knowledge Bases
 
-To be completed...
+Other open knowledge bases also provide persistent identifiers for cultural entities. These can often be used alongside Artsdata URIs to enhance your metadata.
+
+Examples include:
+- **Wikidata**: https://www.wikidata.org
+- **ISNI (International Standard Name Identifier)**: https://isni.org
+- **MusicBrainz** (for performers and recordings): https://musicbrainz.org
+
+To retrieve an identifier:
+1. Search for the entity by name or other known details.
+2. Confirm that the record matches (type, location, description).
+3. Copy the URI or permanent ID shown on the page.
+4. Optionally, include it in your metadata using schema.org or JSON-LD.
 
 ## How Do You Know You’ve Found the Right URI?
 
