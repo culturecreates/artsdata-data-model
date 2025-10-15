@@ -8,10 +8,6 @@ Lorsque vous travaillez avec des données ouvertes liées, il est important de r
 
 Artsdata fournit des identifiants uniformes de ressource (URI) pour les entités culturelles au Canada. Ces URI sont conçus pour être pérennes et interopérables sur le Web.
 
-Pour en savoir plus sur les URI, nous vous invitons à consulter notre aperçu des identifiants pérennes: https://www.artsdata.ca/fr/ressources/bien-identifie. 
-
-Vous pouvez également explorer nos recommandations sur les identifiants pour obtenir des conseils plus techniques: https://culturecreates.github.io/artsdata-data-model/identifier-recommendations. 
-
 Cette page vous montre comment trouver et utiliser un URI d’identifiant pérenne Artsdata.
 
 ## Récupérer des URI Artsdata
@@ -55,7 +51,18 @@ Selon la configuration de l’application, cela peut fonctionner de façon simil
 
 ## Récupérer des URI à partir d’autres bases de connaissances
 
-À compléter...
+D'autres bases de connaissances ouvertes fournissent également des identifiants pérennes pour les entités culturelles. Ceux-ci peuvent être utilisés en complément des URI Artsdata pour enrichir vos métadonnées.
+
+Exemples :
+- **Wikidata** : https://www.wikidata.org
+- **ISNI (International Standard Name Identifier)** : https://isni.org
+- **MusicBrainz** (pour les artistes et enregistrements) : https://musicbrainz.org
+
+Pour récupérer un identifiant :
+1. Recherchez l’entité par nom ou autre information connue.
+2. Vérifiez que la fiche correspond (type, lieu, description).
+3. Copiez l’URI ou l’identifiant permanent affiché.
+4. Optionnellement, intégrez-le à vos métadonnées à l’aide de schema.org ou JSON-LD.
 
 ## Comment savoir si vous avez trouvé le bon URI ?
 
