@@ -8,9 +8,9 @@ When working with linked open data, it’s important to refer to cultural entiti
 
 Artsdata provides Uniform Resource Identifiers (URIs) for cultural entities in Canada. These URIs are designed to be persistent and interoperable across the web.
 
-To learn more about URIs, we encourage you to visit our [overview on persistent identifiers]([url](https://www.artsdata.ca/en/resources/identifiable-and-findable)).
+To learn more about URIs, we encourage you to visit our overview on persistent identifiers: https://www.artsdata.ca/en/resources/identifiable-and-findable. 
 
-You can also explore our [identifier recommendations]([url](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations)) for more technical guidance.
+You can also explore our identifier recommendations for more technical guidance: https://culturecreates.github.io/artsdata-data-model/identifier-recommendations. 
 
 This page will show you how to find and use an Artsdata URI.
 
