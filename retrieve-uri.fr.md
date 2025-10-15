@@ -2,7 +2,7 @@
 
 {% include retrieve-uri-languages.html %}
 
-# Comment récupérer les URI d’identifiants pérennes Artsdata
+# Comment récupérer les URI d’identifiants pérennes
 
 Lorsque vous travaillez avec des données ouvertes liées, il est important de référencer les entités culturelles (comme les organismes, les personnes, les lieux et les événements) à l’aide d’identifiants stables.
 
