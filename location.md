@@ -71,9 +71,9 @@ Enter the performance hall under location `name` and add the building name under
 ```
 *Note that the Artsdata and Wikidata URIs under `sameAs` point to the Salle Desjardins performance hall inside Centre des arts Juliette-Lassonde.*
 
-#### 3. Add a `containedinPlace` entity
+#### 3. Add a nested entity under `containedInPlace`
 
-Enter the performance hall name under location `name`. Add a `containedinPlace` nested entity with the building name under `name` and `sameAs`value pointing to a URI describing the building. This way, machines will be able to recognize that the performance hall is a part of the building rather than a separate location.
+Enter the performance hall name under location `name`. Add a `containedInPlace` nested entity with the building name under `name` and `sameAs`value pointing to a URI describing the building. This way, machines will be able to recognize that the performance hall is a part of the building rather than a separate location.
    Example:
 ```
  "location":
@@ -98,7 +98,7 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
             }
     },
 ```
-*Note that because the performance hall and building share the same address, it is not necessary to repeat the `address` nested entity within `containedinPlace`.*
+*Note that because the performance hall and building share the same address, it is not necessary to repeat the `address` nested entity within `containedInPlace`.*
 
 
 ## Good practices regarding location `sameAs`
