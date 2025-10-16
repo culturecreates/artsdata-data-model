@@ -69,9 +69,9 @@ Indiquer le nom de la salle sous `name` et ajouter le nom du bâtiment sous `alt
 ```
 *Remarque : les URI d’Artsdata et de Wikidata sous `sameAs` pointent vers la salle Desjardins située à l’intérieur du Centre des arts Juliette-Lassonde.*
 
-#### 3. Ajouter une entité `containedinPlace`
+#### 3. Ajouter une entité imbriquée sous `containedInPlace`
 
-Indiquer le nom de la salle de spectacle sous `name`. Ajouter une entité imbriquée `containedinPlace` avec le nom du bâtiment sous `name`, ainsi qu’une valeur `sameAs`pointant vers une URI décrivant le bâtiment. Cela permet aux systèmes de reconnaître que la salle fait partie intégrante du bâtiment, et non qu’elle constitue un lieu distinct. 
+Indiquer le nom de la salle de spectacle sous `name`. Ajouter une entité imbriquée `containedInPlace` avec le nom du bâtiment sous `name`, ainsi qu’une valeur `sameAs`pointant vers une URI décrivant le bâtiment. Cela permet aux systèmes de reconnaître que la salle fait partie intégrante du bâtiment, et non qu’elle constitue un lieu distinct. 
 
 Exemple :
 ```
