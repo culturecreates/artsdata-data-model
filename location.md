@@ -91,7 +91,7 @@ Enter the performance hall name under location `name`. Add a `containedinPlace` 
                "streetAddress":"1705 Rue Saint-Antoine",
                "addressCountry":"CA"
             },
-            "containedinPlace":{
+            "containedInPlace":{
                "@type":"Place",
                "name":"Centre des arts Juliette-Lassonde",
                "sameAs":"http://kg.artsdata.ca/resource/K5-796"
