@@ -90,14 +90,14 @@ Exemple :
                "streetAddress":"1705 Rue Saint-Antoine",
                "addressCountry":"CA"
             },
-            "containedinPlace":{
+            "containedInPlace":{
                "@type":"Place",
                "name":"Centre des arts Juliette-Lassonde",
                "sameAs":"http://kg.artsdata.ca/resource/K5-796"
             }
     },
 ```
-*Remarque : comme la salle et le bâtiment partagent la même adresse, il n’est pas nécessaire de répéter les champs `address` dans `containedinPlace`.*
+*Remarque : comme la salle et le bâtiment partagent la même adresse, il n’est pas nécessaire de répéter les champs `address` dans `containedInPlace`.*
 
 
 ## Bonnes pratiques concernant la propriété `sameAs`
