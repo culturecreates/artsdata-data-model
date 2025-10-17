@@ -16,7 +16,7 @@ ado: rdf:type owl:Ontology ;
     dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage."@en ;
     dcterms:creator "Artsdata Stewardship Team" ;
     dcterms:created "2025-09-30"^^xsd:date ;
-    dcterms:modified "2025-09-30"^^xsd:date ;
+    dcterms:modified "2025-10-17"^^xsd:date ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "ado" ;
     vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
@@ -24,7 +24,9 @@ ado: rdf:type owl:Ontology ;
     owl:versionInfo "1.0.0" ;
     dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
 
+####################
 # Classes
+####################
 ado:Thing rdf:type rdfs:Class ; 
     rdfs:label "Thing"@en ;
     rdfs:comment "The most generic class of things in Artsdata."@en ;
@@ -43,17 +45,33 @@ ado:EventType rdf:type rdfs:Class ;
     rdfs:isDefinedBy ado: ;
     rdfs:subClassOf skos:Concept, ado:Thing .
 
+ado:Genre rdf:type rdfs:Class ;
+    rdfs:label "Genre"@en ;
+    rdfs:comment "A class representing different genres of artistic works."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf skos:Concept, ado:Thing .
+
 ado:Event rdf:type rdfs:Class ;
     rdfs:label "Event"@en ;
     rdfs:comment "An event is a happening that occurs at a certain time and location. Examples include and are not limited to a: performance, concert, conference, festival, exhibition and/or social gathering."@en ;
-    rdfs:subClassOf schema:Event, ado:Thing ;
+    owl:equivalentClass schema:Event, ado:Thing ;
     rdfs:isDefinedBy ado: ;
     schema:alternateName "performance"@en, "représentation"@fr .
 
+####################
 # Properties
+####################
+
 ado:hasEventType rdf:type rdf:Property ;
     rdfs:label "has event type"@en ;
     rdfs:comment "Links an event to its Artsdata event type controlled vocabulary."@en ;
     rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:Event ;
+    rdfs:domain ado:Event ;
     rdfs:range ado:EventType .
+
+ado:hasGenre rdf:type rdf:Property ;
+    rdfs:label "has genre"@en ;
+    rdfs:comment "Links an event to its Artsdata genre controlled vocabulary."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain ado:LivePerformanceWork ;
+    rdfs:range ado:Genre .
