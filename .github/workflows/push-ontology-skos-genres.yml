@@ -1,4 +1,4 @@
-name: Staging - Push SKOS Genres to production api.artsdata.ca
+name: Push SKOS Genres to production api.artsdata.ca
 on:
   workflow_dispatch:
 jobs:
