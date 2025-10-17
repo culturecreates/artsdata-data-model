@@ -38,120 +38,120 @@ adr:ArtsdataGenres-Collection-1.0 dcterms:isPartOf adr:ArtsdataGenres ;
 
 adr:K6-1 rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Theatre" .
+	skos:prefLabel "Theatre"@en, "Théâtre "@fr .
 
 adr:K6-2 rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Dance" .
+	skos:prefLabel "Dance"@en, "Danse "@fr .
 
 adr:K6-201 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-2 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Ballet" .
+	skos:prefLabel "Ballet"@en, "Ballet"@fr .
 
 adr:K6-202 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-2 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Contemporary Dance" .
+	skos:prefLabel "Contemporary Dance"@en, "Contemporaine"@fr .
 
 adr:K6-203 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-2 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Modern Dance" .
+	skos:prefLabel "Modern Dance"@en, "Moderne"@fr .
 
 adr:K6-3 rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Music" .
+	skos:prefLabel "Music"@en, "Musique "@fr .
 
 adr:K6-301 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-3 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Classical" .
+	skos:prefLabel "Classical"@en, "Classique"@fr .
 
 adr:K6-302 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-3 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Country" .
+	skos:prefLabel "Country"@en, "Country"@fr .
 
 adr:K6-303 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-3 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Folk" .
+	skos:prefLabel "Folk"@en, "Folk"@fr .
 
 adr:K6-304 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-3 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Jazz" .
+	skos:prefLabel "Jazz"@en, "Jazz "@fr .
 
 adr:K6-305 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-3 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Blues" .
+	skos:prefLabel "Blues"@en, "Blues"@fr .
 
 adr:K6-306 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-3 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "New Music" .
+	skos:prefLabel "New Music"@en, "Musique Contemporaine"@fr .
 
 adr:K6-307 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-3 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Popular music" .
+	skos:prefLabel "Popular music"@en, "Populaire"@fr .
 
 adr:K6-308 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-3 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "World music" .
+	skos:prefLabel "World music"@en, "Traditionnelles du monde"@fr .
 
 adr:K6-4 rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Musico-dramatic genre" .
+	skos:prefLabel "Musico-dramatic genre"@en, "Genre musico-dramatique"@fr .
 
 adr:K6-401 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-4 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Musical Theatre" .
+	skos:prefLabel "Musical Theatre"@en, "Comédie musicale"@fr .
 
 adr:K6-402 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-4 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Opera" .
+	skos:prefLabel "Opera"@en, "Opéra"@fr .
 
 adr:K6-5 rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Spoken Word" .
+	skos:prefLabel "Spoken Word"@en, "Art de la parole "@fr .
 
 adr:K6-501 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-5 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Storytelling" .
+	skos:prefLabel "Storytelling"@en, "Conte"@fr .
 
 adr:K6-502 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-5 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Poetry" .
+	skos:prefLabel "Poetry"@en, "Poésie"@fr .
 
 adr:K6-503 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-5 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Slam" .
+	skos:prefLabel "Slam"@en, "Slam"@fr .
 
 adr:K6-9 rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Other performing art" .
+	skos:prefLabel "Other performing art"@en, "Other performing art"@fr .
 
 adr:K6-901 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-9 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Circus" .
+	skos:prefLabel "Circus"@en, "Cirque "@fr .
 
 adr:K6-902 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-9 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Comedy" .
+	skos:prefLabel "Comedy"@en, "Humour"@fr .
 
 adr:K6-903 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-9 ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel "Variety" .
+	skos:prefLabel "Variety"@en, "Variété"@fr .
 
