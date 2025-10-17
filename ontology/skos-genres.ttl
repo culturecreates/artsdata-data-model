@@ -1,0 +1,157 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix adr: <http://kg.artsdata.ca/resource/> .
+@prefix ado: <http://kg.artsdata.ca/ontology/> .
+@prefix footlight: <http://lod.footlight.io/resource/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+adr:ArtsdataGenres dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-genres.ttl> ;
+	vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-genres.ttl> ;
+	vann:example adr:K6-1 ;
+	vann:preferredNamespacePrefix "adr" ;
+	vann:preferredNamespaceUri <http://kg.artsdata.ca/resource/> ;
+	vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
+	schema:creator adr:K1-5, adr:K16-211 ;
+	schema:dateCreated "2025-10-17"^^xsd:date ;
+	schema:dateModified "2025-10-17"^^xsd:date ;
+	schema:version "1.0" ;
+	rdf:type skos:ConceptScheme ;
+	rdfs:comment "Draft version for tests with ATC"@en, "Draft version for tests with ATC"@fr ;
+	owl:priorVersion "Not applicable"@en, "Non-applicable"@fr ;
+	owl:versionInfo "1.0 First version"@en, "1.0 Première version"@fr ;
+	skos:hasTopConcept adr:K6-1, adr:K6-2, adr:K6-3 ;
+	skos:prefLabel "Artsdata Genres Controlled Vocabulary"@en, "Vocabulaire contrôlé Artsdata pour les genres"@fr .
+
+adr:ArtsdataGenres-Collection-1.0 dcterms:isPartOf adr:ArtsdataGenres ;
+	schema:version "1.0" ;
+	rdf:type skos:Collection ;
+	rdfs:comment "All Artsdata concepts that are part of vocabulary version 1.0 (including those carried forward, excluding those deprecated in 1.0)."@en, "Tous les concepts de Artsdata faisant partie de la version 1.0 (y compris ceux maintenus, à l’exclusion de ceux dépréciés en 1.0)."@fr ;
+	owl:versionInfo "1.0For testing"@en, "1.0For testing"@fr ;
+	skos:prefLabel "Artsdata Genres—Collection for Version 1.0"@en, "Types genres—Collection pour Version 1.0"@fr .
+
+adr:K6-1 rdf:type skos:Concept ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Theatre" .
+
+adr:K6-2 rdf:type skos:Concept ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Dance" .
+
+adr:K6-201 rdf:type skos:Concept ;
+	skos:broader "adr:K6-2" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Ballet" .
+
+adr:K6-202 rdf:type skos:Concept ;
+	skos:broader "adr:K6-2" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Contemporary Dance" .
+
+adr:K6-203 rdf:type skos:Concept ;
+	skos:broader "adr:K6-2" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Modern Dance" .
+
+adr:K6-3 rdf:type skos:Concept ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Music" .
+
+adr:K6-301 rdf:type skos:Concept ;
+	skos:broader "adr:K6-3" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Classical" .
+
+adr:K6-302 rdf:type skos:Concept ;
+	skos:broader "adr:K6-3" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Country" .
+
+adr:K6-303 rdf:type skos:Concept ;
+	skos:broader "adr:K6-3" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Folk" .
+
+adr:K6-304 rdf:type skos:Concept ;
+	skos:broader "adr:K6-3" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Jazz" .
+
+adr:K6-305 rdf:type skos:Concept ;
+	skos:broader "adr:K6-3" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Blues" .
+
+adr:K6-306 rdf:type skos:Concept ;
+	skos:broader "adr:K6-3" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "New Music" .
+
+adr:K6-307 rdf:type skos:Concept ;
+	skos:broader "adr:K6-3" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Popular music" .
+
+adr:K6-308 rdf:type skos:Concept ;
+	skos:broader "adr:K6-3" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "World music" .
+
+adr:K6-4 rdf:type skos:Concept ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Musico-dramatic genre" .
+
+adr:K6-401 rdf:type skos:Concept ;
+	skos:broader "adr:K6-4" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Musical Theatre" .
+
+adr:K6-402 rdf:type skos:Concept ;
+	skos:broader "adr:K6-4" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Opera" .
+
+adr:K6-5 rdf:type skos:Concept ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Spoken Word" .
+
+adr:K6-501 rdf:type skos:Concept ;
+	skos:broader "adr:K6-5" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Storytelling" .
+
+adr:K6-502 rdf:type skos:Concept ;
+	skos:broader "adr:K6-5" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Poetry" .
+
+adr:K6-503 rdf:type skos:Concept ;
+	skos:broader "adr:K6-5" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Slam" .
+
+adr:K6-9 rdf:type skos:Concept ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Other performing art" .
+
+adr:K6-901 rdf:type skos:Concept ;
+	skos:broader "adr:K6-9" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Circus" .
+
+adr:K6-902 rdf:type skos:Concept ;
+	skos:broader "adr:K6-9" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Comedy" .
+
+adr:K6-903 rdf:type skos:Concept ;
+	skos:broader "adr:K6-9" ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Variety" .
+
