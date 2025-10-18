@@ -14,7 +14,7 @@ jobs:
           -H 'Content-Type: application/json' \
           -X POST http://staging.api.artsdata.ca/databus/  \
           --data '{ "artifact": "artsdata-ontology",
-                    "comment": "Artsdata Ontology",
+                    "comment": "Made by hand in Turtle format",
                     "publisher": "${{ secrets.PUBLISHER_URI_GREGORY }}",
                     "group": "${{ github.event.repository.name }}",
                     "version": "${{ steps.version.outputs.dumpdate }}",

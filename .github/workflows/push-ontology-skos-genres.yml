@@ -14,7 +14,7 @@ jobs:
           -H 'Content-Type: application/json' \
           -X POST http://api.artsdata.ca/databus/  \
           --data '{ "artifact": "skos-genres",
-                    "comment": "Artsdata Genres",
+                    "comment": "Derived from spreadsheet https://docs.google.com/spreadsheets/d/1RSbTTJtjBW48BKVwQR9zcR4zr2wDEtoq-wvuAqYwiY0/edit",
                     "publisher": "${{ secrets.PUBLISHER_URI_GREGORY }}",
                     "group": "${{ github.event.repository.name }}",
                     "version": "${{ steps.version.outputs.dumpdate }}",
