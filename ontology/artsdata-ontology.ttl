@@ -64,14 +64,14 @@ ado:Event rdf:type rdfs:Class ;
 
 ado:hasEventType rdf:type rdf:Property ;
     rdfs:label "has event type"@en ;
-    rdfs:comment "Links an event to its Artsdata event type controlled vocabulary."@en ;
+    rdfs:comment "Links an Event to an event type defined by the Artsdata controlled vocabulary for event types."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain ado:Event ;
     rdfs:range ado:EventType .
 
 ado:hasGenre rdf:type rdf:Property ;
     rdfs:label "has genre"@en ;
-    rdfs:comment "Links an event to its Artsdata genre controlled vocabulary."@en ;
+    rdfs:comment "Links a Live Performance Work to a genre defined by the Artsdata controlled vocabulary for genres."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain ado:LivePerformanceWork ;
     rdfs:range ado:Genre .
