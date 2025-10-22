@@ -41,13 +41,7 @@ Voir : [Lignes directrices concernant la propriété sameAs et les URI]({{ base 
 
 ### Comment récupérer des URI d'identifiants pérennes
 
-**Option 1 : Récupération manuelle par le biais de l'interface d'Artsdata**
-
-N'importe qui peut utiliser la fonction recherche de l'[interface du graphe de connaissances](https://kg.artsdata.ca/) pour trouver une entité et récupérer son URI Artsdata. [Cet article](https://www.artsdata.ca/fr/ressources/bien-identifie?anchor=recuperer) contient des instructions étape-par-étape pour y arriver. Une fois que l'on s'est familiarisé avec cette façon de faire, récupérer une URI est une affaire de quelques secondes.
-
-**Option 2 : Récupération par le biais du service de réconciliation**
-
-Les développeurs peuvent aussi utiliser l'[API de réconciliation d'Artsdata](https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html) pour récupérer des URI Artsdata. Selon le contexte de l'application, cela peut prendre la forme d'une fonction d'auto-suggestion un peu comme celle de Google : l'utilisateur saisit le nom d'une entité et le service de réconciliation retourne des entités ayant des noms similaires. Lorsque l'utilisateur sélectionne une entité, le nom complet et l'URI Artsdata sont automatiquement chargés dans l'application. Il est possible de fournir d'autres points de données en sus de l'URI Artsdata, comme par exemple des URI d'autres identifiant pérennes.
+Voir : [Comment récupérer les URI d’identifiants pérennes]({{ base }}/retrieve-uri.fr.html)
 
 ### Comment entreposer des URI externes dans une base de données
 
