@@ -18,7 +18,7 @@ Selon les [instructions d’Artsdata]([https://docs.google.com/spreadsheets/d/1z
 
 Cependant, une organisation peut préférer utiliser le nom du bâtiment dans ses données structurées – particulièrement si le nom du bâtiment est plus connu que celui de la salle, ou si la salle porte le même nom qu’une autre située dans un bâtiment différent.
 
-Dans ces cas, deux solutions sont possibles :
+Dans ces cas, quatre solutions sont possibles :
 
 #### 1. Fournir des valeurs différentes pour `name` et `sameAs`
 
@@ -44,16 +44,14 @@ Indiquer le nom du bâtiment sous `name`, mais ajouter un champ `sameAs` qui poi
 ```
 *Remarque : les URI d’Artsdata et de Wikidata sous `sameAs` pointent vers la salle Desjardins située à l’intérieur du Centre des arts Juliette-Lassonde.*
 
-#### 2. Ajouter une valeur `alternateName`
+#### 2. Entrer un séparateur entre le nom du bâtiment et celui de la salle de spectacle sous `name`
 
-Indiquer le nom de la salle sous `name` et ajouter le nom du bâtiment sous `alternateName`, ou inversement, selon lequel vous préfériez utiliser en tant que libellé principal.
-   Exemple :
+Entrez le nom du bâtiment et celui de la salle de spectacle sous `name`, séparés par un séparateur (par exemple, un tiret demi-cadratin ou une barre verticale). Vous pouvez choisir d'ajouter n'importe quel nom du lieu en premier, selon celui que vous préférez voir apparaître dans son intégralité (en gardant à l'esprit que seuls les 60 premiers caractères peuvent être affichés dans les résultats de recherche). Exemple :
    ```
 "location":
          {
             "@type":"Place",
-            "name":"Salle Desjardins",
-            "alternateName":"Centre des arts Juliette-Lassonde",
+            "name":"Salle Desjardins – Centre des arts Juliette-Lassonde",
             "sameAs":[
                "http://kg.artsdata.ca/resource/K2-227",
                "http://www.wikidata.org/entity/Q111668872"],
@@ -98,6 +96,33 @@ Exemple :
     },
 ```
 *Remarque : comme la salle et le bâtiment partagent la même adresse, il n’est pas nécessaire de répéter les champs `address` dans `containedInPlace`.*
+
+#### 4. Ajouter une valeur `alternateName`
+
+Pour des raisons sémantiques, cette stratégie n'est pas recommandée par l'équipe Artsdata. Cependant, vous pouvez toujours choisir de l'ajouter à vos données structurées si les autres options ne correspondent pas à vos besoins actuels.
+
+Indiquer le nom de la salle sous `name` et ajouter le nom du bâtiment sous `alternateName`, ou inversement, selon lequel vous préfériez utiliser en tant que libellé principal.
+   Exemple :
+   ```
+"location":
+         {
+            "@type":"Place",
+            "name":"Salle Desjardins",
+            "alternateName":"Centre des arts Juliette-Lassonde",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
+            "address":{
+               "@type":"PostalAddress",
+               "addressLocality":"Saint-Hyacinthe",
+               "addressRegion":"QC",
+               "postalCode":"J2S 9E2",
+               "streetAddress":"1705 Rue Saint-Antoine",
+               "addressCountry":"CA"
+            }
+    },
+```
+*Remarque : les URI d’Artsdata et de Wikidata sous `sameAs` pointent vers la salle Desjardins située à l’intérieur du Centre des arts Juliette-Lassonde.*
 
 
 ## Bonnes pratiques concernant la propriété `sameAs`
