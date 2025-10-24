@@ -48,7 +48,7 @@ Enter the building name under location `name`, but add a `sameAs` pointing to a 
 
 #### 2. Enter a separator between the building and performance hall under `name`
 
-Enter both the building and performance hall name under location `name`, divided by a separator such as an en-dash or vertical bar. You may choose to add either name first, depending on which you would prefer to show up in its entirety (keeping in mind that only the first 60 characters may be displayed in search engines).
+Enter both the building and performance hall name under location `name`, divided by a separator (e.g. an en-dash or vertical bar). You may choose to add either location name first, depending on which you would prefer to show up in its entirety (keeping in mind that only the first 60 characters may be displayed in search results).
    Example:
    ```
 "location":
