@@ -82,3 +82,9 @@ If your entity is not in Artsdata, or if your record needs to be updated:
 * Email us at artsdata@capacoa.ca
 
 The Artsdata team can help you add or correct information.
+
+### Related contents
+- [What are persistent identifiers and why do they matter?](https://www.artsdata.ca/en/resources/identifiable-and-findable)
+- [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifier-recommendations.html)
+- [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id.html)
+- [Artsdata Guidelines about the schema:sameAs property]({{ base }}/sameas.html)
