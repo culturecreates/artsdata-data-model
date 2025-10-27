@@ -20,7 +20,7 @@ Tout le monde peut utiliser l’outil de recherche d’Artsdata sur l’interfac
 
 Regarder la vidéo “[Comment récupérer un URI Artsdata](https://youtu.be/sICvNpBHroE)” ([Version anglaise](https://youtu.be/HRv1GCegFws))
 
-[<img width="1220" height="685" alt="Capture d'écran où l'on voit un curseur pointant vers une URI." src="https://github.com/user-attachments/assets/00d6561b-dc0f-44b0-b7d7-19c07667811a" />](https://youtu.be/sICvNpBHroE)
+[<img width="640" height="359" alt="Capture d'écran où l'on voit un curseur pointant vers une URI." src="https://github.com/user-attachments/assets/00d6561b-dc0f-44b0-b7d7-19c07667811a" />](https://youtu.be/sICvNpBHroE)
 
 Durée : 3,5 minutes. Sous-titres disponibles en français et en anglais.
 
