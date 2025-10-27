@@ -20,7 +20,7 @@ Anyone can use Artsdata’s search tool on the knowledge graph’s interface to 
 
 Watch “[How to Retrieve an Artsdata URI](https://youtu.be/HRv1GCegFws)” ([Version française](https://youtu.be/sICvNpBHroE)) 
 
-[<img width="1220" height="685" alt="Screenshot showing a cursor pointing to an Artsdata ID" src="https://github.com/user-attachments/assets/00d6561b-dc0f-44b0-b7d7-19c07667811a" />](https://youtu.be/HRv1GCegFws)
+[<img width="640" height="359" alt="Screenshot showing a cursor pointing to an Artsdata ID" src="https://github.com/user-attachments/assets/00d6561b-dc0f-44b0-b7d7-19c07667811a" />](https://youtu.be/HRv1GCegFws)
 
 Video duration: 3.5 minutes. English and French subtitles available.
 
