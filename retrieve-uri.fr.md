@@ -16,7 +16,7 @@ Cette page vous montre comment trouver et utiliser une URI d’identifiant pére
 
 Tout le monde peut utiliser l’outil de recherche d’Artsdata sur l’interface du graphe de connaissances pour trouver une entité et récupérer son URI Artsdata. Une fois le processus maîtrisé, il faut moins de 10 secondes pour récupérer une URI d’identifiant pérenne.
 
-#### Vidéo tutorielle
+#### Tutoriel
 
 Regarder la vidéo “[Comment récupérer un URI Artsdata](https://youtu.be/sICvNpBHroE)” ([Version anglaise](https://youtu.be/HRv1GCegFws))
 
