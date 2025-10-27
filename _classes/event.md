@@ -19,9 +19,9 @@ In order for Artsdata to automatically create a unique persistent ID for an even
 
 - `@Type`: `Event` (or an Event sub-type);
 - `startTime`: `dateTime` value in ISO standard 8601 format (with or without a time zone offset);
-- `location`: `Place` object with a complete address and a `sameAs` link to a Wikidata or Artsdata URI identifying the Place ojbect.
+- `location`: `Place` object with a _complete_ address and a [`sameAs`]({{ base }}/sameas.html) link to a Wikidata or Artsdata URI identifying the Place object.
 
-In the absence of a `location.sameAs` URI, Artsdata can use the `location.address.postalCode` to recognize the shape of a Place object. This process makes it possible automatically match the shape to an Artsdata URI, and then to mint Artsdata IDs to event held in this Place. Similarly, the Place's postal code is very useful to identify potential duplicate event records.
+In the absence of a `location.sameAs` URI, Artsdata may be able to use `location.name`, `location.address.locality`, and/or `location.address.postalCode` to automatically or manually reconcile (i.e. "recognize") Place entities and match them to their Artsdata URI. Similarly, the Place's postal code is very useful to identify potential duplicate event records, which is an important validation process taking place prior to assigning an ID to an event.
 
 If an Event object does not fully meet these requirements, it may still possible to manually assign an ID, as long as at least one of the following properties is used:
 - `name`;
