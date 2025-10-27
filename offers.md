@@ -1,7 +1,7 @@
 <p>{% include back-button.html %}</p>
 {% include offers-languages.html %}
 
-# Artsdata Guidelines Regarding the offerss Property
+# Artsdata Guidelines Regarding the `offers` Property
 
 The `offers` property is highly recommended for performing arts events. It enables robots to navigate to the official ticketing page and can also identify additional information, such as the lowest ticket price, the currency of that price, and the date/time when ticket purchasing becomes available.
 
