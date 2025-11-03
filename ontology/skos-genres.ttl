@@ -23,18 +23,16 @@ adr:ArtsdataGenres dcterms:hasFormat <https://raw.githubusercontent.com/culturec
 	schema:dateModified "2025-10-17"^^xsd:date ;
 	schema:version "1.0" ;
 	rdf:type skos:ConceptScheme ;
-	rdfs:comment "Draft version for tests with ATC"@en, "Draft version for tests with ATC"@fr ;
+	rdfs:comment "First Version"@en, "Première version"@fr ;
 	owl:priorVersion "Not applicable"@en, "Non-applicable"@fr ;
 	owl:versionInfo "1.0 First version"@en, "1.0 Première version"@fr ;
 	skos:hasTopConcept adr:K6-1, adr:K6-2, adr:K6-3 ;
 	skos:prefLabel "Artsdata Genres Controlled Vocabulary"@en, "Vocabulaire contrôlé Artsdata pour les genres"@fr .
 
 adr:ArtsdataGenres-Collection-1.0 dcterms:isPartOf adr:ArtsdataGenres ;
-	schema:version "1.0" ;
 	rdf:type skos:Collection ;
 	rdfs:comment "All Artsdata concepts that are part of vocabulary version 1.0 (including those carried forward, excluding those deprecated in 1.0)."@en, "Tous les concepts de Artsdata faisant partie de la version 1.0 (y compris ceux maintenus, à l’exclusion de ceux dépréciés en 1.0)."@fr ;
-	owl:versionInfo "1.0For testing"@en, "1.0For testing"@fr ;
-	skos:prefLabel "Artsdata Genres—Collection for Version 1.0"@en, "Types genres—Collection pour Version 1.0"@fr .
+	skos:prefLabel "Artsdata Genres - Collection for v 1.0"@en, "Artsdata Genres - Collection pour v 1.0"@fr .
 
 adr:K6-1 rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataGenres ;
