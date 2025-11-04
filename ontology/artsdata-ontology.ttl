@@ -10,6 +10,9 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema:  <http://schema.org/> .
+@prefix frbroo: <https://www.iflastandards.info/fr/frbr/frbroo#> .
+@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> . 
+@prefix dbo: <http://dbpedia.org/ontology/> .
 
 ado: rdf:type owl:Ontology ;
     dcterms:title "Artsdata Ontology"@en ;
@@ -38,7 +41,8 @@ ado:LivePerformanceWork rdf:type rdfs:Class ;
     rdfs:comment "Work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience."@en ,
         "Œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public."@fr ;
     rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf ado:Thing, schema:CreativeWork .
+    rdfs:subClassOf ado:Thing, schema:CreativeWork, lrmoo:F1, dbo:Work ;
+    owl:equivalentClass frbroo:F20  . # milopa:PERFORMANCE_WORK when published
 
 ado:Event rdf:type rdfs:Class ;
     rdfs:label "Event"@en ;
@@ -59,8 +63,6 @@ ado:Genre rdf:type rdfs:Class ;
     rdfs:comment "A class representing different genres of artistic works."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:subClassOf skos:Concept, ado:Thing .
-
-
 
 ####################
 # Properties
