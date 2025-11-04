@@ -42,8 +42,9 @@ ado:LivePerformanceWork rdf:type rdfs:Class ;
         "Œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public."@fr ;
     rdfs:isDefinedBy ado: ;
     rdfs:subClassOf ado:Thing, schema:CreativeWork, lrmoo:F1, dbo:Work ;
-    owl:equivalentClass frbroo:F20  . # milopa:PERFORMANCE_WORK when published
-
+    owl:equivalentClass frbroo:F20  ; # milopa:PERFORMANCE_WORK when published
+    owl:disjointWith schema:Event .
+    
 ado:Event rdf:type rdfs:Class ;
     rdfs:label "Event"@en ;
     schema:alternateName "performance"@en, "représentation"@fr ;
