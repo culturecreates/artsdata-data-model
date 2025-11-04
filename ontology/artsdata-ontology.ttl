@@ -34,7 +34,8 @@ ado:Thing rdf:type rdfs:Class ;
 
 ado:LivePerformanceWork rdf:type rdfs:Class ;
     rdfs:label "Live Performance Work"@en,  "Œuvre scénique"@fr;
-    rdfs:comment "A work that is performed live, such as a play, concert, or dance performance."@en ;
+    rdfs:comment "Work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience."@en ,
+        "Œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public."@fr ;
     rdfs:isDefinedBy ado: ;
     rdfs:subClassOf ado:Thing ;
     schema:alternateName "show"@en, "spectacle"@fr .
