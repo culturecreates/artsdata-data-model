@@ -19,7 +19,7 @@ This API follows the documentation provided by the [W3C Entity Reconciliation Co
 
 The reconciliation service endpoint is `https://api.artsdata.ca/recon`.
 
-## Manual reconciliation
+## Manual reconciliation using the Test Bench
 To manually add Artsdata IDs to your structured data:
 1. Open the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)
 2. Select a radio button for the type of entity you want to reconcile. For example 'Place'.
@@ -28,7 +28,7 @@ To manually add Artsdata IDs to your structured data:
 5. Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211
 6. Add the URI to your structured data using 'sameAs'.
 
-## Adding additional properties
+### Adding additional properties
 In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. The additional properties are required to be in the returned entities. Any entity that does not match the additional property will be exluded from the reconciliation results.
 
 For example to add a postal code when reconiling places, add the property id "schema:address/schema:postalCode" and the postal code.
@@ -76,4 +76,13 @@ The tool can be accessed via the kg.artsdata.ca interface menu. Documentation wi
 To batch reconcile, you may also use tools like [OpenRefine](https://openrefine.org) and point the reconilication tool to the Artsdata reconciliation endpoint. View this [screen recording](https://youtu.be/VkOncek9iuY).
 
 Reconciliation service endpoint: [https://api.artsdata.ca/recon](https://api.artsdata.ca/recon)
+
+## Manual reconciliation within the Artsdata interface
+
+The reconciliation service is also used by several features in the Artsdata interface. For example, a logged-in user may:
+
+* Manually mint/link a top-level or nested entity with the "Minter" feature, if the entity is assigned a persistent URI in the uploaded graph;
+* Manually add a sameAs to a nested entity as part of the "Mint from blank node" suite of features, if the entity is a nested blanked node in the uploaded graph.
+
+These features are useful when entities come back recurrently within a data source.
 
