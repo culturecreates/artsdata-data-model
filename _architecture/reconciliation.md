@@ -79,10 +79,9 @@ Reconciliation service endpoint: [https://api.artsdata.ca/recon](https://api.art
 
 ## Manual reconciliation within the Artsdata interface
 
-The reconciliation service is also used by several features in the Artsdata interface. For example, a logged-in user may:
+The reconciliation service is also used by several features in the Artsdata interface. For example, a logged-in user may reconcile entities from a previously uploaded data source using the following methods:
 
-* Manually mint/link a top-level or nested entity with the "Minter" feature, if the entity is assigned a persistent URI in the uploaded graph;
+* Manually mint/link a top-level or nested entity with the "Minter" feature, if the entity is assigned a persistent URI by the source (i.e. a [local URI]({{ base }}/identifier-recommendations)) or as part of the Extract-Transform-Load process;
 * Manually add a sameAs to a nested entity as part of the "Mint from blank node" suite of features, if the entity is a nested blanked node in the uploaded graph.
 
 These features are useful when entities come back recurrently within a data source.
-
