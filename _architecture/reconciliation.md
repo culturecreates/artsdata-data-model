@@ -11,8 +11,7 @@ Supported entity types include:
 * Person
 * Organization
 * Agent (Person or Organization/Group)
-* Concept
-* Artsdata Event Type
+* Concept (Event type, Genre, etc.)
 
 Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! 
 
@@ -29,7 +28,6 @@ To manually add Artsdata IDs to your structured data:
 5. Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211
 6. Add the URI to your structured data using 'sameAs'.
 
-
 ## Adding additional properties
 In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. The additional properties are required to be in the returned entities. Any entity that does not match the additional property will be exluded from the reconciliation results.
 
@@ -37,7 +35,7 @@ For example to add a postal code when reconiling places, add the property id "sc
 <img width="564" alt="Screenshot 2024-01-31 at 4 02 49 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/1944952b-de90-4a86-a097-a06a8185a5bf">
 <img width="607" alt="Screenshot 2024-01-31 at 4 02 38 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/33b1974c-bf06-4d86-b659-2490e769aebf">
 
-## Example of structred data with added 'sameAs'
+## Example of structured data with added 'sameAs'
 Example for an event's location linked to an Artdata URI. The `"sameAs": "http://kg.artsdata.ca/resource/K11-211"` has been added.
 ```
 {
@@ -65,12 +63,17 @@ Example for an event's location linked to an Artdata URI. The `"sameAs": "http:/
     "sameAs": "http://kg.artsdata.ca/resource/K11-211"
 }
 ```
-## Batch reconciliation
 
-To batch reconcile, use tools like [OpenRefine](https://openrefine.org) and point the reconilication tool to the Artsdata reconciliation endpoint. View this [screen recording](https://youtu.be/VkOncek9iuY).
+## Artsdata batch reconciliation tool
+
+Logged in users may use to Artsdata Batch Reconciliation Tool to quickly reconcile entire datasets.
+
+The tool can be accessed via the kg.artsdata.ca interface menu. Documentation will be published soon.
+
+
+## Batch reconciliation using Open Refine
+
+To batch reconcile, you may also use tools like [OpenRefine](https://openrefine.org) and point the reconilication tool to the Artsdata reconciliation endpoint. View this [screen recording](https://youtu.be/VkOncek9iuY).
 
 Reconciliation service endpoint: [https://api.artsdata.ca/recon](https://api.artsdata.ca/recon)
 
-## Upcoming tools
-
-Here is a sneek video preview of a prototype plug-in to Airtable [https://youtu.be/ngX-EHipKDU](https://youtu.be/ngX-EHipKDU)
