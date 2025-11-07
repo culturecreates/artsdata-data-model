@@ -31,8 +31,9 @@ Voici un schéma illustrant cette architecture ainsi que les flux de données en
 ### Fournisseurs de données
 
 Artsdata propose aux fournisseurs de données une diversité de processus et d’outils pour l’extraction-transformation-chargement (ETC) de leurs données :
-* Extraction frontale par moissonnage de données structurées JSON-LD (c.-à-d. explorer des pages web, y dénicher les données structurées et les copier)&nbsp;;
-* Extraction frontale combinant moissonnage de JSON-LD et reconnaissance naturelle du langage&nbsp;; 
+* Extraction frontale par moissonnage de données structurées (c.-à-d. explorer des pages web et récupérer les données structurées au format JSON-LD ou microdonnées)&nbsp;;
+* Extraction frontale par moissonnage de données structurées et moissonage de texte par XPath (c.-à-d. explorer des pages web et récupérer des chaînes de texte dans le corps de la page à l'aide du XML Path Language)&nbsp;;
+* Extraction frontale combinant moissonnage de données structurées et reconnaissance naturelle du langage&nbsp;; 
 * ETC par le biais de terminaux (APIs, JSON-LD) ;
 * [Google Sheet vers Artsdata](https://github.com/culturecreates/artsdata-data-model/blob/bee2019172794a5b87dfa378cc1d4062bfdbbc3d/_architecture/google-sheet-vers-artsdata.md) (outil de conversion de données de chiffrier)&nbsp;;
 * Importation depuis Wikidata (un service permettant d'importer des éléments déjà chargés dans Wikidata)&nbsp;;
