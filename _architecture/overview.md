@@ -31,7 +31,8 @@ The following figure illustrates how data flows in and out of Artsdata.ca.
 ### Data providers
 
 For data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of Extract-Transform-Load (ETL) processes and tools are available:
-* Front-end ETL with JSON-LD scraping (i.e. scanning web pages with the Artsdata crawler, retrieving JSON-LD structured data and copying it);
+* Front-end ETL with basic JSON-LD scraping (i.e. scanning web pages and retrieving JSON-LD or microdata structured data);
+* Front-end ETL with both JSON-LD and HTML XPath scraping (i.e. scanning web pages and retrieving specific strings of text using the XML Path Language)
 * Front-end ETL combining JSON-LD scraping and natural language processing;
 * ETL via endpoints (APIs, JSON-LD endpoint);
 * Google Sheet to Artsdata (a tool to convert spreadsheet information into linked open data);
