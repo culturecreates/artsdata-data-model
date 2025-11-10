@@ -43,7 +43,7 @@ For data providers, such as arts organizations (producers, presenters, agents, v
 
 Front-end extraction is performed by the Artsdata crawler, a user agent that functions just like the search engines' robots. Some websites may not allow or may restrict web page crawling. To find out how to allow the Artsdata crawler, consult the [Artsdata-Crawler Permission](https://kg.artsdata.ca/doc/artsdata-crawler) documentation page. 
 
-Prior to being loaded to Artsata, data must meet minimal the requirements [Artsdata data model]({{ base }}) for the entity type. [SHACL shapes]({{ base }}/shacl_reports.html) are used to validate data before importing.
+Prior to being loaded to Artsata, data must meet the minimal requirements of the [Artsdata data model]({{ base }}) for the entity type. [SHACL shapes]({{ base }}/shacl_reports.html) are used to validate data before importing.
 
 Consult the [Data Contributor Conditions](https://kg.artsdata.ca/doc/contributor-conditions) page to learn more about the extraction, transformation, loading and semantic enrichment processes.
 
