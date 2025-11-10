@@ -1,5 +1,8 @@
 theme: jekyll-theme-slate
 
+url: "http://docs.artsdata.ca" 
+baseurl: ""                     
+
 collections:
   classes:
     output: true
@@ -7,3 +10,7 @@ collections:
     output: true
   gabarits-jsonld:
     output: true
+
+# --- Include CNAME file in the built site (important) ---
+include:
+  - CNAME
