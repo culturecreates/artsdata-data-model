@@ -33,13 +33,13 @@ The following figure illustrates how data flows in and out of Artsdata.ca.
 For data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of Extract-Transform-Load (ETL) processes are available:
 * Automatic website crawling
   * crawling websites with event structured data (JSON-LD, RDFa or microdata)
-  * contact an Artsdata steward to add your site
+  * contact an Artsdata steward to immediately add your site
 * Manual website crawling
   * crawling web pages for event structured and un-structured data using custom XPath/CSS selectors to extract text from HTML)
-  * requires advanced configuration
+  * requires technical setup
 * APIs
-  * loading data from endpoints with JSON or JSON-LD
-  * setup is done outside Artsdata
+  * loading data from JSON endpoints
+  * requires technical setup
 * Google Sheet to Artsdata
   * a tool to convert spreadsheet information into linked open data
   * contact Artsdata steward for Google sheet
