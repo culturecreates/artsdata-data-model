@@ -4,7 +4,30 @@ layout: class-event-doc
 ---
 # Événement
 
-En cours de traduction...
+Dans Artsdata, un événement est défini comme « une activité organisée qui se déroule à un moment et un lieu précis ». L' [`adr:Event`](http://kg.artsdata.ca/resource/Event) est considéré comme une classe équivalente à [`schema:Event`](https://schema.org/Event). 
+
+Toute représentation unique, série de représentations ou édition d'un festival est considérée comme une entité du type `Event` ou `EventSeries` dans Artsdata.
+
+## Types d'événement
+
+Les entités du type Event peuvent être associées à des types supplémentaires à partir du [Vocabulaire contrôlé Artsdata pour les types d’événements](../event-types.fr.html), en utilisant la propriété `additionalType`.
+
+Outre les concepts issus du vocabulaire contrôlé Artsdata, Artsdata accepte les sous-types d'événements Schema.org ainsi que les concepts Wikidata comme valeurs `additionalType`.
+
+## Exigences minimales pour la création d'identifiants Artsdata pour les événements
+
+Pour qu'Artsdata puisse créer automatiquement un identifiant unique et pérenne pour un événement, l'événement doit au minimum comporter les paires attribut-valeur suivantes :
+
+- `@Type`: `Event` (ou un sous-type d'Event);
+- `startTime`: valuer `dateTime` au format ISO 8601 (avec ou sans décalage de fuseau horaire);
+- `location`: objet `Place` avec une adresse postale _complète_ et un lien [`sameAs`]({{ base }}/sameas.fr.html) vers un URI Wikidata ou Artsdata qui identife l'objet Place.
+
+En l'absence d'une URI `location.sameAs`, Artsdata pourrait être en mésure d'utiliser `location.name`, `location.address.locality`, et/ou `location.address.postalCode` afin de réconcilier automatiquement ou manuellement (c.à.d. « reconnaître ») les entities du type Place et de les associer à leur URI Artsdata. De même, le code postale de l'objet Place est très utile pour identifier les doublons potentiels dans les entités du type Event, ce qui constitue un processus de validation important avant l'attribution d'un identifiant unique à un événement.
+
+Si un objet Event ne répond pas entièrement à ces exigences, il est toujours possible d'attribuer manuellement un identifiant, à condition qu'au moins l'une des propriétés suivantes soit utilisée : :
+- `name`;
+- `description`;
+- `url`.
 
 ## Propriétés
 
