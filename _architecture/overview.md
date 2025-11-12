@@ -30,18 +30,30 @@ The following figure illustrates how data flows in and out of Artsdata.ca.
 
 ### Data providers
 
-For data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of Extract-Transform-Load (ETL) processes and tools are available:
-* Front-end ETL with basic JSON-LD scraping (i.e. scanning web pages and retrieving JSON-LD or microdata structured data);
-* Front-end ETL with both JSON-LD and HTML XPath scraping (i.e. scanning web pages and retrieving specific strings of body text using the XML Path Language);
-* Front-end ETL combining JSON-LD scraping and natural language processing;
-* ETL via endpoints (APIs, JSON-LD endpoint);
-* Google Sheet to Artsdata (a tool to convert spreadsheet information into linked open data);
-* Mint from Wikidata (a service to import data previously loaded to Wikidata);
-* Footlight Console (event information management software for a single site);
-* Footlight CMS (event information management software for multiple sites);
-* Artsdata Load API (Graph-store API) that accepts RDF data meeting all Artsdata data modelling requirements and constraints (SHACL defined in Artsdata.ca or ShEx when coming from Wikidata). 
+For data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of Extract-Transform-Load (ETL) processes are available:
+* Automatic website crawling
+  * crawling websites with event structured data (JSON-LD, RDFa or microdata)
+  * contact an Artsdata steward to add your site
+* Manual website crawling
+  * crawling web pages for event structured and un-structured data using custom XPath/CSS selectors to extract text from HTML)
+  * requires advanced configuration
+* APIs
+  * loading data from endpoints with JSON or JSON-LD
+  * setup is done outside Artsdata
+* Google Sheet to Artsdata
+  * a tool to convert spreadsheet information into linked open data
+  * contact Artsdata steward for Google sheet
+* Mint from Wikidata
+  * a service to import data previously loaded to Wikidata
+  * available directly in Artsdata with a user account
+* Footlight Console
+  * software to add event strucutred data to any website
+  * contact Culture Creates (info@culturecreates.com)
+* Footlight CMS
+  *  event management software
+  *  contact Culture Creates (info@culturecreates.com)
 
-Front-end extraction is performed by the Artsdata crawler, a user agent that functions just like the search engines' robots. Some websites may not allow or may restrict web page crawling. To find out how to allow the Artsdata crawler, consult the [Artsdata-Crawler Permission](https://kg.artsdata.ca/doc/artsdata-crawler) documentation page. 
+Website crawling is performed by the Artsdata crawler, a user agent that functions just like the search engines' robots. Some websites may not allow or may restrict web page crawling. To find out how to allow the Artsdata crawler, consult the [Artsdata-Crawler Permission](https://kg.artsdata.ca/doc/artsdata-crawler) documentation page. 
 
 Prior to being loaded to Artsata, data must meet the minimal requirements of the [Artsdata data model]({{ base }}) for the entity type. [SHACL shapes]({{ base }}/shacl_reports.html) are used to validate data before importing.
 
