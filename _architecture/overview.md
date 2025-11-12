@@ -50,8 +50,15 @@ For data providers, such as arts organizations (producers, presenters, agents, v
   * software to add event strucutred data to any website
   * contact Culture Creates (info@culturecreates.com)
 * Footlight CMS
-  *  event management software
-  *  contact Culture Creates (info@culturecreates.com)
+  * event management software
+  * contact Culture Creates (info@culturecreates.com)
+* Artsdata Databus
+  * send RDF (JSON-LD or any RDF format) to the Artsdata Databus endpoint
+  * requires an Artsdata databus account
+* Github Pipeline Action
+  * uses Github workflows 
+  * options to send a data dump or crawl websites
+  * requires an Artsdata databus account 
 
 Website crawling is performed by the Artsdata crawler, a user agent that functions just like the search engines' robots. Some websites may not allow or may restrict web page crawling. To find out how to allow the Artsdata crawler, consult the [Artsdata-Crawler Permission](https://kg.artsdata.ca/doc/artsdata-crawler) documentation page. 
 
