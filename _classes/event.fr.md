@@ -24,7 +24,7 @@ Pour qu'Artsdata puisse créer automatiquement un identifiant unique et pérenne
 
 En l'absence d'une URI `location.sameAs`, Artsdata pourrait être en mésure d'utiliser `location.name`, `location.address.locality`, et/ou `location.address.postalCode` afin de réconcilier automatiquement ou manuellement (c.à.d. « reconnaître ») les entities du type Place et de les associer à leur URI Artsdata. De même, le code postale de l'objet Place est très utile pour identifier les doublons potentiels dans les entités du type Event, ce qui constitue un processus de validation important avant l'attribution d'un identifiant unique à un événement.
 
-Si un objet Event ne répond pas entièrement à ces exigences, il est toujours possible d'attribuer manuellement un identifiant, à condition qu'au moins l'une des propriétés suivantes soit utilisée : :
+Si un objet Event ne répond pas entièrement à ces exigences, il est toujours possible d'attribuer manuellement un identifiant, à condition qu'au moins l'une des propriétés suivantes soit utilisée :
 - `name`;
 - `description`;
 - `url`.
