@@ -93,7 +93,7 @@ Data consumers wanting to use the data can access it in a number of ways:
 * Crawl persistent identifiers to access the associated metadata in JSON-LD format;
 * Call the RESTfull [Artsdata Query API](https://culturecreates.github.io/artsdata-data-model/architecture/query-api.html);
 * Subscribe to a custom iCalendar subscription feed via the [iCal Server](https://culturecreates.github.io/artsdata-data-model/architecture/ical.html);
-* Call the [Artsdata SPARQL endpoint](https://culturecreates.github.io/artsdata-data-model/architecture/sparql.html).;
+* Call the [Artsdata SPARQL endpoint](https://culturecreates.github.io/artsdata-data-model/architecture/sparql.html);
 * Download a data dump of triples serialized in a variety of formats such as JSON-LD or N-Quads. 
 
 The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.
