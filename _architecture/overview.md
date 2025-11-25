@@ -58,7 +58,8 @@ For data providers, such as arts organizations (producers, presenters, agents, v
 * Github Pipeline Action
   * uses Github workflows 
   * options to send a data dump or crawl websites
-  * requires an Artsdata databus account 
+  * requires an Artsdata databus account
+  * [documentation](https://github.com/culturecreates/artsdata-pipeline-action?tab=readme-ov-file#artsdata-pipeline-action) 
 
 Website crawling is performed by the Artsdata crawler, a user agent that functions just like the search engines' robots. Some websites may not allow or may restrict web page crawling. To find out how to allow the Artsdata crawler, consult the [Artsdata-Crawler Permission](https://kg.artsdata.ca/doc/artsdata-crawler) documentation page. 
 
