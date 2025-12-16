@@ -16,7 +16,7 @@ La classe [`ado:LivePerformanceWork`](http://kg.artsdata.ca/ontology/LivePerform
 
 ## Exemple de données structurées
 
-Voici un exemple de données structurées du `@type Event`, avec une entité imbriquée `LivePerformanceWork` sous la propriété `workPerformed`. Cet exemple est basé sur une série de représentations de l'œuvre * Orpheus | S'abreuver des volcans * par Alan Lake Factori(e), qui est bien décrite sur le [site web de la compagnie](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) et dans le [répertoire Scène Pro](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
+Voici un exemple de données structurées du `@type Event`, avec une entité imbriquée `ado:LivePerformanceWork` sous la propriété `workPerformed`. Cet exemple est basé sur une série de représentations de l'œuvre * Orpheus | S'abreuver des volcans * par Alan Lake Factori(e), qui est bien décrite sur le [site web de la compagnie](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) et dans le [répertoire Scène Pro](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
 
 ```
 {
