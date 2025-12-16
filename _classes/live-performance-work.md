@@ -3,19 +3,19 @@ class_name: LivePerformanceWork
 layout: class-live-performance-work-doc
 ---
 # Live Performance Work
-A `LivePerformanceWork`in Artsdata is defined as a "work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience". 
+A live performance qork in Artsdata is defined as a "work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience". 
 
-It is a subclass of [LRMoo F1:Work](https://cidoc-crm.org/f1-work) and an equivalent to [milopa:PERFORMANCE_WORK](https://github.com/pair-cg/milopa).
+[`ado:LivePerformanceWork`](http://kg.artsdata.ca/ontology/LivePerformanceWork) is a subclass of [LRMoo F1:Work](https://cidoc-crm.org/f1-work) and an equivalent to [milopa:PERFORMANCE_WORK](https://github.com/pair-cg/milopa).
 
 
 ## Properties
 
-Check back soon for further details.
+Coming soon
 
 
 ## Sample Structured Data
 
-Here is sample `@type Event` structured data, with a nested `LivePerformanceWork` entity under the property `workPerformed`. This example is based on a series of performances of the work * Orpheus | S'abreuver des volcans * by Alan Lake Factori(e), which is well described on the [company's website](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) and in the [Scène Pro directory](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
+Here is sample `@type Event` structured data, with a nested `ado:LivePerformanceWork` entity under the property `workPerformed`. This example is based on a series of performances of the work * Orpheus | S'abreuver des volcans * by Alan Lake Factori(e), which is well described on the [company's website](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) and in the [Scène Pro directory](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
 
 ```
 {
@@ -113,4 +113,4 @@ Here is sample `@type Event` structured data, with a nested `LivePerformanceWork
 ```
 
 
-For more information about the development of the `LivePerformanceWork` class, please consult this [GitHub discussion](https://github.com/culturecreates/artsdata-data-model/discussions/133).
+For more information about the development of the `ado:LivePerformanceWork` class, please consult this [GitHub discussion](https://github.com/culturecreates/artsdata-data-model/discussions/133).
