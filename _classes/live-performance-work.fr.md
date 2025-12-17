@@ -16,13 +16,13 @@ La classe [`ado:LivePerformanceWork`](http://kg.artsdata.ca/ontology/LivePerform
 
 ## Exemple de données structurées
 
-Voici un exemple de données structurées du `@type Event`, avec une entité imbriquée `ado:LivePerformanceWork` sous la propriété `workPerformed`. Cet exemple est basé sur une série de représentations de l'œuvre * Orpheus | S'abreuver des volcans * par Alan Lake Factori(e), qui est bien décrite sur le [site web de la compagnie](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) et dans le [répertoire Scène Pro](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
+Voici un exemple de données structurées du `@type Event`, avec une entité imbriquée `ado:LivePerformanceWork` sous la propriété `workPerformed`. Cet exemple est basé sur une représentation de l'œuvre * Orpheus | S'abreuver des volcans * par Alan Lake Factori(e), qui est bien décrite sur le [site web de la compagnie](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) et dans le [répertoire Scène Pro](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
 
 ```
 {
     "@context": "https://schema.org",
     "id": "http://kg.artsdata.ca/resource/K23-2815",
-    "@type": "EventSeries",
+    "@type": "Event",
     "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent",
     "sameAs": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie",
     "location": {
@@ -32,7 +32,7 @@ Voici un exemple de données structurées du `@type Event`, avec une entité imb
         "name": "Place des Arts - Cinquième Salle"
         },
     "startDate": "2025-04-01T20:00:00-04:00",
-    "endDate": "2025-04-05T22:00:00-04:00",
+    "endDate": "2025-04-01T22:00:00-04:00",
     "name": "Alan Lake Factori(e) - S’abreuver des volcans",
     "url": "https://www.dansedanse.ca/fr/spectacles/alan-lake-factorie-sabreuver-des-volcans",
     "workPerformed": {
@@ -73,43 +73,6 @@ Voici un exemple de données structurées du `@type Event`, avec une entité imb
         "name": "Alan Lake Factori(e)",
         "url": "https://alanlakefactorie.org/"
         },
-     "subEvent": [
-         {
-         "@id": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie#2025-04-01T200000-0400",
-         "@type": "Event",
-         "location": "http://kg.artsdata.ca/resource/K11-22",
-         "name": "Alan Lake Factori(e) - S’abreuver des volcans",
-         "startDate": "2025-04-01T20:00:00-04:00"
-          },
-         {
-         "@id": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie#2025-04-02T200000-0400",
-         "@type": "Event",
-         "location": "http://kg.artsdata.ca/resource/K11-22",
-         "name": "Alan Lake Factori(e) - S’abreuver des volcans",
-         "startDate": "2025-04-02T20:00:00-04:00"
-          },
-         {
-         "@id": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie#2025-04-03T200000-0400",
-         "@type": "Event",
-        "location": "http://kg.artsdata.ca/resource/K11-22",
-         "name": "Alan Lake Factori(e) - S’abreuver des volcans",
-          "startDate": "2025-04-03T20:00:00-04:00"
-          },
-         {
-          "@id": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie#2025-04-04T200000-0400",
-          "@type": "Event",
-          "location": "http://kg.artsdata.ca/resource/K11-22",
-         "name": "Alan Lake Factori(e) - S’abreuver des volcans",
-         "startDate": "2025-04-04T20:00:00-04:00"
-         },
-         {
-         "@id": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie#2025-04-05T200000-0400",
-         "@type": "Event",
-         "location": "http://kg.artsdata.ca/resource/K11-22",
-         "name": "Alan Lake Factori(e) - S’abreuver des volcans",
-         "startDate": "2025-04-05T20:00:00-04:00"
-         }
-    ]
 }
 ```
 
