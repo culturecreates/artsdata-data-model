@@ -14,6 +14,8 @@ Voici la logique suivie par le processus de création automatique (auto-minting)
 
 ### Recommandations
 
+Lorsque vous saisissez vos données d'événement, **veuillez vérifier que vos données de `location` sont cohérentes entre vos données de billetterie, les données structurées de votre site web et toute autre application que vous utilisez (par exemple, Arts Touring Connector).**
+
 Selon les [instructions d’Artsdata]([https://docs.google.com/spreadsheets/d/1zGMVtrMO6Ja82jblir2AUjzSYAciCXBwoNzi-pomGok/edit?gid=0#gid=0](https://culturecreates.github.io/artsdata-data-model/classes/event.fr.html#properties)), il est préférable d’être aussi précis que possible lors de la saisie d’un champ `location` imbriqué sous une entité `@type Event`. Autrement dit, il vaut mieux indiquer les valeurs `name` et `sameAs` de la salle de spectacle où l’événement a lieu, plutôt que celles du bâtiment dans son ensemble. 
 
 Cependant, une organisation peut préférer utiliser le nom du bâtiment dans ses données structurées – particulièrement si le nom du bâtiment est plus connu que celui de la salle, ou si la salle porte le même nom qu’une autre située dans un bâtiment différent.
