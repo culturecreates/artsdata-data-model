@@ -16,6 +16,8 @@ Here is the logic followed by Artsdata’s auto-minting process:
 
 ### Recommendations
 
+When you enter your event information, **please ensure that your `location` data is consistent between your ticketing data, your website structured data and any other application you use (for example, the Arts Touring Connector).**
+
 As per [Artsdata's instructions](https://culturecreates.github.io/artsdata-data-model/classes/event.html#properties), it is preferable to be as precise as possible when entering a `location` nested entity under an `@type Event`. In other words, it is better to enter the `name` and `sameAs` values for the performance hall where the event is taking place rather than for the building as a whole. 
 
 However, an organization may prefer to enter the name of the building in their structured data – particularly if the building name is more well-known than the performance hall name, or if the performance hall shares its name with another hall in a different building. 
