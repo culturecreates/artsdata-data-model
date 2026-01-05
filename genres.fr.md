@@ -1,3 +1,7 @@
+{% include back-button.html %}
+
+{% include genres-languages.html %}
+
 ## Vocabulaire contrôlé Artsdata pour les genres
 
 | <!-- --> | <!-- --> |
