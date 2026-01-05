@@ -5,9 +5,9 @@
 #### Table des matières
 * [Aperçu] (#aperçu)
 * [Pourquoi ces lignes directrices sont nécessaires] (#pourquoi-ces-lignes-directrices-sont-nécessaires)
-* [Lignes directrices générales]
-* [Recommandations par genre]
-* [Notes complémentaires]
+* [Lignes directrices générales] (#lignes directrices générales)
+* [Recommandations par genre] (#recommandations par genre)
+* [Notes complémentaires] (#notes complémentaires)
 
 ## Aperçu
 
