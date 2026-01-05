@@ -15,44 +15,42 @@
 adr:AcappellaMusicPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r19 ;
+	skos:changeNote _:r31 ;
 	skos:definition "A music performance featuring vocals without any instrumental accompaniment."@en, "Un spectacle de musique a cappella"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "A Cappella Music Show"@en, "Spectacle de musique a capella"@fr .
 
 adr:ArtsdataEventTypes dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-event-types.ttl> ;
-	dcterms:identifier "ArtsdataEventTypes" ;
 	vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-event-types.ttl> ;
 	vann:example adr:PerformingArtsEvent ;
 	vann:preferredNamespacePrefix "adr" ;
 	vann:preferredNamespaceUri <http://kg.artsdata.ca/resource/> ;
-	vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/event.html> ;
+	vann:usageNote <http://docs.artsdata.ca/event-types.html> ;
 	schema:creator adr:K1-5, adr:K16-211 ;
 	schema:dateCreated "2021-08-10"^^xsd:date ;
-	schema:dateModified "2025-08-25"^^xsd:date ;
-	schema:version "4.0.2" ;
+	schema:dateModified "2026-01-05"^^xsd:date ;
+	schema:version "4.0.3" ;
 	rdf:type skos:ConceptScheme ;
 	rdfs:comment "Base controlled vocabulary for Artsdata Event Types. Serves as a persistent, version-independent reference for all specific version schemes. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars."@en, "Vocabulaire contrôlé de base pour les types d'événements Artsdata. Sert de référence permanente et indépendante de la version pour tous les schémas de version spécifiques. L'objectif de ce vocabulaire contrôlé est de servir de base pour cartographier les différents types d'événements organisés par les organisations artistiques, afin que ces événements puissent être réutilisés dans les calendriers d'événements."@fr ;
-	owl:priorVersion "3.4.5 — First revised event type definitions: event types (43), and alignment with external vocabularies."@en, "3.4.5 — Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
-	owl:versionInfo "4.0 — Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated concepts (16), and better alignment with external vocabularies."@en, "4.0 — Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de concepts obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
+	rdfs:seeAlso <http://docs.artsdata.ca/event-types.html> ;
+	owl:priorVersion "3.4 - First revised event type definitions: event types (43), and alignment with external vocabularies."@en, "3.4 - Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
+	owl:versionInfo "4.0 (2025-08-25) - Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated event types (16), and better alignment with external vocabularies."@en, "4.0 (2025-08-25) - Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de types obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
 	skos:hasTopConcept adr:Event ;
 	skos:prefLabel "Artsdata Event Types Controlled Vocabulary"@en, "Vocabulaire contrôlé Artsdata pour les types d'événements"@fr .
 
-adr:ArtsdataEventTypes-Collection-3.4.5 dcterms:isPartOf adr:ArtsdataEventTypes ;
-	schema:version "3.4.5" ;
+adr:ArtsdataEventTypes-Collection-3.4 dcterms:isPartOf adr:ArtsdataEventTypes ;
 	rdf:type skos:Collection ;
-	rdfs:comment "All concepts that were present in vocabulary version 3.4.5"@en, "Tous les concepts présents dans la version 3.4.5 du vocabulaire."@fr ;
-	owl:versionInfo "3.4.5 — First revised event type definitions: event types (43), and alignment with external vocabularies."@en, "3.4.5 — Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
+	rdfs:comment "All concepts that were present in vocabulary version 3.4"@en, "Tous les concepts présents dans la version 3.4 du vocabulaire."@fr ;
+	owl:versionInfo "3.4 - First revised event type definitions: event types (43), and alignment with external vocabularies."@en, "3.4 - Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
 	skos:member adr:AcappellaMusicPerformance, adr:BroadcastEvent, adr:Chanson, adr:ChansonPerformance, adr:Chansonanglophone, adr:Chansonfrancophone, adr:ChildrensEvent, adr:CircusPerformance, adr:Classes, adr:ClassicalMusicPerformance, adr:ComedyPerformance, adr:Conference, adr:CountryMusicPerformance, adr:DancePerformance, adr:Event, adr:EventSeries, adr:ExhibitionEvent, adr:Festival, adr:JazzPerformance, adr:LiveBroadcastEvent, adr:MasterclassEvent, adr:MusicPerformance, adr:MusicalComedyPerformance, adr:MusicalTheatrePerformance, adr:OnDemand, adr:OperaPerformance, adr:PerformanceArt, adr:PerformingArtsEvent, adr:PostshowTalk, adr:PreshowTalk, adr:PublicationEvent, adr:RehearsalEvent, adr:ResidencyActivity, adr:RhythmAndBluesPerformance, adr:RockMusicPerformance, adr:ScreeningEvent, adr:SocialEvent, adr:SpokenWordPerformance, adr:Storytelling, adr:TheatrePerformance, adr:VarietyShow, adr:VisualArtsEvent, adr:WorkshopEvent, adr:WorldMusicPerformance ;
-	skos:prefLabel "Artsdata Event Types—Collection for Version 3.4.5"@en, "Types d’événement Artsdata—Collection pour Version 3.4.5"@fr .
+	skos:prefLabel "Collection of all Artsdata Event Types version 3.4"@en, "Types d’événement Artsdata—Collection pour Version 3.4"@fr .
 
 adr:ArtsdataEventTypes-Collection-4.0 dcterms:isPartOf adr:ArtsdataEventTypes ;
-	schema:version "4.0" ;
 	rdf:type skos:Collection ;
-	rdfs:comment "All Artsdata concepts that are part of vocabulary version 4.0 (including those carried forward, excluding those deprecated in 4.0)."@en, "Tous les concepts de Artsdata faisant partie de la version 4.0 (y compris ceux maintenus, à l’exclusion de ceux dépréciés en 4.0)."@fr ;
-	owl:versionInfo "4.0 — Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated concepts (16), and better alignment with external vocabularies."@en, "4.0 — Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de concepts obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
+	rdfs:comment "All Artsdata concepts that are part of vocabulary version 4.0"@en, "Tous les concepts de Artsdata faisant partie de la version 4.0"@fr ;
+	owl:versionInfo "4.0 - Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated event types (16), and better alignment with external vocabularies."@en, "4.0 - Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de types obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
 	skos:member adr:AwardsEvent, adr:ChildrensEvent, adr:CircusPerformance, adr:Class, adr:ComedyPerformance, adr:Competition, adr:Convention, adr:DancePerformance, adr:Event, adr:EventSeries, adr:ExhibitionEvent, adr:Festival, adr:FestivalSeries, adr:LiveFilmConcert, adr:MasterclassEvent, adr:MusicPerformance, adr:MusicalTheatrePerformance, adr:OperaPerformance, adr:PerformanceArt, adr:PerformingArtsEvent, adr:PostshowTalk, adr:PowWow, adr:PreshowTalk, adr:RehearsalEvent, adr:ResidencyEvent, adr:SaleEvent, adr:ScreeningEvent, adr:SocialDance, adr:SocialEvent, adr:SpokenWordPerformance, adr:StorytellingPerformance, adr:TalkEvent, adr:TheatrePerformance, adr:VarietyPerformance, adr:WorkshopEvent ;
-	skos:prefLabel "Artsdata Event Types—Collection for Version 4.0"@en, "Types d’événement Artsdata—Collection pour Version 4.0"@fr .
+	skos:prefLabel "Collection of Artsdata Event Types version 4.0 excluding deprecated types."@en, "Types d’événement Artsdata—Collection pour Version 4.0"@fr .
 
 adr:AwardsEvent rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Recognition Event, Awards Ceremony, Awards Show, Prize Ceremony, Gala Awards"@en, "Remise de distinctions, Cérémonie de remise de prix, Cérémonie de prix, Gala de récompenses"@fr ;
@@ -66,7 +64,7 @@ adr:AwardsEvent rdf:type ado:EventType, skos:Concept ;
 adr:BroadcastEvent rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r9 ;
+	skos:changeNote _:r52 ;
 	skos:closeMatch schema:BroadcastEvent, wd:Q15078788 ;
 	skos:definition "A publication event featuring a one-to-many distribution of video and/or audio content via a electronic mass communication method."@en, "Un événement de publication impliquant une distribution de contenu vidéo et/ou audio de type \"un à plusieurs\" par un moyen de communication électronique de masse."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -76,16 +74,15 @@ adr:BroadcastEvent rdf:type ado:EventType, skos:Concept ;
 adr:Chanson rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r36 ;
+	skos:changeNote _:r50 ;
 	skos:definition "Performance of lyric-driven songs"@en, "Performance de chanson lyrique"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Chanson"@en, "Chanson"@fr .
 
-adr:ChansonPerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:ChansonPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r15 ;
+	skos:changeNote _:r9 ;
 	skos:definition "A musical performance featuring \"chanson\", a Francophone subgenre of lyric-driven songs."@en, "Une performance musicale mettant en vedette \"chanson\", un sous-genre francophone de chansons à paroles."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Chanson"@en, "Chanson"@fr .
@@ -93,24 +90,22 @@ adr:ChansonPerformance dcterms:modified "2025-08-26"^^xsd:date ;
 adr:Chansonanglophone rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:Chanson ;
-	skos:changeNote _:r22 ;
+	skos:changeNote _:r2 ;
 	skos:definition "Performance of lyric-driven English song"@en, "Performance de chanson lyrique en anglais"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "English Song"@en, "Chanson anglophone"@fr .
 
-adr:Chansonfrancophone dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:Chansonfrancophone rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:Chanson ;
-	skos:changeNote _:r53 ;
+	skos:changeNote _:r19 ;
 	skos:definition "Performance of lyric-driven French song"@en, "Performance de chanson française lyrique"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Chanson francophone"@en, "Chanson francophone"@fr .
 
-adr:ChildrensEvent dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:ChildrensEvent rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r51 ;
+	skos:changeNote _:r34 ;
 	skos:closeMatch schema:ChildrensEvent ;
 	skos:definition "An event featuring educational and/or artistic content suitable for all-ages."@en, "Un événement mettant en vedette le contenu éducatif et/ou artistique approprié a tous âges."@fr ;
 	skos:editorialNote "Proposed for future deprecation once the performing arts community can define a controlled vocabulary for audience types. (Artsdata lacks the ability to interpret and transform target audience metadata without a controlled audience vocabulary serialized with URIs.)"@en, "Proposé pour abandon à l'avenir, dès que la communauté des arts du spectacle pourra définir un vocabulaire contrôlé pour les types de public. (Artsdata ne permet pas d'interpréter et de transformer les métadonnées du public cible sans un vocabulaire contrôlé sérialisé avec des URI.)"@fr ;
@@ -120,7 +115,7 @@ adr:ChildrensEvent dcterms:modified "2025-08-26"^^xsd:date ;
 
 adr:CircusPerformance rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r20 ;
+	skos:changeNote _:r6 ;
 	skos:closeMatch wd:Q103810625 ;
 	skos:definition "A performance that involves a series of acts to display human skill, daring, humour, and/or tricks involving animals."@en, "Une représentation qui implique une série de prestations affichant des compétences humaines, du courage, de l'humour et/ou des astuces avec des animaux."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -130,7 +125,7 @@ adr:CircusPerformance rdf:type ado:EventType, skos:Concept ;
 adr:Class rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Course, Lessons"@en, "Série de cours, leçons"@fr ;
 	skos:broader adr:EventSeries ;
-	skos:changeNote _:r37 ;
+	skos:changeNote _:r18 ;
 	skos:closeMatch schema:CourseInstance, wd:Q18204 ;
 	skos:definition "An event series that provides a structured learning experience offered at a specific time and location."@en, "Une série d'événements offrant une expérience d'apprentissage structurée à un moment et un lieu spécifiques."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -141,24 +136,23 @@ adr:Classes dcterms:isReplacedBy adr:Class ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:altLabel "Course, Lessons"@en, "Série de cours, leçons"@fr ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r18 ;
+	skos:changeNote _:r26 ;
 	skos:closeMatch schema:CourseInstance ;
 	skos:definition "An event series that provides a structured learning experience offered at a specific time and location."@en, "Un type d'événement spécialisé qui est conçu dans le but de fournir des expériences d'apprentissage structurées offertes à des moments et dans des lieux spécifiques."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Classes"@en, "Cours"@fr .
 
-adr:ClassicalMusicPerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:ClassicalMusicPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r1 ;
+	skos:changeNote _:r27 ;
 	skos:definition "A musical performance featuring any music composed before 1900 with orchestral instrumentation."@en, "Un concert de musique classique"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Classical Music Performance"@en, "Spectacle de musique classique"@fr .
 
 adr:ComedyPerformance rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r28 ;
+	skos:changeNote _:r55 ;
 	skos:closeMatch schema:ComedyEvent, wd:Q3492850 ;
 	skos:definition "A performance featuring one or more comedians telling and/or acting out jokes intended to make an audience laugh."@en, "Une représentation mettant en vedette un ou plusieurs comédiens racontant et/ou jouant des blagues destinées à faire rire un public."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -166,7 +160,7 @@ adr:ComedyPerformance rdf:type ado:EventType, skos:Concept ;
 
 adr:Competition rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r41 ;
+	skos:changeNote _:r44 ;
 	skos:closeMatch wd:Q841654 ;
 	skos:definition "An event in which people compete against each other for prizes."@en, "Un événement dans lequel les gens s'affrontent pour remporter des prix."@fr ;
 	skos:hiddenLabel "Tournament, Championship, Talent Show, Contest, Battle of the Bands"@en, "Tournoi, Compétition, Championnat, Spectacle de talents"@fr ;
@@ -174,11 +168,10 @@ adr:Competition rdf:type ado:EventType, skos:Concept ;
 	skos:prefLabel "Competition"@en, "Concours"@fr .
 
 adr:Conference dcterms:isReplacedBy adr:TalkEvent ;
-	dcterms:modified "2025-08-26"^^xsd:date ;
 	rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r4 ;
+	skos:changeNote _:r37 ;
 	skos:definition "A live speaking activity such as a talk and or speech."@en, "Une activité de prise de parole en direct telle qu'une conférence ou un discours."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:note <https://github.com/culturecreates/artsdata-data-model/issues/48> ;
@@ -187,7 +180,7 @@ adr:Conference dcterms:isReplacedBy adr:TalkEvent ;
 adr:Convention rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Conference, Congress"@en ;
 	skos:broader adr:EventSeries ;
-	skos:changeNote _:r30 ;
+	skos:changeNote _:r23 ;
 	skos:closeMatch wd:Q114834437 ;
 	skos:definition "An event series consisting of live speaking activities, including lectures, workshops, and/or social events."@en, "Une série d'événements comprenant des activités de prise de parole en direct, y compris des conférences, des ateliers et/ou des événements sociaux."@fr ;
 	skos:editorialNote "Added to act as an intermediate Type between the superclass \"Event\" and Post- and Pre-show Talk events."@en, "Ajouté pour agir comme un type intermédiaire entre la superclasse « Événement » et les événements de discussion post- et pré-spectacle."@fr ;
@@ -197,19 +190,17 @@ adr:Convention rdf:type ado:EventType, skos:Concept ;
 	skos:prefLabel "Convention"@en, "Congrès"@fr ;
 	skos:scopeNote "This concept can include keynote talks, conference panels, lectures and interviews, for example."@en, "Ce concept peut inclure des congrès, des panels de congrès, des cours magistraux et des ateliers, par exemple."@fr .
 
-adr:CountryMusicPerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:CountryMusicPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r14 ;
+	skos:changeNote _:r47 ;
 	skos:definition "A musical performance featuring the country genre."@en, "Performance de musique country"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Country Music Show"@en, "Spectacle de musique country"@fr .
 
-adr:DancePerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:DancePerformance rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r40 ;
+	skos:changeNote _:r48 ;
 	skos:closeMatch wd:Q47468117 ;
 	skos:definition "A performance featuring the execution of a dance work."@en, "Une représentation présentant l’exécution d’une œuvre chorégraphique."@fr ;
 	skos:hiddenLabel "Ballet"@en, "Ballet"@fr ;
@@ -218,7 +209,7 @@ adr:DancePerformance dcterms:modified "2025-08-26"^^xsd:date ;
 	skos:prefLabel "Dance Performance"@en, "Représentation de danse"@fr .
 
 adr:Event rdf:type ado:EventType, skos:Concept ;
-	skos:changeNote _:r39 ;
+	skos:changeNote _:r24 ;
 	skos:closeMatch schema:Event, wd:Q1656682 ;
 	skos:definition "An organized activity that occurs at a specific time and location."@en, "Une activité organisée qui a lieu à une heure et un lieu précis."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -226,7 +217,7 @@ adr:Event rdf:type ado:EventType, skos:Concept ;
 
 adr:EventSeries rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r26 ;
+	skos:changeNote _:r15 ;
 	skos:closeMatch schema:EventSeries, wd:Q15275719 ;
 	skos:definition "A coherent series of individual events, shows, gatherings, and/or performances with organizational continuity."@en, "Une série cohérente d'événements individuels, de spectacles, de rassemblements et/ou de performances avec une continuité organisationnelle."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -234,7 +225,7 @@ adr:EventSeries rdf:type ado:EventType, skos:Concept ;
 
 adr:ExhibitionEvent rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r29 ;
+	skos:changeNote _:r4 ;
 	skos:closeMatch footlight:63c01b741c6b6c005aad86c2, footlight:65b2575b8468f40064831051, schema:ExhibitionEvent, wd:Q464980, <https://www.laval.ca/d1a01a8d-f1ab-4bf6-aa31-c2b0df375121> ;
 	skos:definition "An event where a collection of curated objects are grouped together according to some theme for the purpose of being presented to the public."@en, "Un événement où une collection d'objets sélectionnés est regroupée selon un thème dans le but d'être présentée au public."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -243,7 +234,7 @@ adr:ExhibitionEvent rdf:type ado:EventType, skos:Concept ;
 adr:Festival rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Festival Edition, Festival occurrence, Festival Instance, Festival Event"@en, "Édition du festival, Occurrence du festival, Instance du festival, Manifestation du festival"@fr ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r23 ;
+	skos:changeNote _:r17 ;
 	skos:closeMatch schema:Festival, wd:Q27968043 ;
 	skos:definition "An event with an organized set of activities focused on a theme that lasts anywhere from several hours to weeks."@en, "Un événement avec un ensemble organisé d’activités axées sur un thème qui dure de quelques heures à plusieurs semaines."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -253,18 +244,17 @@ adr:Festival rdf:type ado:EventType, skos:Concept ;
 adr:FestivalSeries rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Repeating festival, Periodic Festival, Recurring Festival"@en, "Festival récurrent, Festival périodique"@fr ;
 	skos:broader adr:EventSeries ;
-	skos:changeNote _:r47 ;
+	skos:changeNote _:r33 ;
 	skos:closeMatch schema:EventSeries, wd:Q132241 ;
 	skos:definition "An event series of repeating festivals."@en, "Une série d'événements de festivals répétitifs."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:note <https://github.com/culturecreates/artsdata-planet-lavitrine/issues/30#issuecomment-2347153078> ;
 	skos:prefLabel "Festival Series"@en, "Série de festivals"@fr .
 
-adr:JazzPerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:JazzPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r54 ;
+	skos:changeNote _:r10 ;
 	skos:definition "A musical performance featuring the jazz genre."@en, "Un spectacle de musique de jazz"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Jazz Show"@en, "Spectacle jazz"@fr .
@@ -272,7 +262,7 @@ adr:JazzPerformance dcterms:modified "2025-08-26"^^xsd:date ;
 adr:LiveBroadcastEvent rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:BroadcastEvent ;
-	skos:changeNote _:r12 ;
+	skos:changeNote _:r46 ;
 	skos:closeMatch wd:Q26261757 ;
 	skos:definition "A broadcast event featuring a live feed of audio and/or video content, and conducted via an electronic mass communication method."@en, "Un événement de diffusion mettant en vedette un flux en direct de contenu audio et/ou vidéo, réalisé par un moyen de communication électronique de masse."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -281,14 +271,14 @@ adr:LiveBroadcastEvent rdf:type ado:EventType, skos:Concept ;
 adr:LiveFilmConcert rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Film-in-Concert, Cine-Concert, Film Concert, Film with Live Orchestra, Live Orchestra Film Screening, Live Score Performance, Movie with Live Music, Live to Picture Performance, Live to Projection, Film Music Concert, Live Soundtrack Screening, Symphonic Film Experience, Movies in Concert, Cinema Symphony"@en, "Film en concert, Ciné-concert, Concert de film, Film avec orchestre en direct, Projection de film avec orchestre en direct, Performance de musique de film en direct, Film avec musique live, Performance en direct sur image, Projection avec musique en direct, Concert de musique de film, Projection avec bande-son en direct, Expérience symphonique de film, Films en concert, Symphonie cinématographique"@fr ;
 	skos:broader adr:ScreeningEvent ;
-	skos:changeNote _:r25 ;
+	skos:changeNote _:r21 ;
 	skos:definition "A screening event in which live musicians perform a film’s soundtrack in real time."@en, "Un événement de projection où des musiciens en direct interprètent la bande-son d’un film en temps réel."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Live Film Concert"@en, "Ciné-concert"@fr .
 
 adr:MasterclassEvent rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:WorkshopEvent ;
-	skos:changeNote _:r21 ;
+	skos:changeNote _:r8 ;
 	skos:closeMatch wd:Q1281422 ;
 	skos:definition "A workshop event featuring an expert in a specific medium teaching and/or counselling other artists in the same medium, and providing newer artists with the benefit of the expert's experience."@en, "Un événement d'atelier mettant en vedette un expert dans un domaine spécifique qui enseigne et/ou conseille d'autres artistes dans le même domaine, et offre aux nouveaux artistes l'avantage de l'expérience de l'expert."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -297,24 +287,23 @@ adr:MasterclassEvent rdf:type ado:EventType, skos:Concept ;
 adr:MusicPerformance rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Music event"@en, "Événement de musique"@fr ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r35 ;
+	skos:changeNote _:r3 ;
 	skos:closeMatch schema:MusicEvent, wd:Q182832, wd:Q638 ;
 	skos:definition "A performance featuring the execution of a music work involving one or more artists singing and/or playing instruments."@en, "Un représentation mettant en vedette l'exécution d'une œuvre musicale impliquant un ou plusieurs artistes chantant et/ou jouant des instruments."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Concert"@en, "Concert"@fr .
 
-adr:MusicalComedyPerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:MusicalComedyPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:ComedyPerformance ;
-	skos:changeNote _:r0 ;
+	skos:changeNote _:r11 ;
 	skos:definition "A comedy performance in which the artist utilizes instrumental accompaniment for comedic effect."@en, "Un spectacle de théâtre musical comique"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Musical Comedy Show"@en, "Spectacle comédie musicale"@fr .
 
 adr:MusicalTheatrePerformance rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r7 ;
+	skos:changeNote _:r25 ;
 	skos:closeMatch schema:TheaterEvent, wd:Q1370345 ;
 	skos:definition "A performance featuring the execution of a musico-dramatic work in the musical theatre genre, combining music, singing, and acting to tell a story."@en, "Une représentation présentant la représentation d'une œuvre musico-dramatique du genre du théâtre musical, combinant musique, chant et jeu d'acteur pour raconter une histoire."@fr ;
 	skos:hiddenLabel "Musical, Broadway, Musical Comedy"@en, "Musical, Broadway, comédie musicale"@fr ;
@@ -324,7 +313,7 @@ adr:MusicalTheatrePerformance rdf:type ado:EventType, skos:Concept ;
 adr:OnDemand rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:BroadcastEvent ;
-	skos:changeNote _:r38 ;
+	skos:changeNote _:r43 ;
 	skos:closeMatch schema:OnDemandEvent, wd:Q2295887 ;
 	skos:definition "As per Schema.org, this is a publication event during which a program (e.g. catch-up TV or radio podcast) is available on-demand."@en, "Selon Schema.org, il s'agit d'un événement de publication au cours duquel un programme (par exemple, une télévision de rattrapage ou un podcast radio) est disponible à la demande."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -334,18 +323,17 @@ adr:OnDemand rdf:type ado:EventType, skos:Concept ;
 adr:OperaPerformance rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Opera"@en, "Opéra"@fr ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r52 ;
+	skos:changeNote _:r40 ;
 	skos:closeMatch schema:MusicEvent, wd:Q11931373, wd:Q1344 ;
 	skos:definition "A performance featuring the execution of a musico-dramatic work in the opera genre, combining singing, stagecraft, and narrative storytelling."@en, "Une représentation présentant la représentation d'une œuvre musico-dramatique du genre opéra, mêlant chant, mise en scène et narration scenique."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Opera Performance"@en, "Représentation d'opéra"@fr ;
 	skos:scopeNote "A performance featuring selected arias, choruses or instrumental pieces from diverse operas (rather than an entire or a significant section of a single opera work) is an instance of Concert."@en, "Une représentation présentant une sélection d'airs, de chœurs ou de pièces instrumentales extraits de divers opéras (plutôt qu'une œuvre entière ou une portion significative d'une œuvre entière) est une instance de Concert."@fr .
 
-adr:PerformanceArt dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:PerformanceArt rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Art performance"@fr ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r33 ;
+	skos:changeNote _:r54 ;
 	skos:closeMatch schema:VisualArtsEvent, wd:Q213156 ;
 	skos:definition "A performance that produces an emphemeral performance work in the course of the work's execution."@en, "Une représentation qui produise une œuvre éphémère au cours de son exécution."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -354,7 +342,7 @@ adr:PerformanceArt dcterms:modified "2025-08-26"^^xsd:date ;
 
 adr:PerformingArtsEvent rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r6 ;
+	skos:changeNote _:r5 ;
 	skos:closeMatch wd:Q184485, wd:Q35140 ;
 	skos:definition "An event during which a live performance work is publicly presented for an audience."@en, "Un événement au cours duquel une œuvre scénique est exécutée en publique."@fr ;
 	skos:hiddenLabel "Show"@en, "Spectacle"@fr ;
@@ -372,7 +360,7 @@ adr:PostshowTalk rdf:type ado:EventType, skos:Concept ;
 
 adr:PowWow rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r44 ;
+	skos:changeNote _:r36 ;
 	skos:closeMatch wd:Q254279 ;
 	skos:definition "A festival held by North American Indigenous communities following specific ceremonial protocols and featuring dancing, singing, and drumming."@en, "Un festival célébré par les communautés autochtones d'Amérique du Nord, respectant des protocoles cérémoniels précis et incluant des danses, des chants et du tambour."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -380,7 +368,7 @@ adr:PowWow rdf:type ado:EventType, skos:Concept ;
 
 adr:PreshowTalk rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:TalkEvent ;
-	skos:changeNote _:r49 ;
+	skos:changeNote _:r39 ;
 	skos:closeMatch schema:Event, wd:Q603773 ;
 	skos:definition "An event featuring artists talking to or with an audience before a performance."@en, "Un événement mettant en vedette des artistes discutant avec le public avant une performance."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -389,7 +377,7 @@ adr:PreshowTalk rdf:type ado:EventType, skos:Concept ;
 adr:PublicationEvent rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r48 ;
+	skos:changeNote _:r45 ;
 	skos:closeMatch schema:PublicationEvent ;
 	skos:definition "An event which presents a creative work to the public for the first time."@en, "Un événement qui présente une œuvre créative au public pour la première fois."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -398,7 +386,7 @@ adr:PublicationEvent rdf:type ado:EventType, skos:Concept ;
 adr:RehearsalEvent rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Public rehearsal, Public Dress rehearsal, Preview, Pre-premiere"@en, "Répétition publique, Répétition devant public, Générale devant public, Avant-première"@fr ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r43 ;
+	skos:changeNote _:r12 ;
 	skos:closeMatch wd:Q1751775 ;
 	skos:definition "An event where the process of creating a performance work and preparing for its performance is presented to the public."@en, "Un événement où le processus de création d’une œuvre de spectacle et sa préparation en vue de sa présentation sont partagés avec le public."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -409,32 +397,30 @@ adr:ResidencyActivity dcterms:isReplacedBy adr:ResidencyEvent ;
 	rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r11 ;
+	skos:changeNote _:r16 ;
 	skos:definition "A residency activity is an activity where a sponsor, usually a performing arts organization with access theatre or venue facility, supports the work of artists by providing resources."@en, "Une activité de résidence est une activité où un sponsor, généralement un organisme des arts de la scène avec accès à un théâtre ou à une salle, soutient le travail des artistes en fournissant des ressources."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Residency"@en, "Résidence"@fr .
 
 adr:ResidencyEvent rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r27 ;
+	skos:changeNote _:r29 ;
 	skos:definition "An event in which an arts organization sponsors one or more artists and supports their work by providing access to the resources the organization has at its disposal."@en, "Un événement dans laquelle une organisation artistique parraine un ou plusieurs artistes et soutient leur travail en leur donnant accès aux ressources dont dispose l'organisation."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Residency"@en, "Résidence"@fr .
 
-adr:RhythmAndBluesPerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:RhythmAndBluesPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r45 ;
+	skos:changeNote _:r22 ;
 	skos:definition "A musical performance featuring the rhythm and blues genre."@en, "Spectacle de musique R&B"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "R&B Show"@en, "Spectacle R&B"@fr .
 
-adr:RockMusicPerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:RockMusicPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r55 ;
+	skos:changeNote _:r49 ;
 	skos:definition "A musical performance featuring the rock genre."@en, "Un spectacle de musique rock"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Rock Music Show"@en, "Spectacle de musique rock"@fr .
@@ -442,7 +428,7 @@ adr:RockMusicPerformance dcterms:modified "2025-08-26"^^xsd:date ;
 adr:SaleEvent rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Market, Fair"@en, "Marché, Foire"@fr ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r8 ;
+	skos:changeNote _:r30 ;
 	skos:closeMatch schema:SaleEvent ;
 	skos:definition "An event where art and/or cultural products are bought and sold."@en, "Un événement où d'art et/ou des produits culturels sont achetés et vendus."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -451,7 +437,7 @@ adr:SaleEvent rdf:type ado:EventType, skos:Concept ;
 adr:ScreeningEvent rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Film, Cinema, Cinematographic Screening"@en, "Film, Cinéma, Projection cinématographique"@fr ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r31 ;
+	skos:changeNote _:r28 ;
 	skos:closeMatch schema:ScreeningEvent, wd:Q2295790 ;
 	skos:definition "An event that presents film or video content to an audience."@en, "Un événement qui présente du contenu audiovisuel à un public."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -468,7 +454,7 @@ adr:SocialDance rdf:type ado:EventType, skos:Concept ;
 
 adr:SocialEvent rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r46 ;
+	skos:changeNote _:r7 ;
 	skos:closeMatch schema:SocialEvent, wd:Q117769381 ;
 	skos:definition "An event organized for a group of people to meet and/or interact with each other."@en, "Un événement organisé pour qu'un groupe de personnes se rencontre et/ou interagisse les unes avec les autres."@fr ;
 	skos:hiddenLabel "Reception, Opening, Launch, Party"@en, "Réception, Vernissage, Lancement, Fête"@fr ;
@@ -477,7 +463,7 @@ adr:SocialEvent rdf:type ado:EventType, skos:Concept ;
 
 adr:SpokenWordPerformance rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r50 ;
+	skos:changeNote _:r38 ;
 	skos:closeMatch schema:TheaterEvent, wd:Q1428637 ;
 	skos:definition "A performance featuring poetry performed for an audience."@en, "Une représentation mettant en vedette de la poésie interprétée devant un public."@fr ;
 	skos:hiddenLabel "Slam Poetry, Poetry performance, Dramatic Poetry Reading, Poetry reading"@en, "Lecture à haute voix, poésie, Slam de poésie, Création parlée, Poésie orale, Lecture de poésie, Arts de la parole"@fr ;
@@ -489,14 +475,14 @@ adr:Storytelling dcterms:isReplacedBy adr:StorytellingPerformance ;
 	rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r5 ;
+	skos:changeNote _:r35 ;
 	skos:definition "Storytelling uses words and actions to reveal the elements and images of a story all the while encouraging the listener's imagination."@en, "Le conte utilise des mots et des actions pour révéler les éléments et les images d'une histoire tout en encourageant l'imagination de l'auditeur."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Storytelling"@en, "conte"@fr .
 
 adr:StorytellingPerformance rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r32 ;
+	skos:changeNote _:r0 ;
 	skos:closeMatch wd:Q989963 ;
 	skos:definition "A performance that uses words and actions to convey to an audience the elements and content of a specific narrative."@en, "Une représentation qui utilise des mots et des actions pour transmettre au public les éléments et le contenu d'une narration spécifique."@fr ;
 	skos:hiddenLabel "Story Time, Narration, Reading"@en, "Narration, conte, L'heure du conte, art oratoire"@fr ;
@@ -506,7 +492,7 @@ adr:StorytellingPerformance rdf:type ado:EventType, skos:Concept ;
 adr:TalkEvent rdf:type ado:EventType, skos:Concept ;
 	skos:altLabel "Lecture"@en, "Conférence"@fr ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r3 ;
+	skos:changeNote _:r1 ;
 	skos:closeMatch wd:Q114834437 ;
 	skos:definition "An event in which one or more people speak in front of an audience."@en, "Un événement au cours duquel une ou plusieurs personnes parlent devant un public."@fr ;
 	skos:hiddenLabel "Debate"@en, "Débat"@fr ;
@@ -514,10 +500,9 @@ adr:TalkEvent rdf:type ado:EventType, skos:Concept ;
 	skos:note <https://github.com/culturecreates/artsdata-data-model/issues/48> ;
 	skos:prefLabel "Talk"@en, "Discussion"@fr .
 
-adr:TheatrePerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:TheatrePerformance rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r16 ;
+	skos:changeNote _:r32 ;
 	skos:closeMatch schema:TheaterEvent, wd:Q11812395 ;
 	skos:definition "A performance in which actors realize a dramatic work written for the stage."@en, "Une représentation dans lequel des acteurs jouent une pièce écrite pour la scène."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -526,7 +511,7 @@ adr:TheatrePerformance dcterms:modified "2025-08-26"^^xsd:date ;
 
 adr:VarietyPerformance rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r10 ;
+	skos:changeNote _:r51 ;
 	skos:closeMatch wd:Q117187901 ;
 	skos:definition "A performance that features multiple performances of differing art media or genres."@en, "Un événement des arts de la scène mettant en vedette plusieurs performances d'art ou de genres différents."@fr ;
 	skos:hiddenLabel "Talent Show"@en ;
@@ -537,17 +522,16 @@ adr:VarietyShow dcterms:isReplacedBy adr:VarietyPerformance ;
 	rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:PerformingArtsEvent ;
-	skos:changeNote _:r24 ;
+	skos:changeNote _:r14 ;
 	skos:definition "Variety show is made up of a variety of acts."@en, "Le spectacle de variétés est composé d'une variété de numéros."@fr ;
 	skos:hiddenLabel "Talent Show"@en ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Variety Show"@en, "Spectacle variété"@fr .
 
-adr:VisualArtsEvent dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:VisualArtsEvent rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r2 ;
+	skos:changeNote _:r20 ;
 	skos:closeMatch schema:VisualArtsEvent, wd:Q667276 ;
 	skos:definition "An event involving any art medium that produces finished art objects to be viewed by an audience."@en, "Un événement impliquant tout médium artistique produisant des objets d'art finis destinés à être vus par un public."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
@@ -555,189 +539,188 @@ adr:VisualArtsEvent dcterms:modified "2025-08-26"^^xsd:date ;
 
 adr:WorkshopEvent rdf:type ado:EventType, skos:Concept ;
 	skos:broader adr:Event ;
-	skos:changeNote _:r17 ;
+	skos:changeNote _:r41 ;
 	skos:closeMatch wd:Q27556165 ;
 	skos:definition "An event where people learn about and/or practice a specific subject or activity."@en, "Un événement où les gens apprennent et/ou pratiquent un sujet ou une activité spécifique."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Workshop"@en, "Atelier"@fr .
 
-adr:WorldMusicPerformance dcterms:modified "2025-08-26"^^xsd:date ;
-	rdf:type ado:EventType, skos:Concept ;
+adr:WorldMusicPerformance rdf:type ado:EventType, skos:Concept ;
 	owl:deprecated "true"^^xsd:boolean ;
 	skos:broader adr:MusicPerformance ;
-	skos:changeNote _:r34 ;
+	skos:changeNote _:r53 ;
 	skos:definition "A musical performance featuring music from elsewhere in the world."@en, "Spectacle de musique du monde"@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "World Music Show"@en, "Spectacle musique du monde"@fr .
 
-_:r0 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r0 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "URI changed from \"adr:Storytelling\" to \"adr:StorytellingPerformance\". Definition harmonized." .
 
-_:r1 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r1 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "URI changed from \"adr:Conference\" to \"adr:TalkEvent\". Definition harmonized." .
 
-_:r10 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- URI changed from \"adr:VarietyShow\" to \"adr:VarietyPerformance\"., - Definition harmonized., - Preferred label harmonized." .
+_:r10 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated.\"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
-_:r11 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - Replaced by adr:ResidencyEvent" .
+_:r11 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
-_:r12 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - Type is not defined by the event format, but rather by its access mode. This facet should be represented with \"schema:eventAttendanceMode\"." .
+_:r12 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized." .
 
 _:r13 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
-_:r14 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r14 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. Replaced by adr:VarietyPerformance" .
 
-_:r15 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r15 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized. skos:broader changed from \"Event\" to avoid circularity in the subclass hierarchy." .
 
-_:r16 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+_:r16 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. Replaced by adr:ResidencyEvent" .
 
 _:r17 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
-_:r18 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - Replaced by adr:Class" .
+_:r18 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "URI changed from \"adr:Classes\" to \"adr:Class\". Changed skos:broader to \"EventSeries\". Preferred label harmonized." .
 
-_:r19 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r19 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. The facet that defines this eventType is a \"language\" facet, and therefore out of scope. Additionally, this language facet is twice redundant, first because \"Chanson\" as a genre is already a French genre, and second because the eventType \"Chanson\" already exists." .
 
-_:r2 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - The facet that defines this event is a \"subject\" facet. An event featuring visual art objects could refer to any number of differently formated events, most of which already have an EventType in this ontology (cf. Exhibition, Workshop, Performance Art, etc.), and is thus out of scope as a defining facet., - Most cases of \"VisualArtsEvent\" in Artsdata actually refer to Exhibitions, which already have an EventType" .
+_:r2 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. Unclear what this EventType refers to, since \"chanson\" is a specifically French subgenre. The facet that defines this eventType is a \"language\" facet, and therefore out of scope." .
 
-_:r20 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+_:r20 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. The facet that defines this event is a \"subject\" facet. An event featuring visual art objects could refer to any number of differently formated events, most of which already have an EventType in this ontology (cf. Exhibition, Workshop, Performance Art, etc.), and is thus out of scope as a defining facet. Most cases of \"VisualArtsEvent\" in Artsdata actually refer to Exhibitions, which already have an EventType." .
 
 _:r21 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized., - Changed \"skos:broader\" to WorkshopEvent, since a Masterclass is a subclass of workshop" .
+	rdf:value "New concept in version 4.0." .
 
-_:r22 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - Unclear what this EventType refers to, since \"chanson\" is a specifically French subgenre., - The facet that defines this eventType is a \"language\" facet, and therefore out of scope." .
+_:r22 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
 _:r23 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "New concept in version 4.0." .
 
-_:r24 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - Replaced by adr:VarietyPerformance" .
+_:r24 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized." .
 
 _:r25 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- New concept in version 4.0." .
+	rdf:value "Definition harmonized." .
 
-_:r26 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized., -skos:broader changed from \"Event\" to avoid circularity in the subclass hierarchy" .
+_:r26 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. Replaced by adr:Class" .
 
-_:r27 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- URI changed from \"adr:ResidencyActivity\" to \"adr:ResidencyEvent\"., - Definition harmonized." .
+_:r27 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
 _:r28 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
 _:r29 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "URI changed from \"adr:ResidencyActivity\" to \"adr:ResidencyEvent\". Definition harmonized." .
 
 _:r3 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- URI changed from \"adr:Conference\" to \"adr:TalkEvent\" , - Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
 _:r30 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- New concept in version 4.0." .
+	rdf:value "New concept in version 4.0." .
 
-_:r31 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+_:r31 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
 _:r32 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- URI changed from \"adr:Storytelling\" to \"adr:StorytellingPerformance\"., - Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
 _:r33 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "New concept in version 4.0." .
 
-_:r34 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r34 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized." .
 
-_:r35 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+_:r35 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. Replaced by adr:StorytellingPerformance" .
 
-_:r36 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "- Definition from 3.4.5." .
+_:r36 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "New concept in version 4.0." .
 
-_:r37 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- URI changed from \"adr:Classes\" to \"adr:Class\"., - Changed skos:broader to \"EventSeries\", - Preferred label harmonized." .
+_:r37 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. Replaced by adr:TalkEvent" .
 
-_:r38 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - This EventType is definitionally not an event, as it lacks the organization that defines an event. Something that is available on demand has no set time or location; on the contrary, something that is available \"on demand\" can be accessed at whatever time, from wherever, and is furthermore defined by this lack of set time or location. It is the exact opposite of an \"event\" in this sense. An \"OnDemand\" event would lack \"location\" and \"time\" properties, which are required properties for EventTypes in Artsdata. It is unclear why or how eventTypes that lack these properties would be catalogued in Artsdata." .
+_:r38 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized. Preferred label harmonized." .
 
 _:r39 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
-_:r4 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - Replaced by adr:TalkEvent" .
+_:r4 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized." .
 
 _:r40 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
 _:r41 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- New concept in version 4.0." .
+	rdf:value "Definition harmonized." .
 
 _:r42 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- New concept in version 4.0." .
+	rdf:value "New concept in version 4.0." .
 
-_:r43 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+_:r43 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. This EventType is definitionally not an event, as it lacks the organization that defines an event. Something that is available on demand has no set time or location; on the contrary, something that is available \"on demand\" can be accessed at whatever time, from wherever, and is furthermore defined by this lack of set time or location. It is the exact opposite of an \"event\" in this sense. An \"OnDemand\" event would lack \"location\" and \"time\" properties, which are required properties for EventTypes in Artsdata. It is unclear why or how eventTypes that lack these properties would be catalogued in Artsdata." .
 
 _:r44 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- New concept in version 4.0." .
+	rdf:value "New concept in version 4.0." .
 
-_:r45 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r45 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. The facet that defines this eventType is a \"subject\" facet; it refers to the content of the event and not its form. The \"publication for a CreativeWork of any type\" could refer to a number of differently formated events (a book launch, a broadcast, a film premiere), some of which already have an eventType in this ontology, for example a ScreeningEvent or a BroadcastEvent. It should therefore be considered out of scope in this vocabulary." .
 
-_:r46 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+_:r46 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. Type is not defined by the event format, but rather by its access mode. This facet should be represented with \"schema:eventAttendanceMode\"." .
 
-_:r47 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- New concept in version 4.0." .
+_:r47 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
-_:r48 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - The facet that defines this eventType is a \"subject\" facet; it refers to the content of the event and not its form. The \"publication for a CreativeWork of any type\" could refer to a number of differently formated events (a book launch, a broadcast, a film premiere), some of which already have an eventType in this ontology, for example a ScreeningEvent or a BroadcastEvent. It should therefore be considered out of scope in this vocabulary." .
+_:r48 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized." .
 
-_:r49 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+_:r49 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
-_:r5 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - Replaced by adr:StorytellingPerformance" .
+_:r5 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized." .
 
-_:r50 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized., - Preferred label harmonized." .
+_:r50 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre. Use broader adr:MusicPerformance instead." .
 
 _:r51 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "URI changed from \"adr:VarietyShow\" to \"adr:VarietyPerformance\". Definition harmonized. Preferred label harmonized." .
 
-_:r52 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+_:r52 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. Type is not defined by the event format, but rather by its access mode. This facet should be represented with \"schema:eventAttendanceMode\"." .
 
-_:r53 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - The facet that defines this eventType is a \"language\" facet, and therefore out of scope. Additionally, this language facet is twice redundant, first because \"Chanson\" as a genre is already a French genre, and second because the eventType \"Chanson\" already exists." .
+_:r53 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
-_:r54 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r54 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized." .
 
-_:r55 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - \"Out of scope\" , - Type is not defined by the event format, but rather by its genre." .
+_:r55 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
+	rdf:value "Definition harmonized." .
 
 _:r56 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- New concept in version 4.0." .
+	rdf:value "New concept in version 4.0." .
 
 _:r6 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
 _:r7 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- Definition harmonized." .
+	rdf:value "Definition harmonized." .
 
 _:r8 dcterms:references adr:ArtsdataEventTypes-Collection-4.0 ;
-	rdf:value "- New concept in version 4.0." .
+	rdf:value "Definition harmonized. Changed \"skos:broader\" to WorkshopEvent, since a Masterclass is a subclass of workshop." .
 
-_:r9 dcterms:references adr:ArtsdataEventTypes-Collection-3.4.5 ;
-	rdf:value "Deprecated, - Type is not defined by the event format, but rather by its access mode. This facet should be represented with \"schema:eventAttendanceMode\"." .
+_:r9 dcterms:references adr:ArtsdataEventTypes-Collection-3.4 ;
+	rdf:value "Deprecated. \"Out of scope\". Type is not defined by the event format, but rather by its genre." .
 
