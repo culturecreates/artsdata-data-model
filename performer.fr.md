@@ -8,7 +8,7 @@ La propriété 'performer' fournit des informations extrêmement précieuses sur
 
 ### Bonnes pratiques pour le choix des valeurs de performer
 
-Voir : [Good Practices for Selecting performer Values]({{ base }}/performer-values.html)
+Sélectionner la ou les bonnes valeurs pour la propriété `performer` n'est pas toujours chose aisée. C'est pourquoi nous avons conçu cette série de [bonnes pratiques]({{ base }}/performer-values.fr.html)
 
 ### Bonnes pratiques concernant le @type des interprètes
 
