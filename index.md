@@ -35,6 +35,8 @@ Here are the main Classes used in Artsdata.
   
 - [Organization types](https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit?usp=sharing)
 
+- [Genres]({{ base }}/genres.html)
+
 ### Persistent Identifiers
 
 In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other unique persistent identifiers, like Wikidata and ISNI, to recognize and reconcile entities of type [Organization]({{ base }}/classes/organization.html), [Person]({{ base }}/classes/person.html) and [Place]({{ base }}/classes/place.html). 
