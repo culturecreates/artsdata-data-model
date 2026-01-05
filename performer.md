@@ -8,7 +8,7 @@ The `performer` property provides extremely valuable information about a perform
 
 ### Good practices for selecting `performer` values
 
-See: [Good Practices for Selecting performer Values]({{ base }}/performer-values.html)
+Selecting the right value(s) for the `performer` property can be a little challenging at times. That's why we drafted these [Good Practices for Selecting performer Values]({{ base }}/performer-values.html).
 
 ### Good practices regarding performers' `@type`
 
