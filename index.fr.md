@@ -39,7 +39,7 @@ En plus de l'identifiant Artsdata, le graphe de connaissances Artsdata s'appuie 
 
 - [Types d'événements]({{ base }}/event-types.fr.html)
   
-- [Types d'organismes](https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit?usp=sharing)
+- [Types d'organismes]({{ base }}/organization-types.fr.html)
 
 - [Genres]({{ base }}/genres.fr.html)  
 
