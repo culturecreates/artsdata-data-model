@@ -4,6 +4,14 @@
 
 ## Artsdata Controlled Vocabulary for Genres
 
+
+| <!-- --> | <!-- --> |
+| - | - |
+| Concept scheme | [adr:ArtsdataGenres](http://kg.artsdata.ca/resource/ArtsdataGenres) |
+| Version | 1.0 |
+| Release date | January 2025 |
+
+
 English translation coming soon...
 
 ### Concepts
