@@ -33,7 +33,7 @@ Here are the main Classes used in Artsdata.
 
 - [Event types]({{ base }}/event-types.html)
   
-- [Organization types](https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit?usp=sharing)
+- [Organization types]({{ base }}/organization-types.html)
 
 - [Genres]({{ base }}/genres.html)
 
