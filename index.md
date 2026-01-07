@@ -5,11 +5,11 @@
 ## Artsdata Data Model v{{ site.data.versions.schemaVersion }}
 [Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
-A simple data model for Performing Arts Events and related Places, People and Organizations. 
+A data model for representing performing arts events and works, as well as related places, people and organizations. 
 
-The Artsdata data model (ontology) is a sub-set of Schema.org along with a few controlled vocabularies specific to Artsdata. The data mode is formally represented using the language SHACL [here](https://kg.artsdata.ca/query/show?sparql=https://raw.githubusercontent.com/artsdata-stewards/artsdata-actions/main/queries/artsdata_SHACL_validation_rules.sparql).
+The Artsdata data model (ontology) is a sub-set of Schema.org and other ontologies, along with core concepts and controlled vocabularies specific to Artsdata. The data model is formally represented using the language SHACL [here](https://kg.artsdata.ca/query/show?sparql=https://raw.githubusercontent.com/artsdata-stewards/artsdata-actions/main/queries/artsdata_SHACL_validation_rules.sparql).
 
-The classes and properties used in Artsdata resemble [Google Event Structured Data](https://developers.google.com/search/docs/data-types/event).  The main difference is that Artsdata creates links between entities within Artsdata and interlinks URIs outside of Artsdata including links to Wikidata and other LOD (Linked Open Data) sources.  Artsdata also generates unique global identifiers (IRIs also called URIs) for classes such as Events, Persons, Places, and Organizations.
+The classes and properties used in Artsdata resemble [Google Event Structured Data](https://developers.google.com/search/docs/data-types/event).  The main difference is that Artsdata creates links between entities within Artsdata and entities outside of Artsdata including links to Wikidata and other LOD (Linked Open Data) sources.  Artsdata also generates persistent global identifiers (IRIs also called URIs) for classes such as Events, Live Performance Works, Places, Persons and Organizations.
 
 Here are the main Classes used in Artsdata.
 
@@ -59,11 +59,9 @@ In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on othe
 
 Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called **OWL-Horst (optimized)**. 
 
-The main ontology used in Artsdata.ca is **Schema.org**. Artsdata.ca imports the core Schema.org schema and the pending Schema.org schema (to include schema:EventSeries which is a pending class).  
+The main ontology used in Artsdata.ca is **Schema.org**. Artsdata.ca imports the core Schema.org schema and the pending Schema.org schema (to include schema:EventSeries which is a pending class). Other ontologies imported or used in Artsdata include DBpedia, DCAT, DATAID, PROV, SHACL, VANN, SKOS, and Wikidata.
 
-Artsdata.ca has a large number of class and property mappings between Schema.org, Wikidata.org, DBpedia.org, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns) using owl:equivalentClass and owl:equivalentProperty. The mappings come prebuilt from external ontologies. 
-
-Current work into the next version of the Artsdata.ca ontology is being influenced by the work at CAPACOA's [Linked Digital Future](https://linkeddigitalfuture.ca) initiative and involves aligning the data model with data models used in cultural heritage including, but not limited to, CIDOC-CRM, FRBRoo, PROV and RDA. The data models will be futher specificed by a domain-specifc vocabulary to be released in the upcoming versions.
+Artsdata.ca has a large number of class and property mappings between Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns) using owl:equivalentClass, owl:equivalentProperty, skos:exactMatch, and skos:closeMatch. Some mappings come prebuilt from external ontologies; others are defined within Artsdata. 
 
 #### Exceptions handling schema.org in Artsdata
 Artsdata converts all schema.org **https** URIs to **http** URIs, and also makes the following transformations:
@@ -77,6 +75,7 @@ Artsdata converts all schema.org **https** URIs to **http** URIs, and also makes
 * [Artsdata controlled vocabularies](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology)
     * [http://kg.artsdata.ca/resource/ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes)
     * [http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes)
+    * [http://kg.artsdata.ca/resource/ArtsdataGenres](http://kg.artsdata.ca/resource/ArtsdataGenres)
 
 ### Provenance
 
