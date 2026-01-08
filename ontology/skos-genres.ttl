@@ -19,7 +19,7 @@ adr:ArtsdataGenres dcterms:hasFormat <https://raw.githubusercontent.com/culturec
 	vann:example adr:K6-100 ;
 	vann:preferredNamespacePrefix "adr" ;
 	vann:preferredNamespaceUri <http://kg.artsdata.ca/resource/> ;
-	vann:usageNote <https://docs.artsdata.ca/classes/live-performance-work.html> ;
+	vann:usageNote <https://docs.artsdata.ca/genres.html> ;
 	schema:creator adr:K1-5, adr:K16-211 ;
 	schema:dateCreated "2026-01-05"^^xsd:date ;
 	schema:dateModified "2026-01-05"^^xsd:date ;
