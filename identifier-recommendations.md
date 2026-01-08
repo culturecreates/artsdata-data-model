@@ -23,7 +23,7 @@ In order to guide data providers and consumers in the adoption and implementatio
 | - | - | - | - | - |
 | [schema:Person](https://schema.org/Person) | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | Optional |
 | [schema:Organization](https://schema.org/Organization)<br>[schema:PerformingGroup](https://schema.org/PerformingGroup) | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | Optional | Optional |
-| [schema:Place](https://schema.org/Place) | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | Not a valid type for this ID | Optional |
+| [schema:Place](https://schema.org/Place)<br>[ado:LivePerformanceWork](http://kg.artsdata.ca/ontology/LivePerformanceWork) | <span style="color:green">**Recommended**</span> | <span style="color:green">**Recommended**</span> | Not a valid type for this ID | Optional |
 | [schema:Event](https://schema.org/Event) | <span style="color:green">**Recommended**</span> | Optional | Not a valid type for this ID | Optional |
 
 The Artsdata ID, the Wikidata ID and the ISNI are globally-unique persistent identifiers intended to be referenced across a wide range of information systems, outside of their own web domain. This explains why they are sometimes called “global” identifiers, “bridge” identifiers or “external” identifiers. In these guidelines, they are called _external URIs_.

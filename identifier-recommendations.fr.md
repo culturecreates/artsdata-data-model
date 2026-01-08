@@ -22,7 +22,7 @@ Afin d’aider les fournisseurs de données dans l’adoption et la mise en œuv
 | - | - | - | - | - |
 | [schema:Person](https://schema.org/Person) | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | Optionnel |
 | [schema:Organization](https://schema.org/Organization)<br>[schema:PerformingGroup](https://schema.org/PerformingGroup) | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | Optionnel | Optionnel |
-| [schema:Place](https://schema.org/Place) | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | Non-valide pour ce type | Optionnel |
+| [schema:Place](https://schema.org/Place)<br>[ado:LivePerformanceWork](http://kg.artsdata.ca/ontology/LivePerformanceWork) | <span style="color:green">**Recommandé**</span> | <span style="color:green">**Recommandé**</span> | Non-valide pour ce type | Optionnel |
 | [schema:Event](https://schema.org/Event) | <span style="color:green">**Recommandé**</span> | Optionnel | Non-valide pour ce type | Optionnel |
 
 L'identifiant Artsdata, l'identifiant Wikidata et l'ISNI sont des identifiants pérennes globalement uniques : ils sont destinés à référencés dans plusieurs systèmes d'informations, hors de leurs domaine web. En ce sens, on les désigne parfois d'identifiants « globaux », identifiants « passerelles » ou identifiants « externes ». Dans ces lignes directrices, on les appelle _URI externes_. 
