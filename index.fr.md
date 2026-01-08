@@ -5,12 +5,11 @@
 ## Modèle de données Artsdata v{{ site.data.versions.schemaVersion }}
 [Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
 
-Un modèle de données simple pour les événements dans les arts de la scène ainsi que pour les lieux, les personnes et les organismes connexes. 
+Un modèle de données pour représenter les événements, les œuvres, les lieux, les personnes et les organismes dans arts de la scène. 
 
-Le modèle de données (ontologie) d’Artsdata est un sous-ensemble de Schema.org avec quelques vocabulaires contrôlés additionnels. Le modèle d'Artsdata.ca est représenté formellement avec le language SHACL [ici](https://kg.artsdata.ca/query/show?sparql=https://raw.githubusercontent.com/artsdata-stewards/artsdata-actions/main/queries/artsdata_SHACL_validation_rules.sparql).
+Le modèle de données (ontologie) d’Artsdata est un sous-ensemble de Schema.org et d'autres ontologies avec quelques vocabulaires contrôlés additionnels. Le modèle d'Artsdata.ca est représenté formellement avec le language SHACL [ici](https://kg.artsdata.ca/query/show?sparql=https://raw.githubusercontent.com/artsdata-stewards/artsdata-actions/main/queries/artsdata_SHACL_validation_rules.sparql).
 
-Les classes et propriétés utilisées dans Artsdata sont similaires au modèle de [Google Event Structured Data](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr). En particulier, les propriétés obligatoires pour les événements dans la documentation de Google sont aussi des propriétés obligatoires dans Artsdata.  La différence principale est qu’Artsdata enrichit les données structurées avec des URIs et relie les URIs vers Wikidata et d’autres sources LOD (Linked Open Data). Artsdata génère également des URI (identifiants globaux uniques et pérennes) pour les événements, personnes, lieux, organisations et aussi pour quelques vocabulaires contrôlés comme des types d'événements spécifiques aux arts de la scène. Ces URIs peuvent être utilisés en dehors d'Artsdata.
-
+Les classes et propriétés utilisées dans Artsdata s'apparentent au modèle de [Données structurées d'événement de Google](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr). En particulier, les propriétés obligatoires pour les événements dans la documentation de Google sont aussi des propriétés obligatoires dans le modèle de données Artsdata. La différence principale est qu’Artsdata s'appuie sur les [identifiants pérennes](#identifiants-pérennes) pour lier les données d'Artsdata avec d'autres bases de connaissances ouvertes telles que Wikidata.
 
 Voici les Classes utilisées dans Artsdata.
 
@@ -31,9 +30,12 @@ Voici les Classes utilisées dans Artsdata.
 </ol>
 
 ### Identifiants pérennes
-En plus de l'identifiant Artsdata, le graphe de connaissances Artsdata s'appuie sur d'autres [identifiants pérennes](https://www.artsdata.ca/fr/ressources/bien-identifie), comme l'identifiant Wikidata et l'ISNI, afin de reconnaître et de réconcilier les entités nommées des classes [Organization](https://culturecreates.github.io/artsdata-data-model/classes/organization.html), [Person](https://culturecreates.github.io/artsdata-data-model/classes/person.html) et [Place](https://culturecreates.github.io/artsdata-data-model/classes/place.html). 
 
-[Lignes directrices à propos des identifiants pérennes](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr)
+Artsdata génère ses propres identifiants globaux uniques et pérennes (IRI aussi appelée URI) pour les entités des classes événements, spectacles, lieux, personnes et organisations, ainsi que pour les concepts de vocabulaires contrôlés. Ces URIs peuvent être utilisés en dehors d'Artsdata.
+
+En plus de l'identifiant Artsdata, le graphe de connaissances Artsdata s'appuie sur d'autres [identifiants pérennes](https://www.artsdata.ca/fr/ressources/bien-identifie), comme l'identifiant Wikidata, l'ISNI et les identifiants locaux, afin de reconnaître, de réconcilier et lier les entités nommées. 
+
+[Lignes directrices à propos des identifiants pérennes](https://docs.artsdata.ca/identifier-recommendations.fr.html)
 
 ### Vocabulaires contrôlés
 
@@ -59,11 +61,9 @@ Les formes [SHACL]({{ base }}/shacl_reports.html) sont utilisées pour valider l
 
 Artsdata.ca utilise un ensemble de bases d’implications RDFS et OWL afin de permettre une inférence simple, appelé **OWL-Horst (optimized)**. 
 
-La principale ontologie utilisée dans Artsdata.ca est **Schema.org**. Artsdata.ca importe le schéma de base Schema.org et le schéma Schema.org en attente (pour inclure schema:EventSeries qui est une classe en attente).  
+La principale ontologie utilisée dans Artsdata.ca est **Schema.org**. Artsdata.ca importe le schéma de base Schema.org et le schéma Schema.org en attente (pour inclure schema:EventSeries qui est une classe en attente). Plusieurs autres ontologies sont utilisées, notamment DBpedia, DCAT, DATAID, PROV, SHACL, VANN, SKOS et Wikidata.
 
-Artsdata.ca a un grand nombre de mappages de classes et de propriétés entre Schema.org, Wikidata.org, DBpedia.org, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns) en utilisant owl:equivalentClass and owl:equivalentProperty. La majorité des mappages sont préconstruits à partir d’ontologies externes avec quelques mappages supplémentaires spécifiques à [Artsdata.ca](http://kg.artsdata.ca/Wikidata_Mapping) à Wikidata. 
-
-Les travaux en cours sur la prochaine version de l’ontologie Artsdata.ca sont influencés par les travaux de l’initiative [Un avenir numérique lié](https://linkeddigitalfuture.ca/fr/accueil/) de CAPACOA et impliquent l’alignement du modèle de données avec les modèles de données utilisés dans le patrimoine culturel, y compris, mais sans s’y limiter, CIDOC-CRM, FRBRoo, PROV et RDA. Les modèles de données seront en outre spécifiés par un vocabulaire spécifique au domaine qui sera publié dans les prochaines versions.
+Artsdata.ca a un grand nombre de mappages de classes et de propriétés entre Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, FOAF et DOLCE+DnS Ultralite (Ontology Design Patterns) en utilisant owl:equivalentClass, owl:equivalentProperty, skos:exactMatch et skos:closeMatch. Certains mappages sont préconstruits à partir d’ontologies externes; d'autres sont définis dans Artsdata. 
 
 #### Ontologies chargées dans Artsdata
 
@@ -72,6 +72,7 @@ Les travaux en cours sur la prochaine version de l’ontologie Artsdata.ca sont 
 * [Vocabulaires contrôlés par Artsdata](https://github.com/culturecreates/artsdata-data-model/tree/master/ontology)
     * [http://kg.artsdata.ca/resource/ArtsdataEventTypes](http://kg.artsdata.ca/resource/ArtsdataEventTypes)
     * [http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes)
+    * [http://kg.artsdata.ca/resource/ArtsdataGenres](http://kg.artsdata.ca/resource/ArtsdataGenres)
 
 ### Provenance
 
