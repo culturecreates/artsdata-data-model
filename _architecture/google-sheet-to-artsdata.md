@@ -9,9 +9,11 @@ This [spreadsheet tool](https://docs.google.com/spreadsheets/d/1NacZsvFwahT3qbnk
 
 ![google-sheet-to-artsdata-screenshot](https://github.com/user-attachments/assets/be0ad350-73f9-43e7-9dea-9ed3c593c149)  
 
+[Try it out](https://docs.google.com/spreadsheets/d/1NacZsvFwahT3qbnksFcFEiBwK-ou5XJJzyrUyr7QUpc/edit?gid=1100103681#gid=1100103681)
+
 ## How to Get Started  
 
-1. Open the tool and make your own copy. Ignore the Apps File Script warning – this script needs to be copied to your version of the spreadsheet so that your event information can be converted into structured data.
+1. [Open the tool](https://docs.google.com/spreadsheets/d/1NacZsvFwahT3qbnksFcFEiBwK-ou5XJJzyrUyr7QUpc/edit?gid=444637066#gid=444637066) and make your own copy. Ignore the Apps File Script warning – this script needs to be copied to your version of the spreadsheet so that your event information can be converted into structured data.
 2. Enter your contact information in the `“Fill This First”` tab.
 3. Already using an in-house spreadsheet for your event and performance data? Go to the `“Import”` tab to learn how to map your data into the tool.
 4. Otherwise, watch the linked help video on `“Fill This First”` for guidance on manually adding venue and organization information related to your events. Then, do the same on the `“Event Data”` tab for the rest of your event information.
