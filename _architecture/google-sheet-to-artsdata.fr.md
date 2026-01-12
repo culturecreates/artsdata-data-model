@@ -12,7 +12,7 @@ Cet [outil de chiffrier](https://docs.google.com/spreadsheets/d/1szaf-gjoKSO2IhF
 
 ## Pour commencer
 
-1. Faites une copie du chiffrier. Ignorez l’avertissement d’Apps Script file – ce script doit être copié à votre version du chiffrier pour qu’il puisse convertir vos informations en données structurées.
+1. [Faites une copie du chiffrier]((https://docs.google.com/spreadsheets/d/1szaf-gjoKSO2IhFw3y9cPwSUCfpHV7KhrHXo7MFx6mA/edit?usp=sharing). Ignorez l’avertissement d’Apps Script file – ce script doit être copié à votre version du chiffrier pour qu’il puisse convertir vos informations en données structurées.
 2. Saisissez vos coordonnées dans l’onglet `« Remplir en premier »`.
 3. Vous utilisez déjà un chiffrier interne pour vos données de spectacles? Rendez-vous à l’onglet `« Importation »` pour apprendre comment mapper vos données dans l’outil.
 4. Autrement, regardez la vidéo d’aide liée sur `« Remplir en premier »` pour obtenir des instructions sur la saisie manuelle des informations concernant les lieux et les organismes liés à vos événements. Puis, faites de même dans l'onglet `« Données de l'événement »` pour la reste de vos informations d’événement.
