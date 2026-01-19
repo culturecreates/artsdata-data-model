@@ -61,7 +61,7 @@ Les formes [SHACL]({{ base }}/shacl_reports.html) sont utilisées pour valider l
 
 Artsdata.ca utilise un ensemble de bases d’implications RDFS et OWL afin de permettre une inférence simple, appelé **OWL-Horst (optimized)**. 
 
-La principale ontologie utilisée dans Artsdata.ca est **Schema.org**. Artsdata.ca importe le schéma de base Schema.org et le schéma Schema.org en attente (pour inclure schema:EventSeries qui est une classe en attente). Plusieurs autres ontologies sont utilisées, notamment DBpedia, DCAT, DATAID, PROV, SHACL, VANN, SKOS et Wikidata.
+La principale ontologie utilisée dans Artsdata.ca est **Schema.org**. Artsdata.ca importe le schéma de base Schema.org et le schéma Schema.org en attente (pour inclure schema:EventSeries qui est une classe en attente). Plusieurs autres ontologies sont utilisées, notamment DBpedia, DCAT, DATAID, PROV, SHACL, VANN, VoID, SKOS et Wikidata.
 
 Artsdata.ca a un grand nombre de mappages de classes et de propriétés entre Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, FOAF et DOLCE+DnS Ultralite (Ontology Design Patterns) en utilisant owl:equivalentClass, owl:equivalentProperty, skos:exactMatch et skos:closeMatch. Certains mappages sont préconstruits à partir d’ontologies externes; d'autres sont définis dans Artsdata. 
 
@@ -76,7 +76,7 @@ Artsdata.ca a un grand nombre de mappages de classes et de propriétés entre Sc
 
 ### Provenance
 
-Voir la section plus bas en anglais.
+En cours de traduction...
 
 ### Architecture des flux de données
 
