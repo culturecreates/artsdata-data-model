@@ -6,17 +6,15 @@ layout: class-live-performance-work-doc
 
 Dans Artsdata, une œuvre scénique est defini comme une « œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public ».
 
-La classe [`ado:LivePerformanceWork`](http://kg.artsdata.ca/ontology/LivePerformanceWork) est considérée comme une sous-classe de [LRMoo F1:Work](https://cidoc-crm.org/f1-work), une classe équivalente à [milopa:PERFORMANCE_WORK](https://github.com/pair-cg/milopa) et une classe quasi-équivalente à [datascene:Spectacle](https://datascene.ca/modele/classes_principales/).
-
+La classe [ado:LivePerformanceWork](http://kg.artsdata.ca/ontology/LivePerformanceWork) est considérée comme une sous-classe de [lrmoo:F1_Work](https://cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.1.1.html#F1) et une classe équivalente à [milopa:PERFORMANCE_WORK](https://github.com/pair-cg/milopa) et à [datascene:Spectacle](https://documentation.datascene.ca/references/show/).
 
 ## Propriétés
 
-À venir
-
+Le profil d'application de la classe `ado:LivePerformanceWork` est en cours de dévéloppement et sera publié sous peu. Il importera des propriétés de Schema.org, LRMoo et Wikidata. Il sera par ailleurs mis en correspondance avec d'autres ontologies RDF.
 
 ## Exemple de données structurées
 
-Voici un exemple de données structurées du `@type Event`, avec une entité imbriquée `ado:LivePerformanceWork` sous la propriété `workPerformed`. Cet exemple est basé sur une représentation de l'œuvre * Orpheus | S'abreuver des volcans * par Alan Lake Factori(e), qui est bien décrite sur le [site web de la compagnie](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) et dans le [répertoire Scène Pro](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
+Voici un exemple de données structurées d'une entité de type `Event`, avec une entité imbriquée `ado:LivePerformanceWork` sous la propriété `workPerformed`. Cet exemple est basé sur une représentation de l'œuvre scénique *`Orpheus | S'abreuver des volcans`* par Alan Lake Factori(e), qui est bien décrite sur le [site web de la compagnie](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) et dans le [répertoire Scène Pro](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
 
 ```
 {
@@ -75,6 +73,5 @@ Voici un exemple de données structurées du `@type Event`, avec une entité imb
         },
 }
 ```
-
 
 Pour en savoir plus à propos du développement de la classe `ado:LivePerformanceWork`, veuillez consulter cette [discussion GitHub](https://github.com/culturecreates/artsdata-data-model/discussions/133).
