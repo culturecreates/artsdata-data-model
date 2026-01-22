@@ -3,19 +3,18 @@ class_name: LivePerformanceWork
 layout: class-live-performance-work-doc
 ---
 # Live Performance Work
-A live performance qork in Artsdata is defined as a "work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience". 
 
-[`ado:LivePerformanceWork`](http://kg.artsdata.ca/ontology/LivePerformanceWork) is a subclass of [LRMoo F1:Work](https://cidoc-crm.org/f1-work) and an equivalent to [milopa:PERFORMANCE_WORK](https://github.com/pair-cg/milopa).
+A live performance work in Artsdata is defined as a "work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience". 
 
+[ado:LivePerformanceWork](http://kg.artsdata.ca/ontology/LivePerformanceWork) is a subclass of [lrmoo:F1_Work](https://cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.1.1.html#F1) and an equivalent class to [milopa:PERFORMANCE_WORK](https://github.com/pair-cg/milopa) and [datascene:Show](https://documentation.datascene.ca/references/show/).
 
 ## Properties
 
-Coming soon
-
+The application profile for `ado:LivePerformanceWork` is currently in development and will be published soon. It will import properties from Schema.org, LRMoo and Wikidata, and will be mapped to other RDF ontologies.
 
 ## Sample Structured Data
 
-Here is sample `@type Event` structured data, with a nested `ado:LivePerformanceWork` entity under the property `workPerformed`. This example is based on a performance of the work * Orpheus | S'abreuver des volcans * by Alan Lake Factori(e), which is well described on the [company's website](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) and in the [Scène Pro directory](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
+Here is sample `@type Event` structured data, with a nested `ado:LivePerformanceWork` entity under the property `workPerformed`. This example is based on a performance of the work *`Orpheus | S'abreuver des volcans`* by Alan Lake Factori(e), which is well described on the [company's website](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) and in the [Scène Pro directory](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
 
 ```
 {
