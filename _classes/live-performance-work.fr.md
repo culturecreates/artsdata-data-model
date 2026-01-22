@@ -4,7 +4,7 @@ layout: class-live-performance-work-doc
 ---
 # Œuvre scénique
 
-Dans Artsdata, une œuvre scénique est defini comme une « œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public ».
+Dans Artsdata, une *œuvre scénique* (aussi appelée « spectacle ») est définie comme une « œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public ».
 
 La classe [ado:LivePerformanceWork](http://kg.artsdata.ca/ontology/LivePerformanceWork) est considérée comme une sous-classe de [lrmoo:F1_Work](https://cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.1.1.html#F1) et une classe équivalente à [milopa:PERFORMANCE_WORK](https://github.com/pair-cg/milopa) et à [datascene:Spectacle](https://documentation.datascene.ca/references/show/).
 
