@@ -1,4 +1,4 @@
-name:  Push SKOS Membership to staging.api.artsdata.ca
+name:  Push SKOS Membership
 on:
   workflow_dispatch:
 jobs:
