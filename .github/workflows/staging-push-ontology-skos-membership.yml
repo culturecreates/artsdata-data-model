@@ -1,0 +1,23 @@
+name: Staging - Push SKOS Membership to staging.api.artsdata.ca
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set current date as output
+        id: version  # this is used on variable path
+        run: echo "dumpdate=$(date +'%Y-%m-%dT%H-%M-%S')" >> $GITHUB_OUTPUT
+      - name: Call Artsdata Databus
+        run: |
+          curl \
+          -H 'Content-Type: application/json' \
+          -X POST http://staging.api.artsdata.ca/databus/  \
+          --data '{ "artifact": "skos-membership",
+                    "publisher": "${{ secrets.PUBLISHER_URI_GREGORY }}",
+                    "group": "${{ github.event.repository.name }}",
+                    "version": "${{ steps.version.outputs.dumpdate }}",
+                    "downloadUrl": "https://raw.githubusercontent.com/culturecreates/artsdata-data-model/master/ontology/skos-membership.ttl",
+                    "downloadFile": "skos-membership.ttl",
+                    "shacl": "skos"
+                  }'    
