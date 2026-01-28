@@ -36,7 +36,7 @@ adr:ArtsdataEventTypes dcterms:hasFormat <https://raw.githubusercontent.com/cult
 	owl:priorVersion "3.4 - First revised event type definitions: event types (43), and alignment with external vocabularies."@en, "3.4 - Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
 	owl:versionInfo "4.0 (2025-08-25) - Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated event types (16), and better alignment with external vocabularies."@en, "4.0 (2025-08-25) - Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de types obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
 	skos:hasTopConcept adr:Event ;
-	skos:prefLabel "Artsdata Event Types"@en, "Artsdata - types d'événements "@fr .
+	skos:prefLabel "Artsdata Event Types"@en, "Artsdata - types d'événements"@fr .
 
 adr:ArtsdataEventTypes-Collection-3.4 rdf:type skos:Collection ;
 	rdfs:comment "All concepts that were present in vocabulary version 3.4"@en, "Tous les concepts présents dans la version 3.4 du vocabulaire."@fr ;
