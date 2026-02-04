@@ -1,6 +1,7 @@
 ---
 title: Google Sheets
 layout: architecture-doc
+nav_order: 7
 ---
 
 {% include base.html %}

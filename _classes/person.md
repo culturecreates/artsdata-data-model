@@ -2,6 +2,8 @@
 class_name: Person
 layout: class-doc
 shex: person
+nav_order: 9
+title: Person
 ---
 
 ## Adding people

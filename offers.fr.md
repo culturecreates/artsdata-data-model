@@ -1,5 +1,5 @@
 <p>{% include back-button.html %}</p>
-{% include offers-languages.html %}
+{% include language-switcher.html %}
 
 # Lignes directrices Artsdata pour la propriété `offers`
 

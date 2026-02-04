@@ -1,6 +1,8 @@
 ---
 class_name: Organization
 layout: class-doc
+nav_order: 8
+title: Organization
 ---
 
 ## Organization Type

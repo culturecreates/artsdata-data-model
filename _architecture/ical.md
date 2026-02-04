@@ -1,6 +1,7 @@
 ---
 title: iCal Server
 layout: architecture-doc
+nav_order: 9
 ---
 
 Artsdata's iCal Server makes it possible to configure a custom iCal feed and to import Artsdata events into any calendar application supporting the iCal standard (ex., Google Calendar, Outlook, and many website plugins).

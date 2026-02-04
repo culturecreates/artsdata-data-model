@@ -1,6 +1,6 @@
 {% include base.html %}
 {% include last-modified.html %}
-{% include homepage-languages.html %}
+{% include language-switcher.html %}
 
 ## Artsdata Data Model v{{ site.data.versions.schemaVersion }}
 [Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>

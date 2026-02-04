@@ -1,6 +1,6 @@
 {% include back-button.html %}
 
-{% include performer-languages.html %}
+{% include language-switcher.html %}
 
 # Lignes directrices Artsdata pour la propriété `performer`
 

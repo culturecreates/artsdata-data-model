@@ -1,6 +1,7 @@
 ---
 title: Footlight Console
 layout: architecture-doc
+nav_order: 4
 ---
 
 {% include base.html %}

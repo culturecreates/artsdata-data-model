@@ -1,6 +1,7 @@
 ---
 title: Data Consumers
 layout: architecture-doc
+nav_order: 2
 ---
 
 Data Consumers use the data in Artsdata.ca to create listing sites, enrich data in their CMS, or build recommendation engines and intelligent assistants.

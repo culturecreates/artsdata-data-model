@@ -1,10 +1,10 @@
 ---
 title: Gabarits de données structurées d'événement
 layout: gabarits-doc
+nav_order: 100
 ---
 
-
-{% include gabarit-languages.html %}
+{% include language-switcher.html %}
 
 Gabarits de données structurées d'événement
 ============================================

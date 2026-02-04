@@ -1,11 +1,11 @@
 ---
 title: Architecture Sommaire
 layout: default
+nav_order: 110
 ---
 
-<p>{% include back-button.html %}</p>
-
-<p>{% include architecture-languages.html %}</p>
+{% include back-button.html %}
+{% include language-switcher.html %}
 
 Architecture des flux de données
 =========

@@ -1,6 +1,6 @@
 {% include back-button.html %}
 
-{% include retrieve-uri-languages.html %}
+{% include language-switcher.html %}
 
 # Comment récupérer les URI d’identifiants pérennes
 

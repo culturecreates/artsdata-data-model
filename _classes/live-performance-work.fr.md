@@ -1,7 +1,10 @@
 ---
 class_name: LivePerformanceWork (fr)
 layout: class-live-performance-work-doc
+nav_order: 104
+title: LivePerformanceWork (fr)
 ---
+
 # Œuvre scénique
 
 Dans Artsdata, une *œuvre scénique* (aussi appelée « spectacle ») est définie comme une « œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public ».

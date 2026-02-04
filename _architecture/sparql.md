@@ -1,6 +1,7 @@
 ---
 title: SPARQL Endpoint & Federation
 layout: architecture-doc
+nav_order: 15
 ---
 
 The Artsdata.ca SPARQL endpoint is mainly used internally due to the complexity of writing SPARQLs. 

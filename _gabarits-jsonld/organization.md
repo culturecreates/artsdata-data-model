@@ -1,6 +1,7 @@
 ---
 title: Organization Structured Data Templates
 layout: gabarits-doc
+nav_order: 4
 ---
 
 Structured Data Templates for Organizations

@@ -1,7 +1,10 @@
 ---
 class_name: LivePerformanceWork
 layout: class-live-performance-work-doc
+nav_order: 6
+title: LivePerformanceWork
 ---
+
 # Live Performance Work
 
 A live performance work in Artsdata is defined as a "work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience". 

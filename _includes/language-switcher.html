@@ -1,0 +1,74 @@
+{% comment %}
+  Automatic language switcher
+  Detects if French version exists and provides toggle
+{% endcomment %}
+
+{% assign current_url = page.url %}
+{% assign is_french = false %}
+
+{% if current_url contains '.fr.html' or page.lang == 'fr' %}
+  {% assign is_french = true %}
+{% endif %}
+
+{% if is_french %}
+  {% assign alternate_url = current_url | replace: '.fr.html', '.html' %}
+  {% assign alternate_lang = 'en' %}
+  {% assign current_label = 'FR' %}
+  {% assign alternate_label = 'EN' %}
+{% else %}
+  {% assign alternate_url = current_url | replace: '.html', '.fr.html' %}
+  {% assign alternate_lang = 'fr' %}
+  {% assign current_label = 'EN' %}
+  {% assign alternate_label = 'FR' %}
+{% endif %}
+
+{% comment %} Check if alternate exists {% endcomment %}
+{% assign alternate_exists = false %}
+{% for p in site.pages %}
+  {% if p.url == alternate_url %}
+    {% assign alternate_exists = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Check in collections if not found {% endcomment %}
+{% unless alternate_exists %}
+  {% for item in site.classes %}
+    {% if item.url == alternate_url %}
+      {% assign alternate_exists = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}
+
+{% unless alternate_exists %}
+  {% for item in site.architecture %}
+    {% if item.url == alternate_url %}
+      {% assign alternate_exists = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}
+
+{% unless alternate_exists %}
+  {% for item in site.gabarits-jsonld %}
+    {% if item.url == alternate_url %}
+      {% assign alternate_exists = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}
+
+<div class="language-switcher">
+  <span class="label-current-lang">{{ current_label }}</span>
+  {% if alternate_exists %}
+    <a href="{{ alternate_url | relative_url }}"
+       class="btn-language-switch"
+       hreflang="{{ alternate_lang }}">
+      {{ alternate_label }}
+    </a>
+    <link rel="alternate" hreflang="{{ alternate_lang }}" href="{{ site.url }}{{ alternate_url }}" />
+  {% else %}
+    <span class="label-unavailable">({{ alternate_label }} unavailable)</span>
+  {% endif %}
+</div>

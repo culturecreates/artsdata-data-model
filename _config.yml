@@ -1,8 +1,32 @@
-theme: jekyll-theme-slate
+# Theme configuration
+theme: just-the-docs
 
-url: "http://docs.artsdata.ca" 
-baseurl: ""                     
+# Plugins
+plugins:
+  - jekyll-sitemap
 
+# Site branding
+title: "Artsdata Documentation"
+description: "Data model documentation for Artsdata.ca"
+logo: "/assets/images/artsdata-logo-placeholder.svg"
+
+# Placeholder colors (to be replaced with official brand colors later)
+color_scheme: artsdata
+
+# Site URLs
+url: "http://docs.artsdata.ca"
+baseurl: ""
+
+# Navigation
+aux_links:
+  "Artsdata.ca": "https://www.artsdata.ca"
+  "GitHub": "https://github.com/culturecreates/artsdata-data-model"
+
+# Navigation configuration
+nav_enabled: true
+nav_sort: case_insensitive
+
+# Collections
 collections:
   classes:
     output: true
@@ -10,7 +34,47 @@ collections:
     output: true
   gabarits-jsonld:
     output: true
+# Collections in navigation
+just_the_docs:
+  collections:
+    classes:
+      name: Classes
+      nav_exclude: false
+      search_exclude: false
+    architecture:
+      name: Architecture
+      nav_exclude: false
+      search_exclude: false
+    gabarits-jsonld:
+      name: Templates
+      nav_exclude: false
+      search_exclude: false
 
-# --- Include CNAME file in the built site (important) ---
+# Footer content
+footer_content: "© 2026 Artsdata.ca | <a href='https://creativecommons.org/publicdomain/zero/1.0/'>CC0 License</a>"
+
+# Include CNAME file in the built site (important)
 include:
   - CNAME
+
+# Exclude from site build (development files)
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - classes-index.md
+  - architecture-index.md
+  - templates-index.md
+
+# Sitemap configuration
+defaults:
+  - scope:
+      path: ""
+    values:
+      sitemap: true
+  - scope:
+      path: "README.md"
+    values:
+      sitemap: false

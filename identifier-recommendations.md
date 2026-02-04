@@ -1,5 +1,5 @@
 <p>{% include back-button.html %}</p>
-{% include identifier-recommendations-languages.html %}
+{% include language-switcher.html %}
 
 ## Artsdata Guidelines regarding Persistent Identifiers
 

@@ -1,10 +1,11 @@
 ---
 title: Data Flow Architecture
 layout: default
+nav_order: 12
 ---
-<p>{% include back-button.html %}</p>
 
-<p>{% include architecture-languages.html %}</p>
+{% include back-button.html %}
+{% include language-switcher.html %}
 
 Data Flow Architecture
 ====================
