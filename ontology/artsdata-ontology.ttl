@@ -96,7 +96,7 @@ ado:managedBy rdf:type rdf:Property ;
     owl:equivalentProperty wdt:P137 .
 
 ado:ownedBy rdf:type rdf:Property ;
-    rdfs:label "has resident"@en ;
+    rdfs:label "owned by"@en ;
     rdfs:comment "Links a Place to an Organization that owns it."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Place ;
