@@ -112,7 +112,6 @@ ado:usedBy rdf:type rdf:Property ;
     rdfs:domain schema:Place ;
     rdfs:range schema:Organization ;
     owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-	owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:equivalentProperty wdt:P1535, dbo:operator .
 
 ado:hasResident rdf:type rdf:Property ;
