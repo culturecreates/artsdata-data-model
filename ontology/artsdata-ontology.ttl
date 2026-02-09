@@ -115,7 +115,7 @@ ado:usedBy rdf:type rdf:Property ;
 
 ado:hasResident rdf:type rdf:Property ;
     rdfs:label "has resident"@en ;
-    rdfs:comment "Links a Place to an Organization that has a residency status within this Place. Some artistic companies have a special "residency" status within a venue. Resident companies aren't managing the venue, but they are given privileged access to the facilities by the venue manager for creation, production and presentation activities. For example, they are often given the opportunity to book their performance dates before rental clients. They may also be provided office space within the venue."@en ;
+    rdfs:comment "Links a Place to an Organization that has a residency status within this Place. Some artistic companies have a special \"residency\" status within a venue. Resident companies aren't managing the venue, but they are given privileged access to the facilities by the venue manager for creation, production and presentation activities. For example, they are often given the opportunity to book their performance dates before rental clients. They may also be provided office space within the venue."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Place ;
     rdfs:range schema:Organization ;
