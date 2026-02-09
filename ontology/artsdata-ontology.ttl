@@ -13,6 +13,7 @@
 @prefix frbroo: <https://www.iflastandards.info/fr/frbr/frbroo#> .
 @prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> . 
 @prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
 
 ado: rdf:type owl:Ontology ;
     dcterms:title "Artsdata Ontology"@en ;
