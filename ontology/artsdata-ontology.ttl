@@ -24,7 +24,7 @@ ado: rdf:type owl:Ontology ;
     vann:preferredNamespacePrefix "ado" ;
     vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
     owl:versionIRI <http://kg.artsdata.ca/ontology/1/> ; # TODO: location = /ontology/1 { return 301 /ontology/; }
-    owl:versionInfo "1.0.0" ;
+    owl:versionInfo "1.1.0" ;
     dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
 
 ####################
@@ -41,7 +41,7 @@ ado:LivePerformanceWork rdf:type rdfs:Class ;
     rdfs:comment "Work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience."@en ,
         "Œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public."@fr ;
     rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf ado:Thing, schema:CreativeWork, lrmoo:F1, dbo:Work ;
+    rdfs:subClassOf ado:Thing, schema:CreativeWork, lrmoo:F1_Work, dbo:Work ;
     owl:equivalentClass frbroo:F20  ; # milopa:PERFORMANCE_WORK when published
     owl:disjointWith schema:Event .
     
@@ -84,3 +84,40 @@ ado:hasGenre rdf:type rdf:Property ;
     rdfs:domain ado:LivePerformanceWork ;
     rdfs:range ado:Genre ;
     rdfs:subPropertyOf schema:genre .
+
+ado:managedBy rdf:type rdf:Property ;
+    rdfs:label "managed by"@en ;
+    rdfs:comment "Links a Place to the Organization responsible for its day-to-day operations."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Organization ;
+    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+	owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:equivalentProperty wdt:P137, dbo:operator .
+
+ado:ownedBy rdf:type rdf:Property ;
+    rdfs:label "owned by"@en ;
+    rdfs:comment "Links a Place to an Organization that owns it."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Organization ;
+    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:equivalentProperty wdt:P127 .
+
+ado:usedBy rdf:type rdf:Property ;
+    rdfs:label "used by"@en ;
+    rdfs:comment "Links a Place to an Organization that regularly uses this Place as an Event location. A minimum threshold of regularity should be met for this relationship to be true. As a rule of thumb, if an organization holds three events or more per year in a given place, one could deem a usedBy relationship to be present."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Organization ;
+    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:equivalentProperty wdt:P1535 .
+
+ado:hasResident rdf:type rdf:Property ;
+    rdfs:label "has resident"@en ;
+    rdfs:comment "Links a Place to an Organization that has a residency status within this Place. Some artistic companies have a special "residency" status within a venue. Resident companies aren't managing the venue, but they are given privileged access to the facilities by the venue manager for creation, production and presentation activities. For example, they are often given the opportunity to book their performance dates before rental clients. They may also be provided office space within the venue."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Organization ;
+    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:equivalentProperty wdt:P466 .
