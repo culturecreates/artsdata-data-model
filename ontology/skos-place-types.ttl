@@ -47,7 +47,7 @@ adr:ArtsdataPlaceTypes dcterms:hasFormat <https://raw.githubusercontent.com/cult
 	schema:creator adr:K1-5, adr:K16-211 ;
 	schema:dateCreated "2026-02-11"^^xsd:date ;
 	schema:dateModified "2026-02-11"^^xsd:date ;
-	schema:version "1.0.0" ;
+	schema:version "1.0.1" ;
 	rdf:type skos:ConceptScheme ;
 	rdfs:comment "First Version"@en, "Première version"@fr ;
 	rdfs:seeAlso <https://docs.artsdata.ca/classes/place.html> ;
@@ -56,11 +56,11 @@ adr:ArtsdataPlaceTypes dcterms:hasFormat <https://raw.githubusercontent.com/cult
 	skos:prefLabel "Artsdata Place Types"@en, "Types de lieu Artsdata"@fr ;
 	prov:wasDerivedFrom <https://docs.google.com/spreadsheets/d/1UtW5_tLdR72vf6WCZNPOmgJQ1SQGMc0xL8hRT3OAY9Y> .
 
-adr:ArtsdataPlaceTypes-Collection-1.0.0 rdf:type skos:Collection ;
-	rdfs:comment "All Artsdata concepts that are part of vocabulary version 1.0. Useful to group concepts by version (excluding deprecated concepts) when there are multiple versions."@en, "Tous les concepts de Artsdata faisant partie de la version 1.0"@fr ;
+adr:ArtsdataPlaceTypes-Collection-v1 rdf:type skos:Collection ;
+	rdfs:comment "All Artsdata concepts that are part of vocabulary version 1. Useful to group concepts by version (excluding deprecated concepts) when there are multiple versions."@en, "Tous les concepts de Artsdata faisant partie de la version 1."@fr ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
-	skos:member adr:Amphitheatre, adr:BlackBox, adr:Building, adr:Cabaret, adr:ComedyClub, adr:Complex, adr:ConcertHall, adr:EventVenue, adr:ExhibitionSpace, adr:InteriorSpace, adr:ItalianTheatre, adr:MeetingSpace, adr:MovieTheatre, adr:MusicVenue, adr:NightClub, adr:OperaHouse, adr:PerformanceHall, adr:PerformingArtsBuilding, adr:PerformingArtsCentre, adr:RehearsalSpace, adr:Structure, adr:TheatreBuilding, adr:TheatreInTheRound ;
-	skos:prefLabel "Collection of Artsdata Place Types v1.0"@en, "Types de lieu Artsdata - Collection pour v1.0"@fr .
+	skos:member adr:Amphitheatre, adr:BlackBox, adr:Building, adr:Cabaret, adr:CivicSocialStructure, adr:ComedyClub, adr:Complex, adr:ConcertHall, adr:CultureRecreationalStructure, adr:EventVenue, adr:ExhibitionSpace, adr:InteriorSpace, adr:ItalianTheatre, adr:MeetingSpace, adr:MovieTheatre, adr:MusicVenue, adr:NightClub, adr:OperaHouse, adr:PerformanceHall, adr:PerformingArtsBuilding, adr:PerformingArtsCentre, adr:PlaceConcept, adr:RehearsalSpace, adr:Structure, adr:TheatreBuilding, adr:TheatreInTheRound ;
+	skos:prefLabel "Collection of Artsdata Place Types v1"@en, "Types de lieu Artsdata - Collection pour v1"@fr .
 
 adr:BlackBox rdf:type skos:Concept ;
 	skos:broader adr:PerformanceHall ;
