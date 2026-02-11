@@ -52,6 +52,7 @@ adr:ArtsdataPlaceTypes dcterms:hasFormat <https://raw.githubusercontent.com/cult
 	rdfs:comment "First Version"@en, "Première version"@fr ;
 	rdfs:seeAlso <https://docs.artsdata.ca/classes/place.html> ;
 	owl:versionInfo "1.0 (2026-02-11) First version"@en, "1.0 (2026-02-11) Première version"@fr ;
+	skos:hasTopConcept adr:PlaceConcept ;
 	skos:prefLabel "Artsdata Place Types"@en, "Types de lieu Artsdata"@fr ;
 	prov:wasDerivedFrom <https://docs.google.com/spreadsheets/d/1UtW5_tLdR72vf6WCZNPOmgJQ1SQGMc0xL8hRT3OAY9Y> .
 
@@ -85,6 +86,7 @@ adr:Cabaret rdf:type ado:Genre, skos:Concept ;
 	skos:prefLabel "Cabaret"@en, "Cabaret"@fr .
 
 adr:CivicSocialStructure rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:PlaceConcept ;
 	skos:definition "Structures originally created to be used by governmental entities or community organizations for such purposes as governance activities, mail distribution, public safety, or social activities. This subclass also includes structures used by trade, fraternal, professional, or special-interest groups or associations for such organizational purposes as conducting meetings or ceremonies or housing group-related objects such as regalia or records."@en, "Constructions initialement conçues afin d'être mises au service d’organismes gouvernementaux ou communautaires pour des activités de gouvernance, de distribution de courrier, de sécurité publique ou d’action sociale. Cette sous-classe englobe les constructions servant à des associations ou groupes commerciaux, mutualistes, professionnels ou ayant des intérêts communs à des fins organisationnelles, par exemple pour la tenue de réunions ou de cérémonies, ou encore pour regrouper dans un même espace des objets de marque, des insignes ou des archives en lien avec ces groupes ou associations."@fr ;
 	skos:editorialNote "Imported from Nomenclature."@en, "Importé depuis Nomenclature."@fr ;
 	skos:exactMatch nom:597 ;
@@ -108,6 +110,7 @@ adr:CommunityCentre rdf:type ado:Genre, skos:Concept ;
 	skos:prefLabel "Community centre"@en, "Centre communautaire"@fr .
 
 adr:Complex rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:PlaceConcept ;
 	skos:definition "Aggregation of buildings, other structures, and/or open spaces, often multifunctional, and more extensive than single-built works"@en, "Agrégation de bâtiments, d'autres structures et/ou d'espaces ouverts, souvent multifonctionnels, et plus étendus que des ouvrages individuels."@fr ;
 	skos:editorialNote "Imported from Art & Architecture Thesaurus"@en, "Importé depuis Art & Architecture Thesaurus"@fr ;
 	skos:exactMatch aat:300000202, wd:Q1497364 ;
@@ -139,6 +142,7 @@ adr:CulturalCentre rdf:type ado:Genre, skos:Concept ;
 	skos:prefLabel "Cultural centre"@en, "Centre culturel"@fr .
 
 adr:CultureRecreationalStructure rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:PlaceConcept ;
 	skos:definition "Structures originally created for cultural or recreational activities. Included in this subclass are structures that provide exhibition space for music, fine arts, dance, drama, or collections of objects, flora, or fauna displayed for public benefit.  Also included are structures that provide space for sporting or entertainment activities, usually for groups and occasionally for individuals."@en, "Constructions initialement conçues pour des activités culturelles ou récréatives. Cette sous-classe comprend les constructions offrant des espaces pour la musique, les beaux-arts, la danse ou l’art dramatique, ou les collections d’objets ou de spécimens de la flore ou de la faune à l’intention du public. Elle englobe les constructions abritant des activités de sport ou de divertissement, d’ordinaire à l’intention de groupes et à l’occasion pour les particuliers."@fr ;
 	skos:editorialNote "Imported from Nomenclature."@en, "Importé depuis Nomenclature."@fr ;
 	skos:exactMatch aat:300424157, nom:659 ;
@@ -147,6 +151,7 @@ adr:CultureRecreationalStructure rdf:type ado:Genre, skos:Concept ;
 
 adr:EventVenue rdf:type ado:Genre, skos:Concept ;
 	skos:altLabel "Entertainment venue, Event space"@en, "Lieu de l'événement, Site de l'événement, Lieu pour des événements"@fr ;
+	skos:broader adr:PlaceConcept ;
 	skos:closeMatch schema:EventVenue ;
 	skos:definition "Location suitable for hosting events, indoors or outdoors"@en, "Espace intérieur ou extérieur prévu pour accueillir des événements."@fr ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
@@ -288,6 +293,11 @@ adr:PerformingArtsCentre rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Performing arts centre"@en, "Centre des arts de la scène"@fr .
 
+adr:PlaceConcept rdf:type ado:Genre, skos:Concept ;
+	skos:definition "Top level place concept"@en ;
+	skos:inScheme adr:ArtsdataPlaceTypes ;
+	skos:prefLabel "Concept of a place"@en, "Type de lieu"@fr .
+
 adr:RehearsalSpace rdf:type ado:Genre, skos:Concept ;
 	skos:altLabel "Rehearsal studio"@en, "Studio de répétition"@fr ;
 	skos:broader adr:CultureRecreationalStructure, adr:InteriorSpace ;
@@ -320,6 +330,7 @@ adr:Stadium rdf:type ado:Genre, skos:Concept ;
 
 adr:Structure rdf:type ado:Genre, skos:Concept ;
 	skos:altLabel "Architetural structure"@en, "Structure architecturale"@fr ;
+	skos:broader adr:PlaceConcept ;
 	skos:definition "Freestanding buildings, components of buildings, complexes of buildings, other structures, or a man-made environment, typically large enough for humans to enter, serving a practical purpose, being relatively permanent and stable, and usually considered to have aesthetic value."@en ;
 	skos:editorialNote "Imported from Art & Architecture Thesaurus"@en, "Importé depuis Art & Architecture Thesaurus"@fr ;
 	skos:exactMatch aat:300265418, wd:Q811979 ;
