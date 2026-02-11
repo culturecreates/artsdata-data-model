@@ -2,6 +2,7 @@
 title: L'outil Google Sheet-vers-Artsdata
 layout: architecture-doc
 nav_order: 104
+nav_exclude: true
 ---
 
 {% include language-switcher.html %}

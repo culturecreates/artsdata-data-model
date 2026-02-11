@@ -3,6 +3,7 @@ class_name: Event (fr)
 layout: class-event-doc
 nav_order: 102
 title: Event (fr)
+nav_exclude: true
 ---
 
 # Événement

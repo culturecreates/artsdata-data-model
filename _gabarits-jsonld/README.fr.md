@@ -2,6 +2,7 @@
 title: Gabarits de données structurées d'événement
 layout: gabarits-doc
 nav_order: 100
+nav_exclude: true
 ---
 
 {% include language-switcher.html %}

@@ -1,3 +1,7 @@
+---
+lang: en
+layout: default
+---
 {% include base.html %}
 {% include last-modified.html %}
 {% include language-switcher.html %}
@@ -21,11 +25,13 @@ Here are the main Classes used in Artsdata.
 
 <ol>
 {% for class in site.classes %}
+  {% unless class.nav_exclude %}
 <li>
     <a href="{{ base }}{{ class.url }}">
         {{ class.class_name }}
     </a>
 </li>
+  {% endunless %}
 {% endfor %}
 </ol>
 

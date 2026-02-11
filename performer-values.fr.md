@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+lang: fr
+---
 {% include back-button.html %}
 
 # Bonnes pratiques pour le choix des valeurs de performer

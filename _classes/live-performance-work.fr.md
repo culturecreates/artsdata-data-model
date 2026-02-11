@@ -3,6 +3,7 @@ class_name: LivePerformanceWork (fr)
 layout: class-live-performance-work-doc
 nav_order: 104
 title: LivePerformanceWork (fr)
+nav_exclude: true
 ---
 
 # Œuvre scénique

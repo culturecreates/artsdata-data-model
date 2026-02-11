@@ -11,12 +11,20 @@
 {% endif %}
 
 {% if is_french %}
-  {% assign alternate_url = current_url | replace: '.fr.html', '.html' %}
+  {% if current_url == '/index.fr.html' or current_url == '/' %}
+    {% assign alternate_url = '/' %}
+  {% else %}
+    {% assign alternate_url = current_url | replace: '.fr.html', '.html' %}
+  {% endif %}
   {% assign alternate_lang = 'en' %}
   {% assign current_label = 'FR' %}
   {% assign alternate_label = 'EN' %}
 {% else %}
-  {% assign alternate_url = current_url | replace: '.html', '.fr.html' %}
+  {% if current_url == '/' or current_url == '/index.html' %}
+    {% assign alternate_url = '/index.fr.html' %}
+  {% else %}
+    {% assign alternate_url = current_url | replace: '.html', '.fr.html' %}
+  {% endif %}
   {% assign alternate_lang = 'fr' %}
   {% assign current_label = 'EN' %}
   {% assign alternate_label = 'FR' %}

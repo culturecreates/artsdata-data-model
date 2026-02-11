@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+lang: fr
+---
 {% include back-button.html %}
 
 {% include language-switcher.html %}
