@@ -1,4 +1,4 @@
-name: Staging - Push an Ontology file to staging.api.artsdata.ca
+name: Push Ontology file
 on:
   workflow_dispatch:
     inputs:
@@ -17,7 +17,7 @@ jobs:
         run: |
           curl \
           -H 'Content-Type: application/json' \
-          -X POST http://staging.api.artsdata.ca/databus/  \
+          -X POST http://api.artsdata.ca/databus/  \
           --data '{ "artifact": "${{ github.event.inputs.artifact }}",
                     "comment": "Made by hand in Turtle format",
                     "publisher": "${{ secrets.PUBLISHER_URI_GREGORY }}",
