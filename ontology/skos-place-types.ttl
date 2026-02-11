@@ -16,7 +16,7 @@
 @prefix nom: <https://nomenclature.info/nom/> .
 @prefix dbpedia: <http://dbpedia.org/ontology/> .
 
-adr:Amphitheatre rdf:type ado:Genre, skos:Concept ;
+adr:Amphitheatre rdf:type skos:Concept ;
 	skos:broader adr:OpenAirEventVenue, adr:PerformingArtsBuilding ;
 	skos:definition "Open-air performing arts building."@en, "Salle de spectacle en plein air."@fr ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
@@ -24,13 +24,13 @@ adr:Amphitheatre rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Amphitheatre"@en, "Amphithéâtre"@fr .
 
-adr:Arena rdf:type ado:Genre, skos:Concept ;
+adr:Arena rdf:type skos:Concept ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
 	skos:exactMatch wd:Q641226 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Arena"@en, "Aréna"@fr .
 
-adr:ArtGallery rdf:type ado:Genre, skos:Concept ;
+adr:ArtGallery rdf:type skos:Concept ;
 	skos:broader adr:ExhibitionBuilding ;
 	skos:closeMatch schema:ArtGallery, wd:Q1007870 ;
 	skos:editorialNote "Imported from Art & Architecture Thesaurus"@en, "Importé depuis Art & Architecture Thesaurus"@fr ;
@@ -62,14 +62,14 @@ adr:ArtsdataPlaceTypes-Collection-1.0.0 rdf:type skos:Collection ;
 	skos:member adr:Amphitheatre, adr:BlackBox, adr:Building, adr:Cabaret, adr:ComedyClub, adr:Complex, adr:ConcertHall, adr:EventVenue, adr:ExhibitionSpace, adr:InteriorSpace, adr:ItalianTheatre, adr:MeetingSpace, adr:MovieTheatre, adr:MusicVenue, adr:NightClub, adr:OperaHouse, adr:PerformanceHall, adr:PerformingArtsBuilding, adr:PerformingArtsCentre, adr:RehearsalSpace, adr:Structure, adr:TheatreBuilding, adr:TheatreInTheRound ;
 	skos:prefLabel "Collection of Artsdata Place Types v1.0"@en, "Types de lieu Artsdata - Collection pour v1.0"@fr .
 
-adr:BlackBox rdf:type ado:Genre, skos:Concept ;
+adr:BlackBox rdf:type skos:Concept ;
 	skos:broader adr:PerformanceHall ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
 	skos:exactMatch wd:Q201946 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Black box theatre"@en .
 
-adr:Building rdf:type ado:Genre, skos:Concept ;
+adr:Building rdf:type skos:Concept ;
 	skos:altLabel "Édifice, Bâtisse, Construction"@fr ;
 	skos:broader adr:Structure ;
 	skos:definition "Architectural structure, typically with a roof and walls."@en, "Structure architecturale, généralement encloisonnée avec des murs et une toiture."@fr ;
@@ -78,14 +78,14 @@ adr:Building rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Building"@en, "Bâtiment"@fr .
 
-adr:Cabaret rdf:type ado:Genre, skos:Concept ;
+adr:Cabaret rdf:type skos:Concept ;
 	skos:broader adr:PerformanceHall ;
 	skos:editorialNote "Is this a subclass of Building or of Room?"@en, "Au Québec, nous avons des « cabaret du casino », le « cabaret La Basoche » qui désignent des salles plutôt que des bâtiment."@fr ;
 	skos:exactMatch aat:300007099, wd:Q131183 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Cabaret"@en, "Cabaret"@fr .
 
-adr:CivicSocialStructure rdf:type ado:Genre, skos:Concept ;
+adr:CivicSocialStructure rdf:type skos:Concept ;
 	skos:broader adr:PlaceConcept ;
 	skos:definition "Structures originally created to be used by governmental entities or community organizations for such purposes as governance activities, mail distribution, public safety, or social activities. This subclass also includes structures used by trade, fraternal, professional, or special-interest groups or associations for such organizational purposes as conducting meetings or ceremonies or housing group-related objects such as regalia or records."@en, "Constructions initialement conçues afin d'être mises au service d’organismes gouvernementaux ou communautaires pour des activités de gouvernance, de distribution de courrier, de sécurité publique ou d’action sociale. Cette sous-classe englobe les constructions servant à des associations ou groupes commerciaux, mutualistes, professionnels ou ayant des intérêts communs à des fins organisationnelles, par exemple pour la tenue de réunions ou de cérémonies, ou encore pour regrouper dans un même espace des objets de marque, des insignes ou des archives en lien avec ces groupes ou associations."@fr ;
 	skos:editorialNote "Imported from Nomenclature."@en, "Importé depuis Nomenclature."@fr ;
@@ -93,14 +93,14 @@ adr:CivicSocialStructure rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Civic & Social Structures"@en, "Constructions civiques et sociales"@fr .
 
-adr:ComedyClub rdf:type ado:Genre, skos:Concept ;
+adr:ComedyClub rdf:type skos:Concept ;
 	skos:broader adr:PerformanceHall ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
 	skos:exactMatch wd:Q2814066 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Comedy club"@en .
 
-adr:CommunityCentre rdf:type ado:Genre, skos:Concept ;
+adr:CommunityCentre rdf:type skos:Concept ;
 	skos:altLabel "Community hall"@en, "Salle communautaire"@fr ;
 	skos:broader adr:Building, adr:EventVenue ;
 	skos:closeMatch wd:Q77115 ;
@@ -109,7 +109,7 @@ adr:CommunityCentre rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Community centre"@en, "Centre communautaire"@fr .
 
-adr:Complex rdf:type ado:Genre, skos:Concept ;
+adr:Complex rdf:type skos:Concept ;
 	skos:broader adr:PlaceConcept ;
 	skos:definition "Aggregation of buildings, other structures, and/or open spaces, often multifunctional, and more extensive than single-built works"@en, "Agrégation de bâtiments, d'autres structures et/ou d'espaces ouverts, souvent multifonctionnels, et plus étendus que des ouvrages individuels."@fr ;
 	skos:editorialNote "Imported from Art & Architecture Thesaurus"@en, "Importé depuis Art & Architecture Thesaurus"@fr ;
@@ -117,14 +117,14 @@ adr:Complex rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Complex"@en, "Complexe"@fr .
 
-adr:ConcertHall rdf:type ado:Genre, skos:Concept ;
+adr:ConcertHall rdf:type skos:Concept ;
 	skos:broader adr:PerformanceHall ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
 	skos:exactMatch wd:Q10547643 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Concert hall"@en, "Salle de concert"@fr .
 
-adr:ConventionCentre rdf:type ado:Genre, skos:Concept ;
+adr:ConventionCentre rdf:type skos:Concept ;
 	skos:altLabel "Conference centre, congress centre"@en, "Palais des congrès"@fr ;
 	skos:broader adr:Building, adr:EventVenue ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
@@ -132,7 +132,7 @@ adr:ConventionCentre rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Convention centre"@en, "Centre de conférence"@fr .
 
-adr:CulturalCentre rdf:type ado:Genre, skos:Concept ;
+adr:CulturalCentre rdf:type skos:Concept ;
 	skos:altLabel "Complexe culturel"@fr ;
 	skos:broader adr:Building, adr:CultureRecreationalStructure, adr:EventVenue ;
 	skos:closeMatch wd:Q1329623 ;
@@ -141,7 +141,7 @@ adr:CulturalCentre rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Cultural centre"@en, "Centre culturel"@fr .
 
-adr:CultureRecreationalStructure rdf:type ado:Genre, skos:Concept ;
+adr:CultureRecreationalStructure rdf:type skos:Concept ;
 	skos:broader adr:PlaceConcept ;
 	skos:definition "Structures originally created for cultural or recreational activities. Included in this subclass are structures that provide exhibition space for music, fine arts, dance, drama, or collections of objects, flora, or fauna displayed for public benefit.  Also included are structures that provide space for sporting or entertainment activities, usually for groups and occasionally for individuals."@en, "Constructions initialement conçues pour des activités culturelles ou récréatives. Cette sous-classe comprend les constructions offrant des espaces pour la musique, les beaux-arts, la danse ou l’art dramatique, ou les collections d’objets ou de spécimens de la flore ou de la faune à l’intention du public. Elle englobe les constructions abritant des activités de sport ou de divertissement, d’ordinaire à l’intention de groupes et à l’occasion pour les particuliers."@fr ;
 	skos:editorialNote "Imported from Nomenclature."@en, "Importé depuis Nomenclature."@fr ;
@@ -149,7 +149,7 @@ adr:CultureRecreationalStructure rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Cultural & Recreational Structures"@en, "Constructions culturelles et récréatives"@fr .
 
-adr:EventVenue rdf:type ado:Genre, skos:Concept ;
+adr:EventVenue rdf:type skos:Concept ;
 	skos:altLabel "Entertainment venue, Event space"@en, "Lieu de l'événement, Site de l'événement, Lieu pour des événements"@fr ;
 	skos:broader adr:PlaceConcept ;
 	skos:closeMatch schema:EventVenue ;
@@ -159,14 +159,14 @@ adr:EventVenue rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Event venue"@en, "espace événementiel"@fr .
 
-adr:ExhibitionBuilding rdf:type ado:Genre, skos:Concept ;
+adr:ExhibitionBuilding rdf:type skos:Concept ;
 	skos:broader adr:Building, adr:CultureRecreationalStructure, adr:EventVenue ;
 	skos:editorialNote "Imported from Nomenclature."@en, "Importé depuis Nomenclature."@fr ;
 	skos:exactMatch nom:668 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Exhibition building"@en, "Bâtiment pour expositions"@fr .
 
-adr:ExhibitionSpace rdf:type ado:Genre, skos:Concept ;
+adr:ExhibitionSpace rdf:type skos:Concept ;
 	skos:broader adr:CultureRecreationalStructure, adr:EventVenue, adr:InteriorSpace ;
 	skos:definition "Room or otherwise delineated space designed for presenting exhibitions."@en, "Salle ou espace délimité conçu accueillir des expositions."@fr ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
@@ -174,14 +174,14 @@ adr:ExhibitionSpace rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Exhibition space"@en, "Espace d'exposition"@fr .
 
-adr:FairGround rdf:type ado:Genre, skos:Concept ;
+adr:FairGround rdf:type skos:Concept ;
 	skos:broader adr:OpenAirEventVenue ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
 	skos:exactMatch wd:Q2948561 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Fair ground"@en, "Champ de foire"@fr .
 
-adr:HouseOfCulture rdf:type ado:Genre, skos:Concept ;
+adr:HouseOfCulture rdf:type skos:Concept ;
 	skos:altLabel "Maison de la culture"@en ;
 	skos:broader adr:CulturalCentre ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
@@ -189,7 +189,7 @@ adr:HouseOfCulture rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "House of culture"@en, "Maison de la culture"@fr .
 
-adr:InteriorSpace rdf:type ado:Genre, skos:Concept ;
+adr:InteriorSpace rdf:type skos:Concept ;
 	skos:altLabel "Room, Hall, Chamber"@en, "Salle, pièce, chambre"@fr ;
 	skos:broader adr:Structure ;
 	skos:closeMatch schema:Room, wd:Q1299240 ;
@@ -199,7 +199,7 @@ adr:InteriorSpace rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Interior space"@en, "Espace intérieur"@fr .
 
-adr:ItalianTheatre rdf:type ado:Genre, skos:Concept ;
+adr:ItalianTheatre rdf:type skos:Concept ;
 	skos:altLabel "Proscenium theatre"@en, "Salle à l'Italienne"@fr ;
 	skos:broader adr:PerformanceHall ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
@@ -207,14 +207,14 @@ adr:ItalianTheatre rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Italian theatre"@en, "Théâtre à l'italienne"@fr .
 
-adr:Library rdf:type ado:Genre, skos:Concept ;
+adr:Library rdf:type skos:Concept ;
 	skos:broader adr:Building, adr:CivicSocialStructure, adr:CultureRecreationalStructure ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
 	skos:exactMatch aat:300006824, wd:Q856584, nom:614 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Library"@en, "Bibliothèque"@fr .
 
-adr:MeetingSpace rdf:type ado:Genre, skos:Concept ;
+adr:MeetingSpace rdf:type skos:Concept ;
 	skos:altLabel "Conference Room, Conference hall, Reception room, Board room"@en, "Salle de conférence, salle de réception"@fr ;
 	skos:broader adr:EventVenue, adr:InteriorSpace ;
 	skos:closeMatch schema:MeetingRoom, aat:300004398 ;
@@ -223,21 +223,21 @@ adr:MeetingSpace rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Meeting room"@en, "Salle de réunion"@fr .
 
-adr:MovieTheatre rdf:type ado:Genre, skos:Concept ;
+adr:MovieTheatre rdf:type skos:Concept ;
 	skos:broader adr:Building, adr:CultureRecreationalStructure, adr:EventVenue ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
 	skos:exactMatch schema:MovieTheater, aat:300007135, wd:Q41253 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Movie theatre"@en, "Cinéma"@fr .
 
-adr:MuseumBuilding rdf:type ado:Genre, skos:Concept ;
+adr:MuseumBuilding rdf:type skos:Concept ;
 	skos:broader adr:ExhibitionBuilding ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
 	skos:exactMatch aat:300005768, wd:Q24699794, nom:672 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Museum building"@en, "Bâtiment de musée"@fr .
 
-adr:MusicVenue rdf:type ado:Genre, skos:Concept ;
+adr:MusicVenue rdf:type skos:Concept ;
 	skos:altLabel "Salle de concert"@fr ;
 	skos:broader adr:CultureRecreationalStructure, adr:EventVenue ;
 	skos:definition "Place where one can listen to live music."@en, "Endroit où l'on peut écouter de la musique sur scène exécutée en direct."@fr ;
@@ -246,14 +246,14 @@ adr:MusicVenue rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Music venue"@en, "Lieu pour la musique"@fr .
 
-adr:NightClub rdf:type ado:Genre, skos:Concept ;
+adr:NightClub rdf:type skos:Concept ;
 	skos:altLabel "Discothèque"@fr ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
 	skos:exactMatch wd:Q622425 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Night club"@en, "Boîte de nuit"@fr .
 
-adr:OpenAirEventVenue rdf:type ado:Genre, skos:Concept ;
+adr:OpenAirEventVenue rdf:type skos:Concept ;
 	skos:altLabel "Outdoor event venue"@en, "Lieu extérieur pour des événements"@fr ;
 	skos:broader adr:EventVenue ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
@@ -261,14 +261,14 @@ adr:OpenAirEventVenue rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Open air event venue"@en, "Lieu pour événements en plein air"@fr .
 
-adr:OperaHouse rdf:type ado:Genre, skos:Concept ;
+adr:OperaHouse rdf:type skos:Concept ;
 	skos:broader adr:PerformingArtsBuilding ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
 	skos:exactMatch aat:300007104, wd:Q153562 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Opera house"@en, "Maison d'opéra"@fr .
 
-adr:PerformanceHall rdf:type ado:Genre, skos:Concept ;
+adr:PerformanceHall rdf:type skos:Concept ;
 	skos:altLabel "Performance space, Theatre"@en, "Théâtre"@fr ;
 	skos:broader adr:CultureRecreationalStructure, adr:EventVenue, adr:InteriorSpace ;
 	skos:closeMatch aat:300449028 ;
@@ -278,7 +278,7 @@ adr:PerformanceHall rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Performance hall"@en, "Salle de spectacle"@fr .
 
-adr:PerformingArtsBuilding rdf:type ado:Genre, skos:Concept ;
+adr:PerformingArtsBuilding rdf:type skos:Concept ;
 	skos:broader adr:Building, adr:CultureRecreationalStructure, adr:EventVenue ;
 	skos:definition "Building designed primarily for the presentation of live performances and other performing arts activities."@en, "Édifice dédié principalement à la présentation de spectacle vivants et à d'autres activités associées aux arts de la scène."@fr ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
@@ -286,19 +286,19 @@ adr:PerformingArtsBuilding rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Performing arts building"@en, "Bâtiment des arts de la scène"@fr .
 
-adr:PerformingArtsCentre rdf:type ado:Genre, skos:Concept ;
+adr:PerformingArtsCentre rdf:type skos:Concept ;
 	skos:broader adr:OpenAirEventVenue, adr:PerformingArtsBuilding ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
 	skos:exactMatch wd:Q3469910 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Performing arts centre"@en, "Centre des arts de la scène"@fr .
 
-adr:PlaceConcept rdf:type ado:Genre, skos:Concept ;
+adr:PlaceConcept rdf:type skos:Concept ;
 	skos:definition "Top level place concept"@en ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Concept of a place"@en, "Type de lieu"@fr .
 
-adr:RehearsalSpace rdf:type ado:Genre, skos:Concept ;
+adr:RehearsalSpace rdf:type skos:Concept ;
 	skos:altLabel "Rehearsal studio"@en, "Studio de répétition"@fr ;
 	skos:broader adr:CultureRecreationalStructure, adr:InteriorSpace ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
@@ -306,7 +306,7 @@ adr:RehearsalSpace rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Rehearsal room"@en, "Salle de répétition"@fr .
 
-adr:ReligiousBuilding rdf:type ado:Genre, skos:Concept ;
+adr:ReligiousBuilding rdf:type skos:Concept ;
 	skos:broader adr:Building, adr:EventVenue ;
 	skos:closeMatch nom:585 ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
@@ -314,21 +314,21 @@ adr:ReligiousBuilding rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Religious building"@en, "Bâtiment religieux"@fr .
 
-adr:SportsVenue rdf:type ado:Genre, skos:Concept ;
+adr:SportsVenue rdf:type skos:Concept ;
 	skos:broader ado:Place, adr:CultureRecreationalStructure ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
 	skos:exactMatch wd:Q1076486 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Sports venue"@en, "Installation sportive"@fr .
 
-adr:Stadium rdf:type ado:Genre, skos:Concept ;
+adr:Stadium rdf:type skos:Concept ;
 	skos:broader adr:EventVenue, adr:SportsVenue ;
 	skos:editorialNote "Imported from Wikidata."@en, "Importé depuis Wikidata."@fr ;
 	skos:exactMatch wd:Q483110 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Stadium"@en, "Stade"@fr .
 
-adr:Structure rdf:type ado:Genre, skos:Concept ;
+adr:Structure rdf:type skos:Concept ;
 	skos:altLabel "Architetural structure"@en, "Structure architecturale"@fr ;
 	skos:broader adr:PlaceConcept ;
 	skos:definition "Freestanding buildings, components of buildings, complexes of buildings, other structures, or a man-made environment, typically large enough for humans to enter, serving a practical purpose, being relatively permanent and stable, and usually considered to have aesthetic value."@en ;
@@ -337,14 +337,14 @@ adr:Structure rdf:type ado:Genre, skos:Concept ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Built work"@en, "Ouvrage bâti"@fr .
 
-adr:TheatreBuilding rdf:type ado:Genre, skos:Concept ;
+adr:TheatreBuilding rdf:type skos:Concept ;
 	skos:broader adr:PerformingArtsBuilding ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
 	skos:exactMatch aat:300007117, wd:Q24354 ;
 	skos:inScheme adr:ArtsdataPlaceTypes ;
 	skos:prefLabel "Theatre building"@en, "Théâtre"@fr .
 
-adr:TheatreInTheRound rdf:type ado:Genre, skos:Concept ;
+adr:TheatreInTheRound rdf:type skos:Concept ;
 	skos:broader adr:PerformanceHall ;
 	skos:editorialNote "Imported from Wikidata"@en, "Importé depuis Wikidata"@fr ;
 	skos:exactMatch wd:Q7777493 ;
