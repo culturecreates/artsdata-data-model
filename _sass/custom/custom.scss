@@ -6,33 +6,33 @@
   gap: 0.5rem;
   margin: 1rem 0;
   padding: 0.5rem 0.75rem;
-  background-color: #f5f6fa;
+  background-color: $sidebar-color;
   border-radius: 4px;
   font-size: 0.875rem;
 
   .label-current-lang {
     font-weight: 600;
-    color: #44434d;
+    color: $body-text-color;
   }
 
   .btn-language-switch {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background-color: #0066cc;
+    background-color: $link-color;
     color: white;
     text-decoration: none;
     border-radius: 3px;
     transition: background-color 0.2s;
 
     &:hover {
-      background-color: darken(#0066cc, 10%);
+      background-color: darken($link-color, 10%);
       color: white;
       text-decoration: none;
     }
   }
 
   .label-unavailable {
-    color: #999;
+    color: #98aba7;
     font-style: italic;
   }
 }

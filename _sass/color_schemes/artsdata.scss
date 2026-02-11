@@ -1,24 +1,28 @@
-// Artsdata Placeholder Color Scheme
-// TODO: Replace with official brand colors when available
+// Artsdata Brand Color Scheme
+// Official brand colors from Artsdata design system
 
-$link-color: #0066cc;
-$btn-primary-color: #0066cc;
-$base-button-color: #f7f7f7;
+// Primary & Interactive Elements
+$link-color: #2b6673;                    // Primary Dark brand color
+$btn-primary-color: #2b6673;             // Primary buttons
+$base-button-color: #f6f7f7;             // Neutral 50
 
-$sidebar-color: #f5f6fa;
-$border-color: #e1e4e8;
+// Layout & Structure
+$sidebar-color: #f6f7f7;                 // Neutral 50
+$border-color: #e1e6e4;                  // Neutral 100
 
-$body-background-color: $white;
-$body-heading-color: #2c3e50;
-$body-text-color: #44434d;
-$nav-child-link-color: #44434d;
+// Typography
+$body-background-color: $white;          // #fff
+$body-heading-color: #343b3a;            // Secondary Dark
+$body-text-color: #3d4846;               // Neutral 700
+$nav-child-link-color: #637470;          // Secondary (Neutral 500)
 
-$feedback-color: darken($sidebar-color, 3%);
-$table-background-color: $white;
-$code-background-color: #f5f6fa;
+// Calculated/Derived Colors
+$feedback-color: darken(#f6f7f7, 3%);    // Darken Neutral 50
+$table-background-color: $white;         // #fff
+$code-background-color: #d9f2f4;         // Brand 100 (light teal)
 
-// Custom accents
-$purple-000: #f5f0ff;
-$purple-100: #e1d5ff;
-$purple-200: #c4a7ff;
-$purple-300: #a580ff;
+// Status Colors (for potential future use)
+$success-color: #28A745;
+$danger-color: #DC3545;
+$warning-color: #FFC107;
+$info-color: #17A2B8;
