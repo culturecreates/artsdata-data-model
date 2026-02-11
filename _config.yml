@@ -59,7 +59,6 @@ include:
 
 # Exclude from site build (development files)
 exclude:
-  - "CLAUDE.md"
   - README.md
   - Gemfile
   - Gemfile.lock
@@ -75,10 +74,6 @@ defaults:
       path: ""
     values:
       sitemap: true
-  - scope:
-      path: "CLAUDE.md"
-    values:
-      sitemap: false
   - scope:
       path: "README.md"
     values:
