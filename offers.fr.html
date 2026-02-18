@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/offers.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/offers.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/offers.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/offers.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=offers.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+<p><br />
+<a href="offers.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="offers.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="lignes-directrices-artsdata-pour-la-propriété-offers">Lignes directrices Artsdata pour la propriété <code class="language-plaintext highlighter-rouge">offers</code></h1>
+
+<p>La propriété <code class="language-plaintext highlighter-rouge">offers</code> est fortement recommandée pour les événements des arts de la scène. Elle permet aux robots d’accéder à la page officielle de billetterie et peut également identifier des informations supplémentaires, telles que le prix de billets le plus bas, la monnaie dans laquelle ce prix est exprimé et la date/heure à laquelle les billets seront mis en vente.</p>
+
+<p>Pour les besoins d’Artsdata, deux types principaux sont associés à cette propriété : <code class="language-plaintext highlighter-rouge">Offer</code> et <code class="language-plaintext highlighter-rouge">AggregateOffer</code>.</p>
+
+<h3 id="offer">Offer</h3>
+
+<p>Identifie un prix de billet unique pour une URL de billetterie unique.</p>
+
+<p>Exemple pour <a href="https://www.showpass.com/whose-lineage-is-it-anyway-an-improvised-shakspearean-history-3/">Whose Lineage is it Anyway? An Improvised Shakspearean History</a>, diffusé par Little Mountain Gallery, qui comprend un prix unique d’aucune place assignée :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"offers":
+         {
+            "@type":"Offer",
+            "name":"General Admission",
+            "url":"https://www.showpass.com/whose-lineage-is-it-anyway-an-improvised-shakspearean-history-3/",
+            "price":"16.94",
+            "priceCurrency":"CAD",
+            "availability":"http://schema.org/InStock",
+            "validFrom":"2025-09-09T16:53:19-07:00",
+            "validThrough":"2025-11-07T20:15:00-08:00"
+    },
+</code></pre></div></div>
+
+<h3 id="aggregateoffer">AggregateOffer</h3>
+
+<p>Identifie plusieurs prix de billets pour une seule URL de billetterie.</p>
+
+<p>Exemple pour <a href="https://www.eventbrite.ca/e/adolescentes-de-venezuela-live-concert-ottawa-tickets-1747846177969?aff=ebdssbcategorybrowse">Adolescentes de Venezuela Live Concert Ottawa</a>, diffusé par DDB Production, qui comprend un prix d’ aucune place assignée et un prix privilégié :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"offers":
+         {
+            "@type":"AggregateOffer",
+            "url":"https://www.eventbrite.ca/e/adolescentes-de-venezuela-live-concert-ottawa-tickets-1747846177969",
+            "lowPrice":"65.4",
+            "highPrice":"86.73",
+            "priceCurrency":"CAD",
+            "availability":"http://schema.org/InStock",
+            "validFrom":"2025-09-26T15:00:00+00:00",
+    },
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

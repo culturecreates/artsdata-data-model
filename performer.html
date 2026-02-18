@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/performer.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/performer.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/performer.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<table>
+  <tbody>
+    <tr>
+      <td><a onclick="goBack()">&lt;  Back</a></td>
+      <td><a href="./index.html">Home</a></td>
+      <td><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/performer.md">Edit page</a></td>
+      <td>🙋 <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a></td>
+      <td><span id="last-modified"></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=performer.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<p><br />
+<a href="performer.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="performer.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="artsdata-guidelines-regarding-the-performer-property">Artsdata Guidelines Regarding the performer Property</h1>
+
+<p>The <code class="language-plaintext highlighter-rouge">performer</code> property provides extremely valuable information about a performing arts event. For example, it can be used to retrieve other performances by the same performer entity or to filter events based on the origin of the performer.</p>
+
+<h3 id="good-practices-for-selecting-performer-values">Good practices for selecting <code class="language-plaintext highlighter-rouge">performer</code> values</h3>
+
+<p>Selecting the right value(s) for the <code class="language-plaintext highlighter-rouge">performer</code> property can be a little challenging at times. That’s why we drafted these <a href="./performer-values.html">Good Practices for Selecting performer Values</a>.</p>
+
+<h3 id="good-practices-regarding-performers-type">Good practices regarding performers’ <code class="language-plaintext highlighter-rouge">@type</code></h3>
+
+<p>Determining whether a performer should be assigned the <a href="https://schema.org/Person"><code class="language-plaintext highlighter-rouge">Person</code></a>, <a href="https://schema.org/PerformingGroup"><code class="language-plaintext highlighter-rouge">PerformingGroup</code></a>, or <a href="https://schema.org/PerformingGroup"><code class="language-plaintext highlighter-rouge">Organization</code></a> is not a always a straightforward task.</p>
+
+<p>Confusion often arises when a solo artist is performing along with other musicians whose names are not specified.</p>
+
+<p>Let’s take an example: Susan Aglukark <a href="http://kg.artsdata.ca/resource/K12-296">ad:K12-296</a> is touring along with four musicians, but we don’t know who they are, and they may even change from one performance to another. In such a case, is the performer entity a <code class="language-plaintext highlighter-rouge">Person</code> or a <code class="language-plaintext highlighter-rouge">PerformingGroup</code>?</p>
+
+<p><strong>If the name of the performer entity is the name of a physical person, then the type should be <code class="language-plaintext highlighter-rouge">Person</code>.</strong></p>
+
+<p>Here’s why.</p>
+
+<p><code class="language-plaintext highlighter-rouge">PerformingGroup</code> is a subclass of <code class="language-plaintext highlighter-rouge">Organization</code> and has no direct or indirect relationship with the <code class="language-plaintext highlighter-rouge">Person</code> class in the Schema.org ontology. Consequently, if the type were <code class="language-plaintext highlighter-rouge">PerformingGroup</code>, search engines, Artsdata and other user agents reading the data will attempt to reconcile the name string - “Susan Aglukark” in the above example - against other <code class="language-plaintext highlighter-rouge">PerformingGroup</code> or <code class="language-plaintext highlighter-rouge">Organization</code> entities in authority files. Since Susan Aglukark is considered a Person in Wikidata, Musicbrainz, VIAF and ISNI (and Artsdata), they may not find a match.</p>
+
+<p>In other words, if you want your structured data to make sense for machines, you should use the same type as one would find in authority files such as <a href="https://www.wikidata.org/">Wikidata</a> and <a href="https://viaf.org/">VIAF</a>.</p>
+
+<p>In situations where it is not possible to assign a specific type to a given <code class="language-plaintext highlighter-rouge">performer</code> entity or if you wish to define a default type that will be true for all <code class="language-plaintext highlighter-rouge">performer</code> objects, Artsdata recommends the following modelling for the nested entity:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    {
+        "@type": "Thing",
+        "additionalType": [
+            "http://dbpedia.org/ontology/Agent",
+            "http://xmlns.com/foaf/0.1/Agent",
+            "http://www.cidoc-crm.org/cidoc-crm/E39_Actor"],
+        "name": "--Nom de l'entité : Name of the entity--",
+        "sameAs": ""--URI Artsdata.ca, obtenue avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--"
+        }
+</code></pre></div></div>
+
+<p>In this proposed modelling, the “Agent” and “Actor” additional types are classes designating “an entity that acts”, and are super classes to persons, groups and organizations. The Artsdata reconciliation server enables reconciliation against the <a href="https://dbpedia.org/ontology/Agent"><code class="language-plaintext highlighter-rouge">dbo:Agent</code></a> class.</p>
+
+<p>Even though <code class="language-plaintext highlighter-rouge">Thing</code> is not an expected type for objects nested under the <code class="language-plaintext highlighter-rouge">performer</code> property in Schema.org, the Schema community deems it acceptable to use a broader type (or to omit the type altogether), when a narrower type cannot be defined (<a href="https://github.com/culturecreates/artsdata-data-model/discussions/127#discussioncomment-12947634">read more</a>).</p>
+
+<p>In conjunction with the use of <code class="language-plaintext highlighter-rouge">Thing</code> as a default broader type, we recommend providing a <code class="language-plaintext highlighter-rouge">sameAs</code> to an Artsdata ID. If the <code class="language-plaintext highlighter-rouge">performer</code> object has <code class="language-plaintext highlighter-rouge">Thing</code> as the default broader type, and it also has a <code class="language-plaintext highlighter-rouge">sameAs</code> to an Artsdata ID (where a narrower type is always stated), then search engines can compare the two data records and choose to use the narrower type for the performer entity.</p>
+
+<h3 id="good-practices-regarding-performers-sameas">Good practices regarding performers’ <code class="language-plaintext highlighter-rouge">sameAs</code></h3>
+
+<ul>
+  <li><a href="./sameas.html">Artsdata guidelines about the schema:sameAs property</a>
+    <ul>
+      <li><a href="./retrieve-uri.html">How to retrieve persistent identifiers’ URIs</a></li>
+    </ul>
+  </li>
+</ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

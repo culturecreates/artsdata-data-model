@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Gabarits de données structurées d’événement | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Gabarits de données structurées d’événement" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/gabarits-jsonld/README.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/gabarits-jsonld/README.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Gabarits de données structurées d’événement" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"Overview of how data is modelled in Artsdata.ca.","headline":"Gabarits de données structurées d’événement","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/gabarits-jsonld/README.fr.html"},"url":"http://docs.artsdata.ca/gabarits-jsonld/README.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/README.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_gabarits-jsonld/README.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<!-- _includes/base.html -->
+
+<p><br />
+<a href="../gabarits-jsonld/README.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="../gabarits-jsonld/README.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="gabarits-de-données-structurées-dévénement">Gabarits de données structurées d’événement</h1>
+
+<p>Gabarits de données structurées au format JSON-LD s’appuyant sur le vocabulaire Schema.org.</p>
+
+<h2 id="conventions">Conventions</h2>
+
+<h3 id="identification-des-valeurs-à-modifier-dans-les-gabarits">Identification des valeurs à modifier dans les gabarits</h3>
+
+<p>Les gabarits sont rendus disponibles sous forme de fichier contenant des données au format JSON-LD.</p>
+
+<p>Afin de faciliter la compréhension et l’utilisation, des notes explicatives ont été incluses à propos des valeurs attendues et du format dans lequel elles devraient être saisie. Ces notes ont été placées entre de doubles tirets en français et anglais. Par exemple:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"url": "--URL complète vers la page Web concernée : Full URL to the relevant webpage--"
+</code></pre></div></div>
+
+<p>Une fois le gabarit utilisé et rempli avec des données, il ne devrait plus contenir de doubles tirets. Par exemple:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"url": "https://placedesarts.com"
+</code></pre></div></div>
+
+<h2 id="gabarits">Gabarits</h2>
+
+<p>Le gabarit <em>Événement</em> est destiné à représenter les informations à propos d’événements uniques, c’est-à-dire un spectacle ayant une seule représentation. Si votre événement comporte une série de représentations d’un même spectacle, veuillez <em>ajouter</em> l’extension <em>Série d’événements</em> au gabarit <em>Événement</em> afin de décrire chaque représentation comme une <em>entité imbriquée</em><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> sous la propriété <a href="https://schema.org/subEvent">‘subEvent’</a>, puis changez le type de l’événement principal pour <a href="https://schema.org/EventSeries">‘EventSeries’</a>.</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld">Gabarit Événement</a> : événement unique (avec une seule représentation).</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld">Extension pour les Séries d’événements</a> : extension du gabarit <em>Événement</em> pour décrire chaque représentation d’un même spectacle en tant qu’entités imbriquées.</p>
+  </li>
+</ul>
+
+<p>Dans le cas des festivals, vous pouvez utiliser un ou plusieurs des gabarits figurant dans le document suivant pour décrire l’édition du festival dans son ensemble, les jours spécifiques du festival et/ou les événements individuels au sein du festival :</p>
+
+<ul>
+  <li><a href="https://docs.google.com/document/d/1P-URop6G4fTTePSjyjnFowBTdQWb3zm5emkQ-q9KcK0/edit?usp=sharing">Gabarits de festival</a> : L’édition du festival, le jour du festival et un événement individuel</li>
+</ul>
+
+<p>Veuillez noter que les gabarits de festival sont destinés à représenter des informations en lien avec l’édition spécifique d’un festival, par exemple <a href="https://quartiersdanses.com/calendrier-2023/">Édition 2023 : Festival Quartiers Danses</a> (équivalent à <a href="http://kg.artsdata.ca/resource/Festival">ado:Festival</a> et <a href="https://www.wikidata.org/wiki/Q27968043">wd:Q27968043</a>). Ils ne sont pas destinés à représenter des informations sur le festival en tant qu’événement récurrent (équivalent à <a href="https://www.wikidata.org/wiki/Q132241">wd:Q132241</a>) ou en tant qu’organisme (équivalent à <a href="http://www.wikidata.org/entity/Q108669279">wd:Q108669279</a> et <a href="http://kg.artsdata.ca/resource/FestivalOrganization">ado:FestivalOrganization</a>). Pour plus de détails à propos de ces différents concepts, veuillez consulter le <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Cultural_events/Data_structure">WikiProjet Cultural events</a>.</p>
+
+<h2 id="détails-sur-certaines-propriétés-clés">Détails sur certaines propriétés clés</h2>
+
+<h3 id="id"><em>@id</em></h3>
+<p>Saisissez une URI (Uniform Resource Identifier) constituant un <a href="https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr">identifiant pérenne</a> pour cet événement à l’intérieur du domaine du site web. L’URI de l’événement doit être différente de l’URL de la page web de l’événement, puisqu’il s’agit de deux <a href="https://schema.org/Thing"><em>choses</em></a> (ou <em>entités</em>) distinctes dans le contexte des données structurées Schema.org.</p>
+
+<p>Dans le cas d’une série de représentations d’un même spectacle, en plus de l’URI de la série, une URI distincte devrait être assignée à chaque représentation à l’aide de l’<a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld">Extension pour les Séries d’événements</a>. Assurez-vous qu’aucun sous-événement ne se voit assigner la même l’URI que l’objet de type <em>EventSeries</em>.</p>
+
+<p>Dans le cas des festivals, il est recommandé d’attribuer à chaque événement une URI unique si tous les événements sont énumérés sur la même page web.</p>
+
+<p>Si vous n’êtes pas en mesure d’attribuer une URI à chaque événement, incluant chaque représentation d’une série de représentations, alors il est préférable de ne pas utiliser la propriété <em>@id</em>.</p>
+
+<p><a href="https://culturecreates.github.io/artsdata-data-model/sameas-guidelines.fr">En savoir plus à propos de la propriété @id et des URI locales</a></p>
+
+<h3 id="additionaltype"><a href="https://schema.org/additionalType"><em>additionalType</em></a></h3>
+<p>Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au <a href="https://culturecreates.github.io/artsdata-data-model/event-type.fr.html">vocabulaire contrôlé Artsdata</a> pour identifier le ou les types les mieux appropriés parmi tous les types d’événements des arts de la scène. Vous pouvez ajouter autant de propriétés <em>additionalType</em> que nécessaire pour bien décrire l’événement. En guise de valeur par défaut, nous recommandons le type <a href="http://kg.artsdata.ca/resource/PerformingArtsEvent">PerformingArtsEvent</a>, qui désigne « une œuvre des arts de la scène exécutée pour un public ».</p>
+
+<h3 id="name"><a href="https://schema.org/name"><em>name</em></a></h3>
+<p>Saississez une appellation par laquelle l’événement est susceptible d’être recherché et reconnu. Il peut s’agir de la même valeur que le nom de l’artiste principal (<em>performer.name</em>) et/ou le nom de l’œuvre-spectacle (<em>workPerformed.name</em>), selon la notoriété de chacun. Tâchez de ne pas excéder une longueur de 60 caractères (pour des fins d’affichage dans les pages de résultats et dans les calendriers). N’ajoutez pas d’autres informations (comme le lieu ou la date). Au lieu, saisissez ces autres informations à l’aide des propriétés appropriées.</p>
+
+<p>Dans le cas des éditions des festivals, indiquez l’année dans le titre, et dans le cas des jours des festivals, indiquez la date ou le jour numéroté (par exemple, Jour 1).</p>
+
+<h3 id="startdate"><a href="https://schema.org/startDate"><em>startDate</em></a></h3>
+<p>Saisissez la date et l’heure de début de l’événement, au format <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.</p>
+
+<p>Si possible, précisez le fuseau horaire en incluant le <a href="https://nrc.canada.ca/fr/horloge-web/">nombre d’heures de décalage avec le temps universel coordonné (UTC)</a>. Si ce n’est pas possible, alors il est préférable de ne saisir aucune valeur de fuseau horaire plutôt que de saisir une valeur factice (comme <code class="language-plaintext highlighter-rouge">+00:00</code>) ou une valeur par défaut qui ne tiendrait pas compte des changements entre l’heure normale et l’heure avancée. En l’absence d’une valeur, le fuseau horaire présumé est l’heure locale.</p>
+<ul>
+  <li>Conseil : Le fuseau horaire est parfois hérité des paramètres généraux du site web. Si votre fuseau horaire apparaît comme <code class="language-plaintext highlighter-rouge">+00:00</code> sans que vous n’ayez vous-même renseigné cette valeur, vérifiez les paramètres de votre site web.</li>
+</ul>
+
+<p>Si l’heure de début de l’événement est inconnue ou s’il s’agit d’un événement d’une journée entière, ne saisissez pas de valeur d’heure ni de valeur de fuseau horaire.</p>
+
+<h3 id="location"><a href="https://schema.org/location"><em>location</em></a></h3>
+<p>Saisissez les informations identifiant et décrivant l’endroit où est présenté l’événement. L’entité imbriquée sous la propriété <em>location</em> peut être de @type <a href="https://schema.org/Place">Place</a> (un lieu physique) ou de @type <a href="https://schema.org/VirtualLocation">VirtualLocation</a> (un lieu virtuel).
+Dans le cas des lieux physiques :</p>
+<ul>
+  <li>Il est préférable de saisir les valeurs désignant l’entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située).</li>
+  <li>Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l’URI Wikidata et/ou Artsdata du lieu sous la propriété <em>location.sameAs</em>.</li>
+  <li>Google requiert la propriété <em>location.address</em> avec une entité de type <em>PostalAddress</em>. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation.</li>
+  <li>Pour une entité de type <em>PostalAddress</em>, il est préférable d’utiliser les abréviations postales de deux lettres pour les valeurs <em>addressRegion</em> et <em>addressCountry</em>.</li>
+</ul>
+
+<p>Dans le cas des festivals, si le jour du festival et/ou l’édition du festival se déroule dans plusieurs lieux au sein d’une localité (c.-à-d. une ville ou une région), il est recommandé de renseigner la propriété <em>location.address</em> en omettant les sous-propriétés <em>postalCode</em> et <em>streetAddress</em>.</p>
+
+<h3 id="url"><a href="https://schema.org/url"><em>url</em></a></h3>
+<p>Saisissez l’URL canonique (c.-à-d. l’URL « officielle ») désignant la page web de l’événement sur le site de l’organisateur. Dans le cas de séries de représentations, saisissez l’URL de la page web de chaque représentation si elle existe. Sinon saisissez, l’URL de la page web de la série de représentations.</p>
+
+<p>Dans le cas des festivals, si l’édition du festival ou l’événement individuel du festival est décrit sur plusieurs pages web (par exemple, la page d’accueil, la page du programme complet et la page des activités quotidiennes), choisissez une URL de page comme URL canonique et indiquez cette même valeur d’URL dans les données structurées de chaque page.</p>
+
+<h3 id="eventstatus"><a href="https://schema.org/eventStatus"><em>eventStatus</em></a></h3>
+<p>Indiquez si un événement est <a href="https://schema.org/EventScheduled">programmé</a> (avec date), <a href="https://schema.org/EventPostponed">reporté</a> (date à confirmer), <a href="https://schema.org/EventRescheduled">reprogrammé</a> (avec nouvelle date) ou <a href="https://schema.org/EventCancelled">annulé</a>.</p>
+
+<h3 id="eventattendancemode"><a href="https://schema.org/eventAttendanceMode"><em>eventAttendanceMode</em></a></h3>
+<p>Indiquez si un événement se produit <a href="https://schema.org/OfflineEventAttendanceMode">en personne</a>, <a href="https://schema.org/OnlineEventAttendanceMode">en ligne</a>, ou format <a href="https://schema.org/MixedEventAttendanceMode">hybride</a>.</p>
+
+<h3 id="organizer"><a href="https://schema.org/organizer"><em>organizer</em></a></h3>
+<p>Saisissez les informations identifiant et décrivant l’organisme qui est responsable de la présentation du spectacle ou du festival. Il peut s’agir d’un organisme diffuseur ou d’une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignée sous la propriété <em>performer</em>). On peut ajouter plusieurs <em>organizer(s)</em>. Les <em>entitées imbriquées</em><sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> sous cette propriété sont généralement de @type <a href="https://schema.org/Organization">Organization</a>. Les propriétés recommandées pour l’entité imbriquée incluent : <em>name</em>, <em>URL</em> et <em>sameAs</em> (pointant vers un identifiant Artsdata et/ou Wikidata).</p>
+
+<h3 id="performer"><a href="https://schema.org/performer"><em>performer</em></a></h3>
+<p>Saisissez les informations identifiant et décrivant la compagnie, le groupe ou la (des) personne(s) qui est(sont) responsable de l’exécution de la représentation. Il est possible d’ajouter plusieurs <em>performer(s)</em>. Les entités imbriquées sous cette propriété peuvent être de @type <a href="https://schema.org/Organization">Organization</a>, <a href="https://schema.org/PerformingGroup">PerformingGroup</a> ou <a href="https://schema.org/Person">Person</a>. Les propriétés recommandées pour l’entité imbriquée incluent : <em>name</em>, <em>URL</em> et <em>sameAs</em> (pointant vers un identifiant ISNI, Artsdata et/ou Wikidata).</p>
+
+<h3 id="doortime"><a href="https://schema.org/doorTime"><em>doorTime</em></a></h3>
+
+<p>Dans le cas des festivals, indiquez l’heure à laquelle commence l’admission au jour du festival et/ou à l’édition du festival, au format ISO 8601. Cette propriété est destinée à être utilisée lorsque l’ouverture des portes (<em>doorTime</em>) est différente de l’heure de début (<em>startTime</em>) du premier événement du programme du festival.</p>
+
+<h3 id="offers"><a href="https://schema.org/offers"><em>offers</em></a></h3>
+<p>Saississez au moins une entité de type Offer ou AggregateOffer avec l’URL de la page où l’on peut se procurer les billets. Pour plus d’informations sur la façon de renseigner les offres, consultez la <a href="https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr#structured-data-type-definitions">documentation de Google</a>.</p>
+
+<h3 id="sameas"><a href="https://schema.org/sameAs"><em>sameAs</em></a></h3>
+<p>Saisissez les URIs d’<a href="https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr">identifiants pérennes</a> permettant d’identifier sans ambiguité l’événement et/ou les entitées imbriquées<sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> dans l’entité de type <em>Event</em>.</p>
+
+<p><a href="https://culturecreates.github.io/artsdata-data-model/sameas-guidelines.fr">En savoir plus à propos de la propriété sameAs</a></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Par <strong>« entités imbriquées »</strong>, on entend des entités liées à l’entité <em>Event</em> par le biais des propriétés telles <em>organizer</em>, <em>performer</em>, <em>location</em> ou <em>subEvent</em>. Ces entités sont des <a href="https://schema.org/Thing">choses</a> à part entières dans le contexte Schema.org. Elles peuvent avoir un <em>@type</em> différent de l’entité de premier niveau. Elles peuvent être décrites avec des pairs propriété-valeur au même titre que l’entité de premier niveau. En imbriquant ces entités à l’intérieur du code d’une entité de premier niveau à l’aide d’accolades <code class="language-plaintext highlighter-rouge">{ }</code> : on signifie que l’entité de premier niveau est l’entité principale; on décrit sémantiquement la relation entre l’entité de premier niveau et ses entités de second niveau; et on évite toute confusion à savoir si une pair propriété-valeur (par exemple, un nom ou une description) se rapporte à l’entité principale ou à une entité secondaire. Les entités imbriquées sont généralement représentées (dans le code et dans les visualisateurs JSON-LD) avec une indentation, cela afin de faciliter la lecture du code par les humains. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:1:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Google Sheets | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Google Sheets" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/architecture/google-sheets.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/architecture/google-sheets.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Google Sheets" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"Overview of how data is modelled in Artsdata.ca.","headline":"Google Sheets","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/google-sheets.html"},"url":"http://docs.artsdata.ca/architecture/google-sheets.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_architecture/google-sheets.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_architecture/google-sheets.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<h2>Google Sheets</h2>
+
+<!-- _includes/base.html -->
+
+<p>Google spreadsheets are an easy way to get started loading data into Artsdata.ca.</p>
+
+<p>For example, event organizer can use the <a href="../architecture/google-sheet-to-artsdata.html">Google Sheet-to-Artsdata tool</a> to convert their event information into Schema structured data. This structured data can then be loaded to the Artsdata knowledge graph via the Artsdata databus.</p>
+
+<p>Other kinds of Google Sheets can also be loaded to Artsdata, provided they meet a few conditions:</p>
+
+<ul>
+  <li>The first row sheet must contain column headings.</li>
+  <li>The heading names must match the machine name of properties within the <a href="..">Artsdata data model</a>. Property names are always written in camel case. For example, the heading for an artist’s given name should be <code class="language-plaintext highlighter-rouge">givenName</code>.</li>
+  <li>The cell values must match the expected data type for the property. For example, the value for the <code class="language-plaintext highlighter-rouge">sameAs</code> property should be a full URI.</li>
+</ul>
+
+<p>If you wish to upload a Google Sheet to the Artsdata knowledge graph, please send your are spreadsheet to <a href="mailto:artsdata@capacoa.ca"><strong>artsdata@capacoa.ca</strong></a>. We will happily assess its suitability for upload, and offer guidance as needed.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

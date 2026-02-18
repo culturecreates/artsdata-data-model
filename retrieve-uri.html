@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/retrieve-uri.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/retrieve-uri.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/retrieve-uri.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<table>
+  <tbody>
+    <tr>
+      <td><a onclick="goBack()">&lt;  Back</a></td>
+      <td><a href="./index.html">Home</a></td>
+      <td><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/retrieve-uri.md">Edit page</a></td>
+      <td>🙋 <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a></td>
+      <td><span id="last-modified"></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=retrieve-uri.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<p><br />
+<a href="retrieve-uri.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="retrieve-uri.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="how-to-retrieve-persistent-identifiers-uris">How to Retrieve Persistent Identifiers’ URIs</h1>
+
+<p>When working with linked open data, it’s important to refer to cultural entities (like organizations, people, venues, and events) using stable identifiers.</p>
+
+<p>Artsdata provides Uniform Resource Identifiers (URIs) for cultural entities in Canada. These URIs are designed to be persistent and interoperable across the web.</p>
+
+<p>This page will show you how to find and use an Artsdata URI.</p>
+
+<h2 id="retrieving-artsdata-uris">Retrieving Artsdata URIs</h2>
+
+<h3 id="option-1-manual-retrieval">Option 1: Manual Retrieval</h3>
+
+<p>Anyone can use Artsdata’s search tool on the knowledge graph’s interface to find a entity and retrieve its Artsdata URI. Once you’ve become familiar with the process, it takes less than 10 seconds to retrieve an Artsdata URI.</p>
+
+<h4 id="tutorial-video">Tutorial Video</h4>
+
+<p>Watch “<a href="https://youtu.be/HRv1GCegFws">How to Retrieve an Artsdata URI</a>” (<a href="https://youtu.be/sICvNpBHroE">Version française</a>)</p>
+
+<p><a href="https://youtu.be/HRv1GCegFws"><img width="640" height="359" alt="Screenshot showing a cursor pointing to an Artsdata ID" src="https://github.com/user-attachments/assets/00d6561b-dc0f-44b0-b7d7-19c07667811a" /></a></p>
+
+<p>Video duration: 3.5 minutes. English and French subtitles available.</p>
+
+<p>This video walks through a real example: a cultural worker at Tangente (a Montreal-based dance presenter) retrieves her organization’s URI from Artsdata to correctly document a dance series at the Édifice Wilder.</p>
+
+<h4 id="quick-steps">Quick Steps</h4>
+
+<ol>
+  <li>Go to <a href="https://kg.artsdata.ca/">kg.artsdata.ca</a>.</li>
+  <li>Search the thing (or “entity”) in the search bar in the top right corner of the screen. You can search by:
+    <ul>
+      <li>The name of the organization, venue, or person;</li>
+      <li>Their website URL;</li>
+      <li>An existing Artsdata ID (e.g. K10-337).</li>
+    </ul>
+  </li>
+  <li>Identify the right entity among in the list of search results by confirming the:
+    <ul>
+      <li>Type (Organization, Person, Place, Event);</li>
+      <li>Description (e.g. city or occupation).</li>
+    </ul>
+  </li>
+  <li>Click the blue compact URI (e.g. ad:K10-337) to access the record page.</li>
+  <li>On the record page, look for the URI below the entity’s name:
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/K10-337</code></li>
+    </ul>
+  </li>
+  <li>Click the “copy” icon to copy the URI to your clipboard.</li>
+  <li>Paste the URI in your structured data, in your EPK, on your profile page, etc.</li>
+</ol>
+
+<h3 id="option-2-automated-retrieval-via-the-artsdata-reconciliation-service">Option 2: Automated Retrieval via the Artsdata Reconciliation Service</h3>
+
+<p>Developers can also use the Artsdata Reconciliation API to retrieve Artsdata URIs.</p>
+
+<p>Depending on the application’s setting, this can work in a similar fashion as Google Search’s auto-suggestion feature:</p>
+
+<ul>
+  <li>The user types in a performer name;</li>
+  <li>The reconciliation service returns entities with similar names along with their disambiguation description;</li>
+  <li>The user selects an entity, and the full name and the Artsdata URI are automatically loaded;</li>
+  <li>Additional data points can be passed along with the Artsdata URI.</li>
+</ul>
+
+<h2 id="retrieving-uris-from-other-knowledge-bases">Retrieving URIs from other Knowledge Bases</h2>
+
+<p>Other open knowledge bases also provide persistent identifiers for cultural entities. These can often be used alongside Artsdata URIs to enhance your metadata.</p>
+
+<p>Examples include:</p>
+<ul>
+  <li><strong>Wikidata</strong>: <a href="https://www.wikidata.org">https://www.wikidata.org</a></li>
+  <li><strong>ISNI (International Standard Name Identifier)</strong>: <a href="https://www.wikidata.org">https://isni.org</a></li>
+  <li><strong>MusicBrainz</strong> (for performers and recordings): <a href="https://www.wikidata.org">https://musicbrainz.org</a></li>
+</ul>
+
+<p>To retrieve an identifier:</p>
+<ol>
+  <li>Search for the entity by name or other known details;</li>
+  <li>Confirm that the record matches (type, location, description);</li>
+  <li>Copy the URI shown on the page or in the navigation bar.</li>
+</ol>
+
+<h2 id="how-do-you-know-youve-found-the-right-uri">How Do You Know You’ve Found the Right URI?</h2>
+
+<p>When you follow these steps, you’re not just grabbing any link. You’re identifying a verified, unique identifier that points to one specific cultural entity in the Artsdata Knowledge Graph.</p>
+
+<p>To confirm it’s correct, verify:</p>
+<ul>
+  <li>Format: The URI begins with <code class="language-plaintext highlighter-rouge">http://</code> or <code class="language-plaintext highlighter-rouge">https://</code>. If you only have the alphanumeric code name, look for an <code class="language-plaintext highlighter-rouge">http</code> address on the page or in the navigation bar.</li>
+  <li>Entity match: The record’s type and description align with what you’re looking for.
+    <ul>
+      <li>Type: Does the entity have the right type? Sometimes, an organization (Organization type) and a venue (Place type) may have the same name. Similarly, many live performance events have (Event type) the same name as the main performer (Person or Organization type).</li>
+      <li>Description: Does the location, occupation, or label match what you’re looking for?</li>
+    </ul>
+  </li>
+  <li>Location: In the Artsdata knowledge graph, the web page URL and the entity URI have radically formats. Make sure to copy the URI just below the record title.</li>
+  <li>Trusted source: The URI comes from Artsdata’s authoritative database (kg.artsdata.ca).</li>
+</ul>
+
+<h2 id="what-if-i-cant-find-my-organization">What if I can’t find my organization?</h2>
+
+<p>If your entity is not in Artsdata, or if your record needs to be updated:</p>
+<ul>
+  <li>Email us at artsdata@capacoa.ca</li>
+</ul>
+
+<p>The Artsdata team can help you add or correct information.</p>
+
+<h3 id="related-contents">Related contents</h3>
+<ul>
+  <li><a href="https://www.artsdata.ca/en/resources/identifiable-and-findable">What are persistent identifiers and why do they matter?</a></li>
+  <li><a href="./identifier-recommendations.html">Artsdata Guidelines regarding Persistent Identifiers</a>
+    <ul>
+      <li><a href="./id.html">Artsdata guidelines regarding the @id property and URIs</a></li>
+      <li><a href="./sameas.html">Artsdata Guidelines about the schema:sameAs property</a></li>
+    </ul>
+  </li>
+</ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

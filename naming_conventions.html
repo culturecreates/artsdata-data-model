@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/naming_conventions.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/naming_conventions.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/naming_conventions.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=naming_conventions.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+<h1 id="naming-conventions">Naming Conventions</h1>
+<p><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/naming_conventions.md">Edit page</a> | <span id="last-modified"></span></p>
+
+<p>Conventions for naming things.</p>
+
+<h1 id="uris">URIs</h1>
+<h3 id="use">Use</h3>
+<ul>
+  <li>Use <a href="https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph">Valid IRIs</a></li>
+  <li>Use lowercase protocol http and domain name</li>
+  <li>Prefer http instead of https when both are available.</li>
+  <li><strong>For the path</strong> before the last ‘/’ or ‘#’, use lowercase letters seperated by dash “-“</li>
+  <li>Always add a path if possible. This makes it easier to write server rules to manage dereferencing (like in nginx) and content negotiation.</li>
+  <li>After the last ‘/’ or ‘#’ please use camelCase.</li>
+  <li>For properties (predicates) the first letter is lowercase.</li>
+  <li>For classes and named entities, the first letter is uppercase.</li>
+</ul>
+
+<h3 id="avoid">Avoid</h3>
+<ul>
+  <li>Do not use snakecase (this_is_snake_case)</li>
+  <li>Do not use uppercase in the part that is replaced by the prefix (bad: http://example.com/resource/Place#Montreal)</li>
+  <li>Uppercase characters in scheme names (http) and domain names (example.com)</li>
+  <li>Percent-encoding of characters where it is not required by IRI syntax</li>
+  <li>Explicitly stated HTTP default port (http://example.com:80/); http://example.com/ is preferable</li>
+  <li>Completely empty path in HTTP IRIs (http://example.com); http://example.com/ is preferable</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+<ul>
+  <li>http://example.com/resource/ClassName or ex:ClassName</li>
+  <li>http://example.com/resource/ontology#EventClass or exo:EventClass</li>
+  <li>http://example.com/resource/ontology#propertyName or exo:propertyName</li>
+  <li>http://example.com/extra-words/in-path#ClassName or exwp:ClassName</li>
+</ul>
+
+<h1 id="graph-names">Graph Names</h1>
+
+<h3 id="reserved">Reserved</h3>
+<p>The following graph names are reserved:</p>
+<ul>
+  <li>http://kg.artsdata.ca/minted/</li>
+  <li>http://kg.artsdata.ca/ontology/</li>
+  <li>http://kg.artsdata.ca/databus</li>
+  <li>http://kg.artsdata.ca/graph-ranking</li>
+</ul>
+
+<h3 id="artsdata-databus">Artsdata Databus</h3>
+<p>All data must be imported using the Artsdata Databus. When data in imported using the databus, each version is named as follows:</p>
+<ul>
+  <li>http://kg.artsdata.ca/databus/[account]/[group]/[artifact]/[version]</li>
+</ul>
+
+<p>Where:</p>
+<ul>
+  <li>account is a free Artsdata account setup for a specific user or organization to upload data</li>
+  <li>group is the general grouping of articats usually around a project or software that produces datasets</li>
+  <li>artifact is the dataset name</li>
+  <li>version is the version of the dataset</li>
+</ul>
+
+<p>The databus only stores the dataset metadata including the downloadUrl for each version. It does not store the actual triples.</p>
+
+<p>Artsdata subscribes to artifacts, and will automatically load the triples of each new version replacing the previous version in the graph.</p>
+
+<p>Graphs are named as follows:</p>
+<ul>
+  <li>http://kg.artsdata.ca/[account]/[group]/[artifact]</li>
+</ul>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/sameas.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/sameas.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/sameas.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/sameas.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=sameas.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+<p><a href="sameas.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="sameas.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h2 id="artsdata-guidelines-about-the-schemasameas-property">Artsdata Guidelines about the schema:sameAs property</h2>
+
+<p>Along with <a href="./id.html"><code class="language-plaintext highlighter-rouge">@id</code> property</a>, the <a href="https://schema.org/sameAs"><code class="language-plaintext highlighter-rouge">schema:sameAs</code></a> property offers another excellent means of unambiguously identifying Things in Schema structured data.</p>
+
+<p>Artsdata recommends populating the <code class="language-plaintext highlighter-rouge">sameAs</code> property with a <a href="https://www.artsdata.ca/en/resources/identifiable-and-findable">persistent identifier</a>, in URI format. Here is some additional information on how to retreive a URI: https://culturecreates.github.io/artsdata-data-model/retrieve-uri</p>
+
+<p>Always enter persistent identifiers in full URI format (rather than entering just the identifier’s string). For example, for the short-form Wikidata ID <code class="language-plaintext highlighter-rouge">Q596774</code>, the matching URI is <code class="language-plaintext highlighter-rouge">http://www.wikidata.org/entity/Q596774</code>.</p>
+
+<p>Artsdata strongly recommends persistent identifiers from open knowledge bases and authority files (see the <a href="https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html">list of supported identifiers</a>), because they are machine-actionable: Artsdata can dereference these URIs to access all available descriptive metadata about the entity they identify.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">sameAs</code> property can be used on both top-level objects and nested entities. In the following example, the <code class="language-plaintext highlighter-rouge">sameAs</code> property is populated both for the top-level <code class="language-plaintext highlighter-rouge">Event</code> type entity, and for entities nested under the <code class="language-plaintext highlighter-rouge">location</code>, <code class="language-plaintext highlighter-rouge">organizer</code> and <code class="language-plaintext highlighter-rouge">performer</code> properties.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "@context": "https://kg.artsdata.ca/context.jsonld",
+    "@type": "Event",
+    "@id": "https://scenesfrancophones.ca/id/6130",
+    "sameAs": "http://kg.artsdata.ca/resource/K43-1002",
+    "name": "Maten - Utenat",
+    "url": "https://scenesfrancophones.ca/spectacles/maten-utenat-6130",
+    "startDateTime": "2025-05-01T19:30:00-03:00",
+    "location": {
+                "@type": "Place",
+                "@id": "https://scenesfrancophones.ca/id/467",
+                "name": "Théâtre Gilles-Laplante",
+                "sameAs": "http://www.wikidata.org/entity/Q117093397",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "300, chemin Beaverbrook",
+                    "addressLocality": "Miramichi",
+                    "addressRegion": "NB",
+                    "postalCode": "E1V 1A1",
+                    "addressCountry": "CA"
+                    },
+                },
+    "description": "Le groupe innu Maten est originaire de Mani-Utenam, sur la Côte Nord du Québec...",
+    "image": "https://scenesfrancophones.ca/sites/default/files/styles/large/public/2024-07/Maten%20-%20Sf.png?itok=qjWZfzae",
+    "organizer": {
+                "@type": "Organization",
+                "@id": "https://scenesfrancophones.ca/id/37",
+                "name": "Carrefour communautaire Beausoleil",
+                "sameAs": "http://www.wikidata.org/entity/Q133105414"
+            },
+    "performer": {
+                "@type": "PerformingGroup",
+                "@id": "https://scenesfrancophones.ca/id/6108",
+                "name": "Maten",
+                "sameAs": [
+                        "https://isni.org/isni/0000000491339041",
+                        "http://www.wikidata.org/entity/Q112681868"
+                        ]
+                }
+}
+</code></pre></div></div>
+
+<p>It is possible to populate several <code class="language-plaintext highlighter-rouge">sameAs</code> values for the same entity. In the previous example, under <code class="language-plaintext highlighter-rouge">performer</code> property, the entity named “Maten” has an array of <code class="language-plaintext highlighter-rouge">sameAs</code> values (delineated by square brackets) containing both an ISNI URI and a Wikidata URI. This is however not necessary. In most cases, a single Wikidata or VIAF URI is enough, since it can be dereferenced to retrieve several other persistent identifiers.</p>
+
+<p>Social media and streaming platforms’ accounts may also be populated under <code class="language-plaintext highlighter-rouge">sameAs</code>. Again, this may not be necessary: if the entity is already identified with a Wikidata URI (or an Artsdata URI linked with a Wikidata URI), any robot can dereference the Wikidata URI to retrieve all social media and streaming platform accounts associated with this entity in Wikidata. In other words, if these accounts are listed in Wikidata, listing them under sameAs would be redundant from a machine standpoint.</p>
+
+<h3 id="related-contents">Related contents</h3>
+<ul>
+  <li><a href="https://www.artsdata.ca/en/resources/identifiable-and-findable">What are persistent identifiers and why do they matter?</a></li>
+  <li><a href="./identifier-recommendations.html">Artsdata Guidelines regarding Persistent Identifiers</a>
+    <ul>
+      <li><a href="./id.html">Artsdata guidelines regarding the @id property and URIs</a></li>
+      <li><a href="./retrieve-uri.html">How to retrieve persistent identifiers’ URIs</a></li>
+    </ul>
+  </li>
+</ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

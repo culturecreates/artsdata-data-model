@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Data Flow Architecture | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Data Flow Architecture" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt; Back | Home | Edit page | &amp;#x1F64B; Check for open issues |" />
+<meta property="og:description" content="&lt; Back | Home | Edit page | &amp;#x1F64B; Check for open issues |" />
+<link rel="canonical" href="http://docs.artsdata.ca/architecture/overview.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/architecture/overview.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Data Flow Architecture" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"&lt; Back | Home | Edit page | &amp;#x1F64B; Check for open issues |","headline":"Data Flow Architecture","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/overview.html"},"url":"http://docs.artsdata.ca/architecture/overview.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_architecture/overview.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_architecture/overview.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+
+<p><br />
+<a href="overview.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="overview.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a>
+</p>
+
+<h1 id="data-flow-architecture">Data Flow Architecture</h1>
+<p>The Artsdata linked open data ecosystem is divided in three areas:</p>
+<ul>
+  <li>Data providers;</li>
+  <li>Artsdata knowledge graph;</li>
+  <li>Data consumers.</li>
+</ul>
+
+<p>The following figure illustrates how data flows in and out of Artsdata.ca.</p>
+
+<p><img src="../images/artsdata-architecture.png" alt="test" usemap="#image-map" />
+<!-- Drawing source https://drive.google.com/file/d/1s7j4xMUgkpaz46o_711HFQ0PlU9WlUTG/view?usp=sharing --></p>
+<map name="image-map">
+  <area href="../architecture/data-consumers.html" alt="Data Consumers" title="Data Consumers" coords="584,52,722,310" shape="rect" />
+</map>
+
+<h3 id="breakdown-of-architecture">Breakdown of architecture</h3>
+<ul>
+
+  
+   <li> <a href="../architecture/artsdata.html"> Artsdata.ca Website</a></li>
+  
+
+  
+   <li> <a href="../architecture/data-consumers.html"> Data Consumers</a></li>
+  
+
+  
+   <li> <a href="../architecture/data-model.html"> Artsdata Data Model &amp; Ontology</a></li>
+  
+
+  
+   <li> <a href="../architecture/footlight.html"> Footlight Console</a></li>
+  
+
+  
+   <li> <a href="../architecture/google-sheet-to-artsdata.fr.html"> L'outil Google Sheet-vers-Artsdata</a></li>
+  
+
+  
+   <li> <a href="../architecture/google-sheet-to-artsdata.html"> Google Sheet-to-Artsdata Tool</a></li>
+  
+
+  
+   <li> <a href="../architecture/google-sheets.html"> Google Sheets</a></li>
+  
+
+  
+   <li> <a href="../architecture/graph-store-api.html"> Databus API</a></li>
+  
+
+  
+   <li> <a href="../architecture/ical.html"> iCal Server</a></li>
+  
+
+  
+   <li> <a href="../architecture/minting.html"> Minting API</a></li>
+  
+
+  
+
+  
+
+  
+   <li> <a href="../architecture/query-api.html"> Query API</a></li>
+  
+
+  
+   <li> <a href="../architecture/reconciliation.html"> Reconciliation API</a></li>
+  
+
+  
+   <li> <a href="../architecture/sparql.html"> SPARQL Endpoint &amp; Federation</a></li>
+  
+
+  
+   <li> <a href="../architecture/triple-store.html"> Artsdata Triplestore</a></li>
+  
+
+</ul>
+
+<h2 id="detailed-presentation-of-each-area">Detailed presentation of each area</h2>
+
+<h3 id="data-providers">Data providers</h3>
+
+<p>For data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of Extract-Transform-Load (ETL) processes are available:</p>
+<ul>
+  <li>Automatic website crawling
+    <ul>
+      <li>crawling websites with event structured data (JSON-LD, RDFa or microdata)</li>
+      <li>contact an Artsdata steward to immediately add your site</li>
+    </ul>
+  </li>
+  <li>Manual website crawling
+    <ul>
+      <li>crawling web pages for event structured and un-structured data using custom XPath/CSS selectors to extract text from HTML)</li>
+      <li>requires technical setup</li>
+    </ul>
+  </li>
+  <li>APIs
+    <ul>
+      <li>loading data from JSON endpoints</li>
+      <li>requires technical setup</li>
+    </ul>
+  </li>
+  <li>Google Sheet to Artsdata
+    <ul>
+      <li>a tool to convert spreadsheet information into linked open data</li>
+      <li>contact Artsdata steward for Google sheet</li>
+    </ul>
+  </li>
+  <li>Mint from Wikidata
+    <ul>
+      <li>a service to import data previously loaded to Wikidata</li>
+      <li>available directly in Artsdata with a user account</li>
+    </ul>
+  </li>
+  <li>Footlight Console
+    <ul>
+      <li>software to add event strucutred data to any website</li>
+      <li>contact Culture Creates (info@culturecreates.com)</li>
+    </ul>
+  </li>
+  <li>Footlight CMS
+    <ul>
+      <li>event management software</li>
+      <li>contact Culture Creates (info@culturecreates.com)</li>
+    </ul>
+  </li>
+  <li>Artsdata Databus
+    <ul>
+      <li>send RDF (JSON-LD or any RDF format) to the Artsdata Databus endpoint</li>
+      <li>requires an Artsdata databus account</li>
+    </ul>
+  </li>
+  <li>Github Pipeline Action
+    <ul>
+      <li>uses Github workflows</li>
+      <li>options to send a data dump or crawl websites</li>
+      <li>requires an Artsdata databus account</li>
+      <li><a href="https://github.com/culturecreates/artsdata-pipeline-action?tab=readme-ov-file#artsdata-pipeline-action">documentation</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Website crawling is performed by the Artsdata crawler, a user agent that functions just like the search engines’ robots. Some websites may not allow or may restrict web page crawling. To find out how to allow the Artsdata crawler, consult the <a href="https://kg.artsdata.ca/doc/artsdata-crawler">Artsdata-Crawler Permission</a> documentation page.</p>
+
+<p>Prior to being loaded to Artsata, data must meet the minimal requirements of the <a href="..">Artsdata data model</a> for the entity type. <a href="../shacl_reports.html">SHACL shapes</a> are used to validate data before importing.</p>
+
+<p>Consult the <a href="https://kg.artsdata.ca/doc/contributor-conditions">Data Contributor Conditions</a> page to learn more about the extraction, transformation, loading and semantic enrichment processes.</p>
+
+<p>All data submitted to Artsdata.ca requires a user account registered with artsdata.ca. Third-party developers are welcome and can use the <a href="https://culturecreates.github.io/artsdata-data-model/architecture/graph-store-api.html">Artsdata Databus API</a> to load data. If you wish to register with Artsdata or if you need assistance to load your data, please <a href="https://www.artsdata.ca/en/contact-us">contact the Artsdata team</a>.</p>
+
+<p>All data submitted to artsdata.ca is agreed upon by the registered account to be CC0.</p>
+
+<p>For more information, visit the <a href="https://kg.artsdata.ca/doc/contributor-conditions">Data Contributor Conditions</a> page.</p>
+
+<p>Artsdata data providers include associations, unions, industry platforms, ticketing services, and individual arts organizations (<a href="https://kg.artsdata.ca/fr/query/show?sparql=feeds_all&amp;title=Data+Feeds">see the list</a>).</p>
+
+<h3 id="artsdata-knowledge-graph-kgartsdataca">Artsdata knowledge graph (kg.artsdata.ca)</h3>
+
+<p>Artsdata aggregates and shares descriptive metadata related to cultural events (and related entities) from/with multiple websites and external databases. Data is published as <a href="https://en.wikipedia.org/wiki/Linked_data">Linked Open Data</a> with <a href="../identifier-recommendations.html">persistent identifiers</a> (i.e. URIs) that can be used to link events to artists, venues and arts organizations.</p>
+
+<p>The <a href="https://culturecreates.github.io/artsdata-data-model">Artsdata data model</a> is implemented using classic RDF ontologies. It is a sub-set of Schema.org and maps data to a multitude of other classic (i.e. LRMoo, DBpedia) and non-classic (i.e. Wikidata) ontologies.</p>
+
+<p>Artsdata mints its own Artsdata persistent identifiers (URIs) for named entities when they meet minimal requirements for minting. Registered users can mint an Artsdata URI from a Wikidata URI. Artsdata also uses external URIs (Wikidata, VIAF) for named entities and concepts.</p>
+
+<p>The Artsdata triplestore is a standard (compliant with W3C Standards) RDF triplestore using the “GraphDB Free” product by OntoText.</p>
+
+<h3 id="data-consumers">Data consumers</h3>
+
+<p>Data consumers wanting to use the data can access it in a number of ways:</p>
+<ul>
+  <li>Browse the knowledge graph interface at <a href="https://kg.artsdata.ca/">kg.artsdata.ca</a>;</li>
+  <li>Call the <a href="https://culturecreates.github.io/artsdata-data-model/architecture/reconciliation.html">Artsdata Reconciliation API</a> to retrieve persistent identifiers;</li>
+  <li>Crawl persistent identifiers to access the associated metadata in JSON-LD format;</li>
+  <li>Call the RESTfull <a href="https://culturecreates.github.io/artsdata-data-model/architecture/query-api.html">Artsdata Query API</a>;</li>
+  <li>Subscribe to a custom iCalendar subscription feed via the <a href="https://culturecreates.github.io/artsdata-data-model/architecture/ical.html">iCal Server</a>;</li>
+  <li>Call the <a href="https://culturecreates.github.io/artsdata-data-model/architecture/sparql.html">Artsdata SPARQL endpoint</a>;</li>
+  <li>Download a data dump of triples serialized in a variety of formats such as JSON-LD or N-Quads.</li>
+</ul>
+
+<p>The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions.</p>
+
+<p>Artsdata data consumers include listing sites, industry platforms, arts service organizations, destination marketing organizations, government bodies and search engines (<a href="https://kg.artsdata.ca/doc/data-consumers">see the list</a>). For an overview of use cases, check our <a href="https://www.artsdata.ca/en/stories">user stories</a>.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

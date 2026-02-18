@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Live Performance Work | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Live Performance Work" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Live Performance Work" />
+<meta property="og:description" content="Live Performance Work" />
+<link rel="canonical" href="http://docs.artsdata.ca/classes/live-performance-work.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/classes/live-performance-work.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Live Performance Work" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"Live Performance Work","headline":"Live Performance Work","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/live-performance-work.html"},"url":"http://docs.artsdata.ca/classes/live-performance-work.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_classes/live-performance-work.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+LivePerformanceWork">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_classes/live-performance-work.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<br>
+<a href='live-performance-work.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='live-performance-work.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+
+<h1 id="live-performance-work">Live Performance Work</h1>
+
+<p>A live performance work in Artsdata is defined as a “work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience”.</p>
+
+<p><a href="http://kg.artsdata.ca/ontology/LivePerformanceWork">ado:LivePerformanceWork</a> is a subclass of <a href="https://cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.1.1.html#F1">lrmoo:F1_Work</a> and an equivalent class to <a href="https://github.com/pair-cg/milopa">milopa:PERFORMANCE_WORK</a> and <a href="https://documentation.datascene.ca/references/show/">datascene:Show</a>.</p>
+
+<h2 id="properties">Properties</h2>
+
+<p>The application profile for <code class="language-plaintext highlighter-rouge">ado:LivePerformanceWork</code> is currently in development and will be published soon. It will import properties from Schema.org, LRMoo and Wikidata, and will be mapped to other RDF ontologies.</p>
+
+<h2 id="sample-structured-data">Sample Structured Data</h2>
+
+<p>Here is sample <code class="language-plaintext highlighter-rouge">@type Event</code> structured data, with a nested <code class="language-plaintext highlighter-rouge">ado:LivePerformanceWork</code> entity under the property <code class="language-plaintext highlighter-rouge">workPerformed</code>. This example is based on a performance of the work <em><code class="language-plaintext highlighter-rouge">Orpheus | S'abreuver des volcans</code></em> by Alan Lake Factori(e), which is well described on the <a href="https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/">company’s website</a> and in the <a href="https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276">Scène Pro directory</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "@context": "https://schema.org",
+    "id": "http://kg.artsdata.ca/resource/K23-2815",
+    "@type": "Event",
+    "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent",
+    "sameAs": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie",
+    "location": {
+        "id": "http://kg.artsdata.ca/resource/K11-22",
+        "type": "Place",
+        "sameAs": "http://www.wikidata.org/entity/Q42986539",
+        "name": "Place des Arts - Cinquième Salle"
+        },
+    "startDate": "2025-04-01T20:00:00-04:00",
+    "endDate": "2025-04-01T22:00:00-04:00",
+    "name": "Alan Lake Factori(e) - S’abreuver des volcans",
+    "url": "https://www.dansedanse.ca/fr/spectacles/alan-lake-factorie-sabreuver-des-volcans",
+    "workPerformed": {
+        "@type": "CreativeWork",
+        "additionalType": "http://kg.artsdata.ca/resource/LivePerformanceWork",
+        "name": "Orpheus | S'abreuver des volcans",
+        "url": "https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/",
+        "mainEntityOfPage": "https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276",
+        "genre": [
+                "http://www.wikidata.org/entity/Q11639",
+                "http://vocab.getty.edu/page/aat/300054144"
+                ],
+        "about": {
+            "@type": "Person",
+            "name": "Orpheus",
+            "sameAs": "http://www.wikidata.org/entity/Q174353"
+            },
+       "creator": {
+            "@type": "Person",
+            "name": "Alan Lake",
+            "sameAs": "http://www.wikidata.org/entity/Q64925368"
+            },
+        "producer": {
+            "@type": "Organization",
+            "name": "Alan Lake Factori(e)",
+            "url": "https://alanlakefactorie.org/"
+            },
+        "image": "https://images.scenepro.ca/uploads%2Fshowmain/692957167540869-image.png",
+        "inlanguage": "fr",
+        "audience": {
+            "@type": "Audience",
+            "name": "Tous publics",
+            "disambiguatingDescription": "Term from the Scène Pro audience vocabulary designating 'General audiences'"
+            }
+        },
+    "performer": {
+        "@type": "Organization",
+        "name": "Alan Lake Factori(e)",
+        "url": "https://alanlakefactorie.org/"
+        }
+}
+</code></pre></div></div>
+
+<p>For more information about the development of the <code class="language-plaintext highlighter-rouge">ado:LivePerformanceWork</code> class, please consult this <a href="https://github.com/culturecreates/artsdata-data-model/discussions/133">GitHub discussion</a>.</p>
+
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

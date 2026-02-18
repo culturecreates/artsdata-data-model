@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/index.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/index.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/index.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=index.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+<p><br />
+<a href="./index.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="./index.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h2 id="modèle-de-données-artsdata-v10">Modèle de données Artsdata v1.0</h2>
+<p><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/index.fr.md">Edit page</a> | <span id="last-modified"></span></p>
+
+<p>Un modèle de données pour représenter les événements, les œuvres, les lieux, les personnes et les organismes dans arts de la scène.</p>
+
+<p>Le modèle de données (ontologie) d’Artsdata est un sous-ensemble de Schema.org et d’autres ontologies avec quelques vocabulaires contrôlés additionnels. Le modèle d’Artsdata.ca est représenté formellement avec le language SHACL <a href="https://kg.artsdata.ca/query/show?sparql=https://raw.githubusercontent.com/artsdata-stewards/artsdata-actions/main/queries/artsdata_SHACL_validation_rules.sparql">ici</a>.</p>
+
+<p>Les classes et propriétés utilisées dans Artsdata s’apparentent au modèle de <a href="https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr">Données structurées d’événement de Google</a>. En particulier, les propriétés obligatoires pour les événements dans la documentation de Google sont aussi des propriétés obligatoires dans le modèle de données Artsdata. La différence principale est qu’Artsdata s’appuie sur les <a href="#identifiants-pérennes">identifiants pérennes</a> pour lier les données d’Artsdata avec d’autres bases de connaissances ouvertes telles que Wikidata.</p>
+
+<p>Voici les Classes utilisées dans Artsdata.</p>
+
+<p><img src="/images/data-model-image.png" alt="Image" /></p>
+
+<p>[<a href="https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/678866c150bdf24519892d68d640a904/raw/f1249bb614c7a659e683360cbbee2547c9d8f62b/artsdata_event_model">open drawing tool</a>]</p>
+
+<h3 id="classes">Classes</h3>
+
+<ol>
+
+<li>
+    <a href="./classes/event-attendance-mode-enumeration.html">
+        EventAttendanceModeEnumeration
+    </a>
+</li>
+
+<li>
+    <a href="./classes/event-status-type.html">
+        EventStatusType
+    </a>
+</li>
+
+<li>
+    <a href="./classes/event.fr.html">
+        Event (fr)
+    </a>
+</li>
+
+<li>
+    <a href="./classes/event.html">
+        Event
+    </a>
+</li>
+
+<li>
+    <a href="./classes/live-performance-work.fr.html">
+        LivePerformanceWork (fr)
+    </a>
+</li>
+
+<li>
+    <a href="./classes/live-performance-work.html">
+        LivePerformanceWork
+    </a>
+</li>
+
+<li>
+    <a href="./classes/offer.html">
+        Offer
+    </a>
+</li>
+
+<li>
+    <a href="./classes/organization.html">
+        Organization
+    </a>
+</li>
+
+<li>
+    <a href="./classes/person.html">
+        Person
+    </a>
+</li>
+
+<li>
+    <a href="./classes/place.html">
+        Place
+    </a>
+</li>
+
+<li>
+    <a href="./classes/postal-address.html">
+        PostalAddress
+    </a>
+</li>
+
+<li>
+    <a href="./classes/virtual-location.html">
+        VirtualLocation
+    </a>
+</li>
+
+<li>
+    <a href="./classes/web-page.html">
+        WebPage
+    </a>
+</li>
+
+</ol>
+
+<h3 id="identifiants-pérennes">Identifiants pérennes</h3>
+
+<p>Artsdata génère ses propres identifiants globaux uniques et pérennes (IRI aussi appelée URI) pour les entités des classes événements, spectacles, lieux, personnes et organisations, ainsi que pour les concepts de vocabulaires contrôlés. Ces URIs peuvent être utilisés en dehors d’Artsdata.</p>
+
+<p>En plus de l’identifiant Artsdata, le graphe de connaissances Artsdata s’appuie sur d’autres <a href="https://www.artsdata.ca/fr/ressources/bien-identifie">identifiants pérennes</a>, comme l’identifiant Wikidata, l’ISNI et les identifiants locaux, afin de reconnaître, de réconcilier et lier les entités nommées.</p>
+
+<p><a href="https://docs.artsdata.ca/identifier-recommendations.fr.html">Lignes directrices à propos des identifiants pérennes</a></p>
+
+<h3 id="vocabulaires-contrôlés">Vocabulaires contrôlés</h3>
+
+<ul>
+  <li>
+    <p><a href="./event-types.fr.html">Types d’événements</a></p>
+  </li>
+  <li>
+    <p><a href="./organization-types.fr.html">Types d’organismes</a></p>
+  </li>
+  <li>
+    <p><a href="./genres.fr.html">Genres</a></p>
+  </li>
+</ul>
+
+<h3 id="gabarits-de-données-structurées">Gabarits de données structurées</h3>
+
+<ul>
+  <li>
+    <p><a href="./gabarits-jsonld/README.fr.html">Gabarits pour les événements</a></p>
+  </li>
+  <li>
+    <p><a href="./gabarits-jsonld/organization">Gabarits pour les organismes</a></p>
+  </li>
+  <li>
+    <p><a href="https://docs.google.com/document/d/e/2PACX-1vRorpIgx1arsAqGuiR428j74uxk5K2V63f9yHgWn1C4CyqxH3mMk_Hw92JsGJBh4CKprGc9rG85Gfcn/pub">Gabarits pour les personnes</a></p>
+  </li>
+</ul>
+
+<h3 id="rapports-de-validation-shacl">Rapports de validation SHACL</h3>
+
+<p>Les formes <a href="./shacl_reports.html">SHACL</a> sont utilisées pour valider les données avant l’importation.</p>
+
+<h3 id="ontologies-et-inférences">Ontologies et inférences</h3>
+
+<p>Artsdata.ca utilise un ensemble de bases d’implications RDFS et OWL afin de permettre une inférence simple, appelé <strong>OWL-Horst (optimized)</strong>.</p>
+
+<p>La principale ontologie utilisée dans Artsdata.ca est <strong>Schema.org</strong>. Artsdata.ca importe le schéma de base Schema.org et le schéma Schema.org en attente (pour inclure schema:EventSeries qui est une classe en attente). Plusieurs autres ontologies sont utilisées, notamment DBpedia, DCAT, DATAID, PROV, SHACL, VANN, VoID, SKOS et Wikidata.</p>
+
+<p>Artsdata.ca a un grand nombre de mappages de classes et de propriétés entre Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, FOAF et DOLCE+DnS Ultralite (Ontology Design Patterns) en utilisant owl:equivalentClass, owl:equivalentProperty, skos:exactMatch et skos:closeMatch. Certains mappages sont préconstruits à partir d’ontologies externes; d’autres sont définis dans Artsdata.</p>
+
+<h4 id="ontologies-chargées-dans-artsdata">Ontologies chargées dans Artsdata</h4>
+
+<ul>
+  <li><a href="https://www.w3.org/2000/01/rdf-schema">https://www.w3.org/2000/01/rdf-schema</a></li>
+  <li><a href="https://github.com/culturecreates/artsdata-data-model/tree/master/_triples">Ontologies externes</a></li>
+  <li><a href="https://github.com/culturecreates/artsdata-data-model/tree/master/ontology">Vocabulaires contrôlés par Artsdata</a>
+    <ul>
+      <li><a href="http://kg.artsdata.ca/resource/ArtsdataEventTypes">http://kg.artsdata.ca/resource/ArtsdataEventTypes</a></li>
+      <li><a href="http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes">http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes</a></li>
+      <li><a href="http://kg.artsdata.ca/resource/ArtsdataGenres">http://kg.artsdata.ca/resource/ArtsdataGenres</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="provenance">Provenance</h3>
+
+<p>En cours de traduction…</p>
+
+<h3 id="architecture-des-flux-de-données">Architecture des flux de données</h3>
+
+<p>En principe, n’importe qui peut ajouter des données à Artsdata.ca pourvu que certaines exigences en matière de données soient respectées. Voici un <a href="./architecture/overview.fr.html">diagramme</a> sur la façon dont les données entrent et sortent d’Artsdata.ca.</p>
+
+<h3 id="données-ouvertes-et-liées-mise-en-cache">Données ouvertes et liées, mise en cache</h3>
+
+<p>Artsdata.ca charge les données ouvertes et liées de Wikidata et DBpedia afin de les mettre en cache pour des raisons de performances. Les triplets sont obtenus en utilisant la négociation de contenu (au lieu de vidages de données) et sont mis en cache sans modification dans leurs graphes nommés respectifs.</p>
+
+<p><strong>Remarque:</strong> il existe une exception notable, la propriété Wikidata <strong>P31</strong> (instance de) est transformée en <strong>rdf:type</strong>.  Ce même résultat aurait pu être obtenu en utilisant owl:equivalentProperty mais il n’a pas été sélectionné pour des raisons de performances.</p>
+
+<h3 id="conventions-de-nommage">Conventions de nommage</h3>
+
+<p><a href="./naming_conventions.html">Conventions</a> sur la façon de nommer les choses en cas de doute.</p>
+
+<h3 id="assistance-ou-contact">Assistance ou contact</h3>
+
+<p><a href="mailto:artsdata-support@capacoa.ca">Contactez nous</a>.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

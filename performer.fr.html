@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/performer.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/performer.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/performer.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<table>
+  <tbody>
+    <tr>
+      <td><a onclick="goBack()">&lt;  Back</a></td>
+      <td><a href="./index.html">Home</a></td>
+      <td><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/performer.fr.md">Edit page</a></td>
+      <td>🙋 <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a></td>
+      <td><span id="last-modified"></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=performer.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<p><br />
+<a href="performer.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="performer.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="lignes-directrices-artsdata-pour-la-propriété-performer">Lignes directrices Artsdata pour la propriété <code class="language-plaintext highlighter-rouge">performer</code></h1>
+
+<p>La propriété ‘performer’ fournit des informations extrêmement précieuses sur un événement des arts de la scène. Par exemple, elle peut être utilisée pour récupérer d’autres représentations associées au même interprète ou pour filtrer des événements en fonction de l’origine de l’interprète.</p>
+
+<h3 id="bonnes-pratiques-pour-le-choix-des-valeurs-de-performer">Bonnes pratiques pour le choix des valeurs de performer</h3>
+
+<p>Sélectionner la ou les bonnes valeurs pour la propriété <code class="language-plaintext highlighter-rouge">performer</code> n’est pas toujours chose aisée. C’est pourquoi nous avons conçu cette série de <a href="./performer-values.fr.html">bonnes pratiques</a></p>
+
+<h3 id="bonnes-pratiques-concernant-le-type-des-interprètes">Bonnes pratiques concernant le @type des interprètes</h3>
+
+<p>Déterminer si un interprète doit être typé comme <a href="https://schema.org/Person"><code class="language-plaintext highlighter-rouge">Person</code></a>, <a href="https://schema.org/PerformingGroup"><code class="language-plaintext highlighter-rouge">PerformingGroup</code></a>, ou <a href="https://schema.org/PerformingGroup"><code class="language-plaintext highlighter-rouge">Organization</code></a> n’est pas toujours une tâche simple.</p>
+
+<p>La confusion survient souvent lorsqu’un artiste solo se produit accompagné d’autres musiciens dont les noms ne sont pas précisés.</p>
+
+<p>Prenons un exemple : Susan Aglukark <a href="http://kg.artsdata.ca/resource/K12-296">ad:K12-296</a> est en tournée avec quatre musiciens, mais nous ne savons pas qui ils sont, et leur composition peut même varier d’une représentation à l’autre. Dans un tel cas, l’entité performer doit-elle être une ‘Person’ ou un ‘PerformingGroup’ ?</p>
+
+<p><strong>Si le nom de l’entité interprète est celui d’une personne physique, alors le type doit être ‘Person’.</strong></p>
+
+<p>Voici pourquoi.</p>
+
+<p>PerformingGroup est une sous-classe de ‘Organization’ et n’a aucune relation directe ou indirecte avec la classe Person dans l’ontologie Schema.org. Par conséquent, si le type était ‘PerformingGroup’, les moteurs de recherche, Artsdata et d’autres agents utilisateurs qui lisent ces données tenteront de faire correspondre la chaîne de caractères du nom – « Susan Aglukark » dans l’exemple ci-dessus – avec d’autres entités de type PerformingGroup ou Organization présentes dans des fichiers d’autorité. Or, puisque Susan Aglukark est considérée comme une personne dans Wikidata, MusicBrainz, VIAF et ISNI (ainsi que dans Artsdata), aucune correspondance ne sera trouvée.</p>
+
+<p>Autrement dit, si vous souhaitez que vos données structurées aient du sens pour les machines, vous devez utiliser le même type que celui que l’on retrouve dans les fichiers d’autorité tels que <a href="https://www.wikidata.org/">Wikidata</a> et <a href="https://viaf.org/">VIAF</a>.</p>
+
+<p>Dans les situations où il n’est pas possible d’assigner un type précis à une entité ‘performer’, ou si vous souhaitez définir un type par défaut valable pour tous les objets ‘performer’, Artsdata recommande la modélisation suivante pour l’entité imbriquée :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "@type": "Thing",
+    "additionalType": [
+        "http://dbpedia.org/ontology/Agent",
+        "http://xmlns.com/foaf/0.1/Agent",
+        "http://www.cidoc-crm.org/cidoc-crm/E39_Actor"],
+    "name": "--Nom de l'entité : Name of the entity--",
+    "sameAs": ""--URI Artsdata.ca, obtenue avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--"
+    }
+</code></pre></div></div>
+
+<p>Dans cette modélisation proposée, les types additionnels « Agent » et « Actor » sont des classes désignant « une entité qui agit » et constituent des super-classes englobant les personnes, les groupes et les organisations. Le serveur de réconciliation Artsdata permet la réconciliation avec la classe <a href="https://dbpedia.org/ontology/Agent"><code class="language-plaintext highlighter-rouge">dbo:Agent</code></a>.</p>
+
+<p>Même si ‘Thing’ n’est pas un type attendu pour les objets imbriqués sous la propriété ‘performer’ dans Schema.org, la communauté Schema considère qu’il est acceptable d’utiliser un type plus large (ou d’omettre le type), lorsqu’un type plus spécifique ne peut être défini (<a href="https://github.com/culturecreates/artsdata-data-model/discussions/127#discussioncomment-12947634">en savoir plus</a>).</p>
+
+<p>En complément de l’utilisation de ‘Thing’ comme type générique par défaut, nous recommandons de fournir une propriété ‘sameAs’ pointant vers un identifiant Artsdata. Si l’objet performer utilise Thing comme type générique et inclut un sameAs vers un identifiant Artsdata (où un type plus précis est toujours indiqué), les moteurs de recherche peuvent comparer les deux enregistrements de données et choisir d’utiliser le type plus spécifique pour l’entité interprète.</p>
+
+<h3 id="bonnes-pratiques-concernant-la-propriété-sameas-des-interprètes">Bonnes pratiques concernant la propriété ‘sameAs’ des interprètes</h3>
+
+<ul>
+  <li><a href="./sameas.fr.html">Lignes directrices concernant la propriété sameAs et les URI</a>
+    <ul>
+      <li><a href="./retrieve-uri.fr.html">Comment récupérer les URI d’identifiants pérennes</a></li>
+    </ul>
+  </li>
+</ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

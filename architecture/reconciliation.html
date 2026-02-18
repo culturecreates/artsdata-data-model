@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Reconciliation API | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Reconciliation API" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data." />
+<meta property="og:description" content="The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data." />
+<link rel="canonical" href="http://docs.artsdata.ca/architecture/reconciliation.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/architecture/reconciliation.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Reconciliation API" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data.","headline":"Reconciliation API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/reconciliation.html"},"url":"http://docs.artsdata.ca/architecture/reconciliation.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_architecture/reconciliation.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_architecture/reconciliation.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<h2>Reconciliation API</h2>
+
+<p>The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data.</p>
+
+<p>Supported entity types include:</p>
+<ul>
+  <li>Event</li>
+  <li>Place</li>
+  <li>Person</li>
+  <li>Organization</li>
+  <li>Agent (Person or Organization/Group)</li>
+  <li>Concept (Event type, Genre, etc.)</li>
+</ul>
+
+<p>Give it a try using the <a href="https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon">Test bench</a>!</p>
+
+<p>This API follows the documentation provided by the <a href="https://reconciliation-api.github.io/specs/latest/">W3C Entity Reconciliation Community Group</a>.</p>
+
+<p>The reconciliation service endpoint is <code class="language-plaintext highlighter-rouge">https://api.artsdata.ca/recon</code>.</p>
+
+<h2 id="manual-reconciliation-using-the-test-bench">Manual reconciliation using the Test Bench</h2>
+<p>To manually add Artsdata IDs to your structured data:</p>
+<ol>
+  <li>Open the <a href="https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon">Test bench</a></li>
+  <li>Select a radio button for the type of entity you want to reconcile. For example ‘Place’.</li>
+  <li>Enter the name of the entity. For example ‘Salle André-Mathieu’. Or enter the official website url.</li>
+  <li>Click the ‘Reconcile’ button to search Artsdata.</li>
+  <li>Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211</li>
+  <li>Add the URI to your structured data using ‘sameAs’.</li>
+</ol>
+
+<h3 id="adding-additional-properties">Adding additional properties</h3>
+<p>In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. The additional properties are required to be in the returned entities. Any entity that does not match the additional property will be exluded from the reconciliation results.</p>
+
+<p>For example to add a postal code when reconiling places, add the property id “schema:address/schema:postalCode” and the postal code.
+<img width="564" alt="Screenshot 2024-01-31 at 4 02 49 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/1944952b-de90-4a86-a097-a06a8185a5bf" />
+<img width="607" alt="Screenshot 2024-01-31 at 4 02 38 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/33b1974c-bf06-4d86-b659-2490e769aebf" /></p>
+
+<h2 id="example-of-structured-data-with-added-sameas">Example of structured data with added ‘sameAs’</h2>
+<p>Example for an event’s location linked to an Artdata URI. The <code class="language-plaintext highlighter-rouge">"sameAs": "http://kg.artsdata.ca/resource/K11-211"</code> has been added.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {
+    "@language": "fr",
+    "@value": "Diane Dufresne | Sur rendez-vous"
+  },
+  "startDate": "2025-07-21T19:00-05:00",
+  "location": {
+    "@type": "Place",
+    "name": {
+      "@language": "fr",
+      "@value": "Salle André-Mathieu"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Laval",
+      "addressCountry": "CA",
+      "streetAddress": "475 Bd de l'Avenir",
+      "postalCode": "H7N 5H9",
+      "addressRegion": "Québec"
+    },
+    "sameAs": "http://kg.artsdata.ca/resource/K11-211"
+}
+</code></pre></div></div>
+
+<h2 id="artsdata-batch-reconciliation-tool">Artsdata batch reconciliation tool</h2>
+
+<p>Logged in users may use to Artsdata Batch Reconciliation Tool to quickly reconcile entire datasets.</p>
+
+<p>The tool can be accessed via the kg.artsdata.ca interface menu. Documentation will be published soon.</p>
+
+<h2 id="batch-reconciliation-using-open-refine">Batch reconciliation using Open Refine</h2>
+
+<p>To batch reconcile, you may also use tools like <a href="https://openrefine.org">OpenRefine</a> and point the reconilication tool to the Artsdata reconciliation endpoint. View this <a href="https://youtu.be/VkOncek9iuY">screen recording</a>.</p>
+
+<p>Reconciliation service endpoint: <a href="https://api.artsdata.ca/recon">https://api.artsdata.ca/recon</a></p>
+
+<h2 id="manual-reconciliation-within-the-artsdata-interface">Manual reconciliation within the Artsdata interface</h2>
+
+<p>The reconciliation service is also used by several features in the Artsdata interface. For example, a logged-in user may reconcile entities from a previously uploaded data source using the following methods:</p>
+
+<ul>
+  <li>Manually mint/link a top-level or nested entity with the “Minter” feature, if the entity is assigned a persistent URI by the source (i.e. a <a href="/identifier-recommendations">local URI</a>) or as part of the Extract-Transform-Load process;</li>
+  <li>Manually add a sameAs to a nested entity as part of the “Mint from blank node” suite of features, if the entity is a nested blanked node in the uploaded graph.</li>
+</ul>
+
+<p>These features are useful when entities come back recurrently within a data source.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

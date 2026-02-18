@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/retrieve-uri.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/retrieve-uri.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/retrieve-uri.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<table>
+  <tbody>
+    <tr>
+      <td><a onclick="goBack()">&lt;  Back</a></td>
+      <td><a href="./index.html">Home</a></td>
+      <td><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/retrieve-uri.fr.md">Edit page</a></td>
+      <td>🙋 <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a></td>
+      <td><span id="last-modified"></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=retrieve-uri.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<p><br />
+<a href="retrieve-uri.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="retrieve-uri.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="comment-récupérer-les-uri-didentifiants-pérennes">Comment récupérer les URI d’identifiants pérennes</h1>
+
+<p>Lorsque vous travaillez avec des données ouvertes liées, il est important de référencer les entités culturelles (comme les organismes, les personnes, les lieux et les événements) à l’aide d’identifiants stables.</p>
+
+<p>Artsdata fournit des identifiants uniformes de ressource (URI) pour les entités culturelles au Canada. Ces URI sont conçues pour être pérennes et interopérables sur le Web.</p>
+
+<p>Cette page vous montre comment trouver et utiliser une URI d’identifiant pérenne Artsdata.</p>
+
+<h2 id="récupérer-des-uri-artsdata">Récupérer des URI Artsdata</h2>
+
+<h3 id="option-1--récupération-manuelle">Option 1 : Récupération manuelle</h3>
+
+<p>Tout le monde peut utiliser l’outil de recherche d’Artsdata sur l’interface du graphe de connaissances pour trouver une entité et récupérer son URI Artsdata. Une fois le processus maîtrisé, il faut moins de 10 secondes pour récupérer une URI d’identifiant pérenne.</p>
+
+<h4 id="tutoriel">Tutoriel</h4>
+
+<p>Regarder la vidéo “<a href="https://youtu.be/sICvNpBHroE">Comment récupérer un URI Artsdata</a>” (<a href="https://youtu.be/HRv1GCegFws">Version anglaise</a>)</p>
+
+<p><a href="https://youtu.be/sICvNpBHroE"><img width="640" height="359" alt="Capture d'écran où l'on voit un curseur pointant vers une URI." src="https://github.com/user-attachments/assets/00d6561b-dc0f-44b0-b7d7-19c07667811a" /></a></p>
+
+<p>Durée : 3,5 minutes. Sous-titres disponibles en français et en anglais.</p>
+
+<p>Cette vidéo présente un exemple réel : une travailleuse culturelle de Tangente (un diffuseur de danse basé à Montréal) récupère l’URI de son organisme dans Artsdata afin de documenter correctement une série de spectacles à l’Édifice Wilder.</p>
+
+<h4 id="étapes-rapides">Étapes rapides</h4>
+
+<ol>
+  <li>Allez sur <a href="https://kg.artsdata.ca/">kg.artsdata.ca</a>.</li>
+  <li>Recherchez la <em>chose</em> (ou « entité ») dans la boîte de recherche, dans le coin supérieur droit de l’écran. Vous pouvez effectuer votre recherche selon :
+    <ul>
+      <li>Le nom de l’organisme, du lieu ou de la personne ;</li>
+      <li>L’URL du site Web ;</li>
+      <li>Un identifiant Artsdata existant (ex. : K10-337).</li>
+    </ul>
+  </li>
+  <li>Identifiez la bonne entité parmi la liste de résultats, en vérifiant :
+    <ul>
+      <li>le type (Organisme, Personne, Lieu, Événement) ;</li>
+      <li>la description (ex. : ville ou occupation).</li>
+    </ul>
+  </li>
+  <li>Cliquez sur l’URI compacte en bleu, ex. : <code class="language-plaintext highlighter-rouge">ad:K10-337</code></li>
+  <li>Sur la page de l’entité, repérez l’URI sous le nom de l’entité :
+    <ul>
+      <li>Exemple : <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/K10-337</code></li>
+    </ul>
+  </li>
+  <li>Cliquez sur l’icône « copier » pour copier sur l’URI sur votre babillard.</li>
+  <li>Collez l’URI dans vos données structurées, dans votre dossier de presse électronique, sur votre page de profil, etc.</li>
+</ol>
+
+<h3 id="option-2--récupération-automatisée-via-le-service-de-réconciliation-artsdata">Option 2 : Récupération automatisée via le service de réconciliation Artsdata</h3>
+
+<p>Les développeurs peuvent également utiliser l’API de réconciliation d’Artsdata pour récupérer automatiquement les URI d’identifiants pérennes.</p>
+
+<p>Selon la configuration de l’application, cela peut fonctionner de façon similaire à la saisie semi-automatique de Google :</p>
+
+<ul>
+  <li>L’utilisateur tape le nom d’un artiste ;</li>
+  <li>Le service de réconciliation retourne une liste d’entités similaires avec leurs URI Artsdata ;</li>
+  <li>L’utilisateur sélectionne une entité, et le nom complet ainsi que l’URI Artsdata sont automatiquement intégrés ;</li>
+  <li>D’autres données, comme des identifiants supplémentaires, peuvent aussi être récupérées avec l’URI.</li>
+</ul>
+
+<h2 id="récupérer-des-uri-à-partir-dautres-bases-de-connaissances">Récupérer des URI à partir d’autres bases de connaissances</h2>
+
+<p>D’autres bases de connaissances ouvertes fournissent également des identifiants pérennes pour les entités culturelles. Ceux-ci peuvent être utilisés en complément des URI Artsdata pour enrichir vos métadonnées.</p>
+
+<p>Exemples :</p>
+<ul>
+  <li><strong>Wikidata</strong>: <a href="https://www.wikidata.org">https://www.wikidata.org</a></li>
+  <li><strong>ISNI (International Standard Name Identifier)</strong>: <a href="https://www.wikidata.org">https://isni.org</a></li>
+  <li><strong>MusicBrainz</strong> (for performers and recordings): <a href="https://www.wikidata.org">https://musicbrainz.org</a></li>
+</ul>
+
+<p>Pour récupérer un identifiant :</p>
+<ol>
+  <li>Recherchez l’entité par nom ou autre information connue ;</li>
+  <li>Vérifiez que la fiche correspond (type, lieu, description) ;</li>
+  <li>Copiez l’URI qui apparaît sur la page ou dans la barre de navigation.</li>
+</ol>
+
+<h2 id="comment-savoir-si-vous-avez-trouvé-le-bon-uri-">Comment savoir si vous avez trouvé le bon URI ?</h2>
+
+<p>En suivant ces étapes, vous ne récupérez pas simplement un lien. Vous obtenez un identifiant vérifié et unique qui pointe vers une entité culturelle précise dans le graphe de connaissances Artsdata.</p>
+
+<p>Pour vous assurer que c’est le bon :</p>
+
+<ul>
+  <li>Format : L’URI débute par <code class="language-plaintext highlighter-rouge">http://</code> or <code class="language-plaintext highlighter-rouge">https://</code>. Si vous n’avez récupéré que le nom de code alphanumérique, recherchez une adresse <code class="language-plaintext highlighter-rouge">http</code> sur la page ou dans la barre de navigation.</li>
+  <li>Correspondance de l’entité : Le type et la description de la fiche correspondent à ce que vous recherchez.
+    <ul>
+      <li>Type : L’entité a-t-elle le bon type ? Parfois, une organisation (type Organisme) et un lieu (type Lieu) peuvent porter le même nom. De même, plusieurs événements (type Événement) ont le même nom que leur artiste principal (type Personne ou Organisation).</li>
+      <li>Description : Le lieu, l’occupation ou l’étiquette correspondent-ils ?</li>
+    </ul>
+  </li>
+  <li>Emplacement de l’URI : Dans le graphe de connaissance Artsdata, l’URI et l’URL de la page Web ont des formats radicalement différents. Assurez-vous de récupérer l’URI qui apparaît sous le nom de l’entité.</li>
+  <li>Source fiable : L’URI provient de la base de connaissance officielle et authoritative d’Artsdata (<a href="https://kg.artsdata.ca">kg.artsdata.ca</a>).</li>
+</ul>
+
+<h2 id="que-faire-si-je-ne-trouve-pas-mon-organisme-">Que faire si je ne trouve pas mon organisme ?</h2>
+
+<p>Si votre entité n’est pas encore présente dans Artsdata ou si votre fiche doit être mise à jour :</p>
+<ul>
+  <li>Écrivez-nous à <a href="mailto:artsdata@capacoa.ca">artsdata@capacoa.ca</a></li>
+</ul>
+
+<p>L’équipe d’Artsdata peut vous aider à ajouter ou corriger l’information.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

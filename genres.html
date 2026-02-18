@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/genres.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/genres.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/genres.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<table>
+  <tbody>
+    <tr>
+      <td><a onclick="goBack()">&lt;  Back</a></td>
+      <td><a href="./index.html">Home</a></td>
+      <td><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/genres.md">Edit page</a></td>
+      <td>🙋 <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a></td>
+      <td><span id="last-modified"></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=genres.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<p><br />
+<a href="genres.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="genres.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h2 id="artsdata-controlled-vocabulary-for-genres">Artsdata Controlled Vocabulary for Genres</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><!-- --></th>
+      <th><!-- --></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Concept scheme</td>
+      <td><a href="http://kg.artsdata.ca/resource/ArtsdataGenres">adr:ArtsdataGenres</a></td>
+    </tr>
+    <tr>
+      <td>Version</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Release date</td>
+      <td>January 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This page describes the controlled vocabulary used in the Artsdata knowledge graph to differentiate genres in the arts and culture sector, and more specifically in the performing arts.</p>
+
+<p>This controlled vocabulary represents a list of values for the property <a href="https://schema.org/genre">schema:genre</a>, whose domain is <a href="https://schema.org/CreativeWork">schema:CreativeWork</a>. It is therefore a controlled vocabulary that can be used to describe both works that are part of the WEMI continuum (for example, a play as a dramatic text), as well as live performance works (<a href="http://kg.artsdata.ca/ontology/LivePerformanceWork">ado:LivePerformanceWork</a>) that incorporate expressions of WEMI works (for example, a theatrical production). This can lead to confusion in cases where a live performance work associated with one genre incorporates or is derived from a work associated with another genre (for example, a circus show based on Romeo and Juliet). In such cases, the appropriate genre statement should be associated with each work entity.</p>
+
+<p>This vocabulary has multiple levels of hierarchy (the initial vocabulary contains two levels, but it would be possible to add additional levels). The relationships skos:narrower/skos:broader between concepts have a “many-to-many” cardinality: a concept may have none, one, or multiple parents.</p>
+
+<p>Identifiers for genre concepts are opaque. This ensures the stability of URIs while allowing the flexibility to change labels as often as needed.</p>
+
+<p>The Artsdata controlled vocabulary for genres is more of a “service vocabulary” than a “reference vocabulary.” It does not aim to standardize genre concepts, but rather to support interoperability among the many existing genre vocabularies. Artsdata uses it in conjunction with its reconciliation service in order to programmatically recognize genre strings and match them with genre concepts from Artsdata as well as external concepts. The Artsdata controlled vocabulary is mapped to the following vocabularies:</p>
+
+<ul>
+  <li>Wikidata</li>
+  <li>Art and Architecture Thesaurus (partial)</li>
+  <li>Musicbrainz (via Wikidata)</li>
+</ul>
+
+<p>The inaugural version of this controlled vocabulary was proposed in November 2025. The discussions surrounding its creation are documented in <a href="https://github.com/culturecreates/artsdata-data-model/discussions/186">this discussion</a>.</p>
+
+<h3 id="concepts">Concepts</h3>
+
+<p>The list of genres (SKOS concepts) can be consulted in the <a href="http://kg.artsdata.ca/resource/ArtsdataGenres">concept scheme</a>, in this <a href="https://docs.google.com/spreadsheets/d/1RSbTTJtjBW48BKVwQR9zcR4zr2wDEtoq-wvuAqYwiY0/edit?usp=sharing">spreadsheet</a>, or in the table below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>CURI</th>
+      <th>Preferred label</th>
+      <th>Exact match</th>
+      <th>Close match</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-100">K6-100</a></td>
+      <td>Theatre</td>
+      <td>wd:Q11635, aat:300417582</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-200">K6-200</a></td>
+      <td>Dance</td>
+      <td>wd:Q11639, aat:300054144</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-201">K6-201</a></td>
+      <td>Ballet</td>
+      <td>wd:Q41425</td>
+      <td>wd:Q1020618</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-202">K6-202</a></td>
+      <td>Contemporary dance</td>
+      <td>wd:Q186035</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-203">K6-203</a></td>
+      <td>Modern dance</td>
+      <td>wd:Q850130</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-204">K6-204</a></td>
+      <td>Cultural dance</td>
+      <td>wd:Q201022</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-300">K6-300</a></td>
+      <td>Music</td>
+      <td>wd:Q638, aat:300054146</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-301">K6-301</a></td>
+      <td>Classical</td>
+      <td>wd:Q9730</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-302">K6-302</a></td>
+      <td>Country</td>
+      <td>wd:Q83440</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-303">K6-303</a></td>
+      <td>Folk</td>
+      <td> </td>
+      <td>wd:Q43343</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-304">K6-304</a></td>
+      <td>Jazz</td>
+      <td>wd:Q8341</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-305">K6-305</a></td>
+      <td>Blues</td>
+      <td>wd:Q9759</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-306">K6-306</a></td>
+      <td>New Music</td>
+      <td> </td>
+      <td>wd:Q8011523</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-307">K6-307</a></td>
+      <td>Popular music</td>
+      <td>wd:Q373342</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-308">K6-308</a></td>
+      <td>World music</td>
+      <td>wd:Q205049</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-309">K6-309</a></td>
+      <td>Chanson</td>
+      <td>wd:Q1062400</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-310">K6-310</a></td>
+      <td>Instrumental</td>
+      <td>wd:Q639197</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-311">K6-311</a></td>
+      <td>Alternative</td>
+      <td>wd:Q1695023</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-312">K6-312</a></td>
+      <td>Electronic</td>
+      <td>wd:Q9778</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-313">K6-313</a></td>
+      <td>Metal</td>
+      <td>wd:Q12326776</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-314">K6-314</a></td>
+      <td>Rap</td>
+      <td>wd:Q11401</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-315">K6-315</a></td>
+      <td>Rhythm and blues</td>
+      <td>wd:Q45981</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-316">K6-316</a></td>
+      <td>Rock</td>
+      <td>wd:Q11399</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-400">K6-400</a></td>
+      <td>Musico-dramatic</td>
+      <td> </td>
+      <td>wd:Q123777276</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-401">K6-401</a></td>
+      <td>Musical Theatre</td>
+      <td> </td>
+      <td>wd:Q1370345</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-402">K6-402</a></td>
+      <td>Opera</td>
+      <td>wd:Q1344</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-500">K6-500</a></td>
+      <td>Spoken</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-501">K6-501</a></td>
+      <td>Storytelling</td>
+      <td> </td>
+      <td>wd:Q989963</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-502">K6-502</a></td>
+      <td>Poetry</td>
+      <td> </td>
+      <td>wd:Q482</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-503">K6-503</a></td>
+      <td>Slam</td>
+      <td> </td>
+      <td>wd:Q2293670</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-504">K6-504</a></td>
+      <td>Spoken Word</td>
+      <td>wd:Q1428637</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-900">K6-900</a></td>
+      <td>Performing art</td>
+      <td> </td>
+      <td>wd:Q184485</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-901">K6-901</a></td>
+      <td>Circus</td>
+      <td> </td>
+      <td>wd:Q713197</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-902">K6-902</a></td>
+      <td>Comedy</td>
+      <td> </td>
+      <td>wd:Q3492850</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-903">K6-903</a></td>
+      <td>Variety</td>
+      <td>wd:Q117187901</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-904">K6-904</a></td>
+      <td>Puppetry</td>
+      <td>wd:Q588750, aat:300248147</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-905">K6-905</a></td>
+      <td>Mime</td>
+      <td>wd:Q39818, aat:300417615</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/K6-906">K6-906</a></td>
+      <td>Magic</td>
+      <td>wd:Q148442, aat:300417618</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

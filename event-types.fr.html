@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/event-types.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/event-types.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/event-types.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/event-types.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=event-types.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+<p><br />
+<a href="event-types.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="event-types.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h2 id="vocabulaire-contrôlé-artsdata-pour-les-types-dévénements">Vocabulaire contrôlé Artsdata pour les types d’événements</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><!-- --></th>
+      <th><!-- --></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Schéma de concepts</td>
+      <td><a href="http://kg.artsdata.ca/resource/ArtsdataEventTypes">adr:ArtsdataEventTypes</a></td>
+    </tr>
+    <tr>
+      <td>Version</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td>Date de modification</td>
+      <td>septembre 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Cette page décrit le vocabulaire contrôlé utilisé dans le graphe de connaissances Artsdata pour différencier les types d’événements dans le secteur des arts et culture.</p>
+
+<p>La version 4.0 du vocabulaire contrôlé représente une refonte significative par rapport à la version 3.4.5.</p>
+
+<p>Les facettes d’un événement qui sont prises en compte dans la différenciation des types d’événements dans la version 4.0 de ce vocabulaire sont celles qui font référence à la conception, au format et/ou au fonctionnement d’un événement artistique donné, plutôt qu’à son contenu artistique.</p>
+
+<p>Les facettes considérées comme hors d’application du vocabulaire contrôlé de type événement (comme la langue, le public, la période de l’année, etc.) doivent être représentées par d’autres moyens, tels que : l’utilisation des propriétés et concepts Wikidata existants ; l’utilisation de vocabulaires contrôlés externes ; et/ou la création de vocabulaires contrôlés Artsdata supplémentaires.</p>
+
+<h3 id="types-dévénements">Types d’événements</h3>
+
+<p>La liste des types (concepts SKOS) peut être consultée dans le <a href="http://kg.artsdata.ca/resource/ArtsdataEventTypes">schéma de concepts</a>, dans cette <a href="https://docs.google.com/spreadsheets/d/1cwNQIHcU0iBUi2dLdh1tnOFDxrYCA-DKxnLiXrOXYug/edit?usp=sharing">feuille de calcul</a>, ou dans le dans le tableau ci-dessous .</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>CURI</th>
+      <th>Libellé préféré</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/Event">Event</a></td>
+      <td>Événement</td>
+      <td>Une activité organisée qui a lieu à une heure et un lieu précis.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/EventSeries">EventSeries</a></td>
+      <td>Série d’événements</td>
+      <td>Une série cohérente d’événements individuels, de spectacles, de rassemblements et/ou de performances avec une continuité organisationnelle.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/Class">Class</a></td>
+      <td>Cours</td>
+      <td>Une série d’événements offrant une expérience d’apprentissage structurée à un moment et un lieu spécifiques.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/TalkEvent">TalkEvent</a></td>
+      <td>Discussion</td>
+      <td>Un événement au cours duquel une ou plusieurs personnes parlent devant un public.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/PerformingArtsEvent">PerformingArtsEvent</a></td>
+      <td>Représentation</td>
+      <td>Un événement au cours duquel une œuvre scénique est exécutée en publique.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/RehearsalEvent">RehearsalEvent</a></td>
+      <td>Répétition devant public</td>
+      <td>Un événement où le processus de création d’une œuvre de spectacle et sa préparation en vue de sa présentation sont partagés avec le public.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/CircusPerformance">CircusPerformance</a></td>
+      <td>Représentation de cirque</td>
+      <td>Une représentation qui implique une série de prestations affichant des compétences humaines, du courage, de l’humour et/ou des astuces avec des animaux.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/ComedyPerformance">ComedyPerformance</a></td>
+      <td>Représentation d’humour</td>
+      <td>Une représentation mettant en vedette un ou plusieurs comédiens racontant et/ou jouant des blagues destinées à faire rire un public.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/DancePerformance">DancePerformance</a></td>
+      <td>Représentation de danse</td>
+      <td>Une représentation présentant l’exécution d’une œuvre chorégraphique.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/MusicalTheatrePerformance">MusicalTheatrePerformance</a></td>
+      <td>Représentation de théâtre musical</td>
+      <td>Une représentation présentant la représentation d’une œuvre musico-dramatique du genre du théâtre musical, combinant musique, chant et jeu d’acteur pour raconter une histoire.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/OperaPerformance">OperaPerformance</a></td>
+      <td>Représentation d’opéra</td>
+      <td>Une représentation présentant la représentation d’une œuvre musico-dramatique du genre opéra, mêlant chant, mise en scène et narration scenique.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/MusicPerformance">MusicPerformance</a></td>
+      <td>Concert</td>
+      <td>Un représentation mettant en vedette l’exécution d’une œuvre musicale impliquant un ou plusieurs artistes chantant et/ou jouant des instruments.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/SpokenWordPerformance">SpokenWordPerformance</a></td>
+      <td>Représentation de création parlée</td>
+      <td>Une représentation mettant en vedette de la poésie interprétée devant un public.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/TheatrePerformance">TheatrePerformance</a></td>
+      <td>Représentation de théâtre</td>
+      <td>Une représentation dans lequel des acteurs jouent une pièce écrite pour la scène.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/StorytellingPerformance">StorytellingPerformance</a></td>
+      <td>Représentation de conte</td>
+      <td>Une représentation qui utilise des mots et des actions pour transmettre au public les éléments et le contenu d’une narration spécifique.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/VarietyPerformance">VarietyPerformance</a></td>
+      <td>Représentation de variétés</td>
+      <td>Un événement des arts de la scène mettant en vedette plusieurs performances d’art ou de genres différents.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/PerformanceArt">PerformanceArt</a></td>
+      <td>Performance artistique</td>
+      <td>Une représentation qui produise une œuvre éphémère au cours de son exécution.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/Festival">Festival</a></td>
+      <td>Festival</td>
+      <td>Un événement avec un ensemble organisé d’activités axées sur un thème qui dure de quelques heures à plusieurs semaines.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/ChildrensEvent">ChildrensEvent</a></td>
+      <td>Événement pour enfants</td>
+      <td>Un événement mettant en vedette le contenu éducatif et/ou artistique approprié a tous âges.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/ExhibitionEvent">ExhibitionEvent</a></td>
+      <td>Exposition</td>
+      <td>Un événement où une collection d’objets sélectionnés est regroupée selon un thème dans le but d’être présentée au public.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/ResidencyEvent">ResidencyEvent</a></td>
+      <td>Résidence</td>
+      <td>Un événement dans laquelle une organisation artistique parraine un ou plusieurs artistes et soutient leur travail en leur donnant accès aux ressources dont dispose l’organisation.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/ScreeningEvent">ScreeningEvent</a></td>
+      <td>Projection</td>
+      <td>Un événement qui présente du contenu audiovisuel à un public.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/SocialEvent">SocialEvent</a></td>
+      <td>Événement social</td>
+      <td>Un événement organisé pour qu’un groupe de personnes se rencontre et/ou interagisse les unes avec les autres.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/WorkshopEvent">WorkshopEvent</a></td>
+      <td>Atelier</td>
+      <td>Un événement où les gens apprennent et/ou pratiquent un sujet ou une activité spécifique.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/MasterclassEvent">MasterclassEvent</a></td>
+      <td>Cours de maître</td>
+      <td>Un événement d’atelier mettant en vedette un expert dans un domaine spécifique qui enseigne et/ou conseille d’autres artistes dans le même domaine, et offre aux nouveaux artistes l’avantage de l’expérience de l’expert.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/PostshowTalk">PostshowTalk</a></td>
+      <td>Discussion après-spectacle</td>
+      <td>Un événement mettant en vedette des artistes discutant avec le public après une performance.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/PreshowTalk">PreshowTalk</a></td>
+      <td>Discussion avant-spectacle</td>
+      <td>Un événement mettant en vedette des artistes discutant avec le public avant une performance.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/PowWow">PowWow</a></td>
+      <td>Pow-wow</td>
+      <td>Un festival célébré par les communautés autochtones d’Amérique du Nord, respectant des protocoles cérémoniels précis et incluant des danses, des chants et du tambour.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/Competition">Competition</a></td>
+      <td>Concours</td>
+      <td>Un événement dans lequel les gens s’affrontent pour remporter des prix.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/Convention">Convention</a></td>
+      <td>Congrès</td>
+      <td>Une série d’événements comprenant des activités de prise de parole en direct, y compris des conférences, des ateliers et/ou des événements sociaux.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/SocialDance">SocialDance</a></td>
+      <td>Danse sociale</td>
+      <td>Un événement social où des personnes se réunissent pour danser ensemble dans un cadre structuré ou informel.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/AwardsEvent">AwardsEvent</a></td>
+      <td>Événement de remise de prix</td>
+      <td>Un événement social où des personnes, groupes, organismes ou oeuvres se voient décerner des distinctions.</td>
+    </tr>
+    <tr>
+      <td><a href="http://kg.artsdata.ca/resource/LiveFilmConcert">LiveFilmConcert</a></td>
+      <td>Ciné-concert</td>
+      <td>Un événement de projection où des musiciens en direct interprètent la bande-son d’un film en temps réel.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="comment-utiliser">Comment utiliser</h3>
+
+<p>Le vocabulaire contrôlé du type d’événement Artsdata est utilisé avec le type d’événement schema.org. Un événement dans Artsdata est un http://schema.org/Event (schema:Event ou schema:EventSeries) et éventuellement un type supplémentaire issu du vocabulaire contrôlé d’événements Artsdata à l’aide de la propriété schema:additionalType.</p>
+
+<p>Par example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ex:Event1 un schema:Event ; 
+schema:additionalType &lt;http://kg.artsdata.ca/resource/PerformingArtsEvent&gt; .
+</code></pre></div></div>
+
+<p>Pour implémenter les propriétés schema:Event et schema:additionalType dans vos données structurées, veuillez consulter les <a href="https://culturecreates.github.io/artsdata-data-model/gabarits-jsonld/README.html">modèles de données structurées d’Artsdata</a>.</p>
+
+<h3 id="principaux-changements-dans-la-version-40">Principaux changements dans la version 4.0</h3>
+
+<p>L’équipe Artsdata a défini la version 4.0 du vocabulaire contrôlé d’Artsdata pour les types d’événements, en consultation avec le groupe communautaire Artsdata (
+veuillez consulter <a href="https://docs.google.com/document/d/1XMi70zjJBwu_dMSPUhf_Po6pymYcOUvgSQxXwW9vXO4/edit?usp=sharing">le rapport du projet</a> ).</p>
+
+<p>La version 4.0 du vocabulaire contrôlé des types d’événements d’Artsdata marque une avancée majeure dans l’alignement de nos données avec les meilleures pratiques du secteur et l’amélioration de la clarté sémantique. Lancée en réponse aux incohérences généralisées et aux chevauchements conceptuels de la version précédente, cette refonte introduit un modèle de catégorisation basé sur le format qui prend mieux en charge les applications de données ouvertes liées et la découvrabilité numérique.</p>
+
+<p><a href="https://docs.google.com/document/d/1nvSysesvUv_ksaR31YaVhx0gHEHQySzjWwRr-zC7Cow/edit?usp=sharing">Ce document</a> décrit les directives suivies par l’équipe Artsdata lors de la refonte du vocabulaire contrôlé d’Artsdata pour les types d’événements, ainsi que les principaux changements apportés dans la version 4.0.</p>
+
+<p>Les types basés sur le genre sont obsolètes. Bien que certains types d’événements soient obsolètes, leurs URI resteront accessibles aux utilisateurs de la version 3.4.5. Quelques types basés sur la discipline ont été conservés dans la version 4.0, mais sont désormais annotés comme « proposés pour être abandonnés » dans une version ultérieure du vocabulaire.</p>
+
+<p>De même, toutes les relations sémantiques <code class="language-plaintext highlighter-rouge">skos:exactMatch</code> avec la taxonomie discipline/genre de Scène Pro ont été supprimées.</p>
+
+<p>De nouveaux types ont été ajoutés, notamment Pow-wow, Concours, Vente, Danse sociale, Événement de remise de prix, Ciné-concert, Série de festivals et Discussion.</p>
+
+<p>Les URI ont été modifiés pour les concepts suivantes: <code class="language-plaintext highlighter-rouge">adr:StorytellingPerformance</code> (de <code class="language-plaintext highlighter-rouge">adr:Storytelling</code>), <code class="language-plaintext highlighter-rouge">adr:VarietyPerformance</code> (de <code class="language-plaintext highlighter-rouge">adr:VarietyShow</code>), <code class="language-plaintext highlighter-rouge">adr:Class</code> (de <code class="language-plaintext highlighter-rouge">adr:Classes</code>), <code class="language-plaintext highlighter-rouge">adr:TalkEvent</code> (de <code class="language-plaintext highlighter-rouge">adr:Conference</code>) et <code class="language-plaintext highlighter-rouge">adr:ResidencyEvent” (de </code>adr:ResidencyActivity`).</p>
+
+<p>En raison de la confusion entourant altLabels lors des commentaires de la communauté, cette refonte a ajouté la propriété <code class="language-plaintext highlighter-rouge">skos:hiddenLabel</code> et a commencé à utiliser cette propriété avec <code class="language-plaintext highlighter-rouge">skos:altLabels</code>.</p>
+
+<p>Les labels et les définitions ont été harmonisés pour rendre la terminologie et la syntaxe cohérentes.</p>
+
+<p>Certaines définitions d’eventType incluent désormais des notes de portée avec la propriété <code class="language-plaintext highlighter-rouge">skos:scopeNote</code> pour fournir des informations « encyclopédiques » utiles à l’utilisateur, ainsi que <code class="language-plaintext highlighter-rouge">skos:editorialNote</code> pour transmettre des informations générales sur le raisonnement et les éventuelles modifications futures prévues pour la version 5.0.</p>
+
+<p>La hiérarchie des sous-classes de certains types a été mise à jour. Par exemple, <code class="language-plaintext highlighter-rouge">adr:PreshowTalk</code> et <code class="language-plaintext highlighter-rouge">adr:PostshowTalk</code> sont devenus des sous-classes d’un nouveau concept <code class="language-plaintext highlighter-rouge">adr:TalkEvent</code>.</p>
+
+<p>Une feuille de calcul détaillant toutes les modifications apportées entre la version 3.4.5 et la version 4.0 peut être trouvée <a href="https://docs.google.com/spreadsheets/d/1cwNQIHcU0iBUi2dLdh1tnOFDxrYCA-DKxnLiXrOXYug/edit?usp=sharing">ici</a>.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

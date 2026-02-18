@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/identifier-recommendations.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/identifier-recommendations.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/identifier-recommendations.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/identifier-recommendations.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=identifier-recommendations.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+<p><br />
+<a href="identifier-recommendations.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="identifier-recommendations.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="lignes-directrices-dartsdata-à-propos-des-identifiants-pérennes">Lignes directrices d’Artsdata à propos des identifiants pérennes</h1>
+
+<p>Conformément aux spécifications du RDF pour les données ouvertes et liées, chaque entité nommée (comme par exemple un événement, un lieu ou une personne), classe et propriété chargée dans le triple store d’Artsdata doit être désignée par un identifiant pérenne exprimé sous la forme d’une adresse URI (<a href="https://www.artsdata.ca/fr/ressources/bien-identifie">voir cet article</a> pour en apprendre plus à propos des identifiants pérennes).</p>
+
+<h3 id="identifiants-pérennes-supportés-et-recommandés">Identifiants pérennes supportés et recommandés</h3>
+<p>Artsdata attribue ses propres identifiants pérennes (URI) aux entités nommées lorsqu’elles satisfont aux exigences minimale pour l’attribution d’identifiants. Les utilisateurs enregistrés peuvent créer eux-mêmes des URI pour les entités déjà chargées dans Artsdata. Ils peuvent aussi créer une URI Artsdata à partir d’une URI Wikidata.</p>
+
+<p>Artsdata s’appuie aussi sur des URI externes. Artsdata supporte tous les identifiants pérennes de base de connaissances ouvertes, incluant :</p>
+<ul>
+  <li>Wikidata ;</li>
+  <li>ISNI ;</li>
+  <li>VIAF ;</li>
+  <li>Musicbrainz.</li>
+</ul>
+
+<p>Artsdata accepte aussi les URI locales générées par un fournisseur de données (voir plus bas).</p>
+
+<p>Afin d’aider les fournisseurs de données dans l’adoption et la mise en œuvre d’identifiants pérennes, voici quelques recommandations d’identifiants pérennes selon les classes d’entités.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>ID Artsdata</th>
+      <th>ID Wikidata</th>
+      <th>ISNI</th>
+      <th>URI locale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://schema.org/Person">schema:Person</a></td>
+      <td><span style="color:green"><strong>Recommandé</strong></span></td>
+      <td><span style="color:green"><strong>Recommandé</strong></span></td>
+      <td><span style="color:green"><strong>Recommandé</strong></span></td>
+      <td>Optionnel</td>
+    </tr>
+    <tr>
+      <td><a href="https://schema.org/Organization">schema:Organization</a><br /><a href="https://schema.org/PerformingGroup">schema:PerformingGroup</a></td>
+      <td><span style="color:green"><strong>Recommandé</strong></span></td>
+      <td><span style="color:green"><strong>Recommandé</strong></span></td>
+      <td>Optionnel</td>
+      <td>Optionnel</td>
+    </tr>
+    <tr>
+      <td><a href="https://schema.org/Place">schema:Place</a><br /><a href="http://kg.artsdata.ca/ontology/LivePerformanceWork">ado:LivePerformanceWork</a></td>
+      <td><span style="color:green"><strong>Recommandé</strong></span></td>
+      <td><span style="color:green"><strong>Recommandé</strong></span></td>
+      <td>Non-valide pour ce type</td>
+      <td>Optionnel</td>
+    </tr>
+    <tr>
+      <td><a href="https://schema.org/Event">schema:Event</a></td>
+      <td><span style="color:green"><strong>Recommandé</strong></span></td>
+      <td>Optionnel</td>
+      <td>Non-valide pour ce type</td>
+      <td>Optionnel</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>L’identifiant Artsdata, l’identifiant Wikidata et l’ISNI sont des identifiants pérennes globalement uniques : ils sont destinés à référencés dans plusieurs systèmes d’informations, hors de leurs domaine web. En ce sens, on les désigne parfois d’identifiants « globaux », identifiants « passerelles » ou identifiants « externes ». Dans ces lignes directrices, on les appelle <em>URI externes</em>.</p>
+
+<p>Par opposition, les identifiants « locaux » (par exemple, les clés d’une base de données relationnelle), sont destinés à être référencés à l’interne, à l’intérieur d’un système d’information local. Les identifiants locaux peuvent aussi être exprimés sous la forme d’une URI à l’intérieur du domaine web ou le système d’information est hébergé. Ces <em>URI locales</em> peuvent être réconciliées (c.-à-d. mises en correspondance ou <em>matchées</em>) avec des <em>URI externes</em> afin de préciser que deux URI désignent la même entité du monde réel (par exemple, une personne, un lieu ou un événement).</p>
+
+<p>Dans les données structurées Schema et dans le <a href=".">modèle de données Artsdata</a>, les URI locales sont la cible (c.-à-d. la valeur attendue) de la propriété <code class="language-plaintext highlighter-rouge">@id</code>, alors que les URI externes sont la cible de la propriété <code class="language-plaintext highlighter-rouge">sameAs</code>.</p>
+
+<h3 id="comment-intégrer-une-uri-locale-à-des-données-structurées">Comment intégrer une URI locale à des données structurées</h3>
+
+<p>Voir : <a href="./id.fr.html">Lignes directrices concernant la propriété @id et les URI locales</a></p>
+
+<h3 id="comment-intégrer-des-uri-externes-à-des-données-structurées">Comment intégrer des URI externes à des données structurées</h3>
+
+<p>Voir : <a href="./sameas.fr.html">Lignes directrices concernant la propriété sameAs et les URI</a></p>
+
+<h3 id="comment-récupérer-des-uri-didentifiants-pérennes">Comment récupérer des URI d’identifiants pérennes</h3>
+
+<p>Voir : <a href="./retrieve-uri.fr.html">Comment récupérer les URI d’identifiants pérennes</a></p>
+
+<h3 id="comment-entreposer-des-uri-externes-dans-une-base-de-données">Comment entreposer des URI externes dans une base de données</h3>
+
+<p>À venir…</p>
+
+<h2 id="à-propos-de-lidentifiant-artsdata">À propos de l’identifiant Artsdata</h2>
+
+<p>L’identifiant Artsdata est un identifiant globalement unique et pérenne pouvant désigner tout concept ou toute entité nommée dans le graphe de connaissances Artsdata. Il peut notamment être assigné à des entités pour lesquelles il n’existe à l’heure actuelle aucun identifiant passerelle approprié, notamment les entités de type Event. Toute entité satisfaisant à une validation SHACL peut se voir assigner un identifiant.</p>
+
+<p>Il est possible pour des tiers de contribuer à l’assignation d’identifiants Artsdata. Les utilisateurs enregistrés peuvent notamment :</p>
+<ul>
+  <li>Utiliser la fonction “Minter”, dans l’interface d’Artsdata, pour assigner ou lier un identifiant à une entité déjà chargée dans Artsdata;</li>
+  <li>Utiliser la fonction “Mint using Wikidata”, dans l’interface d’Artsdata, pour charger une entité depuis Wikidata et lui assigner un identifiant Artsdata;</li>
+  <li>Utiliser l’API Mint pour assigner des identifiants à des entités qui ne sont pas encore chargées dans Artsdata.</li>
+</ul>
+
+<h3 id="spécifications-de-lidentifiant-artsdata">Spécifications de l’identifiant Artsdata</h3>
+
+<ul>
+  <li>Format de l’URI : <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/$1</code></li>
+  <li>Regex l’identifiant : <code class="language-plaintext highlighter-rouge">^K\d+-\d+$</code></li>
+  <li>Exemple d’URI : <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/K12-438</code></li>
+  <li>Note : Le format d’URI d’Artsdata n’inclut pas un protocole sécurisé “https”, comme c’est souvent le cas pour les identifiants pérennes avec négociation de contenu.</li>
+</ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,387 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ads: <http://kg.artsdata.ca/shacl/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+
+####################################################
+# Artsdata Events SHACL v4.3
+####################################################
+
+################
+# Super Property Shapes
+# used by more than one shape class
+################
+ads:SameAsSh
+    sh:path schema:sameAs ;
+    sh:minCount 0 ;
+    sh:pattern "^http" ;
+    sh:description "sameAs properties must be URIs and start with http" ;
+    sh:nodeKind sh:IRI .
+
+ads:NameSh
+    sh:path schema:name ;
+    sh:uniqueLang true ;
+    sh:name "Name of event" ;
+    sh:minCount 1 ;
+    sh:or ( 
+        [sh:datatype rdf:langString ;] 
+        [sh:datatype xsd:string ;]
+    ) .
+
+################
+# Event Shapes
+################
+ads:EventSeriesShape
+    a sh:NodeShape ;
+    sh:targetClass schema:EventSeries ;
+    sh:node ads:EventShape ;
+    sh:property ads:subEventPropertySh .
+
+ads:subEventPropertySh
+    a sh:PropertyShape ;
+    sh:path schema:subEvent ;
+    sh:minCount 1 ;
+    sh:message "EventSeries must have alteast one subEvent property." .
+    
+ads:EventShape
+    # TODO: Check that Event ID ends with #Event
+    a sh:NodeShape ;
+    # sh:closed true ;
+
+    # Sub-types of Event
+    sh:targetClass  schema:Event, 
+                    schema:EventSeries, 
+                    schema:MusicEvent, 
+                    schema:TheaterEvent, 
+                    schema:ComedyEvent, 
+                    schema:DanceEvent, 
+                    schema:ExhibitionEvent, 
+                    schema:Festival, 
+                    schema:ChildrensEvent, 
+                    schema:ScreeningEvent,
+                    schema:EducationEvent, 
+                    schema:FoodEvent, 
+                    schema:Hackathon, 
+                    schema:LiteraryEvent, 
+                    schema:PublicationEvent,
+                    schema:SaleEvent, 
+                    schema:SocialEvent, 
+                    schema:SportsEvent, 
+                    schema:VisualArtsEvent ;
+
+    # sh:ignoredProperties ( rdf:type ) ;
+    
+    # Required Properties
+    sh:property ads:NameSh, 
+                ads:LocationSh, 
+                ads:StartDateSh ;
+ 				 
+
+    # Check optional properties
+    sh:property ads:EventAttendanceModeSh, 
+                ads:EventStatusSh,
+				ads:MainEntityOfPageSh,
+                ads:OrganizerSh, 
+                ads:PerformerSh, 
+                ads:EndDateSh, 
+                ads:OffersSh  .
+
+ads:StartDateSh
+    sh:path schema:startDate ;
+    sh:or (
+        [ sh:datatype xsd:dateTime ; ]
+        [ sh:datatype xsd:date ; ]
+    ) ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "Start date and time of Event" .
+
+ads:EndDateSh
+    sh:path schema:endDate ;
+    sh:or (
+        [ sh:datatype xsd:dateTime ; ]
+        [ sh:datatype xsd:date ; ]
+    ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 .
+
+ads:LocationSh
+    # TODO: Check that location can be inferred if using subEvents 
+    sh:path schema:location ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:or (
+        [ sh:node ads:PlaceShape ; ]
+        [ sh:node ads:VirtualLocationShape ; ]
+        [ sh:nodeKind sh:IRI ; ]
+    ) .
+
+ads:EventStatusSh
+    sh:path schema:eventStatus ;
+    sh:maxCount  1 ;
+    sh:minCount 0 ;
+   # sh:class schema:EventStatusType ;
+    sh:in  (    schema:EventPostponed  
+                schema:EventScheduled  
+                schema:EventCancelled  
+                schema:EventRescheduled  
+                schema:EventMovedOnline )  .
+
+
+ads:EventAttendanceModeSh
+    sh:path schema:eventAttendanceMode ;
+    sh:maxCount  1 ;
+    sh:minCount 0 ;
+   # sh:class schema:EventAttendanceModeEnumeration ;
+    sh:in  (    schema:OfflineEventAttendanceMode  
+                schema:OnlineEventAttendanceMode 
+                schema:MixedEventAttendanceMode )  .
+
+
+ads:UrlWarningSh
+    sh:path schema:url ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
+
+ads:MainEntityOfPageSh
+    sh:path schema:mainEntityOfPage ;
+    sh:minCount  0 ;
+    sh:node ads:WebPageShape .
+
+ads:OffersSh
+    # TODO: Add Offer node shape
+    sh:path schema:offers ;
+    sh:minCount  0 .
+
+ads:DescriptionWarningSh
+    sh:path schema:description ;
+    sh:severity sh:Warning ;
+   # sh:languageIn ( "en" "fr" ) ;
+    sh:uniqueLang true ;
+    sh:minCount  1 .
+
+ads:OrganizerSh
+    sh:path schema:organizer ;
+    sh:or (
+        [ sh:node ads:PersonShape ; ]
+        [ sh:node ads:OrganizationShape ; ]
+        [ sh:node ads:IdSh ; ]
+    ) ;
+    sh:message "organizer is not a valid Person or Organizatinon or Id." .
+
+ads:PerformerSh
+    sh:path schema:performer ;
+    sh:or (
+        [ sh:node ads:PersonShape ; ]
+        [ sh:node ads:OrganizationShape ; ]
+        [ sh:node ads:IdSh ; ]
+    ) ;
+    sh:message "performer is not a valid Person or Organizatinon or Id." .
+
+ads:ImageWarningSh
+   sh:path schema:image ;
+    sh:severity sh:Warning ;
+    sh:minCount  1 .
+
+################
+# WebPage Shape
+################
+ads:WebPageShape
+    a sh:NodeShape ;
+ #   sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass schema:WebPage ;
+  #  sh:closed true ;
+    sh:property ads:LastReviewedSh,
+				ads:DateModifiedSh,
+                ads:WebPageUrlSh, 
+                ads:InLanguageSh .
+
+ads:WebPageUrlSh   
+    sh:path schema:url ;
+    sh:minCount 1 .
+    
+ads:InLanguageSh
+    sh:path schema:inLanguage ;
+    sh:minCount 1 .
+
+ads:LastReviewedSh
+    sh:path schema:lastReviewed ;
+    sh:datatype xsd:dateTime ;
+    sh:minCount 1 ;
+    sh:maxCount 1 .
+
+ads:DateModifiedSh
+    sh:path schema:dateModified ;
+    sh:datatype xsd:dateTime ;
+    sh:minCount 0 ;
+    sh:maxCount 1 .
+
+
+################
+# Person Shape
+################
+ads:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Person ;
+    # Super Shapes
+    sh:property ads:NameSh, 
+                ads:SameAsSh .
+
+
+################    
+# Organization Shape
+################
+ads:OrganizationShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Organization ;
+    # Super Shapes
+    sh:property ads:NameSh, 
+                ads:SameAsSh,
+                ads:NEQSh ,
+                ads:CanadianBusinessNumberSh .
+
+ads:NEQSh
+    sh:path  wdt:P10503 ;
+    sh:pattern "^\\d{10}$" ;
+    sh:minCount 0 ;
+    sh:not [
+		  sh:hasValue "0000000000"  
+	] .
+
+ads:CanadianBusinessNumberSh
+    sh:path  wdt:P8860 ;
+    sh:pattern "^\\d{9}$" ;
+    sh:minCount 0 ;
+    sh:not [
+		  sh:hasValue "000000000"  
+	] .
+
+################
+# Place Shape 
+################
+ads:PlaceShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Place ;
+#    sh:ignoredProperties ( rdf:type ) ;
+    sh:property ads:PlaceNameSh, 
+                ads:SameAsSh,
+                ads:PlaceUrlSh ;
+    sh:or  (   
+        [ sh:property ads:MultiAddress  ; ]
+        [ sh:property  ads:AddressObj  ; ]
+    ) .
+
+ads:VirtualLocationSh
+    sh:path schema:address ;
+    sh:node ads:VirtualLocationShape .
+
+ads:AddressObj
+    sh:path schema:address ;
+    sh:minCount 1 ;
+    sh:node ads:PostalAddressShape .
+  
+ads:MultiAddress 
+    sh:path schema:address ;
+    sh:minCount 2 ;
+    sh:or (
+        [ sh:node ads:PostalAddressShape ;]
+        [ sh:datatype xsd:string ; ]
+    ) .
+
+ads:PlaceNameSh
+    sh:path schema:name ;
+    sh:uniqueLang true ;
+    sh:minCount 0 ;
+    sh:or ( 
+        [sh:datatype rdf:langString ;] 
+        [sh:datatype xsd:string ;]
+    ) .
+
+
+ads:PlaceUrlSh
+    sh:path schema:url ;
+    sh:minCount 0 .
+
+################
+# VirtualLocation Shape
+################
+ads:VirtualLocationShape
+    a sh:NodeShape ;
+    sh:targetClass schema:VirtualLocation ;
+    sh:property ads:VirtualLocationUrlSh .
+
+ads:VirtualLocationUrlSh
+    sh:path schema:url ;
+    sh:pattern "^http" ;
+    sh:minCount 1 .
+
+################
+# PostalAddress Shape 
+################
+ads:PostalAddressShape
+    a sh:NodeShape ;
+    sh:targetClass schema:PostalAddress ;
+    # sh:closed true ;
+  #  sh:ignoredProperties ( rdf:type ) ;
+    sh:property ads:StreetAddressSh, 
+                ads:addressCountrySh, 
+                ads:addressRegionSh, 
+                ads:postalCodeSh, 
+                ads:addressLocalitySh .
+    
+ads:StreetAddressSh
+    sh:path schema:streetAddress ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+    sh:or ( 
+        [sh:datatype rdf:langString ;] 
+        [sh:datatype xsd:string ;]
+    ) .
+
+ads:addressCountrySh
+    sh:path schema:addressCountry ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+    sh:or ( 
+        [sh:datatype rdf:langString ;] 
+        [sh:datatype xsd:string ;]
+    ) .
+
+ ads:addressRegionSh
+    sh:path schema:addressRegion ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+    sh:or ( 
+        [sh:datatype rdf:langString ;] 
+        [sh:datatype xsd:string ;]
+    ) .
+
+ads:postalCodeSh
+    sh:path schema:postalCode ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string .
+
+ads:addressLocalitySh
+    sh:path schema:addressLocality ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+    sh:or ( 
+        [sh:datatype rdf:langString ;] 
+        [sh:datatype xsd:string ;]
+    ) .
+    
+################
+# Id Shape for properties using URI 
+################
+ads:IdSh
+   	a sh:NodeShape ;
+	# sh:targetObjectsOf schema:performer, schema:organizer ;
+	sh:nodeKind sh:IRI .

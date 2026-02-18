@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/location.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/location.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/location.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/location.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=location.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+<p><br />
+<a href="location.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="location.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="lignes-directrices-artsdata-pour-les-valeurs-location">Lignes directrices Artsdata pour les valeurs <code class="language-plaintext highlighter-rouge">location</code></h1>
+
+<h2 id="bonnes-pratiques-concernant-la-granularité-de-place">Bonnes pratiques concernant la granularité de <code class="language-plaintext highlighter-rouge">place</code></h2>
+
+<p>Lorsqu’un bâtiment contient plusieurs salles de spectacle, Artsdata peut rencontrer des problèmes de rapprochement si les données structurées décrivent le bâtiment plutôt que la salle de spectacle spécifique. Cela peut donner l’impression que deux représentations ont lieu au même moment et au même endroit, alors qu’il s’agit en réalité de deux lieux différents.</p>
+
+<p>Voici la logique suivie par le processus de création automatique (auto-minting) d’Artsdata :</p>
+<ul>
+  <li>Si deux événements sont associés au même <code class="language-plaintext highlighter-rouge">Place</code> ; ET</li>
+  <li>Si leur <code class="language-plaintext highlighter-rouge">startTime</code> diffère de moins d’une heure ; ALORS</li>
+  <li>Marquer les deux événements comme <code class="language-plaintext highlighter-rouge">ado:PotentialDuplicate</code> ET ne pas générer automatiquement un nouvel identifiant.</li>
+</ul>
+
+<h3 id="recommandations">Recommandations</h3>
+
+<p>Lorsque vous saisissez vos données d’événement, <strong>veuillez vérifier que vos données de <code class="language-plaintext highlighter-rouge">location</code> sont cohérentes entre vos données de billetterie, les données structurées de votre site web et toute autre application que vous utilisez (par exemple, Arts Touring Connector).</strong></p>
+
+<p>Selon les <a href="[https://docs.google.com/spreadsheets/d/1zGMVtrMO6Ja82jblir2AUjzSYAciCXBwoNzi-pomGok/edit?gid=0#gid=0](https://culturecreates.github.io/artsdata-data-model/classes/event.fr.html#properties)">instructions d’Artsdata</a>, il est préférable d’être aussi précis que possible lors de la saisie d’un champ <code class="language-plaintext highlighter-rouge">location</code> imbriqué sous une entité <code class="language-plaintext highlighter-rouge">@type Event</code>. Autrement dit, il vaut mieux indiquer les valeurs <code class="language-plaintext highlighter-rouge">name</code> et <code class="language-plaintext highlighter-rouge">sameAs</code> de la salle de spectacle où l’événement a lieu, plutôt que celles du bâtiment dans son ensemble.</p>
+
+<p>Cependant, une organisation peut préférer utiliser le nom du bâtiment dans ses données structurées – particulièrement si le nom du bâtiment est plus connu que celui de la salle, ou si la salle porte le même nom qu’une autre située dans un bâtiment différent.</p>
+
+<p>Dans ces cas, quatre solutions sont possibles :</p>
+
+<h4 id="1-fournir-des-valeurs-différentes-pour-name-et-sameas">1. Fournir des valeurs différentes pour <code class="language-plaintext highlighter-rouge">name</code> et <code class="language-plaintext highlighter-rouge">sameAs</code></h4>
+
+<p>Indiquer le nom du bâtiment sous <code class="language-plaintext highlighter-rouge">name</code>, mais ajouter un champ <code class="language-plaintext highlighter-rouge">sameAs</code> qui pointe vers une URI décrivant la salle de spectacle. Ainsi, le nom du bâtiment sera utilisé comme libellé principal, mais les systèmes pourront reconnaître que le lieu physique réel est la salle située dans le bâtiment, et non le bâtiment lui-même.
+   Exemple :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"location":
+         {
+            "@type":"Place",
+            "name":"Centre des arts Juliette-Lassonde",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
+            "address":{
+               "@type":"PostalAddress",
+               "addressLocality":"Saint-Hyacinthe",
+               "addressRegion":"QC",
+               "postalCode":"J2S 9E2",
+               "streetAddress":"1705 Rue Saint-Antoine",
+               "addressCountry":"CA"
+            }
+    },
+</code></pre></div></div>
+<p><em>Remarque : les URI d’Artsdata et de Wikidata sous <code class="language-plaintext highlighter-rouge">sameAs</code> pointent vers la salle Desjardins située à l’intérieur du Centre des arts Juliette-Lassonde.</em></p>
+
+<h4 id="2-entrer-un-séparateur-entre-le-nom-du-bâtiment-et-celui-de-la-salle-de-spectacle-sous-name">2. Entrer un séparateur entre le nom du bâtiment et celui de la salle de spectacle sous <code class="language-plaintext highlighter-rouge">name</code></h4>
+
+<p>Entrez le nom du bâtiment et celui de la salle de spectacle sous <code class="language-plaintext highlighter-rouge">name</code>, séparés par un séparateur (par exemple, un tiret demi-cadratin ou une barre verticale). Vous pouvez choisir d’ajouter n’importe quel nom du lieu en premier, selon celui que vous préférez voir apparaître dans son intégralité (en gardant à l’esprit que seuls les 60 premiers caractères peuvent être affichés dans les résultats de recherche). Exemple :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"location":
+         {
+            "@type":"Place",
+            "name":"Salle Desjardins – Centre des arts Juliette-Lassonde",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
+            "address":{
+               "@type":"PostalAddress",
+               "addressLocality":"Saint-Hyacinthe",
+               "addressRegion":"QC",
+               "postalCode":"J2S 9E2",
+               "streetAddress":"1705 Rue Saint-Antoine",
+               "addressCountry":"CA"
+            }
+    },
+</code></pre></div></div>
+<p><em>Remarque : les URI d’Artsdata et de Wikidata sous <code class="language-plaintext highlighter-rouge">sameAs</code> pointent vers la salle Desjardins située à l’intérieur du Centre des arts Juliette-Lassonde.</em></p>
+
+<h4 id="3-ajouter-une-entité-imbriquée-sous-containedinplace">3. Ajouter une entité imbriquée sous <code class="language-plaintext highlighter-rouge">containedInPlace</code></h4>
+
+<p>Indiquer le nom de la salle de spectacle sous <code class="language-plaintext highlighter-rouge">name</code>. Ajouter une entité imbriquée <code class="language-plaintext highlighter-rouge">containedInPlace</code> avec le nom du bâtiment sous <code class="language-plaintext highlighter-rouge">name</code>, ainsi qu’une valeur <code class="language-plaintext highlighter-rouge">sameAs</code>pointant vers une URI décrivant le bâtiment. Cela permet aux systèmes de reconnaître que la salle fait partie intégrante du bâtiment, et non qu’elle constitue un lieu distinct.</p>
+
+<p>Exemple :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> "location":
+         {
+            "@type":"Place",
+            "name":"Salle Desjardins",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
+            "address":{
+               "@type":"PostalAddress",
+               "addressLocality":"Saint-Hyacinthe",
+               "addressRegion":"QC",
+               "postalCode":"J2S 9E2",
+               "streetAddress":"1705 Rue Saint-Antoine",
+               "addressCountry":"CA"
+            },
+            "containedInPlace":{
+               "@type":"Place",
+               "name":"Centre des arts Juliette-Lassonde",
+               "sameAs":"http://kg.artsdata.ca/resource/K5-796"
+            }
+    },
+</code></pre></div></div>
+<p><em>Remarque : comme la salle et le bâtiment partagent la même adresse, il n’est pas nécessaire de répéter les champs <code class="language-plaintext highlighter-rouge">address</code> dans <code class="language-plaintext highlighter-rouge">containedInPlace</code>.</em></p>
+
+<h4 id="4-ajouter-une-valeur-alternatename">4. Ajouter une valeur <code class="language-plaintext highlighter-rouge">alternateName</code></h4>
+
+<p>Pour des raisons sémantiques, cette stratégie n’est pas recommandée par l’équipe Artsdata. Cependant, vous pouvez toujours choisir de l’ajouter à vos données structurées si les autres options ne correspondent pas à vos besoins actuels.</p>
+
+<p>Indiquer le nom de la salle sous <code class="language-plaintext highlighter-rouge">name</code> et ajouter le nom du bâtiment sous <code class="language-plaintext highlighter-rouge">alternateName</code>, ou inversement, selon lequel vous préfériez utiliser en tant que libellé principal.
+   Exemple :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"location":
+         {
+            "@type":"Place",
+            "name":"Salle Desjardins",
+            "alternateName":"Centre des arts Juliette-Lassonde",
+            "sameAs":[
+               "http://kg.artsdata.ca/resource/K2-227",
+               "http://www.wikidata.org/entity/Q111668872"],
+            "address":{
+               "@type":"PostalAddress",
+               "addressLocality":"Saint-Hyacinthe",
+               "addressRegion":"QC",
+               "postalCode":"J2S 9E2",
+               "streetAddress":"1705 Rue Saint-Antoine",
+               "addressCountry":"CA"
+            }
+    },
+</code></pre></div></div>
+<p><em>Remarque : les URI d’Artsdata et de Wikidata sous <code class="language-plaintext highlighter-rouge">sameAs</code> pointent vers la salle Desjardins située à l’intérieur du Centre des arts Juliette-Lassonde.</em></p>
+
+<h2 id="bonnes-pratiques-concernant-la-propriété-sameas">Bonnes pratiques concernant la propriété <code class="language-plaintext highlighter-rouge">sameAs</code></h2>
+
+<ul>
+  <li><a href="./sameas.html">Lignes directrices d’Artsdata concernant la propriété sameAs</a>
+    <ul>
+      <li><a href="./retrieve-uri.fr.html">Récupérer les URIs d’identifiants pérennes</a></li>
+    </ul>
+  </li>
+</ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

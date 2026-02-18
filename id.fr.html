@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/id.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/id.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/id.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/id.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=id.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+<p><a href="id.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="id.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h2 id="ligne-directrices-dartsdata-concernant-la-propriété-id-et-les-uri-locales">Ligne directrices d’Artsdata concernant la propriété @id et les URI locales</h2>
+
+<p>Malheureusement, la documentation Schema.org ne dit pas grand-chose sur la propriété <code class="language-plaintext highlighter-rouge">"@id"</code>, ni sur la manière de générer des URI pour eux. Afin de combler ces lacunes, Artsdata a préparé les lignes directrices suivantes. Ces lignes directrices s’adressent principalement aux développeurs web.</p>
+
+<p>Dans ces lignes directrices, le mot « Chose » est emprunté à la terminologie Schema (<a href="https://schema.org/Thing">schema:Thing</a>) afin de désigner n’importe quel objet du monde réel, tel qu’un événement, un lieu ou une personne spécifique. Il est synonyme du terme entité ( fréquemment utilisé dans la documentation d’Artsdata), dans le sens d’un objet ayant une identité.</p>
+
+<h3 id="documentation-générale-sur-la-propriété-id">Documentation générale sur la propriété @id</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Type de données</td>
+      <td><a href="https://www.datypic.com/sc/xsd/t-xsd_anyURI.html">xsd:anyURI</a></td>
+    </tr>
+    <tr>
+      <td>Instructions</td>
+      <td>La valeur doit être une URI constituant un identifiant unique pérenne pour la Chose (par exemple, une entité Event ou Place) dans le domaine du site web.</td>
+    </tr>
+    <tr>
+      <td>Remarque</td>
+      <td>Ne renseignez pas la même URI sous <code class="language-plaintext highlighter-rouge">@id</code> et <code class="language-plaintext highlighter-rouge">url</code>. <br />L’URL d’une page web est l’identifiant unique pérenne de cette page web, et rien d’autre. Elle ne doit pas être utilisée pour identifier les éléments décrits sur cette page web. Dans les données structurées Schema (et dans toute autre ontologie basée sur le RDF), un « objet du monde réel » (tel qu’un événement ou un lieu) et le document web qui le décrit sont deux choses distinctes : elles méritent chacune leur propre URI.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Faites défiler vers le bas afin d’apprendre comment générer des URI fonctionnels.</p>
+
+<h3 id="avantages-dutiliser-id-pour-attribuer-des-uri-aux-choses">Avantages d’utiliser @id pour attribuer des URI aux Choses</h3>
+
+<ul>
+  <li>Les @ids avec les URI sont aux Choses ce que les URL canoniques sont aux pages web. Ils permettent d’identifier un objet unique, de localiser et de récupérer les ressources qui le décrivent (c’est-à-dire une représentation JSON-LD) et de s’y référer dans d’autres systèmes d’information (c’est-à-dire d’établir un « lien » avec lui).</li>
+  <li>Les URI facilitent la réconciliation des jeux de données. Une fois qu’une correspondance est trouvée entre l’URI locale d’une chose et l’identifiant Artsdata de cette Chose, nous pouvons écrire un lien <a href="https://schema.org/sameAs"><code class="language-plaintext highlighter-rouge">schema:sameAs</code></a> dans Artsdata et ne plus jamais avoir besoin de répéter ce processus de réconciliation.</li>
+  <li>Les URI peuvent garantir la pérennité des données. Même lorsqu’une page d’événement n’est plus publiée sur un site web, l’URI identifiant cet événement peut être conservée dans Artsdata et peut continuer à être consultée (ainsi que les données structurées qui y sont associées).</li>
+</ul>
+
+<h2 id="comment-générer-une-uri-fonctionnelle">Comment générer une URI fonctionnelle</h2>
+
+<p>Aux fins de l’identification d’une Chose, une URI est fonctionnelle si elle identifie de manière univoque un seul objet du monde réel ET si cet objet du monde réel n’est associé qu’à une seule URI au sein du domaine web. En d’autres termes, la cardinalité entre l’URI et la Chose doit être biunivoque (“one-to-one”). Bien qu’il soit préférable que l’URI renvoie à une représentation (HTML, JSON-LD ou autre) de la Chose qu’elle désigne, Artsdata peut utiliser n’importe quel type d’URI fonctionnelle pour se référer à des Choses externes, même si ces URI mènent à des réponses « 404 non-trouvé ».</p>
+
+<h3 id="uri-croisillons-basées-sur-une-page-web">URI croisillons basées sur une page web</h3>
+<p><em>Remarque : cette méthode peut ne pas convenir aux sites web avec négociation linguistique, avec un contenu dynamique ou décrivant plusieurs entités sur une même page.</em></p>
+
+<ul>
+  <li>Il est possible de générer une URI fonctionnelle en ajoutant un croisillon (<code class="language-plaintext highlighter-rouge">#</code>) à la fin de l’URL d’une page web existante, suivi d’une chaîne de caractères qui sert d’identifiant unique pour une Chose décrite sur la page (un événement, un lieu ou un interprète). Cette chaîne est appelée un <a href="https://fr.wikipedia.org/wiki/Identificateur_de_fragment">identificateur de fragment</a>.</li>
+  <li>L’identificateur de fragment doit préférablement être unique au sein du domaine du site web. Au minimum, il doit être unique au sein de la page.</li>
+  <li>N’ajoutez les identificateurs de fragments qu’aux URL canoniques. Si une Chose est décrite sur plusieurs pages web, elle doit toujours avoir la même URI, quel que soit l’endroit où elle est référencée sur votre site web.</li>
+  <li>Il n’est pas nécessaire que l’identificateur de fragment pointe vers un point d’ancrage dans le corps de la page (par exemple, un identifiant ou un attribut de nom). En fait, il n’est même pas nécessaire que l’URI renvoie à une page web (tel que mentionné plus haut).</li>
+</ul>
+
+<h4 id="exemples-duri-croisillons-basées-sur-une-page-web">Exemples d’URI croisillons basées sur une page web</h4>
+
+<p>Voici quelques exemples d’utilisations incorrectes et correctes d’URI dérivées d’URL de pages web :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exemple</th>
+      <th>Adéquation en tant qu’URI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><br /><code class="language-plaintext highlighter-rouge">"@id": "https://someorg.ca/events/eventname/"</code><br /><br />(Où la valeur est la même que celle de la page URL, sans identificateur de fragment)</td>
+      <td><span style="color:red"><strong>Erreur critique</strong></span><br />Les valeurs <code class="language-plaintext highlighter-rouge">@id</code> et <code class="language-plaintext highlighter-rouge">url</code> ne devraient pas être les mêmes.</td>
+    </tr>
+    <tr>
+      <td><br /><code class="language-plaintext highlighter-rouge">"@id": "https://someorg.ca/events/eventname/#event"</code><br /><br />(Où le même identificateur de fragment est utilisé pour toutes entités du même type.)</td>
+      <td><span style="color:orange"><strong>Bien</strong></span><br />Remarque : cette convention de nommage est simple et facile à mettre en œuvre. Cependant, elle ne fonctionnera pas si plusieurs événements sont répertoriés sur la même page, car plusieurs événements se verraient attribuer la même URI.</td>
+    </tr>
+    <tr>
+      <td><br /><code class="language-plaintext highlighter-rouge">"@id": "https://someorg.ca/events/eventname/#123abc"</code><br /><br />(Où l’indentificateur de fragment <code class="language-plaintext highlighter-rouge">123abc</code> suit une convention de nommage qui garantit l’unicité au sein de la page web.)</td>
+      <td><span style="color:green"><strong>Mieux !</strong></span></td>
+    </tr>
+    <tr>
+      <td><br /><code class="language-plaintext highlighter-rouge">"@id": "https://someorg.ca/events/eventname/#key"</code><br /><br /><small>(Où <code class="language-plaintext highlighter-rouge">key</code> est la clé primaire de l’événement dans votre base de données locale)</small></td>
+      <td><span style="color:green"><strong>Encore mieux !</strong></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Utiliser la clé primaire de la Chose dans votre base de données pour l’identificateur de fragment est un moyen simple et efficace de garantir l’unicité de l’identificateur de fragment au sein du domaine du site.</p>
+
+<p>Si vous ne pouvez pas utiliser les clés de la base de données comme nom pour l’identificateur de fragment, vous pouvez opter pour une convention de nommage qui garantira le caractère univoque de l’identificateur de fragment aujourd’hui et à l’avenir. Par exemple, vous pouvez baser votre identificateur de fragment sur la chaîne <code class="language-plaintext highlighter-rouge">startDate</code> et la chaîne <code class="language-plaintext highlighter-rouge">location.name</code>, comme dans cette convention de nommage : <code class="language-plaintext highlighter-rouge">YYMMDDHH-LIEU</code> <em>(Remarque : Si vous optez pour un identificateur de fragment basé sur des points de données, veillez à ce qu’il demeure stable même si les points de données sont édités : après l’avoir généré, entreposez l’identificateur de fragment dans un champ dédié)</em>.</p>
+
+<h3 id="autres-stratégies-pour-générer-des-uri">Autres stratégies pour générer des URI</h3>
+
+<p>Les URI croisillons basées sur les URL de pages web existantes, telles que décrites ci-dessus, ne sont qu’une des nombreuses façons de générer des URI fonctionnelles afin d’identifier les entités décrites sur votre site web. Voici d’autres stratégies pour générer des URI flexibles, stables et pérennes :</p>
+
+<ul>
+  <li>L’URI croisillon peut être basée sur un chemin d’URL qui est indépendant de toute page web existante. Les URI indépendants de la structure du site web sont plus stables dans le temps que les URI croisillons basées sur une page web. En effet, même si la structure du site devait changer, la convention de nommage, elle, peut demeurer inchangée. 
+ Exemple : « <code class="language-plaintext highlighter-rouge">https://example.org/id/#123456</code> » 
+ (Rappel : Cet URI croisillon est fonctionnelle même si elle ne mène à aucune ressource).</li>
+  <li>Pour les sites web avec un contenu dynamique, vous pouvez utiliser des règles de réécriture pour vous assurer que l’URI est indépendante de l’implémentation actuelle du site. 
+ Exemple : « <code class="language-plaintext highlighter-rouge">https://example.org/event/123456</code> » réécrit comme « <code class="language-plaintext highlighter-rouge">https://example.org/index.php?event=123456</code> »</li>
+  <li>Les règles de redirection sont fréquemment utilisées afin de générer des <a href="https://en.wikipedia.org/wiki/HTTP_303">URI 303</a>. La réponse du serveur 303 indique que l’URI n’identifie pas un document web ordinaire et redirige la requête vers une autre URI, généralement avec une négociation de contenu.</li>
+  <li>Vous pouvez mettre en œuvre de la négociation de contenu afin de diriger une requête vers différentes représentations HTML, JSON-LD et/ou RDF de la même Chose, selon les préférences du client.</li>
+  <li>Vous pouvez également utiliser un service externe afin de générer des URI sur un autre domaine et les rediriger vers votre domaine web. Ces services comprennent les <a href="https://www.doi.org/">Digital Object Identifiers</a> (DOI), les <a href="https://arks.org/">Archival Resource Keys</a> (ARK) et les <a href="https://purl.archive.org/">PURL</a>.</li>
+</ul>
+
+<h3 id="ressources-externes-au-sujet-des-uri">Ressources externes au sujet des URI</h3>
+
+<ul>
+  <li><a href="https://www.w3.org/TR/cooluris/">Cool URI for the Semantic Web</a>, W3C Interest Group Note 03 December 2008</li>
+  <li><a href="https://www.culture.gouv.fr/Espace-documentation/Publications-revues/Identifiants-perennes-pour-les-ressources-numeriques">Identifiants pérennes pour les ressources culturelles : Vade-mecum pour les producteurs de données</a>, Version 1.0, 2015.</li>
+</ul>
+
+<h2 id="si-vous-ne-pouvez-pas-générer-votre-propre-uri">Si vous ne pouvez pas générer votre propre URI…</h2>
+
+<p>Ne vous inquiétez pas. Artsdata peut très bien gérer des données sans URI.</p>
+
+<p>Comme alternative (ou en complément de <code class="language-plaintext highlighter-rouge">@id</code>), envisagez d’utiliser la propriété <code class="language-plaintext highlighter-rouge">sameAs</code> pour assigner un identifiant pérenne externe à vos entités Place, Person et Organization. Il s’agit d’un moyen simple et très efficace d’identifier une Chose, et de fournir un lien vers davantage de données à son sujet.</p>
+
+<p><a href=".sameas.fr.html">En savoir plus</a></p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

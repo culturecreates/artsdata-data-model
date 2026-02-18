@@ -1,0 +1,292 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix adr: <http://kg.artsdata.ca/resource/> .
+@prefix ado: <http://kg.artsdata.ca/ontology/> .
+@prefix footlight: <http://lod.footlight.io/resource/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix aat: <http://vocab.getty.edu/page/aat/> .
+
+adr:ArtsdataGenres dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-genres.ttl> ;
+	vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-genres.ttl> ;
+	vann:example adr:K6-100 ;
+	vann:preferredNamespacePrefix "adr" ;
+	vann:preferredNamespaceUri <http://kg.artsdata.ca/resource/> ;
+	vann:usageNote <https://docs.artsdata.ca/genres.html> ;
+	schema:creator adr:K1-5, adr:K16-211 ;
+	schema:dateCreated "2026-01-05"^^xsd:date ;
+	schema:dateModified "2026-01-05"^^xsd:date ;
+	schema:version "1.0.1" ;
+	rdf:type skos:ConceptScheme ;
+	rdfs:comment "First Version"@en, "Première version"@fr ;
+	rdfs:seeAlso <https://docs.artsdata.ca/classes/live-performance-work.html> ;
+	owl:versionInfo "1.0 (2026-01-05) First version"@en, "1.0 (2026-01-05) Première version"@fr ;
+	skos:prefLabel "Artsdata Genres Controlled Vocabulary"@en, "Vocabulaire contrôlé Artsdata pour les genres"@fr ;
+	prov:wasDerivedFrom <https://docs.google.com/spreadsheets/d/1RSbTTJtjBW48BKVwQR9zcR4zr2wDEtoq-wvuAqYwiY0> .
+
+adr:ArtsdataGenres-Collection-1.0.1 rdf:type skos:Collection ;
+	rdfs:comment "All Artsdata concepts that are part of vocabulary version 1.0. Useful to group concepts by version (excluding deprecated concepts) when there are multiple versions."@en, "Tous les concepts de Artsdata faisant partie de la version 1.0"@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:member adr:K6-100, adr:K6-200, adr:K6-201, adr:K6-202, adr:K6-203, adr:K6-204, adr:K6-300, adr:K6-301, adr:K6-302, adr:K6-303, adr:K6-304, adr:K6-305, adr:K6-306, adr:K6-307, adr:K6-308, adr:K6-309, adr:K6-310, adr:K6-311, adr:K6-312, adr:K6-313, adr:K6-314, adr:K6-315, adr:K6-316, adr:K6-400, adr:K6-401, adr:K6-402, adr:K6-500, adr:K6-501, adr:K6-502, adr:K6-503, adr:K6-504, adr:K6-900, adr:K6-901, adr:K6-902, adr:K6-903, adr:K6-904, adr:K6-905, adr:K6-906 ;
+	skos:prefLabel "Collection of Artsdata Genres v1.0"@en, "Artsdata Genres - Collection pour v1.0"@fr .
+
+adr:K6-100 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Theatrical"@en ;
+	skos:exactMatch wd:Q11635 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Theatre"@en, "Théâtre"@fr .
+
+adr:K6-200 rdf:type ado:Genre, skos:Concept ;
+	skos:definition "Genre axé sur des mouvements rythmiques du corps."@fr ;
+	skos:exactMatch wd:Q11639 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Dance"@en, "Danse"@fr .
+
+adr:K6-201 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-200 ;
+	skos:closeMatch wd:Q1020618 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en, "Importé depuis Arts Touring Connector"@fr ;
+	skos:exactMatch wd:Q41425 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Ballet"@en, "Ballet"@fr .
+
+adr:K6-202 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-200 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en ;
+	skos:exactMatch wd:Q186035 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Contemporary dance"@en, "Contemporaine"@fr .
+
+adr:K6-203 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-200 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en ;
+	skos:exactMatch wd:Q850130 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Modern dance"@en, "Moderne"@fr .
+
+adr:K6-204 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Folk Dance"@en, "Danse folklorique"@fr ;
+	skos:broader adr:K6-200 ;
+	skos:definition "Any folk or traditional dance associated with a specific culture."@en, "Toute danse folklorique ou traditionnelle associée à une culture spécifique."@fr ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Cultural dance"@en, "Danse culturelle"@fr .
+
+adr:K6-300 rdf:type ado:Genre, skos:Concept ;
+	skos:exactMatch wd:Q638 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Music"@en, "Musique"@fr .
+
+adr:K6-301 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en, "Importé depuis Arts Touring Connector"@fr ;
+	skos:exactMatch wd:Q9730 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Classical"@en, "Classique"@fr .
+
+adr:K6-302 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en, "Importé depuis Arts Touring Connector"@fr ;
+	skos:exactMatch wd:Q83440 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Country"@en, "Country"@fr .
+
+adr:K6-303 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Roots"@en ;
+	skos:broader adr:K6-300 ;
+	skos:closeMatch wd:Q43343 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en, "Importé depuis Arts Touring Connector"@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Folk"@en, "Folk"@fr .
+
+adr:K6-304 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Derived from Arts Touring Connector"@en, "Dérivé de Arts Touring Connector"@fr ;
+	skos:exactMatch wd:Q8341 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Jazz"@en, "Jazz"@fr .
+
+adr:K6-305 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Derived from Arts Touring Connector"@en, "Dérivé de Arts Touring Connector"@fr ;
+	skos:exactMatch wd:Q9759 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Blues"@en, "Blues"@fr .
+
+adr:K6-306 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:closeMatch wd:Q8011523 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en, "Importé depuis Arts Touring Connector"@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "New Music"@en, "Musique Contemporaine"@fr .
+
+adr:K6-307 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Pop music"@en, "Musique pop"@fr ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en, "Importé depuis Arts Touring Connector"@fr ;
+	skos:exactMatch wd:Q373342 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Popular music"@en, "Populaire"@fr .
+
+adr:K6-308 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Globale"@fr ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from Arts Touring Connector"@en, "Importé depuis Arts Touring Connector"@fr ;
+	skos:exactMatch wd:Q205049 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "World music"@en, "Traditionnelles du monde"@fr .
+
+adr:K6-309 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Song"@en ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "See: https://github.com/culturecreates/artsdata-data-model/issues/196"@en, "Voir : https://github.com/culturecreates/artsdata-data-model/issues/196"@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel ""@en, "Chanson"@fr .
+
+adr:K6-310 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "See: https://github.com/culturecreates/artsdata-data-model/issues/196"@en, "Voir : https://github.com/culturecreates/artsdata-data-model/issues/196"@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Instrumental"@en, "Instrumentale"@fr .
+
+adr:K6-311 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from CARAS and ADISQ"@en, "Importé depuis ADISQ et CARAS"@fr ;
+	skos:exactMatch wd:Q1695023 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Alternative"@en, "Alternative"@fr .
+
+adr:K6-312 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from CARAS and ADISQ"@en, "Importé depuis ADISQ et CARAS"@fr ;
+	skos:exactMatch wd:Q9778 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Electronic"@en, "Électronique"@fr .
+
+adr:K6-313 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Hard, Heavy metal"@en ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from CARAS and ADISQ"@en, "Importé depuis ADISQ et CARAS"@fr ;
+	skos:exactMatch wd:Q12326776 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Metal"@en, "Métal"@fr .
+
+adr:K6-314 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Hip hop"@en, "Hip hop"@fr ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from CARAS and ADISQ"@en, "Importé depuis ADISQ et CARAS"@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Rap"@en, "Rap"@fr .
+
+adr:K6-315 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "R&B"@en, "R&B"@fr ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from CARAS and ADISQ"@en, "Importé depuis ADISQ et CARAS"@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Rhythm and blues"@en, "Rhythm and blues"@fr .
+
+adr:K6-316 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-300 ;
+	skos:editorialNote "Imported from CARAS and ADISQ"@en, "Importé depuis ADISQ et CARAS"@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Rock"@en, "Rock"@fr .
+
+adr:K6-400 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Dramatico-musical, Music theatre, Music theater"@en, "dramatico-musical"@fr ;
+	skos:closeMatch wd:Q123777276 ;
+	skos:definition "Genre combining a dramatic text or plot and a musical score."@en, "Genre combinant un texte dramatique ou une intrigue dramatique et une partition musicale."@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Musico-dramatic"@en, "Musico-dramatique"@fr .
+
+adr:K6-401 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-400 ;
+	skos:closeMatch wd:Q1370345 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Musical Theatre"@en, "Comédie musicale"@fr .
+
+adr:K6-402 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-400 ;
+	skos:exactMatch wd:Q1344 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Opera"@en, "Opéra"@fr .
+
+adr:K6-500 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Spoken creation"@en, "Création parlée"@fr ;
+	skos:definition "Genre based mainly on spoken contents."@en, "Genre basé principalement sur un contenu parlé."@fr ;
+	skos:editorialNote "Derived from Office québécois de la langue française. See: https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/8355335/creation-parlee. See also: https://github.com/culturecreates/artsdata-data-model/issues/101."@en, "Importé depuis l'Office québécois de la langue française. Voir : https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/8355335/creation-parlee. Voir aussi : https://github.com/culturecreates/artsdata-data-model/issues/101."@fr ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Spoken"@en, "Parlé"@fr .
+
+adr:K6-501 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-500 ;
+	skos:closeMatch wd:Q989963 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Storytelling"@en, "Conte"@fr .
+
+adr:K6-502 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-500 ;
+	skos:closeMatch wd:Q482 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Poetry"@en, "Poésie"@fr .
+
+adr:K6-503 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-500 ;
+	skos:closeMatch wd:Q2293670 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Slam"@en, "Slam"@fr .
+
+adr:K6-504 rdf:type ado:Genre, skos:Concept ;
+	skos:broader adr:K6-500 ;
+	skos:exactMatch wd:Q1428637 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Spoken Word"@en, "Art de la parole "@fr .
+
+adr:K6-900 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Performing arts"@en, "Arts de la scène, spectacle"@fr ;
+	skos:definition "Non-specified performing arts genre."@en, "Genre des arts de la scène non-spécifié."@fr ;
+	skos:editorialNote "This concept is not a specific genre of the performing arts, but rather denotes 'any' performing art. The concept was included in the vocabulary for the purpose of enabling automated reconciliation of keyword strings in data sources. Read more in: https://github.com/culturecreates/artsdata-data-model/issues/198"@en ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Performing art"@en, "Art de la scène"@fr .
+
+adr:K6-901 rdf:type ado:Genre, skos:Concept ;
+	skos:closeMatch wd:Q713197 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Circus"@en, "Cirque "@fr .
+
+adr:K6-902 rdf:type ado:Genre, skos:Concept ;
+	skos:closeMatch wd:Q3492850 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Comedy"@en, "Humour"@fr .
+
+adr:K6-903 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Variété"@fr ;
+	skos:exactMatch wd:Q117187901 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Variety"@en, "Variétés"@fr .
+
+adr:K6-904 rdf:type ado:Genre, skos:Concept ;
+	skos:editorialNote "Imported from aat:300248147"@fr ;
+	skos:exactMatch aat:300248147, wd:Q588750 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Puppetry"@en, "Marionnette"@fr .
+
+adr:K6-905 rdf:type ado:Genre, skos:Concept ;
+	skos:editorialNote "Imported from aat:300417615"@fr ;
+	skos:exactMatch aat:300417615, wd:Q39818 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Mime"@en, "Mime"@fr .
+
+adr:K6-906 rdf:type ado:Genre, skos:Concept ;
+	skos:altLabel "Illusion"@en, "Illusion"@fr ;
+	skos:editorialNote "Imported from aat:300417618"@fr ;
+	skos:exactMatch aat:300417618, wd:Q148442 ;
+	skos:inScheme adr:ArtsdataGenres ;
+	skos:prefLabel "Magic"@en, "Magie"@fr .
+

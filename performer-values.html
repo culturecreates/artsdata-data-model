@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/performer-values.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/performer-values.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/performer-values.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/performer-values.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=performer-values.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+
+<h1 id="good-practices-for-selecting-performer-values">Good Practices for Selecting performer Values</h1>
+
+<h4 id="table-of-contents">Table of Contents</h4>
+<ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#why-this-guidance-is-needed">Why This Guidance is Needed</a></li>
+  <li><a href="#general-guidelines">General Guidelines</a></li>
+  <li><a href="#genre-specific-recommendations">Genre-Specific Recommendations</a></li>
+  <li><a href="#additional-notes">Additional Notes</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<p>These guidelines are designed primarily for promotional and discoverability use cases. They may not be suitable for archival or casting contexts where detailed credits or full ensembles are needed.</p>
+
+<p>This document presents a set of good practices for selecting values to populate the <a href="https://schema.org/performer"><code class="language-plaintext highlighter-rouge">performer</code></a> property in the context of performing arts event data. It is based on the Artsdata team’s ongoing work with cultural organizations and developers across the Canadian performing arts sector.</p>
+
+<h2 id="why-this-guidance-is-needed">Why This Guidance is Needed</h2>
+
+<p>While properties like <code class="language-plaintext highlighter-rouge">location</code> or <code class="language-plaintext highlighter-rouge">organizer</code> are relatively easy to populate—thanks to limited options and dropdowns—<code class="language-plaintext highlighter-rouge">performer</code> is more complex. It often requires a nuanced understanding of the performance and its structure, especially in multidisciplinary and ensemble-based genres like dance, orchestral music, or theatre.</p>
+
+<p>Cultural workers may hesitate to populate this property due to:</p>
+
+<ul>
+  <li>Ambiguity around what counts as a “performer”;</li>
+  <li>Lack of predefined lists;</li>
+  <li>Uncertainty around prominence or naming conventions.</li>
+</ul>
+
+<p>These guidelines aim to reduce friction and offer clarity.</p>
+
+<h2 id="general-guidelines">General Guidelines</h2>
+
+<h3 id="1-align-with-public-presentation">1. Align with Public Presentation</h3>
+
+<p>Select performer values that match how the show is described to the public:</p>
+
+<ul>
+  <li>Check the title, subtitle, and description on the event web page;</li>
+  <li>Use the name(s) of artists or companies highlighted in promotional materials.</li>
+</ul>
+
+<h3 id="2-main-entities-on-stage">2. Main Entities on Stage</h3>
+
+<p>As a general rule, <code class="language-plaintext highlighter-rouge">performer</code> should include the main entity or entities physically performing on stage during the event.</p>
+
+<h3 id="3-use-role-for-clarity">3. Use <code class="language-plaintext highlighter-rouge">Role</code> for Clarity</h3>
+
+<p>If more than one performer is relevant (e.g., headliner and opener), use <a href="https://schema.org/Role"><code class="language-plaintext highlighter-rouge">Role</code></a> to clarify their respective roles.</p>
+
+<h4 id="this-is-an-example-from-a-fictitious-event-in-json-ld">This is an example from a fictitious event in JSON-LD:</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "performer": [
+    {
+      "type": "Role",
+      "roleName": "Headliner",
+      "performer": {
+        "type": "PerformingGroup",
+        "name": "Main Band"
+      }
+    },
+    {
+      "type": "Role",
+      "roleName": "Opening Act",
+      "performer": {
+        "type": "PerformingGroup",
+        "name": "Up-and-coming Band"
+      }
+    }
+  ]
+</code></pre></div></div>
+<h3 id="4-fallback-for-single-value-systems">4. Fallback for Single-Value Systems</h3>
+
+<p>If your CMS or publishing tool only allows for a single <code class="language-plaintext highlighter-rouge">performer</code> value:</p>
+
+<ul>
+  <li>Choose the entity with the most public recognition;</li>
+  <li>Prioritize names that are likely to be recognized by search engines and audiences.</li>
+</ul>
+
+<h2 id="genre-specific-recommendations">Genre-Specific Recommendations</h2>
+
+<h3 id="dance-performances">Dance Performances</h3>
+
+<p>Acceptable <code class="language-plaintext highlighter-rouge">performer</code> values may include:</p>
+
+<ul>
+  <li>The dance company (recommended default);</li>
+  <li>A solo or featured performer;</li>
+  <li>Guest artist(s);</li>
+  <li>Principal dancer(s);</li>
+  <li>A list of individual dancers (if known and relevant).</li>
+</ul>
+
+<p><strong>When in doubt, list the dance company</strong> — this helps identify the show’s origin and is usually discoverable.</p>
+
+<h3 id="orchestral-concerts">Orchestral Concerts</h3>
+
+<p>Acceptable <code class="language-plaintext highlighter-rouge">performer</code> values may include:</p>
+
+<ul>
+  <li>The orchestra (recommended default);</li>
+  <li>Soloist(s) (e.g., pianist, violinist);</li>
+  <li>Guest conductor(s).</li>
+</ul>
+
+<p>If only one value can be used, <strong>choose the orchestra</strong> for consistency and discoverability.</p>
+
+<h2 id="additional-notes">Additional Notes</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">sameAs</code> links (e.g., to Wikidata, ISNI, or Artsdata URIs) when identifying performer entities to enhance interoperability.</li>
+</ul>
+
+<p>See: <a href="./sameas-guidelines">Artsdata guidelines regarding the sameAs property</a></p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

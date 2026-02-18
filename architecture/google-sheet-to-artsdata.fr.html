@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>L’outil Google Sheet-vers-Artsdata | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="L’outil Google Sheet-vers-Artsdata" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/architecture/google-sheet-to-artsdata.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/architecture/google-sheet-to-artsdata.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="L’outil Google Sheet-vers-Artsdata" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"Overview of how data is modelled in Artsdata.ca.","headline":"L’outil Google Sheet-vers-Artsdata","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/google-sheet-to-artsdata.fr.html"},"url":"http://docs.artsdata.ca/architecture/google-sheet-to-artsdata.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_architecture/google-sheet-to-artsdata.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_architecture/google-sheet-to-artsdata.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<h2>L'outil Google Sheet-vers-Artsdata</h2>
+
+<p><br />
+<a href="google-sheet-to-artsdata.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="google-sheet-to-artsdata.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<p>Cet <a href="https://docs.google.com/spreadsheets/d/1szaf-gjoKSO2IhFw3y9cPwSUCfpHV7KhrHXo7MFx6mA/edit?usp=sharing">outil de chiffrier</a> est destiné à aider les organismes des arts de la scène à convertir leurs informations d’événement en données structurées Schema. Ces données structurées peuvent ensuite être chargées dans le graphe de connaissances d’Artsdata et même collées sur votre propre site web. Les données structurées aident les moteurs de recherche et autres outils de recommandation à mieux comprendre vos événements, afin qu’ils puissent les partager avec des publics potentiels.</p>
+
+<p><img src="https://github.com/user-attachments/assets/e0087b62-7a35-4905-bf84-c1429c2a3908" alt="outil-google-sheet-vers-artsdata-capture-ecran" /></p>
+
+<h2 id="pour-commencer">Pour commencer</h2>
+
+<ol>
+  <li>[Faites une copie du chiffrier]((https://docs.google.com/spreadsheets/d/1szaf-gjoKSO2IhFw3y9cPwSUCfpHV7KhrHXo7MFx6mA/edit?usp=sharing). Ignorez l’avertissement d’Apps Script file – ce script doit être copié à votre version du chiffrier pour qu’il puisse convertir vos informations en données structurées.</li>
+  <li>Saisissez vos coordonnées dans l’onglet <code class="language-plaintext highlighter-rouge">« Remplir en premier »</code>.</li>
+  <li>Vous utilisez déjà un chiffrier interne pour vos données de spectacles? Rendez-vous à l’onglet <code class="language-plaintext highlighter-rouge">« Importation »</code> pour apprendre comment mapper vos données dans l’outil.</li>
+  <li>Autrement, regardez la vidéo d’aide liée sur <code class="language-plaintext highlighter-rouge">« Remplir en premier »</code> pour obtenir des instructions sur la saisie manuelle des informations concernant les lieux et les organismes liés à vos événements. Puis, faites de même dans l’onglet <code class="language-plaintext highlighter-rouge">« Données de l'événement »</code> pour la reste de vos informations d’événement.</li>
+</ol>
+
+<h2 id="étapes-suivantes">Étapes suivantes</h2>
+
+<p>Une fois que vos données sont saisies, vous pouvez nous envoyer votre chiffrier complété par courriel. Nous le téléverserons dans le graphe de connaissances Artsdata, où il sera publié sous licence CC0. Cela permet à vos données d’être réutilisées dans des calendriers culturels et indexées par les moteurs de recherche.</p>
+
+<p>Si vous souhaitez ajouter des données structurées d’événement à votre propre site web, vous pouvez copier le code à côté de chaque nom d’événement dans l’onglet <code class="language-plaintext highlighter-rouge">« Code à intégrer »</code>. Puis, vous pouvez coller les codes directement sur vos pages d’événements. La procédure peut varier selon votre système de gestion de contenu (CMS), mais elle est généralement simple. Cette étape améliore la visibilité de vos événements et signale aux moteurs de recherche que votre site est la source officielle.</p>
+
+<p>Pour en savoir plus sur l’ajout des données structurées à vos pages d’événements, naviguez à la page <a href="https://www.artsdata.ca/fr/ressources/donnees-structurees?_gl=1*uasvca*_up*MQ..*_ga*NDM0NjgwMDUuMTc0NTQ2NDI0MQ..*_ga_FHQQ6Z1J9J*MTc0NTQ2NDI0MC4xLjAuMTc0NTQ2NDI0MC4wLjAuMA..">Données structurées et découvrabilité des événements</a> sur le site web d’Artsdata.</p>
+
+<h2 id="besoin-daide">Besoin d’aide?</h2>
+
+<p>Nous serions heureux de vous accompagner dans ce processus. N’hésitez pas à nous contacter à l’adresse [<strong>artsdata@capacoa.ca</strong>](mailto:artsdata@capacoa.ca] si vous souhaitez en savoir plus !</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Event Structured Data Templates | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Event Structured Data Templates" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/gabarits-jsonld/README.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/gabarits-jsonld/README.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Event Structured Data Templates" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"Overview of how data is modelled in Artsdata.ca.","headline":"Event Structured Data Templates","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/gabarits-jsonld/README.html"},"url":"http://docs.artsdata.ca/gabarits-jsonld/README.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/README.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_gabarits-jsonld/README.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<!-- _includes/base.html -->
+
+<p><br />
+<a href="../gabarits-jsonld/README.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="../gabarits-jsonld/README.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h1 id="event-structured-data-templates">Event Structured Data Templates</h1>
+
+<p>Structured data templates in JSON-LD format based on the Schema.org vocabulary.</p>
+
+<h2 id="conventions">Conventions</h2>
+
+<h3 id="identification-of-values-to-modify-in-the-templates">Identification of values to modify in the templates</h3>
+
+<p>Templates are made available as a file containing data in JSON-LD format.</p>
+
+<p>To facilitate understanding and use, explanatory notes have been included about the expected values and the format in which they should be entered. These notes have been placed between double dashes in French and in English. For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"url": "--URL complète vers la page Web concernée : Full URL to the relevant webpage--"
+</code></pre></div></div>
+
+<p>Once the template is used and filled with data, it should no longer contain double dashes. For instance:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"url": "https://placedesarts.com"
+</code></pre></div></div>
+
+<h2 id="templates">Templates</h2>
+
+<p>The <em>Event</em> template is intended to represent information about single events, ie a show having a single representation. If your event has a series of performances of the same show, please <em>add</em> the <em>Event Series</em> template to the <em>Event</em> template to describe each individual performance as a <em>nested entity</em><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> within the <a href="https://schema.org/subEvent">‘subEvent’</a> property’s array. Then change the top <em>Event</em> type to <a href="https://schema.org/EventSeries">‘EventSeries’</a>.</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld">Event template</a> - single events</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld">Add-on for Event Series</a> - add-on to Event template to include a series of performances of the same show</p>
+  </li>
+</ul>
+
+<p>For festivals, you can use one or more of the following templates to describe the festival edition as a whole, specific days within the festival, and/or individual events within the festival:</p>
+
+<ul>
+  <li><a href="https://docs.google.com/document/d/1YyXX0xcYxzbzKvgvO8y0_lKC_LoQmbgn9oXC5X6t1Zs/edit?usp=sharing">Festival templates</a> - Festival Edition, Festival Day and Individual Event</li>
+</ul>
+
+<p>Please note that the festival templates are intended to represent information about the specific edition of a festival, for example <a href="https://prismaticfestival.com/index.php/prismatic-2023/">Prismatic 2023</a> (equivalent to <a href="http://kg.artsdata.ca/resource/Festival">ado:Festival</a> and <a href="https://www.wikidata.org/wiki/Q27968043">wd:Q27968043</a>). They are not intended to represent information about the festival as a recurring event (equivalent to <a href="https://www.wikidata.org/wiki/Q132241">wd:Q132241</a>) or as an organization (equivalent to <a href="http://kg.artsdata.ca/resource/FestivalOrganization">ado:FestivalOrganization</a> and <a href="http://www.wikidata.org/entity/Q108669279">wd:Q108669279</a>). For additional clarity on these different but related concepts, please consult <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Cultural_events/Data_structure">WikiProject Cultural events</a>.</p>
+
+<h2 id="details-on-key-properties">Details on key properties</h2>
+
+<h3 id="id"><em>@id</em></h3>
+<p>Enter a URI constituting a unique <a href="https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html">persistent identifier</a> of the event within the website domain. The event’s URI should be different from the web page’s URI, because a “real-world object” and the web page describing it are two distinct <a href="https://schema.org/Thing">things</a> (or <em>entities</em>) in Schema structured data.</p>
+
+<p>For series of performances, in addition to the URI of the <em>EventSeries</em> entity, a distinct URI should be assigned to each performance using the <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld">Add-on for Event Series</a>. Make sure that no individual performance is assigned the same URI as the first-level <em>EventSeries</em> entity.</p>
+
+<p>For festivals, it is recommended to assign each individual event a unique URI if they are all listed on the same webpage.</p>
+
+<p>If you are unable to assign a distinct URI to each event, including each performance of a series of performances, then it is preferable not to use the <em>@id</em> property.</p>
+
+<p><a href="https://culturecreates.github.io/artsdata-data-model/id-and-uri-guidelines.html">Read more about the @id property and local URIs</a></p>
+
+<h3 id="additionaltype"><a href="https://schema.org/additionalType"><em>additionalType</em></a></h3>
+<p>Enter additional types corresponding to the particular type of event. Refer to the <a href="https://culturecreates.github.io/artsdata-data-model/event-types.html">Artsdata controlled vocabulary</a> to identify the most appropriate type(s) of all performing arts event types. You can add as many <em>additionalType</em> properties as needed to properly describe the event. As a default, we recommend the type <a href="http://kg.artsdata.ca/resource/PerformingArtsEvent">PerformingArtsEvent</a>, which denotes “a performing arts work performed for an audience”.</p>
+
+<h3 id="name"><a href="https://schema.org/name"><em>name</em></a></h3>
+<p>Enter a title by which the event is most likely to be searched and recognized. This could be the same value as the name of the main artist (<em>performer.name</em>) and/or the name of the show (<em>workPerformed.name</em>), depending on the popularity of each. Try not to exceed a length of 60 characters (for full display in results pages and calendars). Do not add any other information (such as location or date). Instead, enter this information using the appropriate properties.</p>
+
+<p>For festival editions, include the year in the title, and for festival days, include the date or numbered day (e.g. Day 1).</p>
+
+<h3 id="startdate"><a href="https://schema.org/startDate"><em>startDate</em></a></h3>
+<p>Enter the date and time when the event begins, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.</p>
+
+<p>If possible, specify the timezone, including the number of hours offset from Coordinated Universal Time (UTC): https://nrc.canada.ca/en/web-clock/ . If you are not able to enter a timezone, then it is preferable not to enter any timezone value at all, rather than entering a dummy value (such as <code class="language-plaintext highlighter-rouge">+00:00</code>) or a default value that would not take into account changes between Standard and Daylight Savings Time. If no timezone value is specified, the time is assumed to be in local time.</p>
+<ul>
+  <li>Tip: Timezone information is sometimes inherited from a website’s general settings. If your timezone value appears as <code class="language-plaintext highlighter-rouge">+00:00</code>, but you did not populate this value yourself, check your website’s settings.</li>
+</ul>
+
+<p>If the event start time is unknown, or if the event is a full-day event, do not enter a time value or a time zone value.</p>
+
+<h3 id="location"><a href="https://schema.org/location"><em>location</em></a></h3>
+<p>Enter the information identifying and describing the place where the event is presented (is happening). The entity <em>nested</em> under the <em>location</em> property can be @type <a href="https://schema.org/Place">Place</a> (a physical space) or @type <a href="https://schema.org/VirtualLocation">VirtualLocation</a> (an online space).
+In the case of a physical space:</p>
+<ul>
+  <li>The value should be as precise as possible (for example, the performance hall inside the building instead of the building itself).</li>
+  <li>For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place’s Wikidata or Artsdata URI.</li>
+  <li>Google requires the <em>address</em> property with nested <em>PostalAddress</em> entity. As a matter of fact, a complete PostalAddress entity, including the postal code, can help with disambiguation.</li>
+  <li>For a <em>PostalAddress</em> entity, it is better to use the two-letter postal abbreviations for <em>addressRegion</em> and <em>addressCountry</em> values.</li>
+</ul>
+
+<p>For festivals, if the festival day and/or festival edition occurs in multiple venues across a locality (i.e. a town, city or region), it is recommended to use the <em>location.address</em> property without the <em>postalCode</em> and <em>streetAddress</em> subproperties.</p>
+
+<h3 id="url"><a href="https://schema.org/url"><em>url</em></a></h3>
+<p>Enter the canonic URL (i.e. “official URL”) of the event web page on the organizer’s website.</p>
+
+<p>For series of performances, if each peformance has its own web page, enter each performance’s unique URL. Otherwise, enter the URL of the event series’ web page.</p>
+
+<p>For festivals, if the festival edition or an individual festival event is described on multiple pages (for example, the home page, the full schedule page, and the day-to-day page), choose one page URL as the canonical URL and enter this same URL value in the structured data of each page.</p>
+
+<h3 id="eventstatus"><a href="https://schema.org/eventStatus"><em>eventStatus</em></a></h3>
+<p>Indicate whether an event is <a href="https://schema.org/EventScheduled">scheduled</a> (with date), <a href="https://schema.org/EventPostponed">postponed</a> (date to be confirmed), <a href="https://schema.org/EventRescheduled">rescheduled</a> (with new date) or <a href="https://schema.org/EventCancelled">cancelled</a>.</p>
+
+<h3 id="eventattendancemode"><a href="https://schema.org/eventAttendanceMode"><em>eventAttendanceMode</em></a></h3>
+<p>Indicate if an event occurs <a href="https://schema.org/OfflineEventAttendanceMode">in person</a>, <a href="https://schema.org/OnlineEventAttendanceMode">online</a>, or is <a href="https://schema.org/MixedEventAttendanceMode">hybrid</a>, meaning both on and offline.</p>
+
+<h3 id="organizer"><a href="https://schema.org/organizer"><em>organizer</em></a></h3>
+<p>Enter information identifying and describing the organization that is responsible for presenting the show or festival. It can be a presenting organization or a company self-presenting its own production (in which case, the same value would be entered under the performer property). You can add multiple <em>organizer(s)</em>. Entities <em>nested</em><sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> under this property are typically of @type <a href="https://schema.org/Organization">Organization</a>. Recommended properties for the nested entity include: <em>name</em>, <em>url</em>, and <em>sameAs</em> (with link pointing to a Wikidata or Artsdata URI).</p>
+
+<h3 id="performer"><a href="https://schema.org/performer"><em>performer</em></a></h3>
+<p>Enter information identifying and describing the company, group or person(s) who is(are) responsible for performing the performance. It is possible to add several <em>performer(s)</em>. The entities <em>nested</em> under this property can be of @type <a href="https://schema.org/Organization">Organization</a>, <a href="https://schema.org/PerformingGroup">PerformingGroup</a> or <a href="https://schema.org/Person">Person</a>. Recommended properties for the nested entity include: <em>name</em>, <em>url</em>, and <em>sameAs</em> (with link pointing to an ISNI, Wikidata or Artsdata URI).</p>
+
+<h3 id="offers"><a href="https://schema.org/offers"><em>offers</em></a></h3>
+<p>Enter at least one <em>Offer</em> or <em>AggregateOffer</em> type entity, including the URL of the event’s ticketing page.  For more information about how to describe <em>Offer</em> type entities, consult <a href="https://developers.google.com/search/docs/appearance/structured-data/event#structured-data-type-definitions">Google’s documentation</a>.</p>
+
+<h3 id="doortime"><a href="https://schema.org/doorTime"><em>doorTime</em></a></h3>
+
+<p>For festivals, enter the time that admission to the festival day and/or festival edition begins, in ISO 8601 format. This property is intended to be used when the doorTime is different from the startTime of the first event within the festival schedule.</p>
+
+<h3 id="sameas"><a href="https://schema.org/sameAs"><em>sameAs</em></a></h3>
+<p>Enter the URIs of <a href="https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html">persistent identifiers</a> that identify without any ambiguity the event and/or the entities nested within the <em>Event</em> type entity. When there are multiple values, list them within square brackets, one URI per line.</p>
+
+<p><a href="https://culturecreates.github.io/artsdata-data-model/sameas-guidelines">Read more about the sameAs property</a></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>The term <strong>“nested entities”</strong> refers to entities linked to the <em>Event</em> entity through properties such as <em>organizer</em>, <em>performer</em>, <em>location</em> ou <em>subEvent</em>. These entities are <a href="https://schema.org/Thing">things</a> in their own right in the Schema.org context. They can have a different <em>@type</em> from the first-level entity. They can be described with attribute-value pairs in the same fashion as the first-level entity. The “nesting” of entities within the first-level entity serves many purposes: it indicates that the first-level entity is the main entity of the web page; it explicitly and semantically describes the relationship between the first-level entity and the second-level entities; it removes any confusion as to which attribute-value pair relates to which entity. Nested entities are embedded as values within an attribute-value pair using curly brackets <code class="language-plaintext highlighter-rouge">{ }</code>. Nested entities are usually indented in the code and in JSON-LD viewers, in order to help human readability. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

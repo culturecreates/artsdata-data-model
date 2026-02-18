@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Databus API | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Databus API" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An API that acts as a gateway between the outside world and the Artsdata Triplestore." />
+<meta property="og:description" content="An API that acts as a gateway between the outside world and the Artsdata Triplestore." />
+<link rel="canonical" href="http://docs.artsdata.ca/architecture/graph-store-api.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/architecture/graph-store-api.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Databus API" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"An API that acts as a gateway between the outside world and the Artsdata Triplestore.","headline":"Databus API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/graph-store-api.html"},"url":"http://docs.artsdata.ca/architecture/graph-store-api.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_architecture/graph-store-api.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_architecture/graph-store-api.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<h2>Databus API</h2>
+
+<p>An API that acts as a gateway between the outside world and the Artsdata Triplestore.</p>
+
+<h2 id="artsdata-databus-service">Artsdata Databus Service</h2>
+
+<p>The Artsdata Databus is primarily used to store metadata on RDF files hosted by 3rd parties so they can be automatically loaded into the Artsdata.ca triple store.</p>
+
+<p>See documentation on the <a href="https://documenter.getpostman.com/view/3157443/TVep7mv3">Artsdata Databus API</a></p>
+
+<p>The Artsdata Databus is a directory of versioned artifacts sometimes called datasets.</p>
+
+<p>Dataset metadata can be registered on the Databus as long as the dataset remains available for download via a download URL.</p>
+
+<p>The Databus only stores metadata about the dataset, and not the datset itself. The metadata includes the url to download the data, the format of the data (JSON, CSV, RDF), the name of the artifact, version, group, the user account registering the data, the dataset license, and depending on the data format it can also store the number of triples, number of classes, number of SHACL violations and other provenance data such as related agents used to create the dataset. Note that registering a dataset on the Databus does not actually store the data in Artsdata.</p>
+
+<p>The Databus informs Artsdata when new versions of datasets are available. ONLY RDF formats can be loaded into the Artsdata Knowledge graph. Most datasets registered on the Databus are loaded into Artsdata within a few mintues. There are standard generic transformations that are done during the import to fix common problems. If the Artifact is registerd with a SHACL file, then a SHACL report is added to the Artsdata graph. The imported graph can be used for reconciliation. Reconciliation consists of adding sameAs links, minting new Artsdata URIs, and updating the core Artsdata entities based on graph ranking.</p>
+
+<p>Rules when using the Databus service:</p>
+<ul>
+  <li>You must be a member of an Artsdata Databus team. If you wish to upload a dataset please contact the stewards of Artsdata.</li>
+  <li>Every Dataset is organized by account/group/artifact/version and uses the <a href="https://github.com/dbpedia/DataId-Ontology">DataID</a> ontology</li>
+  <li>When a dataset (artifact-version) is loaded into Artsdata, it replaces any existing artifact.</li>
+  <li>URIs with domain kg.artsdata.ca are not allowed as a triple subject.</li>
+  <li>Ontologies are not allowed to be uploaded. If you wish to upload an ontology please contact the stewards of Artsdata.</li>
+</ul>
+
+<p>The relationships among the group, artifact, version, and file are depicted in the following diagram, courtesy of Dbpedia. For more details visit https://dbpedia.gitbook.io/databus/model/how-to</p>
+
+<p><img src="https://github.com/user-attachments/assets/ce89d67a-ee48-4c54-92c9-43b0dcaadda1" alt="image" /></p>
+
+<h2 id="artsdata-databus-shacl-validation-reports">Artsdata Databus SHACL validation reports</h2>
+
+<p>A SHACL validation service is available to test datasets prior to upload to the Artsdata Databus. This RESTful API service receives parameters for the SHACL file to apply and the data graph to test.  Contact <a href="mailto:info@culturecreates.com">Culture Creates</a> for access to this service.</p>
+
+<h2 id="credentials">Credentials</h2>
+<p>Uploading data to the Databus API requires secure authentication. Artsdata can use either Github or <a href="https://github.com/dbpedia/webid">WebID</a> for authentication. Alternatively, an X-API-KEY may be supplied in the header. Contact stewards of Artsdata to determine the necessary credentials for your organization.</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

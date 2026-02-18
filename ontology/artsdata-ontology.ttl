@@ -1,0 +1,125 @@
+
+@prefix adr:  <http://kg.artsdata.ca/resource/> .
+@prefix ado:  <http://kg.artsdata.ca/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema:  <http://schema.org/> .
+@prefix frbroo: <https://www.iflastandards.info/fr/frbr/frbroo#> .
+@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> . 
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+
+ado: rdf:type owl:Ontology ;
+    dcterms:title "Artsdata Ontology"@en ;
+    dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage."@en ;
+    dcterms:creator "Artsdata Stewardship Team" ;
+    dcterms:created "2025-09-30"^^xsd:date ;
+    dcterms:modified "2025-10-17"^^xsd:date ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "ado" ;
+    vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
+    owl:versionIRI <http://kg.artsdata.ca/ontology/1/> ; # TODO: location = /ontology/1 { return 301 /ontology/; }
+    owl:versionInfo "1.1.0" ;
+    vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/artsdata-ontology.ttl> ;
+    dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
+
+####################
+# Classes
+####################
+ado:Thing rdf:type rdfs:Class ; 
+    rdfs:label "Thing"@en ;
+    rdfs:comment "The most generic class of things in Artsdata."@en ;
+    rdfs:isDefinedBy ado: .
+
+ado:LivePerformanceWork rdf:type rdfs:Class ;
+    rdfs:label "Live Performance Work"@en,  "Œuvre scénique"@fr;
+    schema:alternateName "show"@en, "spectacle"@fr ;
+    rdfs:comment "Work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience."@en ,
+        "Œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public."@fr ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf ado:Thing, schema:CreativeWork, lrmoo:F1_Work, dbo:Work ;
+    owl:equivalentClass frbroo:F20  ; # milopa:PERFORMANCE_WORK when published
+    owl:disjointWith schema:Event .
+    
+ado:Event rdf:type rdfs:Class ;
+    rdfs:label "Event"@en ;
+    schema:alternateName "performance"@en, "représentation"@fr ;
+    rdfs:comment "An event is a happening that occurs at a certain time and location. Examples include and are not limited to a: performance, concert, conference, festival, exhibition and/or social gathering."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf ado:Thing ;
+    owl:equivalentClass schema:Event .
+
+ado:EventType rdf:type rdfs:Class ;
+    rdfs:label "Event Type"@en ;
+    rdfs:comment "A class representing different types of events."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf skos:Concept, ado:Thing .
+
+ado:Genre rdf:type rdfs:Class ;
+    rdfs:label "Genre"@en ;
+    rdfs:comment "A class representing different genres of artistic works."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf skos:Concept, ado:Thing .
+
+####################
+# Properties
+####################
+
+ado:hasEventType rdf:type rdf:Property ;
+    rdfs:label "has event type"@en ;
+    rdfs:comment "Links an Event to an event type defined by the Artsdata controlled vocabulary for event types."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain ado:Event ;
+    rdfs:range ado:EventType ;
+    rdfs:subPropertyOf schema:additionalType .
+
+ado:hasGenre rdf:type rdf:Property ;
+    rdfs:label "has genre"@en ;
+    rdfs:comment "Links a Live Performance Work to a genre defined by the Artsdata controlled vocabulary for genres."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain ado:LivePerformanceWork ;
+    rdfs:range ado:Genre ;
+    rdfs:subPropertyOf schema:genre .
+
+ado:managedBy rdf:type rdf:Property ;
+    rdfs:label "managed by"@en ;
+    rdfs:comment "Links a Place to the Organization responsible for its day-to-day operations."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Organization ;
+    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+	owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:equivalentProperty wdt:P137, dbo:operator .
+
+ado:ownedBy rdf:type rdf:Property ;
+    rdfs:label "owned by"@en ;
+    rdfs:comment "Links a Place to an Organization that owns it."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Organization ;
+    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:equivalentProperty wdt:P127 .
+
+ado:usedBy rdf:type rdf:Property ;
+    rdfs:label "used by"@en ;
+    rdfs:comment "Links a Place to an Organization that regularly uses this Place as an Event location. A minimum threshold of regularity should be met for this relationship to be true. As a rule of thumb, if an organization holds three events or more per year in a given place, one could deem a usedBy relationship to be present."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Organization ;
+    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:equivalentProperty wdt:P1535 .
+
+ado:hasResident rdf:type rdf:Property ;
+    rdfs:label "has resident"@en ;
+    rdfs:comment "Links a Place to an Organization that has a residency status within this Place. Some artistic companies have a special \"residency\" status within a venue. Resident companies aren't managing the venue, but they are given privileged access to the facilities by the venue manager for creation, production and presentation activities. For example, they are often given the opportunity to book their performance dates before rental clients. They may also be provided office space within the venue."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Organization ;
+    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+    owl:equivalentProperty wdt:P466 .

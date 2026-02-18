@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/identifier-recommendations.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/identifier-recommendations.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/identifier-recommendations.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/identifier-recommendations.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=identifier-recommendations.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+<p><br />
+<a href="identifier-recommendations.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="identifier-recommendations.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h2 id="artsdata-guidelines-regarding-persistent-identifiers">Artsdata Guidelines regarding Persistent Identifiers</h2>
+
+<p>As per the W3C’s RDF specifications for linked open data, each named entity (for example, an event, a place or a person), class and property loaded in the Artsdata triple store must be denoted by a persistent identifier, represented as a URI (<a href="https://www.artsdata.ca/en/resources/identifiable-and-findable">see this article</a> to learn more about persistent identifiers).</p>
+
+<h3 id="supported-and-recommended-persistent-identifiers">Supported and recommended persistent identifiers</h3>
+
+<p>Artsdata assigns its own persistent identifiers (URIs) to named entities that meet minimum requirements for ID minting. Registered users can use the “Minter” feature to link or mint a new Artsdata ID for entities that are already loaded to the knowledge graph. They can also use the “Mint using Wikidata” feature to load a Wikidata item and mint a new Artsdata ID.</p>
+
+<p>Artsdata also relies on external URIs. Artsdata supports all persistent identifiers from open knowledge bases, including:</p>
+<ul>
+  <li>Wikidata;</li>
+  <li>ISNI;</li>
+  <li>VIAF;</li>
+  <li>Musicbrainz.</li>
+</ul>
+
+<p>Artsdata also accepts local URIS minted by data providers (read more below).</p>
+
+<p>In order to guide data providers and consumers in the adoption and implementation of persistent identifiers, here are recommended persistent identifiers according to the entity type.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Artsdata ID</th>
+      <th>Wikidata ID</th>
+      <th>ISNI</th>
+      <th>Local URI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://schema.org/Person">schema:Person</a></td>
+      <td><span style="color:green"><strong>Recommended</strong></span></td>
+      <td><span style="color:green"><strong>Recommended</strong></span></td>
+      <td><span style="color:green"><strong>Recommended</strong></span></td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><a href="https://schema.org/Organization">schema:Organization</a><br /><a href="https://schema.org/PerformingGroup">schema:PerformingGroup</a></td>
+      <td><span style="color:green"><strong>Recommended</strong></span></td>
+      <td><span style="color:green"><strong>Recommended</strong></span></td>
+      <td>Optional</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><a href="https://schema.org/Place">schema:Place</a><br /><a href="http://kg.artsdata.ca/ontology/LivePerformanceWork">ado:LivePerformanceWork</a></td>
+      <td><span style="color:green"><strong>Recommended</strong></span></td>
+      <td><span style="color:green"><strong>Recommended</strong></span></td>
+      <td>Not a valid type for this ID</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><a href="https://schema.org/Event">schema:Event</a></td>
+      <td><span style="color:green"><strong>Recommended</strong></span></td>
+      <td>Optional</td>
+      <td>Not a valid type for this ID</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The Artsdata ID, the Wikidata ID and the ISNI are globally-unique persistent identifiers intended to be referenced across a wide range of information systems, outside of their own web domain. This explains why they are sometimes called “global” identifiers, “bridge” identifiers or “external” identifiers. In these guidelines, they are called <em>external URIs</em>.</p>
+
+<p>By contrast, “local” identifiers, for example database keys, are meant to be referenced internally, within the local information system. Local identifiers can also be expressed in the form of a URI within the web domain where the system – or the website – is hosted. These <em>local URIs</em> can be reconciled (i.e. matched) with <em>external URIs</em> to indicate that these URIs are identifying the same real-world entity (for example, a person, a place or an event)</p>
+
+<p>In Schema structured data and in the Artsdata data model, <em>local URIs</em> are expected values for the <code class="language-plaintext highlighter-rouge">@id</code> property, whereas <em>external URIs</em> are expected values for the <code class="language-plaintext highlighter-rouge">sameAs</code> property.</p>
+
+<h3 id="how-to-integrate-local-uris-to-structured-data">How to integrate local URIs to structured data</h3>
+
+<p>See: <a href="./id.html">Artsdata guidelines regarding the @id property and URIs</a></p>
+
+<h3 id="how-to-integrate-external-uris-into-structured-data">How to integrate external URIs into structured data</h3>
+
+<p>See: <a href="./sameas.html">Artsdata guidelines regarding the sameAs property</a></p>
+
+<h3 id="how-to-retrieve-persistent-identifiers-uris">How to retrieve persistent identifiers’ URIs</h3>
+
+<p>See : <a href="./retrieve-uri.html">How to retrieve persistent identifiers’ URIs</a></p>
+
+<h3 id="how-to-store-external-uris-in-a-local-database">How to store external URIs in a local database</h3>
+
+<p>Coming soon…</p>
+
+<h3 id="about-the-artsdata-identifier">About the Artsdata Identifier</h3>
+
+<p>The Artsdata ID is a globally-unique persistent identifier for any concept or named entity in the Artsdata knowledge graph. It can be assigned to performing arts entity types for which there exists at present no good persistent identifier (for example, an event). Any entity that meets minimal requirements and that passes SHACL validation can be minted an ID.</p>
+
+<p>Third parties are welcome to contribute to assigning Artsdata IDs. Registered users may:</p>
+<ul>
+  <li>Use the “Minter” feature, in the Artsdata interface, to mint or link an ID to an entity loaded to the knowledge graph;</li>
+  <li>Use the “Mint using Wikidata” feature, in the Artsdata interface, to load an entity from Wikidata and to mint or link an ID for it;</li>
+  <li>Use the Minting API to assign IDs to entities that have not been loaded to Artsdata yet.</li>
+</ul>
+
+<h4 id="specifications">Specifications</h4>
+<ul>
+  <li>URI format: <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/$1</code></li>
+  <li>Regex for the ID: <code class="language-plaintext highlighter-rouge">^K\d+-\d+$</code></li>
+  <li>Sample URI: <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/K12-438</code></li>
+  <li>Note : The URI format doesn’t use a secured “https” protocol, as is often the case for URIs with content negotiation.</li>
+</ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

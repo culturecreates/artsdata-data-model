@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Organization | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Organization" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Organization Type" />
+<meta property="og:description" content="Organization Type" />
+<link rel="canonical" href="http://docs.artsdata.ca/classes/organization.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/classes/organization.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Organization" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"Organization Type","headline":"Organization","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/organization.html"},"url":"http://docs.artsdata.ca/classes/organization.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        
+
+
+
+
+<!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_classes/organization.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+Organization">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_classes/organization.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+
+
+<h1><a href="http://schema.org/Organization">Organization</a></h1>
+
+
+<p>
+    Schema.org definition: An organization such as a school, NGO, corporation, club, etc.
+</p>
+
+<p>
+    Subclass Of: <a href="http://schema.org/Thing">http://schema.org/Thing </a> 
+</p>
+
+<h2 id="organization-type">Organization Type</h2>
+
+<p><a href="http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes">Artsdata Organization Types</a> is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language. In this vocabulary, the parent concept <a href="http://kg.artsdata.ca/resource/Organization">adr:Organization</a> is defined as “A structured group of people, united by a common purpose - this includes both groups that are formally structured as a legal body (e.g., a not-for-profit corporation) as well as those that are informally structured, but otherwise act together.”</p>
+
+<p>The controlled vocabulary is implemented in SKOS and mapped to Wikidata classes using intermediary SKOS Concepts with skos:closeMatch.</p>
+
+<p>To use the Artsdata Organization Types please use the schema:additionalType property on a schema:Organization class.</p>
+
+<p>You can download the complete controlled vocabulary with this <a href="https://db.artsdata.ca/repositories/artsdata/statements?context=%3Chttp://kg.artsdata.ca/culture-creates/ontology/artsdata-organization-types%3E">download link</a>.</p>
+
+<p>WIP - here is the Google <a href="https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit#gid=1933025380">spreadsheet</a></p>
+
+<h2 id="adding-organizations-to-artsdataca">Adding organizations to Artsdata.ca</h2>
+
+<h3 id="structured-data-template">Structured data template</h3>
+<ul>
+  <li><a href="https://docs.google.com/document/d/1e_2pVYaGYkVxKtl6Y6btrHYrIyqoNf_6yeSl4dRJLbI/edit?tab=t.0#heading=h.fn96d7fxizbh">Arts Organization Structured Data Template</a></li>
+</ul>
+
+<h3 id="required-by-the-artsdata-shacl-validator">Required by the Artsdata SHACL validator</h3>
+
+<ul>
+  <li><a href="https://schema.org/name">name</a> - Indicate language @en, @fr</li>
+  <li><a href="https://schema.org/url">url</a> - Official URL of the organization</li>
+  <li><a href="https://schema.org/address">address</a> - Use <a href="https://schema.org/PostalAddress">PostalAddress</a></li>
+</ul>
+
+<h3 id="recommended">Recommended</h3>
+<ul>
+  <li><a href="https://schema.org/additionalType">additionalType</a> - Please use the <a href="http://kg.artsdata.ca/ontology/ArtsdataOrganizationTypes">Artsdata Organization Type</a> controlled vocabulary</li>
+  <li><a href="https://schema.org/sameAs">sameAs</a> - Please use an Artsdata ID obtained from the Artsdata Reconciliation Service API, and optionally other social media profiles and external global IDs like Wikidata and ISNI.</li>
+  <li>
+    <p><a href="https://schema.org/alternateName">alternateName</a> - Name typically found on websites. Indicate language @en, @fr</p>
+  </li>
+  <li><a href="http://schema.org/areaServed">areaServed</a> (pending)</li>
+  <li><a href="http://schema.org/contactPoint">contactPoint</a> (pending)</li>
+  <li><a href="http://schema.org/subOrganization">subOrganization</a> (pending)</li>
+  <li><a href="http://schema.org/parentOrganization">parentOrganization</a> (pending)</li>
+  <li><a href="http://schema.org/legalName">legalName</a> (pending) - indicate language @en, @fr</li>
+  <li><a href="http://schema.org/identifier">identifier</a> - Established identifiers like the Canadian Business Number. For example: ({ “@type”: “PropertyValue”, “propertyID”: “BN”, “value”:  “801228875”})</li>
+  <li><a href="htp://schema.org/naics">naics</a></li>
+  <li><a href="http://schema.org/department">department</a> (pending)</li>
+</ul>
+
+<h3 id="mapping-to-wikidata">Mapping to Wikidata</h3>
+<p>Social media URLs in schema:sameAs and identifiers are automatically mapped to Wikidata properties.</p>
+<ul>
+  <li>Facebook ID (<a href="http://www.wikidata.org/entity/P2013">wdt:P2013</a>)</li>
+  <li>Twitter username (<a href="http://www.wikidata.org/entity/P2002">wdt:P2002</a>)</li>
+  <li>Instagram username (<a href="http://www.wikidata.org/entity/P2003">wdt:P2003</a>)</li>
+  <li>Canadian business number (<a href="http://www.wikidata.org/entity/P8860">wdt:P8860</a>)</li>
+  <li>Numéro d’entreprise du Québec (<a href="http://www.wikidata.org/entity/P10503">wdt:P10503</a>)</li>
+</ul>
+
+
+<h2>Properties</h2>
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    
+    
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/sameAs'> sameAs </a>
+        </td>
+        <td>
+            URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/alternateName'> alternateName </a>
+        </td>
+        <td>
+            An alias for the item.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/description'> description </a>
+        </td>
+        <td>
+            A description of the item.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/name'> name </a>
+        </td>
+        <td>
+            The name of the item.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/url'> url </a>
+        </td>
+        <td>
+            URL of the item.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/image'> image </a>
+        </td>
+        <td>
+            An image of the item. This can be a <a class="localLink" href="http://schema.org/URL">URL</a> or a fully described <a class="localLink" href="http://schema.org/ImageObject">ImageObject</a>.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/identifier'> identifier </a>
+        </td>
+        <td>
+            The identifier property represents any kind of identifier for any kind of <a class="localLink" href="http://schema.org/Thing">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href="/docs/datamodel.html#identifierBg">background notes</a> for more details.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/additionalType'> additionalType </a>
+        </td>
+        <td>
+            An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/disambiguatingDescription'> disambiguatingDescription </a>
+        </td>
+        <td>
+            A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/mainEntityOfPage'> mainEntityOfPage </a>
+        </td>
+        <td>
+            Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href="/docs/datamodel.html#mainEntityBackground">background notes</a> for details.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Thing</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/address'> address </a>
+        </td>
+        <td>
+            Physical address of the item.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Organization</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+           <a href='http://schema.org/location'> location </a>
+        </td>
+        <td>
+            The location of for example where the event is happening, an organization is located, or where an action takes place.
+            <br>
+            <span style="font-size: 0.75rem">from class http://schema.org/Organization</span> 
+            <br>
+            
+        </td>
+    </tr>
+    
+</table>
+
+
+<a href='#'>More Specific Types</a>
+[To do: Generate the subclasses here.]
+
+<h2>Equivalent classes</h2>   
+
+<table>
+   <tr>
+       <th>Class</th>
+       <th>Equivalent Class</th>
+   </tr>
+    
+   <tr>
+       <td> <a href="http://dbpedia.org/ontology/Organisation">http://dbpedia.org/ontology/Organisation </a></td>
+       <td>  <a href="http://schema.org/Organization">http://schema.org/Organization </a> 
+        <br>
+        <span style="font-size: 0.75rem"> from graph <a href="http://kg.artsdata.ca/ontology/dbpedia_2016-10">http://kg.artsdata.ca/ontology/dbpedia_2016-10 </a></span></td>
+   </tr>
+    
+   <tr>
+       <td> <a href="http://dbpedia.org/ontology/Organisation">http://dbpedia.org/ontology/Organisation </a></td>
+       <td>  <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson">http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson </a> 
+        <br>
+        <span style="font-size: 0.75rem"> from graph <a href="http://kg.artsdata.ca/ontology/dbpedia_2016-10">http://kg.artsdata.ca/ontology/dbpedia_2016-10 </a></span></td>
+   </tr>
+    
+   <tr>
+       <td> <a href="http://dbpedia.org/ontology/Organisation">http://dbpedia.org/ontology/Organisation </a></td>
+       <td>  <a href="http://www.wikidata.org/entity/Q43229">http://www.wikidata.org/entity/Q43229 </a> 
+        <br>
+        <span style="font-size: 0.75rem"> from graph <a href="http://kg.artsdata.ca/ontology/dbpedia_2016-10">http://kg.artsdata.ca/ontology/dbpedia_2016-10 </a></span></td>
+   </tr>
+   
+</table>
+
+
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

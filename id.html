@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="artsdata-data-model" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of how data is modelled in Artsdata.ca." />
+<meta property="og:description" content="Overview of how data is modelled in Artsdata.ca." />
+<link rel="canonical" href="http://docs.artsdata.ca/id.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/id.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="artsdata-data-model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Overview of how data is modelled in Artsdata.ca.","headline":"artsdata-data-model","url":"http://docs.artsdata.ca/id.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/id.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=id.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+<p><a href="id.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
+<a href="id.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a></p>
+
+<h2 id="artsdata-guidelines-about-the-id-property-and-uris">Artsdata Guidelines about the @id property and URIs</h2>
+
+<p>The Schema.org documentation does not, unfortunately, say much about the <code class="language-plaintext highlighter-rouge">"@id"</code> property, nor how to generate URIs for them. In order to make up for these shortfalls, Artsdata prepared the following guidelines. These guidelines are intended primarily for web developers.</p>
+
+<p>In these guidelines, the word “Thing” is borrowed from the Schema terminology to designate any real-world object, such as a specific event, place or person. It is synonymous with the term “entity” (commonly used in Artsdata documentation), in the sense of an object with an identity.</p>
+
+<h3 id="general-documentation-for-the-id-property">General documentation for the @id property</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data type</td>
+      <td><a href="https://www.datypic.com/sc/xsd/t-xsd_anyURI.html">xsd:anyURI</a></td>
+    </tr>
+    <tr>
+      <td>Instructions</td>
+      <td>The value should be a URI constituting a unique persistent identifier for the Thing (for example, an Event or Place entity) within the website domain.</td>
+    </tr>
+    <tr>
+      <td>Note</td>
+      <td>Do not populate the same URI under both <code class="language-plaintext highlighter-rouge">@id</code> and <code class="language-plaintext highlighter-rouge">url</code>.<br />A webpage URL is the unique persistent identifier for that webpage, and nothing else. It should not be used to identify any of the things described on that webpage. In Schema structured data (and in any other RDF-based ontologies), a “real-world object” (such as an Event or Place entity) and the web document describing it are two distinct things: they each deserve their own URI.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Scroll down to learn how to generate functional URIs.</p>
+
+<h3 id="benefits-of-using-id-to-assign-uris-to-things">Benefits of using @id to assign URIs to Things</h3>
+
+<ul>
+  <li>@ids with URIs are to Things what canonical URLs are to webpages. They make it possible to identify a single Thing, to locate and retrieve resources describing it (i.e. a JSON-LD representation), and to refer to it in other information systems (i.e. “link” to it).</li>
+  <li>URIs make it easier to reconcile datasets. Once a match is found between a Thing’s local URI and that Thing’s Artsdata ID, we can write a schema:sameAs link in Artsdata and never need to repeat this reconciliation process ever again.</li>
+  <li>URIs can ensure that data lasts over time. Even when an event page is unpublished from a website, the URI identifying this event can be preserved in Artsdata and continue to be accessed (along with the associated structured data).</li>
+</ul>
+
+<h2 id="how-to-generate-a-functional-uri">How to generate a functional URI</h2>
+
+<p>For the purpose of identifying a Thing, a URI is functional if it uniquely identifies a single real-world object AND if this real-world object is assigned a single URI within the web domain. In other words, the cardinality must be one-to-one. While it is preferable that the URI resolves to some representation (HTML, JSON-LD or other) of the Thing, Artsdata can use any type of functional URI to refer to external Things, even if these URIs lead to “404 Not Found” responses.</p>
+
+<h3 id="webpage-based-hashuris">Webpage-based HashURIs</h3>
+
+<p><em>Note: This method may not be suitable for websites with language negotiation, with dynamic content, or with multiple entities on the same webpage.</em></p>
+
+<ul>
+  <li>It is possible to generate a functional URI by appending a hash (<code class="language-plaintext highlighter-rouge">#</code>) at the end of an existing webpage URL, followed by a string of characters that acts as a unique identifier for a Thing described on the page (an event, a place or a performer). This string is called a fragment identifier.</li>
+  <li>The fragment identifier should preferably be unique within the website domain. At a minimum, it should be unique within the page.</li>
+  <li>Only append fragment identifiers to canonical URLs. If a given Thing is described across several webpages, it must always have the same URI, no matter where it is referenced on your website.</li>
+  <li>It is not necessary for the fragment identifier to point to a tail anchor within the page’s body (for example, an id or name attribute). As a matter of fact, it is not even necessary for the HashURI to resolve to a webpage.</li>
+</ul>
+
+<h4 id="examples-of-webpage-based-hashuris">Examples of webpage-based HashURIs</h4>
+
+<p>Here are a few examples of improper and proper uses of URIs derived from webpage URLs:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Example</th>
+      <th>Suitability as URI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><br /><code class="language-plaintext highlighter-rouge">"@id": "https://someorg.ca/events/eventname/"</code><br />(Where the value is the same as the page URL, without a fragment identifier)</td>
+      <td><span style="color:red"><strong>Critical Error</strong></span><br />The <code class="language-plaintext highlighter-rouge">"@id"</code> and <code class="language-plaintext highlighter-rouge">"url"</code> values should not be the same.</td>
+    </tr>
+    <tr>
+      <td><br /><code class="language-plaintext highlighter-rouge">"@id": "https://someorg.ca/events/eventname/#event"</code><br /><br />(Where the same fragment identifier is used for all entities of the same type.)</td>
+      <td><span style="color:orange"><strong>Good</strong></span><br />Note: This naming convention won’t work if more than one event is listed on the same page, because multiple events would be assigned the same URI.</td>
+    </tr>
+    <tr>
+      <td><br /><code class="language-plaintext highlighter-rouge">"@id": "https://someorg.ca/events/eventname/#123abc"</code><br /><br />(Where the fragment identifier <code class="language-plaintext highlighter-rouge">123abc</code> follows a naming convention that guarantees  uniqueness within the webpage.)</td>
+      <td><br /><span style="color:green"><strong>Better!</strong></span></td>
+    </tr>
+    <tr>
+      <td><br /><code class="language-plaintext highlighter-rouge">"@id": "https://someorg.ca/events/eventname/#key"</code><br /><br /><small>(Where <code class="language-plaintext highlighter-rouge">key</code> is the primary key identifying the event entity in your local database.)</small></td>
+      <td><br /><span style="color:green"><strong>Even better!</strong></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Basing the fragment identifier on the Thing’s primary key in your database is a simple and efficient means of ensuring that the fragment identifier is unique within the site’s domain.</p>
+
+<p>If you can’t base your fragment identifier on database keys, we recommend using a naming convention that will ensure the uniqueness of the fragments identifier today and in the future. For example, you could base your fragment identifier on the <code class="language-plaintext highlighter-rouge">startDate</code> string and the <code class="language-plaintext highlighter-rouge">location.name</code> string, as in this naming convention: <code class="language-plaintext highlighter-rouge">YYMMDDHH-SOMEPLACE</code> <em>(Note: If you opt for a fragment identifier based on data points, make sure it remains stable even if these data points are edited: once it is dynamically generated, make it static by storing it in field where it won’t change)</em>.</p>
+
+<h3 id="other-strategies-to-generate-uris">Other strategies to generate URIs</h3>
+
+<p>HashURIs based on existing webpage URLs, as described above, are only one of many ways of generating functional URIs to identify the things described on your website. Here are other strategies for generating flexible, stable and persistent URIs:</p>
+
+<ul>
+  <li>HashURIs can be based on a URL path that is independent of any existing webpage. URIs that are independent from the website’s structure are more stable over time than webpage-based HashURIs. In other words, if the site structure changes, you can still continue to use the same naming convention. 
+Example: <code class="language-plaintext highlighter-rouge">"https://someorg.ca/id/#123456"</code> 
+(Reminder: This HashURI is functional even if it does not resolve to any resource.)</li>
+  <li>For websites with dynamic content, you may use rewrite rules to ensure the URI is independent from the site’s current implementation. 
+Example: <code class="language-plaintext highlighter-rouge">"https://someorg.ca/event/123456"</code> rewritten to <code class="language-plaintext highlighter-rouge">"https://someorg.ca/index.php?event=123456"</code></li>
+  <li>Redirection rules are commonly used to generate <a href="https://en.wikipedia.org/wiki/HTTP_303">303 URIs</a>. The 303 server response signals that the URI does not identify a regular web document and then redirects the request to another URI, usually with content negotiation.</li>
+  <li>You may implement content negotiation to direct a request to different HTML, JSON-LD and/or RDF representations, depending on client preference.</li>
+  <li>You may also use an external service to generate URIs on another domain and redirect them to your web domain. Such services include <a href="https://www.doi.org/">Digital Object Identifiers</a> (DOI), <a href="https://arks.org/">Archival Resource Keys</a> (ARK) and <a href="https://purl.archive.org/">PURL</a>.</li>
+</ul>
+
+<h3 id="external-resources-on-uris">External resources on URIs</h3>
+
+<ul>
+  <li><a href="https://www.w3.org/TR/cooluris/">Cool URIs for the Semantic Web</a>, W3C Interest Group Note 03 December 2008</li>
+  <li><a href="https://www.culture.gouv.fr/Espace-documentation/Publications-revues/Identifiants-perennes-pour-les-ressources-numeriques">Identifiants pérennes pour les ressources culturelles : Vade-mecum pour les producteurs de données</a>, Version 1.0, 2015.</li>
+</ul>
+
+<h2 id="if-you-are-unable-to-generate-your-own-uris">If you are unable to generate your own URIs…</h2>
+
+<p>Don’t worry. Artsdata can handle data without URIs.</p>
+
+<p>As an alternative (or in complement to <code class="language-plaintext highlighter-rouge">"@id"</code>), consider using the <code class="language-plaintext highlighter-rouge">"sameAs"</code> property to assign an external persistent identifier to your Place, Person and Organization entities. This is a simple and highly effective way to identify a Thing, and to provide a link to more data about it.</p>
+
+<p>See: <a href="./sameas.html">Artsdata guidelines regarding the sameAs property</a></p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

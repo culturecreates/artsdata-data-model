@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Event.fr | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Event.fr" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Événement" />
+<meta property="og:description" content="Événement" />
+<link rel="canonical" href="http://docs.artsdata.ca/classes/event.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/classes/event.fr.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Event.fr" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"Événement","headline":"Event.fr","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/event.fr.html"},"url":"http://docs.artsdata.ca/classes/event.fr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_classes/event.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+Event (fr)">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_classes/event.fr.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<br>
+<a href='event.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
+<a href='event.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+
+<h1 id="événement">Événement</h1>
+
+<p>Dans Artsdata, un événement est défini comme « une activité organisée qui se déroule à un moment et un lieu précis ». La classe <a href="http://kg.artsdata.ca/resource/Event"><code class="language-plaintext highlighter-rouge">adr:Event</code></a> est considérée comme une classe équivalente à <a href="https://schema.org/Event"><code class="language-plaintext highlighter-rouge">schema:Event</code></a>.</p>
+
+<p>Toute représentation unique, série de représentations ou édition d’un festival est considérée comme une entité du type <code class="language-plaintext highlighter-rouge">Event</code> ou <code class="language-plaintext highlighter-rouge">EventSeries</code> dans Artsdata.</p>
+
+<h2 id="types-dévénement">Types d’événement</h2>
+
+<p>Les entités du type Event peuvent être associées à des types supplémentaires à partir du <a href="../event-types.fr.html">Vocabulaire contrôlé Artsdata pour les types d’événements</a>, en utilisant la propriété <code class="language-plaintext highlighter-rouge">additionalType</code>.</p>
+
+<p>Outre les concepts issus du vocabulaire contrôlé Artsdata, Artsdata accepte les sous-types d’événements Schema.org ainsi que les concepts Wikidata comme valeurs pour la propriété <code class="language-plaintext highlighter-rouge">additionalType</code>.</p>
+
+<h2 id="exigences-minimales-pour-la-création-didentifiants-artsdata-pour-les-événements">Exigences minimales pour la création d’identifiants Artsdata pour les événements</h2>
+
+<p>Pour qu’Artsdata puisse créer automatiquement un identifiant unique et pérenne pour un événement, l’événement doit au minimum comporter les paires attribut-valeur suivantes :</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">@Type</code>: <code class="language-plaintext highlighter-rouge">Event</code> (ou un sous-type d’événement);</li>
+  <li><code class="language-plaintext highlighter-rouge">startTime</code>: valeur <code class="language-plaintext highlighter-rouge">dateTime</code> au format ISO 8601 (avec ou sans décalage de fuseau horaire);</li>
+  <li><code class="language-plaintext highlighter-rouge">location</code>: objet <code class="language-plaintext highlighter-rouge">Place</code> avec une adresse postale <em>complète</em> et un lien <a href="/sameas.fr.html"><code class="language-plaintext highlighter-rouge">sameAs</code></a> vers un URI Wikidata ou Artsdata qui identife l’objet Place.</li>
+</ul>
+
+<p>En l’absence d’une URI sous <code class="language-plaintext highlighter-rouge">location.sameAs</code>, Artsdata pourrait être en mesure d’utiliser <code class="language-plaintext highlighter-rouge">location.name</code>, <code class="language-plaintext highlighter-rouge">location.address.locality</code>, et/ou <code class="language-plaintext highlighter-rouge">location.address.postalCode</code> afin de réconcilier automatiquement ou manuellement (c.à.d. « reconnaître ») les entités du type Place et de les associer à leur URI Artsdata. De même, le code postale de l’objet Place est très utile pour identifier les doublons potentiels dans les entités du type Event, ce qui constitue un processus de validation important avant l’attribution d’un identifiant pérenne à un événement.</p>
+
+<p>Si un objet Event ne répond pas entièrement à ces exigences, il est toujours possible d’attribuer manuellement un identifiant, à condition qu’au moins l’une des propriétés suivantes soit renseignée :</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">description</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">url</code>.</li>
+</ul>
+
+<h2 id="propriétés">Propriétés</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Propriété</th>
+      <th>Statut</th>
+      <th>Instructions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="http://schema.org/startDate">startDate</a></td>
+      <td>Requis</td>
+      <td>Saisissez la date et l’heure de début de l’événement, au format <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Si possible, précisez le fuseau horaire en incluant le nombre d’heures de <a href="https://nrc.canada.ca/fr/horloge-web/">décalage avec le temps universel coordonné (UTC)</a>. Si ce n’est pas possible, alors il est préférable de ne saisir aucune valeur de fuseau horaire plutôt que de saisir une valeur factice (comme “+00:00”) ou une valeur par défaut qui ne tiendrait pas compte des changements entre l’heure normale et l’heure avancée. En l’absence d’une valeur, le fuseau horaire présumé est l’heure locale. Si l’heure de début de l’événement est inconnue ou s’il s’agit d’un événement d’une journée entière, ne saisissez pas de valeur d’heure ni de valeur de fuseau horaire.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/location">location</a></td>
+      <td>Requis</td>
+      <td>Saisissez les informations identifiant et décrivant le lieu où l’événement se déroule. Dans le cas d’un lieu physique, la valeur devrait préférablement être l’entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située). Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l’URI Wikidata et/ou Artsdata du lieu sous la propriété <code class="language-plaintext highlighter-rouge">sameAs</code>. À défaut d’identifiants, une adresse postale complète – incluant le code postal et les abrévations postales de deux lettres pour la province/le territoire et le pays – peut faciliter la désambiguïsation. Pour plus d’informations, consultez ces <a href="/location.fr.html">lignes directrices</a></td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/name">name</a></td>
+      <td>Requis</td>
+      <td>Saisissez une appellation par laquelle l’événement est susceptible d’être recherché et reconnu. Il peut s’agir de la même valeur que le nom de l’artiste principal (<code class="language-plaintext highlighter-rouge">performer.name</code>) et/ou le nom de l’œuvre-spectacle (<code class="language-plaintext highlighter-rouge">workPerformed.name</code>), selon la notoriété de chacun. Tâchez de ne pas excéder une longueur de 60 caractères (pour des fins d’affichage dans les pages de résultats et dans les calendriers). N’ajoutez pas d’autres informations (comme le lieu ou la date). Au lieu, saisissez ces autres informations à l’aide des propriétés appropriées. Voir aussi <code class="language-plaintext highlighter-rouge">alternateName</code>.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/additionalType">additionalType</a></td>
+      <td>Recommandé</td>
+      <td>Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au <a href="/event-type.fr.html">vocabulaire contrôlé Artsdata</a> pour identifier le ou les types les mieux appropriés parmi tous les types d’événements des arts de la scène. En guise de valeur par défaut, nous recommandons le type <a href="http://kg.artsdata.ca/resource/PerformingArtsEvent">adr:PerformingArtsEvent</a>, qui désigne une « représentation ».</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/url">url</a></td>
+      <td>Recommandé</td>
+      <td>Saisissez l’URL canonique (c.-à-d. « officielle ») désignant la page web de l’événement sur le site de l’organisateur.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/description">description</a></td>
+      <td>Recommandé</td>
+      <td>Saisissez une courte description de l’événement. Ne répétez pas des informations factuelles tels que la date et le lieu. Ajoutez-les plutôt aux propriétés correspondantes.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/image">image</a></td>
+      <td>Recommandé</td>
+      <td>Identifiez l’image principale de la page d’événement. Il peut s’agir d’une URL ou d’un <code class="language-plaintext highlighter-rouge">ImageObject</code> entièrement décrit. Les propriétés recommandées pour un <code class="language-plaintext highlighter-rouge">ImageObject</code> imbriqué incluent : <code class="language-plaintext highlighter-rouge">contentUrl</code>, <code class="language-plaintext highlighter-rouge">creator</code>, <code class="language-plaintext highlighter-rouge">copyrightNotice</code>, <code class="language-plaintext highlighter-rouge">license</code>. Les propriétés suggerées incluent : <code class="language-plaintext highlighter-rouge">creditText</code> fournissant les attributions appropriées aux parties associées avec l’image (les interprètes, les concepteurs, la compagnie de production), <code class="language-plaintext highlighter-rouge">caption</code> et <code class="language-plaintext highlighter-rouge">description</code> fournissant une description « alt » de l’image. Pour plus d’informations, consultez la <a href="https://kg.artsdata.ca/fr/doc/image-policy">Politique d’Artsdata relative aux images</a>.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/organizer">organizer</a></td>
+      <td>Recommandé</td>
+      <td>Saisissez les informations identifiant et décrivant l’organisme qui est responsable de la présentation du spectacle. Il peut s’agir d’un organisme diffuseur ou alors d’une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignées sous la propriété performer). Les propriétés recommandées pour l’entité imbriquée incluent : <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">url</code> et <code class="language-plaintext highlighter-rouge">sameAs</code> (pointant vers un identifiant Artsdata et/ou Wikidata).</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/performer">performer</a></td>
+      <td>Recommandé</td>
+      <td>Saisissez les informations identifiant et décrivant la compagnie, le groupe ou le (les) artiste(s) qui est (sont) responsable de l’exécution de la représentation. Il est possible d’ajouter plusieurs performer(s). Les propriétés recommandées pour l’entité imbriquées incluent : <code class="language-plaintext highlighter-rouge">name</code>, URL et <code class="language-plaintext highlighter-rouge">sameAs</code> (pointant vers une URI ISNI, Artsdata et/ou Wikidata). Pour plus d’informations, consultez ces <a href="/performer.fr.html">lignes directrices</a>.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/workPerformed">workPerformed</a></td>
+      <td>Facultatif</td>
+      <td>Saisissez les informations identifiant et décrivant l’œuvre-spectacle exécutée lors de la représentation ou alors décrivant la ou des œuvres musicales, dramatiques, musicodramatiques intégrées à l’œuvre-spectacle. Les propriétés recommandées pour l’entité imbriquée incluent : <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">genre</code>, <code class="language-plaintext highlighter-rouge">inLanguage</code> et <code class="language-plaintext highlighter-rouge">sameAs</code> (pointant vers une URI Artsdata ou Wikidata). Si l’œuvre n’a pas d’identifiant Artsdata ou Wikidata, creator.<code class="language-plaintext highlighter-rouge">sameAs</code> peut être utilisé en guise d’alternative.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/offers">offers</a></td>
+      <td>Recommandé</td>
+      <td>Saisissez au moins une entité de type <code class="language-plaintext highlighter-rouge">Offer</code> ou <code class="language-plaintext highlighter-rouge">AggregateOffer</code> avec l’URL de la page où l’on peut se procurer les billets. Pour plus d’informations sur la façon de renseigner les offres, consultez le gabarit de données structurées d’événements Artsdata et la <a href="https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr#structured-data-type-definitions">documentation de Google</a></td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/sameAs">sameAs</a></td>
+      <td>Facultatif</td>
+      <td>Saisissez les URI d’identifiants pérennes (par ex., Artsdata) et/ou les URL des réseaux sociaux (par ex., page d’événement Facebook) qui identifient sans ambiguïté l’événement. Saississez toujours l’URI complète de l’identifiant (plutôt que de saisir uniquement l’identifiant lui-même). Pour plus d’informations, consultez ces <a href="/sameas.fr.html">lignes directrices</a>.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/inLanguage">inLanguage</a></td>
+      <td>Facultatif</td>
+      <td>Identifiez la langue principale parlée, chantée et/ou signée lors de l’événement. Si plusieurs langues sont employées de manière significative au cours de l’événement, énumérez-les à l’intérieur de crochets. Voir aussi <code class="language-plaintext highlighter-rouge">subtitleLanguage</code>.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/endDate">endDate</a></td>
+      <td>Facultatif</td>
+      <td>Saisissez la date et l’heure de fin de l’événement, au format ISO 8601. Assurez-vous de préciser le fuseau horaire en incluant le nombre d’heures de décalage avec le temps universel coordonné (UTC).</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/duration">duration</a></td>
+      <td>Facultatif</td>
+      <td>Saisissez la durée entre la date de début et la date de fin de l’événement, au format ISO 8601.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/eventAttendanceMode">eventAttendanceMode</a></td>
+      <td>Facultatif</td>
+      <td>Identifiez la manière dont les publics assistent à l’événement, telle qu’en ligne, hors ligne ou hybride. Pour la liste complète, consulter <a href="https://schema.org/EventAttendanceModeEnumeration"><code class="language-plaintext highlighter-rouge">EventAttendanceModeEnumeration</code></a>.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/eventStatus">eventStatus</a></td>
+      <td>Facultatif</td>
+      <td>Identifiez l’état actuel de la programmation de l’événement, tel que programmé, annulé ou reprogrammé. Pour la liste complète, consulter <a href="https://schema.org/EventStatusType"><code class="language-plaintext highlighter-rouge">EventStatusType</code></a>.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/alternateName">alternateName</a></td>
+      <td>Facultatif</td>
+      <td>Saisissez une appellation complémentaire à la valeur saisie sous <code class="language-plaintext highlighter-rouge">name</code> et qui conviendrait pour désigner un sous-titre de l’événement. Il peut s’agir du nom de l’œuvre-spectacle, de l’artiste principal ou de la compagnie. Il peut aussi s’agir du nom de l’artiste qui assure la première partie de la représention ou encore du nom du festival dans le cadre duquel est représenté l’événement. Ne saisissez pas de variante(s) d’épellation du nom déjà saisi sous <code class="language-plaintext highlighter-rouge">name</code>.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/mainEntityOfPage">mainEntityOfPage</a></td>
+      <td>Facultatif</td>
+      <td>Saisissez l’URL d’une page d’un autre site web que celui de l’organisateur qui décrit le même événement que l’URL canonique.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/superEvent">superEvent</a></td>
+      <td>Facultatif</td>
+      <td>Si votre événement fait partie d’un événement plus grand, tel qu’un <code class="language-plaintext highlighter-rouge">Festival</code>, saisissez les informations identifiant et décrivant l’événement plus grand.</td>
+    </tr>
+    <tr>
+      <td><a href="http://schema.org/subEvent">subEvent</a></td>
+      <td>Facultatif</td>
+      <td>Si votre événement est de type <code class="language-plaintext highlighter-rouge">EventSeries</code> et comporte une série de représentations d’un même spectacle, veuillez décrire chaque représentation comme une entité imbriquée sous la propriété <code class="language-plaintext highlighter-rouge">subEvent</code>. Si votre événement est de type <code class="language-plaintext highlighter-rouge">Festival</code> et que la page web canonique décrivant l’édition du festival sert aussi de page web canonique des spectacles qui y sont présentés (c.-à-d. que l’édition du festival et les représentations sont décrite sur une même page), veuillez décrire chaque représentation de spectacle en tant qu’entité imbriquée sous la propriété <code class="language-plaintext highlighter-rouge">subEvent</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

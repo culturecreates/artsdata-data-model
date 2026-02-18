@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=c7649732942b63453c4cbc9ac7b19659755e8578">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>iCal Server | artsdata-data-model</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="iCal Server" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Artsdata’s iCal Server makes it possible to configure a custom iCal feed and to import Artsdata events into any calendar application supporting the iCal standard (ex., Google Calendar, Outlook, and many website plugins)." />
+<meta property="og:description" content="Artsdata’s iCal Server makes it possible to configure a custom iCal feed and to import Artsdata events into any calendar application supporting the iCal standard (ex., Google Calendar, Outlook, and many website plugins)." />
+<link rel="canonical" href="http://docs.artsdata.ca/architecture/ical.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/architecture/ical.html" />
+<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:54:13+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="iCal Server" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-18T06:54:13+00:00","datePublished":"2026-02-18T06:54:13+00:00","description":"Artsdata’s iCal Server makes it possible to configure a custom iCal feed and to import Artsdata events into any calendar application supporting the iCal standard (ex., Google Calendar, Outlook, and many website plugins).","headline":"iCal Server","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/ical.html"},"url":"http://docs.artsdata.ca/architecture/ical.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+          
+
+          <h1 id="project_title">artsdata-data-model</h1>
+          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <!-- _includes/base.html -->
+
+<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_architecture/ical.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=_architecture/ical.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+<h2>iCal Server</h2>
+
+<p>Artsdata’s iCal Server makes it possible to configure a custom iCal feed and to import Artsdata events into any calendar application supporting the iCal standard (ex., Google Calendar, Outlook, and many website plugins).</p>
+
+<p>The iCal feed is serialized following the <a href="https://datatracker.ietf.org/doc/html/rfc5545">RFC 5545</a> specification. The <a href="https://www.kanzaki.com/docs/ical/dateTime.html"><code class="language-plaintext highlighter-rouge">DATE-TIME</code></a> value is serialized with local time zone and time zone reference. The npm package used to add the VTIMEZONE component is <a href="https://tz.add-to-calendar-technology.com/">timezones-ical-library</a>. Here is a table of valid <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">TZ Identifiers</a>. Standard links are converted to their canoncial form. For exampe: If the input data contains the standard link <code class="language-plaintext highlighter-rouge">America/Montreal</code> it will be automatically converted to the canonical <code class="language-plaintext highlighter-rouge">America/Toronto</code> for use in the VTIMEZONE component.</p>
+
+<p>Support for later specifications could be provided, as needed.</p>
+
+<h2 id="how-to-create-an-ical-feed">How to create an iCal Feed</h2>
+
+<p>To create a new iCal Feed, add a CONSTRUCT SPARQL to the artsdata-stewards <a href="https://github.com/artsdata-stewards/artsdata-actions/tree/main/ical">iCal Github repository</a>. Your CONSTRUCT SPARQL will automatically appear in the list of iCal Feeds.</p>
+
+<p>To share an iCal Feed:</p>
+<ol>
+  <li>Go to <a href="http://kg.artsdata.ca">Artsdata.ca</a>.</li>
+  <li>Sign-in with any Github account.</li>
+  <li>Navigate to the “iCal Feeds” using the menu (top-right).</li>
+  <li>Click the copy icon of the iCal Feed you wish to share.</li>
+</ol>
+
+<p>The iCal Feed URL can be used with any iCal/ICS tool of your choice. To test an iCal Feed, copy the iCal Feed URL and paste it into this free Wordpress calendar plugin: <a href="https://icscalendar.com/preview/">ICS Calendar</a>.&lt;/p&gt;</p>
+
+<h2 id="construct-sparql-requirements">CONSTRUCT SPARQL requirements</h2>
+<p>The CONSTRUCT SPARQL must have the following minimum data in order to work with the Artsdata iCal server:</p>
+
+<p>Events of type <code class="language-plaintext highlighter-rouge">schema:Event</code> with properties:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>schema:name
+schema:startDate
+schema:endDate
+schema:location
+schema:description
+schema:url
+</code></pre></div></div>
+
+<p>Nested location of type <code class="language-plaintext highlighter-rouge">schema:Place</code> with properties:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>schema:name
+schema:address
+</code></pre></div></div>
+
+<p>Nested address of type <code class="language-plaintext highlighter-rouge">schema:PostalAddress</code> with properties:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>schema:streetAddress
+schema:addressRegion
+schema:addressCountry
+schema:postalCode
+schema:addressLocality
+</code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<p>You can find sample CONSTRUCT SPARQL at <a href="https://kg.artsdata.ca/ical">https://kg.artsdata.ca/ical</a></p>
+
+<h3 id="sample-server-response">Sample server response</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//sebbo.net//ical-generator//EN
+NAME:artsdata-ical
+X-WR-CALNAME:artsdata-ical
+BEGIN:VTIMEZONE
+TZID:America/Toronto
+X-LIC-LOCATION:America/Toronto
+LAST-MODIFIED:20250101T220159Z
+X-LIC-LOCATION:America/Toronto
+BEGIN:DAYLIGHT
+TZNAME:EDT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:EST
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+TIMEZONE-ID:America/Toronto
+X-WR-TIMEZONE:America/Toronto
+BEGIN:VEVENT
+UID:31dbda94d58362aefded6ff3f0c90f1372e2153fcb9cf9962f173534b19b3b34
+SEQUENCE:0
+DTSTAMP:20250509T163118
+DTSTART;TZID=America/Toronto:20250510T200000
+DTEND;TZID=America/Toronto:20250510T210000
+SUMMARY:Ivan Boivin-Flamand
+LOCATION:Espace Carole-Guérin\, 725 Bd Ducharme\, La Tuque\, QC\, G9X 3B4
+ \, CA
+DESCRIPTION:IBF Ivan Boivin Flamand Ivan Boivin Flamand est un auteur-comp
+ ositeur interprète et guitariste virtuose originaire de la Première Nati
+ on atikamekw de Manawan. Dans les dernières années\, il s’est démarqu
+ é par sa présence sur scène flamboyante aux côtés de Florent Vollant\
+ , Scott-Pien Picard\, Maten et PAKO\, ou encore Samian au Gala ADISQ 2022.
+  Son énergie contagieuse sur scène et ses solos de guitares épiques son
+ t acclamées par le public. Il est considéré comme une étoile montante 
+ et un modèle pour les jeunes des communautés autochtones. Ivan Boivin-Fl
+ amand lance maintenant son projet solo avec un premier EP Indie-Pop Rock e
+ n anglais\, à paraître en mars 2024. \n\nSpectacle de la série DÉCOUVE
+ RTE de la programmation 2024-2025 !\n \n &lt;em&gt;Mon Complexe a des étoiles d
+ ans les yeux depuis 25 ans ! #JYSERAI... et vous ?&lt;/em&gt;
+URL;VALUE=URI:https://www.ovation.ca/00001Q/fr/Event/?eventId=1L00LU
+END:VEVENT
+END:VCALENDAR
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
