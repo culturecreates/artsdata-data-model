@@ -7,19 +7,22 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema:  <http://schema.org/> .
 @prefix adr:  <http://kg.artsdata.ca/resource/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 adr:ArtsdataOrganizationTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
-  skos:prefLabel "Controlled Vocabulary for organization types" ;
+  skos:prefLabel "Artsdata Organization Types" ;
   rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language." ;
-  owl:versionInfo "3.1.0";
+  schema:version "3.1.1" ;
+  owl:versionInfo "v3 (2023-03-14) Added new organization types and updated definitions."@en ;
   vann:preferredNamespacePrefix "adr" ;
   vann:preferredNamespaceUri adr: ;
   schema:dateCreated "2022-04-01"^^xsd:date ;
-  schema:dateModified "2023-03-14"^^xsd:date ;
+  schema:dateModified "2026-01-27"^^xsd:date ;
   schema:creator  adr:K16-211 ;
   vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/organization.html> ;
   vann:example adr:PerformingArtsCompany ;
   vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-organization-types.ttl> ; 
+  dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-organization-types.ttl> ;
   skos:hasTopConcept adr:Organization . 
 
 # Copy/paste triples from 'Generate triples' tab in https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit#gid=1933025380

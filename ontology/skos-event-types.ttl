@@ -28,15 +28,15 @@ adr:ArtsdataEventTypes dcterms:hasFormat <https://raw.githubusercontent.com/cult
 	vann:usageNote <http://docs.artsdata.ca/event-types.html> ;
 	schema:creator adr:K1-5, adr:K16-211 ;
 	schema:dateCreated "2021-08-10"^^xsd:date ;
-	schema:dateModified "2026-01-05"^^xsd:date ;
-	schema:version "4.0.3" ;
+	schema:dateModified "2026-01-27"^^xsd:date ;
+	schema:version "4.0.4" ;
 	rdf:type skos:ConceptScheme ;
 	rdfs:comment "Base controlled vocabulary for Artsdata Event Types. Serves as a persistent, version-independent reference for all specific version schemes. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars."@en, "Vocabulaire contrôlé de base pour les types d'événements Artsdata. Sert de référence permanente et indépendante de la version pour tous les schémas de version spécifiques. L'objectif de ce vocabulaire contrôlé est de servir de base pour cartographier les différents types d'événements organisés par les organisations artistiques, afin que ces événements puissent être réutilisés dans les calendriers d'événements."@fr ;
 	rdfs:seeAlso <http://docs.artsdata.ca/event-types.html> ;
 	owl:priorVersion "3.4 - First revised event type definitions: event types (43), and alignment with external vocabularies."@en, "3.4 - Première définition révisée des types d’événements : types d’événements (43), et alignement avec des vocabulaires externes."@fr ;
 	owl:versionInfo "4.0 (2025-08-25) - Major revision of event type definitions: refined hierarchy (8), new event types (8), deprecated event types (16), and better alignment with external vocabularies."@en, "4.0 (2025-08-25) - Révision majeure des définitions des types d’événements : hiérarchie affinée (8), ajout de nouveaux types (8), dépréciation de types obsolètes (16), et meilleur alignement avec des vocabulaires externes."@fr ;
 	skos:hasTopConcept adr:Event ;
-	skos:prefLabel "Artsdata Event Types Controlled Vocabulary"@en, "Vocabulaire contrôlé Artsdata pour les types d'événements"@fr .
+	skos:prefLabel "Artsdata Event Types"@en, "Artsdata - types d'événements"@fr .
 
 adr:ArtsdataEventTypes-Collection-3.4 rdf:type skos:Collection ;
 	rdfs:comment "All concepts that were present in vocabulary version 3.4"@en, "Tous les concepts présents dans la version 3.4 du vocabulaire."@fr ;
