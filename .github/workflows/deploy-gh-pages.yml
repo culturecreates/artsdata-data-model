@@ -37,7 +37,12 @@ jobs:
         run: bundle install
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: |
+          if [ -n "${{ github.event.inputs.deploy_path }}" ]; then
+            bundle exec jekyll build --baseurl "/${{ github.event.inputs.deploy_path }}"
+          else
+            bundle exec jekyll build --baseurl ""
+          fi
         env:
           JEKYLL_ENV: production
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
