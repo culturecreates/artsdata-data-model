@@ -41,6 +41,7 @@ jobs:
         env:
           JEKYLL_ENV: production
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_REPO_NWO: ${{ github.repository }}
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
