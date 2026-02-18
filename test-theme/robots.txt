@@ -1,1 +1,1 @@
-Sitemap: http://docs.artsdata.ca/sitemap.xml
+Sitemap: http://docs.artsdata.ca/test-theme/sitemap.xml
