@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+    .site-nav ul li a {
+      background-image: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list {
+      display: block;
+    }
+
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Artsdata Documentation | Data model documentation for Artsdata.ca</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Artsdata Documentation" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Data model documentation for Artsdata.ca" />
+<meta property="og:description" content="Data model documentation for Artsdata.ca" />
+<link rel="canonical" href="http://docs.artsdata.ca/" />
+<meta property="og:url" content="http://docs.artsdata.ca/" />
+<meta property="og:site_name" content="Artsdata Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Artsdata Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Data model documentation for Artsdata.ca","headline":"Artsdata Documentation","name":"Artsdata Documentation","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/artsdata-logo.svg"}},"url":"http://docs.artsdata.ca/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="Artsdata Documentation"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    
+    
+      
+      
+      
+      
+        
+          
+            <div class="nav-category">Classes</div>
+            <ul class="nav-list"><li class="nav-list-item"><a href="/classes/event-attendance-mode-enumeration.html" class="nav-list-link">EventAttendanceModeEnumeration</a></li><li class="nav-list-item"><a href="/classes/event-status-type.html" class="nav-list-link">EventStatusType</a></li><li class="nav-list-item"><a href="/classes/event.html" class="nav-list-link">Event</a></li><li class="nav-list-item"><a href="/classes/live-performance-work.html" class="nav-list-link">LivePerformanceWork</a></li><li class="nav-list-item"><a href="/classes/offer.html" class="nav-list-link">Offer</a></li><li class="nav-list-item"><a href="/classes/organization.html" class="nav-list-link">Organization</a></li><li class="nav-list-item"><a href="/classes/person.html" class="nav-list-link">Person</a></li><li class="nav-list-item"><a href="/classes/place.html" class="nav-list-link">Place</a></li><li class="nav-list-item"><a href="/classes/postal-address.html" class="nav-list-link">PostalAddress</a></li><li class="nav-list-item"><a href="/classes/virtual-location.html" class="nav-list-link">VirtualLocation</a></li><li class="nav-list-item"><a href="/classes/web-page.html" class="nav-list-link">WebPage</a></li></ul>
+          
+        
+      
+    
+      
+      
+      
+      
+        
+          
+            <div class="nav-category">Architecture</div>
+            <ul class="nav-list"><li class="nav-list-item"><a href="/architecture/artsdata.html" class="nav-list-link">Artsdata.ca Website</a></li><li class="nav-list-item"><a href="/architecture/data-consumers.html" class="nav-list-link">Data Consumers</a></li><li class="nav-list-item"><a href="/architecture/data-model.html" class="nav-list-link">Artsdata Data Model & Ontology</a></li><li class="nav-list-item"><a href="/architecture/footlight.html" class="nav-list-link">Footlight Console</a></li><li class="nav-list-item"><a href="/architecture/google-sheet-to-artsdata.html" class="nav-list-link">Google Sheet-to-Artsdata Tool</a></li><li class="nav-list-item"><a href="/architecture/google-sheets.html" class="nav-list-link">Google Sheets</a></li><li class="nav-list-item"><a href="/architecture/graph-store-api.html" class="nav-list-link">Databus API</a></li><li class="nav-list-item"><a href="/architecture/ical.html" class="nav-list-link">iCal Server</a></li><li class="nav-list-item"><a href="/architecture/minting.html" class="nav-list-link">Minting API</a></li><li class="nav-list-item"><a href="/architecture/overview.html" class="nav-list-link">Data Flow Architecture</a></li><li class="nav-list-item"><a href="/architecture/query-api.html" class="nav-list-link">Query API</a></li><li class="nav-list-item"><a href="/architecture/reconciliation.html" class="nav-list-link">Reconciliation API</a></li><li class="nav-list-item"><a href="/architecture/sparql.html" class="nav-list-link">SPARQL Endpoint & Federation</a></li><li class="nav-list-item"><a href="/architecture/triple-store.html" class="nav-list-link">Artsdata Triplestore</a></li></ul>
+          
+        
+      
+    
+      
+      
+      
+      
+        
+          
+            <div class="nav-category">Templates</div>
+            <ul class="nav-list"><li class="nav-list-item"><a href="/gabarits-jsonld/README.html" class="nav-list-link">Event Structured Data Templates</a></li><li class="nav-list-item"><a href="/gabarits-jsonld/organization.html" class="nav-list-link">Organization Structured Data Templates</a></li><li class="nav-list-item"><a href="/gabarits-jsonld/person.html" class="nav-list-link">Person Structured Data Templates</a></li></ul>
+          
+        
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a><br>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Artsdata Documentation" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Artsdata Documentation</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.artsdata.ca" class="site-button"
+          
+        >
+          Artsdata.ca
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/culturecreates/artsdata-data-model" class="site-button"
+          
+        >
+          GitHub
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <!-- _includes/base.html -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=index.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+<div class="language-switcher">
+  <span class="label-current-lang">EN</span>
+  
+    <a href="/index.fr.html" class="btn-language-switch" hreflang="fr">
+      FR
+    </a>
+    <link rel="alternate" hreflang="fr" href="http://docs.artsdata.ca/index.fr.html" />
+  
+</div>
+<h2 id="artsdata-data-model-v10">
+  
+  
+    <a href="#artsdata-data-model-v10" class="anchor-heading" aria-labelledby="artsdata-data-model-v10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Artsdata Data Model v1.0
+  
+  
+</h2>
+    
+<p><a href="https://github.com/culturecreates/artsdata-data-model/blob/master/index.md">Edit page</a> | <span id="last-modified"></span></p>
+
+<p>A data model for representing performing arts events and works, as well as related places, people and organizations.</p>
+
+<p>The Artsdata data model (ontology) is a sub-set of Schema.org and other ontologies, along with core concepts and controlled vocabularies specific to Artsdata. The data model is formally represented using the language SHACL <a href="https://kg.artsdata.ca/query/show?sparql=https://raw.githubusercontent.com/artsdata-stewards/artsdata-actions/main/queries/artsdata_SHACL_validation_rules.sparql">here</a>.</p>
+
+<p>The classes and properties used in Artsdata resemble <a href="https://developers.google.com/search/docs/data-types/event">Google Event Structured Data</a>.  The main difference is that Artsdata creates links between entities within Artsdata and entities outside of Artsdata including links to Wikidata and other LOD (Linked Open Data) sources.  Artsdata also generates persistent global identifiers (IRIs also called URIs) for classes such as Events, Live Performance Works, Places, Persons and Organizations.</p>
+
+<p>Here are the main Classes used in Artsdata.</p>
+
+<p><img src="/images/data-model-image.png" alt="Image" /></p>
+
+<p>[<a href="https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/saumier/678866c150bdf24519892d68d640a904/raw/f1249bb614c7a659e683360cbbee2547c9d8f62b/artsdata_event_model">open drawing tool</a>]</p>
+<h3 id="classes">
+  
+  
+    <a href="#classes" class="anchor-heading" aria-labelledby="classes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Classes
+  
+  
+</h3>
+    
+
+<ol>
+
+  
+<li>
+    <a href="./classes/event-attendance-mode-enumeration.html">
+        EventAttendanceModeEnumeration
+    </a>
+</li>
+  
+
+  
+<li>
+    <a href="./classes/event-status-type.html">
+        EventStatusType
+    </a>
+</li>
+  
+
+  
+
+  
+<li>
+    <a href="./classes/event.html">
+        Event
+    </a>
+</li>
+  
+
+  
+
+  
+<li>
+    <a href="./classes/live-performance-work.html">
+        LivePerformanceWork
+    </a>
+</li>
+  
+
+  
+<li>
+    <a href="./classes/offer.html">
+        Offer
+    </a>
+</li>
+  
+
+  
+<li>
+    <a href="./classes/organization.html">
+        Organization
+    </a>
+</li>
+  
+
+  
+<li>
+    <a href="./classes/person.html">
+        Person
+    </a>
+</li>
+  
+
+  
+<li>
+    <a href="./classes/place.html">
+        Place
+    </a>
+</li>
+  
+
+  
+<li>
+    <a href="./classes/postal-address.html">
+        PostalAddress
+    </a>
+</li>
+  
+
+  
+<li>
+    <a href="./classes/virtual-location.html">
+        VirtualLocation
+    </a>
+</li>
+  
+
+  
+<li>
+    <a href="./classes/web-page.html">
+        WebPage
+    </a>
+</li>
+  
+
+</ol>
+<h3 id="controlled-vocabularies">
+  
+  
+    <a href="#controlled-vocabularies" class="anchor-heading" aria-labelledby="controlled-vocabularies"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Controlled vocabularies
+  
+  
+</h3>
+    
+
+<ul>
+  <li>
+    <p><a href="./event-types.html">Event types</a></p>
+  </li>
+  <li>
+    <p><a href="./organization-types.html">Organization types</a></p>
+  </li>
+  <li>
+    <p><a href="./genres.html">Genres</a></p>
+  </li>
+</ul>
+<h3 id="persistent-identifiers">
+  
+  
+    <a href="#persistent-identifiers" class="anchor-heading" aria-labelledby="persistent-identifiers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Persistent Identifiers
+  
+  
+</h3>
+    
+
+<p>In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other unique persistent identifiers, like Wikidata and ISNI, to recognize and reconcile entities of type <a href="./classes/organization.html">Organization</a>, <a href="./classes/person.html">Person</a> and <a href="./classes/place.html">Place</a>.</p>
+
+<p><a href="https://culturecreates.github.io/artsdata-data-model/identifier-recommendations">Guidelines regarding persistent identifiers for data providers</a></p>
+<h3 id="structured-data-templates">
+  
+  
+    <a href="#structured-data-templates" class="anchor-heading" aria-labelledby="structured-data-templates"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Structured Data Templates
+  
+  
+</h3>
+    
+
+<ul>
+  <li>
+    <p><a href="./gabarits-jsonld/README.html">Event templates</a></p>
+  </li>
+  <li>
+    <p><a href="https://docs.google.com/document/d/e/2PACX-1vRdOlvKHAEP-4MEUyt3Y4BhyfGn8Ki4Nu40vw_JlaCYDZ1hEHnloH-qGyBcrjXXBbjCz1InKYz3lKw2/pub">Person templates</a></p>
+  </li>
+  <li>
+    <p><a href="./gabarits-jsonld/organization">Organization templates</a></p>
+  </li>
+</ul>
+<h3 id="shacl-validation-reports">
+  
+  
+    <a href="#shacl-validation-reports" class="anchor-heading" aria-labelledby="shacl-validation-reports"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> SHACL Validation Reports
+  
+  
+</h3>
+    
+
+<p><a href="./shacl_reports.html">SHACL</a> shapes are used to validate data before importing.</p>
+<h3 id="ontologies--inferencing">
+  
+  
+    <a href="#ontologies--inferencing" class="anchor-heading" aria-labelledby="ontologies--inferencing"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ontologies &amp; Inferencing
+  
+  
+</h3>
+    
+
+<p>Artsdata.ca uses a basic set of RDFS and OWL entailments (or ruleset) to enable simple inferencing, called <strong>OWL-Horst (optimized)</strong>.</p>
+
+<p>The main ontology used in Artsdata.ca is <strong>Schema.org</strong>. Artsdata.ca imports the core Schema.org schema and the pending Schema.org schema (to include schema:EventSeries which is a pending class). Other ontologies imported or used in Artsdata include DBpedia, DCAT, DATAID, PROV, SHACL, VANN, VoID, SKOS, and Wikidata.</p>
+
+<p>Artsdata.ca has a large number of class and property mappings between Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns) using owl:equivalentClass, owl:equivalentProperty, skos:exactMatch, and skos:closeMatch. Some mappings come prebuilt from external ontologies; others are defined within Artsdata.</p>
+<h4 id="exceptions-handling-schemaorg-in-artsdata">
+  
+  
+    <a href="#exceptions-handling-schemaorg-in-artsdata" class="anchor-heading" aria-labelledby="exceptions-handling-schemaorg-in-artsdata"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exceptions handling schema.org in Artsdata
+  
+  
+</h4>
+    
+<p>Artsdata converts all schema.org <strong>https</strong> URIs to <strong>http</strong> URIs, and also makes the following transformations:</p>
+<ol>
+  <li>schema:eventStatus and schema:eventAttendanceMode are converted to URIs in Artsdata, whereas the schema.org @context defines them as Literals.</li>
+  <li>datatype schema:Date and schema:DateTime are converted to xsd:date or xsd:dateTime to enable SPARQL to handle time.</li>
+  <li>schema:LocalBusiness and it’s subClasses are replaced with schema:Place to ensure that schema:Organization and schema:Place are disjoint (meaning a Place cannot be an Organization and vice versa).</li>
+</ol>
+<h4 id="ontologies-loaded-into-artsdata">
+  
+  
+    <a href="#ontologies-loaded-into-artsdata" class="anchor-heading" aria-labelledby="ontologies-loaded-into-artsdata"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ontologies loaded into Artsdata
+  
+  
+</h4>
+    
+<ul>
+  <li><a href="https://www.w3.org/2000/01/rdf-schema">https://www.w3.org/2000/01/rdf-schema</a></li>
+  <li><a href="https://github.com/culturecreates/artsdata-data-model/tree/master/_triples">External ontologies</a></li>
+  <li><a href="https://github.com/culturecreates/artsdata-data-model/tree/master/ontology">Artsdata controlled vocabularies</a>
+    <ul>
+      <li><a href="http://kg.artsdata.ca/resource/ArtsdataEventTypes">http://kg.artsdata.ca/resource/ArtsdataEventTypes</a></li>
+      <li><a href="http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes">http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes</a></li>
+      <li><a href="http://kg.artsdata.ca/resource/ArtsdataGenres">http://kg.artsdata.ca/resource/ArtsdataGenres</a></li>
+    </ul>
+  </li>
+</ul>
+<h3 id="provenance">
+  
+  
+    <a href="#provenance" class="anchor-heading" aria-labelledby="provenance"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Provenance
+  
+  
+</h3>
+    
+
+<p>Data is great, but it is not the ultimate truth, and without traceability it can lose our trust. For example, what if two web pages have different dates for the same performing arts event. Which source is more trust worthy? How can we follow the data back to the source to decide for ourselves?</p>
+
+<p>Artsdata.ca tracks data provenance in 2 different ways:</p>
+<ol>
+  <li>Data feed metadata attached to named graphs. Each data feed source in Artsdata.ca is stored in a separate named graph. The graph’s URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the <strong>Named Graphs</strong> approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data feed was loaded, the software used to collect it and the email of the contributing organization. Each time a data feed is imported, whether by crawling a web site, using an JSON API or loading a spreadsheet, the graph’s provenance metadata is updated.</li>
+  <li>Core data annotations with RDF-star. Core data in Artsdata for all minted entities have provenance tracked using RDF-star and the Provenance Ontology (using prov:wasDerivedFrom and for:wasGeneratedBy).</li>
+</ol>
+<h3 id="data-flow-architecture">
+  
+  
+    <a href="#data-flow-architecture" class="anchor-heading" aria-labelledby="data-flow-architecture"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Data Flow Architecture
+  
+  
+</h3>
+    
+
+<p>In principle, anyone can add data to Artsdata.ca as long as certain data requirements are met.  Here is a <a href="./architecture/overview.html">diagram</a> about how data flows in and out of Artsdata.ca.</p>
+<h3 id="caching-lod">
+  
+  
+    <a href="#caching-lod" class="anchor-heading" aria-labelledby="caching-lod"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Caching LOD
+  
+  
+</h3>
+    
+
+<p>Artsdata.ca loads LOD from Wikidata and DBpedia in order to cache it for performance reasons. The triples are obtained using content negotiation (instead of data dumps) and are cached unmodified in their respective named graphs.</p>
+
+<p><strong>Note:</strong> there is one notable exception, the Wikidata property <strong>P31</strong> (instance of) is transformed to <strong>rdf:type</strong>.  This same result could have been accomplished using owl:equivalentProperty but it was not selected for performance reasons.</p>
+<h3 id="naming-conventions">
+  
+  
+    <a href="#naming-conventions" class="anchor-heading" aria-labelledby="naming-conventions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Naming Conventions
+  
+  
+</h3>
+    
+
+<p><a href="./naming_conventions.html">Conventions</a> on how to name things when in doubt.</p>
+<h3 id="support-or-contact">
+  
+  
+    <a href="#support-or-contact" class="anchor-heading" aria-labelledby="support-or-contact"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Support or Contact
+  
+  
+</h3>
+    
+
+<p><a href="mailto:artsdata-support@capacoa.ca">Contact support</a> and we’ll help you sort it out.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">© 2026 Artsdata.ca | <a href='https://creativecommons.org/publicdomain/zero/1.0/'>CC0 License</a></p>
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a><br>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

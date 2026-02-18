@@ -1,0 +1,688 @@
+{"0": {
+    "doc": "EventAttendanceModeEnumeration",
+    "title": "Enumeration members",
+    "content": ". | MixedEventAttendanceMode | OfflineEventAttendanceMode | OnlineEventAttendanceMode | . ",
+    "url": "/classes/event-attendance-mode-enumeration.html#enumeration-members",
+    
+    "relUrl": "/classes/event-attendance-mode-enumeration.html#enumeration-members"
+  },"1": {
+    "doc": "EventAttendanceModeEnumeration",
+    "title": "EventAttendanceModeEnumeration",
+    "content": " ",
+    "url": "/classes/event-attendance-mode-enumeration.html",
+    
+    "relUrl": "/classes/event-attendance-mode-enumeration.html"
+  },"2": {
+    "doc": "EventStatusType",
+    "title": "Enumeration members",
+    "content": ". | EventCancelled | EventMovedOnline | EventPostponed | EventRescheduled | EventScheduled | . ",
+    "url": "/classes/event-status-type.html#enumeration-members",
+    
+    "relUrl": "/classes/event-status-type.html#enumeration-members"
+  },"3": {
+    "doc": "EventStatusType",
+    "title": "EventStatusType",
+    "content": " ",
+    "url": "/classes/event-status-type.html",
+    
+    "relUrl": "/classes/event-status-type.html"
+  },"4": {
+    "doc": "Event (fr)",
+    "title": "Événement",
+    "content": "Dans Artsdata, un événement est défini comme « une activité organisée qui se déroule à un moment et un lieu précis ». La classe adr:Event est considérée comme une classe équivalente à schema:Event. Toute représentation unique, série de représentations ou édition d’un festival est considérée comme une entité du type Event ou EventSeries dans Artsdata. ",
+    "url": "/classes/event.fr.html#%C3%A9v%C3%A9nement",
+    
+    "relUrl": "/classes/event.fr.html#événement"
+  },"5": {
+    "doc": "Event (fr)",
+    "title": "Types d’événement",
+    "content": "Les entités du type Event peuvent être associées à des types supplémentaires à partir du Vocabulaire contrôlé Artsdata pour les types d’événements, en utilisant la propriété additionalType. Outre les concepts issus du vocabulaire contrôlé Artsdata, Artsdata accepte les sous-types d’événements Schema.org ainsi que les concepts Wikidata comme valeurs pour la propriété additionalType. ",
+    "url": "/classes/event.fr.html#types-d%C3%A9v%C3%A9nement",
+    
+    "relUrl": "/classes/event.fr.html#types-dévénement"
+  },"6": {
+    "doc": "Event (fr)",
+    "title": "Exigences minimales pour la création d’identifiants Artsdata pour les événements",
+    "content": "Pour qu’Artsdata puisse créer automatiquement un identifiant unique et pérenne pour un événement, l’événement doit au minimum comporter les paires attribut-valeur suivantes : . | @Type: Event (ou un sous-type d’événement); | startTime: valeur dateTime au format ISO 8601 (avec ou sans décalage de fuseau horaire); | location: objet Place avec une adresse postale complète et un lien sameAs vers un URI Wikidata ou Artsdata qui identife l’objet Place. | . En l’absence d’une URI sous location.sameAs, Artsdata pourrait être en mesure d’utiliser location.name, location.address.locality, et/ou location.address.postalCode afin de réconcilier automatiquement ou manuellement (c.à.d. « reconnaître ») les entités du type Place et de les associer à leur URI Artsdata. De même, le code postale de l’objet Place est très utile pour identifier les doublons potentiels dans les entités du type Event, ce qui constitue un processus de validation important avant l’attribution d’un identifiant pérenne à un événement. Si un objet Event ne répond pas entièrement à ces exigences, il est toujours possible d’attribuer manuellement un identifiant, à condition qu’au moins l’une des propriétés suivantes soit renseignée : . | description; | url. | . ",
+    "url": "/classes/event.fr.html#exigences-minimales-pour-la-cr%C3%A9ation-didentifiants-artsdata-pour-les-%C3%A9v%C3%A9nements",
+    
+    "relUrl": "/classes/event.fr.html#exigences-minimales-pour-la-création-didentifiants-artsdata-pour-les-événements"
+  },"7": {
+    "doc": "Event (fr)",
+    "title": "Propriétés",
+    "content": "| Propriété | Statut | Instructions | . | startDate | Requis | Saisissez la date et l’heure de début de l’événement, au format ISO 8601. Si possible, précisez le fuseau horaire en incluant le nombre d’heures de décalage avec le temps universel coordonné (UTC). Si ce n’est pas possible, alors il est préférable de ne saisir aucune valeur de fuseau horaire plutôt que de saisir une valeur factice (comme “+00:00”) ou une valeur par défaut qui ne tiendrait pas compte des changements entre l’heure normale et l’heure avancée. En l’absence d’une valeur, le fuseau horaire présumé est l’heure locale. Si l’heure de début de l’événement est inconnue ou s’il s’agit d’un événement d’une journée entière, ne saisissez pas de valeur d’heure ni de valeur de fuseau horaire. | . | location | Requis | Saisissez les informations identifiant et décrivant le lieu où l’événement se déroule. Dans le cas d’un lieu physique, la valeur devrait préférablement être l’entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située). Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l’URI Wikidata et/ou Artsdata du lieu sous la propriété sameAs. À défaut d’identifiants, une adresse postale complète – incluant le code postal et les abrévations postales de deux lettres pour la province/le territoire et le pays – peut faciliter la désambiguïsation. Pour plus d’informations, consultez ces lignes directrices | . | name | Requis | Saisissez une appellation par laquelle l’événement est susceptible d’être recherché et reconnu. Il peut s’agir de la même valeur que le nom de l’artiste principal (performer.name) et/ou le nom de l’œuvre-spectacle (workPerformed.name), selon la notoriété de chacun. Tâchez de ne pas excéder une longueur de 60 caractères (pour des fins d’affichage dans les pages de résultats et dans les calendriers). N’ajoutez pas d’autres informations (comme le lieu ou la date). Au lieu, saisissez ces autres informations à l’aide des propriétés appropriées. Voir aussi alternateName. | . | additionalType | Recommandé | Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au vocabulaire contrôlé Artsdata pour identifier le ou les types les mieux appropriés parmi tous les types d’événements des arts de la scène. En guise de valeur par défaut, nous recommandons le type adr:PerformingArtsEvent, qui désigne une « représentation ». | . | url | Recommandé | Saisissez l’URL canonique (c.-à-d. « officielle ») désignant la page web de l’événement sur le site de l’organisateur. | . | description | Recommandé | Saisissez une courte description de l’événement. Ne répétez pas des informations factuelles tels que la date et le lieu. Ajoutez-les plutôt aux propriétés correspondantes. | . | image | Recommandé | Identifiez l’image principale de la page d’événement. Il peut s’agir d’une URL ou d’un ImageObject entièrement décrit. Les propriétés recommandées pour un ImageObject imbriqué incluent : contentUrl, creator, copyrightNotice, license. Les propriétés suggerées incluent : creditText fournissant les attributions appropriées aux parties associées avec l’image (les interprètes, les concepteurs, la compagnie de production), caption et description fournissant une description « alt » de l’image. Pour plus d’informations, consultez la Politique d’Artsdata relative aux images. | . | organizer | Recommandé | Saisissez les informations identifiant et décrivant l’organisme qui est responsable de la présentation du spectacle. Il peut s’agir d’un organisme diffuseur ou alors d’une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignées sous la propriété performer). Les propriétés recommandées pour l’entité imbriquée incluent : name, url et sameAs (pointant vers un identifiant Artsdata et/ou Wikidata). | . | performer | Recommandé | Saisissez les informations identifiant et décrivant la compagnie, le groupe ou le (les) artiste(s) qui est (sont) responsable de l’exécution de la représentation. Il est possible d’ajouter plusieurs performer(s). Les propriétés recommandées pour l’entité imbriquées incluent : name, URL et sameAs (pointant vers une URI ISNI, Artsdata et/ou Wikidata). Pour plus d’informations, consultez ces lignes directrices. | . | workPerformed | Facultatif | Saisissez les informations identifiant et décrivant l’œuvre-spectacle exécutée lors de la représentation ou alors décrivant la ou des œuvres musicales, dramatiques, musicodramatiques intégrées à l’œuvre-spectacle. Les propriétés recommandées pour l’entité imbriquée incluent : name, url, genre, inLanguage et sameAs (pointant vers une URI Artsdata ou Wikidata). Si l’œuvre n’a pas d’identifiant Artsdata ou Wikidata, creator.sameAs peut être utilisé en guise d’alternative. | . | offers | Recommandé | Saisissez au moins une entité de type Offer ou AggregateOffer avec l’URL de la page où l’on peut se procurer les billets. Pour plus d’informations sur la façon de renseigner les offres, consultez le gabarit de données structurées d’événements Artsdata et la documentation de Google | . | sameAs | Facultatif | Saisissez les URI d’identifiants pérennes (par ex., Artsdata) et/ou les URL des réseaux sociaux (par ex., page d’événement Facebook) qui identifient sans ambiguïté l’événement. Saississez toujours l’URI complète de l’identifiant (plutôt que de saisir uniquement l’identifiant lui-même). Pour plus d’informations, consultez ces lignes directrices. | . | inLanguage | Facultatif | Identifiez la langue principale parlée, chantée et/ou signée lors de l’événement. Si plusieurs langues sont employées de manière significative au cours de l’événement, énumérez-les à l’intérieur de crochets. Voir aussi subtitleLanguage. | . | endDate | Facultatif | Saisissez la date et l’heure de fin de l’événement, au format ISO 8601. Assurez-vous de préciser le fuseau horaire en incluant le nombre d’heures de décalage avec le temps universel coordonné (UTC). | . | duration | Facultatif | Saisissez la durée entre la date de début et la date de fin de l’événement, au format ISO 8601. | . | eventAttendanceMode | Facultatif | Identifiez la manière dont les publics assistent à l’événement, telle qu’en ligne, hors ligne ou hybride. Pour la liste complète, consulter EventAttendanceModeEnumeration. | . | eventStatus | Facultatif | Identifiez l’état actuel de la programmation de l’événement, tel que programmé, annulé ou reprogrammé. Pour la liste complète, consulter EventStatusType. | . | alternateName | Facultatif | Saisissez une appellation complémentaire à la valeur saisie sous name et qui conviendrait pour désigner un sous-titre de l’événement. Il peut s’agir du nom de l’œuvre-spectacle, de l’artiste principal ou de la compagnie. Il peut aussi s’agir du nom de l’artiste qui assure la première partie de la représention ou encore du nom du festival dans le cadre duquel est représenté l’événement. Ne saisissez pas de variante(s) d’épellation du nom déjà saisi sous name. | . | mainEntityOfPage | Facultatif | Saisissez l’URL d’une page d’un autre site web que celui de l’organisateur qui décrit le même événement que l’URL canonique. | . | superEvent | Facultatif | Si votre événement fait partie d’un événement plus grand, tel qu’un Festival, saisissez les informations identifiant et décrivant l’événement plus grand. | . | subEvent | Facultatif | Si votre événement est de type EventSeries et comporte une série de représentations d’un même spectacle, veuillez décrire chaque représentation comme une entité imbriquée sous la propriété subEvent. Si votre événement est de type Festival et que la page web canonique décrivant l’édition du festival sert aussi de page web canonique des spectacles qui y sont présentés (c.-à-d. que l’édition du festival et les représentations sont décrite sur une même page), veuillez décrire chaque représentation de spectacle en tant qu’entité imbriquée sous la propriété subEvent. | . ",
+    "url": "/classes/event.fr.html#propri%C3%A9t%C3%A9s",
+    
+    "relUrl": "/classes/event.fr.html#propriétés"
+  },"8": {
+    "doc": "Event (fr)",
+    "title": "Event (fr)",
+    "content": " ",
+    "url": "/classes/event.fr.html",
+    
+    "relUrl": "/classes/event.fr.html"
+  },"9": {
+    "doc": "Event",
+    "title": "Event",
+    "content": "An Event in Artsdata is defined as: “an organized activity that occurs at a specific time and location”. The adr:Event is deemed an equivalent class to schema:Event. Any single performance, run of performances, or festival edition is deemed an Event or EventSeries type entity in Artsdata. ",
+    "url": "/classes/event.html",
+    
+    "relUrl": "/classes/event.html"
+  },"10": {
+    "doc": "Event",
+    "title": "Event Types",
+    "content": "Event type entities can be assigned additional types from the Artsdata controlled vocabulary for event types, using the additionalType property. In addition to concepts from the Artsdata controlled vocabulary, Artsdata accepts Schema.org Event sub-types as well as Wikidata concepts as additional types. ",
+    "url": "/classes/event.html#event-types",
+    
+    "relUrl": "/classes/event.html#event-types"
+  },"11": {
+    "doc": "Event",
+    "title": "Minimal requirements for minting Artsdata IDs for Events",
+    "content": "In order for Artsdata to automatically create a unique persistent ID for an event, the event must minimally have these attribute-value pairs: . | @Type: Event (or an Event sub-type); | startTime: dateTime value in ISO standard 8601 format (with or without a time zone offset); | location: Place object with a complete address and a sameAs link to a Wikidata or Artsdata URI identifying the Place object. | . In the absence of a location.sameAs URI, Artsdata may be able to use location.name, location.address.locality, and/or location.address.postalCode to automatically or manually reconcile (i.e. “recognize”) Place entities and match them to their Artsdata URI. Similarly, the Place’s postal code is very useful to identify potential duplicate event records, which is an important validation process taking place prior to assigning an ID to an event. If an Event object does not fully meet these requirements, it may still possible to manually assign an ID, as long as at least one of these two properties is used: . | description; | url. | . ",
+    "url": "/classes/event.html#minimal-requirements-for-minting-artsdata-ids-for-events",
+    
+    "relUrl": "/classes/event.html#minimal-requirements-for-minting-artsdata-ids-for-events"
+  },"12": {
+    "doc": "Event",
+    "title": "Properties",
+    "content": "| Property | Status | Instructions | . | startDate | Required | Enter the date and time when the event begins, in ISO 8601 date format. If possible, specify the time zone, including the number of hours offset from Coordinated Universal Time (UTC). If you are not able to enter a time zone, then it is preferable not to enter any time zone value at all, rather than entering a dummy value (such as “+00:00”) or a default value that would not take into account changes between Standard and Daylight Savings Time. If no time zone value is specified, the time is assumed to be in local time. If the event start time is unknown, or if the event is a full-day event, do not enter a time value or a time zone value. | . | location | Required | Enter where the event takes place. In the case of a physical venue, the value should be as precise as possible (for example, the performance hall inside the building instead of the building itself). For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place’s Wikidata or Artsdata URI. Otherwise, a complete PostalAddress entity – including the postal code and the two-letter postal abbreviations for the province/territory and country – can help with disambiguation. For more information, see these guidelines. | . | name | Required | Enter a title by which the event is most likely to be searched and recognized. This could be the same value as the name of the main artist (performer.name) and/or the name of the show (workPerformed.name), depending on the popularity of each. Try not to exceed a length of 60 characters (for full display in results pages and calendars). Do not add any other information (such as location or date). Instead, enter this information using the appropriate properties. See also alternateName. | . | additionalType | Recommended | Enter additional types corresponding to the particular type of event. Refer to the Artsdata controlled vocabulary to identify the most appropriate event type(s). As a default, we recommend the type adr:PerformingArtsEvent, which denotes a “performance”. | . | url | Recommended | Enter the canonical (aka “official”) URL of the event webpage on the organizer’s website. | . | description | Recommended | Enter a short description of the event. Don’t repeat other facts like date and location. Instead, add that information to the respective properties. | . | image | Recommended | Identify the main image for the event page. This can be a URL or a fully described ImageObject. Recommend properties for the nested ImageObject include: contentUrl, creator, copyrightNotice, license. Suggested properties include: creditText providing proper attributions to parties associated with the image (performers, designers, production company), caption and description providing an “alt” description of the image. For more information, see the Artsdata Image Policy. | . | organizer | Recommended | Enter information identifying and describing the organization or person who presents the event. For an organization, this can be a presenting organization or even a company presenting its own production (in which case, the same value would be entered under the performer property). Recommended properties for the nested entity include: name, url, and sameAs (with link pointing to a Wikidata or Artsdata URI). | . | performer | Recommended | Enter information identifying and describing the main company, group or artist(s) delivering the performance. Recommended properties for the nested entity include: name, url, and sameAs (with link pointing to an ISNI, Wikidata or Artsdata URI). For more information, see these guidelines. | . | workPerformed | Optional | Enter information identifying and describing the performance work performed at the event, or the musical, dramatic or music-dramatic work(s) integrated into the performance work. Recommended properties for the nested entity include: name, url, genre, sameAs (with a link pointing to a Wikidata or Artsdata URI), and inLanguage. If the work itself does not have a Wikidata or Artsdata URI, a creator nested entity may be added, stating the creator’s name and sameAs (with a link pointing to a Wikidata URI). | . | offers | Recommended | Enter at least one Offer or AggregateOffer type entity, including the URL of the event’s ticketing page. For more information about how to describe Offer type entities, consult the Artsdata event structured data template and Google’s documentation | . | sameAs | Optional | Enter the URIs of persistent identifiers (ex. Artsdata) and/or social media URLs (ex. Facebook event page) that unambiguously identify the event. Always enter identifiers in full URI format (instead of entering just the ID itself). For more information, see these guidelines. | . | inLanguage | Optional | Identify the main language spoken, sung and/or signed during the event. If more than one language is used extensively over the course of the event, list each language within square brackets. See also subtitleLanguage. | . | endDate | Optional | Enter the date and time when the event ends, in ISO 8601 date format. Be sure to specify the time zone, including the number of hours offset from Coordinated Universal Time (UTC). | . | duration | Optional | Enter the length from the startDate to the endDate of the event, in ISO 8601 date format. | . | eventAttendanceMode | Optional | Identify the manner in which audiences attend the event, such as online, offline, or mixed. For the complete list, see EventAttendanceModeEnumeration. | . | eventStatus | Optional | Identify the current programming status of the event, such as scheduled, cancelled or rescheduled. For the complete list, see EventStatusType. | . | alternateName | Optional | Enter a complementary name to the value entered under name, which could designate a subtitle for the event. This could be the name of the show, the main artist or the company. It could also be the name of the opening act, or the name of the festival where the event takes place. Do not enter any variant(s) of the name already entered under name. | . | mainEntityOfPage | Optional | Enter the URL of a page on another website other than organizer’s that describes the same event as the canonical URL. | . | superEvent | Optional | If your event is part of a larger event, such as a Festival, enter information identifying and describing the larger event. | . | subEvent | Optional | If your event is an EventSeries and consists of a series of performances of the same performance work, please describe each performance as a nested entity under the subEvent property. If your event is a Festival and a single web page describes both the festival edition and individual performances presented at the festival, please describe each performance as a nested entity under the subEvent property. | . ",
+    "url": "/classes/event.html#properties",
+    
+    "relUrl": "/classes/event.html#properties"
+  },"13": {
+    "doc": "LivePerformanceWork (fr)",
+    "title": "Œuvre scénique",
+    "content": "Dans Artsdata, une œuvre scénique (aussi appelée « spectacle ») est définie comme une « œuvre composée d’un ensemble d’éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public ». La classe ado:LivePerformanceWork est considérée comme une sous-classe de lrmoo:F1_Work et une classe équivalente à milopa:PERFORMANCE_WORK et à datascene:Spectacle. ",
+    "url": "/classes/live-performance-work.fr.html#%C5%93uvre-sc%C3%A9nique",
+    
+    "relUrl": "/classes/live-performance-work.fr.html#œuvre-scénique"
+  },"14": {
+    "doc": "LivePerformanceWork (fr)",
+    "title": "Propriétés",
+    "content": "Le profil d’application de la classe ado:LivePerformanceWork est en cours de dévéloppement et sera publié sous peu. Il importera des propriétés de Schema.org, LRMoo et Wikidata. Il sera par ailleurs mis en correspondance avec d’autres ontologies RDF. ",
+    "url": "/classes/live-performance-work.fr.html#propri%C3%A9t%C3%A9s",
+    
+    "relUrl": "/classes/live-performance-work.fr.html#propriétés"
+  },"15": {
+    "doc": "LivePerformanceWork (fr)",
+    "title": "Exemple de données structurées",
+    "content": "Voici un exemple de données structurées d’une entité de type Event, avec une entité imbriquée ado:LivePerformanceWork sous la propriété workPerformed. Cet exemple est basé sur une représentation de l’œuvre scénique Orpheus | S'abreuver des volcans par Alan Lake Factori(e), qui est bien décrite sur le site web de la compagnie et dans le répertoire Scène Pro. { \"@context\": \"https://schema.org\", \"id\": \"http://kg.artsdata.ca/resource/K23-2815\", \"@type\": \"Event\", \"additionalType\": \"http://kg.artsdata.ca/resource/PerformingArtsEvent\", \"sameAs\": \"http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie\", \"location\": { \"id\": \"http://kg.artsdata.ca/resource/K11-22\", \"type\": \"Place\", \"sameAs\": \"http://www.wikidata.org/entity/Q42986539\", \"name\": \"Place des Arts - Cinquième Salle\" }, \"startDate\": \"2025-04-01T20:00:00-04:00\", \"endDate\": \"2025-04-01T22:00:00-04:00\", \"name\": \"Alan Lake Factori(e) - S’abreuver des volcans\", \"url\": \"https://www.dansedanse.ca/fr/spectacles/alan-lake-factorie-sabreuver-des-volcans\", \"workPerformed\": { \"@type\": \"CreativeWork\", \"additionalType\": \"http://kg.artsdata.ca/resource/LivePerformanceWork\", \"name\": \"Orpheus | S'abreuver des volcans\", \"url\": \"https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/\", \"mainEntityOfPage\": \"https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276\", \"genre\": [ \"http://www.wikidata.org/entity/Q11639\", \"http://vocab.getty.edu/page/aat/300054144\" ], \"about\": { \"@type\": \"Person\", \"name\": \"Orpheus\", \"sameAs\": \"http://www.wikidata.org/entity/Q174353\" }, \"creator\": { \"@type\": \"Person\", \"name\": \"Alan Lake\", \"sameAs\": \"http://www.wikidata.org/entity/Q64925368\" }, \"producer\": { \"@type\": \"Organization\", \"name\": \"Alan Lake Factori(e)\", \"url\": \"https://alanlakefactorie.org/\" }, \"image\": \"https://images.scenepro.ca/uploads%2Fshowmain/692957167540869-image.png\", \"inlanguage\": \"fr\", \"audience\": { \"@type\": \"Audience\", \"name\": \"Tous publics\", \"disambiguatingDescription\": \"Term from the Scène Pro audience vocabulary designating 'General audiences'\" } }, \"performer\": { \"@type\": \"Organization\", \"name\": \"Alan Lake Factori(e)\", \"url\": \"https://alanlakefactorie.org/\" }, } . Pour en savoir plus à propos du développement de la classe ado:LivePerformanceWork, veuillez consulter cette discussion GitHub. ",
+    "url": "/classes/live-performance-work.fr.html#exemple-de-donn%C3%A9es-structur%C3%A9es",
+    
+    "relUrl": "/classes/live-performance-work.fr.html#exemple-de-données-structurées"
+  },"16": {
+    "doc": "LivePerformanceWork (fr)",
+    "title": "LivePerformanceWork (fr)",
+    "content": " ",
+    "url": "/classes/live-performance-work.fr.html",
+    
+    "relUrl": "/classes/live-performance-work.fr.html"
+  },"17": {
+    "doc": "LivePerformanceWork",
+    "title": "Live Performance Work",
+    "content": "A live performance work in Artsdata is defined as a “work containing an ensemble of creative elements, design elements (intangible and tangible), and plans intended to be performed in front of an audience”. ado:LivePerformanceWork is a subclass of lrmoo:F1_Work and an equivalent class to milopa:PERFORMANCE_WORK and datascene:Show. ",
+    "url": "/classes/live-performance-work.html#live-performance-work",
+    
+    "relUrl": "/classes/live-performance-work.html#live-performance-work"
+  },"18": {
+    "doc": "LivePerformanceWork",
+    "title": "Properties",
+    "content": "The application profile for ado:LivePerformanceWork is currently in development and will be published soon. It will import properties from Schema.org, LRMoo and Wikidata, and will be mapped to other RDF ontologies. ",
+    "url": "/classes/live-performance-work.html#properties",
+    
+    "relUrl": "/classes/live-performance-work.html#properties"
+  },"19": {
+    "doc": "LivePerformanceWork",
+    "title": "Sample Structured Data",
+    "content": "Here is sample @type Event structured data, with a nested ado:LivePerformanceWork entity under the property workPerformed. This example is based on a performance of the work Orpheus | S'abreuver des volcans by Alan Lake Factori(e), which is well described on the company’s website and in the Scène Pro directory. { \"@context\": \"https://schema.org\", \"id\": \"http://kg.artsdata.ca/resource/K23-2815\", \"@type\": \"Event\", \"additionalType\": \"http://kg.artsdata.ca/resource/PerformingArtsEvent\", \"sameAs\": \"http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie\", \"location\": { \"id\": \"http://kg.artsdata.ca/resource/K11-22\", \"type\": \"Place\", \"sameAs\": \"http://www.wikidata.org/entity/Q42986539\", \"name\": \"Place des Arts - Cinquième Salle\" }, \"startDate\": \"2025-04-01T20:00:00-04:00\", \"endDate\": \"2025-04-01T22:00:00-04:00\", \"name\": \"Alan Lake Factori(e) - S’abreuver des volcans\", \"url\": \"https://www.dansedanse.ca/fr/spectacles/alan-lake-factorie-sabreuver-des-volcans\", \"workPerformed\": { \"@type\": \"CreativeWork\", \"additionalType\": \"http://kg.artsdata.ca/resource/LivePerformanceWork\", \"name\": \"Orpheus | S'abreuver des volcans\", \"url\": \"https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/\", \"mainEntityOfPage\": \"https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276\", \"genre\": [ \"http://www.wikidata.org/entity/Q11639\", \"http://vocab.getty.edu/page/aat/300054144\" ], \"about\": { \"@type\": \"Person\", \"name\": \"Orpheus\", \"sameAs\": \"http://www.wikidata.org/entity/Q174353\" }, \"creator\": { \"@type\": \"Person\", \"name\": \"Alan Lake\", \"sameAs\": \"http://www.wikidata.org/entity/Q64925368\" }, \"producer\": { \"@type\": \"Organization\", \"name\": \"Alan Lake Factori(e)\", \"url\": \"https://alanlakefactorie.org/\" }, \"image\": \"https://images.scenepro.ca/uploads%2Fshowmain/692957167540869-image.png\", \"inlanguage\": \"fr\", \"audience\": { \"@type\": \"Audience\", \"name\": \"Tous publics\", \"disambiguatingDescription\": \"Term from the Scène Pro audience vocabulary designating 'General audiences'\" } }, \"performer\": { \"@type\": \"Organization\", \"name\": \"Alan Lake Factori(e)\", \"url\": \"https://alanlakefactorie.org/\" } } . For more information about the development of the ado:LivePerformanceWork class, please consult this GitHub discussion. ",
+    "url": "/classes/live-performance-work.html#sample-structured-data",
+    
+    "relUrl": "/classes/live-performance-work.html#sample-structured-data"
+  },"20": {
+    "doc": "LivePerformanceWork",
+    "title": "LivePerformanceWork",
+    "content": " ",
+    "url": "/classes/live-performance-work.html",
+    
+    "relUrl": "/classes/live-performance-work.html"
+  },"21": {
+    "doc": "Offer",
+    "title": "Offer",
+    "content": " ",
+    "url": "/classes/offer.html",
+    
+    "relUrl": "/classes/offer.html"
+  },"22": {
+    "doc": "Organization",
+    "title": "Organization Type",
+    "content": "Artsdata Organization Types is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language. In this vocabulary, the parent concept adr:Organization is defined as “A structured group of people, united by a common purpose - this includes both groups that are formally structured as a legal body (e.g., a not-for-profit corporation) as well as those that are informally structured, but otherwise act together.” . The controlled vocabulary is implemented in SKOS and mapped to Wikidata classes using intermediary SKOS Concepts with skos:closeMatch. To use the Artsdata Organization Types please use the schema:additionalType property on a schema:Organization class. You can download the complete controlled vocabulary with this download link. WIP - here is the Google spreadsheet . ",
+    "url": "/classes/organization.html#organization-type",
+    
+    "relUrl": "/classes/organization.html#organization-type"
+  },"23": {
+    "doc": "Organization",
+    "title": "Adding organizations to Artsdata.ca",
+    "content": "Structured data template . | Arts Organization Structured Data Template | . Required by the Artsdata SHACL validator . | name - Indicate language @en, @fr | url - Official URL of the organization | address - Use PostalAddress | . Recommended . | additionalType - Please use the Artsdata Organization Type controlled vocabulary | sameAs - Please use an Artsdata ID obtained from the Artsdata Reconciliation Service API, and optionally other social media profiles and external global IDs like Wikidata and ISNI. | alternateName - Name typically found on websites. Indicate language @en, @fr . | areaServed (pending) | contactPoint (pending) | subOrganization (pending) | parentOrganization (pending) | legalName (pending) - indicate language @en, @fr | identifier - Established identifiers like the Canadian Business Number. For example: ({ “@type”: “PropertyValue”, “propertyID”: “BN”, “value”: “801228875”}) | naics | department (pending) | . Mapping to Wikidata . Social media URLs in schema:sameAs and identifiers are automatically mapped to Wikidata properties. | Facebook ID (wdt:P2013) | Twitter username (wdt:P2002) | Instagram username (wdt:P2003) | Canadian business number (wdt:P8860) | Numéro d’entreprise du Québec (wdt:P10503) | . ",
+    "url": "/classes/organization.html#adding-organizations-to-artsdataca",
+    
+    "relUrl": "/classes/organization.html#adding-organizations-to-artsdataca"
+  },"24": {
+    "doc": "Organization",
+    "title": "Organization",
+    "content": " ",
+    "url": "/classes/organization.html",
+    
+    "relUrl": "/classes/organization.html"
+  },"25": {
+    "doc": "Person",
+    "title": "Adding people",
+    "content": "Here is a preliminary document (French only) on a template to add People. Another way is to add a performing arts person in Wikidata and fill in the following required fields. Please add as much data as possible to help cases that require disambiguation. We recommend linking social media profiles, and external global IDs like ISNI, but these are not mandatory. | Given name | Family name | Occupation . | actor | stage director | musician | . | Instance of human | Gender . | male | female | intersex | transgender female | transgender male | non-binary | . | Date of birth | . Structured data templates . This evolving document contains our latest structured data templates for artists. Aside from the standard JSON-LD format, there are also three different templates in Microdata format. Le document est disponible également en français. ShEx Validator . Artsdata uses ShEx to validate data for import. If the data passes the ShEx validation, the person will automatically be added to Artsdata.ca in a couple of days. Test using this Online Validator . ",
+    "url": "/classes/person.html#adding-people",
+    
+    "relUrl": "/classes/person.html#adding-people"
+  },"26": {
+    "doc": "Person",
+    "title": "Person",
+    "content": " ",
+    "url": "/classes/person.html",
+    
+    "relUrl": "/classes/person.html"
+  },"27": {
+    "doc": "Place",
+    "title": "Types of Places",
+    "content": "The following types of places have been designed by the LDFI project led by CAPACOA. https://m.wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues/Typology . Artsdata highly recommends using the Wikidata type URI as schema:additionalType. Artsdata also takes advantage of the schema:placeContainedIn to create links between rooms/halls and buildings. Also between buildings and encompassing places such as city. This automatically situated event venues in a city, region, province and country. Linking increases the ability for reconciling places when only a name and postal address is available. ",
+    "url": "/classes/place.html#types-of-places",
+    
+    "relUrl": "/classes/place.html#types-of-places"
+  },"28": {
+    "doc": "Place",
+    "title": "Proposed additions",
+    "content": " ",
+    "url": "/classes/place.html#proposed-additions",
+    
+    "relUrl": "/classes/place.html#proposed-additions"
+  },"29": {
+    "doc": "Place",
+    "title": "maximumAttendeeCapacity",
+    "content": "This is a recommended property. Systems like scenepro.ca and Wikidata can feed this information to Artsdata. When multiple plans are available, only the maximum value should be selected. ",
+    "url": "/classes/place.html#maximumattendeecapacity",
+    
+    "relUrl": "/classes/place.html#maximumattendeecapacity"
+  },"30": {
+    "doc": "Place",
+    "title": "geo property",
+    "content": "https://schema.org/geo - The geo coordinates of the place. This property is favoured over adding explicit longitude and latuitude because the property geo not only can include longitude and latitude in class GeoCoordinates but it can also be defined by the class GeoShape which gives flexibility to define parks and areas that do not have a specific starting address. This property can satisfy the SHACL validation for Places, removing the absolute requirement of a Place to have a PostalAddress. Related discussion: https://github.com/culturecreates/artsdata-data-model/discussions/126 . ",
+    "url": "/classes/place.html#geo-property",
+    
+    "relUrl": "/classes/place.html#geo-property"
+  },"31": {
+    "doc": "Place",
+    "title": "Place",
+    "content": " ",
+    "url": "/classes/place.html",
+    
+    "relUrl": "/classes/place.html"
+  },"32": {
+    "doc": "PostalAddress",
+    "title": "PostalAddress",
+    "content": " ",
+    "url": "/classes/postal-address.html",
+    
+    "relUrl": "/classes/postal-address.html"
+  },"33": {
+    "doc": "VirtualLocation",
+    "title": "VirtualLocation",
+    "content": " ",
+    "url": "/classes/virtual-location.html",
+    
+    "relUrl": "/classes/virtual-location.html"
+  },"34": {
+    "doc": "WebPage",
+    "title": "WebPage",
+    "content": " ",
+    "url": "/classes/web-page.html",
+    
+    "relUrl": "/classes/web-page.html"
+  },"35": {
+    "doc": "Artsdata.ca Website",
+    "title": "Artsdata.ca Website",
+    "content": "Here is the website of Artsdata.ca. The website provides a YASGUI user interface for writing SPARQL, and general info about Artsdata. This website is also a Lightweight Linked Data Server and Proxy that performs dereferencing for resources stored in the knowledge graph. ",
+    "url": "/architecture/artsdata.html",
+    
+    "relUrl": "/architecture/artsdata.html"
+  },"36": {
+    "doc": "Data Consumers",
+    "title": "Data Consumers",
+    "content": "Data Consumers use the data in Artsdata.ca to create listing sites, enrich data in their CMS, or build recommendation engines and intelligent assistants. Google is an indirect data consumer of the Event JSON-LD published on individual web sites with the Footlight code snippet. Artsdata.ca maps to Schema.org vocabularies for this reason. City of Laval . | The city of Laval in Quebec was the first data client with their own cultural calendar aggregating events from two principle websites: co-motion.ca and laval.ca. | The website called Signé Laval is a cultural calendar that uses Footlight CMS. | . Other data consumers . | Here’s the growing list of Artsdata Data Consumers | . ",
+    "url": "/architecture/data-consumers.html",
+    
+    "relUrl": "/architecture/data-consumers.html"
+  },"37": {
+    "doc": "Artsdata Data Model & Ontology",
+    "title": "Artsdata Data Model & Ontology",
+    "content": "Here is the website that documents the Artsdata.ca Data Model. The data model is evolving to include more information about productions and works, and will be aligned to the well established conceptual models of FRBR and CIDOC-CRM models with classes from FRBRoo and Schema.org, and mappings to the Wikidata ontology. Related publications: . | Lier l’avenir numérique des arts de la scène . | Partenaire de prototypage avec CAPACOA Linked Digital Future action-research project (2019-2020) - https://linkeddigitalfuture.ca . | . ",
+    "url": "/architecture/data-model.html",
+    
+    "relUrl": "/architecture/data-model.html"
+  },"38": {
+    "doc": "Footlight Console",
+    "title": "Footlight Console",
+    "content": "Footlight is a tool &amp; service developed by Culture Creates to convert web pages with events into structured and linked data. Footlight started in 2018 and is in closed beta with 25 arts organizations in Canada. The goal of Footlight is to have a “one hour” learning curve. For this reason, Culture Creates built the Footlight Console, an easy to use UI for arts organizations to review their event data. Culture Creates accompanies arts organizations by configuring the back end (Condenser - very technical and scary) so that all the heavy lifting is done and the arts organization only has to review the results using the Footlight Console (friendly). | Publication “How art institutions can manage their metadata”, Gregory Saumier-Finch (June, 2019) | . Workflow . An arts organization starts by creating a user account on Footlight. Once accepted into the closed beta program, Footlight crawls the web site for events (technical video of initial setup of crawlers by a technical person at Culture Creates) and presents a dashboard of automatically structured events. Footlight uses Artsdata.ca to detect and look up named entities such as Artist, Organization, and Venue. The manager reviews and adjusts the event data and links to named entities using the Footlight console. Footlight re-crawls the web site every 24 hrs. Any changes are shown in the Footlight console. Most changes (like an updated description) are published immediately, however breaking changes (like a missing date) will prevent the event from publication and request a new review by the manager at the Arts Organization. New properties are added “as needed” depending on the evolution of Schema.org and players like Google (technical video of adding additional property to Footlight). New properties need to be reviewed by the arts organization manager before they are published. Output . Footlight publishes linked open data in 2 places: . 1. Event JSON-LD on Web Site . Footlight provides a generic Javascript “code snippet” that can be placed on the web site of the arts organisation (doc). This Javascript dynamically includes the JSON-LD generated by Footlight, into each individual event web page. JSON-LD 1.1 Framing is used to convert the RDF triples into a format recommended by Google. Once published on the web site, search engines like Google are immediately able to use this data to create rich snippets and add events to the Google Knowledge Graph. The Google Search Console generates reports on which pages have Event data and their status inside Google. 2. Artsdata.ca . Footlight publishes RDF to Artsdata.ca for each event that is reviewed in the Footlight Console. Note: EventSeries and Events are linked using schema:subEvent property. ",
+    "url": "/architecture/footlight.html",
+    
+    "relUrl": "/architecture/footlight.html"
+  },"39": {
+    "doc": "L'outil Google Sheet-vers-Artsdata",
+    "title": "Pour commencer",
+    "content": ". | [Faites une copie du chiffrier]((https://docs.google.com/spreadsheets/d/1szaf-gjoKSO2IhFw3y9cPwSUCfpHV7KhrHXo7MFx6mA/edit?usp=sharing). Ignorez l’avertissement d’Apps Script file – ce script doit être copié à votre version du chiffrier pour qu’il puisse convertir vos informations en données structurées. | Saisissez vos coordonnées dans l’onglet « Remplir en premier ». | Vous utilisez déjà un chiffrier interne pour vos données de spectacles? Rendez-vous à l’onglet « Importation » pour apprendre comment mapper vos données dans l’outil. | Autrement, regardez la vidéo d’aide liée sur « Remplir en premier » pour obtenir des instructions sur la saisie manuelle des informations concernant les lieux et les organismes liés à vos événements. Puis, faites de même dans l’onglet « Données de l'événement » pour la reste de vos informations d’événement. | . ",
+    "url": "/architecture/google-sheet-to-artsdata.fr.html#pour-commencer",
+    
+    "relUrl": "/architecture/google-sheet-to-artsdata.fr.html#pour-commencer"
+  },"40": {
+    "doc": "L'outil Google Sheet-vers-Artsdata",
+    "title": "Étapes suivantes",
+    "content": "Une fois que vos données sont saisies, vous pouvez nous envoyer votre chiffrier complété par courriel. Nous le téléverserons dans le graphe de connaissances Artsdata, où il sera publié sous licence CC0. Cela permet à vos données d’être réutilisées dans des calendriers culturels et indexées par les moteurs de recherche. Si vous souhaitez ajouter des données structurées d’événement à votre propre site web, vous pouvez copier le code à côté de chaque nom d’événement dans l’onglet « Code à intégrer ». Puis, vous pouvez coller les codes directement sur vos pages d’événements. La procédure peut varier selon votre système de gestion de contenu (CMS), mais elle est généralement simple. Cette étape améliore la visibilité de vos événements et signale aux moteurs de recherche que votre site est la source officielle. Pour en savoir plus sur l’ajout des données structurées à vos pages d’événements, naviguez à la page Données structurées et découvrabilité des événements sur le site web d’Artsdata. ",
+    "url": "/architecture/google-sheet-to-artsdata.fr.html#%C3%A9tapes-suivantes",
+    
+    "relUrl": "/architecture/google-sheet-to-artsdata.fr.html#étapes-suivantes"
+  },"41": {
+    "doc": "L'outil Google Sheet-vers-Artsdata",
+    "title": "Besoin d’aide?",
+    "content": "Nous serions heureux de vous accompagner dans ce processus. N’hésitez pas à nous contacter à l’adresse [artsdata@capacoa.ca](mailto:artsdata@capacoa.ca] si vous souhaitez en savoir plus ! . ",
+    "url": "/architecture/google-sheet-to-artsdata.fr.html#besoin-daide",
+    
+    "relUrl": "/architecture/google-sheet-to-artsdata.fr.html#besoin-daide"
+  },"42": {
+    "doc": "L'outil Google Sheet-vers-Artsdata",
+    "title": "L'outil Google Sheet-vers-Artsdata",
+    "content": "FR EN | Cet outil de chiffrier est destiné à aider les organismes des arts de la scène à convertir leurs informations d’événement en données structurées Schema. Ces données structurées peuvent ensuite être chargées dans le graphe de connaissances d’Artsdata et même collées sur votre propre site web. Les données structurées aident les moteurs de recherche et autres outils de recommandation à mieux comprendre vos événements, afin qu’ils puissent les partager avec des publics potentiels. ",
+    "url": "/architecture/google-sheet-to-artsdata.fr.html",
+    
+    "relUrl": "/architecture/google-sheet-to-artsdata.fr.html"
+  },"43": {
+    "doc": "Google Sheet-to-Artsdata Tool",
+    "title": "How to Get Started",
+    "content": ". | Open the tool and make your own copy. Ignore the Apps File Script warning – this script needs to be copied to your version of the spreadsheet so that your event information can be converted into structured data. | Enter your contact information in the “Fill This First” tab. | Already using an in-house spreadsheet for your event and performance data? Go to the “Import” tab to learn how to map your data into the tool. | Otherwise, watch the linked help video on “Fill This First” for guidance on manually adding venue and organization information related to your events. Then, do the same on the “Event Data” tab for the rest of your event information. | . ",
+    "url": "/architecture/google-sheet-to-artsdata.html#how-to-get-started",
+    
+    "relUrl": "/architecture/google-sheet-to-artsdata.html#how-to-get-started"
+  },"44": {
+    "doc": "Google Sheet-to-Artsdata Tool",
+    "title": "Next Steps",
+    "content": "Once you’ve entered your data, you can email us your completed spreadsheet. We will upload it to the Artsdata Knowledge Graph, where it will be published under a CC0 license. This allows your data to be reused in cultural calendars and indexed by search engines. If you want to add event structured data to your own website, you can copy the code next to each event name in the “Code embed” tab. Then, you can paste the codes directly onto your event pages. This process will vary depending on your website’s CMS, but should be easy. Doing so will improve your event’s visibility and signal to search engines that your site is the official authority. For more information about adding structured data to your event pages, visit the Structured Data and Event Discoverability page on the Artsdata website. ",
+    "url": "/architecture/google-sheet-to-artsdata.html#next-steps",
+    
+    "relUrl": "/architecture/google-sheet-to-artsdata.html#next-steps"
+  },"45": {
+    "doc": "Google Sheet-to-Artsdata Tool",
+    "title": "Need help?",
+    "content": "We would be happy to walk you through the process. Please reach out to artsdata@capacoa.ca if you’d like to learn more! . ",
+    "url": "/architecture/google-sheet-to-artsdata.html#need-help",
+    
+    "relUrl": "/architecture/google-sheet-to-artsdata.html#need-help"
+  },"46": {
+    "doc": "Google Sheet-to-Artsdata Tool",
+    "title": "Google Sheet-to-Artsdata Tool",
+    "content": "EN FR | This spreadsheet tool is designed to help performing arts organizations convert their event information into Schema structured data. This structured data can then be loaded to the Artsdata knowledge graph and even pasted on your own website. Structured data helps search engines and other recommendation tools to better understand your events, so that they can share them with potential audiences. Try it out . ",
+    "url": "/architecture/google-sheet-to-artsdata.html",
+    
+    "relUrl": "/architecture/google-sheet-to-artsdata.html"
+  },"47": {
+    "doc": "Google Sheets",
+    "title": "Google Sheets",
+    "content": "Google spreadsheets are an easy way to get started loading data into Artsdata.ca. For example, event organizer can use the Google Sheet-to-Artsdata tool to convert their event information into Schema structured data. This structured data can then be loaded to the Artsdata knowledge graph via the Artsdata databus. Other kinds of Google Sheets can also be loaded to Artsdata, provided they meet a few conditions: . | The first row sheet must contain column headings. | The heading names must match the machine name of properties within the Artsdata data model. Property names are always written in camel case. For example, the heading for an artist’s given name should be givenName. | The cell values must match the expected data type for the property. For example, the value for the sameAs property should be a full URI. | . If you wish to upload a Google Sheet to the Artsdata knowledge graph, please send your are spreadsheet to artsdata@capacoa.ca. We will happily assess its suitability for upload, and offer guidance as needed. ",
+    "url": "/architecture/google-sheets.html",
+    
+    "relUrl": "/architecture/google-sheets.html"
+  },"48": {
+    "doc": "Databus API",
+    "title": "Artsdata Databus Service",
+    "content": "The Artsdata Databus is primarily used to store metadata on RDF files hosted by 3rd parties so they can be automatically loaded into the Artsdata.ca triple store. See documentation on the Artsdata Databus API . The Artsdata Databus is a directory of versioned artifacts sometimes called datasets. Dataset metadata can be registered on the Databus as long as the dataset remains available for download via a download URL. The Databus only stores metadata about the dataset, and not the datset itself. The metadata includes the url to download the data, the format of the data (JSON, CSV, RDF), the name of the artifact, version, group, the user account registering the data, the dataset license, and depending on the data format it can also store the number of triples, number of classes, number of SHACL violations and other provenance data such as related agents used to create the dataset. Note that registering a dataset on the Databus does not actually store the data in Artsdata. The Databus informs Artsdata when new versions of datasets are available. ONLY RDF formats can be loaded into the Artsdata Knowledge graph. Most datasets registered on the Databus are loaded into Artsdata within a few mintues. There are standard generic transformations that are done during the import to fix common problems. If the Artifact is registerd with a SHACL file, then a SHACL report is added to the Artsdata graph. The imported graph can be used for reconciliation. Reconciliation consists of adding sameAs links, minting new Artsdata URIs, and updating the core Artsdata entities based on graph ranking. Rules when using the Databus service: . | You must be a member of an Artsdata Databus team. If you wish to upload a dataset please contact the stewards of Artsdata. | Every Dataset is organized by account/group/artifact/version and uses the DataID ontology | When a dataset (artifact-version) is loaded into Artsdata, it replaces any existing artifact. | URIs with domain kg.artsdata.ca are not allowed as a triple subject. | Ontologies are not allowed to be uploaded. If you wish to upload an ontology please contact the stewards of Artsdata. | . The relationships among the group, artifact, version, and file are depicted in the following diagram, courtesy of Dbpedia. For more details visit https://dbpedia.gitbook.io/databus/model/how-to . ",
+    "url": "/architecture/graph-store-api.html#artsdata-databus-service",
+    
+    "relUrl": "/architecture/graph-store-api.html#artsdata-databus-service"
+  },"49": {
+    "doc": "Databus API",
+    "title": "Artsdata Databus SHACL validation reports",
+    "content": "A SHACL validation service is available to test datasets prior to upload to the Artsdata Databus. This RESTful API service receives parameters for the SHACL file to apply and the data graph to test. Contact Culture Creates for access to this service. ",
+    "url": "/architecture/graph-store-api.html#artsdata-databus-shacl-validation-reports",
+    
+    "relUrl": "/architecture/graph-store-api.html#artsdata-databus-shacl-validation-reports"
+  },"50": {
+    "doc": "Databus API",
+    "title": "Credentials",
+    "content": "Uploading data to the Databus API requires secure authentication. Artsdata can use either Github or WebID for authentication. Alternatively, an X-API-KEY may be supplied in the header. Contact stewards of Artsdata to determine the necessary credentials for your organization. ",
+    "url": "/architecture/graph-store-api.html#credentials",
+    
+    "relUrl": "/architecture/graph-store-api.html#credentials"
+  },"51": {
+    "doc": "Databus API",
+    "title": "Databus API",
+    "content": "An API that acts as a gateway between the outside world and the Artsdata Triplestore. ",
+    "url": "/architecture/graph-store-api.html",
+    
+    "relUrl": "/architecture/graph-store-api.html"
+  },"52": {
+    "doc": "iCal Server",
+    "title": "How to create an iCal Feed",
+    "content": "To create a new iCal Feed, add a CONSTRUCT SPARQL to the artsdata-stewards iCal Github repository. Your CONSTRUCT SPARQL will automatically appear in the list of iCal Feeds. To share an iCal Feed: . | Go to Artsdata.ca. | Sign-in with any Github account. | Navigate to the “iCal Feeds” using the menu (top-right). | Click the copy icon of the iCal Feed you wish to share. | . The iCal Feed URL can be used with any iCal/ICS tool of your choice. To test an iCal Feed, copy the iCal Feed URL and paste it into this free Wordpress calendar plugin: ICS Calendar.&lt;/p&gt; . ",
+    "url": "/architecture/ical.html#how-to-create-an-ical-feed",
+    
+    "relUrl": "/architecture/ical.html#how-to-create-an-ical-feed"
+  },"53": {
+    "doc": "iCal Server",
+    "title": "CONSTRUCT SPARQL requirements",
+    "content": "The CONSTRUCT SPARQL must have the following minimum data in order to work with the Artsdata iCal server: . Events of type schema:Event with properties: . schema:name schema:startDate schema:endDate schema:location schema:description schema:url . Nested location of type schema:Place with properties: . schema:name schema:address . Nested address of type schema:PostalAddress with properties: . schema:streetAddress schema:addressRegion schema:addressCountry schema:postalCode schema:addressLocality . ",
+    "url": "/architecture/ical.html#construct-sparql-requirements",
+    
+    "relUrl": "/architecture/ical.html#construct-sparql-requirements"
+  },"54": {
+    "doc": "iCal Server",
+    "title": "Examples",
+    "content": "You can find sample CONSTRUCT SPARQL at https://kg.artsdata.ca/ical . Sample server response . BEGIN:VCALENDAR VERSION:2.0 PRODID:-//sebbo.net//ical-generator//EN NAME:artsdata-ical X-WR-CALNAME:artsdata-ical BEGIN:VTIMEZONE TZID:America/Toronto X-LIC-LOCATION:America/Toronto LAST-MODIFIED:20250101T220159Z X-LIC-LOCATION:America/Toronto BEGIN:DAYLIGHT TZNAME:EDT TZOFFSETFROM:-0500 TZOFFSETTO:-0400 DTSTART:19700308T020000 RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU END:DAYLIGHT BEGIN:STANDARD TZNAME:EST TZOFFSETFROM:-0400 TZOFFSETTO:-0500 DTSTART:19701101T020000 RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU END:STANDARD END:VTIMEZONE TIMEZONE-ID:America/Toronto X-WR-TIMEZONE:America/Toronto BEGIN:VEVENT UID:31dbda94d58362aefded6ff3f0c90f1372e2153fcb9cf9962f173534b19b3b34 SEQUENCE:0 DTSTAMP:20250509T163118 DTSTART;TZID=America/Toronto:20250510T200000 DTEND;TZID=America/Toronto:20250510T210000 SUMMARY:Ivan Boivin-Flamand LOCATION:Espace Carole-Guérin\\, 725 Bd Ducharme\\, La Tuque\\, QC\\, G9X 3B4 \\, CA DESCRIPTION:IBF Ivan Boivin Flamand Ivan Boivin Flamand est un auteur-comp ositeur interprète et guitariste virtuose originaire de la Première Nati on atikamekw de Manawan. Dans les dernières années\\, il s’est démarqu é par sa présence sur scène flamboyante aux côtés de Florent Vollant\\ , Scott-Pien Picard\\, Maten et PAKO\\, ou encore Samian au Gala ADISQ 2022. Son énergie contagieuse sur scène et ses solos de guitares épiques son t acclamées par le public. Il est considéré comme une étoile montante et un modèle pour les jeunes des communautés autochtones. Ivan Boivin-Fl amand lance maintenant son projet solo avec un premier EP Indie-Pop Rock e n anglais\\, à paraître en mars 2024. \\n\\nSpectacle de la série DÉCOUVE RTE de la programmation 2024-2025 !\\n \\n &lt;em&gt;Mon Complexe a des étoiles d ans les yeux depuis 25 ans ! #JYSERAI... et vous ?&lt;/em&gt; URL;VALUE=URI:https://www.ovation.ca/00001Q/fr/Event/?eventId=1L00LU END:VEVENT END:VCALENDAR . ",
+    "url": "/architecture/ical.html#examples",
+    
+    "relUrl": "/architecture/ical.html#examples"
+  },"55": {
+    "doc": "iCal Server",
+    "title": "iCal Server",
+    "content": "Artsdata’s iCal Server makes it possible to configure a custom iCal feed and to import Artsdata events into any calendar application supporting the iCal standard (ex., Google Calendar, Outlook, and many website plugins). The iCal feed is serialized following the RFC 5545 specification. The DATE-TIME value is serialized with local time zone and time zone reference. The npm package used to add the VTIMEZONE component is timezones-ical-library. Here is a table of valid TZ Identifiers. Standard links are converted to their canoncial form. For exampe: If the input data contains the standard link America/Montreal it will be automatically converted to the canonical America/Toronto for use in the VTIMEZONE component. Support for later specifications could be provided, as needed. ",
+    "url": "/architecture/ical.html",
+    
+    "relUrl": "/architecture/ical.html"
+  },"56": {
+    "doc": "Minting API",
+    "title": "Minting API",
+    "content": "The Minting API creates and assigns globally-unique persistent identifiers – Artsdata IDs – to entities. The API returns Artsdata IDs as URIs: . | URI format: http://kg.artsdata.ca/resource/$1 | Regex for the ID: ^K\\d+-\\d+$ | Sample URI: http://kg.artsdata.ca/resource/K12-438 | . The Minting API works in conjunction with the Reconciliation API: an entity should first be passed through the reconciliation API to ensure no Artsdata URI has already been minted for the entity. Minting URIs as a service is in alpha. It provides an API for developers to request new URIs for entities being added to Artsdata. ",
+    "url": "/architecture/minting.html",
+    
+    "relUrl": "/architecture/minting.html"
+  },"57": {
+    "doc": "Architecture Sommaire",
+    "title": "Architecture des flux de données",
+    "content": "L’écosystème de données ouvertes et liées d’Artsdata est composée de plusieurs parties que l’on peut regrouper en trois ensembles : . | Fournisseurs de données : | Graphe de connaissances Artsdata ; | Consommateurs de données. | . Voici un schéma illustrant cette architecture ainsi que les flux de données entre les différents ensembles. Detail des éléments de l’architecture . | Artsdata.ca Website | Data Consumers | Artsdata Data Model &amp; Ontology | Footlight Console | L'outil Google Sheet-vers-Artsdata | Google Sheet-to-Artsdata Tool | Google Sheets | Databus API | iCal Server | Minting API | Query API | Reconciliation API | SPARQL Endpoint &amp; Federation | Artsdata Triplestore | . Fournisseurs de données . Artsdata propose aux fournisseurs de données une diversité de processus et d’outils pour l’extraction-transformation-chargement (ETC) de leurs données : . | Extraction frontale par moissonnage de données structurées (c.-à-d. explorer des pages web et récupérer les données structurées au format JSON-LD ou microdonnées) ; | Extraction frontale par moissonnage de données structurées et moissonage de texte par XPath (c.-à-d. explorer des pages web et récupérer des chaînes de texte dans le corps de la page à l’aide du XML Path Language) ; | Extraction frontale combinant moissonnage de données structurées et reconnaissance naturelle du langage ; | ETC par le biais de terminaux (APIs, JSON-LD) ; | Google Sheet vers Artsdata (outil de conversion de données de chiffrier) ; | Importation depuis Wikidata (un service permettant d’importer des éléments déjà chargés dans Wikidata) ; | Console Footlight (logiciel de gestion de données événementielles pour un seul site web) ; | CMS Footlight (logiciel de gestion de données événementielles multisite) ; | API de chargement Artsdata (API graph-store) qui accepte de données RDF satisfaisant aux exigences minimales d’Artsdata et aux SHACL (ou ShEx lorsque les données proviennent de Wikidata). | . L’extraction frontale est exécutée par le robot Artsdata, un agent utilisateur qui fonctionne de la même manière que les robots d’indexation des moteurs de recherche. Certains site n’autorise pas les robots à explorer les pages web (ou en autorisent certains et bloquent les autres). Pour savoir comment autoriser le robot Artsdata, consultez cette page de documentation. Avant d’être déposées sur Artsdata, les données doivent satisfaire les exigences minimales du modèle de données d’Artsdata. Les formes SHACL sont utilisées pour valider les données avant l’importation. Consultez la page Conditions pour les fournisseurs de données pour en apprendre davantage sur le processus d’extraction, de transformation, de chargement et d’enrichissement sémantique. Le dépôt de données sur Artsdata exige un compte utilisateur Github enregistré auprès d’Artsdata. Nous encourageons les développeurs à s’enregistrer et à utiliser l’API bus de données d’Artsdata pour charger leurs données. Si vous souhaitez vous enregistrer auprès d’Artsdata ou avez besoin d’aide pour charger vos données, veuillez contacter l’équipe d’Artsdata. Toutes les données déposées sur Artsdata sont par défaut publiées sous la licence CC0. Pour en savoir plus, visitez la page Conditions pour les fournisseurs de données. Les fournisseurs de données d’Artsdata comprennent des associations, des syndicats, des billetteries, ainsi que des organismes artistiques (voir la liste). Graphe de connaissances Artsdata (kg.artsdata.ca) . Artsdata aggrège et partage des métadonnées descriptives à propos d’événements culturels (et des entités qui y sont associées) en provenance de multiples sites web et de bases de données. Les données sont publiées sous forme de données ouvertes et liées, c’est-à-dire avec des identifiants pérennes (exprimés sous forme d’URIs) qui permettent de lier des événements à des artistes, des lieux et des organismes. Le modèle de données (ontologie) d’Artsdata est représenté selon des ontologies RDF. Il est un sous-ensemble de Schema.org et s’aligne sur un grand nombre d’ontologies formelles (par exemple, LRMoo, DBpedia) et non-formelles (par exemple, Wikidata). Artsdata attribue ses propres identifiants pérennes (URIs) aux entités nommées lorsqu’elles satisfont aux exigences minimale pour l’attribution d’identifiants. Les utilisateurs enregistrés peuvent créer une URI Artsdata à partir d’une URI Wikidata. Artsdata s’appuie aussi sur des URIs externes (Wikidata, VIAF) pour désigner des entités nommées et des concepts. Le triplestore d’Artsdata, est un triplestore standard (conforme aux normes du W3C) utilisant le produit « GraphDB Free » de la compagnie OntoText. Consommateurs de données . Artsdata offre plusieurs modes d’accès pour les consommateurs de données désirant utiliser les données exposées par le biais d’Artsdata : . | Naviguer l’interface du graphe de connaissances à kg.artsdata.ca ; | Appeler l’API de réconciliation pour récupérer les identifiants pérennes ; | Déréférencer les identifiants pérennes pour récupérer les métadonnées associées au format JSON-LD ; | Appeler l’API de requête RESTfull d’Artsdata ; | S’abonner à un flux iCalendar personnalisé par l’entremise du serveur iCal ; | Effectuer une requête sur le terminal SPARQL d’Artsdata ; | Télécharger un fichier cliché (c.-à-d., un “dump”) sérialisé dans divers formats tels que JSON-LD ou N-Quads. | . Les données déposées sur Artsdata sont sous licence CC0 et peuvent être utilisées dans d’autres applications sans restriction. Les consommateurs de données Artsdata comprennent des calendriers culturels, des plateformes qui soutiennent l’industrie des arts, des organismes de service aux arts, des gouvernements et des moteurs de recherche (voir la liste). Pour un aperçu des cas d’usage, consultez nos récits utilisateur. ",
+    "url": "/architecture/overview.fr.html#architecture-des-flux-de-donn%C3%A9es",
+    
+    "relUrl": "/architecture/overview.fr.html#architecture-des-flux-de-données"
+  },"58": {
+    "doc": "Architecture Sommaire",
+    "title": "Architecture Sommaire",
+    "content": "| &lt; Back | Home | Edit page | 🙋 Check for open issues | | . FR EN | ",
+    "url": "/architecture/overview.fr.html",
+    
+    "relUrl": "/architecture/overview.fr.html"
+  },"59": {
+    "doc": "Data Flow Architecture",
+    "title": "Data Flow Architecture",
+    "content": "The Artsdata linked open data ecosystem is divided in three areas: . | Data providers; | Artsdata knowledge graph; | Data consumers. | . The following figure illustrates how data flows in and out of Artsdata.ca. Breakdown of architecture . | Artsdata.ca Website | Data Consumers | Artsdata Data Model &amp; Ontology | Footlight Console | L'outil Google Sheet-vers-Artsdata | Google Sheet-to-Artsdata Tool | Google Sheets | Databus API | iCal Server | Minting API | Query API | Reconciliation API | SPARQL Endpoint &amp; Federation | Artsdata Triplestore | . ",
+    "url": "/architecture/overview.html#data-flow-architecture",
+    
+    "relUrl": "/architecture/overview.html#data-flow-architecture"
+  },"60": {
+    "doc": "Data Flow Architecture",
+    "title": "Detailed presentation of each area",
+    "content": "Data providers . For data providers, such as arts organizations (producers, presenters, agents, venues) and artists, a range of Extract-Transform-Load (ETL) processes are available: . | Automatic website crawling . | crawling websites with event structured data (JSON-LD, RDFa or microdata) | contact an Artsdata steward to immediately add your site | . | Manual website crawling . | crawling web pages for event structured and un-structured data using custom XPath/CSS selectors to extract text from HTML) | requires technical setup | . | APIs . | loading data from JSON endpoints | requires technical setup | . | Google Sheet to Artsdata . | a tool to convert spreadsheet information into linked open data | contact Artsdata steward for Google sheet | . | Mint from Wikidata . | a service to import data previously loaded to Wikidata | available directly in Artsdata with a user account | . | Footlight Console . | software to add event strucutred data to any website | contact Culture Creates (info@culturecreates.com) | . | Footlight CMS . | event management software | contact Culture Creates (info@culturecreates.com) | . | Artsdata Databus . | send RDF (JSON-LD or any RDF format) to the Artsdata Databus endpoint | requires an Artsdata databus account | . | Github Pipeline Action . | uses Github workflows | options to send a data dump or crawl websites | requires an Artsdata databus account | documentation | . | . Website crawling is performed by the Artsdata crawler, a user agent that functions just like the search engines’ robots. Some websites may not allow or may restrict web page crawling. To find out how to allow the Artsdata crawler, consult the Artsdata-Crawler Permission documentation page. Prior to being loaded to Artsata, data must meet the minimal requirements of the Artsdata data model for the entity type. SHACL shapes are used to validate data before importing. Consult the Data Contributor Conditions page to learn more about the extraction, transformation, loading and semantic enrichment processes. All data submitted to Artsdata.ca requires a user account registered with artsdata.ca. Third-party developers are welcome and can use the Artsdata Databus API to load data. If you wish to register with Artsdata or if you need assistance to load your data, please contact the Artsdata team. All data submitted to artsdata.ca is agreed upon by the registered account to be CC0. For more information, visit the Data Contributor Conditions page. Artsdata data providers include associations, unions, industry platforms, ticketing services, and individual arts organizations (see the list). Artsdata knowledge graph (kg.artsdata.ca) . Artsdata aggregates and shares descriptive metadata related to cultural events (and related entities) from/with multiple websites and external databases. Data is published as Linked Open Data with persistent identifiers (i.e. URIs) that can be used to link events to artists, venues and arts organizations. The Artsdata data model is implemented using classic RDF ontologies. It is a sub-set of Schema.org and maps data to a multitude of other classic (i.e. LRMoo, DBpedia) and non-classic (i.e. Wikidata) ontologies. Artsdata mints its own Artsdata persistent identifiers (URIs) for named entities when they meet minimal requirements for minting. Registered users can mint an Artsdata URI from a Wikidata URI. Artsdata also uses external URIs (Wikidata, VIAF) for named entities and concepts. The Artsdata triplestore is a standard (compliant with W3C Standards) RDF triplestore using the “GraphDB Free” product by OntoText. Data consumers . Data consumers wanting to use the data can access it in a number of ways: . | Browse the knowledge graph interface at kg.artsdata.ca; | Call the Artsdata Reconciliation API to retrieve persistent identifiers; | Crawl persistent identifiers to access the associated metadata in JSON-LD format; | Call the RESTfull Artsdata Query API; | Subscribe to a custom iCalendar subscription feed via the iCal Server; | Call the Artsdata SPARQL endpoint; | Download a data dump of triples serialized in a variety of formats such as JSON-LD or N-Quads. | . The data from Artsdata.ca is CC0 and can be used in other applications without any restrictions. Artsdata data consumers include listing sites, industry platforms, arts service organizations, destination marketing organizations, government bodies and search engines (see the list). For an overview of use cases, check our user stories. ",
+    "url": "/architecture/overview.html#detailed-presentation-of-each-area",
+    
+    "relUrl": "/architecture/overview.html#detailed-presentation-of-each-area"
+  },"61": {
+    "doc": "Data Flow Architecture",
+    "title": "Data Flow Architecture",
+    "content": "| &lt; Back | Home | Edit page | 🙋 Check for open issues | | . EN FR | ",
+    "url": "/architecture/overview.html",
+    
+    "relUrl": "/architecture/overview.html"
+  },"62": {
+    "doc": "Query API",
+    "title": "Event Search API BETA",
+    "content": "The Event Search API is a dedicated endpoint for events and provides an easy way to get a list of events in json or json-ld. The “frame” parameter enables the user to select different output properties and structures. The “format” parameter selects between json and json-ld. And the “source” parameter selects the graph or calatog of graphs. Documentation WIP. Example: List of upcoming events from the placedesarts.com website in Montreal: http://api.artsdata.ca/events?format=json&amp;frame=event_bn&amp;source=http://kg.artsdata.ca/culture-creates/footlight/placedesarts-com . Source parameter . Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI. Here is a list of graphs that can be used as the source parameter. It is possible to create your own catalog of datasets as well. Events demo . Here is a demo website in Github that lists upcoming events in Quebec using the Artsdata API. ",
+    "url": "/architecture/query-api.html#event-search-api-beta",
+    
+    "relUrl": "/architecture/query-api.html#event-search-api-beta"
+  },"63": {
+    "doc": "Query API",
+    "title": "Other APIs coming soon",
+    "content": "The main goal of the Search API is to provide easy access to all data in Artsdata.ca. It offers SPARQL and traditional RESTful GETs. Responses can be in JSON or JSON-LD. A user account enables persisted configurations for ranking graphs or settings for an iCalendar feed. Documentation coming. ",
+    "url": "/architecture/query-api.html#other-apis-coming-soon",
+    
+    "relUrl": "/architecture/query-api.html#other-apis-coming-soon"
+  },"64": {
+    "doc": "Query API",
+    "title": "Query API",
+    "content": "A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies… . Examples . Any Artsdata ID: K2-197 . https://api.artsdata.ca/query?adid=K2-197&amp;format=json&amp;sparql=query_adid . Place: Cabaret La Basoche . http://api.artsdata.ca/query?adid=K5-7&amp;format=json&amp;frame=ranked_place_footlight&amp;sparql=ranked_place_footlight . Person: Étienne Coppée . http://api.artsdata.ca/query?adid=K5-21&amp;format=json&amp;frame=ranked_org_person_footlight&amp;sparql=ranked_org_person_footlight . Organization: Société de musique de chambre de Gatineau . https://api.artsdata.ca/query?adid=K5-3&amp;format=json&amp;frame=ranked_org_person_footlight&amp;sparql=ranked_org_person_footlight . ",
+    "url": "/architecture/query-api.html",
+    
+    "relUrl": "/architecture/query-api.html"
+  },"65": {
+    "doc": "Reconciliation API",
+    "title": "Manual reconciliation using the Test Bench",
+    "content": "To manually add Artsdata IDs to your structured data: . | Open the Test bench | Select a radio button for the type of entity you want to reconcile. For example ‘Place’. | Enter the name of the entity. For example ‘Salle André-Mathieu’. Or enter the official website url. | Click the ‘Reconcile’ button to search Artsdata. | Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211 | Add the URI to your structured data using ‘sameAs’. | . Adding additional properties . In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. The additional properties are required to be in the returned entities. Any entity that does not match the additional property will be exluded from the reconciliation results. For example to add a postal code when reconiling places, add the property id “schema:address/schema:postalCode” and the postal code. ",
+    "url": "/architecture/reconciliation.html#manual-reconciliation-using-the-test-bench",
+    
+    "relUrl": "/architecture/reconciliation.html#manual-reconciliation-using-the-test-bench"
+  },"66": {
+    "doc": "Reconciliation API",
+    "title": "Example of structured data with added ‘sameAs’",
+    "content": "Example for an event’s location linked to an Artdata URI. The \"sameAs\": \"http://kg.artsdata.ca/resource/K11-211\" has been added. { \"@context\": \"https://schema.org\", \"@type\": \"Event\", \"name\": { \"@language\": \"fr\", \"@value\": \"Diane Dufresne | Sur rendez-vous\" }, \"startDate\": \"2025-07-21T19:00-05:00\", \"location\": { \"@type\": \"Place\", \"name\": { \"@language\": \"fr\", \"@value\": \"Salle André-Mathieu\" }, \"address\": { \"@type\": \"PostalAddress\", \"addressLocality\": \"Laval\", \"addressCountry\": \"CA\", \"streetAddress\": \"475 Bd de l'Avenir\", \"postalCode\": \"H7N 5H9\", \"addressRegion\": \"Québec\" }, \"sameAs\": \"http://kg.artsdata.ca/resource/K11-211\" } . ",
+    "url": "/architecture/reconciliation.html#example-of-structured-data-with-added-sameas",
+    
+    "relUrl": "/architecture/reconciliation.html#example-of-structured-data-with-added-sameas"
+  },"67": {
+    "doc": "Reconciliation API",
+    "title": "Artsdata batch reconciliation tool",
+    "content": "Logged in users may use to Artsdata Batch Reconciliation Tool to quickly reconcile entire datasets. The tool can be accessed via the kg.artsdata.ca interface menu. Documentation will be published soon. ",
+    "url": "/architecture/reconciliation.html#artsdata-batch-reconciliation-tool",
+    
+    "relUrl": "/architecture/reconciliation.html#artsdata-batch-reconciliation-tool"
+  },"68": {
+    "doc": "Reconciliation API",
+    "title": "Batch reconciliation using Open Refine",
+    "content": "To batch reconcile, you may also use tools like OpenRefine and point the reconilication tool to the Artsdata reconciliation endpoint. View this screen recording. Reconciliation service endpoint: https://api.artsdata.ca/recon . ",
+    "url": "/architecture/reconciliation.html#batch-reconciliation-using-open-refine",
+    
+    "relUrl": "/architecture/reconciliation.html#batch-reconciliation-using-open-refine"
+  },"69": {
+    "doc": "Reconciliation API",
+    "title": "Manual reconciliation within the Artsdata interface",
+    "content": "The reconciliation service is also used by several features in the Artsdata interface. For example, a logged-in user may reconcile entities from a previously uploaded data source using the following methods: . | Manually mint/link a top-level or nested entity with the “Minter” feature, if the entity is assigned a persistent URI by the source (i.e. a local URI) or as part of the Extract-Transform-Load process; | Manually add a sameAs to a nested entity as part of the “Mint from blank node” suite of features, if the entity is a nested blanked node in the uploaded graph. | . These features are useful when entities come back recurrently within a data source. ",
+    "url": "/architecture/reconciliation.html#manual-reconciliation-within-the-artsdata-interface",
+    
+    "relUrl": "/architecture/reconciliation.html#manual-reconciliation-within-the-artsdata-interface"
+  },"70": {
+    "doc": "Reconciliation API",
+    "title": "Reconciliation API",
+    "content": "The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data. Supported entity types include: . | Event | Place | Person | Organization | Agent (Person or Organization/Group) | Concept (Event type, Genre, etc.) | . Give it a try using the Test bench! . This API follows the documentation provided by the W3C Entity Reconciliation Community Group. The reconciliation service endpoint is https://api.artsdata.ca/recon. ",
+    "url": "/architecture/reconciliation.html",
+    
+    "relUrl": "/architecture/reconciliation.html"
+  },"71": {
+    "doc": "SPARQL Endpoint & Federation",
+    "title": "Wikidata Interlinking",
+    "content": "Artsdata.ca has created property P7627 in Wikidata for linking entities from Wikidata to Artsdata.ca . ",
+    "url": "/architecture/sparql.html#wikidata-interlinking",
+    
+    "relUrl": "/architecture/sparql.html#wikidata-interlinking"
+  },"72": {
+    "doc": "SPARQL Endpoint & Federation",
+    "title": "SPARQL Endpoint & Federation",
+    "content": "The Artsdata.ca SPARQL endpoint is mainly used internally due to the complexity of writing SPARQLs. The default SPARQL endpoint is: https://query.artsdata.ca/sparql. This endpoint only queries the Artsdata core graph. To query across all data feeds and core graphs, you can use this other SPARQL endpoint: https://db.artsdata.ca/repositories/artsdata. For example SPARQL query see this query of Places with an Artsdata ID. ",
+    "url": "/architecture/sparql.html",
+    
+    "relUrl": "/architecture/sparql.html"
+  },"73": {
+    "doc": "Artsdata Triplestore",
+    "title": "Notable configurations",
+    "content": " ",
+    "url": "/architecture/triple-store.html#notable-configurations",
+    
+    "relUrl": "/architecture/triple-store.html#notable-configurations"
+  },"74": {
+    "doc": "Artsdata Triplestore",
+    "title": "NGINX",
+    "content": ". | Maximum data post size 10M (client_max_body_size 10M) | . ",
+    "url": "/architecture/triple-store.html#nginx",
+    
+    "relUrl": "/architecture/triple-store.html#nginx"
+  },"75": {
+    "doc": "Artsdata Triplestore",
+    "title": "GraphDB",
+    "content": ". | RAM Memory 4G -Xms4g | CORS enabled -Dgraphdb.workbench.cors.enable=true | . ",
+    "url": "/architecture/triple-store.html#graphdb",
+    
+    "relUrl": "/architecture/triple-store.html#graphdb"
+  },"76": {
+    "doc": "Artsdata Triplestore",
+    "title": "Artsdata Triplestore",
+    "content": "The Artsdata triplestore is a standard (compliant with W3C Standards) RDF triplestore using “GraphDB Free” product by OntoText. GraphDB uses RDF4J as a library, taking advantage of its APIs for storage and querying, as well as the support for SPARQL 1.1 and RDF syntaxes (e.g., RDF/XML, N3, Turtle). The Docker Image created by Culture Creates can be installed with docker pull culturecreatesorg/graphdb:latest . The triplestore is hosted on AWS with an NGINX server infront to manage SSL with a reverse-proxy. ",
+    "url": "/architecture/triple-store.html",
+    
+    "relUrl": "/architecture/triple-store.html"
+  },"77": {
+    "doc": "Gabarits de données structurées d'événement",
+    "title": "Gabarits de données structurées d’événement",
+    "content": "Gabarits de données structurées au format JSON-LD s’appuyant sur le vocabulaire Schema.org. ",
+    "url": "/gabarits-jsonld/README.fr.html#gabarits-de-donn%C3%A9es-structur%C3%A9es-d%C3%A9v%C3%A9nement",
+    
+    "relUrl": "/gabarits-jsonld/README.fr.html#gabarits-de-données-structurées-dévénement"
+  },"78": {
+    "doc": "Gabarits de données structurées d'événement",
+    "title": "Conventions",
+    "content": "Identification des valeurs à modifier dans les gabarits . Les gabarits sont rendus disponibles sous forme de fichier contenant des données au format JSON-LD. Afin de faciliter la compréhension et l’utilisation, des notes explicatives ont été incluses à propos des valeurs attendues et du format dans lequel elles devraient être saisie. Ces notes ont été placées entre de doubles tirets en français et anglais. Par exemple: . \"url\": \"--URL complète vers la page Web concernée : Full URL to the relevant webpage--\" . Une fois le gabarit utilisé et rempli avec des données, il ne devrait plus contenir de doubles tirets. Par exemple: . \"url\": \"https://placedesarts.com\" . ",
+    "url": "/gabarits-jsonld/README.fr.html#conventions",
+    
+    "relUrl": "/gabarits-jsonld/README.fr.html#conventions"
+  },"79": {
+    "doc": "Gabarits de données structurées d'événement",
+    "title": "Gabarits",
+    "content": "Le gabarit Événement est destiné à représenter les informations à propos d’événements uniques, c’est-à-dire un spectacle ayant une seule représentation. Si votre événement comporte une série de représentations d’un même spectacle, veuillez ajouter l’extension Série d’événements au gabarit Événement afin de décrire chaque représentation comme une entité imbriquée1 sous la propriété ‘subEvent’, puis changez le type de l’événement principal pour ‘EventSeries’. | Gabarit Événement : événement unique (avec une seule représentation). | Extension pour les Séries d’événements : extension du gabarit Événement pour décrire chaque représentation d’un même spectacle en tant qu’entités imbriquées. | . Dans le cas des festivals, vous pouvez utiliser un ou plusieurs des gabarits figurant dans le document suivant pour décrire l’édition du festival dans son ensemble, les jours spécifiques du festival et/ou les événements individuels au sein du festival : . | Gabarits de festival : L’édition du festival, le jour du festival et un événement individuel | . Veuillez noter que les gabarits de festival sont destinés à représenter des informations en lien avec l’édition spécifique d’un festival, par exemple Édition 2023 : Festival Quartiers Danses (équivalent à ado:Festival et wd:Q27968043). Ils ne sont pas destinés à représenter des informations sur le festival en tant qu’événement récurrent (équivalent à wd:Q132241) ou en tant qu’organisme (équivalent à wd:Q108669279 et ado:FestivalOrganization). Pour plus de détails à propos de ces différents concepts, veuillez consulter le WikiProjet Cultural events. ",
+    "url": "/gabarits-jsonld/README.fr.html#gabarits",
+    
+    "relUrl": "/gabarits-jsonld/README.fr.html#gabarits"
+  },"80": {
+    "doc": "Gabarits de données structurées d'événement",
+    "title": "Détails sur certaines propriétés clés",
+    "content": "@id . Saisissez une URI (Uniform Resource Identifier) constituant un identifiant pérenne pour cet événement à l’intérieur du domaine du site web. L’URI de l’événement doit être différente de l’URL de la page web de l’événement, puisqu’il s’agit de deux choses (ou entités) distinctes dans le contexte des données structurées Schema.org. Dans le cas d’une série de représentations d’un même spectacle, en plus de l’URI de la série, une URI distincte devrait être assignée à chaque représentation à l’aide de l’Extension pour les Séries d’événements. Assurez-vous qu’aucun sous-événement ne se voit assigner la même l’URI que l’objet de type EventSeries. Dans le cas des festivals, il est recommandé d’attribuer à chaque événement une URI unique si tous les événements sont énumérés sur la même page web. Si vous n’êtes pas en mesure d’attribuer une URI à chaque événement, incluant chaque représentation d’une série de représentations, alors il est préférable de ne pas utiliser la propriété @id. En savoir plus à propos de la propriété @id et des URI locales . additionalType . Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au vocabulaire contrôlé Artsdata pour identifier le ou les types les mieux appropriés parmi tous les types d’événements des arts de la scène. Vous pouvez ajouter autant de propriétés additionalType que nécessaire pour bien décrire l’événement. En guise de valeur par défaut, nous recommandons le type PerformingArtsEvent, qui désigne « une œuvre des arts de la scène exécutée pour un public ». name . Saississez une appellation par laquelle l’événement est susceptible d’être recherché et reconnu. Il peut s’agir de la même valeur que le nom de l’artiste principal (performer.name) et/ou le nom de l’œuvre-spectacle (workPerformed.name), selon la notoriété de chacun. Tâchez de ne pas excéder une longueur de 60 caractères (pour des fins d’affichage dans les pages de résultats et dans les calendriers). N’ajoutez pas d’autres informations (comme le lieu ou la date). Au lieu, saisissez ces autres informations à l’aide des propriétés appropriées. Dans le cas des éditions des festivals, indiquez l’année dans le titre, et dans le cas des jours des festivals, indiquez la date ou le jour numéroté (par exemple, Jour 1). startDate . Saisissez la date et l’heure de début de l’événement, au format ISO 8601. Si possible, précisez le fuseau horaire en incluant le nombre d’heures de décalage avec le temps universel coordonné (UTC). Si ce n’est pas possible, alors il est préférable de ne saisir aucune valeur de fuseau horaire plutôt que de saisir une valeur factice (comme +00:00) ou une valeur par défaut qui ne tiendrait pas compte des changements entre l’heure normale et l’heure avancée. En l’absence d’une valeur, le fuseau horaire présumé est l’heure locale. | Conseil : Le fuseau horaire est parfois hérité des paramètres généraux du site web. Si votre fuseau horaire apparaît comme +00:00 sans que vous n’ayez vous-même renseigné cette valeur, vérifiez les paramètres de votre site web. | . Si l’heure de début de l’événement est inconnue ou s’il s’agit d’un événement d’une journée entière, ne saisissez pas de valeur d’heure ni de valeur de fuseau horaire. location . Saisissez les informations identifiant et décrivant l’endroit où est présenté l’événement. L’entité imbriquée sous la propriété location peut être de @type Place (un lieu physique) ou de @type VirtualLocation (un lieu virtuel). Dans le cas des lieux physiques : . | Il est préférable de saisir les valeurs désignant l’entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située). | Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l’URI Wikidata et/ou Artsdata du lieu sous la propriété location.sameAs. | Google requiert la propriété location.address avec une entité de type PostalAddress. En effet, une adresse postale complète incluant le code postal peut faciliter la désambiguïsation. | Pour une entité de type PostalAddress, il est préférable d’utiliser les abréviations postales de deux lettres pour les valeurs addressRegion et addressCountry. | . Dans le cas des festivals, si le jour du festival et/ou l’édition du festival se déroule dans plusieurs lieux au sein d’une localité (c.-à-d. une ville ou une région), il est recommandé de renseigner la propriété location.address en omettant les sous-propriétés postalCode et streetAddress. url . Saisissez l’URL canonique (c.-à-d. l’URL « officielle ») désignant la page web de l’événement sur le site de l’organisateur. Dans le cas de séries de représentations, saisissez l’URL de la page web de chaque représentation si elle existe. Sinon saisissez, l’URL de la page web de la série de représentations. Dans le cas des festivals, si l’édition du festival ou l’événement individuel du festival est décrit sur plusieurs pages web (par exemple, la page d’accueil, la page du programme complet et la page des activités quotidiennes), choisissez une URL de page comme URL canonique et indiquez cette même valeur d’URL dans les données structurées de chaque page. eventStatus . Indiquez si un événement est programmé (avec date), reporté (date à confirmer), reprogrammé (avec nouvelle date) ou annulé. eventAttendanceMode . Indiquez si un événement se produit en personne, en ligne, ou format hybride. organizer . Saisissez les informations identifiant et décrivant l’organisme qui est responsable de la présentation du spectacle ou du festival. Il peut s’agir d’un organisme diffuseur ou d’une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignée sous la propriété performer). On peut ajouter plusieurs organizer(s). Les entitées imbriquées1 sous cette propriété sont généralement de @type Organization. Les propriétés recommandées pour l’entité imbriquée incluent : name, URL et sameAs (pointant vers un identifiant Artsdata et/ou Wikidata). performer . Saisissez les informations identifiant et décrivant la compagnie, le groupe ou la (des) personne(s) qui est(sont) responsable de l’exécution de la représentation. Il est possible d’ajouter plusieurs performer(s). Les entités imbriquées sous cette propriété peuvent être de @type Organization, PerformingGroup ou Person. Les propriétés recommandées pour l’entité imbriquée incluent : name, URL et sameAs (pointant vers un identifiant ISNI, Artsdata et/ou Wikidata). doorTime . Dans le cas des festivals, indiquez l’heure à laquelle commence l’admission au jour du festival et/ou à l’édition du festival, au format ISO 8601. Cette propriété est destinée à être utilisée lorsque l’ouverture des portes (doorTime) est différente de l’heure de début (startTime) du premier événement du programme du festival. offers . Saississez au moins une entité de type Offer ou AggregateOffer avec l’URL de la page où l’on peut se procurer les billets. Pour plus d’informations sur la façon de renseigner les offres, consultez la documentation de Google. sameAs . Saisissez les URIs d’identifiants pérennes permettant d’identifier sans ambiguité l’événement et/ou les entitées imbriquées1 dans l’entité de type Event. En savoir plus à propos de la propriété sameAs . | Par « entités imbriquées », on entend des entités liées à l’entité Event par le biais des propriétés telles organizer, performer, location ou subEvent. Ces entités sont des choses à part entières dans le contexte Schema.org. Elles peuvent avoir un @type différent de l’entité de premier niveau. Elles peuvent être décrites avec des pairs propriété-valeur au même titre que l’entité de premier niveau. En imbriquant ces entités à l’intérieur du code d’une entité de premier niveau à l’aide d’accolades { } : on signifie que l’entité de premier niveau est l’entité principale; on décrit sémantiquement la relation entre l’entité de premier niveau et ses entités de second niveau; et on évite toute confusion à savoir si une pair propriété-valeur (par exemple, un nom ou une description) se rapporte à l’entité principale ou à une entité secondaire. Les entités imbriquées sont généralement représentées (dans le code et dans les visualisateurs JSON-LD) avec une indentation, cela afin de faciliter la lecture du code par les humains. &#8617; &#8617;2 &#8617;3 . | . ",
+    "url": "/gabarits-jsonld/README.fr.html#d%C3%A9tails-sur-certaines-propri%C3%A9t%C3%A9s-cl%C3%A9s",
+    
+    "relUrl": "/gabarits-jsonld/README.fr.html#détails-sur-certaines-propriétés-clés"
+  },"81": {
+    "doc": "Gabarits de données structurées d'événement",
+    "title": "Gabarits de données structurées d'événement",
+    "content": "FR EN | ",
+    "url": "/gabarits-jsonld/README.fr.html",
+    
+    "relUrl": "/gabarits-jsonld/README.fr.html"
+  },"82": {
+    "doc": "Event Structured Data Templates",
+    "title": "Event Structured Data Templates",
+    "content": "Structured data templates in JSON-LD format based on the Schema.org vocabulary. ",
+    "url": "/gabarits-jsonld/README.html#event-structured-data-templates",
+    
+    "relUrl": "/gabarits-jsonld/README.html#event-structured-data-templates"
+  },"83": {
+    "doc": "Event Structured Data Templates",
+    "title": "Conventions",
+    "content": "Identification of values to modify in the templates . Templates are made available as a file containing data in JSON-LD format. To facilitate understanding and use, explanatory notes have been included about the expected values and the format in which they should be entered. These notes have been placed between double dashes in French and in English. For example: . \"url\": \"--URL complète vers la page Web concernée : Full URL to the relevant webpage--\" . Once the template is used and filled with data, it should no longer contain double dashes. For instance: . \"url\": \"https://placedesarts.com\" . ",
+    "url": "/gabarits-jsonld/README.html#conventions",
+    
+    "relUrl": "/gabarits-jsonld/README.html#conventions"
+  },"84": {
+    "doc": "Event Structured Data Templates",
+    "title": "Templates",
+    "content": "The Event template is intended to represent information about single events, ie a show having a single representation. If your event has a series of performances of the same show, please add the Event Series template to the Event template to describe each individual performance as a nested entity1 within the ‘subEvent’ property’s array. Then change the top Event type to ‘EventSeries’. | Event template - single events . | Add-on for Event Series - add-on to Event template to include a series of performances of the same show . | . For festivals, you can use one or more of the following templates to describe the festival edition as a whole, specific days within the festival, and/or individual events within the festival: . | Festival templates - Festival Edition, Festival Day and Individual Event | . Please note that the festival templates are intended to represent information about the specific edition of a festival, for example Prismatic 2023 (equivalent to ado:Festival and wd:Q27968043). They are not intended to represent information about the festival as a recurring event (equivalent to wd:Q132241) or as an organization (equivalent to ado:FestivalOrganization and wd:Q108669279). For additional clarity on these different but related concepts, please consult WikiProject Cultural events. ",
+    "url": "/gabarits-jsonld/README.html#templates",
+    
+    "relUrl": "/gabarits-jsonld/README.html#templates"
+  },"85": {
+    "doc": "Event Structured Data Templates",
+    "title": "Details on key properties",
+    "content": "@id . Enter a URI constituting a unique persistent identifier of the event within the website domain. The event’s URI should be different from the web page’s URI, because a “real-world object” and the web page describing it are two distinct things (or entities) in Schema structured data. For series of performances, in addition to the URI of the EventSeries entity, a distinct URI should be assigned to each performance using the Add-on for Event Series. Make sure that no individual performance is assigned the same URI as the first-level EventSeries entity. For festivals, it is recommended to assign each individual event a unique URI if they are all listed on the same webpage. If you are unable to assign a distinct URI to each event, including each performance of a series of performances, then it is preferable not to use the @id property. Read more about the @id property and local URIs . additionalType . Enter additional types corresponding to the particular type of event. Refer to the Artsdata controlled vocabulary to identify the most appropriate type(s) of all performing arts event types. You can add as many additionalType properties as needed to properly describe the event. As a default, we recommend the type PerformingArtsEvent, which denotes “a performing arts work performed for an audience”. name . Enter a title by which the event is most likely to be searched and recognized. This could be the same value as the name of the main artist (performer.name) and/or the name of the show (workPerformed.name), depending on the popularity of each. Try not to exceed a length of 60 characters (for full display in results pages and calendars). Do not add any other information (such as location or date). Instead, enter this information using the appropriate properties. For festival editions, include the year in the title, and for festival days, include the date or numbered day (e.g. Day 1). startDate . Enter the date and time when the event begins, in ISO 8601 date format. If possible, specify the timezone, including the number of hours offset from Coordinated Universal Time (UTC): https://nrc.canada.ca/en/web-clock/ . If you are not able to enter a timezone, then it is preferable not to enter any timezone value at all, rather than entering a dummy value (such as +00:00) or a default value that would not take into account changes between Standard and Daylight Savings Time. If no timezone value is specified, the time is assumed to be in local time. | Tip: Timezone information is sometimes inherited from a website’s general settings. If your timezone value appears as +00:00, but you did not populate this value yourself, check your website’s settings. | . If the event start time is unknown, or if the event is a full-day event, do not enter a time value or a time zone value. location . Enter the information identifying and describing the place where the event is presented (is happening). The entity nested under the location property can be @type Place (a physical space) or @type VirtualLocation (an online space). In the case of a physical space: . | The value should be as precise as possible (for example, the performance hall inside the building instead of the building itself). | For disambiguation and reconciliation purposes, it is strongly recommended to assign a sameAs link to the place’s Wikidata or Artsdata URI. | Google requires the address property with nested PostalAddress entity. As a matter of fact, a complete PostalAddress entity, including the postal code, can help with disambiguation. | For a PostalAddress entity, it is better to use the two-letter postal abbreviations for addressRegion and addressCountry values. | . For festivals, if the festival day and/or festival edition occurs in multiple venues across a locality (i.e. a town, city or region), it is recommended to use the location.address property without the postalCode and streetAddress subproperties. url . Enter the canonic URL (i.e. “official URL”) of the event web page on the organizer’s website. For series of performances, if each peformance has its own web page, enter each performance’s unique URL. Otherwise, enter the URL of the event series’ web page. For festivals, if the festival edition or an individual festival event is described on multiple pages (for example, the home page, the full schedule page, and the day-to-day page), choose one page URL as the canonical URL and enter this same URL value in the structured data of each page. eventStatus . Indicate whether an event is scheduled (with date), postponed (date to be confirmed), rescheduled (with new date) or cancelled. eventAttendanceMode . Indicate if an event occurs in person, online, or is hybrid, meaning both on and offline. organizer . Enter information identifying and describing the organization that is responsible for presenting the show or festival. It can be a presenting organization or a company self-presenting its own production (in which case, the same value would be entered under the performer property). You can add multiple organizer(s). Entities nested1 under this property are typically of @type Organization. Recommended properties for the nested entity include: name, url, and sameAs (with link pointing to a Wikidata or Artsdata URI). performer . Enter information identifying and describing the company, group or person(s) who is(are) responsible for performing the performance. It is possible to add several performer(s). The entities nested under this property can be of @type Organization, PerformingGroup or Person. Recommended properties for the nested entity include: name, url, and sameAs (with link pointing to an ISNI, Wikidata or Artsdata URI). offers . Enter at least one Offer or AggregateOffer type entity, including the URL of the event’s ticketing page. For more information about how to describe Offer type entities, consult Google’s documentation. doorTime . For festivals, enter the time that admission to the festival day and/or festival edition begins, in ISO 8601 format. This property is intended to be used when the doorTime is different from the startTime of the first event within the festival schedule. sameAs . Enter the URIs of persistent identifiers that identify without any ambiguity the event and/or the entities nested within the Event type entity. When there are multiple values, list them within square brackets, one URI per line. Read more about the sameAs property . | The term “nested entities” refers to entities linked to the Event entity through properties such as organizer, performer, location ou subEvent. These entities are things in their own right in the Schema.org context. They can have a different @type from the first-level entity. They can be described with attribute-value pairs in the same fashion as the first-level entity. The “nesting” of entities within the first-level entity serves many purposes: it indicates that the first-level entity is the main entity of the web page; it explicitly and semantically describes the relationship between the first-level entity and the second-level entities; it removes any confusion as to which attribute-value pair relates to which entity. Nested entities are embedded as values within an attribute-value pair using curly brackets { }. Nested entities are usually indented in the code and in JSON-LD viewers, in order to help human readability. &#8617; &#8617;2 . | . ",
+    "url": "/gabarits-jsonld/README.html#details-on-key-properties",
+    
+    "relUrl": "/gabarits-jsonld/README.html#details-on-key-properties"
+  },"86": {
+    "doc": "Event Structured Data Templates",
+    "title": "Event Structured Data Templates",
+    "content": "EN FR | ",
+    "url": "/gabarits-jsonld/README.html",
+    
+    "relUrl": "/gabarits-jsonld/README.html"
+  },"87": {
+    "doc": "Organization Structured Data Templates",
+    "title": "Structured Data Templates for Organizations (francais)",
+    "content": " ",
+    "url": "/gabarits-jsonld/organization.fr.html#structured-data-templates-for-organizations-francais",
+    
+    "relUrl": "/gabarits-jsonld/organization.fr.html#structured-data-templates-for-organizations-francais"
+  },"88": {
+    "doc": "Organization Structured Data Templates",
+    "title": "Organization Structured Data Templates",
+    "content": " ",
+    "url": "/gabarits-jsonld/organization.fr.html",
+    
+    "relUrl": "/gabarits-jsonld/organization.fr.html"
+  },"89": {
+    "doc": "Organization Structured Data Templates",
+    "title": "Structured Data Templates for Organizations",
+    "content": "The contents of this document are under a Creative Commons - Attribution 4.0 license. This is an evolving document in which CAPACOA provides a Schema structured data template for describing performing arts organizations. This template was developed as part of the Digital Discoverability Program. It was adapted from an initial template developed for the Indigenous Performing Arts Alliance, as well as recommendations in the Artsdata data model and in Google’s Organization Schema Markup guidelines. If you try out this JSON-LD template please contact CAPACOA to let us know. We would love to see your structured data in action. &lt;script type=\"application/ld+json\"&gt; { \"@context\": \"http://schema.org/\", \"@type\": \"Organization\", \"name\": \"--Title by which the organization is most likely to be known/searched for--\", \"legalName\": \"--Official title of the organization in legal documents--\", \"alternateName\": \"--Additional alias(es) by which the organization may be known/searched for--\", \"additionalType\": \"--Artsdata URI of a category corresponding to the particular type of organization, for example http://kg.artsdata.ca/resource/PresentingOrganization. See the full list at https://kg.artsdata.ca/entity.html?uri=http%3A%2F%2Fkg.artsdata.ca%2Fresource%2FArtsdataOrganizationTypes--\", \"description\": \"--Short text outlining the organization’s purpose or mission--\", \"url\": \"--URL of the organization’s official website--\", \"logo\": \"--URL of the organization’s logo image file--\", \"foundingDate\": \"--Year or full date that the organization came into existence, in ISO 8601 format. For example, 1979-12-31--\", \"knowsLanguage\": \"--main operating language(s) of the organization, in IETF BCP 47 format. For example, en for English--\", \"knowsAbout\": [ { \"@type\": \"Specialty\", \"name\": \"--Name of the organization’s principal genre, discipline or other specialization--\", \"sameAs\": \"--Wikidata URI of the speciality, in http://www.wikidata.org/entity/$1 format--\" } ], \"address\": { \"@type\": \"PostalAddress\", \"addressCountry\": \"CA\", \"addressRegion\": \"--Two-letter abbreviated name of the province or territory where the organization is based--\", \"addressLocality\": \"--Name of the city or town where the organization is based--\", \"streetAddress\": \"--Civic number and street of the organization’s business address--\", \"postalCode\": \"--Postal code of the organization’s business address--\" }, \"areaServed\": { \"@type\": \"Place\", \"address\": { \"@type\": \"PostalAddress\", \"addressCountry\": \"CA\", \"addressRegion\": \"--Two-letter abbreviated name of the principal province(s) or territor-y(-ies) where the organization provides services--\", \"addressLocality\": \"--Municipality, county or other localized geographical region where the organization provides services--\" } }, \"naics\": \"--Six-digit North American Industry Classification System code. Most performing arts industry codes can be found in https://docs.google.com/spreadsheets/d/1Ddvz6r05IEBiXdfXyOYGDvI-1c6iIoiG-1OZsckgkvU/edit?gid=0#gid=0--\", \"sameAs\": [ \"--Link to one or more of the organization’s social media accounts, if available--\", \"--Artsdata.ca URI of the organization, obtained with the Reconciliation API or the search tool--\", \"--Wikidata URI of the organization, in http://www.wikidata.org/entity/$1 format--\" ] } &lt;/script&gt; . ",
+    "url": "/gabarits-jsonld/organization.html#structured-data-templates-for-organizations",
+    
+    "relUrl": "/gabarits-jsonld/organization.html#structured-data-templates-for-organizations"
+  },"90": {
+    "doc": "Organization Structured Data Templates",
+    "title": "Add-Ons",
+    "content": " ",
+    "url": "/gabarits-jsonld/organization.html#add-ons",
+    
+    "relUrl": "/gabarits-jsonld/organization.html#add-ons"
+  },"91": {
+    "doc": "Organization Structured Data Templates",
+    "title": "member/memberOf",
+    "content": "member can be a helpful Schema property for performing groups who wish to connect data about each individual artist in their organizational structured data. If you decide to use this add-on, please insert it directly above the “naics” line. \"member\": { \"@type\": \"Person\", \"name\": \"--Full stage name of the artist--\", \"url\": \"--URL of the artist’s official website--\", \"sameAs\": [ \"--Link to one or more of the artist’s social media accounts, if available--\", \"--Artsdata.ca URI of the artist, obtained with the Reconciliation API or the search tool--\", \"--Wikidata URI of the artist, in http://www.wikidata.org/entity/$1 format--\" ] }, . Similarly, memberOf can be a helpful Schema property for any type of group or organization who is a member of an arts service organization. If you decide to use this add-on, please insert it directly above the “naics” line. \"memberOf\": { \"@type\": \"Organization\", \"name\": \"--Name of the arts service organization--\", \"url\": \"--URL of the arts service organization’s official website--\", \"sameAs\": [ \"--Link to one or more of the organization’s social media accounts, if available--\", \"--Artsdata.ca URI of the organization, obtained with the Reconciliation API or the search tool--\", \"--Wikidata URI of the organization, in http://www.wikidata.org/entity/$1 format--\" ] }, . ",
+    "url": "/gabarits-jsonld/organization.html#membermemberof",
+    
+    "relUrl": "/gabarits-jsonld/organization.html#membermemberof"
+  },"92": {
+    "doc": "Organization Structured Data Templates",
+    "title": "parentOrganization/subOrganization",
+    "content": "These two properties may be used to designate a larger organization that your organization is a division of (parentOrganization) and a smaller division within your organization (subOrganization), respectively. If you decide to use either of these add-ons, please insert them directly above the “naics” line. \"parentOrganization\": { \"@type\": \"Organization\", \"name\": \"--Name of the parent organization--\", \"url\": \"--URL of the parent organization’s official website--\", \"sameAs\": [ \"--Link to one or more of the parent organization’s social media accounts, if available--\", \"--Artsdata.ca URI of the parent organization, obtained with the Reconciliation API or the search tool--\", \"--Wikidata URI of the parent organization, in http://www.wikidata.org/entity/$1 format--\" ] }, . \"subOrganization\": { \"@type\": \"Organization\", \"name\": \"--Name of the sub-organization--\", \"url\": \"--URL of the sub-organization's official website--\", \"sameAs\": [ \"--Link to one or more of the sub-organization’s social media accounts, if available--\", \"--Artsdata.ca URI of the sub-organization, obtained with the Reconciliation API or the search tool--\", \"--Wikidata URI of the sub-organization, in http://www.wikidata.org/entity/$1 format--\" ] }, . ",
+    "url": "/gabarits-jsonld/organization.html#parentorganizationsuborganization",
+    
+    "relUrl": "/gabarits-jsonld/organization.html#parentorganizationsuborganization"
+  },"93": {
+    "doc": "Organization Structured Data Templates",
+    "title": "Organization Structured Data Templates",
+    "content": " ",
+    "url": "/gabarits-jsonld/organization.html",
+    
+    "relUrl": "/gabarits-jsonld/organization.html"
+  },"94": {
+    "doc": "Person Structured Data Templates",
+    "title": "Structured Data Templates for Person (francais)",
+    "content": " ",
+    "url": "/gabarits-jsonld/person.fr.html#structured-data-templates-for-person-francais",
+    
+    "relUrl": "/gabarits-jsonld/person.fr.html#structured-data-templates-for-person-francais"
+  },"95": {
+    "doc": "Person Structured Data Templates",
+    "title": "Person Structured Data Templates",
+    "content": " ",
+    "url": "/gabarits-jsonld/person.fr.html",
+    
+    "relUrl": "/gabarits-jsonld/person.fr.html"
+  },"96": {
+    "doc": "Person Structured Data Templates",
+    "title": "Structured Data Templates for Person",
+    "content": " ",
+    "url": "/gabarits-jsonld/person.html#structured-data-templates-for-person",
+    
+    "relUrl": "/gabarits-jsonld/person.html#structured-data-templates-for-person"
+  },"97": {
+    "doc": "Person Structured Data Templates",
+    "title": "Person Structured Data Templates",
+    "content": " ",
+    "url": "/gabarits-jsonld/person.html",
+    
+    "relUrl": "/gabarits-jsonld/person.html"
+  }
+}

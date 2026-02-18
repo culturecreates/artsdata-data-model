@@ -1,0 +1,85 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix adr: <http://kg.artsdata.ca/resource/> .
+@prefix ado: <http://kg.artsdata.ca/ontology/> .
+@prefix footlight: <http://lod.footlight.io/resource/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix aat: <http://vocab.getty.edu/page/aat/> .
+
+adr:ActiveMembership rdf:type skos:Concept ;
+	skos:definition "A membership that has been officially recognized by an association as being valid."@en, "Une adhésion qui a été officiellement reconnue par une association comme étant valide."@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:prefLabel "Active Member"@en, "Adhésion active"@fr .
+
+adr:ArtsdataMembership dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-membership.ttl> ;
+	vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-membership.ttl> ;
+	vann:example adr:ActiveMembership ;
+	vann:preferredNamespacePrefix "adr" ;
+	vann:preferredNamespaceUri <http://kg.artsdata.ca/resource/> ;
+	schema:creator adr:K1-5, adr:K16-211 ;
+	schema:dateCreated "2026-01-27"^^xsd:date ;
+	schema:dateModified "2026-01-27"^^xsd:date ;
+	schema:version "0.9" ;
+	rdf:type skos:ConceptScheme ;
+	rdfs:comment "First Version"@en, "Première version"@fr ;
+	owl:versionInfo "0.9 (2026-01-27) First version"@en, "0.9 (2026-01-27) Première version"@fr ;
+	skos:prefLabel "Artsdata Membership Controlled Vocabulary"@en, "Vocabulaire contrôlé Artsdata pour les adhésions"@fr ;
+	prov:wasDerivedFrom <https://docs.google.com/spreadsheets/d/1EhubfnKoEyU1jHTfPYkRwx3qQfzK0KLAXSU8MY0RxaA/edit?gid=1612574115#gid=1612574115> .
+
+adr:ArtsdataMembership-Collection-0.9 rdf:type skos:Collection ;
+	rdfs:comment "All Artsdata concepts that are part of vocabulary version 0.9. Useful to group concepts by version (excluding deprecated concepts) when there are multiple versions."@en, "Tous les concepts de Artsdata faisant partie de la version 0.9"@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:member adr:ActiveMembership, adr:ComplimentaryMembership, adr:GoodStandingMembership, adr:InactiveMembership, adr:LapsedMembership, adr:PendingMembership, adr:PerpetualMembership, adr:RevokedMembership ;
+	skos:prefLabel "Collection of Artsdata Memberships v0.9"@en, "Artsdata adhésions - collection pour v0.9"@fr .
+
+adr:ComplimentaryMembership rdf:type skos:Concept ;
+	skos:altLabel "Free, Comped"@en, "Gratuite"@fr ;
+	skos:broader adr:ActiveMembership ;
+	skos:definition "An active membership that has been granted despite failing to meet all requirements set out by an association for obtaining member status."@en, "Une adhésion active qui a été accordée malgré le fait de ne pas satisfaire à toutes les exigences établies par une association pour obtenir le statut de membre."@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:prefLabel "Complimentary Membership"@en, "Gracieux"@fr .
+
+adr:GoodStandingMembership rdf:type skos:Concept ;
+	skos:broader adr:ActiveMembership ;
+	skos:definition "An active membership that has met all requirements set out by an association for obtaining full member status in the association for a given period of time."@en, "Une adhésion active qui a satisfait à toutes les exigences établies par une association pour obtenir le statut de membre à part entière de l'association pendant une période donnée."@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:prefLabel "Good Standing Membership"@en, "En règle"@fr .
+
+adr:InactiveMembership rdf:type skos:Concept ;
+	skos:definition "A membership that has been officially recognized by an association as being invalid."@en, "Une adhésion qui a été officiellement reconnue par une association comme étant invalide."@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:prefLabel "Inactive Membership"@en, "Adhésion Inactive"@fr .
+
+adr:LapsedMembership rdf:type skos:Concept ;
+	skos:broader adr:ActiveMembership ;
+	skos:definition "An active membership that should be ended due to expiration or non-payment of dues, but which has not yet been removed because of a grace period on the part of the association."@en, "Une adhésion active qui devrait être résiliée en raison de l'expiration ou du non-paiement des cotisations, mais qui n'a pas encore été supprimée en raison d'un délai de grâce de la part de l'association."@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:prefLabel "Lapsed Membership"@en, "Expiré"@fr .
+
+adr:PendingMembership rdf:type skos:Concept ;
+	skos:broader adr:InactiveMembership ;
+	skos:definition "An inactive membership that will become active for the first time upon confirmation from an association that it has met all requirements for full member status."@en, "Une adhésion inactive qui deviendra active pour la première fois après confirmation par une association qu'elle a satisfait à toutes les exigences pour le statut de membre à part entière."@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:prefLabel "Pending Membership"@en, "En attente"@fr .
+
+adr:PerpetualMembership rdf:type skos:Concept ;
+	skos:broader adr:ActiveMembership ;
+	skos:definition "An active membership that has been granted for a period with no end date."@en, "Une adhésion active qui a été accordée pour une période sans date de fin."@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:prefLabel "Perpetual Membership"@en, "Perpétuelle"@fr .
+
+adr:RevokedMembership rdf:type skos:Concept ;
+	skos:altLabel "Terminated, Deleted, Removed"@en, "Enlevé, Résilié, Supprimé, Terminé"@fr ;
+	skos:broader adr:InactiveMembership ;
+	skos:definition "An inactive membership that was previously active before it ceased meeting all requirements set out by an association for obtaining full member status."@en, "Une adhésion inactive qui était auparavant active avant de cesser de répondre à toutes les exigences établies par une association pour obtenir le statut de membre à part entière."@fr ;
+	skos:inScheme adr:ArtsdataMembership ;
+	skos:prefLabel "Revoked Membership"@en, "Révoqué"@fr .
+
