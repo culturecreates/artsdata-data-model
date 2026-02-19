@@ -1,15 +1,9 @@
 ---
 title: Architecture Sommaire
-layout: default
-nav_order: 110
+layout: architecture-doc
+nav_order: 100
 nav_exclude: true
 ---
-
-{% include back-button.html %}
-{% include language-switcher.html %}
-
-Architecture des flux de données
-=========
 
 L'écosystème de données ouvertes et liées d'Artsdata est composée de plusieurs parties que l'on peut regrouper en trois ensembles :
 * Fournisseurs de données :

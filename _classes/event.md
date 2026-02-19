@@ -1,7 +1,7 @@
 ---
 class_name: Event
 layout: class-event-doc
-nav_order: 4
+nav_order: 0
 title: Event
 ---
 

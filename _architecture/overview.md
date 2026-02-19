@@ -1,14 +1,9 @@
 ---
 title: Data Flow Architecture
-layout: default
-nav_order: 12
+layout: architecture-doc
+nav_order: 0
 ---
 
-{% include back-button.html %}
-{% include language-switcher.html %}
-
-Data Flow Architecture
-====================
 The Artsdata linked open data ecosystem is divided in three areas:
 * Data providers;
 * Artsdata knowledge graph;
