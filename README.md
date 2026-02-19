@@ -50,3 +50,77 @@ The naming convention for language versions of the same documentation page is :
 
 - English: No language subtag in the URL slug. Example: `index.md`.
 - Français: `.fr` language subtag inserted before the file extension. Example: `index.fr.md`.
+
+---
+
+## Contributing
+
+### Requirements
+
+- A [GitHub account](https://github.com/join)
+- Write access to this repository
+
+### Creating a new page
+
+1. Navigate to the correct collection folder (`_architecture/`, `_classes/`, or `_gabarits-jsonld/`)
+2. Click **Add file → Create new file**
+3. Name the file using lowercase letters and dashes (e.g. `my-new-topic.md`)
+4. Add the appropriate front matter at the top of the file:
+
+**`_architecture/` pages:**
+```
+---
+title: Your Page Title
+layout: architecture-doc
+---
+```
+
+**`_classes/` pages:**
+```
+---
+class_name: ClassName
+layout: class-event-doc
+---
+```
+
+**`_gabarits-jsonld/` pages:**
+```
+---
+title: Your Template Title
+layout: gabarits-doc
+---
+```
+
+5. Write the page content in Markdown after the closing `---`
+6. Scroll to the bottom, select **Create a new branch and start a pull request**, and submit the PR
+
+### French version
+
+Create a corresponding `.fr.md` file (e.g. `my-page.fr.md`) with `nav_exclude: true` and a `title` field added to the front matter. The EN/FR toggle links the two files automatically based on their shared filename — no additional configuration required.
+
+**Example French front matter for `_architecture/` pages:**
+```
+---
+title: Titre de la page
+layout: architecture-doc
+nav_exclude: true
+---
+```
+
+### File naming rules
+
+| Rule | Example |
+|---|---|
+| Lowercase only | `my-page.md` not `MyPage.md` |
+| Dashes between words | `data-consumers.md` not `data_consumers.md` |
+| French version adds `.fr` | `overview.fr.md` |
+
+### Editing an existing page
+
+1. Open the file in the repository and click the **pencil icon** (✏️)
+2. Make your changes and select **Create a new branch and start a pull request**
+3. Apply the same changes to the corresponding `.fr.md` file in the same branch
+
+### Questions and issues
+
+Open an [issue on GitHub](https://github.com/culturecreates/artsdata-data-model/issues).
