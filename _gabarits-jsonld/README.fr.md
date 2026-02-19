@@ -5,8 +5,6 @@ nav_order: 100
 nav_exclude: true
 ---
 
-{% include language-switcher.html %}
-
 Gabarits de données structurées d'événement
 ============================================
 

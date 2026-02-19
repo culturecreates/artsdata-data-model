@@ -1,9 +1,9 @@
 ---
-title: Organization Structured Data Templates
-layout: gabarits-json ld
+title: Gabarits de données structurées pour les organisations
+layout: gabarits-doc
 nav_order: 102
 nav_exclude: true
 ---
 
-Structured Data Templates for Organizations (francais)
+Gabarits de données structurées pour les organisations
 =====================================

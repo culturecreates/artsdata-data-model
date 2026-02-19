@@ -4,8 +4,6 @@ layout: gabarits-doc
 nav_order: 2
 ---
 
-{% include language-switcher.html %}
-
 Event Structured Data Templates
 =====================================
 
