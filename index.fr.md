@@ -63,7 +63,7 @@ Artsdata.ca utilise un ensemble de bases d’implications RDFS et OWL afin de pe
 
 La principale ontologie utilisée dans Artsdata.ca est **Schema.org**. Artsdata.ca importe le schéma de base Schema.org et le schéma Schema.org en attente (pour inclure schema:EventSeries qui est une classe en attente). Plusieurs autres ontologies sont utilisées, notamment DBpedia, DCAT, DATAID, PROV, SHACL, VANN, VoID, SKOS et Wikidata.
 
-Artsdata.ca a un grand nombre de mappages de classes et de propriétés entre Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, FOAF et DOLCE+DnS Ultralite (Ontology Design Patterns) en utilisant owl:equivalentClass, owl:equivalentProperty, skos:exactMatch et skos:closeMatch. Certains mappages sont préconstruits à partir d’ontologies externes; d'autres sont définis dans Artsdata. 
+Artsdata.ca a un grand nombre de mises en correspondance de classes et de propriétés avec Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, Nomenclature, DCMI, FOAF et DOLCE+DnS Ultralite (Ontology Design Patterns). Les correspondances sont établies en utilisant owl:equivalentClass, owl:equivalentProperty, skos:exactMatch et skos:closeMatch. Certains mappages sont préconstruits à partir d’ontologies externes; d'autres sont définis dans Artsdata. 
 
 #### Ontologies chargées dans Artsdata
 
