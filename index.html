@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=e7cbb43be2a75a367ba1cae415d74491b14c08a3">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=0a7e78f330ea360f36252bf611e64228534ead27">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
@@ -222,7 +222,7 @@
 
 <p>The main ontology used in Artsdata.ca is <strong>Schema.org</strong>. Artsdata.ca imports the core Schema.org schema and the pending Schema.org schema (to include schema:EventSeries which is a pending class). Other ontologies imported or used in Artsdata include DBpedia, DCAT, DATAID, PROV, SHACL, VANN, VoID, SKOS, and Wikidata.</p>
 
-<p>Artsdata.ca has a large number of class and property mappings between Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns) using owl:equivalentClass, owl:equivalentProperty, skos:exactMatch, and skos:closeMatch. Some mappings come prebuilt from external ontologies; others are defined within Artsdata.</p>
+<p>Artsdata.ca has a large number of class and property mappings with Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, Nomenclature, DCMI, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns). Mappings are made using owl:equivalentClass, owl:equivalentProperty, skos:exactMatch, and skos:closeMatch. Some mappings come prebuilt from external ontologies; others are defined within Artsdata.</p>
 
 <h4 id="exceptions-handling-schemaorg-in-artsdata">Exceptions handling schema.org in Artsdata</h4>
 <p>Artsdata converts all schema.org <strong>https</strong> URIs to <strong>http</strong> URIs, and also makes the following transformations:</p>
