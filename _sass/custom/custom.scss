@@ -11,28 +11,35 @@
   font-size: 0.875rem;
 
   .label-current-lang {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: $link-color;
+    color: white;
     font-weight: 600;
-    color: $body-text-color;
+    border-radius: 3px;
   }
 
   .btn-language-switch {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background-color: $link-color;
-    color: white;
+    background-color: transparent;
+    color: $body-text-color;
     text-decoration: none;
     border-radius: 3px;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
 
     &:hover {
-      background-color: darken($link-color, 10%);
-      color: white;
+      background-color: lighten($link-color, 45%);
+      color: $body-text-color;
       text-decoration: none;
     }
   }
 
   .label-unavailable {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
     color: #98aba7;
     font-style: italic;
+    opacity: 0.6;
   }
 }

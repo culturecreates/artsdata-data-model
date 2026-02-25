@@ -67,16 +67,37 @@
   {% endfor %}
 {% endunless %}
 
+{% unless alternate_exists %}
+  {% for item in site.identifiers-guidelines %}
+    {% if item.url == alternate_url %}
+      {% assign alternate_exists = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}
+
 <div class="language-switcher">
-  <span class="label-current-lang">{{ current_label }}</span>
-  {% if alternate_exists %}
-    <a href="{{ alternate_url | relative_url }}"
-       class="btn-language-switch"
-       hreflang="{{ alternate_lang }}">
-      {{ alternate_label }}
-    </a>
-    <link rel="alternate" hreflang="{{ alternate_lang }}" href="{{ site.url }}{{ alternate_url }}" />
+  {% if is_french %}
+    {% comment %} Currently viewing French, so EN is alternate {% endcomment %}
+    {% if alternate_exists %}
+      <a href="{{ alternate_url | relative_url }}"
+         class="btn-language-switch"
+         hreflang="en">EN</a>
+      <link rel="alternate" hreflang="en" href="{{ site.url }}{{ alternate_url }}" />
+    {% else %}
+      <span class="label-unavailable">EN unavailable</span>
+    {% endif %}
+    <span class="label-current-lang">FR</span>
   {% else %}
-    <span class="label-unavailable">({{ alternate_label }} unavailable)</span>
+    {% comment %} Currently viewing English, so FR is alternate {% endcomment %}
+    <span class="label-current-lang">EN</span>
+    {% if alternate_exists %}
+      <a href="{{ alternate_url | relative_url }}"
+         class="btn-language-switch"
+         hreflang="fr">FR</a>
+      <link rel="alternate" hreflang="fr" href="{{ site.url }}{{ alternate_url }}" />
+    {% else %}
+      <span class="label-unavailable">FR unavailable</span>
+    {% endif %}
   {% endif %}
 </div>
