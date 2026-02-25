@@ -48,7 +48,7 @@ Veuillez noter que les gabarits de festival sont destinés à représenter des i
 ## Détails sur certaines propriétés clés
 
 ### _@id_
-Saisissez une URI (Uniform Resource Identifier) constituant un [identifiant pérenne](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr) pour cet événement à l'intérieur du domaine du site web. L'URI de l'événement doit être différente de l'URL de la page web de l'événement, puisqu'il s'agit de deux [_choses_](https://schema.org/Thing) (ou _entités_) distinctes dans le contexte des données structurées Schema.org. 
+Saisissez une URI (Uniform Resource Identifier) constituant un [identifiant pérenne]({{ base }}/identifiers-guidelines/identifier-recommendations.fr) pour cet événement à l'intérieur du domaine du site web. L'URI de l'événement doit être différente de l'URL de la page web de l'événement, puisqu'il s'agit de deux [_choses_](https://schema.org/Thing) (ou _entités_) distinctes dans le contexte des données structurées Schema.org. 
 
 Dans le cas d'une série de représentations d'un même spectacle, en plus de l'URI de la série, une URI distincte devrait être assignée à chaque représentation à l'aide de l'[Extension pour les Séries d'événements](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld). Assurez-vous qu'aucun sous-événement ne se voit assigner la même l'URI que l'objet de type _EventSeries_.
 
@@ -56,7 +56,7 @@ Dans le cas des festivals, il est recommandé d'attribuer à chaque événement 
 
 Si vous n'êtes pas en mesure d'attribuer une URI à chaque événement, incluant chaque représentation d'une série de représentations, alors il est préférable de ne pas utiliser la propriété _@id_.
 
-[En savoir plus à propos de la propriété @id et des URI locales](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines.fr)
+[En savoir plus à propos de la propriété @id et des URI locales]({{ base }}/identifiers-guidelines/sameas.html.fr)
 
 ### [_additionalType_](https://schema.org/additionalType)
 Saisissez des types supplémentaires correspondant au type particulier de l’événement. Référez-vous au [vocabulaire contrôlé Artsdata](https://culturecreates.github.io/artsdata-data-model/event-type.fr.html) pour identifier le ou les types les mieux appropriés parmi tous les types d'événements des arts de la scène. Vous pouvez ajouter autant de propriétés _additionalType_ que nécessaire pour bien décrire l'événement. En guise de valeur par défaut, nous recommandons le type [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent), qui désigne « une œuvre des arts de la scène exécutée pour un public ».
@@ -109,6 +109,6 @@ Dans le cas des festivals, indiquez l'heure à laquelle commence l'admission au 
 Saississez au moins une entité de type Offer ou AggregateOffer avec l'URL de la page où l'on peut se procurer les billets. Pour plus d'informations sur la façon de renseigner les offres, consultez la [documentation de Google](https://developers.google.com/search/docs/appearance/structured-data/event?hl=fr#structured-data-type-definitions).
 
 ### [_sameAs_](https://schema.org/sameAs)
-Saisissez les URIs d'[identifiants pérennes](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.fr) permettant d'identifier sans ambiguité l'événement et/ou les entitées imbriquées[^1] dans l'entité de type _Event_. 
+Saisissez les URIs d'[identifiants pérennes]({{ base }}/identifiers-guidelines/identifier-recommendations.fr) permettant d'identifier sans ambiguité l'événement et/ou les entitées imbriquées[^1] dans l'entité de type _Event_. 
 
-[En savoir plus à propos de la propriété sameAs](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines.fr)
+[En savoir plus à propos de la propriété sameAs]({{ base }}/identifiers-guidelines/sameas.html.fr)

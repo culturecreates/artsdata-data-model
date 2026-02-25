@@ -132,5 +132,5 @@ Enter the performance hall under location `name` and add the building name under
 
 ## Good practices regarding location `sameAs`
 
-- [Artsdata guidelines about the schema:sameAs property]({{ base }}/sameas.html)
-  - [How to retrieve persistent identifiers' URIs]({{ base }}/retrieve-uri.html)
+- [Artsdata guidelines about the schema:sameAs property]({{ base }}/identifiers-guidelines/sameas.html)
+  - [How to retrieve persistent identifiers' URIs]({{ base }}/identifiers-guidelines/retrieve-uri.html)

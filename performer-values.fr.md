@@ -107,4 +107,4 @@ Si une seule valeur peut être utilisée, **choisissez l’orchestre** pour assu
 
 - Utilisez des liens `sameAs` (par exemple vers Wikidata, ISNI ou des URI Artsdata) pour identifier les entités performer et améliorer l’interopérabilité.
 
-Voir : [Lignes directrices Artsdata concernant la propriété `sameAs`]({{ base }}/sameas-guidelines.fr)
+Voir : [Lignes directrices Artsdata concernant la propriété `sameAs`]({{ base }}/identifiers-guidelines/sameas.html.fr)

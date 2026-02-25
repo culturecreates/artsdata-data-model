@@ -47,7 +47,7 @@ Please note that the festival templates are intended to represent information ab
 ## Details on key properties
 
 ### _@id_
-Enter a URI constituting a unique [persistent identifier](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html) of the event within the website domain. The event's URI should be different from the web page's URI, because a "real-world object" and the web page describing it are two distinct [things](https://schema.org/Thing) (or _entities_) in Schema structured data.
+Enter a URI constituting a unique [persistent identifier]({{ base }}/identifiers-guidelines/identifier-recommendations.html) of the event within the website domain. The event's URI should be different from the web page's URI, because a "real-world object" and the web page describing it are two distinct [things](https://schema.org/Thing) (or _entities_) in Schema structured data.
 
 For series of performances, in addition to the URI of the _EventSeries_ entity, a distinct URI should be assigned to each performance using the [Add-on for Event Series](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event_series.jsonld). Make sure that no individual performance is assigned the same URI as the first-level _EventSeries_ entity.
 
@@ -110,6 +110,6 @@ Enter at least one _Offer_ or _AggregateOffer_ type entity, including the URL of
 For festivals, enter the time that admission to the festival day and/or festival edition begins, in ISO 8601 format. This property is intended to be used when the doorTime is different from the startTime of the first event within the festival schedule.
 
 ### [_sameAs_](https://schema.org/sameAs)
-Enter the URIs of [persistent identifiers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html) that identify without any ambiguity the event and/or the entities nested within the _Event_ type entity. When there are multiple values, list them within square brackets, one URI per line.
+Enter the URIs of [persistent identifiers]({{ base }}/identifiers-guidelines/identifier-recommendations.html) that identify without any ambiguity the event and/or the entities nested within the _Event_ type entity. When there are multiple values, list them within square brackets, one URI per line.
 
-[Read more about the sameAs property](https://culturecreates.github.io/artsdata-data-model/sameas-guidelines)
+[Read more about the sameAs property]({{ base }}/identifiers-guidelines/sameas.html)

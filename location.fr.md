@@ -133,5 +133,5 @@ Indiquer le nom de la salle sous `name` et ajouter le nom du bâtiment sous `alt
 
 ## Bonnes pratiques concernant la propriété `sameAs`
 
-- [Lignes directrices d'Artsdata concernant la propriété sameAs]({{ base }}/sameas.html)
-  - [Récupérer les URIs d’identifiants pérennes]({{ base }}/retrieve-uri.fr.html)
+- [Lignes directrices d'Artsdata concernant la propriété sameAs]({{ base }}/identifiers-guidelines/sameas.html)
+  - [Récupérer les URIs d’identifiants pérennes]({{ base }}/identifiers-guidelines/retrieve-uri.fr.html)

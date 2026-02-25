@@ -32,6 +32,8 @@ collections:
     output: true
   architecture:
     output: true
+  identifiers-guidelines:
+    output: true
   gabarits-jsonld:
     output: true
 # Collections in navigation
@@ -43,6 +45,10 @@ just_the_docs:
       search_exclude: false
     architecture:
       name: Architecture
+      nav_exclude: false
+      search_exclude: false
+    identifiers-guidelines:
+      name: Identifiers Guidelines
       nav_exclude: false
       search_exclude: false
     gabarits-jsonld:

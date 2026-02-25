@@ -47,7 +47,7 @@ Here are the main Classes used in Artsdata.
 
 In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other unique persistent identifiers, like Wikidata and ISNI, to recognize and reconcile entities of type [Organization]({{ base }}/classes/organization.html), [Person]({{ base }}/classes/person.html) and [Place]({{ base }}/classes/place.html). 
 
-[Guidelines regarding persistent identifiers for data providers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations)
+[Guidelines regarding persistent identifiers for data providers]({{ base }}/identifiers-guidelines/identifier-recommendations.html)
 
 ### Structured Data Templates
 

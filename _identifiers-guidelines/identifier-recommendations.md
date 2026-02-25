@@ -1,3 +1,9 @@
+---
+title: Persistent Identifiers Guidelines
+layout: default
+nav_order: 0
+---
+
 <p>{% include back-button.html %}</p>
 {% include language-switcher.html %}
 
@@ -34,15 +40,15 @@ In Schema structured data and in the Artsdata data model, _local URIs_ are expec
 
 ### How to integrate local URIs to structured data
 
-See: [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id.html)
+See: [Artsdata guidelines regarding the @id property and URIs]({{ base }}/identifiers-guidelines/id.html)
 
 ### How to integrate external URIs into structured data
 
-See: [Artsdata guidelines regarding the sameAs property]({{ base }}/sameas.html)
+See: [Artsdata guidelines regarding the sameAs property]({{ base }}/identifiers-guidelines/sameas.html)
 
 ### How to retrieve persistent identifiers' URIs
 
-See : [How to retrieve persistent identifiers' URIs]({{ base }}/retrieve-uri.html)
+See : [How to retrieve persistent identifiers' URIs]({{ base }}/identifiers-guidelines/retrieve-uri.html)
 
 ### How to store external URIs in a local database
 

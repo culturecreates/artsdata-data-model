@@ -48,5 +48,5 @@ In conjunction with the use of `Thing` as a default broader type, we recommend p
 
 ### Good practices regarding performers' `sameAs`
 
-- [Artsdata guidelines about the schema:sameAs property]({{ base }}/sameas.html)
-  - [How to retrieve persistent identifiers' URIs]({{ base }}/retrieve-uri.html)
+- [Artsdata guidelines about the schema:sameAs property]({{ base }}/identifiers-guidelines/sameas.html)
+  - [How to retrieve persistent identifiers' URIs]({{ base }}/identifiers-guidelines/retrieve-uri.html)

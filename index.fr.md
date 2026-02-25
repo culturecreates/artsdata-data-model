@@ -42,7 +42,7 @@ Artsdata génère ses propres identifiants globaux uniques et pérennes (IRI aus
 
 En plus de l'identifiant Artsdata, le graphe de connaissances Artsdata s'appuie sur d'autres [identifiants pérennes](https://www.artsdata.ca/fr/ressources/bien-identifie), comme l'identifiant Wikidata, l'ISNI et les identifiants locaux, afin de reconnaître, de réconcilier et lier les entités nommées. 
 
-[Lignes directrices à propos des identifiants pérennes](https://docs.artsdata.ca/identifier-recommendations.fr.html)
+[Lignes directrices à propos des identifiants pérennes]({{ base }}/identifiers-guidelines/identifier-recommendations.fr.html)
 
 ### Vocabulaires contrôlés
 

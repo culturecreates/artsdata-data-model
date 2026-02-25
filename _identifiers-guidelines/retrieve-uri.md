@@ -1,5 +1,10 @@
-{% include back-button.html %}
+---
+title: How to Retrieve URIs
+layout: default
+nav_order: 2
+---
 
+<p>{% include back-button.html %}</p>
 {% include language-switcher.html %}
 
 # How to Retrieve Persistent Identifiers' URIs
@@ -88,6 +93,6 @@ The Artsdata team can help you add or correct information.
 
 ### Related contents
 - [What are persistent identifiers and why do they matter?](https://www.artsdata.ca/en/resources/identifiable-and-findable)
-- [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifier-recommendations.html)
-  - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id.html)
-  - [Artsdata Guidelines about the schema:sameAs property]({{ base }}/sameas.html)
+- [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifiers-guidelines/identifier-recommendations.html)
+  - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/identifiers-guidelines/id.html)
+  - [Artsdata Guidelines about the schema:sameAs property]({{ base }}/identifiers-guidelines/sameas.html)

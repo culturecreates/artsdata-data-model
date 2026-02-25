@@ -50,5 +50,5 @@ En complément de l’utilisation de 'Thing' comme type générique par défaut,
 
 ### Bonnes pratiques concernant la propriété 'sameAs' des interprètes
 
-- [Lignes directrices concernant la propriété sameAs et les URI]({{ base }}/sameas.fr.html)
-  - [Comment récupérer les URI d’identifiants pérennes]({{ base }}/retrieve-uri.fr.html)
+- [Lignes directrices concernant la propriété sameAs et les URI]({{ base }}/identifiers-guidelines/sameas.fr.html)
+  - [Comment récupérer les URI d’identifiants pérennes]({{ base }}/identifiers-guidelines/retrieve-uri.fr.html)

@@ -1,9 +1,12 @@
 ---
+title: Comment récupérer les URI
+layout: default
+nav_order: 2
 nav_exclude: true
 lang: fr
 ---
-{% include back-button.html %}
 
+<p>{% include back-button.html %}</p>
 {% include language-switcher.html %}
 
 # Comment récupérer les URI d’identifiants pérennes

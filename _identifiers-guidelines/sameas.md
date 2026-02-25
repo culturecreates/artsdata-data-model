@@ -1,16 +1,21 @@
+---
+title: sameAs Property Guidelines
+layout: default
+nav_order: 3
+---
+
 <p>{% include back-button.html %}</p>
-<a href='sameas.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
-<a href='sameas.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+{% include language-switcher.html %}
 
 ## Artsdata Guidelines about the schema:sameAs property
 
-Along with [`@id` property]({{ base }}/id.html), the [`schema:sameAs`](https://schema.org/sameAs) property offers another excellent means of unambiguously identifying Things in Schema structured data.
+Along with [`@id` property]({{ base }}/identifiers-guidelines/id.html), the [`schema:sameAs`](https://schema.org/sameAs) property offers another excellent means of unambiguously identifying Things in Schema structured data.
 
-Artsdata recommends populating the `sameAs` property with a [persistent identifier](https://www.artsdata.ca/en/resources/identifiable-and-findable), in URI format. Here is some additional information on how to retreive a URI: https://culturecreates.github.io/artsdata-data-model/retrieve-uri  
+Artsdata recommends populating the `sameAs` property with a [persistent identifier](https://www.artsdata.ca/en/resources/identifiable-and-findable), in URI format. Here is some additional information on how to retreive a URI: {{ base }}/identifiers-guidelines/retrieve-uri.html  
 
 Always enter persistent identifiers in full URI format (rather than entering just the identifier’s string). For example, for the short-form Wikidata ID `Q596774`, the matching URI is `http://www.wikidata.org/entity/Q596774`.
 
-Artsdata strongly recommends persistent identifiers from open knowledge bases and authority files (see the [list of supported identifiers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations.html)), because they are machine-actionable: Artsdata can dereference these URIs to access all available descriptive metadata about the entity they identify.
+Artsdata strongly recommends persistent identifiers from open knowledge bases and authority files (see the [list of supported identifiers]({{ base }}/identifiers-guidelines/identifier-recommendations.html)), because they are machine-actionable: Artsdata can dereference these URIs to access all available descriptive metadata about the entity they identify.
 
 The `sameAs` property can be used on both top-level objects and nested entities. In the following example, the `sameAs` property is populated both for the top-level `Event` type entity, and for entities nested under the `location`, `organizer` and `performer` properties.
 
@@ -63,6 +68,6 @@ Social media and streaming platforms' accounts may also be populated under `same
 
 ### Related contents
 - [What are persistent identifiers and why do they matter?](https://www.artsdata.ca/en/resources/identifiable-and-findable)
-- [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifier-recommendations.html)
-  - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/id.html)
-  - [How to retrieve persistent identifiers' URIs]({{ base }}/retrieve-uri.html)
+- [Artsdata Guidelines regarding Persistent Identifiers]({{ base }}/identifiers-guidelines/identifier-recommendations.html)
+  - [Artsdata guidelines regarding the @id property and URIs]({{ base }}/identifiers-guidelines/id.html)
+  - [How to retrieve persistent identifiers' URIs]({{ base }}/identifiers-guidelines/retrieve-uri.html)

@@ -53,7 +53,7 @@ Les fournisseurs de données d'Artsdata comprennent des associations, des syndic
 
 ### Graphe de connaissances Artsdata (kg.artsdata.ca)
 
-Artsdata aggrège et partage des métadonnées descriptives à propos d'événements culturels (et des entités qui y sont associées) en provenance de multiples sites web et de bases de données. Les données sont publiées sous forme de données ouvertes et liées, c'est-à-dire avec des [identifiants pérennes]({{ base }}/identifier-recommendations.fr) (exprimés sous forme d'URIs) qui permettent de lier des événements à des artistes, des lieux et des organismes.
+Artsdata aggrège et partage des métadonnées descriptives à propos d'événements culturels (et des entités qui y sont associées) en provenance de multiples sites web et de bases de données. Les données sont publiées sous forme de données ouvertes et liées, c'est-à-dire avec des [identifiants pérennes]({{ base }}/identifiers-guidelines/identifier-recommendations.fr) (exprimés sous forme d'URIs) qui permettent de lier des événements à des artistes, des lieux et des organismes.
 
 Le [modèle de données (ontologie) d'Artsdata]({{ base }}/index.fr.html) est représenté selon des ontologies RDF. Il est un sous-ensemble de Schema.org et s'aligne sur un grand nombre d'ontologies formelles (par exemple, LRMoo, DBpedia) et non-formelles (par exemple, Wikidata).
 

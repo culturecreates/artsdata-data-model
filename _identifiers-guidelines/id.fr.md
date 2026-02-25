@@ -1,10 +1,12 @@
 ---
+title: "Propriété @id et URI"
+layout: default
+nav_order: 1
 nav_exclude: true
 lang: fr
 ---
 <p>{% include back-button.html %}</p>
-<a href='id.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
-<a href='id.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+{% include language-switcher.html %}
 
 ## Ligne directrices d’Artsdata concernant la propriété @id et les URI locales
 

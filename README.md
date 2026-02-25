@@ -40,8 +40,8 @@ The Artsdata data model contains several public documentation pages intended for
 | Architecture | _architecture | Documents describing how data flows in and out of Artsdata |
 | Classes | _classes | All top-level classes included in the data model |
 | Controlled vocabularies | Root | event-types |
-| Properties | Root | - location<br> - performer <br> - sameas |
-| Identifiers guidelines | Root | - identifier-recommendations<br>  - id<br>  - sameas<br>  - retrieve-uri |
+| Properties | Root | - location<br> - performer |
+| Identifiers guidelines | _identifiers-guidelines | - identifier-recommendations<br>  - id<br>  - sameas<br>  - retrieve-uri |
 | Structured data templates | _gabarits-jsonld | - README (Event)<br> - Organization<br> - Person |
 
 ### Translations
@@ -62,7 +62,7 @@ The naming convention for language versions of the same documentation page is :
 
 ### Creating a new page
 
-1. Navigate to the correct collection folder (`_architecture/`, `_classes/`, or `_gabarits-jsonld/`)
+1. Navigate to the correct collection folder (`_architecture/`, `_classes/`, `_identifiers-guidelines/`, or `_gabarits-jsonld/`)
 2. Click **Add file → Create new file**
 3. Name the file using lowercase letters and dashes (e.g. `my-new-topic.md`)
 4. Add the appropriate front matter at the top of the file:
@@ -80,6 +80,15 @@ layout: architecture-doc
 ---
 class_name: ClassName
 layout: class-event-doc
+---
+```
+
+**`_identifiers-guidelines/` pages:**
+```
+---
+title: Your Page Title
+layout: default
+nav_order: 4
 ---
 ```
 
