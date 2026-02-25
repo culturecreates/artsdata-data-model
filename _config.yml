@@ -8,7 +8,7 @@ plugins:
 # Site branding
 title: "Artsdata Documentation"
 description: "Data model documentation for Artsdata.ca"
-logo: "/assets/images/artsdata-logo.svg"
+logo: "/assets/images/Artsdata_Logo_Circle.svg"
 
 # Placeholder colors (to be replaced with official brand colors later)
 color_scheme: artsdata
