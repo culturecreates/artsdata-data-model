@@ -1,11 +1,8 @@
 ---
 title: How to Retrieve URIs
-layout: default
+layout: identifiers-guidelines-doc
 nav_order: 2
 ---
-
-<p>{% include back-button.html %}</p>
-{% include language-switcher.html %}
 
 # How to Retrieve Persistent Identifiers' URIs
 

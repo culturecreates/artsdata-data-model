@@ -1,12 +1,10 @@
 ---
 title: Propriété sameAs
-layout: default
+layout: identifiers-guidelines-doc
 nav_order: 3
 nav_exclude: true
 lang: fr
 ---
-<p>{% include back-button.html %}</p>
-{% include language-switcher.html %}
 
 ## Lignes directrices concernant la propriété sameAs et les URI
 

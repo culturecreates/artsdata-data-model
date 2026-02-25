@@ -1,11 +1,8 @@
 ---
 title: Persistent Identifiers Guidelines
-layout: default
+layout: identifiers-guidelines-doc
 nav_order: 0
 ---
-
-<p>{% include back-button.html %}</p>
-{% include language-switcher.html %}
 
 ## Artsdata Guidelines regarding Persistent Identifiers
 

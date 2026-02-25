@@ -1,11 +1,8 @@
 ---
 title: sameAs Property Guidelines
-layout: default
+layout: identifiers-guidelines-doc
 nav_order: 3
 ---
-
-<p>{% include back-button.html %}</p>
-{% include language-switcher.html %}
 
 ## Artsdata Guidelines about the schema:sameAs property
 

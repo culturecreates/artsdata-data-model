@@ -1,12 +1,10 @@
 ---
 title: Lignes directrices sur les identifiants pérennes
-layout: default
+layout: identifiers-guidelines-doc
 nav_order: 0
 nav_exclude: true
 lang: fr
 ---
-<p>{% include back-button.html %}</p>
-{% include language-switcher.html %}
 
 # Lignes directrices d’Artsdata à propos des identifiants pérennes
 
