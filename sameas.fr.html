@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=fb319d2148b119d2d6b76a2faa6699c1d586ffb6">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=190f06c29b9e2d8862e9ec81badeb838bb724b61">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>artsdata-data-model | Overview of how data is modelled in Artsdata.ca.</title>
@@ -102,7 +102,11 @@ function goBack() {
 
 <p>Tout comme la <a href="./id.fr.html">propriété <code class="language-plaintext highlighter-rouge">@id</code></a>, la propriété <a href="https://schema.org/sameAs"><code class="language-plaintext highlighter-rouge">schema:sameAs</code></a> constitue un excellent moyen d’identifier sans ambiguïté toute <em>Chose</em> dans les données structurées Schema.</p>
 
-<p>Artsdata recommande de renseigner la propriété <code class="language-plaintext highlighter-rouge">sameAs</code> avec un <a href="https://www.artsdata.ca/fr/ressources/bien-identifie">identifiant pérenne</a>. Voici des informations supplémentaires sur la façon de récupérer un URI : https://culturecreates.github.io/artsdata-data-model/retrieve-uri.fr</p>
+<p>Artsdata recommande de renseigner la propriété <code class="language-plaintext highlighter-rouge">sameAs</code> avec un <a href="https://www.artsdata.ca/fr/ressources/bien-identifie">identifiant pérenne</a>. Voici des informations supplémentaires sur la façon de récupérer une URI :</p>
+
+<ul>
+  <li><a href="https://docs.artsdata.ca/retrieve-uri.fr.html">Comment récupérer les URI d’identifiants pérennes</a></li>
+</ul>
 
 <p>Veuillez toujours saisir l’identifiant sous forme d’URI complète plutôt qu’en forme courte. Par exemple, pour l’identifiant Wikidata <code class="language-plaintext highlighter-rouge">Q596774</code>, il faut saisir l’URI <code class="language-plaintext highlighter-rouge">http://www.wikidata.org/entity/Q596774</code>.</p>
 
@@ -111,18 +115,21 @@ function goBack() {
 <p>La propriété <code class="language-plaintext highlighter-rouge">sameAs</code> peut être utilisée autant pour des objets de premier niveau que pour les entités imbriquées. Dans l’exemple qui suit, la propriété <code class="language-plaintext highlighter-rouge">sameAs</code> est renseignée autant pour l’entité principale de type <code class="language-plaintext highlighter-rouge">Event</code>, au premier niveau, que pour les entités secondaires imbriquées sous les propriétés <code class="language-plaintext highlighter-rouge">location</code>, <code class="language-plaintext highlighter-rouge">organizer</code> et <code class="language-plaintext highlighter-rouge">performer</code> :</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-    "@context": "https://kg.artsdata.ca/context.jsonld",
-    "@type": "Event",
+    "@context": "https://schema.org/",
+    "@type": "PerformingArtsEvent",
     "@id": "https://scenesfrancophones.ca/id/6130",
     "sameAs": "http://kg.artsdata.ca/resource/K43-1002",
     "name": "Maten - Utenat",
     "url": "https://scenesfrancophones.ca/spectacles/maten-utenat-6130",
-    "startDateTime": "2025-05-01T19:30:00-03:00",
+    "startDate": "2025-05-01T19:30:00-03:00",
     "location": {
                 "@type": "Place",
                 "@id": "https://scenesfrancophones.ca/id/467",
                 "name": "Théâtre Gilles-Laplante",
-                "sameAs": "http://www.wikidata.org/entity/Q117093397",
+                "sameAs": [
+                    "http://kg.artsdata.ca/resource/K11-159",
+                    "http://www.wikidata.org/entity/Q117093397"
+                    ],
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "300, chemin Beaverbrook",
@@ -130,7 +137,7 @@ function goBack() {
                     "addressRegion": "NB",
                     "postalCode": "E1V 1A1",
                     "addressCountry": "CA"
-                    },
+                    }
                 },
     "description": "Le groupe innu Maten est originaire de Mani-Utenam, sur la Côte Nord du Québec...",
     "image": "https://scenesfrancophones.ca/sites/default/files/styles/large/public/2024-07/Maten%20-%20Sf.png?itok=qjWZfzae",
@@ -139,7 +146,7 @@ function goBack() {
                 "@id": "https://scenesfrancophones.ca/id/37",
                 "name": "Carrefour communautaire Beausoleil",
                 "sameAs": "http://www.wikidata.org/entity/Q133105414"
-                },
+            },
     "performer": {
                 "@type": "PerformingGroup",
                 "@id": "https://scenesfrancophones.ca/id/6108",
