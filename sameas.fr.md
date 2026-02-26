@@ -6,7 +6,9 @@
 
 Tout comme la [propriété `@id`]({{ base }}/id.fr.html), la propriété [`schema:sameAs`](https://schema.org/sameAs) constitue un excellent moyen d’identifier sans ambiguïté toute _Chose_ dans les données structurées Schema.
 
-Artsdata recommande de renseigner la propriété `sameAs` avec un [identifiant pérenne](https://www.artsdata.ca/fr/ressources/bien-identifie). Voici des informations supplémentaires sur la façon de récupérer un URI : https://culturecreates.github.io/artsdata-data-model/retrieve-uri.fr 
+Artsdata recommande de renseigner la propriété `sameAs` avec un [identifiant pérenne](https://www.artsdata.ca/fr/ressources/bien-identifie). Voici des informations supplémentaires sur la façon de récupérer une URI :
+
+* [Comment récupérer les URI d’identifiants pérennes](https://docs.artsdata.ca/retrieve-uri.fr.html)
 
 Veuillez toujours saisir l’identifiant sous forme d’URI complète plutôt qu’en forme courte. Par exemple, pour l’identifiant Wikidata `Q596774`, il faut saisir l’URI `http://www.wikidata.org/entity/Q596774`.
 
@@ -16,18 +18,21 @@ La propriété `sameAs` peut être utilisée autant pour des objets de premier n
 
 ```
 {
-    "@context": "https://kg.artsdata.ca/context.jsonld",
-    "@type": "Event",
+    "@context": "https://schema.org/",
+    "@type": "PerformingArtsEvent",
     "@id": "https://scenesfrancophones.ca/id/6130",
     "sameAs": "http://kg.artsdata.ca/resource/K43-1002",
     "name": "Maten - Utenat",
     "url": "https://scenesfrancophones.ca/spectacles/maten-utenat-6130",
-    "startDateTime": "2025-05-01T19:30:00-03:00",
+    "startDate": "2025-05-01T19:30:00-03:00",
     "location": {
                 "@type": "Place",
                 "@id": "https://scenesfrancophones.ca/id/467",
                 "name": "Théâtre Gilles-Laplante",
-                "sameAs": "http://www.wikidata.org/entity/Q117093397",
+                "sameAs": [
+                    "http://kg.artsdata.ca/resource/K11-159",
+                    "http://www.wikidata.org/entity/Q117093397"
+                    ],
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "300, chemin Beaverbrook",
@@ -35,7 +40,7 @@ La propriété `sameAs` peut être utilisée autant pour des objets de premier n
                     "addressRegion": "NB",
                     "postalCode": "E1V 1A1",
                     "addressCountry": "CA"
-                    },
+                    }
                 },
     "description": "Le groupe innu Maten est originaire de Mani-Utenam, sur la Côte Nord du Québec...",
     "image": "https://scenesfrancophones.ca/sites/default/files/styles/large/public/2024-07/Maten%20-%20Sf.png?itok=qjWZfzae",
@@ -44,7 +49,7 @@ La propriété `sameAs` peut être utilisée autant pour des objets de premier n
                 "@id": "https://scenesfrancophones.ca/id/37",
                 "name": "Carrefour communautaire Beausoleil",
                 "sameAs": "http://www.wikidata.org/entity/Q133105414"
-                },
+            },
     "performer": {
                 "@type": "PerformingGroup",
                 "@id": "https://scenesfrancophones.ca/id/6108",
