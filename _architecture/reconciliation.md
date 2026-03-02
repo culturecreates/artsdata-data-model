@@ -15,7 +15,11 @@ Supported entity types include:
 
 Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! 
 
-This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). 
+This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). In addition to the basic reconciliation, it provides all optional services in the documentation:
+* Reconciliation: It can return matching matching entities based on their name string, type and properties (read more below)
+* Preview: It can provide embeddable HTML previews of entities, which clients can display in their user interface.
+* Suggest: It can provide auto-complete endpoints for entities, properties and types.
+* Data extension: It can let clients fetch the values of some properties (i.e. a bit like a GET call but just for selected properties). 
 
 The reconciliation service endpoint is `https://api.artsdata.ca/recon`.
 
@@ -27,6 +31,7 @@ To manually add Artsdata IDs to your structured data:
 4. Click the 'Reconcile' button to search Artsdata. 
 5. Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211
 6. Add the URI to your structured data using 'sameAs'.
+    * [How to add the Artsdata ID with the 'sameAs' property](https://docs.artsdata.ca/sameas.html)
 
 ### Adding additional properties
 In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. The additional properties are required to be in the returned entities. Any entity that does not match the additional property will be exluded from the reconciliation results.
@@ -35,41 +40,11 @@ For example to add a postal code when reconiling places, add the property id "sc
 <img width="564" alt="Screenshot 2024-01-31 at 4 02 49 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/1944952b-de90-4a86-a097-a06a8185a5bf">
 <img width="607" alt="Screenshot 2024-01-31 at 4 02 38 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/33b1974c-bf06-4d86-b659-2490e769aebf">
 
-## Example of structured data with added 'sameAs'
-Example for an event's location linked to an Artdata URI. The `"sameAs": "http://kg.artsdata.ca/resource/K11-211"` has been added.
-```
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": {
-    "@language": "fr",
-    "@value": "Diane Dufresne | Sur rendez-vous"
-  },
-  "startDate": "2025-07-21T19:00-05:00",
-  "location": {
-    "@type": "Place",
-    "name": {
-      "@language": "fr",
-      "@value": "Salle André-Mathieu"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Laval",
-      "addressCountry": "CA",
-      "streetAddress": "475 Bd de l'Avenir",
-      "postalCode": "H7N 5H9",
-      "addressRegion": "Québec"
-    },
-    "sameAs": "http://kg.artsdata.ca/resource/K11-211"
-}
-```
-
 ## Artsdata batch reconciliation tool
 
 Logged in users may use to Artsdata Batch Reconciliation Tool to quickly reconcile entire datasets.
 
 The tool can be accessed via the kg.artsdata.ca interface menu. Documentation will be published soon.
-
 
 ## Batch reconciliation using Open Refine
 
