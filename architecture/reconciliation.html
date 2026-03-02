@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=190f06c29b9e2d8862e9ec81badeb838bb724b61">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=47538168a5afa7456728657fbcc578eee986fe9d">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Reconciliation API | artsdata-data-model</title>
@@ -18,11 +18,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/architecture/reconciliation.html" />
 <meta property="og:site_name" content="artsdata-data-model" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-02-26T18:44:23+00:00" />
+<meta property="article:published_time" content="2026-03-02T19:09:21+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Reconciliation API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-26T18:44:23+00:00","datePublished":"2026-02-26T18:44:23+00:00","description":"The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data.","headline":"Reconciliation API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/reconciliation.html"},"url":"http://docs.artsdata.ca/architecture/reconciliation.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-02T19:09:21+00:00","datePublished":"2026-03-02T19:09:21+00:00","description":"The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data.","headline":"Reconciliation API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/reconciliation.html"},"url":"http://docs.artsdata.ca/architecture/reconciliation.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
@@ -113,7 +113,13 @@ function goBack() {
 
 <p>Give it a try using the <a href="https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon">Test bench</a>!</p>
 
-<p>This API follows the documentation provided by the <a href="https://reconciliation-api.github.io/specs/latest/">W3C Entity Reconciliation Community Group</a>.</p>
+<p>This API follows the documentation provided by the <a href="https://reconciliation-api.github.io/specs/latest/">W3C Entity Reconciliation Community Group</a>. In addition to the basic reconciliation, it provides all optional services in the documentation:</p>
+<ul>
+  <li>Reconciliation: It can return matching matching entities based on their name string, type and properties (read more below)</li>
+  <li>Preview: It can provide embeddable HTML previews of entities, which clients can display in their user interface.</li>
+  <li>Suggest: It can provide auto-complete endpoints for entities, properties and types.</li>
+  <li>Data extension: It can let clients fetch the values of some properties (i.e. a bit like a GET call but just for selected properties).</li>
+</ul>
 
 <p>The reconciliation service endpoint is <code class="language-plaintext highlighter-rouge">https://api.artsdata.ca/recon</code>.</p>
 
@@ -125,7 +131,11 @@ function goBack() {
   <li>Enter the name of the entity. For example ‘Salle André-Mathieu’. Or enter the official website url.</li>
   <li>Click the ‘Reconcile’ button to search Artsdata.</li>
   <li>Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211</li>
-  <li>Add the URI to your structured data using ‘sameAs’.</li>
+  <li>Add the URI to your structured data using ‘sameAs’.
+    <ul>
+      <li><a href="https://docs.artsdata.ca/sameas.html">How to add the Artsdata ID with the ‘sameAs’ property</a></li>
+    </ul>
+  </li>
 </ol>
 
 <h3 id="adding-additional-properties">Adding additional properties</h3>
@@ -134,34 +144,6 @@ function goBack() {
 <p>For example to add a postal code when reconiling places, add the property id “schema:address/schema:postalCode” and the postal code.
 <img width="564" alt="Screenshot 2024-01-31 at 4 02 49 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/1944952b-de90-4a86-a097-a06a8185a5bf" />
 <img width="607" alt="Screenshot 2024-01-31 at 4 02 38 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/33b1974c-bf06-4d86-b659-2490e769aebf" /></p>
-
-<h2 id="example-of-structured-data-with-added-sameas">Example of structured data with added ‘sameAs’</h2>
-<p>Example for an event’s location linked to an Artdata URI. The <code class="language-plaintext highlighter-rouge">"sameAs": "http://kg.artsdata.ca/resource/K11-211"</code> has been added.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": {
-    "@language": "fr",
-    "@value": "Diane Dufresne | Sur rendez-vous"
-  },
-  "startDate": "2025-07-21T19:00-05:00",
-  "location": {
-    "@type": "Place",
-    "name": {
-      "@language": "fr",
-      "@value": "Salle André-Mathieu"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Laval",
-      "addressCountry": "CA",
-      "streetAddress": "475 Bd de l'Avenir",
-      "postalCode": "H7N 5H9",
-      "addressRegion": "Québec"
-    },
-    "sameAs": "http://kg.artsdata.ca/resource/K11-211"
-}
-</code></pre></div></div>
 
 <h2 id="artsdata-batch-reconciliation-tool">Artsdata batch reconciliation tool</h2>
 
