@@ -5,11 +5,12 @@ layout: architecture-doc
 
 A SPARQL endpoint is a web service that allows users to query a dataset using the SPARQL query language, which is designed for querying RDF (Resource Description Framework) data.
 
-The SPARQL service with a User Interface: [https://query.artsdata.ca/sparql](https://query.artsdata.ca/sparql). 
+The SPARQL service for humans: [https://query.artsdata.ca/sparql](https://query.artsdata.ca/sparql). 
 
-The SPARQL endpoint API wrapper for coding: [https://query.artsdata.ca/query](https://query.artsdata.ca/query).
+For coders there are 2 SPARQL endpoints:
+1. [https://query.artsdata.ca/query](https://query.artsdata.ca/query) is recommended, but does not support federation.
 
-The standard GraphDB SPARQL 1.1 endpoint: http://db.artsdata.ca/repositories/artsdata
+2. [http://db.artsdata.ca/repositories/artsdata](http://db.artsdata.ca/repositories/artsdata) is a fully compliant SPARQL 1.1 endpoint by GraphDB, but may be closed to the public in the future.
 
 ## Wikidata Interlinking
 
