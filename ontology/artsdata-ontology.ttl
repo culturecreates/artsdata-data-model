@@ -20,12 +20,12 @@ ado: rdf:type owl:Ontology ;
     dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage."@en ;
     dcterms:creator "Artsdata Stewardship Team" ;
     dcterms:created "2025-09-30"^^xsd:date ;
-    dcterms:modified "2025-10-17"^^xsd:date ;
+    dcterms:modified "2026-03-05"^^xsd:date ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "ado" ;
     vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
     owl:versionIRI <http://kg.artsdata.ca/ontology/1/> ; # TODO: location = /ontology/1 { return 301 /ontology/; }
-    owl:versionInfo "1.1.0" ;
+    owl:versionInfo "1.2.0" ;
     vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/artsdata-ontology.ttl> ;
     dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
 
