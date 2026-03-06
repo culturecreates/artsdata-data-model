@@ -1,6 +1,7 @@
 ---
 title: SPARQL Endpoint
 layout: architecture-doc
+nav_order: 15
 ---
 
 A SPARQL endpoint is a web service that allows users to query a dataset using the SPARQL query language, which is designed for querying RDF (Resource Description Framework) data.

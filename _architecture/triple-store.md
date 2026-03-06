@@ -1,6 +1,7 @@
 ---
 title: Artsdata Triplestore
 layout: architecture-doc
+nav_order: 16
 ---
 
 The Artsdata triplestore is a standard (compliant with W3C Standards) RDF triplestore using "GraphDB Free" product by [OntoText](http://graphdb.ontotext.com).

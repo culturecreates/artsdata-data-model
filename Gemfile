@@ -7,3 +7,5 @@ gem 'github-pages', group: :jekyll_plugins
 gem 'httparty'
 gem 'jekyll'
 gem 'webrick'
+gem 'csv'
+gem "just-the-docs"

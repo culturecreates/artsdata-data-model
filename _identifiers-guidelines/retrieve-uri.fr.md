@@ -1,6 +1,10 @@
-{% include back-button.html %}
-
-{% include retrieve-uri-languages.html %}
+---
+title: Comment récupérer les URI
+layout: identifiers-guidelines-doc
+nav_order: 2
+nav_exclude: true
+lang: fr
+---
 
 # Comment récupérer les URI d’identifiants pérennes
 

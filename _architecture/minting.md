@@ -1,6 +1,7 @@
 ---
 title: Minting API
 layout: architecture-doc
+nav_order: 10
 ---
 
 The Minting API creates and assigns globally-unique persistent identifiers – Artsdata IDs – to entities. The API returns Artsdata IDs as URIs: 

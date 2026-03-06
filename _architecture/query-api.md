@@ -1,6 +1,7 @@
 ---
 title: Query API
 layout: architecture-doc
+nav_order: 13
 ---
 
 A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies...

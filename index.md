@@ -1,6 +1,10 @@
+---
+lang: en
+layout: default
+---
 {% include base.html %}
 {% include last-modified.html %}
-{% include homepage-languages.html %}
+{% include language-switcher.html %}
 
 ## Artsdata Data Model v{{ site.data.versions.schemaVersion }}
 [Edit page](https://github.com/culturecreates/artsdata-data-model/blob/master/{{page.path}}) | <span id="last-modified"></span>
@@ -21,11 +25,13 @@ Here are the main Classes used in Artsdata.
 
 <ol>
 {% for class in site.classes %}
+  {% unless class.nav_exclude %}
 <li>
     <a href="{{ base }}{{ class.url }}">
         {{ class.class_name }}
     </a>
 </li>
+  {% endunless %}
 {% endfor %}
 </ol>
 
@@ -41,7 +47,7 @@ Here are the main Classes used in Artsdata.
 
 In addition to Artsdata Identifiers, the Artsdata Knowledge Graph relies on other unique persistent identifiers, like Wikidata and ISNI, to recognize and reconcile entities of type [Organization]({{ base }}/classes/organization.html), [Person]({{ base }}/classes/person.html) and [Place]({{ base }}/classes/place.html). 
 
-[Guidelines regarding persistent identifiers for data providers](https://culturecreates.github.io/artsdata-data-model/identifier-recommendations)
+[Guidelines regarding persistent identifiers for data providers]({{ base }}/identifiers-guidelines/identifier-recommendations.html)
 
 ### Structured Data Templates
 

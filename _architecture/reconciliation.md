@@ -1,6 +1,7 @@
 ---
 title: Reconciliation API
 layout: architecture-doc
+nav_order: 14
 ---
 
 The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data. 

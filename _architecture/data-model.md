@@ -1,6 +1,7 @@
 ---
 title: Artsdata Data Model & Ontology
 layout: architecture-doc
+nav_order: 3
 ---
 
 [Here](https://culturecreates.github.io/artsdata-data-model/) is the website that documents the Artsdata.ca Data Model.

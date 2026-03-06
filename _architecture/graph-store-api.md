@@ -1,6 +1,7 @@
 ---
 title: Databus API
 layout: architecture-doc
+nav_order: 8
 ---
 
 An API that acts as a gateway between the outside world and the Artsdata Triplestore.

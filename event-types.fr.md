@@ -1,5 +1,9 @@
+---
+nav_exclude: true
+lang: fr
+---
 <p>{% include back-button.html %}</p>
-{% include event-type-languages.html %}
+{% include language-switcher.html %}
 
 ## Vocabulaire contrôlé Artsdata pour les types d'événements
 

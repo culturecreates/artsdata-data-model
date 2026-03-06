@@ -1,5 +1,10 @@
-<p>{% include back-button.html %}</p>
-{% include identifier-recommendations-languages.html %}
+---
+title: Lignes directrices sur les identifiants pérennes
+layout: identifiers-guidelines-doc
+nav_order: 0
+nav_exclude: true
+lang: fr
+---
 
 # Lignes directrices d’Artsdata à propos des identifiants pérennes
 
@@ -37,11 +42,11 @@ Voir : [Lignes directrices concernant la propriété @id et les URI locales]({{ 
 
 ### Comment intégrer des URI externes à des données structurées
 
-Voir : [Lignes directrices concernant la propriété sameAs et les URI]({{ base }}/sameas.fr.html)
+Voir : [Lignes directrices concernant la propriété sameAs et les URI]({{ base }}/identifiers-guidelines/sameas.fr.html)
 
 ### Comment récupérer des URI d'identifiants pérennes
 
-Voir : [Comment récupérer les URI d’identifiants pérennes]({{ base }}/retrieve-uri.fr.html)
+Voir : [Comment récupérer les URI d’identifiants pérennes]({{ base }}/identifiers-guidelines/retrieve-uri.fr.html)
 
 ### Comment entreposer des URI externes dans une base de données
 

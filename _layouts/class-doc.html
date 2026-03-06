@@ -7,8 +7,7 @@ layout: default
 {% assign class_equivalent_class_json = page.class_name | append: '-equivalent-class' %}
 
 {% include back-button.html %}
-
-
+{% include language-switcher.html %}
 
 <h1><a href="{{class_definition.label.value | prepend: 'http://schema.org/'}}">{{ page.class_name }}</a></h1>
 
