@@ -2,7 +2,7 @@
 title: Event Structured Data Templates
 layout: gabarits-doc
 ---
-
+{% include gabarit-languages.html %}
 
 Event Structured Data Templates
 =====================================
