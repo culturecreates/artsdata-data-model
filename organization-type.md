@@ -1,5 +1,5 @@
 <p>{% include back-button.html %}</p>
-{% include organization-type-languages.html %}
+{% include language-switcher.html %}
 
 ## Artsdata Organization Types
 

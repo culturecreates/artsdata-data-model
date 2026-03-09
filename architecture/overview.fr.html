@@ -1,66 +1,265 @@
+
+
 <!DOCTYPE html>
+
 <html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=8f016b58760db6bf68af2e3d5500e1db8fc56ae2">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Architecture Sommaire | artsdata-data-model</title>
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+    .site-nav ul li a {
+      background-image: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list {
+      display: block;
+    }
+
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Architecture Sommaire | Artsdata Documentation</title>
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="Architecture Sommaire" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="&lt; Back | Home | Edit page | &amp;#x1F64B; Check for open issues |" />
-<meta property="og:description" content="&lt; Back | Home | Edit page | &amp;#x1F64B; Check for open issues |" />
+<meta name="description" content="L’écosystème de données ouvertes et liées d’Artsdata est composée de plusieurs parties que l’on peut regrouper en trois ensembles : Fournisseurs de données : Graphe de connaissances Artsdata ; Consommateurs de données." />
+<meta property="og:description" content="L’écosystème de données ouvertes et liées d’Artsdata est composée de plusieurs parties que l’on peut regrouper en trois ensembles : Fournisseurs de données : Graphe de connaissances Artsdata ; Consommateurs de données." />
 <link rel="canonical" href="http://docs.artsdata.ca/architecture/overview.fr.html" />
 <meta property="og:url" content="http://docs.artsdata.ca/architecture/overview.fr.html" />
-<meta property="og:site_name" content="artsdata-data-model" />
+<meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-03-06T18:07:02+00:00" />
+<meta property="article:published_time" content="2026-03-09T11:39:17+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Architecture Sommaire" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-06T18:07:02+00:00","datePublished":"2026-03-06T18:07:02+00:00","description":"&lt; Back | Home | Edit page | &amp;#x1F64B; Check for open issues |","headline":"Architecture Sommaire","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/overview.fr.html"},"url":"http://docs.artsdata.ca/architecture/overview.fr.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-09T11:39:17+00:00","datePublished":"2026-03-09T11:39:17+00:00","description":"L’écosystème de données ouvertes et liées d’Artsdata est composée de plusieurs parties que l’on peut regrouper en trois ensembles : Fournisseurs de données : Graphe de connaissances Artsdata ; Consommateurs de données.","headline":"Architecture Sommaire","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/overview.fr.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/overview.fr.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
-<!-- Setup Google Analytics -->
+  
 
+</head>
 
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
 
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
 
-<!-- end custom head snippets -->
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
 
-  </head>
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
 
-  <body>
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="Artsdata Documentation"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    
+    
+      
+      
+      
+      
+        
           
-            <a id="forkme_banner" href="https://github.com/culturecreates/artsdata-data-model">View on GitHub</a>
+            <div class="nav-category">Classes</div>
+            <ul class="nav-list"><li class="nav-list-item"><a href="/classes/event.html" class="nav-list-link">Event</a></li><li class="nav-list-item"><a href="/classes/event-attendance-mode-enumeration.html" class="nav-list-link">EventAttendanceModeEnumeration</a></li><li class="nav-list-item"><a href="/classes/event-status-type.html" class="nav-list-link">EventStatusType</a></li><li class="nav-list-item"><a href="/classes/live-performance-work.html" class="nav-list-link">LivePerformanceWork</a></li><li class="nav-list-item"><a href="/classes/offer.html" class="nav-list-link">Offer</a></li><li class="nav-list-item"><a href="/classes/organization.html" class="nav-list-link">Organization</a></li><li class="nav-list-item"><a href="/classes/person.html" class="nav-list-link">Person</a></li><li class="nav-list-item"><a href="/classes/place.html" class="nav-list-link">Place</a></li><li class="nav-list-item"><a href="/classes/postal-address.html" class="nav-list-link">PostalAddress</a></li><li class="nav-list-item"><a href="/classes/virtual-location.html" class="nav-list-link">VirtualLocation</a></li><li class="nav-list-item"><a href="/classes/web-page.html" class="nav-list-link">WebPage</a></li></ul>
           
-
-          <h1 id="project_title">artsdata-data-model</h1>
-          <h2 id="project_tagline">Overview of how data is modelled in Artsdata.ca.</h2>
-
+        
+      
+    
+      
+      
+      
+      
+        
           
-        </header>
-    </div>
+            <div class="nav-category">Architecture</div>
+            <ul class="nav-list"><li class="nav-list-item"><a href="/architecture/overview.html" class="nav-list-link">Data Flow Architecture</a></li><li class="nav-list-item"><a href="/architecture/artsdata.html" class="nav-list-link">Artsdata.ca Website</a></li><li class="nav-list-item"><a href="/architecture/data-consumers.html" class="nav-list-link">Data Consumers</a></li><li class="nav-list-item"><a href="/architecture/data-model.html" class="nav-list-link">Artsdata Data Model & Ontology</a></li><li class="nav-list-item"><a href="/architecture/footlight.html" class="nav-list-link">Footlight Console</a></li><li class="nav-list-item"><a href="/architecture/google-sheet-to-artsdata.html" class="nav-list-link">Google Sheet-to-Artsdata Tool</a></li><li class="nav-list-item"><a href="/architecture/google-sheets.html" class="nav-list-link">Google Sheets</a></li><li class="nav-list-item"><a href="/architecture/graph-store-api.html" class="nav-list-link">Databus API</a></li><li class="nav-list-item"><a href="/architecture/ical.html" class="nav-list-link">iCal Server</a></li><li class="nav-list-item"><a href="/architecture/minting.html" class="nav-list-link">Minting API</a></li><li class="nav-list-item"><a href="/architecture/query-api.html" class="nav-list-link">Query API</a></li><li class="nav-list-item"><a href="/architecture/reconciliation.html" class="nav-list-link">Reconciliation API</a></li><li class="nav-list-item"><a href="/architecture/sparql.html" class="nav-list-link">SPARQL Endpoint</a></li><li class="nav-list-item"><a href="/architecture/triple-store.html" class="nav-list-link">Artsdata Triplestore</a></li></ul>
+          
+        
+      
+    
+      
+      
+      
+      
+        
+          
+            <div class="nav-category">Identifiers Guidelines</div>
+            <ul class="nav-list"><li class="nav-list-item"><a href="/identifiers-guidelines/identifier-recommendations.html" class="nav-list-link">Persistent Identifiers Guidelines</a></li><li class="nav-list-item"><a href="/identifiers-guidelines/id.html" class="nav-list-link">@id Property and URIs</a></li><li class="nav-list-item"><a href="/identifiers-guidelines/retrieve-uri.html" class="nav-list-link">How to Retrieve URIs</a></li><li class="nav-list-item"><a href="/identifiers-guidelines/sameas.html" class="nav-list-link">sameAs Property Guidelines</a></li></ul>
+          
+        
+      
+    
+      
+      
+      
+      
+        
+          
+            <div class="nav-category">Templates</div>
+            <ul class="nav-list"><li class="nav-list-item"><a href="/gabarits-jsonld/README.html" class="nav-list-link">Event Structured Data Templates</a></li><li class="nav-list-item"><a href="/gabarits-jsonld/organization.html" class="nav-list-link">Organization Structured Data Templates</a></li><li class="nav-list-item"><a href="/gabarits-jsonld/person.html" class="nav-list-link">Person Structured Data Templates</a></li></ul>
+          
+        
+      
+    
+  
+</nav>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p><!-- _includes/base.html -->
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a><br>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Artsdata Documentation" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Artsdata Documentation</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.artsdata.ca" class="site-button"
+          
+        >
+          Artsdata.ca
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/culturecreates/artsdata-data-model" class="site-button"
+          
+        >
+          GitHub
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <!-- _includes/base.html -->
 
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XBYDJJJNGL"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBYDJJJNGL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -68,7 +267,7 @@
 
   gtag('config', 'G-XBYDJJJNGL');
 </script>
-<a onclick="goBack()">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_architecture/overview.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+<a onclick="goBack()" style="cursor: pointer">&lt;  Back</a> | <a href="../index.html">Home</a> | <a href = "https://github.com/culturecreates/artsdata-data-model/blob/master/_architecture/overview.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
 
 
 <script>
@@ -95,14 +294,160 @@ function goBack() {
   window.history.back();
 }
 </script>
-</p>
 
-<p><br />
-<a href="overview.html"><img src="https://img.shields.io/badge/lang-en-blue.svg" /></a>
-<a href="overview.fr.html"><img src="https://img.shields.io/badge/lang-fr-green.svg" /></a>
-</p>
 
-<h1 id="architecture-des-flux-de-données">Architecture des flux de données</h1>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      
+
+
+
+
+
+
+<div class="language-switcher">
+  
+    
+    
+      <a href="/architecture/overview.html"
+         class="btn-language-switch"
+         hreflang="en">EN</a>
+      <link rel="alternate" hreflang="en" href="http://docs.artsdata.ca/architecture/overview.html" />
+    
+    <span class="label-current-lang">FR</span>
+  
+</div>
+<h2>
+  
+  
+    Architecture Sommaire
+  
+  
+</h2>
+    
 
 <p>L’écosystème de données ouvertes et liées d’Artsdata est composée de plusieurs parties que l’on peut regrouper en trois ensembles :</p>
 <ul>
@@ -113,78 +458,94 @@ function goBack() {
 
 <p>Voici un schéma illustrant cette architecture ainsi que les flux de données entre les différents ensembles.</p>
 
-<p><img src="../images/artsdata-architecture.png" alt="test" usemap="#image-map" />
+<p><img src="/images/artsdata-architecture.png" alt="test" usemap="#image-map" />
 <!-- Drawing source https://drive.google.com/file/d/1s7j4xMUgkpaz46o_711HFQ0PlU9WlUTG/view?usp=sharing --></p>
 <map name="image-map">
-  <area href="../architecture/data-consumers.html" alt="Data Consumers" title="Data Consumers" coords="584,52,722,310" shape="rect" />
+  <area href="/architecture/data-consumers.html" alt="Data Consumers" title="Data Consumers" coords="584,52,722,310" shape="rect" />
 </map>
-
-<h3 id="detail-des-éléments-de-larchitecture">Detail des éléments de l’architecture</h3>
+<h3 id="detail-des-éléments-de-larchitecture">
+  
+  
+    <a href="#detail-des-éléments-de-larchitecture" class="anchor-heading" aria-labelledby="detail-des-éléments-de-larchitecture"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Detail des éléments de l’architecture
+  
+  
+</h3>
+    
 <ul>
 
   
-   <li> <a href="../architecture/artsdata.html"> Artsdata.ca Website</a></li>
+   <li> <a href="/architecture/artsdata.html"> Artsdata.ca Website</a></li>
   
 
   
-   <li> <a href="../architecture/data-consumers.html"> Data Consumers</a></li>
+   <li> <a href="/architecture/data-consumers.html"> Data Consumers</a></li>
   
 
   
-   <li> <a href="../architecture/data-model.html"> Artsdata Data Model &amp; Ontology</a></li>
+   <li> <a href="/architecture/data-model.html"> Artsdata Data Model &amp; Ontology</a></li>
   
 
   
-   <li> <a href="../architecture/footlight.html"> Footlight Console</a></li>
+   <li> <a href="/architecture/footlight.html"> Footlight Console</a></li>
   
 
   
-   <li> <a href="../architecture/google-sheet-to-artsdata.fr.html"> L'outil Google Sheet-vers-Artsdata</a></li>
+   <li> <a href="/architecture/google-sheet-to-artsdata.fr.html"> L'outil Google Sheet-vers-Artsdata</a></li>
   
 
   
-   <li> <a href="../architecture/google-sheet-to-artsdata.html"> Google Sheet-to-Artsdata Tool</a></li>
+   <li> <a href="/architecture/google-sheet-to-artsdata.html"> Google Sheet-to-Artsdata Tool</a></li>
   
 
   
-   <li> <a href="../architecture/google-sheets.html"> Google Sheets</a></li>
+   <li> <a href="/architecture/google-sheets.html"> Google Sheets</a></li>
   
 
   
-   <li> <a href="../architecture/graph-store-api.html"> Databus API</a></li>
+   <li> <a href="/architecture/graph-store-api.html"> Databus API</a></li>
   
 
   
-   <li> <a href="../architecture/ical.html"> iCal Server</a></li>
+   <li> <a href="/architecture/ical.html"> iCal Server</a></li>
   
 
   
-   <li> <a href="../architecture/minting.html"> Minting API</a></li>
+   <li> <a href="/architecture/minting.html"> Minting API</a></li>
   
 
   
-
+   <li> <a href="/architecture/overview.fr.html"> Architecture Sommaire</a></li>
   
 
   
-   <li> <a href="../architecture/query-api.html"> Query API</a></li>
+   <li> <a href="/architecture/overview.html"> Data Flow Architecture</a></li>
   
 
   
-   <li> <a href="../architecture/reconciliation.html"> Reconciliation API</a></li>
+   <li> <a href="/architecture/query-api.html"> Query API</a></li>
   
 
   
-   <li> <a href="../architecture/sparql.html"> SPARQL Endpoint</a></li>
+   <li> <a href="/architecture/reconciliation.html"> Reconciliation API</a></li>
   
 
   
-   <li> <a href="../architecture/triple-store.html"> Artsdata Triplestore</a></li>
+   <li> <a href="/architecture/sparql.html"> SPARQL Endpoint</a></li>
+  
+
+  
+   <li> <a href="/architecture/triple-store.html"> Artsdata Triplestore</a></li>
   
 
 </ul>
-
-<h3 id="fournisseurs-de-données">Fournisseurs de données</h3>
+<h3 id="fournisseurs-de-données">
+  
+  
+    <a href="#fournisseurs-de-données" class="anchor-heading" aria-labelledby="fournisseurs-de-données"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fournisseurs de données
+  
+  
+</h3>
+    
 
 <p>Artsdata propose aux fournisseurs de données une diversité de processus et d’outils pour l’extraction-transformation-chargement (ETC) de leurs données :</p>
 <ul>
@@ -201,38 +562,50 @@ function goBack() {
 
 <p>L’extraction frontale est exécutée par le robot Artsdata, un agent utilisateur qui fonctionne de la même manière que les robots d’indexation des moteurs de recherche. Certains site n’autorise pas les robots à explorer les pages web (ou en autorisent certains et bloquent les autres). Pour savoir comment autoriser le robot Artsdata, consultez cette <a href="https://kg.artsdata.ca/doc/artsdata-crawler">page de documentation</a>.</p>
 
-<p>Avant d’être déposées sur Artsdata, les données doivent satisfaire les exigences minimales du <a href="../index.fr.html">modèle de données d’Artsdata</a>. Les formes <a href="../shacl_reports.html">SHACL</a> sont utilisées pour valider les données avant l’importation.</p>
+<p>Avant d’être déposées sur Artsdata, les données doivent satisfaire les exigences minimales du <a href="/index.fr.html">modèle de données d’Artsdata</a>. Les formes <a href="/shacl_reports.html">SHACL</a> sont utilisées pour valider les données avant l’importation.</p>
 
 <p>Consultez la page <a href="https://kg.artsdata.ca/fr/doc/contributor-conditions">Conditions pour les fournisseurs de données</a> pour en apprendre davantage sur le processus d’extraction, de transformation, de chargement et d’enrichissement sémantique.</p>
 
-<p>Le dépôt de données sur Artsdata exige un compte utilisateur Github enregistré auprès d’Artsdata. Nous encourageons les développeurs à s’enregistrer et à utiliser l’<a href="../architecture/graph-store-api.html">API bus de données d’Artsdata</a> pour charger leurs données. Si vous souhaitez vous enregistrer auprès d’Artsdata ou avez besoin d’aide pour charger vos données, veuillez <a href="https://www.artsdata.ca/fr/nous-joindre">contacter l’équipe d’Artsdata</a>.</p>
+<p>Le dépôt de données sur Artsdata exige un compte utilisateur Github enregistré auprès d’Artsdata. Nous encourageons les développeurs à s’enregistrer et à utiliser l’<a href="/architecture/graph-store-api.html">API bus de données d’Artsdata</a> pour charger leurs données. Si vous souhaitez vous enregistrer auprès d’Artsdata ou avez besoin d’aide pour charger vos données, veuillez <a href="https://www.artsdata.ca/fr/nous-joindre">contacter l’équipe d’Artsdata</a>.</p>
 
 <p>Toutes les données déposées sur Artsdata sont par défaut publiées sous la licence CC0.</p>
 
 <p>Pour en savoir plus, visitez la page <a href="https://kg.artsdata.ca/fr/doc/contributor-conditions">Conditions pour les fournisseurs de données</a>.</p>
 
 <p>Les fournisseurs de données d’Artsdata comprennent des associations, des syndicats, des billetteries, ainsi que des organismes artistiques (<a href="https://kg.artsdata.ca/fr/query/show?sparql=feeds_all&amp;title=Data+Feeds">voir la liste</a>).</p>
+<h3 id="graphe-de-connaissances-artsdata-kgartsdataca">
+  
+  
+    <a href="#graphe-de-connaissances-artsdata-kgartsdataca" class="anchor-heading" aria-labelledby="graphe-de-connaissances-artsdata-kgartsdataca"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Graphe de connaissances Artsdata (kg.artsdata.ca)
+  
+  
+</h3>
+    
 
-<h3 id="graphe-de-connaissances-artsdata-kgartsdataca">Graphe de connaissances Artsdata (kg.artsdata.ca)</h3>
+<p>Artsdata aggrège et partage des métadonnées descriptives à propos d’événements culturels (et des entités qui y sont associées) en provenance de multiples sites web et de bases de données. Les données sont publiées sous forme de données ouvertes et liées, c’est-à-dire avec des <a href="/identifiers-guidelines/identifier-recommendations.fr">identifiants pérennes</a> (exprimés sous forme d’URIs) qui permettent de lier des événements à des artistes, des lieux et des organismes.</p>
 
-<p>Artsdata aggrège et partage des métadonnées descriptives à propos d’événements culturels (et des entités qui y sont associées) en provenance de multiples sites web et de bases de données. Les données sont publiées sous forme de données ouvertes et liées, c’est-à-dire avec des <a href="../identifier-recommendations.fr">identifiants pérennes</a> (exprimés sous forme d’URIs) qui permettent de lier des événements à des artistes, des lieux et des organismes.</p>
-
-<p>Le <a href="../index.fr.html">modèle de données (ontologie) d’Artsdata</a> est représenté selon des ontologies RDF. Il est un sous-ensemble de Schema.org et s’aligne sur un grand nombre d’ontologies formelles (par exemple, LRMoo, DBpedia) et non-formelles (par exemple, Wikidata).</p>
+<p>Le <a href="/index.fr.html">modèle de données (ontologie) d’Artsdata</a> est représenté selon des ontologies RDF. Il est un sous-ensemble de Schema.org et s’aligne sur un grand nombre d’ontologies formelles (par exemple, LRMoo, DBpedia) et non-formelles (par exemple, Wikidata).</p>
 
 <p>Artsdata attribue ses propres identifiants pérennes (URIs) aux entités nommées lorsqu’elles satisfont aux exigences minimale pour l’attribution d’identifiants. Les utilisateurs enregistrés peuvent créer une URI Artsdata à partir d’une URI Wikidata. Artsdata s’appuie aussi sur des URIs externes (Wikidata, VIAF) pour désigner des entités nommées et des concepts.</p>
 
-<p>Le <a href="../architecture/triple-store.html">triplestore d’Artsdata</a>, est un triplestore standard (conforme aux normes du W3C) utilisant le produit « GraphDB Free » de la compagnie OntoText.</p>
-
-<h3 id="consommateurs-de-données">Consommateurs de données</h3>
+<p>Le <a href="/architecture/triple-store.html">triplestore d’Artsdata</a>, est un triplestore standard (conforme aux normes du W3C) utilisant le produit « GraphDB Free » de la compagnie OntoText.</p>
+<h3 id="consommateurs-de-données">
+  
+  
+    <a href="#consommateurs-de-données" class="anchor-heading" aria-labelledby="consommateurs-de-données"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Consommateurs de données
+  
+  
+</h3>
+    
 
 <p>Artsdata offre plusieurs modes d’accès pour les consommateurs de données désirant utiliser les données exposées par le biais d’Artsdata :</p>
 <ul>
   <li>Naviguer l’interface du graphe de connaissances à <a href="https://kg.artsdata.ca/">kg.artsdata.ca</a> ;</li>
-  <li>Appeler l’<a href="../architecture/reconciliation.html">API de réconciliation</a> pour récupérer les identifiants pérennes ;</li>
+  <li>Appeler l’<a href="/architecture/reconciliation.html">API de réconciliation</a> pour récupérer les identifiants pérennes ;</li>
   <li>Déréférencer les identifiants pérennes pour récupérer les métadonnées associées au format JSON-LD ;</li>
-  <li>Appeler l’<a href="../architecture/query-api.html">API de requête</a> RESTfull d’Artsdata ;</li>
-  <li>S’abonner à un <a href="https://kg.artsdata.ca/ical">flux iCalendar</a> personnalisé par l’entremise du <a href="../architecture/ical.html">serveur iCal</a> ;</li>
-  <li>Effectuer une requête sur le <a href="../architecture/sparql.html">terminal SPARQL</a> d’Artsdata ;</li>
+  <li>Appeler l’<a href="/architecture/query-api.html">API de requête</a> RESTfull d’Artsdata ;</li>
+  <li>S’abonner à un <a href="https://kg.artsdata.ca/ical">flux iCalendar</a> personnalisé par l’entremise du <a href="/architecture/ical.html">serveur iCal</a> ;</li>
+  <li>Effectuer une requête sur le <a href="/architecture/sparql.html">terminal SPARQL</a> d’Artsdata ;</li>
   <li>Télécharger un fichier cliché (c.-à-d., un “dump”) sérialisé dans divers formats tels que JSON-LD ou N-Quads.</li>
 </ul>
 
@@ -240,17 +613,39 @@ function goBack() {
 
 <p>Les consommateurs de données Artsdata comprennent des calendriers culturels, des plateformes qui soutiennent l’industrie des arts, des organismes de service aux arts, des gouvernements et des moteurs de recherche (<a href="https://kg.artsdata.ca/fr/doc/data-consumers">voir la liste</a>). Pour un aperçu des cas d’usage, consultez nos <a href="https://www.artsdata.ca/fr/recits">récits utilisateur</a>.</p>
 
-      </section>
-    </div>
+          
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
+          
+            
+          
+        </main>
         
-        <p class="copyright">artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a></p>
-        
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">© 2026 Artsdata.ca | <a href='https://creativecommons.org/publicdomain/zero/1.0/'>CC0 License</a></p>
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      artsdata-data-model maintained by <a href="https://github.com/culturecreates">culturecreates</a><br>
+
+    
+  </div>
+</footer>
+
+      </div>
     </div>
-  </body>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
 </html>
+
