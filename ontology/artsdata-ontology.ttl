@@ -7,12 +7,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema:  <http://schema.org/> .
 @prefix frbroo: <https://www.iflastandards.info/fr/frbr/frbroo#> .
 @prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> . 
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix wd: <http://www.wikidata.org/entity/>
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
@@ -81,88 +79,13 @@ ado:hasEventType rdf:type rdf:Property ;
     rdfs:range ado:EventType ;
     rdfs:subPropertyOf schema:additionalType .
 
-ado:workPerformed rdf:type rdf:Property ;
-    rdfs:label "Work Performed"@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:Event ;
-    rdfs:range schema:CreativeWork ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-    rdfs:subPropertyOf schema:workPerformed ;
-    owl:equivalentProperty wdt:P4646, lrmoo:R80_performed .
-
-ado:title rdf:type rdf:Property ;
-    rdfs:label "Title"@en ;
-    rdfs:comment "Official title of the work, as it appears at the source."@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range rdf:langString ;
-    owl:equivalentProperty wdt:P1476, crm:P102_has_title, dcterms:title .
-
-ado:alternativeTitle rdf:type rdf:Property ;
-    rdfs:label "Alternative Title"@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range rdf:langString ;
-    owl:equivalentProperty wdt:P4970, dcterms:aternative .
-
 ado:usesExpressionOf rdf:type rdf:Property ;
     rdfs:label "Uses expression of"@en ;
     rdfs:comment "This property associates an instance of CreativeWork with another instance of CreativeWork that is a creative input to the former. For example, Pina Bausch's \"The Rite of Spring\" (instance of LivePerformanceWork) uses expression of Igor Stravinsky's \"The Rite of Spring\" (instance of musico-dramatic work)."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range schema:CreativeWork ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:equivalentProperty wdt:P144, lrmoo:R74_uses_expression_of .
-
-ado:follows rdf:type rdf:Property ;
-    rdfs:label "Follows"@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:CreativeWork ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:equivalentProperty wdt:P155, lrmoo:R1_is_logical_successor_of .
-
-ado:isDerivativeOf rdf:type rdf:Property ;
-    rdfs:label "Is derivative of"@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:CreativeWork ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:equivalentProperty wdt:P4969, schema:isBasedOn, lrmoo:R2_is_derivative_of .
-
-ado:hasPart rdf:type rdf:Property ;
-    rdfs:label "Has part(s)"@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:CreativeWork ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:equivalentProperty wdt:P527, schema:hasPart, lrmoo:R67_has_part, dcterms:hasPart .
-
-ado:inspiredBy rdf:type rdf:Property ;
-    rdfs:label "Is inspired by"@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:CreativeWork ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:equivalentProperty wdt:P737, lrmoo:R68_is_inspired_by .
-
-ado:accompanies rdf:type rdf:Property ;
-    rdfs:label "Accompanies or complements"@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:CreativeWork ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:equivalentProperty lrmoo:R77_accompanies_or_complements .
-
-ado:contributor rdf:type rdf:Property ;
-    rdfs:label "Contributor"@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range dbo:Agent ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:equivalentProperty wdt:P767, schema:contributor, dcterms:contributor .
+    rdfs:subPropertyOf lrmoo:R74_uses_expression_of .
 
 ado:hasGenre rdf:type rdf:Property ;
     rdfs:label "has genre"@en ;
