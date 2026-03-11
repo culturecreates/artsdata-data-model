@@ -80,7 +80,7 @@ ado:hasEventType rdf:type rdf:Property ;
     rdfs:subPropertyOf schema:additionalType .
 
 ado:usesExpressionOf rdf:type rdf:Property ;
-    rdfs:label "Uses expression of"@en ;
+    rdfs:label "uses expression of"@en ;
     rdfs:comment "This property associates an instance of CreativeWork with another instance of CreativeWork that is a creative input to the former. For example, Pina Bausch's \"The Rite of Spring\" (instance of LivePerformanceWork) uses expression of Igor Stravinsky's \"The Rite of Spring\" (instance of musico-dramatic work)."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:CreativeWork ;
