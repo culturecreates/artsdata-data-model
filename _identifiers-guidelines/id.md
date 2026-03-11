@@ -1,6 +1,8 @@
-<p>{% include back-button.html %}</p>
-<a href='id.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
-<a href='id.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+---
+title: "@id Property and URIs"
+layout: identifiers-guidelines-doc
+nav_order: 1
+---
 
 ## Artsdata Guidelines about the @id property and URIs
 
@@ -70,12 +72,11 @@ HashURIs based on existing webpage URLs, as described above, are only one of man
 * [Cool URIs for the Semantic Web](https://www.w3.org/TR/cooluris/), W3C Interest Group Note 03 December 2008
 * [Identifiants pérennes pour les ressources culturelles : Vade-mecum pour les producteurs de données](https://www.culture.gouv.fr/Espace-documentation/Publications-revues/Identifiants-perennes-pour-les-ressources-numeriques), Version 1.0, 2015.
 
-
 ## If you are unable to generate your own URIs…
 
 Don’t worry. Artsdata can handle data without URIs.
 
 As an alternative (or in complement to `"@id"`), consider using the `"sameAs"` property to assign an external persistent identifier to your Place, Person and Organization entities. This is a simple and highly effective way to identify a Thing, and to provide a link to more data about it.
 
-See: [Artsdata guidelines regarding the sameAs property]({{ base }}/sameas.html)
+See: [Artsdata guidelines regarding the sameAs property]({{ base }}/identifiers-guidelines/sameas.html)
 

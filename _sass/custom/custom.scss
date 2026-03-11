@@ -1,0 +1,45 @@
+// Custom styles for Artsdata-specific components
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem 0.75rem;
+  background-color: $sidebar-color;
+  border-radius: 4px;
+  font-size: 0.875rem;
+
+  .label-current-lang {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: $link-color;
+    color: white;
+    font-weight: 600;
+    border-radius: 3px;
+  }
+
+  .btn-language-switch {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: transparent;
+    color: $body-text-color;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: lighten($link-color, 45%);
+      color: $body-text-color;
+      text-decoration: none;
+    }
+  }
+
+  .label-unavailable {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    color: #98aba7;
+    font-style: italic;
+    opacity: 0.6;
+  }
+}

@@ -1,6 +1,10 @@
-<p>{% include back-button.html %}</p>
-<a href='sameas.html'><img src='https://img.shields.io/badge/lang-en-blue.svg'></a>
-<a href='sameas.fr.html'><img src='https://img.shields.io/badge/lang-fr-green.svg'></a>
+---
+title: Propriété sameAs
+layout: identifiers-guidelines-doc
+nav_order: 3
+nav_exclude: true
+lang: fr
+---
 
 ## Lignes directrices concernant la propriété sameAs et les URI
 
@@ -8,11 +12,11 @@ Tout comme la [propriété `@id`]({{ base }}/id.fr.html), la propriété [`schem
 
 Artsdata recommande de renseigner la propriété `sameAs` avec un [identifiant pérenne](https://www.artsdata.ca/fr/ressources/bien-identifie). Voici des informations supplémentaires sur la façon de récupérer une URI :
 
-* [Comment récupérer les URI d’identifiants pérennes](https://docs.artsdata.ca/retrieve-uri.fr.html)
+* [Comment récupérer les URI d’identifiants pérennes]({{ base }}/identifiers-guidelines/retrieve-uri.fr.html)
 
 Veuillez toujours saisir l’identifiant sous forme d’URI complète plutôt qu’en forme courte. Par exemple, pour l’identifiant Wikidata `Q596774`, il faut saisir l’URI `http://www.wikidata.org/entity/Q596774`.
 
-Artsdata recommande fortement les identifiants pérennes des bases de connaissances et des fichiers d’autorité ouverts (voir la [liste des identifiants supportés]({{ base }}/identifier-recommendations.fr.html)), car ces identifiants sont exploitables par machine : Artsdata peut déréférencer ces URI afin d’accéder à toutes les métadonnées descriptives qui y sont associées.
+Artsdata recommande fortement les identifiants pérennes des bases de connaissances et des fichiers d’autorité ouverts (voir la [liste des identifiants supportés]({{ base }}/identifiers-guidelines/identifier-recommendations.fr.html)), car ces identifiants sont exploitables par machine : Artsdata peut déréférencer ces URI afin d’accéder à toutes les métadonnées descriptives qui y sont associées.
 
 La propriété `sameAs` peut être utilisée autant pour des objets de premier niveau que pour les entités imbriquées. Dans l'exemple qui suit, la propriété `sameAs` est renseignée autant pour l'entité principale de type `Event`, au premier niveau, que pour les entités secondaires imbriquées sous les propriétés `location`, `organizer` et `performer` : 
 
@@ -68,7 +72,7 @@ Les comptes de médias sociaux peuvent aussi être saisis sous la propriété `s
 
 ### Contenus complémentaires
 - [Que sont les identifiants pérennes et pourquoi sont-ils importants ?](https://www.artsdata.ca/fr/ressources/bien-identifie)
-- [Lignes directrices d’Artsdata à propos des identifiants pérennes]({{ base }}/identifier-recommendations.fr.html)
+- [Lignes directrices d’Artsdata à propos des identifiants pérennes]({{ base }}/identifiers-guidelines/identifier-recommendations.fr.html)
   - [Lignes directrices concernant la propriété @id et les URI locales]({{ base }}/id.fr.html)
-  - [Comment récupérer les URI d’identifiants pérennes]({{ base }}/retrieve-uri.fr.html)
+  - [Comment récupérer les URI d’identifiants pérennes]({{ base }}/identifiers-guidelines/retrieve-uri.fr.html)
   

@@ -1,13 +1,9 @@
 ---
 title: Data Flow Architecture
-layout: default
+layout: architecture-doc
+nav_order: 0
 ---
-<p>{% include back-button.html %}</p>
 
-<p>{% include architecture-languages.html %}</p>
-
-Data Flow Architecture
-====================
 The Artsdata linked open data ecosystem is divided in three areas:
 * Data providers;
 * Artsdata knowledge graph;
@@ -78,7 +74,7 @@ Artsdata data providers include associations, unions, industry platforms, ticket
 
 ### Artsdata knowledge graph (kg.artsdata.ca)
 
-Artsdata aggregates and shares descriptive metadata related to cultural events (and related entities) from/with multiple websites and external databases. Data is published as [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) with [persistent identifiers]({{ base }}/identifier-recommendations.html) (i.e. URIs) that can be used to link events to artists, venues and arts organizations.
+Artsdata aggregates and shares descriptive metadata related to cultural events (and related entities) from/with multiple websites and external databases. Data is published as [Linked Open Data](https://en.wikipedia.org/wiki/Linked_data) with [persistent identifiers]({{ base }}/identifiers-guidelines/identifier-recommendations.html) (i.e. URIs) that can be used to link events to artists, venues and arts organizations.
 
 The [Artsdata data model](https://culturecreates.github.io/artsdata-data-model) is implemented using classic RDF ontologies. It is a sub-set of Schema.org and maps data to a multitude of other classic (i.e. LRMoo, DBpedia) and non-classic (i.e. Wikidata) ontologies. 
 

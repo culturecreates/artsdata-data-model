@@ -1,6 +1,8 @@
 ---
 class_name: Place
 layout: class-doc
+nav_order: 10
+title: Place
 ---
 
 Types of Places 

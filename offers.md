@@ -1,6 +1,6 @@
 <p>{% include back-button.html %}</p>
 
-{% include offers-languages.html %}
+{% include language-switcher.html %}
 
 # Artsdata Guidelines Regarding the `offers` Property
 

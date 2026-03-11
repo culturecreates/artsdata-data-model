@@ -1,0 +1,28 @@
+// Artsdata Brand Color Scheme
+// Official brand colors from Artsdata design system
+
+// Primary & Interactive Elements
+$link-color: #2b6673;                    // Primary Dark brand color
+$btn-primary-color: #2b6673;             // Primary buttons
+$base-button-color: #f6f7f7;             // Neutral 50
+
+// Layout & Structure
+$sidebar-color: #f6f7f7;                 // Neutral 50
+$border-color: #e1e6e4;                  // Neutral 100
+
+// Typography
+$body-background-color: $white;          // #fff
+$body-heading-color: #343b3a;            // Secondary Dark
+$body-text-color: #3d4846;               // Neutral 700
+$nav-child-link-color: #637470;          // Secondary (Neutral 500)
+
+// Calculated/Derived Colors
+$feedback-color: darken(#f6f7f7, 3%);    // Darken Neutral 50
+$table-background-color: $white;         // #fff
+$code-background-color: #d9f2f4;         // Brand 100 (light teal)
+
+// Status Colors (for potential future use)
+$success-color: #28A745;
+$danger-color: #DC3545;
+$warning-color: #FFC107;
+$info-color: #17A2B8;
