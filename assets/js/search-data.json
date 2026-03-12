@@ -505,7 +505,7 @@
   },"72": {
     "doc": "Artsdata Triplestore",
     "title": "GraphDB",
-    "content": ". | RAM Memory 4G -Xms4g | CORS enabled -Dgraphdb.workbench.cors.enable=true | . ",
+    "content": ". | RAM Memory 8GB -Xms5g | CORS enabled -Dgraphdb.workbench.cors.enable=true | . ",
     "url": "/architecture/triple-store.html#graphdb",
     
     "relUrl": "/architecture/triple-store.html#graphdb"
