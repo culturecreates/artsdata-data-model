@@ -21,5 +21,5 @@ NGINX
 
 GraphDB
 ------
-* RAM Memory 4G `-Xms4g`
+* RAM Memory 8GB `-Xms5g`
 * CORS enabled `-Dgraphdb.workbench.cors.enable=true`
