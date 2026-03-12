@@ -35,10 +35,12 @@ Conventions for naming things.
 
 ### Reserved
 The following graph names are reserved:
-* http://kg.artsdata.ca/minted/
-* http://kg.artsdata.ca/ontology/
+* http://kg.artsdata.ca/core
+* http://kg.artsdata.ca/logs
+* http://kg.artsdata.ca/core_reconciled
+* http://kg.artsdata.ca/ontology
 * http://kg.artsdata.ca/databus
-* http://kg.artsdata.ca/graph-ranking
+* http://kg.artsdata.ca/graph_ranking
 
 ### Artsdata Databus
 All data must be imported using the Artsdata Databus. When data in imported using the databus, each version is named as follows:
@@ -54,6 +56,6 @@ The databus only stores the dataset metadata including the downloadUrl for each 
 
 Artsdata subscribes to artifacts, and will automatically load the triples of each new version replacing the previous version in the graph.
 
-Graphs are named as follows:
+Graphs loaded from artifacts are named as follows:
 * http://kg.artsdata.ca/[account]/[group]/[artifact]
 
