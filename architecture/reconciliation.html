@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/architecture/reconciliation.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-03-31T16:40:21+00:00" />
+<meta property="article:published_time" content="2026-04-14T22:45:28+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Reconciliation API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-31T16:40:21+00:00","datePublished":"2026-03-31T16:40:21+00:00","description":"The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data.","headline":"Reconciliation API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/reconciliation.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/reconciliation.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-14T22:45:28+00:00","datePublished":"2026-04-14T22:45:28+00:00","description":"The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data.","headline":"Reconciliation API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/reconciliation.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/reconciliation.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -511,9 +511,11 @@ function goBack() {
   <li>Concept (Event type, Genre, etc.)</li>
 </ul>
 
-<p>Give it a try using the <a href="https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon">Test bench</a>!</p>
+<p>Give it a try using the <a href="https://reconciliation-api.github.io/testbench/">Reconciliation service test bench</a>!</p>
 
-<p>This API follows the documentation provided by the <a href="https://reconciliation-api.github.io/specs/latest/">W3C Entity Reconciliation Community Group</a>. In addition to the basic reconciliation, it provides all optional services in the documentation:</p>
+<p>This Artsdata API follows the documentation provided by the <a href="https://reconciliation-api.github.io/specs/latest/">W3C Entity Reconciliation Community Group</a>. It complies with <a href="https://reconciliation-api.github.io/specs/1.0-draft/">v1.0-draft</a> and continues to fully supports <a href="https://www.w3.org/community/reports/reconciliation/CG-FINAL-specs-0.2-20230410/">v0.2</a>.</p>
+
+<p>In addition to the basic reconciliation, the Artsdata reconciliation service provides all optional services in the documentation:</p>
 <ul>
   <li>Reconciliation: It can return matching matching entities based on their name string, type and properties (read more below)</li>
   <li>Preview: It can provide embeddable HTML previews of entities, which clients can display in their user interface.</li>
@@ -521,7 +523,7 @@ function goBack() {
   <li>Data extension: It can let clients fetch the values of some properties (i.e. a bit like a GET call but just for selected properties).</li>
 </ul>
 
-<p>The reconciliation service endpoint is <code class="language-plaintext highlighter-rouge">https://api.artsdata.ca/recon</code>.</p>
+<p>The Artsdata reconciliation service endpoint is <code class="language-plaintext highlighter-rouge">https://api.artsdata.ca/recon</code>.</p>
 <h2 id="manual-reconciliation-using-the-test-bench">
   
   
@@ -532,12 +534,17 @@ function goBack() {
     
 <p>To manually add Artsdata IDs to your structured data:</p>
 <ol>
-  <li>Open the <a href="https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon">Test bench</a></li>
+  <li>Open the Test Bench:
+    <ul>
+      <li><a href="https://reconciliation-api.github.io/testbench/1.0/#/client/https%3A%2F%2Frecon.artsdata.ca">Version 1.0-draft</a></li>
+      <li><a href="https://reconciliation-api.github.io/testbench/0.2/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon">Version 0.2</a></li>
+    </ul>
+  </li>
   <li>Select a radio button for the type of entity you want to reconcile. For example ‘Place’.</li>
   <li>Enter the name of the entity. For example ‘Salle André-Mathieu’. Or enter the official website url.</li>
   <li>Click the ‘Reconcile’ button to search Artsdata.</li>
   <li>Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211</li>
-  <li>Add the URI to your structured data using ‘sameAs’.
+  <li>Add the URI to your structured data using ‘schema:sameAs’.
     <ul>
       <li><a href="https://docs.artsdata.ca/sameas.html">How to add the Artsdata ID with the ‘sameAs’ property</a></li>
     </ul>
@@ -577,9 +584,9 @@ function goBack() {
 </h2>
     
 
-<p>To batch reconcile, you may also use tools like <a href="https://openrefine.org">OpenRefine</a> and point the reconilication tool to the Artsdata reconciliation endpoint. View this <a href="https://youtu.be/VkOncek9iuY">screen recording</a>.</p>
+<p>To batch reconcile, you may also use tools like <a href="https://openrefine.org">OpenRefine</a> and point the reconciliation tool to the Artsdata reconciliation endpoint. View this <a href="https://youtu.be/VkOncek9iuY">screen recording</a>.</p>
 
-<p>Reconciliation service endpoint: <a href="https://api.artsdata.ca/recon">https://api.artsdata.ca/recon</a></p>
+<p>Artsdata reconciliation service endpoint: <code class="language-plaintext highlighter-rouge">https://api.artsdata.ca/recon</code></p>
 <h2 id="manual-reconciliation-within-the-artsdata-interface">
   
   
