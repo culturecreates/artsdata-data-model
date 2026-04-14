@@ -14,24 +14,28 @@ Supported entity types include:
 * Agent (Person or Organization/Group)
 * Concept (Event type, Genre, etc.)
 
-Give it a try using the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)! 
+Give it a try using the [Reconciliation service test bench](https://reconciliation-api.github.io/testbench/)! 
 
-This API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). In addition to the basic reconciliation, it provides all optional services in the documentation:
+This Artsdata API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). It complies with [v1.0-draft](https://reconciliation-api.github.io/specs/1.0-draft/) and continues to fully supports [v0.2](https://www.w3.org/community/reports/reconciliation/CG-FINAL-specs-0.2-20230410/).
+
+In addition to the basic reconciliation, the Artsdata reconciliation service provides all optional services in the documentation:
 * Reconciliation: It can return matching matching entities based on their name string, type and properties (read more below)
 * Preview: It can provide embeddable HTML previews of entities, which clients can display in their user interface.
 * Suggest: It can provide auto-complete endpoints for entities, properties and types.
 * Data extension: It can let clients fetch the values of some properties (i.e. a bit like a GET call but just for selected properties). 
 
-The reconciliation service endpoint is `https://api.artsdata.ca/recon`.
+The Artsdata reconciliation service endpoint is `https://api.artsdata.ca/recon`.
 
 ## Manual reconciliation using the Test Bench
 To manually add Artsdata IDs to your structured data:
-1. Open the [Test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)
+1. Open the Test Bench:
+    * [Version 1.0-draft](https://reconciliation-api.github.io/testbench/1.0/#/client/https%3A%2F%2Frecon.artsdata.ca)
+    * [Version 0.2](https://reconciliation-api.github.io/testbench/0.2/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon) 
 2. Select a radio button for the type of entity you want to reconcile. For example 'Place'.
 3. Enter the name of the entity. For example 'Salle André-Mathieu'. Or enter the official website url.
 4. Click the 'Reconcile' button to search Artsdata. 
 5. Select the URI for the matching entity ID. The search results are shown on the right side of the screen sorted by score. Be sure the copy the entire URI. For example: http://kg.artsdata.ca/resource/K11-211
-6. Add the URI to your structured data using 'sameAs'.
+6. Add the URI to your structured data using 'schema:sameAs'.
     * [How to add the Artsdata ID with the 'sameAs' property](https://docs.artsdata.ca/sameas.html)
 
 ### Adding additional properties
@@ -49,9 +53,9 @@ The tool can be accessed via the kg.artsdata.ca interface menu. Documentation wi
 
 ## Batch reconciliation using Open Refine
 
-To batch reconcile, you may also use tools like [OpenRefine](https://openrefine.org) and point the reconilication tool to the Artsdata reconciliation endpoint. View this [screen recording](https://youtu.be/VkOncek9iuY).
+To batch reconcile, you may also use tools like [OpenRefine](https://openrefine.org) and point the reconciliation tool to the Artsdata reconciliation endpoint. View this [screen recording](https://youtu.be/VkOncek9iuY).
 
-Reconciliation service endpoint: [https://api.artsdata.ca/recon](https://api.artsdata.ca/recon)
+Artsdata reconciliation service endpoint: `https://api.artsdata.ca/recon`
 
 ## Manual reconciliation within the Artsdata interface
 
