@@ -543,7 +543,7 @@
 <p>Artsdata.ca tracks data provenance in 2 different ways:</p>
 <ol>
   <li>Data feed metadata attached to named graphs. Each data feed source in Artsdata.ca is stored in a separate named graph. The graph’s URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the <strong>Named Graphs</strong> approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data feed was loaded, the software used to collect it and the email of the contributing organization. Each time a data feed is imported, whether by crawling a web site, using an JSON API or loading a spreadsheet, the graph’s provenance metadata is updated.</li>
-  <li>Core data annotations with RDF-star. Core data in Artsdata for all minted entities have provenance tracked using RDF-star and the Provenance Ontology (using prov:wasDerivedFrom and for:wasGeneratedBy).</li>
+  <li>Core data annotations with RDF 1.2. Core data in Artsdata for all minted entities have provenance tracked using RDF 1.2 annotations and the Provenance Ontology (using prov:wasDerivedFrom and prov:wasGeneratedBy).</li>
 </ol>
 <h3 id="data-flow-architecture">
   
