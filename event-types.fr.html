@@ -387,7 +387,7 @@ function goBack() {
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/PerformingArtsEvent">PerformingArtsEvent</a></td>
       <td>Représentation</td>
-      <td>Un événement au cours duquel une œuvre scénique est exécutée en publique.</td>
+      <td>Un événement au cours duquel une œuvre scénique est exécutée en publique.<br />Note - Un concept équivalent a été déclaré dans schema.org: <a href="https://schema.org/PerformingArtsEvent"><code class="language-plaintext highlighter-rouge">schema:PerformingArtsEvent</code></a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/RehearsalEvent">RehearsalEvent</a></td>
@@ -540,15 +540,22 @@ function goBack() {
 </h3>
     
 
-<p>Le vocabulaire contrôlé du type d’événement Artsdata est utilisé avec le type d’événement schema.org. Un événement dans Artsdata est un http://schema.org/Event (schema:Event ou schema:EventSeries) et éventuellement un type supplémentaire issu du vocabulaire contrôlé d’événements Artsdata à l’aide de la propriété schema:additionalType.</p>
+<p>Le vocabulaire contrôlé du type d’événement Artsdata est renseigné avec la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code>, conjointement avec la propriété <code class="language-plaintext highlighter-rouge">type</code> de schema.org ou de RDFa. Ainsi, un événement dans Artsdata peut à la fois être une entité de type schema:Event (schema:Event ou schema:EventSeries) et avoir un type supplémentaire issu du vocabulaire contrôlé d’événements Artsdata à l’aide de la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code>.</p>
 
-<p>Par example:</p>
+<p>Voici un exemple au format Turtle:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ex:Event1 un schema:Event ; 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ex:Event1 a schema:Event ; 
 schema:additionalType &lt;http://kg.artsdata.ca/resource/PerformingArtsEvent&gt; .
 </code></pre></div></div>
 
-<p>Pour implémenter les propriétés schema:Event et schema:additionalType dans vos données structurées, veuillez consulter les <a href="https://culturecreates.github.io/artsdata-data-model/gabarits-jsonld/README.html">modèles de données structurées d’Artsdata</a>.</p>
+<p>Et le même exemple, en JSON-LD :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"@context":"http://schema.org",
+"@type": "Event",
+"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+</code></pre></div></div>
+
+<p>Pour implémenter la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code> dans vos données structurées, veuillez consulter les <a href="https://docs.artsdata.ca/gabarits-jsonld/README.fr.html">gabarits de données structurées d’Artsdata</a>.</p>
 <h3 id="principaux-changements-dans-la-version-40">
   
   
