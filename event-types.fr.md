@@ -31,7 +31,7 @@ La liste des types (concepts SKOS) peut être consultée dans le [schéma de con
 | [EventSeries](http://kg.artsdata.ca/resource/EventSeries) | Série d'événements | Une série cohérente d'événements individuels, de spectacles, de rassemblements et/ou de performances avec une continuité organisationnelle. |
 | [Class](http://kg.artsdata.ca/resource/Class) | Cours | Une série d'événements offrant une expérience d'apprentissage structurée à un moment et un lieu spécifiques. |
 | [TalkEvent](http://kg.artsdata.ca/resource/TalkEvent) | Discussion | Un événement au cours duquel une ou plusieurs personnes parlent devant un public. |
-| [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent) | Représentation | Un événement au cours duquel une œuvre scénique est exécutée en publique. |
+| [PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent) | Représentation | Un événement au cours duquel une œuvre scénique est exécutée en publique.<br>Note - Un concept équivalent a été déclaré dans schema.org: [`schema:PerformingArtsEvent`](https://schema.org/PerformingArtsEvent) |
 | [RehearsalEvent](http://kg.artsdata.ca/resource/RehearsalEvent) | Répétition devant public | Un événement où le processus de création d’une œuvre de spectacle et sa préparation en vue de sa présentation sont partagés avec le public. |
 | [CircusPerformance](http://kg.artsdata.ca/resource/CircusPerformance) | Représentation de cirque | Une représentation qui implique une série de prestations affichant des compétences humaines, du courage, de l'humour et/ou des astuces avec des animaux. |
 | [ComedyPerformance](http://kg.artsdata.ca/resource/ComedyPerformance) | Représentation d’humour | Une représentation mettant en vedette un ou plusieurs comédiens racontant et/ou jouant des blagues destinées à faire rire un public. |
@@ -63,16 +63,24 @@ La liste des types (concepts SKOS) peut être consultée dans le [schéma de con
 
 ### Comment utiliser
 
-Le vocabulaire contrôlé du type d'événement Artsdata est utilisé avec le type d'événement schema.org. Un événement dans Artsdata est un http://schema.org/Event (schema:Event ou schema:EventSeries) et éventuellement un type supplémentaire issu du vocabulaire contrôlé d'événements Artsdata à l'aide de la propriété schema:additionalType.
+Le vocabulaire contrôlé du type d'événement Artsdata est renseigné avec la propriété `schema:additionalType`, conjointement avec la propriété `type` de schema.org ou de RDFa. Ainsi, un événement dans Artsdata peut à la fois être une entité de type schema:Event (schema:Event ou schema:EventSeries) et avoir un type supplémentaire issu du vocabulaire contrôlé d'événements Artsdata à l'aide de la propriété `schema:additionalType`.
 
-Par example:
+Voici un exemple au format Turtle:
 
 ```
-ex:Event1 un schema:Event ; 
+ex:Event1 a schema:Event ; 
 schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .
 ```
 
-Pour implémenter les propriétés schema:Event et schema:additionalType dans vos données structurées, veuillez consulter les [modèles de données structurées d'Artsdata](https://culturecreates.github.io/artsdata-data-model/gabarits-jsonld/README.html).
+Et le même exemple, en JSON-LD :
+
+```
+"@context":"http://schema.org",
+"@type": "Event",
+"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+```
+
+Pour implémenter la propriété `schema:additionalType` dans vos données structurées, veuillez consulter les [gabarits de données structurées d'Artsdata](https://docs.artsdata.ca/gabarits-jsonld/README.fr.html).
 
 ### Principaux changements dans la version 4.0
 
