@@ -60,14 +60,22 @@ The list of types (SKOS concepts) can be viewed in the [concept scheme](http://k
 
 The Artsdata Event Type controlled vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (`schema:Event` or `schema:EventSeries`) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the `schema:additionalType` property.
 
-For example: 
+Here is an example in Turtle: 
 
 ```
 ex:Event1 a schema:Event ; 
 schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .
 ```
 
-To implement schema:Event and schema:additionalType properties in your structured data, please consult Artsdata's [structured data templates](https://culturecreates.github.io/artsdata-data-model/gabarits-jsonld/README.html).
+And the same example in JSON-LD:
+
+```
+"@context":"http://schema.org",
+"@type": "Event",
+"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+```
+
+To implement `schema:Event` and `schema:additionalType` properties in your structured data, please consult Artsdata's [structured data templates](https://docs.artsdata.ca/gabarits-jsonld/README.html).
 
 ### Key Changes in Version 4.0
 
