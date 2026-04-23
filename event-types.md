@@ -25,7 +25,7 @@ The list of types (SKOS concepts) can be viewed in the [concept scheme](http://k
 | [adr:EventSeries](http://kg.artsdata.ca/resource/EventSeries) | Event Series | A coherent series of individual events, shows, gatherings, and/or performances with organizational continuity. |
 | [adr:Class](http://kg.artsdata.ca/resource/Class) | Classes | An event series that provides a structured learning experience offered at a specific time and location. |
 | [adr:TalkEvent](http://kg.artsdata.ca/resource/TalkEvent) | Talk | An event in which one or more people speak in front of an audience. |
-| [adr:PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent) | Performance | An event during which a live performance work is publicly presented for an audience. |
+| [adr:PerformingArtsEvent](http://kg.artsdata.ca/resource/PerformingArtsEvent) | Performance | An event during which a live performance work is publicly presented for an audience.<br>Note - an equivalent concept was declared as an Event subtype in schema.org: [`schema:PerformingArtsEvent`](https://schema.org/PerformingArtsEvent) |
 | [adr:RehearsalEvent](http://kg.artsdata.ca/resource/RehearsalEvent) | Public Rehearsal | An event where the process of creating a performance work and preparing for its performance is presented to the public. |
 | [adr:CircusPerformance](http://kg.artsdata.ca/resource/CircusPerformance) | Circus Performance | A performance that involves a series of acts to display human skill, daring, humour, and/or tricks involving animals. |
 | [adr:ComedyPerformance](http://kg.artsdata.ca/resource/ComedyPerformance) | Comedy Performance | A performance featuring one or more comedians telling and/or acting out jokes intended to make an audience laugh. |
@@ -58,7 +58,7 @@ The list of types (SKOS concepts) can be viewed in the [concept scheme](http://k
 
 ### How to use
 
-The Artsdata Event Type controlled vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (`schema:Event` or `schema:EventSeries`) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the `schema:additionalType` property.
+The Artsdata Event Type Controlled Vocabulary can be populated with the `schema:additionalType` property, along with the generic `schema:Event` class as the main type.  Thus an event entity in Artsdata can both have the type `schema:Event (or `schema:EventSeries`), and have an additional type from the Artsdata Event Controlled Vocabulary using the `schema:additionalType` property. 
 
 Here is an example in Turtle: 
 
@@ -75,7 +75,7 @@ And the same example in JSON-LD:
 "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
 ```
 
-To implement `schema:Event` and `schema:additionalType` properties in your structured data, please consult Artsdata's [structured data templates](https://docs.artsdata.ca/gabarits-jsonld/README.html).
+To implement the `schema:additionalType` property in your structured data, please consult Artsdata's [structured data templates](https://docs.artsdata.ca/gabarits-jsonld/README.html).
 
 ### Key Changes in Version 4.0
 
