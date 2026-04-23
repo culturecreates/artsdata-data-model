@@ -385,7 +385,7 @@ function goBack() {
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/PerformingArtsEvent">adr:PerformingArtsEvent</a></td>
       <td>Performance</td>
-      <td>An event during which a live performance work is publicly presented for an audience.</td>
+      <td>An event during which a live performance work is publicly presented for an audience.<br />Note - an equivalent concept was declared as an Event subtype in schema.org: <a href="https://schema.org/PerformingArtsEvent"><code class="language-plaintext highlighter-rouge">schema:PerformingArtsEvent</code></a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/RehearsalEvent">adr:RehearsalEvent</a></td>
@@ -543,7 +543,7 @@ function goBack() {
 </h3>
     
 
-<p>The Artsdata Event Type controlled vocabulary is used along with the schema.org Event type.  An Event in Artsdata is a http://schema.org/Event (<code class="language-plaintext highlighter-rouge">schema:Event</code> or <code class="language-plaintext highlighter-rouge">schema:EventSeries</code>) and optionally an additional type from the Artsdata Event Controlled Vocabulary using the <code class="language-plaintext highlighter-rouge">schema:additionalType</code> property.</p>
+<p>The Artsdata Event Type Controlled Vocabulary can be populated with the <code class="language-plaintext highlighter-rouge">schema:additionalType</code> property, along with the generic <code class="language-plaintext highlighter-rouge">schema:Event</code> class as the main type.  Thus an event entity in Artsdata can both have the type <code class="language-plaintext highlighter-rouge">schema:Event (or </code>schema:EventSeries<code class="language-plaintext highlighter-rouge">), and have an additional type from the Artsdata Event Controlled Vocabulary using the </code>schema:additionalType` property.</p>
 
 <p>Here is an example in Turtle:</p>
 
@@ -558,7 +558,7 @@ schema:additionalType &lt;http://kg.artsdata.ca/resource/PerformingArtsEvent&gt;
 "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
 </code></pre></div></div>
 
-<p>To implement <code class="language-plaintext highlighter-rouge">schema:Event</code> and <code class="language-plaintext highlighter-rouge">schema:additionalType</code> properties in your structured data, please consult Artsdata’s <a href="https://docs.artsdata.ca/gabarits-jsonld/README.html">structured data templates</a>.</p>
+<p>To implement the <code class="language-plaintext highlighter-rouge">schema:additionalType</code> property in your structured data, please consult Artsdata’s <a href="https://docs.artsdata.ca/gabarits-jsonld/README.html">structured data templates</a>.</p>
 <h3 id="key-changes-in-version-40">
   
   
