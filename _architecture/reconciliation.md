@@ -11,20 +11,24 @@ Supported entity types include:
 * Place
 * Person
 * Organization
+* Artsdata Live Performance Work
 * Agent (Person or Organization/Group)
+* Artsdata Event Type
 * Concept (Event type, Genre, etc.)
 
-Give it a try using the [Reconciliation service test bench](https://reconciliation-api.github.io/testbench/)! 
+Give it a try using the [Reconciliation service test bench 1.0]([https://reconciliation-api.github.io/testbench/](https://reconciliation-api.github.io/testbench/1.0/#/client/https%3A%2F%2Frecon.artsdata.ca))! 
 
-This Artsdata API follows the documentation provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). It complies with [v1.0-draft](https://reconciliation-api.github.io/specs/1.0-draft/) and continues to fully supports [v0.2](https://www.w3.org/community/reports/reconciliation/CG-FINAL-specs-0.2-20230410/).
+This Artsdata API implements the specification provided by the [W3C Entity Reconciliation Community Group](https://reconciliation-api.github.io/specs/latest/). It complies with [v1.0-draft](https://reconciliation-api.github.io/specs/1.0-draft/) and continues to fully supports [v0.2](https://www.w3.org/community/reports/reconciliation/CG-FINAL-specs-0.2-20230410/).
 
 In addition to the basic reconciliation, the Artsdata reconciliation service provides all optional services in the documentation:
-* Reconciliation: It can return matching matching entities based on their name string, type and properties (read more below)
+* Match: It can return matching matching entities based on their name string, type and properties (read more below)
 * Preview: It can provide embeddable HTML previews of entities, which clients can display in their user interface.
 * Suggest: It can provide auto-complete endpoints for entities, properties and types.
 * Data extension: It can let clients fetch the values of some properties (i.e. a bit like a GET call but just for selected properties). 
 
-The Artsdata reconciliation service endpoint is `https://api.artsdata.ca/recon`.
+The Artsdata reconciliation endpoints:
+- Current version 0.2: `https://api.artsdata.ca/recon`
+- New version 1.0-draft: `https://recon.artsdata.ca/`
 
 ## Manual reconciliation using the Test Bench
 To manually add Artsdata IDs to your structured data:
@@ -38,8 +42,8 @@ To manually add Artsdata IDs to your structured data:
 6. Add the URI to your structured data using 'schema:sameAs'.
     * [How to add the Artsdata ID with the 'sameAs' property](https://docs.artsdata.ca/sameas.html)
 
-### Adding additional properties
-In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. The additional properties are required to be in the returned entities. Any entity that does not match the additional property will be exluded from the reconciliation results.
+### Using additional properties
+In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. Select "Required" to force the additional properties to be present in the returned entities or be exluded.
 
 For example to add a postal code when reconiling places, add the property id "schema:address/schema:postalCode" and the postal code.
 <img width="564" alt="Screenshot 2024-01-31 at 4 02 49 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/1944952b-de90-4a86-a097-a06a8185a5bf">
