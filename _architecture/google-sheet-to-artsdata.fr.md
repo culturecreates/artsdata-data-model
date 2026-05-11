@@ -9,6 +9,7 @@ Cet [outil de chiffrier](https://docs.google.com/spreadsheets/d/1szaf-gjoKSO2IhF
 
  ![outil-google-sheet-vers-artsdata-capture-ecran](https://github.com/user-attachments/assets/e0087b62-7a35-4905-bf84-c1429c2a3908)
 
+Faites-en l'essai avec cette [version en modification libre](https://docs.google.com/spreadsheets/d/1tjFDDprFgDGwrUJAo-5JOoTYKOZ2mDIRLkIjhbPRRi8/edit?usp=sharing).
 
 ## Pour commencer
 
