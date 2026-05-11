@@ -4,11 +4,11 @@ layout: architecture-doc
 nav_order: 6
 ---
 
-This [spreadsheet tool](https://docs.google.com/spreadsheets/d/1NacZsvFwahT3qbnksFcFEiBwK-ou5XJJzyrUyr7QUpc/edit?gid=444637066#gid=444637066) is designed to help performing arts organizations convert their event information into Schema structured data. This structured data can then be loaded to the Artsdata knowledge graph and even pasted on your own website. Structured data helps search engines and other recommendation tools to better understand your events, so that they can share them with potential audiences.  
+This [spreadsheet tool](https://docs.google.com/spreadsheets/d/1Xv68jNwc80Mqm3CbDsdz3hkyb96HVPIk_FG9W8kmQps/edit?usp=sharing) is designed to help performing arts organizations convert their event information into Schema structured data. This structured data can then be loaded to the Artsdata knowledge graph and even pasted on your own website. Structured data helps search engines and other recommendation tools to better understand your events, so that they can share them with potential audiences.  
 
 ![google-sheet-to-artsdata-screenshot](https://github.com/user-attachments/assets/be0ad350-73f9-43e7-9dea-9ed3c593c149)  
 
-[Try it out](https://docs.google.com/spreadsheets/d/1NacZsvFwahT3qbnksFcFEiBwK-ou5XJJzyrUyr7QUpc/edit?gid=1100103681#gid=1100103681)
+[Try it out with this test version]()
 
 ## How to Get Started  
 
