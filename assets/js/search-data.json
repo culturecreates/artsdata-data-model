@@ -295,7 +295,7 @@
   },"42": {
     "doc": "L'outil Google Sheet-vers-Artsdata",
     "title": "L'outil Google Sheet-vers-Artsdata",
-    "content": "Cet outil de chiffrier est destiné à aider les organismes des arts de la scène à convertir leurs informations d’événement en données structurées Schema. Ces données structurées peuvent ensuite être chargées dans le graphe de connaissances d’Artsdata et même collées sur votre propre site web. Les données structurées aident les moteurs de recherche et autres outils de recommandation à mieux comprendre vos événements, afin qu’ils puissent les partager avec des publics potentiels. ",
+    "content": "Cet outil de chiffrier est destiné à aider les organismes des arts de la scène à convertir leurs informations d’événement en données structurées Schema. Ces données structurées peuvent ensuite être chargées dans le graphe de connaissances d’Artsdata et même collées sur votre propre site web. Les données structurées aident les moteurs de recherche et autres outils de recommandation à mieux comprendre vos événements, afin qu’ils puissent les partager avec des publics potentiels. Faites-en l’essai avec cette version en modification libre. ",
     "url": "/architecture/google-sheet-to-artsdata.fr.html",
     
     "relUrl": "/architecture/google-sheet-to-artsdata.fr.html"
