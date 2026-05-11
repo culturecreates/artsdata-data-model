@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/architecture/reconciliation.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-05-08T16:25:28+00:00" />
+<meta property="article:published_time" content="2026-05-11T02:51:06+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Reconciliation API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-08T16:25:28+00:00","datePublished":"2026-05-08T16:25:28+00:00","description":"The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data.","headline":"Reconciliation API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/reconciliation.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/reconciliation.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-11T02:51:06+00:00","datePublished":"2026-05-11T02:51:06+00:00","description":"The Artsdata.ca Reconciliation Service can be used to add Artsdata IDs to your structured data.","headline":"Reconciliation API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/reconciliation.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/reconciliation.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -507,23 +507,29 @@ function goBack() {
   <li>Place</li>
   <li>Person</li>
   <li>Organization</li>
+  <li>Artsdata Live Performance Work</li>
   <li>Agent (Person or Organization/Group)</li>
+  <li>Artsdata Event Type</li>
   <li>Concept (Event type, Genre, etc.)</li>
 </ul>
 
-<p>Give it a try using the <a href="https://reconciliation-api.github.io/testbench/">Reconciliation service test bench</a>!</p>
+<p>Give it a try using the <a href="[https://reconciliation-api.github.io/testbench/](https://reconciliation-api.github.io/testbench/1.0/#/client/https%3A%2F%2Frecon.artsdata.ca)">Reconciliation service test bench 1.0</a>!</p>
 
-<p>This Artsdata API follows the documentation provided by the <a href="https://reconciliation-api.github.io/specs/latest/">W3C Entity Reconciliation Community Group</a>. It complies with <a href="https://reconciliation-api.github.io/specs/1.0-draft/">v1.0-draft</a> and continues to fully supports <a href="https://www.w3.org/community/reports/reconciliation/CG-FINAL-specs-0.2-20230410/">v0.2</a>.</p>
+<p>This Artsdata API implements the specification provided by the <a href="https://reconciliation-api.github.io/specs/latest/">W3C Entity Reconciliation Community Group</a>. It complies with <a href="https://reconciliation-api.github.io/specs/1.0-draft/">v1.0-draft</a> and continues to fully supports <a href="https://www.w3.org/community/reports/reconciliation/CG-FINAL-specs-0.2-20230410/">v0.2</a>.</p>
 
 <p>In addition to the basic reconciliation, the Artsdata reconciliation service provides all optional services in the documentation:</p>
 <ul>
-  <li>Reconciliation: It can return matching matching entities based on their name string, type and properties (read more below)</li>
+  <li>Match: It can return matching matching entities based on their name string, type and properties (read more below)</li>
   <li>Preview: It can provide embeddable HTML previews of entities, which clients can display in their user interface.</li>
   <li>Suggest: It can provide auto-complete endpoints for entities, properties and types.</li>
   <li>Data extension: It can let clients fetch the values of some properties (i.e. a bit like a GET call but just for selected properties).</li>
 </ul>
 
-<p>The Artsdata reconciliation service endpoint is <code class="language-plaintext highlighter-rouge">https://api.artsdata.ca/recon</code>.</p>
+<p>The Artsdata reconciliation endpoints:</p>
+<ul>
+  <li>Current version 0.2: <code class="language-plaintext highlighter-rouge">https://api.artsdata.ca/recon</code></li>
+  <li>New version 1.0-draft: <code class="language-plaintext highlighter-rouge">https://recon.artsdata.ca/</code></li>
+</ul>
 <h2 id="manual-reconciliation-using-the-test-bench">
   
   
@@ -550,15 +556,15 @@ function goBack() {
     </ul>
   </li>
 </ol>
-<h3 id="adding-additional-properties">
+<h3 id="using-additional-properties">
   
   
-    <a href="#adding-additional-properties" class="anchor-heading" aria-labelledby="adding-additional-properties"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Adding additional properties
+    <a href="#using-additional-properties" class="anchor-heading" aria-labelledby="using-additional-properties"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Using additional properties
   
   
 </h3>
     
-<p>In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. The additional properties are required to be in the returned entities. Any entity that does not match the additional property will be exluded from the reconciliation results.</p>
+<p>In addition to the type of entity, you can add additional properties to improve the accuracy of the reconiliation. Select “Required” to force the additional properties to be present in the returned entities or be exluded.</p>
 
 <p>For example to add a postal code when reconiling places, add the property id “schema:address/schema:postalCode” and the postal code.
 <img width="564" alt="Screenshot 2024-01-31 at 4 02 49 PM" src="https://github.com/culturecreates/artsdata-data-model/assets/419491/1944952b-de90-4a86-a097-a06a8185a5bf" />
