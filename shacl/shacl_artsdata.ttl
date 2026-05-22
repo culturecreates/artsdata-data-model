@@ -8,8 +8,26 @@
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 
 ####################################################
-# Artsdata Events SHACL v4.3
+# Artsdata Events SHACL v4.7
 ####################################################
+#
+# Change history:
+# v4.7: WebPage shape severity changed to sh:Warning
+# v4.6: Allow postalCode to have langeuage tag
+# v4.5: Added ads:Role and ads:RoleNameSh for performer
+# v4.4: Added target schema:PerformingGroup to ads:OrganizationShape
+# v4.3: Added ads:AddressNested to PlaceShape
+# v4.2: Removed ads:EventShape rule sh:ignoredProperties ( rdf:type ) 
+# v4.1: Removed ads:SameAs rule sh:not ads:containsAtSign, ads:containsSpaces
+#
+# Description:
+# This SHACL file is used to validate Artsdata Event, Place, Person, Organization and WebPage data
+# It checks that Event has required properties and that they are of the correct type
+#   - Name, Location, StartDate
+# It checks the Event optional properties
+#   - EventAttendanceMode, EventStatus, MainEntityOfPage, Organizer, Performer, EndDate, Offers
+# It checks that EventSeries has at least one subEvent property
+
 
 ################
 # Super Property Shapes
@@ -17,6 +35,7 @@
 ################
 ads:SameAsSh
     sh:path schema:sameAs ;
+    sh:name "sameAs of any entity" ;
     sh:minCount 0 ;
     sh:pattern "^http" ;
     sh:description "sameAs properties must be URIs and start with http" ;
@@ -25,11 +44,29 @@ ads:SameAsSh
 ads:NameSh
     sh:path schema:name ;
     sh:uniqueLang true ;
-    sh:name "Name of event" ;
+    sh:name "Name of any entity" ;
     sh:minCount 1 ;
     sh:or ( 
         [sh:datatype rdf:langString ;] 
         [sh:datatype xsd:string ;]
+    ) .
+
+ads:RoleNameSh
+    sh:path schema:roleName ;
+    sh:uniqueLang true ;
+    sh:name "Role Name" ;
+    sh:minCount 1 ;
+    sh:or ( 
+        [sh:datatype rdf:langString ;] 
+        [sh:datatype xsd:string ;]
+    ) .
+
+ads:Role
+    a sh:NodeShape ;
+    sh:targetClass schema:Role ;
+    sh:or  (   
+        [ sh:property ads:NameSh  ; ]
+        [ sh:property ads:RoleNameSh  ; ]
     ) .
 
 ################
@@ -37,6 +74,7 @@ ads:NameSh
 ################
 ads:EventSeriesShape
     a sh:NodeShape ;
+    sh:name "EventSeries Shape" ;
     sh:targetClass schema:EventSeries ;
     sh:node ads:EventShape ;
     sh:property ads:subEventPropertySh .
@@ -48,10 +86,8 @@ ads:subEventPropertySh
     sh:message "EventSeries must have alteast one subEvent property." .
     
 ads:EventShape
-    # TODO: Check that Event ID ends with #Event
     a sh:NodeShape ;
-    # sh:closed true ;
-
+    sh:name "Event Shape" ;
     # Sub-types of Event
     sh:targetClass  schema:Event, 
                     schema:EventSeries, 
@@ -73,7 +109,6 @@ ads:EventShape
                     schema:SportsEvent, 
                     schema:VisualArtsEvent ;
 
-    # sh:ignoredProperties ( rdf:type ) ;
     
     # Required Properties
     sh:property ads:NameSh, 
@@ -150,6 +185,7 @@ ads:UrlWarningSh
 ads:MainEntityOfPageSh
     sh:path schema:mainEntityOfPage ;
     sh:minCount  0 ;
+    sh:severity sh:Warning ;
     sh:node ads:WebPageShape .
 
 ads:OffersSh
@@ -160,9 +196,30 @@ ads:OffersSh
 ads:DescriptionWarningSh
     sh:path schema:description ;
     sh:severity sh:Warning ;
-   # sh:languageIn ( "en" "fr" ) ;
     sh:uniqueLang true ;
     sh:minCount  1 .
+
+<#DescriptionLanguageTagsUnique>  
+  a sh:NodeShape ;
+  sh:targetClass schema:Event ;
+  sh:property [
+      sh:path schema:description ;
+      sh:uniqueLang true ; # Ensures all language tags are unique and literals
+      sh:sparql [
+          sh:select """
+              SELECT $this (COUNT(?untagged) AS ?count)
+              WHERE {
+                  $this <http://schema.org/description> ?untagged .
+                  FILTER (!isLiteral(?untagged) || (LANG(?untagged) = ""))
+              }
+              GROUP BY $this
+              HAVING (?count > 1)
+          """ ;
+          sh:message "A maximum of 1 untagged literal is allowed for schema:description." ;
+          sh:severity sh:Violation ;
+      ] ;
+  ] .
+
 
 ads:OrganizerSh
     sh:path schema:organizer ;
@@ -179,6 +236,7 @@ ads:PerformerSh
         [ sh:node ads:PersonShape ; ]
         [ sh:node ads:OrganizationShape ; ]
         [ sh:node ads:IdSh ; ]
+        [ sh:node ads:Role ; ]
     ) ;
     sh:message "performer is not a valid Person or Organizatinon or Id." .
 
@@ -192,29 +250,33 @@ ads:ImageWarningSh
 ################
 ads:WebPageShape
     a sh:NodeShape ;
- #   sh:ignoredProperties ( rdf:type ) ;
+    sh:name "WebPage Shape" ;
+    sh:severity sh:Warning ;
     sh:targetClass schema:WebPage ;
-  #  sh:closed true ;
     sh:property ads:LastReviewedSh,
 				ads:DateModifiedSh,
                 ads:WebPageUrlSh, 
                 ads:InLanguageSh .
 
 ads:WebPageUrlSh   
+    sh:severity sh:Warning ;
     sh:path schema:url ;
     sh:minCount 1 .
     
 ads:InLanguageSh
+    sh:severity sh:Warning ;
     sh:path schema:inLanguage ;
     sh:minCount 1 .
 
 ads:LastReviewedSh
+    sh:severity sh:Warning ;
     sh:path schema:lastReviewed ;
     sh:datatype xsd:dateTime ;
     sh:minCount 1 ;
     sh:maxCount 1 .
 
 ads:DateModifiedSh
+    sh:severity sh:Warning ;
     sh:path schema:dateModified ;
     sh:datatype xsd:dateTime ;
     sh:minCount 0 ;
@@ -226,6 +288,7 @@ ads:DateModifiedSh
 ################
 ads:PersonShape
     a sh:NodeShape ;
+    sh:name "Person Shape" ;
     sh:targetClass schema:Person ;
     # Super Shapes
     sh:property ads:NameSh, 
@@ -237,12 +300,17 @@ ads:PersonShape
 ################
 ads:OrganizationShape
     a sh:NodeShape ;
-    sh:targetClass schema:Organization ;
-    # Super Shapes
-    sh:property ads:NameSh, 
-                ads:SameAsSh,
-                ads:NEQSh ,
-                ads:CanadianBusinessNumberSh .
+    sh:name "Organization Shape" ;
+    sh:targetClass schema:Organization, schema:PerformingGroup ;
+    # Required Properties
+    sh:property ads:NameSh ;
+    
+    # Optional Properties 
+    sh:property ads:SameAsSh,
+                ads:NEQSh,
+                ads:CanadianBusinessNumberSh,
+                ads:TelephoneSh;
+    .
 
 ads:NEQSh
     sh:path  wdt:P10503 ;
@@ -256,22 +324,30 @@ ads:CanadianBusinessNumberSh
     sh:path  wdt:P8860 ;
     sh:pattern "^\\d{9}$" ;
     sh:minCount 0 ;
+    sh:severity sh:Warning ;
     sh:not [
 		  sh:hasValue "000000000"  
 	] .
+
+ads:TelephoneSh
+    sh:path schema:telephone ;
+    sh:pattern "^\\+[0-9]" ;
+    sh:minCount 0 ;
+    sh:severity sh:Warning ;
+    sh:message "Telephone number should comply with RFC3966 format (e.g., +1-250-383-8124)" .
 
 ################
 # Place Shape 
 ################
 ads:PlaceShape
     a sh:NodeShape ;
+    sh:name "Place Shape" ;
     sh:targetClass schema:Place ;
-#    sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:PlaceNameSh, 
                 ads:SameAsSh,
                 ads:PlaceUrlSh ;
     sh:or  (   
-        [ sh:property ads:MultiAddress  ; ]
+        [ sh:property ads:AddressNested  ; ]
         [ sh:property  ads:AddressObj  ; ]
     ) .
 
@@ -282,15 +358,16 @@ ads:VirtualLocationSh
 ads:AddressObj
     sh:path schema:address ;
     sh:minCount 1 ;
-    sh:node ads:PostalAddressShape .
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+.
   
-ads:MultiAddress 
+ads:AddressNested 
     sh:path schema:address ;
-    sh:minCount 2 ;
-    sh:or (
-        [ sh:node ads:PostalAddressShape ;]
-        [ sh:datatype xsd:string ; ]
-    ) .
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:node ads:PostalAddressShape ;
+.
 
 ads:PlaceNameSh
     sh:path schema:name ;
@@ -311,6 +388,7 @@ ads:PlaceUrlSh
 ################
 ads:VirtualLocationShape
     a sh:NodeShape ;
+    sh:name "Virtual Location Shape" ;
     sh:targetClass schema:VirtualLocation ;
     sh:property ads:VirtualLocationUrlSh .
 
@@ -324,9 +402,10 @@ ads:VirtualLocationUrlSh
 ################
 ads:PostalAddressShape
     a sh:NodeShape ;
+    sh:name "Postal Address Shape" ;
     sh:targetClass schema:PostalAddress ;
-    # sh:closed true ;
-  #  sh:ignoredProperties ( rdf:type ) ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:property ads:StreetAddressSh, 
                 ads:addressCountrySh, 
                 ads:addressRegionSh, 
@@ -344,7 +423,6 @@ ads:StreetAddressSh
 
 ads:addressCountrySh
     sh:path schema:addressCountry ;
-    sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
     sh:or ( 
@@ -354,7 +432,6 @@ ads:addressCountrySh
 
  ads:addressRegionSh
     sh:path schema:addressRegion ;
-    sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
     sh:or ( 
@@ -364,13 +441,15 @@ ads:addressCountrySh
 
 ads:postalCodeSh
     sh:path schema:postalCode ;
-    sh:maxCount 1 ;
     sh:minCount 1 ;
-    sh:datatype xsd:string .
+    sh:uniqueLang true ;
+    sh:or ( 
+        [sh:datatype rdf:langString ;] 
+        [sh:datatype xsd:string ;]
+    ) .
 
 ads:addressLocalitySh
     sh:path schema:addressLocality ;
-    sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
     sh:or ( 
