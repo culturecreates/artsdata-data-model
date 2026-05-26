@@ -499,20 +499,22 @@
 <h4 id="exceptions-handling-schemaorg-in-artsdata">
   
   
-    <a href="#exceptions-handling-schemaorg-in-artsdata" class="anchor-heading" aria-labelledby="exceptions-handling-schemaorg-in-artsdata"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exceptions handling schema.org in Artsdata
+    <a href="#exceptions-handling-schemaorg-in-artsdata" class="anchor-heading" aria-labelledby="exceptions-handling-schemaorg-in-artsdata"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exceptions handling Schema.org in Artsdata
   
   
 </h4>
     
 <ol>
   <li>Artsdata converts all schema.org <strong>https</strong> URIs to <strong>http</strong> URIs</li>
-  <li>Dataype for values of the following properties is URI <code class="language-plaintext highlighter-rouge">("@type":"@id")</code> even though schema.org <code class="language-plaintext highlighter-rouge">@context</code> has evolved over their release versions.
+  <li>Dataype for values of the following properties is set to URI <code class="language-plaintext highlighter-rouge">("@type":"@id")</code>.
     <ol>
       <li>schema:eventStatus</li>
       <li>schema:eventAttendanceMode</li>
       <li>schema:additionalType (note: schema.org changed to string in <a href="https://github.com/schemaorg/schemaorg/issues/3304">v16.0</a>)</li>
       <li>schema:url</li>
       <li>schema:sameAs</li>
+      <li>schema:offers</li>
+      <li>schema:location</li>
     </ol>
   </li>
   <li>Datatype schema:Date and schema:DateTime are converted to xsd:date and xsd:dateTime to enable SPARQL to handle time.</li>
