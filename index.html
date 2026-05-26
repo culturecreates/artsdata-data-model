@@ -504,10 +504,18 @@
   
 </h4>
     
-<p>Artsdata converts all schema.org <strong>https</strong> URIs to <strong>http</strong> URIs, and also makes the following transformations:</p>
 <ol>
-  <li>schema:eventStatus and schema:eventAttendanceMode are converted to URIs in Artsdata, whereas the schema.org @context defines them as Literals.</li>
-  <li>datatype schema:Date and schema:DateTime are converted to xsd:date or xsd:dateTime to enable SPARQL to handle time.</li>
+  <li>Artsdata converts all schema.org <strong>https</strong> URIs to <strong>http</strong> URIs</li>
+  <li>Dataype for values of the following properties is URI <code class="language-plaintext highlighter-rouge">("@type":"@id")</code> even though schema.org <code class="language-plaintext highlighter-rouge">@context</code> has evolved over their release versions.
+    <ol>
+      <li>schema:eventStatus</li>
+      <li>schema:eventAttendanceMode</li>
+      <li>schema:additionalType (note: schema.org changed to string in <a href="https://github.com/schemaorg/schemaorg/issues/3304">v16.0</a>)</li>
+      <li>schema:url</li>
+      <li>schema:sameAs</li>
+    </ol>
+  </li>
+  <li>Datatype schema:Date and schema:DateTime are converted to xsd:date and xsd:dateTime to enable SPARQL to handle time.</li>
   <li>schema:LocalBusiness and it’s subClasses are replaced with schema:Place to ensure that schema:Organization and schema:Place are disjoint (meaning a Place cannot be an Organization and vice versa).</li>
 </ol>
 <h4 id="ontologies-loaded-into-artsdata">
