@@ -70,9 +70,14 @@ The main ontology used in Artsdata.ca is **Schema.org**. Artsdata.ca imports the
 Artsdata.ca has a large number of class and property mappings with Schema.org, Wikidata.org, DBpedia.org, LRMoo, CIDOC-CRM, FRBRoo, AAT, Nomenclature, DCMI, FOAF and DOLCE+DnS Ultralite (Ontology Design Patterns). Mappings are made using owl:equivalentClass, owl:equivalentProperty, skos:exactMatch, and skos:closeMatch. Some mappings come prebuilt from external ontologies; others are defined within Artsdata. 
 
 #### Exceptions handling schema.org in Artsdata
-Artsdata converts all schema.org **https** URIs to **http** URIs, and also makes the following transformations:
-1. schema:eventStatus and schema:eventAttendanceMode are converted to URIs in Artsdata, whereas the schema.org @context defines them as Literals.
-1. datatype schema:Date and schema:DateTime are converted to xsd:date or xsd:dateTime to enable SPARQL to handle time.
+1. Artsdata converts all schema.org **https** URIs to **http** URIs
+1. Dataype for values of the following properties is URI `("@type":"@id")` even though schema.org `@context` has evolved over their release versions.
+     1. schema:eventStatus
+     2. schema:eventAttendanceMode
+     3. schema:additionalType (note: schema.org changed to string in [v16.0](https://github.com/schemaorg/schemaorg/issues/3304))
+     4. schema:url
+     5. schema:sameAs
+1. Datatype schema:Date and schema:DateTime are converted to xsd:date and xsd:dateTime to enable SPARQL to handle time.
 1. schema:LocalBusiness and it's subClasses are replaced with schema:Place to ensure that schema:Organization and schema:Place are disjoint (meaning a Place cannot be an Organization and vice versa).
  
 #### Ontologies loaded into Artsdata
