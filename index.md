@@ -71,10 +71,10 @@ Artsdata.ca has a large number of class and property mappings with Schema.org, W
 
 #### Exceptions handling Schema.org in Artsdata
 1. Artsdata converts all schema.org **https** URIs to **http** URIs
-1. Dataype for values of the following properties is set to URI `("@type":"@id")`.
+1. Dataype for values of the following properties is set to URI `("@type":"@id")`. 
      1. schema:eventStatus
      2. schema:eventAttendanceMode 
-     3. schema:additionalType (note: schema.org changed to string in [v16.0](https://github.com/schemaorg/schemaorg/issues/3304))
+     3. schema:additionalType (note: schema.org changed to string in [v16.0](https://github.com/schemaorg/schemaorg/issues/3304) but Artsdata Ruby gem [json-ld-preloaded](https://github.com/ruby-rdf/json-ld-preloaded) maintains "@type":"@id")
      4. schema:url
      5. schema:sameAs
      6. schema:offers
