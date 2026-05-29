@@ -2,23 +2,23 @@
 {
    "@context":"http://schema.org",
    "@type":"CreativeWork",
-   "@id":"--URI constituant un identifiant unique de l'œuvre. Optionnel : URI constituting a unique identifier of the work. Optional--",
+   "@id":"--URI constituant un identifiant unique de l'œuvre spectacle. Optionnel : URI constituting a unique identifier of the live performance work (i.e. show). Optional--",
    "additionalType":[
       "https://schema.org/PerformanceWork",
       "http://kg.artsdata.ca/ontology/LivePerformanceWork"
    ],
-   "name":"--Titre du projet ou de l'œuvre : Title of the project or work--",
-   "url":"--URL officiel de la page Web du projet : Official URL of the project webpage--",
-   "description":"--Description courte du projet : Short description of the project--",
+   "name":"--Titre de l'œuvre : Title of the work--",
+   "url":"--URL officiel de la page Web de l'œuvre : Official URL of the work's webpage--",
+   "description":"--Description courte de l'œuvre : Short description of the work--",
    "dateCreated":"--Année de création, par exemple 2026 : Year of creation, for example 2026--",
    "contributor":[
       {
          "@type":"Role",
-         "roleName":"--Nom du rôle artistique, par exemple Choreographer ou Director : Name of the artistic role, for example Choreographer or Director--",
+         "roleName":"--Nom du rôle ou de la contribution artistique, par exemple Chorégraphe ou Chorégraphie : Name of the artistic role or contribution, for example Choreographer or Choreography--",
          "contributor":{
             "@type":"Person",
-            "@id":"--URI constituant un identifiant unique du contributeur. Optionnel : URI constituting a unique identifier of the contributor. Optional--",
-            "name":"--Nom du contributeur : Name of the contributor--",
+            "@id":"--URI constituant un identifiant unique de la personne contributrice. Optionnel : URI constituting a unique identifier of the contributor. Optional--",
+            "name":"--Nom de la personne contributrice : Name of the contributor--",
             "sameAs":[
                "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
                "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"
