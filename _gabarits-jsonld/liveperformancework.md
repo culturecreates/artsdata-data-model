@@ -7,7 +7,7 @@ nav_order: 8
 Structured Data Templates for Live Performance Works
 =====================================
 
-The contents of this document are under a Creative Commons - Attribution 4.0 license.
+Structured data templates in JSON-LD format based on the Schema.org vocabulary.
 
 This is an evolving document for a Schema structured data template describing [live performance works](http://kg.artsdata.ca/ontology/LivePerformanceWork) (i.e. a show or production).
 
@@ -34,3 +34,7 @@ If you try out this JSON-LD template please contact Artsdata to let us know. We 
 ### Full template
 
 See the [full JSON-LD template in GitHub](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/LivePerformanceWork/LivePerformanceWork.jsonld)
+
+### Examples
+
+Coming soon...
