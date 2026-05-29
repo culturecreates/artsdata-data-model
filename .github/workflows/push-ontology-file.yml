@@ -9,7 +9,9 @@ on:
         options:
           - artsdata-ontology
           - skos-genres
+          - skos-genres-owl
           - skos-event-types
+          - skos-event-types-owl
           - skos-place-types
           - skos-organization-types
           - skos-membership
