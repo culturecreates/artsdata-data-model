@@ -1,5 +1,5 @@
 ---
-title: Person Structured Data Templates
+title: Live Performance Work Structured Data Templates
 layout: gabarits-doc
 nav_order: 8
 ---
@@ -15,6 +15,8 @@ Note : The `schema:PerformanceWork` class and the `schema:isPerformedIn` propert
 
 If you try out this JSON-LD template please contact Artsdata to let us know. We would love to see your structured data in action.
 
+### Preview
+
 ```
 {
    "@context":"http://schema.org",
@@ -29,4 +31,6 @@ If you try out this JSON-LD template please contact Artsdata to let us know. We 
    ...
 ```
 
-See the [full JSON-LD template](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/LivePerformanceWork/LivePerformanceWork.jsonld)
+### Full template
+
+See the [full JSON-LD template in GitHub](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/LivePerformanceWork/LivePerformanceWork.jsonld)
