@@ -1,0 +1,42 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix adr: <http://kg.artsdata.ca/resource/> .
+
+# OWL bridge layer for skos-genres.ttl.
+# Adds rdfs:subClassOf declarations mirroring skos:broader, enabling HORST class hierarchy inference.
+# Keep this file separate to preserve skos-genres.ttl as a pure SKOS controlled vocabulary.
+
+# Subclasses of adr:K6-200 (Dance)
+adr:K6-201 rdfs:subClassOf adr:K6-200 . # Ballet
+adr:K6-202 rdfs:subClassOf adr:K6-200 . # Contemporary dance
+adr:K6-203 rdfs:subClassOf adr:K6-200 . # Modern dance
+adr:K6-204 rdfs:subClassOf adr:K6-200 . # Cultural dance
+
+# Subclasses of adr:K6-300 (Music)
+adr:K6-301 rdfs:subClassOf adr:K6-300 . # Classical
+adr:K6-302 rdfs:subClassOf adr:K6-300 . # Country
+adr:K6-303 rdfs:subClassOf adr:K6-300 . # Folk
+adr:K6-304 rdfs:subClassOf adr:K6-300 . # Jazz
+adr:K6-305 rdfs:subClassOf adr:K6-300 . # Blues
+adr:K6-306 rdfs:subClassOf adr:K6-300 . # New Music
+adr:K6-307 rdfs:subClassOf adr:K6-300 . # Popular music
+adr:K6-308 rdfs:subClassOf adr:K6-300 . # World music
+adr:K6-309 rdfs:subClassOf adr:K6-300 . # Chanson
+adr:K6-310 rdfs:subClassOf adr:K6-300 . # Instrumental
+adr:K6-311 rdfs:subClassOf adr:K6-300 . # Alternative
+adr:K6-312 rdfs:subClassOf adr:K6-300 . # Electronic
+adr:K6-313 rdfs:subClassOf adr:K6-300 . # Metal
+adr:K6-314 rdfs:subClassOf adr:K6-300 . # Rap
+adr:K6-315 rdfs:subClassOf adr:K6-300 . # Rhythm and blues
+adr:K6-316 rdfs:subClassOf adr:K6-300 . # Rock
+
+# Subclasses of adr:K6-400 (Musico-dramatic)
+adr:K6-401 rdfs:subClassOf adr:K6-400 . # Musical Theatre
+adr:K6-402 rdfs:subClassOf adr:K6-400 . # Opera
+
+# Subclasses of adr:K6-500 (Spoken)
+adr:K6-501 rdfs:subClassOf adr:K6-500 . # Storytelling
+adr:K6-502 rdfs:subClassOf adr:K6-500 . # Poetry
+adr:K6-503 rdfs:subClassOf adr:K6-500 . # Slam
+adr:K6-504 rdfs:subClassOf adr:K6-500 . # Spoken Word
