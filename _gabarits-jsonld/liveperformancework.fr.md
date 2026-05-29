@@ -34,7 +34,7 @@ Si vous mettez en œuvre ce gabarit, nous vous prions de nous en aviser pour que
 
 ### Gabarit complet
 
-See the [full JSON-LD template in GitHub](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/LivePerformanceWork/LivePerformanceWork.jsonld)
+Consultez le [gabarit JSON-LD complet dans GitHub](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/LivePerformanceWork/LivePerformanceWork.jsonld)
 
 ### Exemples
 
