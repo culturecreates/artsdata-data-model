@@ -37,7 +37,7 @@ ado: rdf:type owl:Ontology ;
     vann:preferredNamespacePrefix "ado" ;
     vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
     owl:versionIRI <http://kg.artsdata.ca/ontology/1/> ; # TODO: location = /ontology/1 { return 301 /ontology/; }
-    owl:versionInfo "1.2.0" ;
+    owl:versionInfo "1.3.0" ;
     vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/artsdata-ontology.ttl> ;
     dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
 
