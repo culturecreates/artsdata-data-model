@@ -1,3 +1,83 @@
-TODO
+Here is the transformed, bilingual template for **LivePerformanceWork** (`CreativeWork`).
 
-Adapt template from https://docs.google.com/document/d/1s9BF2HXXl1-6xZQbGubrL_coSmCAUVgPLgxG7LrhQF4/edit?usp=sharing using this other template's syntax as a model: https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Event/event.jsonld
+```json
+{
+   "@context":"http://schema.org",
+   "@type":"CreativeWork",
+   "@id":"--URI constituant un identifiant unique de l'œuvre. Optionnel : URI constituting a unique identifier of the work. Optional--",
+   "additionalType":[
+      "PerformanceWork",
+      "LivePerformanceWork",
+      "http://kg.artsdata.ca/ontology/LivePerformanceWork"
+   ],
+   "name":"--Titre du projet ou de l'œuvre : Title of the project or work--",
+   "url":"--URL officiel de la page Web du projet : Official URL of the project webpage--",
+   "description":"--Description courte du projet : Short description of the project--",
+   "dateCreated":"--Année de création, par exemple 2026 : Year of creation, for example 2026--",
+   "contributor":[
+      {
+         "@type":"Role",
+         "roleName":"--Nom du rôle artistique, par exemple Choreographer ou Director : Name of the artistic role, for example Choreographer or Director--",
+         "contributor":{
+            "@type":"Person",
+            "@id":"--URI constituant un identifiant unique du contributeur. Optionnel : URI constituting a unique identifier of the contributor. Optional--",
+            "name":"--Nom du contributeur : Name of the contributor--",
+            "sameAs":[
+               "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
+               "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"
+            ]
+         }
+      }
+   ],
+   "producer":{
+      "@type":"--Utiliser le type 'Organization' si le producteur est une compagnie ou 'Person' s'il s'agit d'un individu : Use type 'Organization' if the producer is a company, or 'Person' if it is an individual--",
+      "@id":"--URI constituant un identifiant unique du producteur. Optionnel : URI constituting a unique identifier of the producer. Optional--",
+      "name":"--Nom du producteur : Name of the producer--",
+      "url":"--URL du site officiel du producteur : URL of the producer's official website--",
+      "sameAs":[
+         "--lien vers une page sur un réseau social, si disponible : link to a social media page, if available--",
+         "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
+         "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"
+      ]
+   },
+   "genre":[
+      "--Nom du genre artistique : Name of artistic genre--",
+      "--Autre genre artistique, si applicable : Another artistic genre, if applicable--"
+   ],         
+   "keywords":[
+      "--Un mot-clé lié à l'œuvre : Keyword related to the work--",
+      "--Un autre mot-clé lié à l'œuvre : Another keyword related to the work--"
+   ],
+   "image":"--URL de l'image (JPEG ou PNG) sur la page du projet : URL of the image (JPEG or PNG) on the project page--",
+   "countryOfOrigin":"CA",
+   "inLanguage":"--fr pour français ; en pour anglais (Code IETF BCP 47) : fr for French; en for English (IETF BCP 47 code)--",
+   "sameAs":[
+      "--URI Artsdata.ca de l'œuvre : Artsdata.ca URI of the work--",
+      "--URI Wikidata de l'œuvre au format http://www.wikidata.org/entity/$1 : Wikidata URI of the work in http://www.wikidata.org/entity/$1 format--"
+   ],
+   "isPerformedIn":[
+      {
+         "@type":"Event",
+         "@id":"--URI constituant un identifiant unique de l'événement lié. Optionnel : URI constituting a unique identifier of the linked event. Optional--",
+         "name":"--Nom de l'événement associé : Name of the associated event--",
+         "url":"--URL officiel de la page de l'événement : Official URL of the event webpage--",
+         "location":[
+            {
+               "@type":"Place",
+               "@id":"--URI constituant un identifiant unique du lieu. Optionnel : URI constituting a unique identifier of the place. Optional--",
+               "name":"--Nom du lieu ou de la salle : Name of the venue--",
+               "address":{
+                  "@type":"PostalAddress",
+                  "addressLocality":"--Nom de la ville : Name of the City--",
+                  "addressRegion":"--Abréviation postale à deux lettres de la province : Two-letter postal abbreviation of the province--",
+                  "postalCode":"--Code postal avec un espace après les 3 premiers caractères (Ex: H0H 0H0) : Postal code with a space after the first 3 characters (Ex: H0H 0H0)--",
+                  "streetAddress":"--Numéro civique et rue : Civic number and street--",
+                  "addressCountry":"CA"
+               }
+            }
+         ]
+      }
+   ]
+}
+
+```
