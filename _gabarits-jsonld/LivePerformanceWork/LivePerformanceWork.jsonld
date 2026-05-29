@@ -1,13 +1,10 @@
-Here is the transformed, bilingual template for **LivePerformanceWork** (`CreativeWork`).
-
-```json
+```
 {
    "@context":"http://schema.org",
    "@type":"CreativeWork",
    "@id":"--URI constituant un identifiant unique de l'œuvre. Optionnel : URI constituting a unique identifier of the work. Optional--",
    "additionalType":[
-      "PerformanceWork",
-      "LivePerformanceWork",
+      "https://schema.org/PerformanceWork",
       "http://kg.artsdata.ca/ontology/LivePerformanceWork"
    ],
    "name":"--Titre du projet ou de l'œuvre : Title of the project or work--",
@@ -58,9 +55,14 @@ Here is the transformed, bilingual template for **LivePerformanceWork** (`Creati
    "isPerformedIn":[
       {
          "@type":"Event",
+         "additionalType":[
+            "https://schema.org/PerformingArtsEvent",
+            "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+         ],
          "@id":"--URI constituant un identifiant unique de l'événement lié. Optionnel : URI constituting a unique identifier of the linked event. Optional--",
          "name":"--Nom de l'événement associé : Name of the associated event--",
          "url":"--URL officiel de la page de l'événement : Official URL of the event webpage--",
+         "startDate": "--Date et heure du début de l'événement, en format ISO 8601, par exemple 2025-03-15T19:30:00-05:00. Le décalage horaire est optionnel. : Date and time of the start of the event, in ISO 8601 format, for example 2025-03-15T19:30:00-05:00. The time zone offset is optional.--",
          "location":[
             {
                "@type":"Place",
@@ -79,5 +81,4 @@ Here is the transformed, bilingual template for **LivePerformanceWork** (`Creati
       }
    ]
 }
-
 ```
