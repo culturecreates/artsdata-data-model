@@ -16,6 +16,17 @@
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
+
+####################
+# Artsdata Ontology
+####################
+# Background Notes: 
+#     - Artsdata uses HORST (also called OWL-Horst or pD*) as its OWL profile, which is a subset of OWL 2 RL. 
+#     - This means that certain OWL features (e.g., owl:disjointWith, owl:cardinality restrictions) are not used in this ontology to ensure compatibility with HORST reasoners.
+#     - Cardinality constraints are expressed in SHACL.
+#     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
+####################
+
 ado: rdf:type owl:Ontology ;
     dcterms:title "Artsdata Ontology"@en ;
     dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage."@en ;
@@ -45,8 +56,7 @@ ado:LivePerformanceWork rdf:type rdfs:Class ;
         "Œuvre composée d'un ensemble d'éléments créatifs, de conceptions (intangibles et tangibles) et de plans destinée à être exécutée pour un public."@fr ;
     rdfs:isDefinedBy ado: ;
     rdfs:subClassOf ado:Thing, schema:CreativeWork, lrmoo:F1_Work, dbo:Work ;
-    owl:equivalentClass frbroo:F20, wd:Q17538722 ; # datascene:Show, milopa:PERFORMANCE_WORK when published
-    owl:disjointWith schema:Event .
+    owl:equivalentClass frbroo:F20, wd:Q17538722 . # datascene:Show, milopa:PERFORMANCE_WORK when published
     
 ado:Event rdf:type rdfs:Class ;
     rdfs:label "Event"@en ;
