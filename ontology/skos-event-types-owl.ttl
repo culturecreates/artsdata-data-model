@@ -1,0 +1,62 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix adr: <http://kg.artsdata.ca/resource/> .
+@prefix ado: <http://kg.artsdata.ca/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# OWL bridge layer for skos-event-types.ttl.
+# Adds rdfs:subClassOf declarations mirroring skos:broader, enabling HORST class hierarchy inference.
+# Keep this file separate to preserve skos-event-types.ttl as a pure SKOS controlled vocabulary.
+
+# Root: top event type concept is a subclass of schema:Event
+adr:Event rdfs:subClassOf schema:Event .
+
+# Level 2: direct subclasses of adr:Event
+adr:ChildrensEvent rdfs:subClassOf adr:Event .
+adr:Competition rdfs:subClassOf adr:Event .
+adr:EventSeries rdfs:subClassOf adr:Event .
+adr:ExhibitionEvent rdfs:subClassOf adr:Event .
+adr:Festival rdfs:subClassOf adr:Event .
+adr:PerformingArtsEvent rdfs:subClassOf adr:Event .
+adr:PowWow rdfs:subClassOf adr:Event .
+adr:RehearsalEvent rdfs:subClassOf adr:Event .
+adr:ResidencyEvent rdfs:subClassOf adr:Event .
+adr:SaleEvent rdfs:subClassOf adr:Event .
+adr:ScreeningEvent rdfs:subClassOf adr:Event .
+adr:SocialEvent rdfs:subClassOf adr:Event .
+adr:TalkEvent rdfs:subClassOf adr:Event .
+adr:WorkshopEvent rdfs:subClassOf adr:Event .
+
+# Level 3: subclasses of adr:PerformingArtsEvent
+adr:CircusPerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:ComedyPerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:DancePerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:MusicPerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:MusicalTheatrePerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:OperaPerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:PerformanceArt rdfs:subClassOf adr:PerformingArtsEvent .
+adr:SpokenWordPerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:StorytellingPerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:TheatrePerformance rdfs:subClassOf adr:PerformingArtsEvent .
+adr:VarietyPerformance rdfs:subClassOf adr:PerformingArtsEvent .
+
+# Level 3: subclasses of adr:EventSeries
+adr:Class rdfs:subClassOf adr:EventSeries .
+adr:Convention rdfs:subClassOf adr:EventSeries .
+adr:FestivalSeries rdfs:subClassOf adr:EventSeries .
+
+# Level 3: subclasses of adr:SocialEvent
+adr:AwardsEvent rdfs:subClassOf adr:SocialEvent .
+adr:SocialDance rdfs:subClassOf adr:SocialEvent .
+
+# Level 3: subclasses of adr:ScreeningEvent
+adr:LiveFilmConcert rdfs:subClassOf adr:ScreeningEvent .
+
+# Level 3: subclasses of adr:TalkEvent
+adr:PostshowTalk rdfs:subClassOf adr:TalkEvent .
+adr:PreshowTalk rdfs:subClassOf adr:TalkEvent .
+
+# Level 3: subclasses of adr:WorkshopEvent
+adr:MasterclassEvent rdfs:subClassOf adr:WorkshopEvent .

@@ -58,15 +58,15 @@ ado:Event rdf:type rdfs:Class ;
 
 ado:EventType rdf:type rdfs:Class ;
     rdfs:label "Event Type"@en ;
-    rdfs:comment "A class representing different types of events."@en ;
+    rdfs:comment "A metaclass: its instances are classes representing event types. In HORST, rdf:type rdfs:Class is inferred for all instances via rdfs:subClassOf rdfs:Class. The class hierarchy is defined in skos-event-types-owl.ttl."@en ;
     rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf skos:Concept, ado:Thing .
+    rdfs:subClassOf rdfs:Class .
 
 ado:Genre rdf:type rdfs:Class ;
     rdfs:label "Genre"@en ;
-    rdfs:comment "A class representing different genres of artistic works."@en ;
+    rdfs:comment "A metaclass: its instances are classes representing artistic genres. In HORST, rdf:type rdfs:Class is inferred for all instances via rdfs:subClassOf rdfs:Class. The class hierarchy is defined in skos-genres-owl.ttl."@en ;
     rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf skos:Concept, ado:Thing .
+    rdfs:subClassOf rdfs:Class .
 
 ####################
 # Properties
