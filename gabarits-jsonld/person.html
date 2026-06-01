@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/gabarits-jsonld/person.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-06-01T22:36:23+00:00" />
+<meta property="article:published_time" content="2026-06-01T22:36:45+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Person Structured Data Templates" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-01T22:36:23+00:00","datePublished":"2026-06-01T22:36:23+00:00","description":"Structured Data Templates for Person","headline":"Person Structured Data Templates","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/gabarits-jsonld/person.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/gabarits-jsonld/person.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-01T22:36:45+00:00","datePublished":"2026-06-01T22:36:45+00:00","description":"Structured Data Templates for Person","headline":"Person Structured Data Templates","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/gabarits-jsonld/person.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/gabarits-jsonld/person.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -485,6 +485,188 @@ function goBack() {
   
   
 </h1>
+    
+
+<p>Structured data templates in JSON-LD format based on the Schema.org vocabulary.</p>
+
+<p>This is an evolving document for a Schema structured data template describing a <a href="https://schema.org/Person">person</a> (i.e. an individual artist).</p>
+
+<p>If you try out this JSON-LD template please contact Artsdata to let us know. We would love to see your structured data in action.</p>
+<h3 id="preview">
+  
+  
+    <a href="#preview" class="anchor-heading" aria-labelledby="preview"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Preview
+  
+  
+</h3>
+    
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+   "@context": "http://schema.org/",
+   "@type": "Person",
+             "@id": "--URI constituant un identifiant unique de la personne. Optionnel : URI constituting a unique identifier of the person. Optional--",
+             "name": "--Nom de la personne : Name of the person--",
+             "givenName": "--Prénom de la personne : Given name of the person--",
+             "familyName": "--Nom de famille de la personne : Family name of the person--",
+             "jobTitle": "--Discipline artistique ou titre, par exemple Compositeur : Artistic discipline or title, for example Composer. Optional--",
+             "alternateName": "--Pseudonyme ou nom alternatif. Optionnel : Pseudonym or alternate name. Optional--",
+             "image": "--URL de l'image (JPEG ou PNG) : URL of the image (JPEG or PNG)--",
+             "url": "--URL officiel du site Web de la personne : Official URL of the person's website--",
+   ...
+</code></pre></div></div>
+<h3 id="full-template">
+  
+  
+    <a href="#full-template" class="anchor-heading" aria-labelledby="full-template"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Full template
+  
+  
+</h3>
+    
+
+<p>See the <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Person.jsonld">full JSON-LD template in GitHub</a></p>
+<h3 id="example-for-an-artist-profile">
+  
+  
+    <a href="#example-for-an-artist-profile" class="anchor-heading" aria-labelledby="example-for-an-artist-profile"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Example For An Artist Profile
+  
+  
+</h3>
+    
+
+<p>The following JSON-LD script is based on the member profile of <a href="[url](https://ipaa.ca/profile/indigenous-artist/a_waawaaskone)">Aqua Nibii Waawaaskone</a>, a member of the Indigenous Performing Arts Alliance (IPAA). Since this particular member profile did not exemplify all properties in the IPAA individual member schema, we filled in the blanks with fake values in all caps.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script type="application/ld+json"&gt;
+{
+"@context": "http://schema.org/",
+   "@type": "Person",
+     "name": "Aqua Nibii Waawaaskone",
+     "givenName": "Aqua Nibii",
+     "familyName": "Waawaaskone",
+     "alternateName": "SOMEPSEUDONYM",
+     "image": "https://ipaa.ca/wp-content/uploads/avatars/17/AQUA FABCOLLAB.JPG",
+     "@id": "SOME_URI",
+     "url": "https://aquamusic.ca/",
+     "mainEntityOfPage": "https://ipaa.ca/profile/indigenous-artist/a_waawaaskone",
+     "workLocation": 
+     {
+        "@type": "AdministrativeArea",
+        "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CA",
+        "addressRegion": "ON",
+        "addressLocality": "Mississaugas of Scugog/Tkaronto"
+				}
+        },
+        "knowsAbout": [
+        {
+        "@type":	"Specialty",
+        "Name":	"Music",
+        "sameAs":	"http://www.wikidata.org/entity/Q638"
+        },
+        {
+        "@type": 	"Specialty",
+        "Name":	"Other",
+        "sameAs":	"http://www.wikidata.org/entity/Q184485"
+        }
+],
+         "sameAs": [
+         "ISNI_URI",
+         "WIKIDATA_URI",
+         "ARTSDATA_URI",
+         "https://www.facebook.com/aquamusic.ca/", 
+         "https://itunes.apple.com/ca/artist/aqua-nibii-waawaaskone/1077333329", 
+         "https://www.instagram.com/redrhythmandblues/", 
+         "https://www.facebook.com/redrhythmandblues/", 
+         "https://www.facebook.com/aqua.nibiiwaawaaskone ",
+         "https://www.youtube.com/channel/UCP8DA12ia48T3O8X--G_yJ"
+			],
+         "memberOf":	{
+         "@type":	"Organization",					
+         "name":	"Indigenous Performing Arts Alliance",
+         "url":	"https://ipaa.ca/",					
+         "sameAs":	"http://www.wikidata.org/entity/Q110938829"
+				}
+}
+&lt;/script&gt;
+</code></pre></div></div>
+<h3 id="tips-about-the-json-ld-syntax">
+  
+  
+    <a href="#tips-about-the-json-ld-syntax" class="anchor-heading" aria-labelledby="tips-about-the-json-ld-syntax"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tips about the JSON-LD syntax
+  
+  
+</h3>
+    
+
+<ul>
+  <li>The order of properties doesn’t matter. Just be mindful that every property-value pair must have a comma at the end of the line, except for the last property-value pair of an object. In other words, you want commas everywhere, except before a closing square bracket (]) or a closing curly brace (}).</li>
+  <li>You may test your JSON-LD script with the Schema validator</li>
+</ul>
+<h3 id="other-recommended-properties-for-artist-profiles">
+  
+  
+    <a href="#other-recommended-properties-for-artist-profiles" class="anchor-heading" aria-labelledby="other-recommended-properties-for-artist-profiles"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Other recommended properties for artist profiles
+  
+  
+</h3>
+    
+<h4 id="birthplace-and-worklocation">
+  
+  
+    <a href="#birthplace-and-worklocation" class="anchor-heading" aria-labelledby="birthplace-and-worklocation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> birthPlace and workLocation
+  
+  
+</h4>
+    
+
+<p>Provenance metadata is particularly important for artists. If you want to make an artist’s provenance more easily readable and processable by machines, the <a href="[url](https://schema.org/birthPlace)">birthPlace</a> and <a href="[url](https://schema.org/workLocation)">workLocation</a> properties are recommended, along with sameAs entity links to geographic databases.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"birthPlace": {
+      "@type": "AdministrativeArea",
+      "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "COUNTRY",
+          "addressRegion": "PROVINCE",
+          "addressLocality": "CITY" 
+          },
+      "sameAs": [
+          "WIKIDATA CONCEPT URI for the city",
+          "GEONAMES RDF URI for the city" (http://sws.geonames.org/$1/)"
+          ]
+}
+</code></pre></div></div>
+<p>The city is optional. Same for the region. You could choose to only disclose the country of birth. If you disclose the city, we recommend you include a “sameAs” pointing to the Wikidata item for the city.</p>
+
+<p>For the addressCountry and addressRegion, we recommend using two-letter codes. For example, “CA” for “Canada”.</p>
+
+<p>You can model birthPlace and workLocation either as a Place, AdministrativeArea (as above) or as a ContactPoint.</p>
+<h4 id="indigenous-identity">
+  
+  
+    <a href="#indigenous-identity" class="anchor-heading" aria-labelledby="indigenous-identity"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Indigenous identity
+  
+  
+</h4>
+    
+
+<p>Schema does not have a property to describe an artist’s Indigenous ancestry. In the absence of a proper method, the convention in Canada is to use additionalType and the URI of Wikidata item designating the Indigenous people that the artist belongs to.</p>
+
+<p>Here’s an example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"additionalType": 
+"http://www.wikidata.org/entity/Q262457",
+</code></pre></div></div>
+<p>In this example, Q26457 corresponds to the Wikidata item for the Métis People.</p>
+<h3 id="contact-us-for-more">
+  
+  
+    <a href="#contact-us-for-more" class="anchor-heading" aria-labelledby="contact-us-for-more"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Contact us for more
+  
+  
+</h3>
+    
+
+<p>Feel free to contact us at artsdata@capacoa.ca for more information.</p>
 
           
 
