@@ -71,7 +71,7 @@
   },"10": {
     "doc": "Event",
     "title": "Event Types",
-    "content": "Outside of Artsdata, Event entities can be categorized with additional event types from the Artsdata controlled vocabulary for event types using the schema:additionalType property. In addition to concepts from the Artsdata controlled vocabulary, Artsdata accepts Schema.org Event sub-types as well as Wikidata concepts. Once your published data is loaded into Artsdata, your events will automatically be assigned Artsdata EventTypes using the property ado:hasEventType. ",
+    "content": "In your structured data, events can be categorized with additional event types from the Artsdata controlled vocabulary for event types using the schema:additionalType property. In addition to concepts from the Artsdata event types controlled vocabulary, Artsdata accepts Schema.org Event sub-types as well as Wikidata concepts. Once your published data is loaded into Artsdata, your events will automatically be assigned Artsdata EventTypes using the property ado:hasEventType. ",
     "url": "/classes/event.html#event-types",
     
     "relUrl": "/classes/event.html#event-types"
