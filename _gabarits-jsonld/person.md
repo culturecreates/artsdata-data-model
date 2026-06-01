@@ -32,7 +32,7 @@ If you try out this JSON-LD template please contact Artsdata to let us know. We 
 
 ### Full template
 
-See the [full JSON-LD template in GitHub](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Person.jsonld)
+See the [full JSON-LD template in GitHub](https://github.com/culturecreates/artsdata-data-model/blob/master/_gabarits-jsonld/Person/Person.jsonld)
 
 ### Example For An Artist Profile
 
