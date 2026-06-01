@@ -12,9 +12,9 @@ Any single performance, run of performances, or festival edition is deemed an `E
 
 ## Event Types
 
-Outside of Artsdata, Event entities can be categorized with additional event types from the [Artsdata controlled vocabulary for event types](../event-types.html) using the `schema:additionalType` property.
+In your structured data, events can be categorized with additional event types from the [Artsdata controlled vocabulary for event types](../event-types.html) using the `schema:additionalType` property.
 
-In addition to concepts from the Artsdata controlled vocabulary, Artsdata accepts Schema.org Event sub-types as well as Wikidata concepts.
+In addition to concepts from the Artsdata event types controlled vocabulary, Artsdata accepts Schema.org Event sub-types as well as Wikidata concepts.
 
 Once your published data is loaded into Artsdata, your events will automatically be assigned Artsdata EventTypes using the property [ado:hasEventType](http://kg.artsdata.ca/ontology/hasEventType).
 
