@@ -1,0 +1,47 @@
+{
+   "@context":"http://schema.org",
+   "@type":"Person",
+   "@id":"--URI constituant un identifiant unique de la personne. Optionnel : URI constituting a unique identifier of the person. Optional--",
+   "name":"--Nom de la personne : Name of the person--",
+   "givenName":"--Prénom de la personne : Given name of the person--",
+   "familyName":"--Nom de famille de la personne : Family name of the person--",
+   "jobTitle":"--Discipline artistique ou titre, par exemple Compositeur : Artistic discipline or title, for example Composer. Optional--",
+   "alternateName":"--Pseudonyme ou nom alternatif. Optionnel : Pseudonym or alternate name. Optional--",
+   "image":"--URL de l'image (JPEG ou PNG) : URL of the image (JPEG or PNG)--",
+   "url":"--URL officiel du site Web de la personne : Official URL of the person's website--",
+   "mainEntityOfPage":"--URL de la page de profil principale de la personne : URL of the person's main profile page--",
+   "workLocation":{
+      "@type":"AdministrativeArea",
+      "address":{
+         "@type":"PostalAddress",
+         "addressCountry":"CA",
+         "addressRegion":"--Abréviation postale à deux lettres de la province : Two-letter postal abbreviation of the province--",
+         "addressLocality":"--Nom de la ville ou de la localité : Name of the city or locality--"
+      }
+   },
+   "knowsAbout":[
+      {
+         "@type":"Specialty",
+         "name":"--Spécialité ou domaine de connaissance, par exemple Musique : Specialty or area of knowledge, for example Music--",
+         "sameAs":"--URI Wikidata de la spécialité au format http://www.wikidata.org/entity/ID : Wikidata URI of the specialty in http://www.wikidata.org/entity/ID format--"
+      },
+      {
+         "@type":"Specialty",
+         "name":"--Autre spécialité ou domaine de connaissance, si applicable : Another specialty or area of knowledge, if applicable--",
+         "sameAs":"--URI Wikidata de la spécialité au format http://www.wikidata.org/entity/ID : Wikidata URI of the specialty in http://www.wikidata.org/entity/ID format--"
+      }
+   ],
+   "sameAs":[
+      "--URI ISNI de la personne, si disponible : ISNI URI of the person, if available--",
+      "--URI Wikidata au format http://www.wikidata.org/entity/ID : Wikidata URI in http://www.wikidata.org/entity/ID format--",
+      "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
+      "--Lien vers une page sur un réseau social ou plateforme (Facebook, Instagram, Spotify, etc.) : Link to a social media page or platform (Facebook, Instagram, Spotify, etc.)--",
+      "--Autre lien vers un réseau social ou plateforme : Another link to a social media page or platform--"
+   ],
+   "memberOf":{
+      "@type":"Organization",
+      "name":"--Nom de l'organisation à laquelle la personne est affiliée : Name of the organization the person is affiliated with--",
+      "url":"--URL du site officiel de l'organisation : URL of the organization's official website--",
+      "sameAs":"--URI Wikidata de l'organisation au format http://www.wikidata.org/entity/ID : Wikidata URI of the organization in http://www.wikidata.org/entity/ID format--"
+   }
+}
