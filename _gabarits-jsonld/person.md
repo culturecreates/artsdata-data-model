@@ -36,68 +36,52 @@ See the [full JSON-LD template in GitHub](https://github.com/culturecreates/arts
 
 ### Example For An Artist Profile
 
-The following JSON-LD script is based on the member profile of [Aqua Nibii Waawaaskone]([url](https://ipaa.ca/profile/indigenous-artist/a_waawaaskone)), a member of the Indigenous Performing Arts Alliance (IPAA). Since this particular member profile did not exemplify all properties in the IPAA individual member schema, we filled in the blanks with fake values in all caps. 
+The following JSON-LD script is based on the member profile of [Leela Gilday]([url](https://ipaa.ca/profile/indigenous-artist/Leela%20Gilday)), a member of the Indigenous Performing Arts Alliance (IPAA). 
 
 ```
 <script type="application/ld+json">
 {
-"@context": "http://schema.org/",
-   "@type": "Person",
-     "name": "Aqua Nibii Waawaaskone",
-     "givenName": "Aqua Nibii",
-     "familyName": "Waawaaskone",
-     "alternateName": "SOMEPSEUDONYM",
-     "image": "https://ipaa.ca/wp-content/uploads/avatars/17/AQUA FABCOLLAB.JPG",
-     "@id": "SOME_URI",
-     "url": "https://aquamusic.ca/",
-     "mainEntityOfPage": "https://ipaa.ca/profile/indigenous-artist/a_waawaaskone",
-     "workLocation": 
-     {
-        "@type": "AdministrativeArea",
-        "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "CA",
-        "addressRegion": "ON",
-        "addressLocality": "Mississaugas of Scugog/Tkaronto"
-				}
-        },
-        "knowsAbout": [
-        {
-        "@type":	"Specialty",
-        "Name":	"Music",
-        "sameAs":	"http://www.wikidata.org/entity/Q638"
-        },
-        {
-        "@type": 	"Specialty",
-        "Name":	"Other",
-        "sameAs":	"http://www.wikidata.org/entity/Q184485"
-        }
-],
-         "sameAs": [
-         "ISNI_URI",
-         "WIKIDATA_URI",
-         "ARTSDATA_URI",
-         "https://www.facebook.com/aquamusic.ca/", 
-         "https://itunes.apple.com/ca/artist/aqua-nibii-waawaaskone/1077333329", 
-         "https://www.instagram.com/redrhythmandblues/", 
-         "https://www.facebook.com/redrhythmandblues/", 
-         "https://www.facebook.com/aqua.nibiiwaawaaskone ",
-         "https://www.youtube.com/channel/UCP8DA12ia48T3O8X--G_yJ"
-			],
-         "memberOf":	{
-         "@type":	"Organization",					
-         "name":	"Indigenous Performing Arts Alliance",
-         "url":	"https://ipaa.ca/",					
-         "sameAs":	"http://www.wikidata.org/entity/Q110938829"
-				}
+   "@context":"http://schema.org",
+   "@type":"Person",
+   "name":"Leela Gilday",
+   "givenName":"Leela",
+   "familyName":"Gilday",
+   "alternateName":"Leela Gilday",
+   "jobTitle":"Artist",
+   "image":"https://ipaa.ca/wp-content/uploads/ninja-forms/2/PKP2349.jpg",
+   "url":"https://www.leelagilday.com/",
+   "workLocation":{
+      "@type":"AdministrativeArea",
+      "address":{
+         "@type":"PostalAddress",
+         "addressCountry":"CA",
+         "addressRegion":"NT",
+         "addressLocality":"Yellowknife"
+      }
+   },
+   "knowsAbout":[
+      {
+         "@type":"Specialty",
+         "name":"Artist",
+         "sameAs":"http://www.wikidata.org/entity/Q483501"
+      }
+   ],
+   "sameAs":[
+      "http://www.wikidata.org/entity/Q6516255",
+      "http://kg.artsdata.ca/resource/K12-447",
+      "https://www.youtube.com/c/leelagildaymusic",
+      "https://www.instagram.com/leelagildaymusic/?hl=en",
+      "https://www.facebook.com/leelagildaymusic/"
+   ],
+   "memberOf":{
+      "@type":"Organization",
+      "name":"Indigenous Performing Arts Alliance",
+      "url":"https://ipaa.ca/",
+      "sameAs":"http://www.wikidata.org/entity/Q110938829"
+   }
 }
 </script>
 ```
-
-### Tips about the JSON-LD syntax
-
-* The order of properties doesn’t matter. Just be mindful that every property-value pair must have a comma at the end of the line, except for the last property-value pair of an object. In other words, you want commas everywhere, except before a closing square bracket (]) or a closing curly brace (}).
-* You may test your JSON-LD script with the Schema validator
 
 ### Other recommended properties for artist profiles
 
@@ -128,7 +112,7 @@ You can model birthPlace and workLocation either as a Place, AdministrativeArea 
 
 #### Indigenous identity
 
-Schema does not have a property to describe an artist’s Indigenous ancestry. In the absence of a proper method, the convention in Canada is to use additionalType and the URI of Wikidata item designating the Indigenous people that the artist belongs to.
+Schema does not have a property to describe an artist’s Indigenous ancestry. One method is to use additionalType and the URI of Wikidata item designating the Indigenous people that the artist belongs to.
 
 Here’s an example:
 
