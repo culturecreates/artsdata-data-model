@@ -352,14 +352,17 @@ schema:additionalType &lt;http://kg.artsdata.ca/resource/PerformingArtsEvent&gt;
 
 <p>To give it a try:</p>
 <ol>
-  <li>Go to the <a href="https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon">W3C entity reconciliation test bench</a></li>
+  <li>Go to the <a href="https://reconciliation-api.github.io/testbench/1.0/#/client/https%3A%2F%2Frecon.artsdata.ca">W3C entity reconciliation test bench</a></li>
   <li>Enter the name of an event type, such as Circus</li>
   <li>Click the Reconcile button</li>
 </ol>
 
 <p>To limit the results only to the controlled vocabulary:</p>
 <ol>
-  <li>Select the “type” radio button “Artsdata Event Type”</li>
+  <li>Select “add property”</li>
+  <li>Add the property id <code class="language-plaintext highlighter-rouge">skos:ConceptScheme</code></li>
+  <li>Add the property value <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/ArtsdataEventTypes</code></li>
+  <li>Click the radio button “required”</li>
   <li>Click the Reconcile button</li>
 </ol>
 <h3 id="dereferencing">
@@ -371,7 +374,7 @@ schema:additionalType &lt;http://kg.artsdata.ca/resource/PerformingArtsEvent&gt;
 </h3>
     
 
-<p>Each SKOS Concept or ConceptScheme URI can be dereferenced individually. Or you can download the entire vocabulary using this <a href="https://db.artsdata.ca/repositories/artsdata/statements?context=%3Chttp://kg.artsdata.ca/culture-creates/artsdata-data-model/skos-event-types%3E">download link</a>.</p>
+<p>Each SKOS Concept or ConceptScheme URI can be dereferenced individually. Or you can download the entire vocabulary using this <a href="https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-event-types.ttl">download link</a>.</p>
 
           
 

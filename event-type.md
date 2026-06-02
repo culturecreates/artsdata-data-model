@@ -29,14 +29,17 @@ You can reconcile event types using the Artsdata Reconciliation Service.
 <img width="1280" alt="Screen Shot 2022-08-14 at 9 53 10 PM" src="https://user-images.githubusercontent.com/419491/184564852-ed5baeb8-952d-43c7-b8a1-b06b6ba65152.png">
 
 To give it a try:
-1. Go to the [W3C entity reconciliation test bench](https://reconciliation-api.github.io/testbench/#/client/https%3A%2F%2Fapi.artsdata.ca%2Frecon)
+1. Go to the [W3C entity reconciliation test bench](https://reconciliation-api.github.io/testbench/1.0/#/client/https%3A%2F%2Frecon.artsdata.ca)
 2. Enter the name of an event type, such as Circus
 3. Click the Reconcile button
 
 To limit the results only to the controlled vocabulary:
-1. Select the "type" radio button "Artsdata Event Type"
+1. Select "add property"
+2. Add the property id `skos:ConceptScheme`
+3. Add the property value `http://kg.artsdata.ca/resource/ArtsdataEventTypes`
+4. Click the radio button "required"
 8. Click the Reconcile button
 
 ### Dereferencing
 
-Each SKOS Concept or ConceptScheme URI can be dereferenced individually. Or you can download the entire vocabulary using this [download link](https://db.artsdata.ca/repositories/artsdata/statements?context=%3Chttp://kg.artsdata.ca/culture-creates/artsdata-data-model/skos-event-types%3E).
+Each SKOS Concept or ConceptScheme URI can be dereferenced individually. Or you can download the entire vocabulary using this [download link](https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-event-types.ttl).
