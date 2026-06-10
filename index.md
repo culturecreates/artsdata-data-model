@@ -36,12 +36,19 @@ Here are the main Classes used in Artsdata.
 </ol>
 
 ### Controlled vocabularies
+The following controlled vocabularies have been developed by the Artsdata community.
 
 - [Event types]({{ base }}/event-types.html)
   
 - [Organization types]({{ base }}/organization-type.html)
 
 - [Genres]({{ base }}/genres.html)
+
+- Place types
+  
+- Association Membership types
+
+Here is a [visual overview](https://kg.artsdata.ca/vocabularies) of the controlled vocabularies used in Artsdata.
 
 ### Persistent Identifiers
 
