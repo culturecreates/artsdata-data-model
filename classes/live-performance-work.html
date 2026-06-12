@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/classes/live-performance-work.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-06-10T20:43:06+00:00" />
+<meta property="article:published_time" content="2026-06-12T19:10:28+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="LivePerformanceWork" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-10T20:43:06+00:00","datePublished":"2026-06-10T20:43:06+00:00","description":"Live Performance Work","headline":"LivePerformanceWork","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/live-performance-work.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/classes/live-performance-work.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-12T19:10:28+00:00","datePublished":"2026-06-12T19:10:28+00:00","description":"Live Performance Work","headline":"LivePerformanceWork","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/live-performance-work.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/classes/live-performance-work.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -437,6 +437,16 @@ function goBack() {
     
 
 <p>The application profile for <code class="language-plaintext highlighter-rouge">ado:LivePerformanceWork</code> is currently in development and will be published soon. It will import properties from Schema.org, LRMoo and Wikidata, and will be mapped to other RDF ontologies.</p>
+<h2 id="artsdata-genres-controlled-vocabulary">
+  
+  
+    <a href="#artsdata-genres-controlled-vocabulary" class="anchor-heading" aria-labelledby="artsdata-genres-controlled-vocabulary"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Artsdata Genres Controlled Vocabulary
+  
+  
+</h2>
+    
+
+<p>Artsdata can automatically reconcile <code class="language-plaintext highlighter-rouge">genre</code> strings against concepts in the <a href="http://kg.artsdata.ca/resource/ArtsdataGenres">Artsdata Genres Controlled Vocabulary</a>. <code class="language-plaintext highlighter-rouge">schema:genre</code> values can either be text strings, URIs of schema:DefinedTerm objects.</p>
 <h2 id="sample-structured-data">
   
   
@@ -446,62 +456,46 @@ function goBack() {
 </h2>
     
 
-<p>Here is sample <code class="language-plaintext highlighter-rouge">@type Event</code> structured data, with a nested <code class="language-plaintext highlighter-rouge">ado:LivePerformanceWork</code> entity under the property <code class="language-plaintext highlighter-rouge">workPerformed</code>. This example is based on a performance of the work <em><code class="language-plaintext highlighter-rouge">Orpheus | S'abreuver des volcans</code></em> by Alan Lake Factori(e), which is well described on the <a href="https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/">company’s website</a> and in the <a href="https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276">Scène Pro directory</a>.</p>
+<p>Here is sample <code class="language-plaintext highlighter-rouge">ado:LivePerformanceWork</code> structured data. This example is based on a performance of the work <em><code class="language-plaintext highlighter-rouge">Orpheus | S'abreuver des volcans</code></em> by Alan Lake Factori(e), which is well described on the <a href="https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/">company’s website</a> and in the <a href="https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276">Scène Pro directory</a>.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-    "@context": "https://schema.org",
-    "id": "http://kg.artsdata.ca/resource/K23-2815",
-    "@type": "Event",
-    "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent",
-    "sameAs": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie",
-    "location": {
-        "id": "http://kg.artsdata.ca/resource/K11-22",
-        "type": "Place",
-        "sameAs": "http://www.wikidata.org/entity/Q42986539",
-        "name": "Place des Arts - Cinquième Salle"
-        },
-    "startDate": "2025-04-01T20:00:00-04:00",
-    "endDate": "2025-04-01T22:00:00-04:00",
-    "name": "Alan Lake Factori(e) - S’abreuver des volcans",
-    "url": "https://www.dansedanse.ca/fr/spectacles/alan-lake-factorie-sabreuver-des-volcans",
-    "workPerformed": {
-        "@type": "CreativeWork",
-        "additionalType": "http://kg.artsdata.ca/resource/LivePerformanceWork",
-        "name": "Orpheus | S'abreuver des volcans",
-        "url": "https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/",
-        "mainEntityOfPage": "https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276",
-        "genre": [
-                "http://www.wikidata.org/entity/Q11639",
-                "http://vocab.getty.edu/page/aat/300054144"
-                ],
-        "about": {
-            "@type": "Person",
-            "name": "Orpheus",
-            "sameAs": "http://www.wikidata.org/entity/Q174353"
-            },
-       "creator": {
-            "@type": "Person",
-            "name": "Alan Lake",
-            "sameAs": "http://www.wikidata.org/entity/Q64925368"
-            },
-        "producer": {
-            "@type": "Organization",
-            "name": "Alan Lake Factori(e)",
-            "url": "https://alanlakefactorie.org/"
-            },
-        "image": "https://images.scenepro.ca/uploads%2Fshowmain/692957167540869-image.png",
-        "inlanguage": "fr",
-        "audience": {
-            "@type": "Audience",
-            "name": "Tous publics",
-            "disambiguatingDescription": "Term from the Scène Pro audience vocabulary designating 'General audiences'"
-            }
-        },
-    "performer": {
-        "@type": "Organization",
-        "name": "Alan Lake Factori(e)",
-        "url": "https://alanlakefactorie.org/"
-        }
+  "@context": "https://schema.org",
+  "@type": [
+    "CreativeWork",
+    "http://kg.artsdata.ca/ontology/LivePerformanceWork"
+    ],
+  "name": "Orpheus | S'abreuver des volcans",
+  "url": "https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/",
+  "sameAs": "http://www.wikidata.org/entity/Q135182394",
+  "mainEntityOfPage": "https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276",
+  "genre": {
+    "@type": "DefinedTerm",
+    "name": "Danse",
+    "sameAs": [
+      "http://kg.artsdata.ca/resource/K6-200",
+      "http://vocab.getty.edu/page/aat/300054144",
+      "http://www.wikidata.org/entity/Q11639"
+      ]
+    },
+  "inLanguage": "fr",
+  "creator": {
+    "@type": "Person",
+    "name": "Alan Lake",
+    "sameAs": "http://www.wikidata.org/entity/Q64925368"
+    },
+  "producer": [
+    {
+    "@type": "Organization",
+    "name": "Alan Lake Factori(e)",
+    "sameAs": "http://www.wikidata.org/entity/Q135182548"
+      },
+    {
+    "@type": "Organization",
+    "name": "Diffusion Momentum",
+    "alternateName": "Carré 150 – Espace culturel de Victoriaville",
+    "sameAs": "http://www.wikidata.org/entity/Q118097169"
+      }
+    ]
 }
 </code></pre></div></div>
 
