@@ -11,15 +11,23 @@ Artsdata imports the `Place` class from Schema.org. In Schema.org, a [Place](htt
 
 In Artsdata, the `Place` class can be used to define any architectural structure (e.g. a building or a room) or outdoor location.
 
+The Artsdata application profile for the `Place` class is influenced by the [Wikidata WikiProject Cultural venues](https://wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues), maintained by CAPACOA and the LODEPA community. 
+
+Artsdata also takes advantage of the schema:placeContainedIn to create links between rooms/halls and buildings. Also between buildings and encompassing places such as city. This automatically situates Places in a city, region, province and country. Linking increases the ability for reconciling places when only a name and postal address is available.
+
+Once a Place entity from an external source is reconciled with an Artsdata minted identifier, it is linked with its Artsdata identifier with the `schema:sameAs` property.
+
+Here is an overview of properties that have the `Place` class as a domain or as a range.
+
+![Image](images/place-application-profile.png)
+
+[Open Drawing Tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/fjjulien/99c226a4bc505e27c5b2024dd68c2e7d/raw/eba8e87d844efa55467626154deff432e4949188/Artsdata_Place_application_profile)
+
 ## Types of Places 
 
-The following types of places have been designed by the LDFI project led by CAPACOA. 
+Place entities can be categorized with additional types from the [Artsdata Place Types controlled vocabulary](http://kg.artsdata.ca/resource/ArtsdataPlaceTypes) using the `schema:additionalType` property.
 
-https://m.wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues/Typology
-
-Artsdata highly recommends using the Wikidata type URI as schema:additionalType. 
-
-Artsdata also takes advantage of the schema:placeContainedIn to create links between rooms/halls and buildings. Also between buildings and encompassing places such as city. This automatically situated event venues in a city, region, province and country. Linking increases the ability for reconciling places when only a name and postal address is available. 
+A full documentation page for the Artsdata Place Types controlled vocabulary is currently under development. Until this page is available, you may consult this [Google Sheet version](https://docs.google.com/spreadsheets/d/1UtW5_tLdR72vf6WCZNPOmgJQ1SQGMc0xL8hRT3OAY9Y/edit?usp=sharing).
 
 ## Minimal requirements for Place entities
 
