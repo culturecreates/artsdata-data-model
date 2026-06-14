@@ -19,7 +19,7 @@ Once a Place entity from an external source is reconciled with an Artsdata minte
 
 Here is an overview of properties that have the `Place` class as a domain or as a range.
 
-![Image](images/place-application-profile.png)
+![Image](https://github.com/culturecreates/artsdata-data-model/blob/master/images/place-application-profile.png)
 
 [Open Drawing Tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/fjjulien/99c226a4bc505e27c5b2024dd68c2e7d/raw/eba8e87d844efa55467626154deff432e4949188/Artsdata_Place_application_profile)
 
