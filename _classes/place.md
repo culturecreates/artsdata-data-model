@@ -23,9 +23,9 @@ Artsdata also takes advantage of the schema:placeContainedIn to create links bet
 
 ## Minimal requirements for Place entities
 
-To be minted (i.e. assigned) a new Artsdata unique persistent identifier or to be automatically linked to an existing Artsdata ID, a `Place` type entity must comply with any of these three shapes.
+To be minted (i.e. assigned) a new Artsdata unique persistent identifier or to be automatically linked to an existing Artsdata ID, a `Place` type entity must have a [schema:name](https://schema.org/name) and either a complete address or compliant geographic information. Here are the three accepted shapes for addresses and geographical information. 
 
-**1. schema:name and complete schema:PostalAddress object (including streetAddress, locality (city), region (province/territory), postalCode, country)**
+**1. complete schema:PostalAddress object (including streetAddress, locality (city), region (province/territory), postalCode, country)**
 
 ```
  "address": {
@@ -40,7 +40,7 @@ To be minted (i.e. assigned) a new Artsdata unique persistent identifier or to b
 
 OR
 
-**2. schema:name, schema:longitude + schema:latitude, and schema:PostalAddress object with region (province/territory) and country**
+**2. schema:longitude + schema:latitude AND schema:PostalAddress object with region (province/territory) and country**
 
 ```
   "latitude": "45.5873706",
@@ -66,7 +66,7 @@ OR
 
 OR
 
-**3. schema:name, schema:geo with a GeoShape object, and schema:PostalAddress object object with region (province/territory) and country**
+**3. schema:geo with a GeoShape object AND schema:PostalAddress object with region (province/territory) and country**
 
 ```
   "geo": {
