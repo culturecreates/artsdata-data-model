@@ -1,3 +1,7 @@
+{% include back-button.html %}
+
+{% include language-switcher.html %}
+
 # Artsdata Place Types Controlled Vocabulary
 
 | <!-- --> | <!-- --> |
