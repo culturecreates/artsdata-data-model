@@ -1,6 +1,6 @@
 ---
 class_name: Place
-layout: class-doc
+layout: class-event-doc
 nav_order: 10
 title: Place
 ---
