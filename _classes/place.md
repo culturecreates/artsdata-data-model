@@ -25,7 +25,7 @@ Here is an overview of properties that have the `Place` class as a domain or as 
 
 ## Types of Places 
 
-Place entities can be categorized with additional types from the [Artsdata Place Types controlled vocabulary](http://kg.artsdata.ca/resource/ArtsdataPlaceTypes) using the `schema:additionalType` property.
+Place entities can be categorized with additional types from the [Artsdata Place Types controlled vocabulary](https://docs.artsdata.ca/place-types.html) using the `schema:additionalType` property.
 
 A full documentation page for the Artsdata Place Types controlled vocabulary is currently under development. Until this page is available, you may consult this [Google Sheet version](https://docs.google.com/spreadsheets/d/1UtW5_tLdR72vf6WCZNPOmgJQ1SQGMc0xL8hRT3OAY9Y/edit?usp=sharing).
 
