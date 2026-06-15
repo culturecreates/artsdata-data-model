@@ -11,9 +11,9 @@ Artsdata imports the `Place` class from Schema.org. In Schema.org, a [Place](htt
 
 In Artsdata, the `Place` class can be used to define any architectural structure (e.g. a building or a room) or outdoor location.
 
-The Artsdata application profile for the `Place` class is influenced by the [Wikidata WikiProject Cultural venues](https://wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues), maintained by CAPACOA and the LODEPA community. 
+The Artsdata application profile for the `Place` class draws on core Schema.org properties and is inspired by the [Wikidata WikiProject Cultural venues](https://wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues), maintained by CAPACOA and the LODEPA community. 
 
-Artsdata also takes advantage of the schema:placeContainedIn to create links between rooms/halls and buildings. Also between buildings and encompassing places such as city. This automatically situates Places in a city, region, province and country. Linking increases the ability for reconciling places when only a name and postal address is available.
+The application profile notably takes advantage of the schema:placeContainedIn to create links between rooms/halls and buildings, as well as between buildings and encompassing places such as city. This automatically situates Places in a city, region, province and country. Linking increases the ability for reconciling places when only a name and postal address is available.
 
 Once a Place entity from an external source is reconciled with an Artsdata minted identifier, it is linked with its Artsdata identifier with the `schema:sameAs` property.
 
@@ -31,7 +31,7 @@ A full documentation page for the Artsdata Place Types controlled vocabulary is 
 
 ## Minimal requirements for Place entities
 
-To be minted (i.e. assigned) a new Artsdata unique persistent identifier or to be automatically linked to an existing Artsdata ID, a `Place` type entity must have a [schema:name](https://schema.org/name) and either a complete address or compliant geographic information. Here are the three accepted shapes for addresses and geographical information. 
+To be minted (i.e. assigned) a new Artsdata unique persistent identifier or to be automatically linked to an existing Artsdata ID, a `Place` type entity must have a [schema:name](https://schema.org/name) and compliant geographic information. Here are the three accepted shapes for geographic information. 
 
 **1. complete schema:PostalAddress object (including streetAddress, locality (city), region (province/territory), postalCode, country)**
 
