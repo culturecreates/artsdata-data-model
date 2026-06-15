@@ -13,30 +13,16 @@
 
   <style id="jtd-nav-activation">
   
-
-    
-    .site-nav > ul.nav-list:first-child > li:not(:nth-child(1)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li a {
+    .site-nav ul li a {
       background-image: none;
     }
-
-    .site-nav > ul.nav-list:not(:first-child) a,
-    .site-nav li.external a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:first-child > li:nth-child(1) > a {
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .site-nav > ul.nav-category-list > li > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(1) > button svg {
+    .site-nav > ul.nav-category-list > li > button svg {
       transform: rotate(-90deg);
     }
-    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(1) > ul.nav-list {
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list {
       display: block;
     }
+
   </style>
 
   
@@ -54,9 +40,9 @@
 
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Artsdata Place Types Controlled Vocabulary | Artsdata Documentation</title>
+<title>Artsdata Documentation | Data model documentation for Artsdata.ca</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="Artsdata Place Types Controlled Vocabulary" />
+<meta property="og:title" content="Artsdata Documentation" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Data model documentation for Artsdata.ca" />
 <meta property="og:description" content="Data model documentation for Artsdata.ca" />
@@ -65,9 +51,9 @@
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Artsdata Place Types Controlled Vocabulary" />
+<meta property="twitter:title" content="Artsdata Documentation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Data model documentation for Artsdata.ca","headline":"Artsdata Place Types Controlled Vocabulary","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/place-types.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Data model documentation for Artsdata.ca","headline":"Artsdata Documentation","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/place-types.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -155,8 +141,6 @@
 
   <nav aria-label="Main" id="site-nav" class="site-nav">
   
-  
-    <ul class="nav-list"><li class="nav-list-item"><a href="/place-types.html" class="nav-list-link">Artsdata Place Types Controlled Vocabulary</a></li></ul>
   
     
     
@@ -271,7 +255,56 @@
       <div id="main-content" class="main-content">
         <main>
           
-            <h1 id="artsdata-place-types-controlled-vocabulary">
+            <p><!-- _includes/base.html -->
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XBYDJJJNGL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBYDJJJNGL');
+</script>
+<a onclick="goBack()" style="cursor: pointer">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/place-types.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('last-modified')) {
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=place-types.md")
+        .then((response) => {
+          return response.json();
+        })
+        .then((commits) => {
+          var modified = commits[0]['commit']['committer']['date'].slice(0,10);
+          document.getElementById('last-modified').textContent = "Last Modified: " + modified;
+          
+        });
+      }
+  }, false);
+
+</script>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</p>
+
+<div class="language-switcher">
+  
+    
+    <span class="label-current-lang">EN</span>
+    
+      <span class="label-unavailable">FR unavailable</span>
+    
+  
+</div>
+<h1 id="artsdata-place-types-controlled-vocabulary">
   
   
     <a href="#artsdata-place-types-controlled-vocabulary" class="anchor-heading" aria-labelledby="artsdata-place-types-controlled-vocabulary"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Artsdata Place Types Controlled Vocabulary
@@ -348,8 +381,8 @@
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/EventVenue">EventVenue</a></td>
       <td>Event venue</td>
-      <td><a href="http://www.wikidata.org/entity/Q18674739">wd:Q18674739</a>, <a href="https://schema.org/EventVenue">schema:EventVenue</a></td>
-      <td> </td>
+      <td><a href="http://www.wikidata.org/entity/Q18674739">wd:Q18674739</a></td>
+      <td><a href="https://schema.org/EventVenue">schema:EventVenue</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/Complex">Complex</a></td>
@@ -372,14 +405,14 @@
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/InteriorSpace">InteriorSpace</a></td>
       <td>Interior space</td>
-      <td><a href="http://vocab.getty.edu/aat/300133704">aat:300133704</a>, <a href="http://www.wikidata.org/entity/Q1299240">wd:Q1299240</a>, <a href="https://schema.org/Room">schema:Room</a></td>
-      <td> </td>
+      <td><a href="http://vocab.getty.edu/aat/300133704">aat:300133704</a></td>
+      <td><a href="http://www.wikidata.org/entity/Q1299240">wd:Q1299240</a>, <a href="https://schema.org/Room">schema:Room</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/PerformanceHall">PerformanceHall</a></td>
       <td>Performance hall</td>
-      <td><a href="http://www.wikidata.org/entity/Q112688641">wd:Q112688641</a>, <a href="http://vocab.getty.edu/aat/300449028">aat:300449028</a></td>
-      <td> </td>
+      <td><a href="http://www.wikidata.org/entity/Q112688641">wd:Q112688641</a></td>
+      <td><a href="http://vocab.getty.edu/aat/300449028">aat:300449028</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ItalianTheatre">ItalianTheatre</a></td>
@@ -426,8 +459,8 @@
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/MeetingSpace">MeetingSpace</a></td>
       <td>Meeting room</td>
-      <td><a href="http://www.wikidata.org/entity/Q133821658">wd:Q133821658</a>, <a href="http://vocab.getty.edu/aat/300004398">aat:300004398</a>, <a href="https://schema.org/MeetingRoom">schema:MeetingRoom</a></td>
-      <td> </td>
+      <td><a href="http://www.wikidata.org/entity/Q133821658">wd:Q133821658</a></td>
+      <td><a href="http://vocab.getty.edu/aat/300004398">aat:300004398</a>, <a href="https://schema.org/MeetingRoom">schema:MeetingRoom</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ExhibitionSpace">ExhibitionSpace</a></td>
@@ -486,14 +519,14 @@
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/CulturalCentre">CulturalCentre</a></td>
       <td>Cultural centre</td>
-      <td><a href="http://vocab.getty.edu/aat/300005135">aat:300005135</a>, <a href="http://www.wikidata.org/entity/Q1329623">wd:Q1329623</a></td>
-      <td> </td>
+      <td><a href="http://vocab.getty.edu/aat/300005135">aat:300005135</a></td>
+      <td><a href="http://www.wikidata.org/entity/Q1329623">wd:Q1329623</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/CommunityCentre">CommunityCentre</a></td>
       <td>Community centre</td>
-      <td><a href="http://vocab.getty.edu/aat/300005120">aat:300005120</a>, <a href="http://www.wikidata.org/entity/Q77115">wd:Q77115</a></td>
-      <td> </td>
+      <td><a href="http://vocab.getty.edu/aat/300005120">aat:300005120</a></td>
+      <td><a href="http://www.wikidata.org/entity/Q77115">wd:Q77115</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/HouseOfCulture">HouseOfCulture</a></td>
@@ -558,14 +591,14 @@
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ArtGallery">ArtGallery</a></td>
       <td>Art gallery</td>
-      <td><a href="http://vocab.getty.edu/aat/300005232">aat:300005232</a>, <a href="http://www.wikidata.org/entity/Q1007870">wd:Q1007870</a>, <a href="https://schema.org/ArtGallery">schema:ArtGallery</a></td>
-      <td> </td>
+      <td><a href="http://vocab.getty.edu/aat/300005232">aat:300005232</a></td>
+      <td><a href="http://www.wikidata.org/entity/Q1007870">wd:Q1007870</a>, <a href="https://schema.org/ArtGallery">schema:ArtGallery</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ReligiousBuilding">ReligiousBuilding</a></td>
       <td>Religious building</td>
-      <td><a href="http://www.wikidata.org/entity/Q16970">wd:Q16970</a>, <a href="http://vocab.getty.edu/aat/300007391">aat:300007391</a>, <a href="https://nomenclature.info/nom/585">nom:585</a></td>
-      <td> </td>
+      <td><a href="http://www.wikidata.org/entity/Q16970">wd:Q16970</a>, <a href="http://vocab.getty.edu/aat/300007391">aat:300007391</a></td>
+      <td><a href="https://nomenclature.info/nom/585">nom:585</a></td>
     </tr>
   </tbody>
 </table></div>
