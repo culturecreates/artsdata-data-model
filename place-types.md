@@ -1,4 +1,5 @@
 <p>{% include back-button.html %}</p>
+
 {% include language-switcher.html %}
 
 # Artsdata Place Types Controlled Vocabulary
