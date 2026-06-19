@@ -46,14 +46,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Data model documentation for Artsdata.ca" />
 <meta property="og:description" content="Data model documentation for Artsdata.ca" />
-<link rel="canonical" href="http://docs.artsdata.ca/place-types.html" />
-<meta property="og:url" content="http://docs.artsdata.ca/place-types.html" />
+<link rel="canonical" href="http://docs.artsdata.ca/place-types.fr.html" />
+<meta property="og:url" content="http://docs.artsdata.ca/place-types.fr.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Artsdata Documentation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Data model documentation for Artsdata.ca","headline":"Artsdata Documentation","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/place-types.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Data model documentation for Artsdata.ca","headline":"Artsdata Documentation","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/place-types.fr.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -266,13 +266,13 @@
 
   gtag('config', 'G-XBYDJJJNGL');
 </script>
-<a onclick="goBack()" style="cursor: pointer">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/place-types.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
+<a onclick="goBack()" style="cursor: pointer">&lt;  Back</a> | <a href="./index.html">Home</a> | <a href="https://github.com/culturecreates/artsdata-data-model/blob/master/place-types.fr.md">Edit page</a> | &#x1F64B; <a href="https://github.com/culturecreates/artsdata-data-model/issues?q=is%3Aissue+is%3Aopen+">Check for open issues</a> | <span id="last-modified"></span> 
 
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
       if (document.getElementById('last-modified')) {
-      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=place-types.md")
+      fetch("https://api.github.com/repos/culturecreates/artsdata-data-model/commits?path=place-types.fr.md")
         .then((response) => {
           return response.json();
         })
@@ -298,17 +298,17 @@ function goBack() {
 <div class="language-switcher">
   
     
-    <span class="label-current-lang">EN</span>
     
-      <a href="/place-types.fr.html" class="btn-language-switch" hreflang="fr">FR</a>
-      <link rel="alternate" hreflang="fr" href="http://docs.artsdata.ca/place-types.fr.html" />
+      <a href="/place-types.html" class="btn-language-switch" hreflang="en">EN</a>
+      <link rel="alternate" hreflang="en" href="http://docs.artsdata.ca/place-types.html" />
     
+    <span class="label-current-lang">FR</span>
   
 </div>
-<h1 id="artsdata-place-types-controlled-vocabulary">
+<h1 id="vocabulaire-contrôlé-artsdata-des-types-de-lieux">
   
   
-    <a href="#artsdata-place-types-controlled-vocabulary" class="anchor-heading" aria-labelledby="artsdata-place-types-controlled-vocabulary"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Artsdata Place Types Controlled Vocabulary
+    <a href="#vocabulaire-contrôlé-artsdata-des-types-de-lieux" class="anchor-heading" aria-labelledby="vocabulaire-contrôlé-artsdata-des-types-de-lieux"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Vocabulaire contrôlé Artsdata des types de lieux
   
   
 </h1>
@@ -323,7 +323,7 @@ function goBack() {
   </thead>
   <tbody>
     <tr>
-      <td>Concept scheme</td>
+      <td>Système de concepts</td>
       <td><a href="http://kg.artsdata.ca/resource/ArtsdataPlaceTypes">adr:ArtsdataPlaceTypes</a></td>
     </tr>
     <tr>
@@ -331,117 +331,117 @@ function goBack() {
       <td>1.0.1</td>
     </tr>
     <tr>
-      <td>Release date</td>
-      <td>February 2026</td>
+      <td>Date de publication</td>
+      <td>Février 2026</td>
     </tr>
   </tbody>
 </table></div>
 
-<p>This page outlines the controlled vocabulary used in the Artsdata knowledge graph to describe place types in the arts sector. It classifies places according to their design, function and scope. It notably makes a distinction between entire buildings and interior spaces within buildings.</p>
+<p>Cette page présente le vocabulaire contrôlé utilisé dans le graphe de connaissances Artsdata pour décrire les types de lieux dans le secteur des arts. Il classe les lieux selon leur conception, leur fonction et leur portée. Il établit notamment une distinction entre les bâtiments entiers et les espaces intérieurs situés à l’intérieur de bâtiments.</p>
 
-<p>This controlled vocabulary is largely inspired by the typology of the <a href="https://wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues/Typology">Wikidata WikiProject Cultural venues</a>. It imports concepts from Wikidata, the <a href="https://www.getty.edu/research/tools/vocabularies/aat/">Art and Architecture Thesaurus</a>, <a href="https://page.nomenclature.info/apropos-about.app">Nomenclature</a> and <a href="https://schema.org/">Schema</a>. The concept <a href="http://kg.artsdata.ca/resource/PerformanceHall">adr:PerformanceHall</a> is equivalent to the <a href="https://documentation.datascene.ca/references/room/">Room class</a>, in Datascène.</p>
-<h2 id="place-types">
+<p>Ce vocabulaire contrôlé s’inspire largement de la typologie du <a href="https://wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues/Typology">WikiProjet Wikidata sur les lieux culturels</a>. Il importe des concepts de Wikidata, de l’<a href="https://www.getty.edu/research/tools/vocabularies/aat/">Art and Architecture Thesaurus</a>, de <a href="https://page.nomenclature.info/apropos-about.app">Nomenclature</a> et de <a href="https://schema.org/">Schema.org</a>. Le concept <a href="http://kg.artsdata.ca/resource/PerformanceHall">adr:PerformanceHall</a> est équivalent à la <a href="https://documentation.datascene.ca/references/room/">classe Room</a> dans Datascène.</p>
+<h2 id="types-de-lieux">
   
   
-    <a href="#place-types" class="anchor-heading" aria-labelledby="place-types"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Place Types
+    <a href="#types-de-lieux" class="anchor-heading" aria-labelledby="types-de-lieux"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Types de lieux
   
   
 </h2>
     
 
-<p>The list of types (SKOS concepts) can be viewed in the <a href="http://kg.artsdata.ca/resource/ArtsdataPlaceTypes">concept scheme</a>, in this <a href="https://docs.google.com/spreadsheets/d/1UtW5_tLdR72vf6WCZNPOmgJQ1SQGMc0xL8hRT3OAY9Y/edit?usp=sharing">spreadsheet</a>, or in the table below.</p>
+<p>La liste des types, soit les concepts SKOS, peut être consultée dans le <a href="http://kg.artsdata.ca/resource/ArtsdataPlaceTypes">système de concepts</a>, dans cette <a href="https://docs.google.com/spreadsheets/d/1UtW5_tLdR72vf6WCZNPOmgJQ1SQGMc0xL8hRT3OAY9Y/edit?usp=sharing">feuille de calcul</a> ou dans le tableau ci-dessous.</p>
 
 <div class="table-wrapper"><table>
   <thead>
     <tr>
       <th>CURI</th>
-      <th>Preferred label</th>
-      <th>Exact match</th>
-      <th>Close match</th>
+      <th>Libellé préféré</th>
+      <th>Correspondance exacte</th>
+      <th>Correspondance approximative</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/PlaceConcept">adr:PlaceConcept</a></td>
-      <td>Concept of a place</td>
+      <td>Concept de lieu</td>
       <td><a href="https://schema.org/Place">schema:Place</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/CultureRecreationalStructure">adr:CultureRecreationalStructure</a></td>
-      <td>Cultural &amp; Recreational Structures</td>
+      <td>Structures culturelles et récréatives</td>
       <td><a href="https://nomenclature.info/nom/659">nom:659</a>, <a href="http://vocab.getty.edu/aat/300424157">aat:300424157</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/CivicSocialStructure">adr:CivicSocialStructure</a></td>
-      <td>Civic &amp; Social Structures</td>
+      <td>Structures civiques et sociales</td>
       <td><a href="https://nomenclature.info/nom/597">nom:597</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/EventVenue">adr:EventVenue</a></td>
-      <td>Event venue</td>
+      <td>espace événementiel</td>
       <td><a href="http://www.wikidata.org/entity/Q18674739">wd:Q18674739</a></td>
       <td><a href="https://schema.org/EventVenue">schema:EventVenue</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/Complex">adr:Complex</a></td>
-      <td>Complex</td>
+      <td>Complexe</td>
       <td><a href="http://vocab.getty.edu/aat/300000202">aat:300000202</a>, <a href="http://www.wikidata.org/entity/Q1497364">wd:Q1497364</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/Structure">adr:Structure</a></td>
-      <td>Built work</td>
+      <td>Ouvrage bâti</td>
       <td><a href="http://vocab.getty.edu/aat/300265418">aat:300265418</a>, <a href="http://www.wikidata.org/entity/Q811979">wd:Q811979</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/Building">adr:Building</a></td>
-      <td>Building</td>
+      <td>Bâtiment</td>
       <td><a href="http://www.wikidata.org/entity/Q41176">wd:Q41176</a>, <a href="http://dbpedia.org/resource/Building">dbpedia:Building</a>, <a href="http://vocab.getty.edu/aat/300004792">aat:300004792</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/InteriorSpace">adr:InteriorSpace</a></td>
-      <td>Interior space</td>
+      <td>Espace intérieur</td>
       <td><a href="http://vocab.getty.edu/aat/300133704">aat:300133704</a></td>
       <td><a href="http://www.wikidata.org/entity/Q1299240">wd:Q1299240</a>, <a href="https://schema.org/Room">schema:Room</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/PerformanceHall">adr:PerformanceHall</a></td>
-      <td>Performance hall</td>
+      <td>Salle de spectacle</td>
       <td><a href="http://www.wikidata.org/entity/Q112688641">wd:Q112688641</a></td>
       <td><a href="http://vocab.getty.edu/aat/300449028">aat:300449028</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ItalianTheatre">adr:ItalianTheatre</a></td>
-      <td>Italian theatre</td>
+      <td>Théâtre à l’italienne</td>
       <td><a href="http://www.wikidata.org/entity/Q18225059">wd:Q18225059</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ConcertHall">adr:ConcertHall</a></td>
-      <td>Concert hall</td>
+      <td>Salle de concert</td>
       <td><a href="http://www.wikidata.org/entity/Q10547643">wd:Q10547643</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ComedyClub">adr:ComedyClub</a></td>
-      <td>Comedy club</td>
+      <td>Club de comédie</td>
       <td><a href="http://www.wikidata.org/entity/Q2814066">wd:Q2814066</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/BlackBox">adr:BlackBox</a></td>
-      <td>Black box theatre</td>
+      <td>Salle de type boîte noire</td>
       <td><a href="http://www.wikidata.org/entity/Q201946">wd:Q201946</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/TheatreInTheRound">adr:TheatreInTheRound</a></td>
-      <td>Theatre in the round</td>
+      <td>Théâtre en rond</td>
       <td><a href="http://www.wikidata.org/entity/Q7777493">wd:Q7777493</a></td>
       <td> </td>
     </tr>
@@ -453,168 +453,168 @@ function goBack() {
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/RehearsalSpace">adr:RehearsalSpace</a></td>
-      <td>Rehearsal room</td>
+      <td>Salle de répétition</td>
       <td><a href="http://www.wikidata.org/entity/Q1420179">wd:Q1420179</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/MeetingSpace">adr:MeetingSpace</a></td>
-      <td>Meeting room</td>
+      <td>Salle de réunion</td>
       <td><a href="http://www.wikidata.org/entity/Q133821658">wd:Q133821658</a></td>
       <td><a href="http://vocab.getty.edu/aat/300004398">aat:300004398</a>, <a href="https://schema.org/MeetingRoom">schema:MeetingRoom</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ExhibitionSpace">adr:ExhibitionSpace</a></td>
-      <td>Exhibition space</td>
+      <td>Espace d’exposition</td>
       <td><a href="http://www.wikidata.org/entity/Q15206795">wd:Q15206795</a>, <a href="http://vocab.getty.edu/aat/300240057">aat:300240057</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/PerformingArtsBuilding">adr:PerformingArtsBuilding</a></td>
-      <td>Performing arts building</td>
+      <td>Bâtiment des arts de la scène</td>
       <td><a href="http://www.wikidata.org/entity/Q57660343">wd:Q57660343</a>, <a href="http://vocab.getty.edu/aat/300132484">aat:300132484</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/TheatreBuilding">adr:TheatreBuilding</a></td>
-      <td>Theatre building</td>
+      <td>Théâtre</td>
       <td><a href="http://www.wikidata.org/entity/Q24354">wd:Q24354</a>, <a href="http://vocab.getty.edu/aat/300007117">aat:300007117</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/OperaHouse">adr:OperaHouse</a></td>
-      <td>Opera house</td>
+      <td>Maison d’opéra</td>
       <td><a href="http://www.wikidata.org/entity/Q153562">wd:Q153562</a>, <a href="http://vocab.getty.edu/aat/300007104">aat:300007104</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/Amphitheatre">adr:Amphitheatre</a></td>
-      <td>Amphitheatre</td>
+      <td>Amphithéâtre</td>
       <td><a href="http://www.wikidata.org/entity/Q54831">wd:Q54831</a>, <a href="http://vocab.getty.edu/aat/300007128">aat:300007128</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/PerformingArtsCentre">adr:PerformingArtsCentre</a></td>
-      <td>Performing arts centre</td>
+      <td>Centre des arts de la scène</td>
       <td><a href="http://www.wikidata.org/entity/Q3469910">wd:Q3469910</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/MusicVenue">adr:MusicVenue</a></td>
-      <td>Music venue</td>
+      <td>Lieu pour la musique</td>
       <td><a href="http://www.wikidata.org/entity/Q8719053">wd:Q8719053</a>, <a href="https://schema.org/MusicVenue">schema:MusicVenue</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/NightClub">adr:NightClub</a></td>
-      <td>Night club</td>
+      <td>Boîte de nuit</td>
       <td><a href="http://www.wikidata.org/entity/Q622425">wd:Q622425</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/MovieTheatre">adr:MovieTheatre</a></td>
-      <td>Movie theatre</td>
+      <td>Cinéma</td>
       <td><a href="http://www.wikidata.org/entity/Q41253">wd:Q41253</a>, <a href="http://vocab.getty.edu/aat/300007135">aat:300007135</a>, <a href="https://schema.org/MovieTheater">schema:MovieTheater</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/CulturalCentre">adr:CulturalCentre</a></td>
-      <td>Cultural centre</td>
+      <td>Centre culturel</td>
       <td><a href="http://vocab.getty.edu/aat/300005135">aat:300005135</a></td>
       <td><a href="http://www.wikidata.org/entity/Q1329623">wd:Q1329623</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/CommunityCentre">adr:CommunityCentre</a></td>
-      <td>Community centre</td>
+      <td>Centre communautaire</td>
       <td><a href="http://vocab.getty.edu/aat/300005120">aat:300005120</a></td>
       <td><a href="http://www.wikidata.org/entity/Q77115">wd:Q77115</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/HouseOfCulture">adr:HouseOfCulture</a></td>
-      <td>House of culture</td>
+      <td>Maison de la culture</td>
       <td><a href="http://www.wikidata.org/entity/Q5061188">wd:Q5061188</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ConventionCentre">adr:ConventionCentre</a></td>
-      <td>Convention centre</td>
+      <td>Centre de conférence</td>
       <td><a href="http://www.wikidata.org/entity/Q1378975">wd:Q1378975</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/Library">adr:Library</a></td>
-      <td>Library</td>
+      <td>Bibliothèque</td>
       <td><a href="http://www.wikidata.org/entity/Q856584">wd:Q856584</a>, <a href="http://vocab.getty.edu/aat/300006824">aat:300006824</a>, <a href="https://nomenclature.info/nom/614">nom:614</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/SportsVenue">adr:SportsVenue</a></td>
-      <td>Sports venue</td>
+      <td>Installation sportive</td>
       <td><a href="http://www.wikidata.org/entity/Q1076486">wd:Q1076486</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/Stadium">adr:Stadium</a></td>
-      <td>Stadium</td>
+      <td>Stade</td>
       <td><a href="http://www.wikidata.org/entity/Q483110">wd:Q483110</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/Arena">adr:Arena</a></td>
-      <td>Arena</td>
+      <td>Aréna</td>
       <td><a href="http://www.wikidata.org/entity/Q641226">wd:Q641226</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/OpenAirEventVenue">adr:OpenAirEventVenue</a></td>
-      <td>Open air event venue</td>
+      <td>Lieu pour événements en plein air</td>
       <td><a href="http://www.wikidata.org/entity/Q117187730">wd:Q117187730</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/FairGround">adr:FairGround</a></td>
-      <td>Fair ground</td>
+      <td>Champ de foire</td>
       <td><a href="http://www.wikidata.org/entity/Q2948561">wd:Q2948561</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ExhibitionBuilding">adr:ExhibitionBuilding</a></td>
-      <td>Exhibition building</td>
+      <td>Bâtiment pour expositions</td>
       <td><a href="https://nomenclature.info/nom/668">nom:668</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/MuseumBuilding">adr:MuseumBuilding</a></td>
-      <td>Museum building</td>
+      <td>Bâtiment de musée</td>
       <td><a href="http://www.wikidata.org/entity/Q24699794">wd:Q24699794</a>, <a href="http://vocab.getty.edu/aat/300005768">aat:300005768</a>, <a href="https://nomenclature.info/nom/672">nom:672</a></td>
       <td> </td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ArtGallery">adr:ArtGallery</a></td>
-      <td>Art gallery</td>
+      <td>Galerie d’art</td>
       <td><a href="http://vocab.getty.edu/aat/300005232">aat:300005232</a></td>
       <td><a href="http://www.wikidata.org/entity/Q1007870">wd:Q1007870</a>, <a href="https://schema.org/ArtGallery">schema:ArtGallery</a></td>
     </tr>
     <tr>
       <td><a href="http://kg.artsdata.ca/resource/ReligiousBuilding">adr:ReligiousBuilding</a></td>
-      <td>Religious building</td>
+      <td>Bâtiment religieux</td>
       <td><a href="http://www.wikidata.org/entity/Q16970">wd:Q16970</a>, <a href="http://vocab.getty.edu/aat/300007391">aat:300007391</a></td>
       <td><a href="https://nomenclature.info/nom/585">nom:585</a></td>
     </tr>
   </tbody>
 </table></div>
-<h3 id="how-to-use">
+<h3 id="utilisation">
   
   
-    <a href="#how-to-use" class="anchor-heading" aria-labelledby="how-to-use"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> How to use
+    <a href="#utilisation" class="anchor-heading" aria-labelledby="utilisation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Utilisation
   
   
 </h3>
     
 
-<p>The Artsdata Place Type Controlled Vocabulary can be populated with the <code class="language-plaintext highlighter-rouge">schema:additionalType</code> property, along with the generic <code class="language-plaintext highlighter-rouge">schema:Place</code> class as the main type.  Thus, a place entity in Artsdata can both have the type <code class="language-plaintext highlighter-rouge">schema:Place</code>, and have an additional type from the Artsdata Event Controlled Vocabulary using the <code class="language-plaintext highlighter-rouge">schema:additionalType</code> property.</p>
+<p>Le vocabulaire contrôlé Artsdata des types de lieux peut être utilisé avec la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code>, en combinaison avec la classe générique <code class="language-plaintext highlighter-rouge">schema:Place</code> comme type principal. Ainsi, une entité de lieu dans Artsdata peut avoir à la fois le type <code class="language-plaintext highlighter-rouge">schema:Place</code> et un type additionnel provenant du vocabulaire contrôlé Artsdata des types de lieux, au moyen de la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code>.</p>
 
-<p>Here is an example in Turtle in JSON-LD:</p>
+<p>Voici un exemple en JSON-LD :</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"@context":"http://schema.org",
 "@type": "Place",
