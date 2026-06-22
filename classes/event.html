@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/classes/event.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-06-19T18:03:30+00:00" />
+<meta property="article:published_time" content="2026-06-22T20:22:24+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Event" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-19T18:03:30+00:00","datePublished":"2026-06-19T18:03:30+00:00","description":"Event An Event in Artsdata is defined as: “an organized activity that occurs at a specific time and location”. The ado:Event is deemed an equivalent class to schema:Event.","headline":"Event","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/event.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/classes/event.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-22T20:22:24+00:00","datePublished":"2026-06-22T20:22:24+00:00","description":"Event An Event in Artsdata is defined as: “an organized activity that occurs at a specific time and location”. The ado:Event is deemed an equivalent class to schema:Event.","headline":"Event","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/event.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/classes/event.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -440,24 +440,25 @@ function goBack() {
 <p>In addition to concepts from the Artsdata event types controlled vocabulary, Artsdata accepts Schema.org Event sub-types as well as Wikidata concepts.</p>
 
 <p>Once your published data is loaded into Artsdata, your events will automatically be assigned Artsdata EventTypes using the property <a href="http://kg.artsdata.ca/ontology/hasEventType">ado:hasEventType</a>.</p>
-<h2 id="minimal-requirements-for-minting-artsdata-ids-for-events">
+<h2 id="minimal-requirements-for-minting-or-linking-artsdata-ids-for-events">
   
   
-    <a href="#minimal-requirements-for-minting-artsdata-ids-for-events" class="anchor-heading" aria-labelledby="minimal-requirements-for-minting-artsdata-ids-for-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Minimal requirements for minting Artsdata IDs for Events
+    <a href="#minimal-requirements-for-minting-or-linking-artsdata-ids-for-events" class="anchor-heading" aria-labelledby="minimal-requirements-for-minting-or-linking-artsdata-ids-for-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Minimal requirements for minting or linking Artsdata IDs for Events
   
   
 </h2>
     
 
-<p>In order for Artsdata to automatically create a unique persistent ID for an event, the event must minimally have these attribute-value pairs:</p>
+<p>In order for Artsdata to automatically mint (i.e. create) a unique persistent ID for an event or to link an event to an existing ID, the event must minimally have these attribute-value pairs:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">@Type</code>: <code class="language-plaintext highlighter-rouge">Event</code> (or an Event sub-type);</li>
-  <li><code class="language-plaintext highlighter-rouge">startTime</code>: <code class="language-plaintext highlighter-rouge">dateTime</code> value in ISO standard 8601 format (with or without a time zone offset);</li>
-  <li><code class="language-plaintext highlighter-rouge">location</code>: <code class="language-plaintext highlighter-rouge">Place</code> object with a <em>complete</em> address OR a <a href="/identifiers-guidelines/sameas.html"><code class="language-plaintext highlighter-rouge">sameAs</code></a> link to a Wikidata or Artsdata URI identifying the Place.</li>
+  <li><code class="language-plaintext highlighter-rouge">@type</code>: <code class="language-plaintext highlighter-rouge">Event</code> (or an Event sub-type);</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">startTime</code>: Date/time value in ISO standard 8601 format (with or without a time zone offset);</li>
+  <li><code class="language-plaintext highlighter-rouge">location</code>: <code class="language-plaintext highlighter-rouge">Place</code> object with a <code class="language-plaintext highlighter-rouge">name</code> and <a href="https://docs.artsdata.ca/classes/place.html#minimal-requirements-for-place-entities">compliant geographic information</a> OR a <a href="/identifiers-guidelines/sameas.html"><code class="language-plaintext highlighter-rouge">sameAs</code></a> link to a Wikidata or Artsdata URI identifying the Place.</li>
 </ul>
 
-<p>In the absence of a <code class="language-plaintext highlighter-rouge">location.sameAs</code> URI, Artsdata may be able to use <code class="language-plaintext highlighter-rouge">location.name</code>, <code class="language-plaintext highlighter-rouge">location.address.locality</code>, and/or <code class="language-plaintext highlighter-rouge">location.address.postalCode</code> to automatically or manually reconcile (i.e. “recognize”) Place entities and match them to their Artsdata URI. Similarly, the Place’s postal code is very useful to identify potential duplicate event records, which is an important validation process taking place prior to assigning an ID to an event.</p>
+<p>If an external event has the same <code class="language-plaintext highlighter-rouge">location.address.postalCode</code> as an Artsdata-minted event, this event is flagged as a potential duplicate to prevent the minting of a duplicate Artsdata ID. A potential duplicate event must be reviewed by an Artsdata data steward before a decision to mint or link an ID is made. The flagging of potential duplicate events only applies when an Event.location object has not been disambiguated yet. If an event’s location has already been manually linked to a Place in the Artsdata core graph by an Artsdata data steward, this sameAs link is trusted and no potential duplicates are flagged, regardless of postal code matches.</p>
 
 <p>If an Event object does not fully meet these requirements, it may still possible to manually assign an ID, as long as at least one of these two properties is used:</p>
 <ul>
