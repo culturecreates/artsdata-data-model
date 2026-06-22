@@ -88,7 +88,10 @@ OR
   }
 ```
 
-Related discussion: [Mint/Link Parks and Other Places Without Postal Codes #343](https://github.com/culturecreates/artsdata-data-model/discussions/343)
+Notes:
+- Artsdata uses `name` and `address.postalCode` to automatically or manually reconcile (i.e. "recognize") Place entities. When an external Place record has the extact same name and postal code as a Place in the Artsdata core graph (and no other Artsdata place has the same postal code), then the external record and the Artsdata entity are automatically linked. If two or more places in the Artsdata core graph have the same postal codes as an external Place record, then the potential matches have to be reviewed before one of them can be manually linked by an Artsdata steward.
+- In the absence of compliant geographic information, Artsdata may be able to reconcile a Place entity if an external Place record has a `sameAs` link to an Artsdata or Wikidata ID.
+- Related discussion: [Mint/Link Parks and Other Places Without Postal Codes #343](https://github.com/culturecreates/artsdata-data-model/discussions/343)
 
 ## Properties in the Artsdata Ontology
 
@@ -110,9 +113,9 @@ Related discussion: [Mint/Link Parks and Other Places Without Postal Codes #343]
 | [schema:alternateName](https://schema.org/alternateName) | Optional | An alias for the place. For more information, see these [guidelines](https://docs.artsdata.ca/location.html). |
 | [schema:disambiguatingDescription](https://schema.org/disambiguatingDescription) | Optional | A short description of the item used to disambiguate from other, similar items. If left empty, Artsdata generates a disambiguating description based on the locality of the entity. |
 | [schema:url](https://schema.org/url) | Optional | 	Enter the canonical (aka “official”) URL of the place entity. |
-| [schema:geo](https://schema.org/geo) | Optional | This property is favoured over adding explicit longitude and latitude because the property [geo](https://schema.org/geo) can not only include longitude and latitude in a nested [GeoCoordinates](http://schema.org/GeoCoordinates), but it can also be defined by a [GeoShape](https://schema.org/GeoShape) object which gives flexibility to define parks and areas that cannot easily be definedd by a single geo coordinates node. |
 | [schema:containedInPlace](https://schema.org/containedInPlace) | Optional | The basic containment relation between a place and one that contains it. This property is useful to define the relationship between a performance hall and the building that contains it. For more information, see these [guidelines](https://docs.artsdata.ca/location.html). |
 | [schema:containsPlace](https://schema.org/containsPlace) | Optional | The basic containment relation between a place and another that it contains. |
+| [schema:geo](https://schema.org/geo) | Optional | This property is favoured over adding explicit longitude and latitude because the property [geo](https://schema.org/geo) can not only include longitude and latitude in a nested [GeoCoordinates](http://schema.org/GeoCoordinates), but it can also be defined by a [GeoShape](https://schema.org/GeoShape) object which gives flexibility to define parks and areas that cannot easily be definedd by a single geo coordinates node. |
 | [schema:latitude](https://schema.org/latitude) | Optional | The latitude of a location. Artsdata recommends nesting latitude and longitude under the [geo](https://schema.org/geo) property. |
 | [schema:longitude](https://schema.org/longitude) | Optional | The latitude of a location. Artsdata recommends nesting latitude and longitude under the [geo](https://schema.org/geo) property. |
 | [schema:maximumAttendeeCapacity](https://schema.org/maximumAttendeeCapacity) | Optional | Maximum room capacity. Systems like scenepro.ca and Wikidata can feed this information to Artsdata. When multiple room configurations are available, only the maximum value should be selected. | 
