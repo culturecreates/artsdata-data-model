@@ -18,15 +18,16 @@ In addition to concepts from the Artsdata event types controlled vocabulary, Art
 
 Once your published data is loaded into Artsdata, your events will automatically be assigned Artsdata EventTypes using the property [ado:hasEventType](http://kg.artsdata.ca/ontology/hasEventType).
 
-## Minimal requirements for minting Artsdata IDs for Events
+## Minimal requirements for minting or linking Artsdata IDs for Events
 
-In order for Artsdata to automatically create a unique persistent ID for an event, the event must minimally have these attribute-value pairs:
+In order for Artsdata to automatically mint (i.e. create) a unique persistent ID for an event or to link an event to an existing ID, the event must minimally have these attribute-value pairs:
 
-- `@Type`: `Event` (or an Event sub-type);
-- `startTime`: `dateTime` value in ISO standard 8601 format (with or without a time zone offset);
-- `location`: `Place` object with a _complete_ address OR a [`sameAs`]({{ base }}/identifiers-guidelines/sameas.html) link to a Wikidata or Artsdata URI identifying the Place.
+- `@type`: `Event` (or an Event sub-type);
+- `name`;
+- `startTime`: Date/time value in ISO standard 8601 format (with or without a time zone offset);
+- `location`: `Place` object with a `name` and [compliant geographic information](https://docs.artsdata.ca/classes/place.html#minimal-requirements-for-place-entities) OR a [`sameAs`]({{ base }}/identifiers-guidelines/sameas.html) link to a Wikidata or Artsdata URI identifying the Place.
 
-In the absence of a `location.sameAs` URI, Artsdata may be able to use `location.name`, `location.address.locality`, and/or `location.address.postalCode` to automatically or manually reconcile (i.e. "recognize") Place entities and match them to their Artsdata URI. Similarly, the Place's postal code is very useful to identify potential duplicate event records, which is an important validation process taking place prior to assigning an ID to an event.
+If an external event has the same `location.address.postalCode` as an Artsdata-minted event, this event is flagged as a potential duplicate to prevent the minting of a duplicate Artsdata ID. A potential duplicate event must be reviewed by an Artsdata data steward before a decision to mint or link an ID is made. The flagging of potential duplicate events only applies when an Event.location object has not been disambiguated yet. If an event's location has already been manually linked to a Place in the Artsdata core graph by an Artsdata data steward, this sameAs link is trusted and no potential duplicates are flagged, regardless of postal code matches.
 
 If an Event object does not fully meet these requirements, it may still possible to manually assign an ID, as long as at least one of these two properties is used:
 - `description`;
