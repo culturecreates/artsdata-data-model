@@ -34,7 +34,7 @@ jobs:
         run: |
           URL="http://api.artsdata.ca/databus/"
           if [ "${{ github.event.inputs.environment }}" = "staging" ]; then
-            URL="http://staging.api.artsdata.ca/databus/"
+            URL="http://staging-api.artsdata.ca/databus/"
           fi
           curl \
           -H 'Content-Type: application/json' \
