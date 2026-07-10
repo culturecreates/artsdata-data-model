@@ -50,11 +50,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/classes/event.fr.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-06-24T07:23:44+00:00" />
+<meta property="article:published_time" content="2026-07-10T17:51:18+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Event (fr)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-24T07:23:44+00:00","datePublished":"2026-06-24T07:23:44+00:00","description":"Événement","headline":"Event (fr)","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/event.fr.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/classes/event.fr.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-07-10T17:51:18+00:00","datePublished":"2026-07-10T17:51:18+00:00","description":"Événement","headline":"Event (fr)","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/event.fr.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/classes/event.fr.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -412,7 +412,7 @@ function goBack() {
 </h1>
     
 
-<p>Dans Artsdata, un événement est défini comme « une activité organisée qui se déroule à un moment et un lieu précis ». La classe <a href="http://kg.artsdata.ca/resource/Event"><code class="language-plaintext highlighter-rouge">adr:Event</code></a> est considérée comme une classe équivalente à <a href="https://schema.org/Event"><code class="language-plaintext highlighter-rouge">schema:Event</code></a>.</p>
+<p>Dans Artsdata, un événement est défini comme « une activité organisée qui se déroule à un moment et un lieu précis ». La classe <a href="http://kg.artsdata.ca/ontology/Event"><code class="language-plaintext highlighter-rouge">adr:Event</code></a> est considérée comme une classe équivalente à <a href="https://schema.org/Event"><code class="language-plaintext highlighter-rouge">schema:Event</code></a>.</p>
 
 <p>Toute représentation unique, série de représentations ou édition d’un festival est considérée comme une entité du type <code class="language-plaintext highlighter-rouge">Event</code> ou <code class="language-plaintext highlighter-rouge">EventSeries</code> dans Artsdata.</p>
 <h2 id="types-dévénement">
@@ -424,9 +424,11 @@ function goBack() {
 </h2>
     
 
-<p>Les entités du type Event peuvent être associées à des types supplémentaires à partir du <a href="../event-types.fr.html">Vocabulaire contrôlé Artsdata pour les types d’événements</a>, en utilisant la propriété <code class="language-plaintext highlighter-rouge">additionalType</code>.</p>
+<p>Dans vos données structurées, les événements peuvent être classés à l’aide de types d’événements supplémentaires provenant du <a href="../event-types.fr.html">Vocabulaire contrôlé Artsdata pour les types d’événements</a>, en utilisant la propriété <code class="language-plaintext highlighter-rouge">additionalType</code>.</p>
 
-<p>Outre les concepts issus du vocabulaire contrôlé Artsdata, Artsdata accepte les sous-types d’événements Schema.org ainsi que les concepts Wikidata comme valeurs pour la propriété <code class="language-plaintext highlighter-rouge">additionalType</code>.</p>
+<p>Outre les concepts issus du vocabulaire contrôlé Artsdata pour les types d’événements, Artsdata accepte également les sous-types d’événements Schema.org ainsi que les concepts Wikidata.</p>
+
+<p>Une fois vos données publiées chargées dans Artsdata, des types d’événements Artsdata seront automatiquement attribués à vos événements au moyen de la propriété <code class="language-plaintext highlighter-rouge">additionalType</code>.</p>
 <h2 id="exigences-minimales-pour-la-création-didentifiants-artsdata-pour-les-événements">
   
   
@@ -436,17 +438,18 @@ function goBack() {
 </h2>
     
 
-<p>Pour qu’Artsdata puisse créer automatiquement un identifiant unique et pérenne pour un événement, l’événement doit au minimum comporter les paires attribut-valeur suivantes :</p>
+<p>Pour qu’Artsdata puisse automatiquement créer un identifiant unique et pérenne pour un événement ou associer un événement à un identifiant existant, l’événement doit au minimum comporter les paires attribut-valeur suivantes :</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">@Type</code>: <code class="language-plaintext highlighter-rouge">Event</code> (ou un sous-type d’événement);</li>
-  <li><code class="language-plaintext highlighter-rouge">startTime</code>: valeur <code class="language-plaintext highlighter-rouge">dateTime</code> au format ISO 8601 (avec ou sans décalage de fuseau horaire);</li>
-  <li><code class="language-plaintext highlighter-rouge">location</code>: objet <code class="language-plaintext highlighter-rouge">Place</code> avec une adresse postale <em>complète</em> et un lien <a href="/identifiers-guidelines/sameas.fr.html"><code class="language-plaintext highlighter-rouge">sameAs</code></a> vers un URI Wikidata ou Artsdata qui identife l’objet Place.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">startTime</code>: valeur de date et d’heure au format ISO 8601 (avec ou sans décalage de fuseau horaire);</li>
+  <li><code class="language-plaintext highlighter-rouge">location</code>: objet <code class="language-plaintext highlighter-rouge">Place</code> comportant un <code class="language-plaintext highlighter-rouge">name</code> et des renseignements géographiques conformes, OU un lien <a href="/identifiers-guidelines/sameas.fr.html"><code class="language-plaintext highlighter-rouge">sameAs</code></a> vers un URI Wikidata ou Artsdata identifiant le lieu.</li>
 </ul>
 
-<p>En l’absence d’une URI sous <code class="language-plaintext highlighter-rouge">location.sameAs</code>, Artsdata pourrait être en mesure d’utiliser <code class="language-plaintext highlighter-rouge">location.name</code>, <code class="language-plaintext highlighter-rouge">location.address.locality</code>, et/ou <code class="language-plaintext highlighter-rouge">location.address.postalCode</code> afin de réconcilier automatiquement ou manuellement (c.à.d. « reconnaître ») les entités du type Place et de les associer à leur URI Artsdata. De même, le code postale de l’objet Place est très utile pour identifier les doublons potentiels dans les entités du type Event, ce qui constitue un processus de validation important avant l’attribution d’un identifiant pérenne à un événement.</p>
+<p>Si un événement externe possède le même <code class="language-plaintext highlighter-rouge">location.address.postalCode</code> qu’un événement auquel Artsdata a déjà attribué un identifiant, cet événement est signalé comme doublon potentiel afin d’éviter la création d’un identifiant Artsdata en double. Un événement signalé comme doublon potentiel doit être examiné par une personne responsable de l’intendance des données Artsdata avant qu’une décision soit prise quant à la création d’un identifiant ou à l’association à un identifiant existant. Le signalement des doublons potentiels ne s’applique que lorsque l’objet <code class="language-plaintext highlighter-rouge">Event.location</code> n’a pas encore été désambiguïsé. Si le lieu d’un événement a déjà été associé manuellement à une entité <code class="language-plaintext highlighter-rouge">Place</code> dans le graphe central Artsdata par une personne responsable de l’intendance des données Artsdata, ce lien <code class="language-plaintext highlighter-rouge">sameAs</code> est considéré comme fiable et aucun doublon potentiel n’est signalé, même si les codes postaux correspondent.</p>
 
-<p>Si un objet Event ne répond pas entièrement à ces exigences, il est toujours possible d’attribuer manuellement un identifiant, à condition qu’au moins l’une des propriétés suivantes soit renseignée :</p>
+<p>Si un objet <code class="language-plaintext highlighter-rouge">Event</code> ne satisfait pas entièrement à ces exigences, il est toujours possible d’attribuer manuellement un identifiant, à condition qu’au moins l’une des propriétés suivantes soit renseignée :</p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">description</code>;</li>
   <li><code class="language-plaintext highlighter-rouge">url</code>.</li>
@@ -477,7 +480,7 @@ function goBack() {
     <tr>
       <td><a href="http://schema.org/location">location</a></td>
       <td>Requis</td>
-      <td>Saisissez les informations identifiant et décrivant le lieu où l’événement se déroule. Dans le cas d’un lieu physique, la valeur devrait préférablement être l’entité la plus précise (par exemple, la salle plutôt que le bâtiment dans lequel elle est située). Pour des fins de désambiguïsation et de réconciliation des événements, il est fortement recommandé de renseigner l’URI Wikidata et/ou Artsdata du lieu sous la propriété <code class="language-plaintext highlighter-rouge">sameAs</code>. À défaut d’identifiants, une adresse postale complète – incluant le code postal et les abrévations postales de deux lettres pour la province/le territoire et le pays – peut faciliter la désambiguïsation. Pour plus d’informations, consultez ces <a href="/location.fr.html">lignes directrices</a></td>
+      <td>Saisissez le lieu où se déroule l’événement. Dans le cas d’un lieu physique, la valeur devrait être aussi précise que possible (par exemple, la salle de spectacle à l’intérieur du bâtiment plutôt que le bâtiment lui-même). À des fins de désambiguïsation et de réconciliation, il est fortement recommandé d’attribuer à la propriété <code class="language-plaintext highlighter-rouge">sameAs</code> un lien vers l’URI Wikidata ou Artsdata du lieu. Sinon, une entité <code class="language-plaintext highlighter-rouge">PostalAddress</code> complète, comprenant le code postal et les abréviations postales à deux lettres de la province ou du territoire et du pays, peut faciliter la désambiguïsation. Pour plus d’informations, consultez ces <a href="/location.fr.html">lignes directrices</a></td>
     </tr>
     <tr>
       <td><a href="http://schema.org/name">name</a></td>
@@ -507,17 +510,17 @@ function goBack() {
     <tr>
       <td><a href="http://schema.org/organizer">organizer</a></td>
       <td>Recommandé</td>
-      <td>Saisissez les informations identifiant et décrivant l’organisme qui est responsable de la présentation du spectacle. Il peut s’agir d’un organisme diffuseur ou alors d’une compagnie qui présente sa propre production (dans quel cas, la même entité sera aussi renseignées sous la propriété performer). Les propriétés recommandées pour l’entité imbriquée incluent : <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">url</code> et <code class="language-plaintext highlighter-rouge">sameAs</code> (pointant vers un identifiant Artsdata et/ou Wikidata).</td>
+      <td>Saisissez les renseignements permettant d’identifier et de décrire l’organisme ou la personne qui présente l’événement. Dans le cas d’un organisme, il peut s’agir d’un organisme diffuseur ou même d’une compagnie présentant sa propre production, auquel cas la même valeur serait saisie sous la propriété <code class="language-plaintext highlighter-rouge">performer</code>. Les propriétés recommandées pour l’entité imbriquée incluent : <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">url</code> et <code class="language-plaintext highlighter-rouge">sameAs</code> (avec un lien pointant vers une URI Wikidata ou Artsdata).</td>
     </tr>
     <tr>
       <td><a href="http://schema.org/performer">performer</a></td>
       <td>Recommandé</td>
-      <td>Saisissez les informations identifiant et décrivant la compagnie, le groupe ou le (les) artiste(s) qui est (sont) responsable de l’exécution de la représentation. Il est possible d’ajouter plusieurs performer(s). Les propriétés recommandées pour l’entité imbriquées incluent : <code class="language-plaintext highlighter-rouge">name</code>, URL et <code class="language-plaintext highlighter-rouge">sameAs</code> (pointant vers une URI ISNI, Artsdata et/ou Wikidata). Pour plus d’informations, consultez ces <a href="/performer.fr.html">lignes directrices</a>.</td>
+      <td>Saisissez les renseignements permettant d’identifier et de décrire la compagnie, le groupe ou le ou les artistes principaux qui assurent la représentation. Les propriétés recommandées pour l’entité imbriquée incluent : <code class="language-plaintext highlighter-rouge">name</code>, URL et <code class="language-plaintext highlighter-rouge">sameAs</code> (avec un lien pointant vers une URI ISNI, Wikidata ou Artsdata). Pour plus d’informations, consultez ces <a href="/performer.fr.html">lignes directrices</a>.</td>
     </tr>
     <tr>
       <td><a href="http://schema.org/workPerformed">workPerformed</a></td>
       <td>Facultatif</td>
-      <td>Saisissez les informations identifiant et décrivant l’œuvre-spectacle exécutée lors de la représentation ou alors décrivant la ou des œuvres musicales, dramatiques, musicodramatiques intégrées à l’œuvre-spectacle. Les propriétés recommandées pour l’entité imbriquée incluent : <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">genre</code>, <code class="language-plaintext highlighter-rouge">inLanguage</code> et <code class="language-plaintext highlighter-rouge">sameAs</code> (pointant vers une URI Artsdata ou Wikidata). Si l’œuvre n’a pas d’identifiant Artsdata ou Wikidata, creator.<code class="language-plaintext highlighter-rouge">sameAs</code> peut être utilisé en guise d’alternative.</td>
+      <td>Saisissez les informations identifiant et décrivant l’œuvre-spectacle exécutée lors de la représentation ou alors décrivant la ou des œuvres musicales, dramatiques, musicodramatiques intégrées à l’œuvre-spectacle. Les propriétés recommandées pour l’entité imbriquée incluent : <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">genre</code>, <code class="language-plaintext highlighter-rouge">inLanguage</code> et <code class="language-plaintext highlighter-rouge">sameAs</code> (pointant vers une URI Artsdata ou Wikidata). Si l’œuvre elle-même ne possède pas d’URI Wikidata ou Artsdata, une entité <code class="language-plaintext highlighter-rouge">creator</code> imbriquée peut être ajoutée en indiquant le <code class="language-plaintext highlighter-rouge">name</code> du créateur et son <code class="language-plaintext highlighter-rouge">sameAs</code> (avec un lien pointant vers une URI Wikidata ou Artsdata).</td>
     </tr>
     <tr>
       <td><a href="http://schema.org/offers">offers</a></td>
