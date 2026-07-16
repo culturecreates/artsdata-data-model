@@ -41,7 +41,7 @@ The following controlled vocabularies have been developed by the Artsdata commun
 - [Event types]({{ base }}/event-types.html)
 - [Organization types]({{ base }}/organization-type.html)
 - [Genres]({{ base }}/genres.html)
-- Place types
+- [Place types]({{ base }}/place-types.html)
 - Association Membership types
 
 Here is a [visual overview](https://kg.artsdata.ca/vocabularies) of the controlled vocabularies used in Artsdata.
