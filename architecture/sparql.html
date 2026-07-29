@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/architecture/sparql.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-07-16T18:53:03+00:00" />
+<meta property="article:published_time" content="2026-07-29T15:32:18+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="SPARQL Endpoint" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-07-16T18:53:03+00:00","datePublished":"2026-07-16T18:53:03+00:00","description":"A SPARQL endpoint is a web service that allows users to query a dataset using the SPARQL query language, which is designed for querying RDF (Resource Description Framework) data.","headline":"SPARQL Endpoint","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/sparql.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/sparql.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-07-29T15:32:18+00:00","datePublished":"2026-07-29T15:32:18+00:00","description":"A SPARQL endpoint is a web service that allows users to query a dataset using the SPARQL query language, which is designed for querying RDF (Resource Description Framework) data.","headline":"SPARQL Endpoint","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/sparql.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/sparql.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -530,6 +530,10 @@ function goBack() {
     
 
 <p>Artsdata.ca has created property <a href="https://www.wikidata.org/wiki/Property:P7627">P7627</a> in Wikidata for linking entities from Wikidata to Artsdata.ca</p>
+
+<p>Using the <a href="https://query.wikidata.org">Wikidata Query Service</a> it is possible to do a federated SPARQL to Artsdata. Wikidata blocks incoming federated SPARQLs but does have a whitelist of allowed SPARQL endpoints for federated queries originating on Wikidata. The current white labeled Artsdata SPARQL endpoint allowed on Wikidata is <code class="language-plaintext highlighter-rouge">SERVICE &lt;https://artsdata-trifid-production.herokuapp.com/query&gt;</code>. This will soon be changed to a more permanent Artsdata endpoint.</p>
+
+<p>For help maintaining bi-directional interlinking between Artsdata and Wikidata please refer to this <a href="https://github.com/culturecreates/artsdata-planet-wikidata">README</a> in the <a href="https://github.com/culturecreates/artsdata-planet-wikidata">artsdata-planet-wikidata</a> repo.</p>
 
           
 
