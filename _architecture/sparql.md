@@ -16,3 +16,7 @@ For coders there are 2 SPARQL endpoints:
 ## Wikidata Interlinking
 
 Artsdata.ca has created property [P7627](https://www.wikidata.org/wiki/Property:P7627) in Wikidata for linking entities from Wikidata to Artsdata.ca
+
+Using the [Wikidata Query Service](https://query.wikidata.org) it is possible to do a federated SPARQL to Artsdata. Wikidata blocks incoming federated SPARQLs but does have a whitelist of allowed SPARQL endpoints for federated queries originating on Wikidata. The current white labeled Artsdata SPARQL endpoint allowed on Wikidata is `SERVICE <https://artsdata-trifid-production.herokuapp.com/query>`. This will soon be changed to a more permanent Artsdata endpoint.
+
+For help maintaining bi-directional interlinking between Artsdata and Wikidata please refer to this [README](https://github.com/culturecreates/artsdata-planet-wikidata) in the [artsdata-planet-wikidata](https://github.com/culturecreates/artsdata-planet-wikidata) repo.
