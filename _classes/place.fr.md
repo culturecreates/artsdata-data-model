@@ -80,7 +80,7 @@ OU
 ```
   "geo": {
     "@type": "GeoShape",
-    ...one of the following properties: "box", "circle", "polygon"
+    ...l’une des propriétés suivantes : "box", "circle", "polygon"
   },
   "address": {
     "type": "PostalAddress",
