@@ -1,8 +1,8 @@
 ---
 class_name: Place
 layout: class-event-doc
-nav_order: 10
-title: Place
+nav_exclude: true
+title: Place (FR)
 ---
 
 # Place
