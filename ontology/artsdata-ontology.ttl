@@ -25,6 +25,8 @@
 #     - This means that certain OWL features (e.g., owl:disjointWith, owl:cardinality restrictions) are not used in this ontology to ensure compatibility with HORST reasoners.
 #     - Cardinality constraints are expressed in SHACL.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
+# V 1.4.0 
+#     - https://github.com/culturecreates/artsdata-data-model/issues/390
 ####################
 
 ado: rdf:type owl:Ontology ;
@@ -32,12 +34,12 @@ ado: rdf:type owl:Ontology ;
     dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage."@en ;
     dcterms:creator "Artsdata Stewardship Team" ;
     dcterms:created "2025-09-30"^^xsd:date ;
-    dcterms:modified "2026-03-10"^^xsd:date ;
+    dcterms:modified "2026-07-03"^^xsd:date ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "ado" ;
     vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
     owl:versionIRI <http://kg.artsdata.ca/ontology/1/> ; # TODO: location = /ontology/1 { return 301 /ontology/; }
-    owl:versionInfo "1.3.0" ;
+    owl:versionInfo "1.4.0" ;
     vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/artsdata-ontology.ttl> ;
     dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
 
@@ -66,29 +68,24 @@ ado:Event rdf:type rdfs:Class ;
     rdfs:subClassOf ado:Thing ;
     owl:equivalentClass schema:Event .
 
-ado:EventType rdf:type rdfs:Class ;
-    rdfs:label "Event Type"@en ;
-    rdfs:comment "A metaclass: its instances are classes representing event types. In HORST, rdf:type rdfs:Class is inferred for all instances via rdfs:subClassOf rdfs:Class. The class hierarchy is defined in skos-event-types-owl.ttl."@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf rdfs:Class .
-
-ado:Genre rdf:type rdfs:Class ;
-    rdfs:label "Genre"@en ;
-    rdfs:comment "A metaclass: its instances are classes representing artistic genres. In HORST, rdf:type rdfs:Class is inferred for all instances via rdfs:subClassOf rdfs:Class. The class hierarchy is defined in skos-genres-owl.ttl."@en ;
-    rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf rdfs:Class .
 
 ####################
 # Properties
 ####################
 
-ado:hasEventType rdf:type rdf:Property ;
+ado:hasEventTypeConcept rdf:type rdf:Property ;
     rdfs:label "has event type"@en ;
-    rdfs:comment "Links an Event to an event type defined by the Artsdata controlled vocabulary for event types."@en ;
+    rdfs:comment "Links an Event to an event type concept defined by the Artsdata controlled vocabulary for event types."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain ado:Event ;
-    rdfs:range ado:EventType ;
-    rdfs:subPropertyOf schema:additionalType .
+    rdfs:range skos:Concept .
+
+ado:hasPlaceTypeConcept rdf:type rdf:Property ;
+    rdfs:label "has place type"@en ;
+    rdfs:comment "Links a Place to a place type concept defined by the Artsdata controlled vocabulary for place types."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Place ;
+    rdfs:range skos:Concept .
 
 ado:usesExpressionOf rdf:type rdf:Property ;
     rdfs:label "uses expression of"@en ;
@@ -103,8 +100,7 @@ ado:hasGenre rdf:type rdf:Property ;
     rdfs:comment "Links a Live Performance Work to a genre defined by the Artsdata controlled vocabulary for genres."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain ado:LivePerformanceWork ;
-    rdfs:range ado:Genre ;
-    rdfs:subPropertyOf schema:genre .
+    rdfs:range skos:Concept .
 
 ado:managedBy rdf:type rdf:Property ;
     rdfs:label "managed by"@en ;
