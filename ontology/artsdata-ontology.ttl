@@ -25,7 +25,7 @@
 #     - This means that certain OWL features (e.g., owl:disjointWith, owl:cardinality restrictions) are not used in this ontology to ensure compatibility with HORST reasoners.
 #     - Cardinality constraints are expressed in SHACL.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
-# V 1.4.0 
+# V 1.4.0
 #     - https://github.com/culturecreates/artsdata-data-model/issues/390
 ####################
 
@@ -78,6 +78,7 @@ ado:hasEventTypeConcept rdf:type rdf:Property ;
     rdfs:comment "Links an Event to an event type concept defined by the Artsdata controlled vocabulary for event types."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain ado:Event ;
+    rdfs:subPropertyOf schema:additionalType ;
     rdfs:range skos:Concept .
 
 ado:hasPlaceTypeConcept rdf:type rdf:Property ;
@@ -85,6 +86,7 @@ ado:hasPlaceTypeConcept rdf:type rdf:Property ;
     rdfs:comment "Links a Place to a place type concept defined by the Artsdata controlled vocabulary for place types."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Place ;
+    rdfs:subPropertyOf schema:additionalType ;
     rdfs:range skos:Concept .
 
 ado:usesExpressionOf rdf:type rdf:Property ;
@@ -100,6 +102,7 @@ ado:hasGenre rdf:type rdf:Property ;
     rdfs:comment "Links a Live Performance Work to a genre defined by the Artsdata controlled vocabulary for genres."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain ado:LivePerformanceWork ;
+    rdfs:subPropertyOf schema:genre ;
     rdfs:range skos:Concept .
 
 ado:managedBy rdf:type rdf:Property ;
