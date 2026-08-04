@@ -69,8 +69,8 @@ Voici quelques exemples de données structurées JSON-LD qui combinent une class
 
 Une représentation dont le genre n'est pas spécifié :
 ```
-  "@type": "Event",
-  "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+	"@type": "Event",
+	"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
 ```
 Une représentation de danse (utilisant la nouvelle classe schema:PerformingArtsEvent) :
 ```
