@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/architecture/query-api.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-08-03T20:26:54+00:00" />
+<meta property="article:published_time" content="2026-08-04T13:04:24+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Query API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-03T20:26:54+00:00","datePublished":"2026-08-03T20:26:54+00:00","description":"A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies…","headline":"Query API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/query-api.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/query-api.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-04T13:04:24+00:00","datePublished":"2026-08-04T13:04:24+00:00","description":"A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies…","headline":"Query API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/query-api.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/query-api.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -510,6 +510,37 @@ function goBack() {
     
 
 <p>A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies…</p>
+
+<p>This API is in active development and may change. If you are looking for a stable API then please use the <a href="https://docs.artsdata.ca/architecture/reconciliation">Artsdata Reconciliation Service</a> which can be used to search (/match) entities in Artsdata, retrieve data (/extend) about those entities using Artsdata identifiers, as well as generate an HTML preview (/preview) of an Artsdata entity.</p>
+
+<p>The Artsdata Query API is a SPARQL wrapper. It uses the SPARQL passed in as a parameter in the HTTP GET /query request.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sparql</td>
+      <td>SPARQL to run (optional). May be a reserved name or a remote URL. Defaults to <code class="language-plaintext highlighter-rouge">query_adid</code>.</td>
+    </tr>
+    <tr>
+      <td>frame</td>
+      <td>JSON-LD frame (optional). May be a reserved name or a remote URL.</td>
+    </tr>
+    <tr>
+      <td>format</td>
+      <td>Data format in the response body (optional). json | jsonld |html. Defaults to <code class="language-plaintext highlighter-rouge">html</code></td>
+    </tr>
+    <tr>
+      <td>adid</td>
+      <td>K-number used in the SPARQL template (optional).</td>
+    </tr>
+  </tbody>
+</table></div>
 <h3 id="examples">
   
   
@@ -554,18 +585,25 @@ function goBack() {
 </h4>
     
 <p>https://api.artsdata.ca/query?adid=K5-3&amp;format=json&amp;frame=ranked_org_person_footlight&amp;sparql=ranked_org_person_footlight</p>
-<h2 id="event-search-api-beta">
+<h2 id="event-search-api-deprecated">
   
   
-    <a href="#event-search-api-beta" class="anchor-heading" aria-labelledby="event-search-api-beta"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Event Search API BETA
+    <a href="#event-search-api-deprecated" class="anchor-heading" aria-labelledby="event-search-api-deprecated"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Event Search API (deprecated)
   
   
 </h2>
     
 
-<p>The Event Search API is a dedicated endpoint for events and provides an easy way to get a list of events in json or json-ld. The “frame” parameter enables the user to select different output properties and structures. The “format” parameter selects between json and json-ld. And the “source” parameter selects the graph or calatog of graphs. Documentation WIP.</p>
+<p>The Event Search API has been replaced by the <a href="https://docs.artsdata.ca/architecture/reconciliation">Reconciliation Service</a>. To search for events on a date and location, use the reconciliation match service with schema:startDate and schema:location properties.</p>
 
-<p>Example: List of upcoming events from the placedesarts.com website in Montreal: 
+<p>A MCP Server is also being developed.</p>
+
+<p>The following documentation is preserved for historical reasons:</p>
+
+<blockquote>
+  <p>The Event Search API is a dedicated endpoint for events and provides an easy way to get a list of events in json or json-ld. The “frame” parameter enables the user to select different output properties and structures. The “format” parameter selects between json and json-ld. And the “source” parameter selects the graph or calatog of graphs. Documentation WIP.</p>
+
+  <p>Example: List of upcoming events from the placedesarts.com website in Montreal: 
 http://api.artsdata.ca/events?format=json&amp;frame=event_bn&amp;source=http://kg.artsdata.ca/culture-creates/footlight/placedesarts-com</p>
 <h3 id="source-parameter">
   
@@ -575,11 +613,11 @@ http://api.artsdata.ca/events?format=json&amp;frame=event_bn&amp;source=http://k
   
 </h3>
     
-<p>Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI.</p>
+  <p>Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI.</p>
 
-<p>Here is a list of <a href="https://kg.artsdata.ca/query/show?sparql=feeds_all&amp;title=Data+Feeds">graphs</a> that can be used as the source parameter.</p>
+  <p>Here is a list of <a href="https://kg.artsdata.ca/query/show?sparql=feeds_all&amp;title=Data+Feeds">graphs</a> that can be used as the source parameter.</p>
 
-<p>It is possible to create your own catalog of datasets as well.</p>
+  <p>It is possible to create your own catalog of datasets as well.</p>
 <h3 id="events-demo">
   
   
@@ -589,19 +627,17 @@ http://api.artsdata.ca/events?format=json&amp;frame=event_bn&amp;source=http://k
 </h3>
     
 
-<p>Here is a <a href="https://github.com/culturecreates/artsdata-demo-upcoming-events-api">demo website in Github</a> that lists upcoming events in Quebec using the Artsdata API.</p>
-<h2 id="other-apis-coming-soon">
+  <p>Here is a <a href="https://github.com/culturecreates/artsdata-demo-upcoming-events-api">demo website in Github</a> that lists upcoming events in Quebec using the Artsdata API.</p>
+</blockquote>
+<h2 id="mcp-server">
   
   
-    <a href="#other-apis-coming-soon" class="anchor-heading" aria-labelledby="other-apis-coming-soon"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Other APIs coming soon
+    <a href="#mcp-server" class="anchor-heading" aria-labelledby="mcp-server"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> MCP Server
   
   
 </h2>
     
-<p>The main goal of the Search API is to provide easy access to all data in Artsdata.ca. It offers SPARQL and traditional RESTful GETs.
-Responses can be in JSON or JSON-LD.  A user account enables persisted configurations for ranking graphs or settings for an iCalendar feed.</p>
-
-<p>Documentation coming.</p>
+<p>Coming soon.</p>
 
           
 
