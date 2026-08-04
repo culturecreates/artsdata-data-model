@@ -64,8 +64,8 @@ Here are JSON-LD examples of Schema types and Artsdata concepts, used in combina
 
 A live performance with no specific genre :
 ```
-  "@type": "Event",
-  "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+	"@type": "Event",
+	"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
 ```
 A dance performance :
 ```
