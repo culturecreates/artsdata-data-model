@@ -58,11 +58,11 @@ The list of types (SKOS concepts) can be viewed in the [concept scheme](http://k
 
 ### How to use
 
-The Artsdata Event Type Controlled Vocabulary can be populated with the `schema:additionalType` property, along with a Schema class, for example, the generic `schema:Event` class as the main type.  Thus an event entity in Artsdata can both have the type `schema:Event` (or `schema:EventSeries`), and have an additional type from the Artsdata Event Controlled Vocabulary using the `schema:additionalType` property. 
+The Artsdata Event Type Controlled Vocabulary can be populated with the `schema:additionalType` property, along with a Schema class, for example, the generic `schema:Event` class, as the main type.  Thus an event entity in Artsdata can both have the type `schema:Event` (or `schema:EventSeries`), and have an additional type from the Artsdata Event Controlled Vocabulary using the `schema:additionalType` property. 
 
 Here are JSON-LD examples of Schema types and Artsdata concepts, used in combination.
 
-A live performance with no specific genre :
+A live performance (unspecified genre) :
 ```
   "@type": "Event",
   "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
