@@ -58,21 +58,24 @@ The list of types (SKOS concepts) can be viewed in the [concept scheme](http://k
 
 ### How to use
 
-The Artsdata Event Type Controlled Vocabulary can be populated with the `schema:additionalType` property, along with the generic `schema:Event` class as the main type.  Thus an event entity in Artsdata can both have the type `schema:Event (or `schema:EventSeries`), and have an additional type from the Artsdata Event Controlled Vocabulary using the `schema:additionalType` property. 
+The Artsdata Event Type Controlled Vocabulary can be populated with the `schema:additionalType` property, along with a Schema class, for example, the generic `schema:Event` class as the main type.  Thus an event entity in Artsdata can both have the type `schema:Event` (or `schema:EventSeries`), and have an additional type from the Artsdata Event Controlled Vocabulary using the `schema:additionalType` property. 
 
-Here is an example in Turtle: 
+Here are JSON-LD examples of Schema types and Artsdata concepts, used in combination.
 
+A live performance with no specific genre :
 ```
-ex:Event1 a schema:Event ; 
-schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .
+  "@type": "Event",
+  "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
 ```
-
-And the same example in JSON-LD:
-
+A dance performance :
 ```
-"@context":"http://schema.org",
-"@type": "Event",
-"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+	"@type": "PerformingArtsEvent",
+	"additionalType": "http://kg.artsdata.ca/resource/DancePerformance",
+```
+A musical :
+```
+	"@type": "TheatreEvent",
+	"additionalType": "http://kg.artsdata.ca/resource/MusicalTheatrePerformance",
 ```
 
 To implement the `schema:additionalType` property in your structured data, please consult Artsdata's [structured data templates](https://docs.artsdata.ca/gabarits-jsonld/README.html).
