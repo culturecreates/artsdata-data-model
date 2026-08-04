@@ -540,19 +540,21 @@ function goBack() {
 </h3>
     
 
-<p>Le vocabulaire contrôlé du type d’événement Artsdata est renseigné avec la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code>, conjointement avec la propriété <code class="language-plaintext highlighter-rouge">type</code> de schema.org ou de RDFa. Ainsi, un événement dans Artsdata peut à la fois être une entité de type schema:Event (schema:Event ou schema:EventSeries) et avoir un type supplémentaire issu du vocabulaire contrôlé d’événements Artsdata à l’aide de la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code>.</p>
+<p>Le vocabulaire contrôlé du type d’événement Artsdata est renseigné avec la propriété <code class="language-plaintext highlighter-rouge">additionalType</code>, conjointement avec une classe de schema.org en tant que <code class="language-plaintext highlighter-rouge">type</code> principal. Ainsi, un événement dans Artsdata peut à la fois être une entité de type <code class="language-plaintext highlighter-rouge">schema:Event</code> (schema:EventSeries) et avoir un type supplémentaire issu du vocabulaire contrôlé d’événements Artsdata à l’aide de la propriété <code class="language-plaintext highlighter-rouge">additionalType</code>.</p>
 
-<p>Voici un exemple au format Turtle:</p>
+<p>Voici quelques exemples de données structurées JSON-LD qui combinent une classe de schema.org avec un concept d’Artsdata :</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ex:Event1 a schema:Event ; 
-schema:additionalType &lt;http://kg.artsdata.ca/resource/PerformingArtsEvent&gt; .
+<p>Une représentation dont le genre n’est pas spécifié :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "@type": "Event",
+  "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
 </code></pre></div></div>
-
-<p>Et le même exemple, en JSON-LD :</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"@context":"http://schema.org",
-"@type": "Event",
-"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+<p>Une représentation de danse (utilisant la nouvelle classe schema:PerformingArtsEvent) :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"@type": "PerformingArtsEvent",
+	"additionalType": "http://kg.artsdata.ca/resource/DancePerformance",
+</code></pre></div></div>
+<p>Une représentation de comédie musicale :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"@type": "TheatreEvent",
+	"additionalType": "http://kg.artsdata.ca/resource/MusicalTheatrePerformance",
 </code></pre></div></div>
 
 <p>Pour implémenter la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code> dans vos données structurées, veuillez consulter les <a href="https://docs.artsdata.ca/gabarits-jsonld/README.fr.html">gabarits de données structurées d’Artsdata</a>.</p>
