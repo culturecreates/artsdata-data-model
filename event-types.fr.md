@@ -63,21 +63,24 @@ La liste des types (concepts SKOS) peut être consultée dans le [schéma de con
 
 ### Comment utiliser
 
-Le vocabulaire contrôlé du type d'événement Artsdata est renseigné avec la propriété `schema:additionalType`, conjointement avec la propriété `type` de schema.org ou de RDFa. Ainsi, un événement dans Artsdata peut à la fois être une entité de type schema:Event (schema:Event ou schema:EventSeries) et avoir un type supplémentaire issu du vocabulaire contrôlé d'événements Artsdata à l'aide de la propriété `schema:additionalType`.
+Le vocabulaire contrôlé du type d'événement Artsdata est renseigné avec la propriété `additionalType`, conjointement avec une classe de schema.org en tant que `type` principal. Ainsi, un événement dans Artsdata peut à la fois être une entité de type `schema:Event` (schema:EventSeries) et avoir un type supplémentaire issu du vocabulaire contrôlé d'événements Artsdata à l'aide de la propriété `additionalType`.
 
-Voici un exemple au format Turtle:
+Voici quelques exemples de données structurées JSON-LD qui combinent une classe de schema.org avec un concept d'Artsdata :
 
+Une représentation dont le genre n'est pas spécifié :
 ```
-ex:Event1 a schema:Event ; 
-schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent> .
+  "@type": "Event",
+  "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
 ```
-
-Et le même exemple, en JSON-LD :
-
+Une représentation de danse (utilisant la nouvelle classe schema:PerformingArtsEvent) :
 ```
-"@context":"http://schema.org",
-"@type": "Event",
-"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent"
+	"@type": "PerformingArtsEvent",
+	"additionalType": "http://kg.artsdata.ca/resource/DancePerformance",
+```
+Une représentation de comédie musicale :
+```
+	"@type": "TheatreEvent",
+	"additionalType": "http://kg.artsdata.ca/resource/MusicalTheatrePerformance",
 ```
 
 Pour implémenter la propriété `schema:additionalType` dans vos données structurées, veuillez consulter les [gabarits de données structurées d'Artsdata](https://docs.artsdata.ca/gabarits-jsonld/README.fr.html).
