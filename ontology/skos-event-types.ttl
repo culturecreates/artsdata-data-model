@@ -28,8 +28,8 @@ adr:ArtsdataEventTypes dcterms:hasFormat <https://raw.githubusercontent.com/cult
 	vann:usageNote <http://docs.artsdata.ca/event-types.html> ;
 	schema:creator adr:K1-5, adr:K16-211 ;
 	schema:dateCreated "2021-08-10"^^xsd:date ;
-	schema:dateModified "2026-07-03"^^xsd:date ;
-	schema:version "4.0.5" ;
+	schema:dateModified "2026-08-06"^^xsd:date ;
+	schema:version "4.0.6" ;
 	rdf:type skos:ConceptScheme ;
 	rdfs:comment "Base controlled vocabulary for Artsdata Event Type Concepts. Serves as a persistent, version-independent reference for all specific version schemes. The goal of this controlled vocabulary is to serve as a base for mapping different arts organization's event types so events can be reused in event calendars."@en, "Vocabulaire contrôlé de base pour les types d'événements Artsdata. Sert de référence permanente et indépendante de la version pour tous les schémas de version spécifiques. L'objectif de ce vocabulaire contrôlé est de servir de base pour cartographier les différents types d'événements organisés par les organisations artistiques, afin que ces événements puissent être réutilisés dans les calendriers d'événements."@fr ;
 	rdfs:seeAlso <http://docs.artsdata.ca/event-types.html> ;
@@ -137,7 +137,6 @@ adr:Classes dcterms:isReplacedBy adr:Class ;
 	skos:altLabel "Course, Lessons"@en, "Série de cours, leçons"@fr ;
 	skos:broader adr:Event ;
 	skos:changeNote "v4.0 Deprecated. Replaced by adr:Class" ;
-	skos:closeMatch schema:CourseInstance ;
 	skos:definition "An event series that provides a structured learning experience offered at a specific time and location."@en, "Un type d'événement spécialisé qui est conçu dans le but de fournir des expériences d'apprentissage structurées offertes à des moments et dans des lieux spécifiques."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:prefLabel "Classes"@en, "Cours"@fr .
@@ -245,7 +244,7 @@ adr:FestivalSeries rdf:type skos:Concept ;
 	skos:altLabel "Repeating festival, Periodic Festival, Recurring Festival"@en, "Festival récurrent, Festival périodique"@fr ;
 	skos:broader adr:EventSeries ;
 	skos:changeNote "New concept in version 4.0." ;
-	skos:closeMatch schema:EventSeries, wd:Q132241 ;
+	skos:closeMatch wd:Q132241 ;
 	skos:definition "An event series of repeating festivals."@en, "Une série d'événements de festivals répétitifs."@fr ;
 	skos:inScheme adr:ArtsdataEventTypes ;
 	skos:note <https://github.com/culturecreates/artsdata-planet-lavitrine/issues/30#issuecomment-2347153078> ;
