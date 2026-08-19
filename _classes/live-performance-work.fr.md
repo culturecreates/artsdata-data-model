@@ -16,65 +16,65 @@ La classe [ado:LivePerformanceWork](http://kg.artsdata.ca/ontology/LivePerforman
 
 Le profil d'application de la classe `ado:LivePerformanceWork` est en cours de dévéloppement et sera publié sous peu. Il importera des propriétés de Schema.org, LRMoo et Wikidata. Il sera par ailleurs mis en correspondance avec d'autres ontologies RDF.
 
+## Vocabulaire contrôlés des genres d'Artsdata
+
+Artsdata peut réconcilier automatiquement des chaînes de caractères désignant des genres avec les concepts du [Vocabulaire contrôlé Artsdata pour les genres](https://docs.artsdata.ca/genres.fr.html). Les valeurs de la propriété `schema:genre` peuvent être soit des chaînes de caractères, soit des URI, soit des objets de type `schema:DefinedTerm`.
+
 ## Exemple de données structurées
 
-Voici un exemple de données structurées d'une entité de type `Event`, avec une entité imbriquée `ado:LivePerformanceWork` sous la propriété `workPerformed`. Cet exemple est basé sur une représentation de l'œuvre scénique *`Orpheus | S'abreuver des volcans`* par Alan Lake Factori(e), qui est bien décrite sur le [site web de la compagnie](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) et dans le [répertoire Scène Pro](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
+Voici un exemple de données structurées d'une entité de type `ado:LivePerformanceWork`. Cet exemple est basé sur l'œuvre scénique *`Orpheus | S'abreuver des volcans`* par Alan Lake Factori(e), qui est bien décrite sur le [site web de la compagnie](https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/) et dans le [répertoire Scène Pro](https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276).
 
 ```
 {
-    "@context": "https://schema.org",
-    "id": "http://kg.artsdata.ca/resource/K23-2815",
-    "@type": "Event",
-    "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent",
-    "sameAs": "http://kg.footlight.io/resource/placedesarts-com_alan-lake-factorie",
-    "location": {
-        "id": "http://kg.artsdata.ca/resource/K11-22",
-        "type": "Place",
-        "sameAs": "http://www.wikidata.org/entity/Q42986539",
-        "name": "Place des Arts - Cinquième Salle"
-        },
-    "startDate": "2025-04-01T20:00:00-04:00",
-    "endDate": "2025-04-01T22:00:00-04:00",
-    "name": "Alan Lake Factori(e) - S’abreuver des volcans",
-    "url": "https://www.dansedanse.ca/fr/spectacles/alan-lake-factorie-sabreuver-des-volcans",
-    "workPerformed": {
-        "@type": "CreativeWork",
-        "additionalType": "http://kg.artsdata.ca/resource/LivePerformanceWork",
-        "name": "Orpheus | S'abreuver des volcans",
-        "url": "https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/",
-        "mainEntityOfPage": "https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276",
-        "genre": [
-                "http://www.wikidata.org/entity/Q11639",
-                "http://vocab.getty.edu/page/aat/300054144"
-                ],
-        "about": {
-            "@type": "Person",
-            "name": "Orpheus",
-            "sameAs": "http://www.wikidata.org/entity/Q174353"
-            },
-       "creator": {
-            "@type": "Person",
-            "name": "Alan Lake",
-            "sameAs": "http://www.wikidata.org/entity/Q64925368"
-            },
-        "producer": {
-            "@type": "Organization",
-            "name": "Alan Lake Factori(e)",
-            "url": "https://alanlakefactorie.org/"
-            },
-        "image": "https://images.scenepro.ca/uploads%2Fshowmain/692957167540869-image.png",
-        "inlanguage": "fr",
-        "audience": {
-            "@type": "Audience",
-            "name": "Tous publics",
-            "disambiguatingDescription": "Term from the Scène Pro audience vocabulary designating 'General audiences'"
-            }
-        },
-    "performer": {
-        "@type": "Organization",
-        "name": "Alan Lake Factori(e)",
-        "url": "https://alanlakefactorie.org/"
-        },
+  "@context": "https://schema.org",
+  "@type": [
+    "CreativeWork",
+    "PerformanceWork"
+    ],
+  "additionalType": "http://kg.artsdata.ca/ontology/LivePerformanceWork",
+  "name": "Orpheus | S'abreuver des volcans",
+  "sameAs": "http://www.wikidata.org/entity/Q135182394",
+  "url": "https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/",
+  "mainEntityOfPage": "https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276",
+  "image": "https://images.scenepro.ca/uploads%2Fshowmain/692957167540869-image.png",
+  "description": "Orpheus | S’abreuver des volcans réinvente le mythe de la traversée; une plongée viscérale dans les ténèbres, en quête de lien et de renaissance.",
+  "genre": {
+    "@type": "DefinedTerm",
+    "name": "Danse",
+    "sameAs": [
+      "http://kg.artsdata.ca/resource/K6-200",
+      "http://vocab.getty.edu/page/aat/300054144",
+      "http://www.wikidata.org/entity/Q11639"
+      ]
+    },
+  "inLanguage": "fr",
+  "contributor": {
+    "@type": "Role",
+    "roleName": "Choreographer",
+    "contributor": {
+      "@type": "Person",
+      "name": "Alan Lake",
+      "sameAs": "http://www.wikidata.org/entity/Q64925368"
+      }
+    },
+  "producer": [
+    {
+    "@type": "Organization",
+    "name": "Alan Lake Factori(e)",
+    "sameAs": "http://www.wikidata.org/entity/Q135182548"
+      },
+    {
+    "@type": "Organization",
+    "name": "Diffusion Momentum",
+    "alternateName": "Carré 150 – Espace culturel de Victoriaville",
+    "sameAs": "http://www.wikidata.org/entity/Q118097169"
+      }
+    ],
+  "audience": {
+    "@type": "Audience",
+    "name": "Tous publics",
+    "disambiguatingDescription": "Term from the Scène Pro audience vocabulary designating 'General audiences'"
+    }
 }
 ```
 
