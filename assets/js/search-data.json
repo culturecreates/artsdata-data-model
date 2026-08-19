@@ -141,7 +141,7 @@
   },"20": {
     "doc": "LivePerformanceWork",
     "title": "Artsdata Genres Controlled Vocabulary",
-    "content": "Artsdata can automatically reconcile genre strings against concepts in the Artsdata Genres Controlled Vocabulary. schema:genre values can either be text strings, URIs of schema:DefinedTerm objects, as in the example below. ",
+    "content": "Artsdata can automatically reconcile genre strings against concepts in the Artsdata Genres Controlled Vocabulary. schema:genre values can either be text strings, URIs or schema:DefinedTerm objects. ",
     "url": "/classes/live-performance-work.html#artsdata-genres-controlled-vocabulary",
     
     "relUrl": "/classes/live-performance-work.html#artsdata-genres-controlled-vocabulary"
