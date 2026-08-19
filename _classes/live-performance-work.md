@@ -17,7 +17,7 @@ The application profile for `ado:LivePerformanceWork` is currently in developmen
 
 ## Artsdata Genres Controlled Vocabulary
 
-Artsdata can automatically reconcile `genre` strings against concepts in the [Artsdata Genres Controlled Vocabulary](http://kg.artsdata.ca/resource/ArtsdataGenres). `schema:genre` values can either be text strings, URIs of schema:DefinedTerm objects.
+Artsdata can automatically reconcile `genre` strings against concepts in the [Artsdata Genres Controlled Vocabulary](http://kg.artsdata.ca/resource/ArtsdataGenres). `schema:genre` values can either be text strings, URIs of schema:DefinedTerm objects, as in the example below.
 
 ## Sample Structured Data
 
@@ -28,8 +28,9 @@ Here is sample `ado:LivePerformanceWork` structured data. This example is based 
   "@context": "https://schema.org",
   "@type": [
     "CreativeWork",
-    "http://kg.artsdata.ca/ontology/LivePerformanceWork"
+    "PerformanceWork"
     ],
+  "additionalType": "http://kg.artsdata.ca/ontology/LivePerformanceWork",
   "name": "Orpheus | S'abreuver des volcans",
   "url": "https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/",
   "sameAs": "http://www.wikidata.org/entity/Q135182394",
@@ -44,10 +45,14 @@ Here is sample `ado:LivePerformanceWork` structured data. This example is based 
       ]
     },
   "inLanguage": "fr",
-  "creator": {
-    "@type": "Person",
-    "name": "Alan Lake",
-    "sameAs": "http://www.wikidata.org/entity/Q64925368"
+  "contributor": {
+    "@type": "Role",
+    "roleName": "Choreographer",
+    "contributor": {
+      "@type": "Person",
+      "name": "Alan Lake",
+      "sameAs": "http://www.wikidata.org/entity/Q64925368"
+      }
     },
   "producer": [
     {
@@ -64,6 +69,5 @@ Here is sample `ado:LivePerformanceWork` structured data. This example is based 
     ]
 }
 ```
-
 
 For more information about the development of the `ado:LivePerformanceWork` class, please consult this [GitHub discussion](https://github.com/culturecreates/artsdata-data-model/discussions/133).
