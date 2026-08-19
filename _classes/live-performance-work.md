@@ -32,9 +32,11 @@ Here is sample `ado:LivePerformanceWork` structured data. This example is based 
     ],
   "additionalType": "http://kg.artsdata.ca/ontology/LivePerformanceWork",
   "name": "Orpheus | S'abreuver des volcans",
-  "url": "https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/",
   "sameAs": "http://www.wikidata.org/entity/Q135182394",
+  "url": "https://alanlakefactorie.org/portfolio/orpheus-sabreuver-des-volcans/",
   "mainEntityOfPage": "https://scenepro.ca/offres-de-spectacles/Orpheus%20%7C%20S'abreuver%20des%20volcans-7276",
+  "image": "https://images.scenepro.ca/uploads%2Fshowmain/692957167540869-image.png",
+  "description": "Orpheus | S’abreuver des volcans réinvente le mythe de la traversée; une plongée viscérale dans les ténèbres, en quête de lien et de renaissance.",
   "genre": {
     "@type": "DefinedTerm",
     "name": "Danse",
@@ -66,7 +68,12 @@ Here is sample `ado:LivePerformanceWork` structured data. This example is based 
     "alternateName": "Carré 150 – Espace culturel de Victoriaville",
     "sameAs": "http://www.wikidata.org/entity/Q118097169"
       }
-    ]
+    ],
+  "audience": {
+    "@type": "Audience",
+    "name": "Tous publics",
+    "disambiguatingDescription": "Term from the Scène Pro audience vocabulary designating 'General audiences'"
+    }
 }
 ```
 
