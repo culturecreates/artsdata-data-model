@@ -17,7 +17,7 @@ The application profile for `ado:LivePerformanceWork` is currently in developmen
 
 ## Artsdata Genres Controlled Vocabulary
 
-Artsdata can automatically reconcile `genre` strings against concepts in the [Artsdata Genres Controlled Vocabulary](http://kg.artsdata.ca/resource/ArtsdataGenres). `schema:genre` values can either be text strings, URIs of schema:DefinedTerm objects, as in the example below.
+Artsdata can automatically reconcile `genre` strings against concepts in the [Artsdata Genres Controlled Vocabulary](https://docs.artsdata.ca/genres.html). `schema:genre` values can either be text strings, URIs or schema:DefinedTerm objects.
 
 ## Sample Structured Data
 
