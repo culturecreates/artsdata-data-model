@@ -4,50 +4,242 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix schema:  <http://schema.org/> .
-@prefix adr:  <http://kg.artsdata.ca/resource/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix adr: <http://kg.artsdata.ca/resource/> .
+@prefix ado: <http://kg.artsdata.ca/ontology/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix aat: <http://vocab.getty.edu/page/aat/> .
+@prefix dbpedia: <http://dbpedia.org/ontology/> .
 
-adr:ArtsdataOrganizationTypes rdf:type owl:NamedIndividual, skos:ConceptScheme ;
-  skos:prefLabel "Artsdata Organization Types" ;
-  rdfs:comment "This SKOS Concept Scheme is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language." ;
-  schema:version "3.1.1" ;
-  owl:versionInfo "v3 (2023-03-14) Added new organization types and updated definitions."@en ;
-  vann:preferredNamespacePrefix "adr" ;
-  vann:preferredNamespaceUri adr: ;
-  schema:dateCreated "2022-04-01"^^xsd:date ;
-  schema:dateModified "2026-01-27"^^xsd:date ;
-  schema:creator  adr:K16-211 ;
-  vann:usageNote <https://culturecreates.github.io/artsdata-data-model/classes/organization.html> ;
-  vann:example adr:PerformingArtsCompany ;
-  vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-organization-types.ttl> ; 
-  dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-organization-types.ttl> ;
-  skos:hasTopConcept adr:Organization . 
+adr:ArtMuseum schema:naics "712111"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "fine art museum, art gallery"@en, "musée des beaux-arts, galerie d’art"@fr ;
+	skos:broader adr:ArtsOrganization ;
+	skos:closeMatch aat:300312302, wd:Q3196771 ;
+	skos:definition "An organization whose primary activity is to acquire, conserve, research, exhibit and promote the arts and cultural heritage of humanity."@en, "Une organisation dont l’activité principale est d’acquérir, conserver, rechercher, communiquer et exposer les arts et le patrimoine culturel de l’humanité."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Art Museum"@en, "Musée d'art"@fr .
 
-# Copy/paste triples from 'Generate triples' tab in https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit#gid=1933025380
-# TODO: Work needed to add skos mapping to other vocabularies
+adr:ArtSchool schema:naics "611610"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "fine art school, fine arts school, school of fine arts, art academy, arts educational institution"@en, "école des beaux-arts, académie de beaux-arts"@fr ;
+	skos:broader adr:EducationalOrganization ;
+	skos:closeMatch aat:300311640, wd:Q383092 ;
+	skos:definition "An educational organization whose primary activity is to provide instruction in the visual arts."@en, "Un établissement d'enseignement dont l’activité principale est de fournir la formation dans les arts visuels."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Art School"@en, "École d'art"@fr .
 
-adr:Organization  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:Agent; skos:prefLabel "Organization"@en ; skos:prefLabel "Organisme"@fr ; skos:definition "A structured group of people, united by a common purpose. This includes both groups that are formally structured as a legal body (e.g., a not-for-profit corporation) as well as those that are informally structured, but otherwise act together."@en ; skos:definition "Un groupe structuré de personnes, unies par un objectif commun. Il s'agit aussi bien de groupes structurés officiellement comme une entité juridique (par exemple, une entreprise à but non lucratif) et de groupes structurés de manière informelle, mais qui par ailleurs agissent ensemble."@fr ;   skos:altLabel   "association"@en , "body"@en , "collective"@en , "company"@en ;  skos:altLabel  "organisation"@fr , "association"@fr , "compagnie"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:ArtsOrganization  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:Organization; skos:prefLabel "Arts Organization"@en ; skos:prefLabel "Organisme artistique"@fr ; skos:definition "An organization whose primary activity is to create, perform, present and/or promote the visual, performing and/or literary arts. It does not refer to an organization whose purpose is instructional and educational."@en ; skos:definition "Une organisation dont l’activité principal est de créer, exécuter, présenter et/ou promouvoir les arts visuels, de la scène et/ou littéraires. Il ne fait pas référence à une organisation dont le but est pédagogique et éducatif."@fr ;   skos:altLabel   "performing arts organization"@en ;  skos:altLabel  "organisation artistique"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:PerformingArtsCompany  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:ArtsOrganization; skos:prefLabel "Performing Arts Company"@en ; skos:prefLabel "Compagnie en arts de la scène"@fr ; skos:definition "A group of artists and related personnel whose primary activity is creating/producing theatrical productions, dance productions, concerts, circuses, variety shows and/or other performing arts events."@en ; skos:definition "Un groupe d'artistes et personnel associé dont l’activité principal est de créer/produire les productions théâtrales, productions de la danse, les concerts, les cirques, les spectacles de variétés et/ou d’autres événements des arts de la scène."@fr ;   skos:altLabel   "performance group"@en , "performing arts group"@en , "performing arts ensemble"@en , "performing arts troupe"@en , "artistic company"@en ;  skos:altLabel  "groupe de performance"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:TheatreCompany  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:PerformingArtsCompany; skos:prefLabel "Theatre Company"@en ; skos:prefLabel "Compagnie de théâtre"@fr ; skos:definition "A group of artists and associated personnel who mainly create and/or perform plays, puppet shows, and/or similar theatrical productions. It does not refer to groups who primarily produce musicals, ballets or operas."@en ; skos:definition "Un groupe d’artistes et personnel associé qui créent et/ou interprétent principalement les pièces, les spectacles de marionettes, et/ou les productions théâtrales similaires. Il ne fait pas référence aux groupes qui produisent principalement les comédies musicales, les ballets ou les opéras."@fr ;   skos:altLabel   "theatre troupe"@en , "theater troupe"@en , "theatre group"@en , "theater group"@en , "theatrical company"@en , "theatrical troupe"@en , "acting company"@en , "acting troupe"@en , "dramatic company"@en , "puppet theatre company"@en , "puppet theater company"@en , "travelling theatre company"@en , "traveling theater company"@en , "touring theatre ensemble"@en , "touring theater ensemble"@en ;  skos:altLabel  "compagnie théâtrale"@fr , "groupe de théâtre"@fr , "troupe de théâtre"@fr , "troupe théâtrale"@fr , "compagnie de théâtre de marionnettes"@fr , "troupe de théâtre de marionnettes"@fr , "compagnie de théâtre ambulant"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:MusicalTheatreCompany  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:PerformingArtsCompany; skos:prefLabel "Musical Theatre Company"@en ; skos:prefLabel "Compagnie de comédies musicales"@fr ; skos:definition "A group of artists and associated personnel who mainly create and/or perform musicals and/or similar theatrical productions. These productions are characterized by a combination of music, dance, and spoken and sung dialogue."@en ; skos:definition "Un groupe d'artistes et personnel associé qui créent et/ou interprétent principalement des comédies musicales et/ou autres productions similaires. Ces productions sont caractérisées par la musique, la danse et les dialogues parlés et chantés."@fr ;   skos:altLabel   "musical theater company"@en ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:OperaCompany  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:PerformingArtsCompany; skos:prefLabel "Opera Company"@en ; skos:prefLabel "Compagnie d'opéra"@fr ; skos:definition "A group of artists and associated personnel who mainly create and/or perform operas. These musical/theatrical productions contain dialogue that is almost always sung."@en ; skos:definition "Un groupe d'artistes et personnel associé qui créent et/ou interprétent principalement des opéras. Ces productions musicales/théâtrales contient les dialogues qui sont presque toujours chantés."@fr ;   skos:altLabel   "opera ensemble"@en ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:DanceCompany  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:PerformingArtsCompany; skos:prefLabel "Dance Company"@en ; skos:prefLabel "Compagnie de danse"@fr ; skos:definition "A group of artists and associated personnel who mainly create and/or perform dance productions. These types of stage productions are characterized by rhythmic movement, usually set to music."@en ; skos:definition "Un groupe d’artistes et personnel associé qui créent et/ou intérpretent principalement les spectacles de la danse. Ces types de productions scéniques sont caractérisés par le mouvement rythmique, généralement mis en musique."@fr ;   skos:altLabel   "dance troupe"@en , "dance group"@en , "dance ensemble"@en , "dance collective"@en , "dance crew"@en , "dance team"@en , "ballet company"@en ;  skos:altLabel  "compagnie de danse"@fr , "troupe de danseurs"@fr , "compagnie de ballet"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:MusicGroup  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:PerformingArtsCompany; skos:prefLabel "Music Group"@en ; skos:prefLabel "Groupe de musique"@fr ; skos:definition "A group of vocalists, instrumentalists and/or similar artists who mainly perform together. In Schema.org it also includes solo musicians."@en ; skos:definition "Un groupe de vocalistes, instrumentistes et/ou artistes similares qui jouent principalement ensemble. Dans Schema.org, il comprend également des artistes solo."@fr ;   skos:altLabel   "musical group"@en , "musical performance group"@en , "musical ensemble"@en , "musical performance ensemble"@en , "orchestra"@en , "choir"@en , "music band"@en , "musical band"@en , "band"@en ;  skos:altLabel  "groupe musicale"@fr , "groupe de musiciens"@fr , "ensemble musical"@fr , "formation musicale"@fr , "orchestre"@fr , "chorale"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:CircusCompany  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:PerformingArtsCompany; skos:prefLabel "Circus Company"@en ; skos:prefLabel "Compagnie de cirque"@fr ; skos:definition "A group of specialized artists and associated personnel who mainly showcase acts of human skill and/or daring. These may include (but aren’t limited to) acrobatics, stunts, clownery, animal training, and magic."@en ; skos:definition "Un groupe d'artistes spécialisés et personnel associé qui présentent principalement des actes de compétence et/ou d’audace humaine. Ceux-ci peuvent comprendre (mais pas uniquement) d'acrobaties, de cascades, de clownerie, de dressage d'animaux et de magie."@fr ;   skos:altLabel   "circus"@en , "circus troupe"@en ;  skos:altLabel  "cirque"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:ArtistRepresentative  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:ArtsOrganization; skos:prefLabel "Artist Representative"@en ; skos:prefLabel "Représentant d'artiste"@fr ; skos:definition "A person or organization whose primary activity is to represent artists in contract negotiations, manage or organize their financial affairs, and/or generally promote their works."@en ; skos:definition "Une personne ou une organisation dont l’activité principale est de represénter les artistes dans la négociation des contrats, gèrer ou organiser leurs finances, et s’occuper habituellement de promouvoir leur travail."@fr ;   skos:altLabel   "agent"@en , "agency"@en , "manager"@en , "talent agent"@en , "talent agency"@en , "talent manager"@en , "booking agency"@en ;  skos:altLabel  "agent d’artistes"@fr , "agent artistique"@fr , "agence artistique"@fr , "agence d’artistes"@fr , "gérant d’artistes"@fr , "impresario"@fr , "manager d'artiste"@fr , "agence de tournée"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:PresentingOrganization  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:ArtsOrganization; skos:prefLabel "Presenter"@en ; skos:prefLabel "Diffuseur"@fr ; skos:definition "An organization or person whose primary activity is to organize, program and/or promote productions that are created/performed by others."@en ; skos:definition "Une organisation (ou une personne) dont l’activité primaire est d’organiser, programmer et/ou promouvoir des productions qui sont crées/interpretées par des autres."@fr ;   skos:altLabel   "presenting organization"@en , "promoter"@en ;  skos:altLabel  "organisme de diffusion"@fr , "organisme diffuseurs"@fr , "organisation de diffusion"@fr , "promoteur"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:FestivalOrganization  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:PresentingOrganization; skos:prefLabel "Festival Organization"@en ; skos:prefLabel "Organisme de festival"@fr ; skos:definition "A presenting organization whose primary activity is to program and promote a collection of cultural events based around a common theme. This may include (but isn’t limited to) concerts, plays, dance productions, etc."@en ; skos:definition "Une organisation de diffusion dont l’activité primaire est de programmer et promouvoir une collection d’événements culturels qui sont axés sur un theme commun. Elle peut inclure (mais pas uniquement) des concerts, des pièces de théâtre, des productions de la danse, etc."@fr ;   skos:altLabel   "festival"@en , "festival organizer"@en ;  skos:altLabel  "festival"@fr , "organisation de festival"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:ArtsServiceOrganization  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:ArtsOrganization; skos:prefLabel "Arts Service Organization"@en ; skos:prefLabel "Organisme de services aux arts"@fr ; skos:definition "An organization whose primary activity is to provide services to individuals and/or organizational members within an industry/sector, including promoting their interests."@en ; skos:definition "Une organisation dont l’activité principale est de fournir des services aux membres individuels et/ou organisationnels dans une industrie/un secteur, y compris la promotion de leurs intérêts."@fr ;   skos:altLabel   "arts association"@en , "arts service association"@en , "service organization"@en , "business association"@en , "trade association"@en , "industry association"@en , "member association"@en , "member-based arts organization"@en ;  skos:altLabel  "organisation de services aux arts"@fr , "association aux arts"@fr , "association de services aux arts"@fr , "organisme de services association de gens d’affaires"@fr , "association sectorielle"@fr , "association industrielle"@fr , "association de membres"@fr , "association membre"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:ArtistUnion  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:ArtsOrganization; skos:prefLabel "Artist Union"@en ; skos:prefLabel "Syndicat d'artiste"@fr ; skos:definition "An organization whose primary activity is to regulate labour relations between employees and employers and promote employee interests."@en ; skos:definition "Une organisation dont l’activité principale est de régler les relations de travail entre employés et employeurs et de promouvoir les intérêts des employés."@fr ;   skos:altLabel   "labour organization"@en , "labor organization"@en , "labour union"@en , "labor union"@en , "trade union"@en ;  skos:altLabel  "association syndicale"@fr , "organisation syndicale"@fr , "association ouvrières"@fr , "syndicat professionnel"@fr , "syndicat de travailleurs"@fr , "syndicat ouvrier"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:ArtMuseum  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:ArtsOrganization; skos:prefLabel "Art Museum"@en ; skos:prefLabel "Musée d'art"@fr ; skos:definition "An organization whose primary activity is to acquire, conserve, research, exhibit and promote the arts and cultural heritage of humanity."@en ; skos:definition "Une organisation dont l’activité principale est d’acquérir, conserver, rechercher, communiquer et exposer les arts et le patrimoine culturel de l’humanité."@fr ;   skos:altLabel   "fine art museum"@en , "museum of contemporary art"@en , "art gallery"@en , "non-commercial art gallery"@en ;  skos:altLabel  "musée des beaux-arts"@fr , "musée d'art contemporain"@fr , "galerie d’art"@fr , "galeries d'art"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:CommunityOrganization  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:Organization; skos:prefLabel "Community Organization"@en ; skos:prefLabel "Organisme communautaire"@fr ; skos:definition "An organization whose primary activity is to promote the social and/or cultural wellbeing of its community members."@en ; skos:definition "Une organisation dont l’activité principale est de promouvoir le bien-être social et/ou culturel des membres de la collectivité."@fr ;   skos:altLabel   "civic/social organization"@en , "community-based organization"@en , "community service organization"@en , "community centre"@en , "community center"@en , "cultural centre"@en , "cultural center"@en , "social club"@en , "ethnic association"@en ;  skos:altLabel  "organisation communautaire"@fr , "organisme de services communautaires"@fr , "centre communautaire"@fr , "centre culturel"@fr , "société culturelle"@fr , "club service"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:EducationalOrganization  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:Organization; skos:prefLabel "Educational Organization"@en ; skos:prefLabel "Organisme éducatif"@fr ; skos:definition "An organization whose primary activity is to provide instruction and training in one particular subject or a variety of subjects."@en ; skos:definition "Une organisation dont l’activité principale est de fournir l’instruction et la formation dans un sujet particulier ou une variété de sujets."@fr ;   skos:altLabel   "educational association"@en , "educational society"@en , "training organization"@en , "professional development organization"@en ;  skos:altLabel  "organisation éducative"@fr , "organisation d’enseignement"@fr , "organisme de formation"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:PerformingArtsSchool  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:EducationalOrganization; skos:prefLabel "Performing Arts School"@en ; skos:prefLabel "École des arts de la scène"@fr ; skos:definition "An educational institution whose primary activity is to provide instruction in technical and/or professional skills in the performing arts."@en ; skos:definition "Un établissement d’enseignement dont l’activité principale est de fournir la formation dans les competences techniques et/ou professionnels dans le domaine des arts de la scène."@fr ;   skos:altLabel   "school of dramatic art"@en ;  skos:altLabel  "école d'art dramatique"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:ArtSchool  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:EducationalOrganization; skos:prefLabel "Art School"@en ; skos:prefLabel "École d'art"@fr ; skos:definition "An educational institution whose primary activity is to provide instruction in the visual arts."@en ; skos:definition "Un établissement d'enseignement dont l’activité principale est de fournir la formation dans les arts visuels."@fr ;   skos:altLabel   "fine art school"@en , "fine arts school"@en , "school of fine arts"@en , "art academy"@en , "arts educational institution"@en ;  skos:altLabel  "école des beaux-arts"@fr , "académie de beaux-arts"@fr , "institution d'enseignement de l'art"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:PublicFunder  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:Organization; skos:prefLabel "Public Funder"@en ; skos:prefLabel "Bailleur de fonds publics"@fr ; skos:definition "A government agency and/or organization whose primary activity is to financially support a program, organization or domain. They often operate at arms-length from the government to prevent political interference in their decisions."@en ; skos:definition "Un agence et/ou une organisation gouvernemental dont l’activité principale est de fournir le soutien à un programme, un organisme ou un domaine. Ils opèrent souvent sans lien de dépendance avec le gouvernement pour empêcher toute ingérence politique dans leurs décisions."@fr ;   skos:altLabel   "government funder"@en , "public funding body"@en , "government funding body"@en , "public funding agency"@en , "government funding agency"@en , "public funding organization"@en , "government funding organization"@en ;  skos:altLabel  "organisme subventionnaire du gouvernement"@fr , "agence subventionnaire du gouvernement"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:PublicArtsFunder  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:PublicFunder; skos:prefLabel "Public Arts Funder"@en ; skos:prefLabel "Bailleur de fonds publics pour les arts"@fr ; skos:definition "A public funder who mainly supports arts programs, arts organizations or the arts sector as a whole."@en ; skos:definition "Un bailleur de fonds publics qui soutiennent principalement les programmes d'arts, les organismes artistiques et/ou le domaine des arts dans son ensemble."@fr ;   skos:altLabel   "arts funder"@en ;  skos:altLabel  "bailleur de fonds pour les arts"@fr ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:Foundation  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:Organization; skos:prefLabel "Foundation"@en ; skos:prefLabel "Fondation"@fr ; skos:definition "An organization whose primary activity is to provide long-term financial support for charitable causes."@en ; skos:definition "Une organisation dont l'activité principale est de fournir un soutien financier aux causes charitables."@fr ;   skos:altLabel   "charitable foundation"@en , "charitable trust"@en ;  skos:inScheme adr:ArtsdataOrganizationTypes   .
-adr:ArtsFoundation  rdf:type owl:NamedIndividual ,  skos:Concept   ; skos:broader  adr:Foundation; skos:prefLabel "Arts Foundation"@en ; skos:prefLabel "Fondation des arts"@fr ; skos:definition "A foundation who mainly provides financial support for a specific arts organization, for multiple organizations or for the arts sector as a whole. "@en ; skos:definition "Une fondation qui fournissent principalement le soutien financier à un organisme artistique specifique, aux multiples organismes ou au domaine des arts dans son ensemble. "@fr ;   skos:inScheme adr:ArtsdataOrganizationTypes   .
+adr:ArtistRepresentative schema:naics "711411"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "agency, agent, manager, talent agency, booking agency"@en, "agence artistique, agence d’artistes, gérant d’artistes, agence de tournée, agent"@fr ;
+	skos:broader adr:ArtsOrganization ;
+	skos:definition "An organization whose primary activity is to represent artists in contract negotiations, manage or organize their financial affairs, and/or generally promote their works."@en, "Une organisation dont l’activité principale est de represénter les artistes dans la négociation des contrats, gèrer ou organiser leurs finances, et s’occuper habituellement de promouvoir leur travail."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Artist Representative"@en, "Représentant d'artistes"@fr .
+
+adr:ArtistRunCentre rdf:type skos:Concept ;
+	skos:altLabel "artist run centre"@en ;
+	skos:broader adr:ArtsOrganization ;
+	skos:closeMatch wd:Q16020664 ;
+	skos:definition "An organization run primarily by artists and dedicated to the development of contemporary artistic practices and to the production and dissemination of contemporary art works."@en, "Une organisation gérée principalement par des artistes et voué au développement des pratiques artistiques actuelles, ainsi qu'à la production et à la diffusion des œuvres."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Artist-Run Centre"@en, "Centre d'artistes autogéré"@fr .
+
+adr:ArtistUnion schema:naics "813930"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "labour organization, labor organization, trade union"@en, "association syndicale, organisation syndicale, association ouvrières, syndicat professionnel"@fr ;
+	skos:broader adr:ArtsOrganization ;
+	skos:definition "An organization whose primary activity is to regulate labour relations between employees and employers and promote employee interests."@en, "Une organisation dont l’activité principale est de régler les relations de travail entre employés et employeurs et de promouvoir les intérêts des employés."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Artist Union"@en, "Syndicat d'artistes"@fr .
+
+adr:ArtsOrganization schema:naics "711"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "organisme artistique"@fr ;
+	skos:broader adr:Organization ;
+	skos:definition "An organization whose primary activity is to either create, produce, perform, present or promote the visual, performing and/or literary arts."@en, "Une organisation dont l’activité principale est de créer, produire, interpréter, présenter ou promouvoir les arts visuels, de la scène et/ou littéraires."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Arts Organization"@en, "Organisation artistique"@fr .
+
+adr:ArtsServiceOrganization schema:naics "813910"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "arts association, business association, trade association, industry association, member-based organization"@en, "organisation de services aux arts, association de gens d’affaires, association sectorielle"@fr ;
+	skos:broader adr:ArtsOrganization ;
+	skos:closeMatch aat:300386369, wd:Q2178147 ;
+	skos:definition "An organization whose primary activity is to provide services to individuals and/or organizational members within an industry/sector, including promoting their interests."@en, "Une organisation dont l’activité principale est de fournir des services aux membres individuels et/ou organisationnels dans une industrie/un secteur, y compris la promotion de leurs intérêts."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Arts Service Organization"@en, "Organisme de services aux arts"@fr .
+
+adr:ArtsdataOrganizationTypes dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/skos-organization-types.ttl> ;
+	vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/skos-organization-types.ttl> ;
+	vann:example adr:PerformingArtsCompany ;
+	vann:preferredNamespacePrefix "adr" ;
+	vann:preferredNamespaceUri <http://kg.artsdata.ca/resource/> ;
+	vann:usageNote <hhttps://docs.artsdata.ca/classes/organization.html> ;
+	schema:creator adr:K1-5, adr:K16-211 ;
+	schema:dateCreated "2022-04-01"^^xsd:date ;
+	schema:dateModified "2026-08-21"^^xsd:date ;
+	schema:version "3.2" ;
+	rdf:type skos:ConceptScheme ;
+	rdfs:comment "Third Version"@en, "Troisième version"@fr ;
+	rdfs:seeAlso <https://docs.artsdata.ca/classes/organization-types.html> ;
+	owl:versionInfo "3.2 (2026-08-11) Harmonized definitions and skos:related with ado:LivePerformanceWork and Artsdata Genre"@en, "3.2 (2026-08-11) Harmonisation des définitions et de skos:related avec ado:LivePerformanceWork et Genres Artsdata"@fr ;
+	skos:hasTopConcept adr:Organization ;
+	skos:prefLabel "Artsdata Organization Types"@en, "Types d'organisations Artsdata"@fr ;
+	prov:wasDerivedFrom <https://docs.google.com/spreadsheets/d/1UtW5_tLdR72vf6WCZNPOmgJQ1SQGMc0xL8hRT3OAY9Y> .
+
+adr:ArtsdataOrganizationTypes-Collection-v3.2 rdf:type skos:Collection ;
+	rdfs:comment "All Artsdata concepts that are part of vocabulary version 3.2."@en, "Tous les concepts Artsdata faisant partie de la version 3.2."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:member adr:ArtMuseum, adr:ArtSchool, adr:ArtistRepresentative, adr:ArtistRunCentre, adr:ArtistUnion, adr:ArtsOrganization, adr:ArtsServiceOrganization, adr:CircusCompany, adr:CommunityOrganization, adr:DanceCompany, adr:EducationalOrganization, adr:FestivalOrganization, adr:Foundation, adr:MusicGroup, adr:MusicalTheatreCompany, adr:OperaCompany, adr:Organization, adr:PerformingArtsCompany, adr:PerformingArtsSchool, adr:PresentingOrganization, adr:PublicArtsFunder, adr:PublicFunder, adr:TheatreCompany ;
+	skos:prefLabel "Collection of Artsdata Organization Types v3.2"@en, "Types d'organisations Artsdata - Collection pour v3.2"@fr .
+
+adr:CircusCompany schema:naics "711190"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "circus, circus troupe"@en ;
+	skos:broader adr:PerformingArtsCompany ;
+	skos:closeMatch wd:Q47928 ;
+	skos:definition "A group of artists and associated personnel who mainly create, produce and perform circus performance works. "@en, "Un groupe d’artistes et personnel associé qui créent, produisent et exécutent principalement des spectacles de cirque."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Circus Company"@en, "Compagnie de cirque"@fr ;
+	skos:related adr:K6-901 .
+
+adr:CommunityOrganization schema:naics "813410"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "civic/social organization, community-based organization, community service organization, community centre, community center"@en, "organisation communautaire, organisme de services communautaires, centre communautaire"@fr ;
+	skos:broader adr:Organization ;
+	skos:closeMatch wd:Q3269648 ;
+	skos:definition "An organization whose primary activity is to promote the social and/or cultural wellbeing of its community members."@en, "Une organisation dont l’activité principale est de promouvoir le bien-être social et/ou culturel des membres de la collectivité."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Community Organization"@en, "Organisme communautaire"@fr .
+
+adr:DanceCompany schema:naics "711120"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "dance troupe, dance group, dance ensemble, dance collective, dance crew, dance team"@en, "compagnie de danse, troupe de danse"@fr ;
+	skos:broader adr:PerformingArtsCompany ;
+	skos:closeMatch schema:DanceGroup, aat:300400531, wd:Q2393314 ;
+	skos:definition "A group of artists and associated personnel who mainly create, produce and perform dance performance works."@en, "Un groupe d’artistes et personnel associé qui créent, produisent et exécutent principalement les spectacles de la danse. Ces types de productions scéniques sont caractérisés par le mouvement rythmique, généralement mis en musique."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Dance Company"@en, "Compagnie de danse"@fr ;
+	skos:related adr:K6-200 .
+
+adr:EducationalOrganization schema:naics "611"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "school, educational institution, training organization"@en, "école, établissement d’enseignement, organisme de formation"@fr ;
+	skos:broader adr:Organization ;
+	skos:closeMatch schema:EducationalOrganization, wd:Q5341295 ;
+	skos:definition "An organization whose primary activity is to provide instruction and training in one particular subject or a variety of subjects."@en, "Une organisation dont l’activité principale est de fournir l’instruction et la formation dans un sujet particulier ou une variété de sujets."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Educational Organization"@en, "Organisme éducatif"@fr .
+
+adr:FestivalOrganization schema:naics "711322"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "festival organizer"@en, "organisation de festival"@fr ;
+	skos:broader adr:PresentingOrganization ;
+	skos:closeMatch wd:Q108669279 ;
+	skos:definition "A presenting organization whose primary activity is to program and promote a festivals."@en, "Une organisation de diffusion dont l’activité primaire est d'organisation et de promouvoir des festivals."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Festival Organization"@en, "Organisme de festival"@fr ;
+	skos:related adr:Festival .
+
+adr:Foundation rdf:type skos:Concept ;
+	skos:broader adr:Organization ;
+	skos:closeMatch wd:Q157031 ;
+	skos:definition "An organization whose primary activity is to provide long-term financial support for charitable causes."@en, "Une organisation dont l'activité principale est de fournir un soutien financier aux causes charitables."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Foundation"@en, "Fondation"@fr .
+
+adr:MusicGroup schema:naics "711130"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "musical group, musical ensemble, orchestra, choir, music band, musical band, band"@en, "ensemble musical, formation musicale, orchestre, chœur"@fr ;
+	skos:broader adr:PerformingArtsCompany ;
+	skos:closeMatch schema:MusicGroup, aat:300205024, wd:Q2088357 ;
+	skos:definition "A group of artists and associated personnel who mainly create, produce and perform music and concerts"@en, "Un groupe d’artistes et personnel associé qui créent, produisent et exécutent principalement de la musique et des concerts de musique."@fr ;
+	skos:editorialNote "In Schema.org it also includes solo musicians."@en, "Dans Schema.org, il comprend également des artistes solo."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Music Group"@en, "Groupe de musique"@fr ;
+	skos:related adr:K6-300 .
+
+adr:MusicalTheatreCompany schema:naics "711112"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "musical theater company"@en ;
+	skos:broader adr:PerformingArtsCompany ;
+	skos:definition "A group of artists and associated personnel who mainly create, produce and perform musicals and/or similar theatrical performance works."@en, "Un groupe d'artistes et personnel associé qui créent, produisent et exécutent principalement des comédies musicales et/ou autres productions similaires. Ces productions sont caractérisées par la musique, la danse et les dialogues parlés et chantés."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Musical Theatre Company"@en, "Compagnie de comédies musicales"@fr ;
+	skos:related adr:K6-401 .
+
+adr:OperaCompany schema:naics "711112"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "opera ensemble"@en, "ensemble d'opéra"@fr ;
+	skos:broader adr:PerformingArtsCompany ;
+	skos:closeMatch aat:300386374, wd:Q20819922 ;
+	skos:definition "A group of artists and associated personnel who mainly create, produce and perform operas."@en, "Un groupe d'artistes et personnel associé qui créent, produisent et exécutent principalement des opéras."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Opera Company"@en, "Compagnie d'opéra"@fr ;
+	skos:related adr:K6-402 .
+
+adr:Organization rdf:type skos:Concept ;
+	skos:altLabel "association, body, collective, company, group"@en, "organisme, association, compagnie, groupe"@fr ;
+	skos:broader adr:Agent ;
+	skos:closeMatch schema:Organization, aat:300025948, wd:Q43229 ;
+	skos:definition "A structured group of people, united by a common purpose. "@en, "Un groupe structuré de personnes, unies par un objectif commun."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Organization"@en, "Organisation"@fr .
+
+adr:PerformingArtsCompany schema:naics "7111"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	rdfs:seeAlso ado:LivePerformanceWork ;
+	skos:altLabel "performance group, performing arts group, performing arts ensemble, performing arts troupe, artistic company"@en, "groupe en arts de la scène, organisme en arts de la scène"@fr ;
+	skos:broader adr:ArtsOrganization ;
+	skos:closeMatch schema:PerformingGroup, wd:Q105815710 ;
+	skos:definition "A group of artists and related personnel whose primary activity is creating, producing and performing performance works (i.e., shows)."@en, "Un groupe d'artistes et personnel associé dont l’activité principale est de créer, produire et exécuter des œuvres scéniques (c.-à-d. des spectacles)."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Performing Arts Company"@en, "Compagnie en arts de la scène"@fr .
+
+adr:PerformingArtsSchool schema:naics "611610"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "academy, conservatory"@en, "académie, conservatoire"@fr ;
+	skos:broader adr:EducationalOrganization ;
+	skos:closeMatch wd:Q7014642 ;
+	skos:definition "An educational organization whose primary activity is to provide instruction in technical and/or professional skills in the performing arts."@en, "Un établissement d’enseignement dont l’activité principale est de fournir la formation dans les competences techniques et/ou professionnels dans le domaine des arts de la scène."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Performing Arts School"@en, "École des arts de la scène"@fr .
+
+adr:PresentingOrganization schema:naics "7113"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "presenter, promoter"@en, "diffuseur, organisation de diffusion, promoteur"@fr ;
+	skos:broader adr:ArtsOrganization ;
+	skos:closeMatch wd:Q7168296 ;
+	skos:definition "An organization whose primary activity is to organize, program and/or promote productions that are created/performed by others."@en, "Une organisation dont l’activité primaire est d’organiser, programmer et/ou promouvoir des productions qui sont crées/interpretées par des autres."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Presenting organization"@en, "Organisme de diffusion"@fr .
+
+adr:PublicArtsFunder rdf:type skos:Concept ;
+	skos:altLabel "arts funder, arts council"@en, "bailleur de fonds pour les arts, conseil des arts"@fr ;
+	skos:broader adr:PublicFunder ;
+	skos:definition "A public funder who mainly supports arts programs, arts organizations or the arts sector as a whole."@en, "Un bailleur de fonds publics qui soutiennent principalement les programmes d'arts, les organismes artistiques et/ou le domaine des arts dans son ensemble."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Public Arts Funder"@en, "Bailleur de fonds public pour les arts"@fr .
+
+adr:PublicFunder rdf:type skos:Concept ;
+	skos:altLabel "public funding body, funding agency"@en, "organisme subventionnaire du gouvernement, agence subventionnaire du gouvernement"@fr ;
+	skos:broader adr:Organization ;
+	skos:closeMatch wd:Q43228718 ;
+	skos:definition "A government agency or organization whose primary activity is to financially support a program, organization or domain. They often operate at arms-length from the government to prevent political interference in their decisions."@en, "Un agence ou une organisation gouvernemental dont l’activité principale est de fournir le soutien à un programme, un organisme ou un domaine. Ils opèrent souvent sans lien de dépendance avec le gouvernement pour empêcher toute ingérence politique dans leurs décisions."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Public Funder"@en, "Bailleur de fonds public"@fr .
+
+adr:TheatreCompany schema:naics "711111"^^xsd:integer ;
+	rdf:type skos:Concept ;
+	skos:altLabel "theatre troupe, theater troupe, theatre group, theater group, theatrical company, theatrical troupe, theatre collective, acting company, acting troupe, dramatic company"@en, "compagnie théâtrale, collectif de théâtre, groupe de théâtre, troupe de théâtre, troupe théâtrale"@fr ;
+	skos:broader adr:PerformingArtsCompany ;
+	skos:closeMatch schema:TheaterGroup, aat:300266039, wd:Q2416217 ;
+	skos:definition "A group of artists and associated personnel who mainly create, produce and perform plays, puppet shows, and/or similar theatrical performance works."@en, "Un groupe d’artistes et personnel associé qui créent, produisent et exécutent principalement des spectacles de théâtre."@fr ;
+	skos:inScheme adr:ArtsdataOrganizationTypes ;
+	skos:prefLabel "Theatre Company"@en, "Compagnie de théâtre"@fr ;
+	skos:related adr:K6-100 .
+
