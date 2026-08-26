@@ -58,17 +58,17 @@
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="Organization" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Organization Type" />
-<meta property="og:description" content="Organization Type" />
+<meta name="description" content="In the Artsdata data model, schema:Organization is also a subclass of dbo:Agent." />
+<meta property="og:description" content="In the Artsdata data model, schema:Organization is also a subclass of dbo:Agent." />
 <link rel="canonical" href="http://docs.artsdata.ca/classes/organization.html" />
 <meta property="og:url" content="http://docs.artsdata.ca/classes/organization.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-08-26T14:20:41+00:00" />
+<meta property="article:published_time" content="2026-08-26T14:27:45+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Organization" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-26T14:20:41+00:00","datePublished":"2026-08-26T14:20:41+00:00","description":"Organization Type","headline":"Organization","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/organization.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/classes/organization.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-26T14:27:45+00:00","datePublished":"2026-08-26T14:27:45+00:00","description":"In the Artsdata data model, schema:Organization is also a subclass of dbo:Agent.","headline":"Organization","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/classes/organization.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/classes/organization.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -517,24 +517,24 @@ function goBack() {
 <p>
     Subclass Of: <a href="http://schema.org/Thing">http://schema.org/Thing </a> 
 </p>
-<h2 id="organization-type">
+
+<p>In the Artsdata data model, <a href="https://schema.org/Organization"><code class="language-plaintext highlighter-rouge">schema:Organization</code></a> is also a subclass of <a href="http://dbpedia.org/ontology/Agent"><code class="language-plaintext highlighter-rouge">dbo:Agent</code></a>.</p>
+
+<p><img src="images/artsdata-organization-class-hierarchy.png" alt="Image" /></p>
+
+<p>[<a href="https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/fjjulien/26dfe0c7f79913087873cdaf69a989dc/raw/b923db08305bf342c0e5da56e1e8263536c8704b/artsdata-organization-class-hierarchy">open drawing tool</a>]</p>
+<h2 id="organization-types">
   
   
-    <a href="#organization-type" class="anchor-heading" aria-labelledby="organization-type"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Organization Type
+    <a href="#organization-types" class="anchor-heading" aria-labelledby="organization-types"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Organization Types
   
   
 </h2>
     
 
-<p><a href="http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes">Artsdata Organization Types</a> is a controlled vocabulary for organization types used in Artsdata. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations into a common language. In this vocabulary, the parent concept <a href="http://kg.artsdata.ca/resource/Organization">adr:Organization</a> is defined as “A structured group of people, united by a common purpose - this includes both groups that are formally structured as a legal body (e.g., a not-for-profit corporation) as well as those that are informally structured, but otherwise act together.”</p>
+<p><a href="http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes">Artsdata Organization Types</a> is a controlled vocabulary for organization types used in Artsdata. In this vocabulary, the parent concept <a href="http://kg.artsdata.ca/resource/Organization"><code class="language-plaintext highlighter-rouge">adr:Organization</code></a> is defined as “A structured group of people, united by a common purpose”. The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations.</p>
 
-<p>The controlled vocabulary is implemented in SKOS and mapped to Wikidata classes using intermediary SKOS Concepts with skos:closeMatch.</p>
-
-<p>To use the Artsdata Organization Types please use the schema:additionalType property on a schema:Organization class.</p>
-
-<p>You can download the complete controlled vocabulary with this <a href="https://db.artsdata.ca/repositories/artsdata/statements?context=%3Chttp://kg.artsdata.ca/culture-creates/ontology/artsdata-organization-types%3E">download link</a>.</p>
-
-<p>WIP - here is the Google <a href="https://docs.google.com/spreadsheets/d/1wPzZI3G48q02H_II91Bs6ljZFbC0KcSAPzDDK0dtGN8/edit#gid=1933025380">spreadsheet</a></p>
+<p>In addition to concepts from the Artsdata Organization Types controlled vocabulary, Artsdata accepts Schema.org Organization sub-types as well as Wikidata concepts.</p>
 <h2 id="adding-organizations-to-artsdataca">
   
   
@@ -554,19 +554,20 @@ function goBack() {
 <ul>
   <li><a href="https://docs.google.com/document/d/1e_2pVYaGYkVxKtl6Y6btrHYrIyqoNf_6yeSl4dRJLbI/edit?tab=t.0#heading=h.fn96d7fxizbh">Arts Organization Structured Data Template</a></li>
 </ul>
-<h3 id="required-by-the-artsdata-shacl-validator">
+<h2 id="minimal-requirements-for-minting-or-linking-artsdata-ids-for-organizations">
   
   
-    <a href="#required-by-the-artsdata-shacl-validator" class="anchor-heading" aria-labelledby="required-by-the-artsdata-shacl-validator"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Required by the Artsdata SHACL validator
+    <a href="#minimal-requirements-for-minting-or-linking-artsdata-ids-for-organizations" class="anchor-heading" aria-labelledby="minimal-requirements-for-minting-or-linking-artsdata-ids-for-organizations"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Minimal requirements for minting or linking Artsdata IDs for organizations
   
   
-</h3>
+</h2>
     
+
+<p>The following properties are required by the Artsdata SHACL validator when minting or linking an Artsdata ID for an organization.</p>
 
 <ul>
   <li><a href="https://schema.org/name">name</a> - Indicate language @en, @fr</li>
   <li><a href="https://schema.org/url">url</a> - Official URL of the organization</li>
-  <li><a href="https://schema.org/address">address</a> - Use <a href="https://schema.org/PostalAddress">PostalAddress</a></li>
 </ul>
 <h3 id="recommended">
   
@@ -578,18 +579,16 @@ function goBack() {
     
 <ul>
   <li><a href="https://schema.org/additionalType">additionalType</a> - Please use the <a href="http://kg.artsdata.ca/ontology/ArtsdataOrganizationTypes">Artsdata Organization Type</a> controlled vocabulary</li>
+  <li><a href="https://schema.org/address">address</a> - Use <a href="https://schema.org/PostalAddress">PostalAddress</a></li>
   <li><a href="https://schema.org/sameAs">sameAs</a> - Please use an Artsdata ID obtained from the Artsdata Reconciliation Service API, and optionally other social media profiles and external global IDs like Wikidata and ISNI.</li>
   <li>
     <p><a href="https://schema.org/alternateName">alternateName</a> - Name typically found on websites. Indicate language @en, @fr</p>
   </li>
-  <li><a href="http://schema.org/areaServed">areaServed</a> (pending)</li>
+  <li><a href="http://schema.org/legalName">legalName</a> (pending) - indicate language @en, @fr</li>
   <li><a href="http://schema.org/contactPoint">contactPoint</a> (pending)</li>
   <li><a href="http://schema.org/subOrganization">subOrganization</a> (pending)</li>
   <li><a href="http://schema.org/parentOrganization">parentOrganization</a> (pending)</li>
-  <li><a href="http://schema.org/legalName">legalName</a> (pending) - indicate language @en, @fr</li>
   <li><a href="http://schema.org/identifier">identifier</a> - Established identifiers like the Canadian Business Number. For example: ({ “@type”: “PropertyValue”, “propertyID”: “BN”, “value”:  “801228875”})</li>
-  <li><a href="htp://schema.org/naics">naics</a></li>
-  <li><a href="http://schema.org/department">department</a> (pending)</li>
 </ul>
 <h3 id="mapping-to-wikidata">
   
