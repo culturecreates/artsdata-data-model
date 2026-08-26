@@ -25,6 +25,8 @@
 #     - This means that certain OWL features (e.g., owl:disjointWith, owl:cardinality restrictions) are not used in this ontology to ensure compatibility with HORST reasoners.
 #     - Cardinality constraints are expressed in SHACL.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
+# V 1.5.0
+#     - Add ado:hasOrganizationTypeConcept
 # V 1.4.0
 #     - https://github.com/culturecreates/artsdata-data-model/issues/390
 ####################
@@ -86,6 +88,14 @@ ado:hasPlaceTypeConcept rdf:type rdf:Property ;
     rdfs:comment "Links a Place to a place type concept defined by the Artsdata controlled vocabulary for place types."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Place ;
+    rdfs:subPropertyOf schema:additionalType ;
+    rdfs:range skos:Concept .
+
+ado:hasOrganizationTypeConcept rdf:type rdf:Property ;
+    rdfs:label "has organization type"@en ;
+    rdfs:comment "Links an organization to a organization type concept defined by the Artsdata controlled vocabulary for organization types."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Organization ;
     rdfs:subPropertyOf schema:additionalType ;
     rdfs:range skos:Concept .
 
