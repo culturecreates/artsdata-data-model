@@ -7,7 +7,7 @@ title: Organization
 
 In the Artsdata data model, [`schema:Organization`](https://schema.org/Organization) is also a subclass of [`dbo:Agent`](http://dbpedia.org/ontology/Agent).
 
-![Image](images/artsdata-organization-class-hierarchy.png)
+![Image](../images/artsdata-organization-class-hierarchy.png)
 
 [[open drawing tool](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/fjjulien/26dfe0c7f79913087873cdaf69a989dc/raw/b923db08305bf342c0e5da56e1e8263536c8704b/artsdata-organization-class-hierarchy)]
 
