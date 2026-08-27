@@ -1,6 +1,8 @@
 <p>{% include back-button.html %}</p>
 {% include language-switcher.html %}
 
+# Artsdata Organization Types Controlled Vocabulary
+
 | <!-- --> | <!-- --> |
 | - | - |
 | Concept scheme | [adr:ArtsdataPlaceTypes](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes) |
