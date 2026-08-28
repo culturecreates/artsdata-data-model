@@ -13,7 +13,7 @@ In the Artsdata data model, [`schema:Organization`](https://schema.org/Organizat
 
 ## Organization Types
 
-[Artsdata Organization Types](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes) is a controlled vocabulary for organization types used in Artsdata. In this vocabulary, the parent concept [`adr:Organization`](http://kg.artsdata.ca/resource/Organization) is defined as "A structured group of people, united by a common purpose". The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations.
+[Artsdata Organization Types](https://docs.artsdata.ca/organization-types.html) is a controlled vocabulary for organization types used in Artsdata. In this vocabulary, the parent concept [`adr:Organization`](http://kg.artsdata.ca/resource/Organization) is defined as "A structured group of people, united by a common purpose". The goal of this controlled vocabulary is to serve as a base for mapping different types of arts organizations.
 
 In addition to concepts from the Artsdata Organization Types controlled vocabulary, Artsdata accepts Schema.org Organization sub-types as well as Wikidata concepts.
 
