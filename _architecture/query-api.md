@@ -3,6 +3,12 @@ title: Query API
 layout: architecture-doc
 nav_order: 13
 ---
+There are several APIs to query Artsdata.
+
+List of APIs to query Artsdata:
+- [Artsdata MCP Server](#artsdata-mcp-server)
+- [Query API wrapper for SPARQ](#query-api-wrapper-for-sparql)
+- [Event Search API (deprecated)]
 
 # Artsdata MCP Server
 Artsdata is live in the official [MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=ca.artsdata/mcp). 
