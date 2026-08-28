@@ -58,17 +58,17 @@
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="Query API" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies…" />
-<meta property="og:description" content="A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies…" />
+<meta name="description" content="Artsdata MCP Server Artsdata is live in the official MCP Registry." />
+<meta property="og:description" content="Artsdata MCP Server Artsdata is live in the official MCP Registry." />
 <link rel="canonical" href="http://docs.artsdata.ca/architecture/query-api.html" />
 <meta property="og:url" content="http://docs.artsdata.ca/architecture/query-api.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-08-27T14:00:11+00:00" />
+<meta property="article:published_time" content="2026-08-28T17:56:05+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Query API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-27T14:00:11+00:00","datePublished":"2026-08-27T14:00:11+00:00","description":"A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies…","headline":"Query API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/query-api.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/query-api.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-28T17:56:05+00:00","datePublished":"2026-08-28T17:56:05+00:00","description":"Artsdata MCP Server Artsdata is live in the official MCP Registry.","headline":"Query API","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/architecture/query-api.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/architecture/query-api.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -508,7 +508,378 @@ function goBack() {
   
 </h2>
     
+<h1 id="artsdata-mcp-server">
+  
+  
+    <a href="#artsdata-mcp-server" class="anchor-heading" aria-labelledby="artsdata-mcp-server"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Artsdata MCP Server
+  
+  
+</h1>
+    
+<p>Artsdata is live in the official <a href="https://registry.modelcontextprotocol.io/v0.1/servers?search=ca.artsdata/mcp">MCP Registry</a>.</p>
 
+<p>The Artsdata MCP Server exposes the <a href="https://artsdata.ca">Artsdata</a> knowledge
+graph to AI agents and LLM-based tools via the
+<a href="https://modelcontextprotocol.io">Model Context Protocol</a> (MCP). It lets an
+agent search for entities (organizations, people, places), fetch full entity
+details, and search for events — all backed by Artsdata’s linked-data
+knowledge graph.</p>
+<h2 id="endpoint">
+  
+  
+    <a href="#endpoint" class="anchor-heading" aria-labelledby="endpoint"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Endpoint
+  
+  
+</h2>
+    
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://mcp.artsdata.ca/mcp
+</code></pre></div></div>
+
+<p>The server implements the MCP <strong>Streamable HTTP</strong> transport. Requests are
+JSON-RPC 2.0 messages sent via <code class="language-plaintext highlighter-rouge">POST</code>, and require an initialization
+handshake before any tool can be called.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Transport</td>
+      <td>Streamable HTTP (JSON-RPC 2.0 over <code class="language-plaintext highlighter-rouge">POST</code>)</td>
+    </tr>
+    <tr>
+      <td>Protocol version</td>
+      <td><code class="language-plaintext highlighter-rouge">2024-11-05</code></td>
+    </tr>
+    <tr>
+      <td>Auth</td>
+      <td>None (public)</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="connecting-a-client">
+  
+  
+    <a href="#connecting-a-client" class="anchor-heading" aria-labelledby="connecting-a-client"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Connecting a client
+  
+  
+</h2>
+    
+
+<p>Most MCP-aware tools (Claude Code, Claude Desktop, etc.) can connect directly
+by pointing an MCP client configuration at the endpoint above — no manual
+handshake required.</p>
+<h2 id="tools">
+  
+  
+    <a href="#tools" class="anchor-heading" aria-labelledby="tools"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tools
+  
+  
+</h2>
+    
+<h3 id="search_entities">
+  
+  
+    <a href="#search_entities" class="anchor-heading" aria-labelledby="search_entities"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">search_entities</code>
+  
+  
+</h3>
+    
+
+<p>Search for entities in the Artsdata knowledge graph by name and, optionally,
+type.</p>
+
+<p><strong>Input</strong></p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">query</code></td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Non-empty search query.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">types</code></td>
+      <td>array of <code class="language-plaintext highlighter-rouge">Place \| Person \| Organization</code></td>
+      <td>No</td>
+      <td>Filter results by entity type.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">language</code></td>
+      <td><code class="language-plaintext highlighter-rouge">en</code> | <code class="language-plaintext highlighter-rouge">fr</code></td>
+      <td>No (default <code class="language-plaintext highlighter-rouge">en</code>)</td>
+      <td>Language for matching/labels.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">limit</code></td>
+      <td>integer (1–50)</td>
+      <td>No (default 25)</td>
+      <td>Max number of results.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p><strong>Output</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="p">,</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Example call</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_entities"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cirque du Soleil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Organization"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="get_entity">
+  
+  
+    <a href="#get_entity" class="anchor-heading" aria-labelledby="get_entity"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">get_entity</code>
+  
+  
+</h3>
+    
+
+<p>Retrieve full details for a single entity, given its Artsdata URI.</p>
+
+<p><strong>Input</strong></p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">uri</code></td>
+      <td>string (URI)</td>
+      <td>Yes</td>
+      <td>The Artsdata entity URI.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p><strong>Output</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en|fr"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"alternate_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en|fr"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en|fr"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"main_entity_of_page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"same_as"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"string"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"additional_properties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"predicate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="p">,</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"string"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Example call</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get_entity"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kg.artsdata.ca/resource/K11-70"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Example response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"K11-70"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://kg.artsdata.ca/resource/K11-70"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Klondike Institute of Art &amp; Culture"</span><span class="p">,</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Klondike Institute of Art &amp; Culture"</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Klondike Institute of Art &amp; Culture"</span><span class="p">,</span><span class="w"> </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="search_events">
+  
+  
+    <a href="#search_events" class="anchor-heading" aria-labelledby="search_events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">search_events</code>
+  
+  
+</h3>
+    
+
+<p>Search for events in the Artsdata knowledge graph by place, artist,
+organization, type, and language.</p>
+
+<p><strong>Input</strong></p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">places</code></td>
+      <td>array of strings</td>
+      <td>No</td>
+      <td>Place labels to filter by.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">artists</code></td>
+      <td>array of strings</td>
+      <td>No</td>
+      <td>Artist labels to filter by.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">organizations</code></td>
+      <td>array of strings</td>
+      <td>No</td>
+      <td>Organization labels to filter by.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">types</code></td>
+      <td>array of strings</td>
+      <td>No</td>
+      <td>Event type labels to filter by.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">languages</code></td>
+      <td>string</td>
+      <td>No (default <code class="language-plaintext highlighter-rouge">en</code>)</td>
+      <td>Language for matching/labels.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">limit</code></td>
+      <td>integer (1–50)</td>
+      <td>No (default 25)</td>
+      <td>Max number of results.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p><strong>Output</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="p">,</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Example call</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_events"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"places"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Montreal"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Theatre"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h2 id="rest-style-equivalents">
+  
+  
+    <a href="#rest-style-equivalents" class="anchor-heading" aria-labelledby="rest-style-equivalents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> REST-style equivalents
+  
+  
+</h2>
+    
+
+<p>A subset of this functionality is also available as plain REST/JSON
+endpoints on the same host, for clients that don’t speak MCP:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Method &amp; Path</th>
+      <th>Equivalent tool</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GET /search-entities?query=&lt;text&gt;&amp;lang=en\|fr</code></td>
+      <td><code class="language-plaintext highlighter-rouge">search_entities</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GET /entities?id=&lt;uri_or_id&gt;&amp;lang=en\|fr</code></td>
+      <td><code class="language-plaintext highlighter-rouge">get_entity</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Full OpenAPI documentation for these REST endpoints is available at:</p>
+
+<ul>
+  <li>Swagger UI: <code class="language-plaintext highlighter-rouge">/api-docs</code></li>
+  <li>OpenAPI spec: <code class="language-plaintext highlighter-rouge">/api-docs/v1/swagger.yaml</code></li>
+</ul>
+<h2 id="see-also">
+  
+  
+    <a href="#see-also" class="anchor-heading" aria-labelledby="see-also"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> See also
+  
+  
+</h2>
+    
+
+<ul>
+  <li><a href="https://modelcontextprotocol.io">Model Context Protocol specification</a></li>
+  <li><a href="https://artsdata.ca">Artsdata</a></li>
+</ul>
+<h1 id="query-api-wrapper-for-sparql">
+  
+  
+    <a href="#query-api-wrapper-for-sparql" class="anchor-heading" aria-labelledby="query-api-wrapper-for-sparql"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Query API wrapper for SPARQL
+  
+  
+</h1>
+    
 <p>A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies…</p>
 
 <p>This API is in active development and may change. If you are looking for a stable API then please use the <a href="https://docs.artsdata.ca/architecture/reconciliation">Artsdata Reconciliation Service</a> which can be used to search (/match) entities in Artsdata, retrieve data (/extend) about those entities using Artsdata identifiers, as well as generate an HTML preview (/preview) of an Artsdata entity.</p>
@@ -585,13 +956,13 @@ function goBack() {
 </h4>
     
 <p>https://api.artsdata.ca/query?adid=K5-3&amp;format=json&amp;frame=ranked_org_person_footlight&amp;sparql=ranked_org_person_footlight</p>
-<h2 id="event-search-api-deprecated">
+<h1 id="event-search-api-deprecated">
   
   
     <a href="#event-search-api-deprecated" class="anchor-heading" aria-labelledby="event-search-api-deprecated"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Event Search API (deprecated)
   
   
-</h2>
+</h1>
     
 
 <p>The Event Search API has been replaced by the <a href="https://docs.artsdata.ca/architecture/reconciliation">Reconciliation Service</a>. To search for events on a date and location, use the reconciliation match service with schema:startDate and schema:location properties.</p>
@@ -629,15 +1000,6 @@ http://api.artsdata.ca/events?format=json&amp;frame=event_bn&amp;source=http://k
 
   <p>Here is a <a href="https://github.com/culturecreates/artsdata-demo-upcoming-events-api">demo website in Github</a> that lists upcoming events in Quebec using the Artsdata API.</p>
 </blockquote>
-<h2 id="mcp-server">
-  
-  
-    <a href="#mcp-server" class="anchor-heading" aria-labelledby="mcp-server"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> MCP Server
-  
-  
-</h2>
-    
-<p>Coming soon.</p>
 
           
 
