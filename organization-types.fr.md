@@ -61,7 +61,7 @@ Voici un exemple au format JSON-LD :
 "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsCompany"
 ```
 
-## Version control
+## Gestion de versions
 
 ### Version 3.2
 
