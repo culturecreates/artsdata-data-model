@@ -66,21 +66,18 @@ https://api.artsdata.ca/query?adid=K5-3&format=json&frame=ranked_org_person_foot
 
 The Event Search API has been replaced by the [Reconciliation Service](https://docs.artsdata.ca/architecture/reconciliation). To search for events on a date and location, use the reconciliation match service with schema:startDate and schema:location properties.
 
-A MCP Server is also being developed.
-
 The following documentation is preserved for historical reasons:
 
-> The Event Search API is a dedicated endpoint for events and provides an easy way to get a list of events in json or json-ld. The "frame" parameter enables the user to select different output properties and structures. The "format" parameter selects between json and json-ld. And the "source" parameter selects the graph or calatog of graphs. Documentation WIP.
+> The Event Search API is a dedicated endpoint for events and provides an easy way to get a list of events in json or json-ld.
+> Params:
+> * "frame" parameter enables the user to select different output properties and structures.
+> * "format" parameter selects between json and json-ld.
+> * "predicate" parameter selects the property to filter
+> * "object" parameter selects the filter value
 >
->Example: List of upcoming events from the placedesarts.com website in Montreal: 
-http://api.artsdata.ca/events?format=json&frame=event_bn&source=http://kg.artsdata.ca/culture-creates/footlight/placedesarts-com
+>Example: List of upcoming events at Théâtre Maisonneuve (K11-11) in Montreal:
+> https://api.artsdata.ca/events?format=json&apiKey=sandbox&frame=event_location&predicate=schema:location&object=adr:K11-11
 >
->### Source parameter
->Many different datasets are uploaded to Artsdata daily. The Event API allows you to specific the source of your dataset by passing a dataset URI or a catalog of datasets URI.
->
->Here is a list of [graphs](https://kg.artsdata.ca/query/show?sparql=feeds_all&title=Data+Feeds) that can be used as the source parameter.
->
->It is possible to create your own catalog of datasets as well.
 >
 >### Events demo
 >
