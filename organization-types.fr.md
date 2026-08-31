@@ -5,7 +5,23 @@ lang: fr
 <p>{% include back-button.html %}</p>
 {% include language-switcher.html %}
 
-## Artsdata Organization Types (français)
+# Vocabulaire contrôlé Artsdata des types d'organisations
+
+| <!-- --> | <!-- --> |
+| - | - |
+| Schéma de concepts | [adr:ArtsdataOrganizationTypes](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes) |
+| Version | 3.2 |
+| Date de publication | Août 2026 |
+
+## Introduction
+
+Cette page présente le vocabulaire contrôlé utilisé dans le graphe de connaissances Artsdata pour décrire les types d'organisations dans le secteur des arts. 
+
+Ce vocabulaire classe les organisations selon leur activité économique principale. Les concepts et leurs définitions sont étroitement alignés avec la [Système de classification des industries de l'Amérique du Nord](https://www23.statcan.gc.ca/imdb/p3VD_f.pl?Function=getVD&TVD=1369825). Les concepts de ce vocabulaire sont mis en correspondance avec les vocabulaires suivants : [Schema.org](https://schema.org/), [Wikidata](https://www.wikidata.org/wiki/Wikidata:WikiProject_Performing_arts) et [Art and Architecture Thesaurus](https://www.getty.edu/research/tools/vocabularies/aat/).
+
+Dans ce vocabulaire, le concept de premier niveau, [`adr:Organization`](http://kg.artsdata.ca/resource/Organization), est définit comme : « Un groupe structuré de personnes, unies par un objectif commun. » Il peut s'agir aussi bien de groupes structurés officiellement comme une entité juridique (par exemple, une entreprise à but non lucratif) et de groupes structurés de manière informelle, mais qui par ailleurs agissent ensemble. Par exemple, les groupes de musique, les agences de tournée et les compagnies d'opéra sont des concepts spécifiques qui ont adr:Organization comme concept générique.
+
+## Types d'organisations Artsdata
 
 | CURI | Libellé préféré | Correspondance approximative | SCIAN |
 | - | - | - | - |
@@ -32,3 +48,29 @@ lang: fr
 | [adr:PublicArtsFunder](http://kg.artsdata.ca/resource/PublicArtsFunder) | Bailleur de fonds public pour les arts | | |
 | [adr:Foundation](http://kg.artsdata.ca/resource/Foundation) | Fondation | [wd:Q157031](http://www.wikidata.org/entity/Q157031) | |
 | [adr:ArtistRunCentre](http://kg.artsdata.ca/resource/ArtistRunCentre) | Centre d'artistes autogéré | [wd:Q16020664](http://www.wikidata.org/entity/Q16020664) | |
+
+## Comment utiliser
+
+Le vocabulaire contrôlé Artsdata des types d'organisations peut être utilisé avec la propriété `schema:additionalType`, en combinaison avec la classe générique `schema:Organization` comme type principal. Ainsi, une entité de lieu dans Artsdata peut avoir à la fois le type `schema:Organization` et un type additionnel provenant du vocabulaire contrôlé Artsdata des types de lieux, au moyen de la propriété `schema:additionalType`.
+
+Voici un exemple au format JSON-LD :
+
+```
+"@context":"http://schema.org",
+"@type": "Organization",
+"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsCompany"
+```
+
+## Version control
+
+### Version 3.2
+
+[Issue #407](https://github.com/culturecreates/artsdata-data-model/issues/407)
+
+- Harmonisation des définitions, skos:related et rdfs:seeAlso afin de prendre en compte la nouvelle classe ado:LivePerformanceWork et le Vocabulaire contrôlé des genres ;
+- Les commentaires dans les définitions ont été transféré sous skos:scopeNote ou skos:editorialNote ;
+- Mise en concordance complète avec Schema.org, Wikidata and AAT ;
+- Ajout d'une mise en concordance avec SCIAN avec la propriété schema:naics ;
+- Quelques changements à des libellés ;
+- Ajout du concept adr:ArtistRunCentre ;
+    - Ce concept fait partie du vocabulaire contrôlé de l'AGAC pour la nouvelle plateforme Les Galeries.
