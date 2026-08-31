@@ -58,3 +58,15 @@ Here is an example in JSON-LD:
 "@type": "Organization",
 "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsCompany"
 ```
+
+## Version control
+
+### Version 3.2
+
+- Harmonized definitions, skos:related, and rdfs:seeAlso to take into account the new ado:LivePerformanceWork class and the Artsdata Genres vocabulary.
+- Comments in definitions were transferred either to skos:scopeNote or skos:editorialNote.
+- Fully implemented skos:closeMatch mappings withschema, Wikidata and AAT.
+- Added NAICS mappings with schema:naics (note: skos concepts are not in domain for schema:naics).
+- Changed a few labels
+- Added the adr:ArtistRunCentre concept.
+    - This concept is part of AGAC's vocabulary for the new Les Galeries platform. Since AGAC aims for interoperability with Artsdata, we should strive to meet them midways.
