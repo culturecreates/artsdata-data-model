@@ -5,7 +5,7 @@
 
 | <!-- --> | <!-- --> |
 | - | - |
-| Concept scheme | [adr:ArtsdataPlaceTypes](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes) |
+| Concept scheme | [adr:ArtsdataOrganizationTypes](http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes) |
 | Version | 3.2 |
 | Release date | August 2026 |
 
@@ -62,6 +62,8 @@ Here is an example in JSON-LD:
 ## Version control
 
 ### Version 3.2
+
+[Issue #407](https://github.com/culturecreates/artsdata-data-model/issues/407)
 
 - Harmonized definitions, skos:related, and rdfs:seeAlso to take into account the new ado:LivePerformanceWork class and the Artsdata Genres vocabulary.
 - Comments in definitions were transferred either to skos:scopeNote or skos:editorialNote.
