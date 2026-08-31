@@ -26,16 +26,10 @@ knowledge graph.
 https://mcp.artsdata.ca/mcp
 ```
 
-The server implements the MCP **Streamable HTTP** transport. Requests are
-JSON-RPC 2.0 messages sent via `POST`, and require an initialization
-handshake before any tool can be called.
-
-For more details visit [Artsdata mcp-server doc](https://github.com/culturecreates/artsdata-mcp-server/blob/main/docs/mcp-server.md) 
-
 ## See also
 
+- [Artsdata mcp-server doc](https://github.com/culturecreates/artsdata-mcp-server/blob/main/docs/mcp-server.md) 
 - [Model Context Protocol specification](https://modelcontextprotocol.io)
-- [Artsdata](https://artsdata.ca)
 
 # Query API wrapper for SPARQL
 A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies...
