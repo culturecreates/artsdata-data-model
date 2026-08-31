@@ -305,10 +305,55 @@ function goBack() {
     <span class="label-current-lang">FR</span>
   
 </div>
-<h2 id="artsdata-organization-types-français">
+<h1 id="vocabulaire-contrôlé-artsdata-des-types-dorganisations">
   
   
-    <a href="#artsdata-organization-types-français" class="anchor-heading" aria-labelledby="artsdata-organization-types-français"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Artsdata Organization Types (français)
+    <a href="#vocabulaire-contrôlé-artsdata-des-types-dorganisations" class="anchor-heading" aria-labelledby="vocabulaire-contrôlé-artsdata-des-types-dorganisations"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Vocabulaire contrôlé Artsdata des types d’organisations
+  
+  
+</h1>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th><!-- --></th>
+      <th><!-- --></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Schéma de concepts</td>
+      <td><a href="http://kg.artsdata.ca/resource/ArtsdataOrganizationTypes">adr:ArtsdataOrganizationTypes</a></td>
+    </tr>
+    <tr>
+      <td>Version</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <td>Date de publication</td>
+      <td>Août 2026</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h2>
+    
+
+<p>Cette page présente le vocabulaire contrôlé utilisé dans le graphe de connaissances Artsdata pour décrire les types d’organisations dans le secteur des arts.</p>
+
+<p>Ce vocabulaire classe les organisations selon leur activité économique principale. Les concepts et leurs définitions sont étroitement alignés avec la <a href="https://www23.statcan.gc.ca/imdb/p3VD_f.pl?Function=getVD&amp;TVD=1369825">Système de classification des industries de l’Amérique du Nord</a>. Les concepts de ce vocabulaire sont mis en correspondance avec les vocabulaires suivants : <a href="https://schema.org/">Schema.org</a>, <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Performing_arts">Wikidata</a> et <a href="https://www.getty.edu/research/tools/vocabularies/aat/">Art and Architecture Thesaurus</a>.</p>
+
+<p>Dans ce vocabulaire, le concept de premier niveau, <a href="http://kg.artsdata.ca/resource/Organization"><code class="language-plaintext highlighter-rouge">adr:Organization</code></a>, est définit comme : « Un groupe structuré de personnes, unies par un objectif commun. » Il peut s’agir aussi bien de groupes structurés officiellement comme une entité juridique (par exemple, une entreprise à but non lucratif) et de groupes structurés de manière informelle, mais qui par ailleurs agissent ensemble. Par exemple, les groupes de musique, les agences de tournée et les compagnies d’opéra sont des concepts spécifiques qui ont adr:Organization comme concept générique.</p>
+<h2 id="types-dorganisations-artsdata">
+  
+  
+    <a href="#types-dorganisations-artsdata" class="anchor-heading" aria-labelledby="types-dorganisations-artsdata"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Types d’organisations Artsdata
   
   
 </h2>
@@ -464,6 +509,54 @@ function goBack() {
     </tr>
   </tbody>
 </table></div>
+<h2 id="comment-utiliser">
+  
+  
+    <a href="#comment-utiliser" class="anchor-heading" aria-labelledby="comment-utiliser"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Comment utiliser
+  
+  
+</h2>
+    
+
+<p>Le vocabulaire contrôlé Artsdata des types d’organisations peut être utilisé avec la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code>, en combinaison avec la classe générique <code class="language-plaintext highlighter-rouge">schema:Organization</code> comme type principal. Ainsi, une entité de lieu dans Artsdata peut avoir à la fois le type <code class="language-plaintext highlighter-rouge">schema:Organization</code> et un type additionnel provenant du vocabulaire contrôlé Artsdata des types de lieux, au moyen de la propriété <code class="language-plaintext highlighter-rouge">schema:additionalType</code>.</p>
+
+<p>Voici un exemple au format JSON-LD :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"@context":"http://schema.org",
+"@type": "Organization",
+"additionalType": "http://kg.artsdata.ca/resource/PerformingArtsCompany"
+</code></pre></div></div>
+<h2 id="version-control">
+  
+  
+    <a href="#version-control" class="anchor-heading" aria-labelledby="version-control"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Version control
+  
+  
+</h2>
+    
+<h3 id="version-32">
+  
+  
+    <a href="#version-32" class="anchor-heading" aria-labelledby="version-32"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Version 3.2
+  
+  
+</h3>
+    
+
+<p><a href="https://github.com/culturecreates/artsdata-data-model/issues/407">Issue #407</a></p>
+
+<ul>
+  <li>Harmonisation des définitions, skos:related et rdfs:seeAlso afin de prendre en compte la nouvelle classe ado:LivePerformanceWork et le Vocabulaire contrôlé des genres ;</li>
+  <li>Les commentaires dans les définitions ont été transféré sous skos:scopeNote ou skos:editorialNote ;</li>
+  <li>Mise en concordance complète avec Schema.org, Wikidata and AAT ;</li>
+  <li>Ajout d’une mise en concordance avec SCIAN avec la propriété schema:naics ;</li>
+  <li>Quelques changements à des libellés ;</li>
+  <li>Ajout du concept adr:ArtistRunCentre ;
+    <ul>
+      <li>Ce concept fait partie du vocabulaire contrôlé de l’AGAC pour la nouvelle plateforme Les Galeries.</li>
+    </ul>
+  </li>
+</ul>
 
           
 
