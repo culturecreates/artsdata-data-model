@@ -491,14 +491,14 @@
   },"70": {
     "doc": "Query API",
     "title": "Endpoint",
-    "content": "https://mcp.artsdata.ca/mcp . The server implements the MCP Streamable HTTP transport. Requests are JSON-RPC 2.0 messages sent via POST, and require an initialization handshake before any tool can be called. For more details visit Artsdata mcp-server doc . ",
+    "content": "https://mcp.artsdata.ca/mcp . ",
     "url": "/architecture/query-api.html#endpoint",
     
     "relUrl": "/architecture/query-api.html#endpoint"
   },"71": {
     "doc": "Query API",
     "title": "See also",
-    "content": ". | Model Context Protocol specification | Artsdata | . ",
+    "content": ". | Artsdata mcp-server doc | Model Context Protocol specification | . ",
     "url": "/architecture/query-api.html#see-also",
     
     "relUrl": "/architecture/query-api.html#see-also"
