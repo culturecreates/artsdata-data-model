@@ -73,7 +73,7 @@ The list of genres (SKOS concepts) can be consulted in the [concept scheme](http
 
 ## How to use
 
-Artsdata genre concepts can be used as values to the [`schema:genre`](https://schema.org/genre) property. `schema:genre` values can either be text strings, URIs or [`schema:DefinedTerm`](https://schema.org/DefinedTerm) objects. Artsdata recommends the `DefinedTerm` approach, because it makes it possible to provide both the opaque Artsdata URI and a human-readable name string. Artsdata can accept any of these three representations. Even text string can easily be reconciled against genre concepts. 
+Artsdata genre concepts can be used as values to the [`schema:genre`](https://schema.org/genre) property. `schema:genre` values can either be text strings, URIs or [`schema:DefinedTerm`](https://schema.org/DefinedTerm) objects. Artsdata can accept any of these three representations. Even text string can easily be reconciled against genre concepts. 
 
 Here is an example of a `DefinedTerm` object representing the dance genre:
 
