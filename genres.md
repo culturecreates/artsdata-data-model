@@ -2,7 +2,7 @@
 
 {% include language-switcher.html %}
 
-## Artsdata Controlled Vocabulary for Genres
+# Artsdata Controlled Vocabulary for Genres
 
 | <!-- --> | <!-- --> |
 | - | - |
@@ -26,47 +26,86 @@ The Artsdata controlled vocabulary for genres is more of a “service vocabulary
 
 The inaugural version of this controlled vocabulary was proposed in November 2025. The discussions surrounding its creation are documented in [this discussion](https://github.com/culturecreates/artsdata-data-model/discussions/186).
 
-### Concepts
+## Concepts
 
 The list of genres (SKOS concepts) can be consulted in the [concept scheme](http://kg.artsdata.ca/resource/ArtsdataGenres), in this [spreadsheet](https://docs.google.com/spreadsheets/d/1RSbTTJtjBW48BKVwQR9zcR4zr2wDEtoq-wvuAqYwiY0/edit?usp=sharing), or in the table below.
 
 | CURI | Preferred label | Exact match | Close match |
 | - | - | - | - |
-| [K6-100](http://kg.artsdata.ca/resource/K6-100) | Theatre | [wd:Q11635](http://www.wikidata.org/entity/Q11635), [aat:300417582](http://vocab.getty.edu/aat/300417582) | |
-| [K6-200](http://kg.artsdata.ca/resource/K6-200) | Dance | [wd:Q11639](http://www.wikidata.org/entity/Q11639), [aat:300054144](http://vocab.getty.edu/aat/300054144) | |
-| [K6-201](http://kg.artsdata.ca/resource/K6-201) | Ballet | [wd:Q41425](http://www.wikidata.org/entity/Q41425) | [wd:Q1020618](http://www.wikidata.org/entity/Q1020618) |
-| [K6-202](http://kg.artsdata.ca/resource/K6-202) | Contemporary dance | [wd:Q186035](http://www.wikidata.org/entity/Q186035) | |
-| [K6-203](http://kg.artsdata.ca/resource/K6-203) | Modern dance | [wd:Q850130](http://www.wikidata.org/entity/Q850130) | |
-| [K6-204](http://kg.artsdata.ca/resource/K6-204) | Cultural dance | [wd:Q201022](http://www.wikidata.org/entity/Q201022) | |
-| [K6-300](http://kg.artsdata.ca/resource/K6-300) | Music | [wd:Q638](http://www.wikidata.org/entity/Q638), [aat:300054146](http://vocab.getty.edu/aat/300054146) | |
-| [K6-301](http://kg.artsdata.ca/resource/K6-301) | Classical | [wd:Q9730](http://www.wikidata.org/entity/Q9730) | |
-| [K6-302](http://kg.artsdata.ca/resource/K6-302) | Country | [wd:Q83440](http://www.wikidata.org/entity/Q83440) | |
-| [K6-303](http://kg.artsdata.ca/resource/K6-303) | Folk | | [wd:Q43343](http://www.wikidata.org/entity/Q43343) |
-| [K6-304](http://kg.artsdata.ca/resource/K6-304) | Jazz | [wd:Q8341](http://www.wikidata.org/entity/Q8341) | |
-| [K6-305](http://kg.artsdata.ca/resource/K6-305) | Blues | [wd:Q9759](http://www.wikidata.org/entity/Q9759) | |
-| [K6-306](http://kg.artsdata.ca/resource/K6-306) | New Music | | [wd:Q8011523](http://www.wikidata.org/entity/Q8011523) |
-| [K6-307](http://kg.artsdata.ca/resource/K6-307) | Popular music | [wd:Q373342](http://www.wikidata.org/entity/Q373342) | |
-| [K6-308](http://kg.artsdata.ca/resource/K6-308) | World music | [wd:Q205049](http://www.wikidata.org/entity/Q205049) | |
-| [K6-309](http://kg.artsdata.ca/resource/K6-309) | Chanson | [wd:Q1062400](http://www.wikidata.org/entity/Q1062400) | |
-| [K6-310](http://kg.artsdata.ca/resource/K6-310) | Instrumental | [wd:Q639197](http://www.wikidata.org/entity/Q639197) | |
-| [K6-311](http://kg.artsdata.ca/resource/K6-311) | Alternative | [wd:Q1695023](http://www.wikidata.org/entity/Q1695023) | |
-| [K6-312](http://kg.artsdata.ca/resource/K6-312) | Electronic | [wd:Q9778](http://www.wikidata.org/entity/Q9778) | |
-| [K6-313](http://kg.artsdata.ca/resource/K6-313) | Metal | [wd:Q12326776](http://www.wikidata.org/entity/Q12326776) | |
-| [K6-314](http://kg.artsdata.ca/resource/K6-314) | Rap | [wd:Q11401](http://www.wikidata.org/entity/Q11401) | |
-| [K6-315](http://kg.artsdata.ca/resource/K6-315) | Rhythm and blues | [wd:Q45981](http://www.wikidata.org/entity/Q45981) | |
-| [K6-316](http://kg.artsdata.ca/resource/K6-316) | Rock | [wd:Q11399](http://www.wikidata.org/entity/Q11399) | |
-| [K6-400](http://kg.artsdata.ca/resource/K6-400) | Musico-dramatic | | [wd:Q123777276](http://www.wikidata.org/entity/Q123777276) |
-| [K6-401](http://kg.artsdata.ca/resource/K6-401) | Musical Theatre | | [wd:Q1370345](http://www.wikidata.org/entity/Q1370345) |
-| [K6-402](http://kg.artsdata.ca/resource/K6-402) | Opera | [wd:Q1344](http://www.wikidata.org/entity/Q1344) | |
-| [K6-500](http://kg.artsdata.ca/resource/K6-500) | Spoken | | |
-| [K6-501](http://kg.artsdata.ca/resource/K6-501) | Storytelling | | [wd:Q989963](http://www.wikidata.org/entity/Q989963) |
-| [K6-502](http://kg.artsdata.ca/resource/K6-502) | Poetry | | [wd:Q482](http://www.wikidata.org/entity/Q482) |
-| [K6-503](http://kg.artsdata.ca/resource/K6-503) | Slam | | [wd:Q2293670](http://www.wikidata.org/entity/Q2293670) |
-| [K6-504](http://kg.artsdata.ca/resource/K6-504) | Spoken Word | [wd:Q1428637](http://www.wikidata.org/entity/Q1428637) | |
-| [K6-900](http://kg.artsdata.ca/resource/K6-900) | Performing art | | [wd:Q184485](http://www.wikidata.org/entity/Q184485) |
-| [K6-901](http://kg.artsdata.ca/resource/K6-901) | Circus | | [wd:Q713197](http://www.wikidata.org/entity/Q713197) |
-| [K6-902](http://kg.artsdata.ca/resource/K6-902) | Comedy | | [wd:Q3492850](http://www.wikidata.org/entity/Q3492850) |
-| [K6-903](http://kg.artsdata.ca/resource/K6-903) | Variety | [wd:Q117187901](http://www.wikidata.org/entity/Q117187901) | |
-| [K6-904](http://kg.artsdata.ca/resource/K6-904) | Puppetry | [wd:Q588750](http://www.wikidata.org/entity/Q588750), [aat:300248147](http://vocab.getty.edu/aat/300248147) | |
-| [K6-905](http://kg.artsdata.ca/resource/K6-905) | Mime | [wd:Q39818](http://www.wikidata.org/entity/Q39818), [aat:300417615](http://vocab.getty.edu/aat/300417615) | |
-| [K6-906](http://kg.artsdata.ca/resource/K6-906) | Magic | [wd:Q148442](http://www.wikidata.org/entity/Q148442), [aat:300417618](http://vocab.getty.edu/aat/300417618) | |
+| [adr:K6-100](http://kg.artsdata.ca/resource/K6-100) | Theatre | [wd:Q11635](http://www.wikidata.org/entity/Q11635), [aat:300417582](http://vocab.getty.edu/aat/300417582) | |
+| [adr:K6-200](http://kg.artsdata.ca/resource/K6-200) | Dance | [wd:Q11639](http://www.wikidata.org/entity/Q11639), [aat:300054144](http://vocab.getty.edu/aat/300054144) | |
+| [adr:K6-201](http://kg.artsdata.ca/resource/K6-201) | Ballet | [wd:Q41425](http://www.wikidata.org/entity/Q41425) | [wd:Q1020618](http://www.wikidata.org/entity/Q1020618) |
+| [adr:K6-202](http://kg.artsdata.ca/resource/K6-202) | Contemporary dance | [wd:Q186035](http://www.wikidata.org/entity/Q186035) | |
+| [adr:K6-203](http://kg.artsdata.ca/resource/K6-203) | Modern dance | [wd:Q850130](http://www.wikidata.org/entity/Q850130) | |
+| [adr:K6-204](http://kg.artsdata.ca/resource/K6-204) | Cultural dance | [wd:Q201022](http://www.wikidata.org/entity/Q201022) | |
+| [adr:K6-300](http://kg.artsdata.ca/resource/K6-300) | Music | [wd:Q638](http://www.wikidata.org/entity/Q638), [aat:300054146](http://vocab.getty.edu/aat/300054146) | |
+| [adr:K6-301](http://kg.artsdata.ca/resource/K6-301) | Classical | [wd:Q9730](http://www.wikidata.org/entity/Q9730) | |
+| [adr:K6-302](http://kg.artsdata.ca/resource/K6-302) | Country | [wd:Q83440](http://www.wikidata.org/entity/Q83440) | |
+| [adr:K6-303](http://kg.artsdata.ca/resource/K6-303) | Folk | | [wd:Q43343](http://www.wikidata.org/entity/Q43343) |
+| [adr:K6-304](http://kg.artsdata.ca/resource/K6-304) | Jazz | [wd:Q8341](http://www.wikidata.org/entity/Q8341) | |
+| [adr:K6-305](http://kg.artsdata.ca/resource/K6-305) | Blues | [wd:Q9759](http://www.wikidata.org/entity/Q9759) | |
+| [adr:K6-306](http://kg.artsdata.ca/resource/K6-306) | New Music | | [wd:Q8011523](http://www.wikidata.org/entity/Q8011523) |
+| [adr:K6-307](http://kg.artsdata.ca/resource/K6-307) | Popular music | [wd:Q373342](http://www.wikidata.org/entity/Q373342) | |
+| [adr:K6-308](http://kg.artsdata.ca/resource/K6-308) | World music | [wd:Q205049](http://www.wikidata.org/entity/Q205049) | |
+| [adr:K6-309](http://kg.artsdata.ca/resource/K6-309) | Chanson | [wd:Q1062400](http://www.wikidata.org/entity/Q1062400) | |
+| [adr:K6-310](http://kg.artsdata.ca/resource/K6-310) | Instrumental | [wd:Q639197](http://www.wikidata.org/entity/Q639197) | |
+| [adr:K6-311](http://kg.artsdata.ca/resource/K6-311) | Alternative | [wd:Q1695023](http://www.wikidata.org/entity/Q1695023) | |
+| [adr:K6-312](http://kg.artsdata.ca/resource/K6-312) | Electronic | [wd:Q9778](http://www.wikidata.org/entity/Q9778) | |
+| [adr:K6-313](http://kg.artsdata.ca/resource/K6-313) | Metal | [wd:Q12326776](http://www.wikidata.org/entity/Q12326776) | |
+| [adr:K6-314](http://kg.artsdata.ca/resource/K6-314) | Rap | [wd:Q11401](http://www.wikidata.org/entity/Q11401) | |
+| [adr:K6-315](http://kg.artsdata.ca/resource/K6-315) | Rhythm and blues | [wd:Q45981](http://www.wikidata.org/entity/Q45981) | |
+| [adr:K6-316](http://kg.artsdata.ca/resource/K6-316) | Rock | [wd:Q11399](http://www.wikidata.org/entity/Q11399) | |
+| [adr:K6-400](http://kg.artsdata.ca/resource/K6-400) | Musico-dramatic | | [wd:Q123777276](http://www.wikidata.org/entity/Q123777276) |
+| [adr:K6-401](http://kg.artsdata.ca/resource/K6-401) | Musical Theatre | | [wd:Q1370345](http://www.wikidata.org/entity/Q1370345) |
+| [adr:K6-402](http://kg.artsdata.ca/resource/K6-402) | Opera | [wd:Q1344](http://www.wikidata.org/entity/Q1344) | |
+| [adr:K6-500](http://kg.artsdata.ca/resource/K6-500) | Spoken | | |
+| [adr:K6-501](http://kg.artsdata.ca/resource/K6-501) | Storytelling | | [wd:Q989963](http://www.wikidata.org/entity/Q989963) |
+| [adr:K6-502](http://kg.artsdata.ca/resource/K6-502) | Poetry | | [wd:Q482](http://www.wikidata.org/entity/Q482) |
+| [adr:K6-503](http://kg.artsdata.ca/resource/K6-503) | Slam | | [wd:Q2293670](http://www.wikidata.org/entity/Q2293670) |
+| [adr:K6-504](http://kg.artsdata.ca/resource/K6-504) | Spoken Word | [wd:Q1428637](http://www.wikidata.org/entity/Q1428637) | |
+| [adr:K6-900](http://kg.artsdata.ca/resource/K6-900) | Performing art | | [wd:Q184485](http://www.wikidata.org/entity/Q184485) |
+| [adr:K6-901](http://kg.artsdata.ca/resource/K6-901) | Circus | | [wd:Q713197](http://www.wikidata.org/entity/Q713197) |
+| [adr:K6-902](http://kg.artsdata.ca/resource/K6-902) | Comedy | | [wd:Q3492850](http://www.wikidata.org/entity/Q3492850) |
+| [adr:K6-903](http://kg.artsdata.ca/resource/K6-903) | Variety | [wd:Q117187901](http://www.wikidata.org/entity/Q117187901) | |
+| [adr:K6-904](http://kg.artsdata.ca/resource/K6-904) | Puppetry | [wd:Q588750](http://www.wikidata.org/entity/Q588750), [aat:300248147](http://vocab.getty.edu/aat/300248147) | |
+| [adr:K6-905](http://kg.artsdata.ca/resource/K6-905) | Mime | [wd:Q39818](http://www.wikidata.org/entity/Q39818), [aat:300417615](http://vocab.getty.edu/aat/300417615) | |
+| [adr:K6-906](http://kg.artsdata.ca/resource/K6-906) | Magic | [wd:Q148442](http://www.wikidata.org/entity/Q148442), [aat:300417618](http://vocab.getty.edu/aat/300417618) | |
+
+## How to use
+
+Artsdata genre concepts can be used as values to the [`schema:genre`](https://schema.org/genre) property. `schema:genre` values can either be text strings, URIs or [`schema:DefinedTerm`](https://schema.org/DefinedTerm) objects. Artsdata recommends the `DefinedTerm` approach, because it makes it possible to provide both the opaque Artsdata URI and a human-readable name string. Artsdata can accept any of these three representations. Even text string can easily be reconciled against genre concepts. 
+
+Here is an example of a `DefinedTerm` object representing the dance genre:
+
+```
+  "genre": {
+    "@type": "DefinedTerm",
+    "name": "Dance",
+    "sameAs": "http://kg.artsdata.ca/resource/K6-200"
+    }
+```
+
+The `schema:genre` property can be used in stand-alone `CreativeWork` objects, as well as in nested objects. 
+
+Here is an example of an Event with an implicit nested CreativeWork object defined just by its genre:
+
+```
+{
+  "@context": "https://schema.org",
+  "@type": "PerformingArtsEvent",
+  "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent",
+  "name": "Some Event",
+  "workPerformed": {
+    "genre": "Dance"
+    },
+  ...
+}
+```
+
+## Version control
+
+### Version 1.0
+
+This is the inaugural version of the vocabulary.
+
+
