@@ -25,6 +25,17 @@ To generate documentation:
 
 more info: http://jekyll.github.io/github-metadata/authentication/
 
+## Running the SHACL shape tests
+
+The SHACL shape files in `shacl/` (`shacl_artsdata.ttl`, `shacl_artsdata_ontology.ttl`, `shacl_artsdata_core.ttl`) have a Ruby/Minitest test suite under `shacl/tests/`, with its own `Gemfile` separate from the one at the repo root (that one is for the Jekyll site).
+
+1. `cd shacl/tests`
+2. `bundle config set path 'vendor/bundle'`
+3. `bundle install`
+4. `bundle exec rake test`
+
+See [shacl/tests/README.md](shacl/tests/README.md) for what each test file covers and how to add a new case.
+
 ## Formatting Controlled Vocabulary Turtle Files
 The controlled vocabularies and ontologies are writting using turtle syntax. The turtle is often created in a Google Sheet and then copy/pasted into a file with extenion `.ttl`. For example `skos-event-types.ttl`. 
 
