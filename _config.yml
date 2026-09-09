@@ -66,6 +66,7 @@ include:
 # Exclude from site build (development files)
 exclude:
   - README.md
+  - shacl/tests/README.md
   - Gemfile
   - Gemfile.lock
   - vendor/
