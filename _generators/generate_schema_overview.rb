@@ -238,10 +238,10 @@ module SchemaOverview
         </div>
       </header>
       <main id="classes"></main>
-      {% raw %}
+      <!-- {% raw %} -->
       <script type="application/json" id="schema-data">#{data}</script>
       #{script}
-      {% endraw %}
+      <!-- {% endraw %} -->
       </body>
       </html>
     HTML
