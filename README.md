@@ -40,10 +40,11 @@ See [shacl/tests/README.md](shacl/tests/README.md) for what each test file cover
 
 `artsdata-schema.ttl`, at the repo root, merges `ontology/artsdata-ontology.ttl`, `shacl/shacl_artsdata_core.ttl` and `shacl/shacl_artsdata_ontology.ttl` into one self-contained Turtle file describing the full data model of the reconciled Artsdata CORE graph: the ontology's classes, properties and vocabulary equivalences, plus the SHACL constraints. It exists so external tools — e.g. an MCP server's schema tool — can fetch one stable file instead of combining files themselves. (`shacl/shacl_artsdata.ttl`, which validates raw external submissions to the Databus, targets a different graph and is intentionally not included.)
 
-It is a generated file — do not edit it directly. A GitHub Actions workflow ([`.github/workflows/generate-mcp-schema.yml`](.github/workflows/generate-mcp-schema.yml)) regenerates and commits it automatically whenever either source file changes. To regenerate it locally:
+It is a generated file — do not edit it directly. A GitHub Actions workflow ([`.github/workflows/generate-mcp-schema.yml`](.github/workflows/generate-mcp-schema.yml)) regenerates and commits it automatically whenever a source file changes. Regenerating it also regenerates [`schema-overview/index.html`](schema-overview/README.md), an interactive webpage listing every class and property, built from `artsdata-schema.ttl` alone. To regenerate both locally:
 
     % cd _generators
-    % ruby generate_mcp_schema.rb
+    % bundle install   # first time only
+    % bundle exec ruby generate_mcp_schema.rb
 
 ## Formatting Controlled Vocabulary Turtle Files
 The controlled vocabularies and ontologies are writting using turtle syntax. The turtle is often created in a Google Sheet and then copy/pasted into a file with extenion `.ttl`. For example `skos-event-types.ttl`. 

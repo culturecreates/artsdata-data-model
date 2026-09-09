@@ -7,6 +7,7 @@ on:
       - 'shacl/shacl_artsdata_core.ttl'
       - 'shacl/shacl_artsdata_ontology.ttl'
       - '_generators/generate_mcp_schema.rb'
+      - '_generators/generate_schema_overview.rb'
   workflow_dispatch:
 
 permissions:
@@ -25,16 +26,18 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
+          bundler-cache: true
+          working-directory: _generators
 
-      - name: Regenerate artsdata-schema.ttl
+      - name: Regenerate artsdata-schema.ttl and schema-overview/index.html
         run: |
           cd _generators
-          ruby generate_mcp_schema.rb
+          bundle exec ruby generate_mcp_schema.rb
 
-      - name: Commit artsdata-schema.ttl if changed
+      - name: Commit generated files if changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'Regenerate artsdata-schema.ttl'
-          file_pattern: artsdata-schema.ttl
+          commit_message: 'Regenerate artsdata-schema.ttl and schema-overview/index.html'
+          file_pattern: 'artsdata-schema.ttl schema-overview/index.html'
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'

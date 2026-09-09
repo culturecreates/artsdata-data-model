@@ -67,6 +67,7 @@ include:
 exclude:
   - README.md
   - shacl/tests/README.md
+  - schema-overview/README.md
   - Gemfile
   - Gemfile.lock
   - vendor/
@@ -85,3 +86,8 @@ defaults:
       path: "README.md"
     values:
       sitemap: false
+  - scope:
+      path: "schema-overview"
+    values:
+      nav_exclude: true
+      search_exclude: true

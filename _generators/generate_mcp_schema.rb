@@ -8,9 +8,14 @@
 # shacl/shacl_artsdata.ttl (validates raw external submissions to the
 # Databus) is intentionally NOT included: it targets a different graph.
 #
+# Also regenerates schema-overview/index.html (see generate_schema_overview.rb)
+# from the freshly written artsdata-schema.ttl, so the two files never drift
+# apart.
+#
 # Usage:
 #   cd _generators
-#   ruby generate_mcp_schema.rb
+#   bundle install   # first time only
+#   bundle exec ruby generate_mcp_schema.rb
 
 class GenerateMcpSchema
   SOURCE_FILES = %w[
@@ -76,3 +81,4 @@ class GenerateMcpSchema
 end
 
 GenerateMcpSchema.run
+require_relative 'generate_schema_overview'

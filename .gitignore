@@ -3,3 +3,5 @@ _site/
 .github-token
 shacl/tests/.bundle/
 shacl/tests/vendor/
+_generators/.bundle/
+_generators/vendor/
