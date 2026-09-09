@@ -177,6 +177,50 @@ module SchemaOverview
     }.compact
   end
 
+  # ---- Merging property rows ----
+  #
+  # A class is often targeted by more than one sh:NodeShape (e.g. both
+  # ads:CoreOrganizationShape and ads:OrganizationOntologyExtensionShape
+  # target schema:Organization, each with their own property shape for
+  # ado:hasOrganizationTypeConcept). Without merging, the same sh:path
+  # would show up as two separate rows in the same table. Group by path
+  # and combine into one row per property, keeping each contributing
+  # shape's own pattern/message as a separate constraint entry.
+
+  def merge_properties(entries)
+    entries.group_by { |e| e['pathUri'] || e['path'] }.values.map { |group| merge_property_group(group) }
+  end
+
+  def merge_property_group(group)
+    merged = group.first.dup
+    merged['shapes'] = group.map { |e| e['shape'] }.uniq
+    merged.delete('shape')
+    merged['cardinality'] = merge_cardinality(group)
+
+    %w[datatype class nodeKind hasValue uniqueLang languageIn inValues nodeRef or].each do |field|
+      value = group.map { |e| e[field] }.find { |v| v && v != [] }
+      merged[field] = value if value
+    end
+
+    constraints = group.filter_map do |e|
+      next unless e['pattern'] || e['message'] || e['hasValue']
+
+      { 'shape' => e['shape'], 'pattern' => e['pattern'], 'message' => e['message'], 'severity' => e['severity'] }.compact
+    end
+    merged['constraints'] = constraints unless constraints.empty?
+    %w[pattern message severity].each { |field| merged.delete(field) }
+
+    merged
+  end
+
+  def merge_cardinality(group)
+    mins = group.map { |e| e['cardinality'].split('..').first.to_i }
+    maxes = group.map { |e| e['cardinality'].split('..').last }
+    numeric_maxes = maxes.reject { |m| m == '*' }.map(&:to_i)
+    max = numeric_maxes.empty? ? '*' : numeric_maxes.min
+    "#{mins.max}..#{max}"
+  end
+
   # ---- Classes ----
 
   def extract_classes(graph, prefixes)
@@ -193,11 +237,12 @@ module SchemaOverview
 
     class_uris.map do |cls|
       shapes = shapes_by_class[cls] || []
-      properties = shapes.flat_map do |shape|
+      entries = shapes.flat_map do |shape|
         objects(graph, shape, SH.property).map do |p|
           extract_property(graph, prefixes, p, value_constraints).merge('shape' => compact(shape, prefixes))
         end
       end
+      properties = merge_properties(entries)
 
       {
         'uri' => cls.to_s,
@@ -338,11 +383,19 @@ module SchemaOverview
 
         function constraintCell(p) {
           var items = [];
-          if (p.pattern) items.push('pattern <code>' + esc(p.pattern) + '</code>');
+          var multipleShapes = p.shapes && p.shapes.length > 1;
+          (p.constraints || []).forEach(function (c) {
+            var bits = [];
+            if (c.pattern) bits.push('pattern <code>' + esc(c.pattern) + '</code>');
+            if (c.severity === 'sh:Warning') bits.push('<span class="warning-note">Warning only</span>');
+            if (c.message) bits.push(esc(c.message));
+            if (!bits.length) return;
+            var text = bits.join(' &middot; ');
+            if (multipleShapes && c.shape) text += ' <span class="prop-label">(' + esc(c.shape) + ')</span>';
+            items.push(text);
+          });
           if (p.uniqueLang === 'true') items.push('unique language per value');
           if (p.languageIn && p.languageIn.length) items.push('language in ' + p.languageIn.map(esc).join(', '));
-          if (p.severity === 'sh:Warning') items.push('<span class="warning-note">Warning only</span>');
-          if (p.message) items.push(esc(p.message));
           (p.notes || []).forEach(function (n) { items.push(esc(n)); });
           if (p.nodeRef) {
             items.push('<div class="nested"><div class="nested-title">' + link(p.nodeRef.name) + ' fields</div>' +
@@ -367,7 +420,7 @@ module SchemaOverview
 
         function propertyRow(p) {
           var label = p.name || (p.ontology && p.ontology.label && localizedText(p.ontology.label));
-          var subtitle = [label, p.shape ? 'via ' + p.shape : null].filter(Boolean).join(' · ');
+          var subtitle = [label, p.shapes && p.shapes.length ? 'via ' + p.shapes.join(', ') : null].filter(Boolean).join(' · ');
           return '<tr>' +
             '<td class="prop-name">' + link(p.path, p.pathUri) + (subtitle ? '<span class="prop-label">' + esc(subtitle) + '</span>' : '') + '</td>' +
             '<td>' + esc(p.cardinality) + '</td>' +
