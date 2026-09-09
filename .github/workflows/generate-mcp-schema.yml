@@ -1,0 +1,39 @@
+name: Generate MCP schema file
+
+on:
+  push:
+    paths:
+      - 'shacl/shacl_artsdata_core.ttl'
+      - 'shacl/shacl_artsdata_ontology.ttl'
+      - '_generators/generate_mcp_schema.rb'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Regenerate artsdata-schema.ttl
+        run: |
+          cd _generators
+          ruby generate_mcp_schema.rb
+
+      - name: Commit artsdata-schema.ttl if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Regenerate artsdata-schema.ttl'
+          file_pattern: artsdata-schema.ttl
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
