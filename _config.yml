@@ -67,6 +67,7 @@ include:
 exclude:
   - README.md
   - shacl/tests/README.md
+  - schema-overview/README.md
   - Gemfile
   - Gemfile.lock
   - vendor/
