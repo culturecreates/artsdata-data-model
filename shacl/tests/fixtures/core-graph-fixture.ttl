@@ -23,7 +23,9 @@ adr:place1 a schema:Place ;
         a schema:PostalAddress ;
         schema:streetAddress "123 Main St" ;
         schema:addressLocality "Montreal" ;
-        schema:addressCountry "Canada"
+        schema:addressCountry "Canada";
+        schema:addressRegion "QC";
+        schema:postalCode "H3A 1A1" ;
     ] .
 
 adr:org1 a schema:Organization ;
