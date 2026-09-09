@@ -18,7 +18,7 @@
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.5; }
-  header { padding: 2rem 1.5rem 1rem; max-width: 1000px; margin: 0 auto; }
+  header { padding: 2rem 1.5rem 1rem; max-width: 1600px; margin: 0 auto; }
   h1 { margin: 0 0 .5rem; font-size: 1.6rem; }
   header p { color: var(--muted); margin: 0 0 1rem; }
   header p a { color: var(--accent); }
@@ -26,7 +26,7 @@
   #search { flex: 1; min-width: 200px; padding: .5rem .75rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--fg); font-size: .95rem; }
   button { padding: .5rem .75rem; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--fg); cursor: pointer; font-size: .85rem; }
   button:hover { border-color: var(--accent); }
-  main { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+  main { max-width: 1600px; margin: 0 auto; padding: 0 1.5rem 3rem; }
   .class-card { border: 1px solid var(--border); border-radius: 8px; margin-bottom: .75rem; overflow: hidden; }
   .class-card[hidden] { display: none; }
   .class-header { width: 100%; text-align: left; background: var(--card); border: none; color: var(--fg); padding: .9rem 1rem; display: flex; align-items: center; gap: .6rem; cursor: pointer; border-radius: 0; }
@@ -40,7 +40,8 @@
   .class-meta code { font-family: var(--mono); }
   .badge-row { margin-top: .4rem; display: flex; flex-wrap: wrap; gap: .35rem; }
   .badge { display: inline-block; padding: .1rem .5rem; border: 1px solid var(--border); border-radius: 999px; font-size: .78rem; font-family: var(--mono); color: var(--muted); }
-  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; min-width: 800px; border-collapse: collapse; font-size: .88rem; }
   th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
   th { color: var(--muted); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; }
   td.prop-name { font-family: var(--mono); white-space: nowrap; }
@@ -168,7 +169,7 @@
         (cls.comment && cls.comment.length ? '<p class="class-meta">' + localizedText(cls.comment) + '</p>' : '') +
         (meta.length ? '<p class="class-meta">' + meta.join(' &middot; ') + '</p>' : '') +
         (rows
-          ? '<table><thead><tr><th>Property</th><th>Cardinality</th><th>Type / Range</th><th>Constraints</th><th>Definition</th></tr></thead><tbody>' + rows + '</tbody></table>'
+          ? '<div class="table-wrap"><table><thead><tr><th>Property</th><th>Cardinality</th><th>Type / Range</th><th>Constraints</th><th>Definition</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
           : '<p class="empty">No properties shaped for this class.</p>') +
       '</div>';
 
