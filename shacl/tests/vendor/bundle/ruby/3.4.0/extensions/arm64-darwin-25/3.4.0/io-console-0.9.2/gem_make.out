@@ -1,0 +1,44 @@
+current directory: /Users/saumier/repos/culturecreates/artsdata-data-model/shacl/tests/vendor/bundle/ruby/3.4.0/gems/io-console-0.9.2/ext/io/console
+/Users/saumier/.rvm/rubies/ruby-3.4.4/bin/ruby extconf.rb
+checking for rb_interned_str_cstr()... yes
+checking for rb_ractor_local_storage_value_newkey()... yes
+checking for rb_io_descriptor() in ruby/io.h... yes
+checking for rb_io_path() in ruby/io.h... yes
+checking for rb_io_closed_p() in ruby/io.h... yes
+checking for rb_io_open_descriptor() in ruby/io.h... yes
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
+checking for rb_category_warn()... yes
+checking for RB_WARN_CATEGORY_DEPRECATED... yes
+checking for ttyname_r()... yes
+checking for rb_prepend_module()... yes
+creating Makefile
+
+current directory: /Users/saumier/repos/culturecreates/artsdata-data-model/shacl/tests/vendor/bundle/ruby/3.4.0/gems/io-console-0.9.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20260909-87884-9yg6gf sitelibdir\=./.gem.20260909-87884-9yg6gf clean
+
+current directory: /Users/saumier/repos/culturecreates/artsdata-data-model/shacl/tests/vendor/bundle/ruby/3.4.0/gems/io-console-0.9.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20260909-87884-9yg6gf sitelibdir\=./.gem.20260909-87884-9yg6gf
+compiling console.c
+In file included from console.c:9:
+In file included from /Users/saumier/.rvm/rubies/ruby-3.4.4/include/ruby-3.4.0/ruby.h:38:
+In file included from /Users/saumier/.rvm/rubies/ruby-3.4.4/include/ruby-3.4.0/ruby/ruby.h:28:
+In file included from /Users/saumier/.rvm/rubies/ruby-3.4.4/include/ruby-3.4.0/ruby/internal/arithmetic.h:24:
+In file included from /Users/saumier/.rvm/rubies/ruby-3.4.4/include/ruby-3.4.0/ruby/internal/arithmetic/char.h:29:
+/Users/saumier/.rvm/rubies/ruby-3.4.4/include/ruby-3.4.0/ruby/internal/core/rstring.h:398:24: warning: default initialization of an object of type 'struct RString' with const member leaves the object uninitialized [-Wdefault-const-init-field-unsafe]
+  398 |         struct RString retval;
+      |                        ^
+/Users/saumier/.rvm/rubies/ruby-3.4.4/include/ruby-3.4.0/ruby/internal/core/rbasic.h:86:17: note: member 'klass' declared 'const' here
+   86 |     const VALUE klass;
+      |                 ^
+1 warning generated.
+linking shared-object io/console.bundle
+
+current directory: /Users/saumier/repos/culturecreates/artsdata-data-model/shacl/tests/vendor/bundle/ruby/3.4.0/gems/io-console-0.9.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20260909-87884-9yg6gf sitelibdir\=./.gem.20260909-87884-9yg6gf install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 console.bundle ./.gem.20260909-87884-9yg6gf/io
+
+current directory: /Users/saumier/repos/culturecreates/artsdata-data-model/shacl/tests/vendor/bundle/ruby/3.4.0/gems/io-console-0.9.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20260909-87884-9yg6gf sitelibdir\=./.gem.20260909-87884-9yg6gf clean
