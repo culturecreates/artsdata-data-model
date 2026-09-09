@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+# Used by generate_schema_overview.rb to parse artsdata-schema.ttl.
+# Kept in its own Gemfile, separate from the one at the repo root (which is
+# for the Jekyll site) and from shacl/tests/Gemfile (which has its own copy
+# of these same gems for a different purpose), so these dependencies don't
+# leak into either of those.
+gem 'rdf'
+gem 'rdf-turtle'
