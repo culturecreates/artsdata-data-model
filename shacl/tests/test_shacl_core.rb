@@ -19,7 +19,8 @@ class TestShaclCore < Minitest::Test
           File.join(ShaclTestHelper::FIXTURES_DIR, "core-graph-fixture.ttl"),
           File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-genres.ttl"),
           File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-event-types.ttl"),
-          File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-place-types.ttl")
+          File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-place-types.ttl"),
+          File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-organization-types.ttl")
         ]
       )
     end
@@ -120,5 +121,9 @@ class TestShaclCore < Minitest::Test
 
   def test_canadian_business_number_wrong_pattern_is_violation
     assert_includes violations, adr("org3")
+  end
+
+  def test_organization_type_pointing_to_non_adr_uri_is_violation
+    assert_includes violations, adr("org4")
   end
 end

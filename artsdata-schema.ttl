@@ -189,26 +189,28 @@ ado:hasResident rdf:type rdf:Property ;
 #      artsdata-api/app/services/sparqls/mint/event/construct_event_transform.sparql
 #      (and .../liveperformancework/, .../organization/, .../place/, .../person/)
 #   2. Subsequent enrichment queries that refine the constructed graph, e.g.
-#      artsdata-api/.../mint/transform/K1-209_map_event_types.sparql and
-#      K1-210_map_place_types.sparql, which delete any schema:additionalType
-#      value that matches a controlled-vocabulary mapping and insert
-#      ado:hasEventTypeConcept / ado:hasPlaceTypeConcept pointing at the
-#      matching adr: (Artsdata) concept instead. Unmapped additionalType
+#      artsdata-api/.../mint/transform/K1-209_map_event_types.sparql,
+#      K1-210_map_place_types.sparql and K1-212_map_organization_types.sparql,
+#      which delete any schema:additionalType value that matches a
+#      controlled-vocabulary mapping and insert ado:hasEventTypeConcept /
+#      ado:hasPlaceTypeConcept / ado:hasOrganizationTypeConcept pointing at
+#      the matching adr: (Artsdata) concept instead. Unmapped additionalType
 #      values are left in place, so both properties can coexist on one entity.
-#      These two queries also insert an RDF-star provenance triple on the
+#      These queries also insert an RDF-star provenance triple on the
 #      new statement (prov:wasGeneratedBy / prov:used) — that provenance
 #      metadata is intentionally NOT validated by this file.
 #
 # Because the core graph is the reconciled graph, every property that
 # references another entity or concept (organizer, performer, location,
-# hasEventTypeConcept, hasPlaceTypeConcept, hasGenre, usesExpressionOf,
-# managedBy, ownedBy, usedBy, hasResident) is required here to be an
-# Artsdata-minted adr: (kg.artsdata.ca) URI. This is applied uniformly by
-# design, even though today's mint queries only filter for it in some cases
-# (organizer, performer, hasGenre, hasEventTypeConcept, hasPlaceTypeConcept)
-# and not others (location, managedBy, ownedBy, usedBy, hasResident) — a
-# violation on one of the not-yet-filtered properties is a useful signal
-# that the mint query may need to catch up, not necessarily a bad shape.
+# hasEventTypeConcept, hasPlaceTypeConcept, hasOrganizationTypeConcept,
+# hasGenre, usesExpressionOf, managedBy, ownedBy, usedBy, hasResident) is
+# required here to be an Artsdata-minted adr: (kg.artsdata.ca) URI. This is
+# applied uniformly by design, even though today's mint queries only filter
+# for it in some cases (organizer, performer, hasGenre, hasEventTypeConcept,
+# hasPlaceTypeConcept, hasOrganizationTypeConcept) and not others (location,
+# managedBy, ownedBy, usedBy, hasResident) — a violation on one of the
+# not-yet-filtered properties is a useful signal that the mint query may
+# need to catch up, not necessarily a bad shape.
 #
 # ado:usesExpressionOf is included even though no enrichment SPARQL mints it
 # yet; its constraints are inferred from the ontology's declared range plus
@@ -221,8 +223,9 @@ ado:hasResident rdf:type rdf:Property ;
 # until it is formalized in the ontology.
 #
 # This file can optionally be loaded alongside shacl/shacl_artsdata_ontology.ttl:
-# that file's ads:EventTypeConceptShape, ads:PlaceTypeConceptShape and
-# ads:GenreConceptShape are self-targeting (sh:targetObjectsOf) node shapes
+# that file's ads:EventTypeConceptShape, ads:PlaceTypeConceptShape,
+# ads:OrganizationTypeConceptShape and ads:GenreConceptShape are
+# self-targeting (sh:targetObjectsOf) node shapes
 # that add a vocabulary-scheme-membership and not-deprecated check on top of
 # the adr:-URI and sh:class checks already enforced here — they are not
 # referenced from this file (deliberately: referencing them via sh:node
@@ -513,6 +516,7 @@ ads:CoreUsesExpressionOfSh
 ################
 # schema:Organization
 # Source: artsdata-api/app/services/sparqls/mint/organization/construct_organization_transform.sparql
+#         artsdata-api/app/services/sparqls/mint/transform/K1-212_map_organization_types.sparql
 ################
 
 ads:CoreOrganizationShape
@@ -528,8 +532,19 @@ ads:CoreOrganizationShape
                 ads:CoreUnstructuredImageSh,
                 ads:CoreLogoSh,
                 ads:CoreTelephoneSh,
-                ads:CoreCanadianBusinessNumberSh .
+                ads:CoreCanadianBusinessNumberSh,
+                ads:CoreHasOrganizationTypeConceptSh .
     # Not shaped: ado:originEC (see file header) .
+
+ads:CoreHasOrganizationTypeConceptSh
+    a sh:PropertyShape ;
+    sh:path ado:hasOrganizationTypeConcept ;
+    sh:name "has organization type" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class skos:Concept ;
+    sh:message "ado:hasOrganizationTypeConcept must reference an Artsdata-minted (adr:) skos:Concept."@en .
 
 ads:CoreLogoSh
     a sh:PropertyShape ;

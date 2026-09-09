@@ -8,8 +8,9 @@
 # Exercises schema:Event, ado:LivePerformanceWork, schema:Organization,
 # schema:Place and schema:Person as they appear in the Artsdata CORE graph
 # (adr: subject URIs). Must be loaded together with the real vocabulary
-# files under ontology/skos-*.ttl so that adr:Amphitheatre, adr:K6-100 and
-# adr:TheatrePerformance resolve to real skos:Concept instances.
+# files under ontology/skos-*.ttl so that adr:Amphitheatre, adr:K6-100,
+# adr:TheatrePerformance and adr:ArtMuseum resolve to real skos:Concept
+# instances.
 
 # ================= VALID FIXTURES =================
 
@@ -27,7 +28,8 @@ adr:place1 a schema:Place ;
 
 adr:org1 a schema:Organization ;
     schema:name "Grand Hall Society" ;
-    schema:telephone "+1-514-555-0100" .
+    schema:telephone "+1-514-555-0100" ;
+    ado:hasOrganizationTypeConcept adr:ArtMuseum .
 
 # Valid Event
 adr:event1 a schema:Event ;
@@ -127,3 +129,8 @@ adr:show2 a ado:LivePerformanceWork ;
 adr:org3 a schema:Organization ;
     schema:name "Bad CBN Org" ;
     <http://www.wikidata.org/prop/direct/P8860> "12345" .
+
+# Organization hasOrganizationTypeConcept pointing to a non-adr: URI
+adr:org4 a schema:Organization ;
+    schema:name "Bad Org Type Org" ;
+    ado:hasOrganizationTypeConcept ext:someType .
