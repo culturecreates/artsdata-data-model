@@ -7,9 +7,9 @@
 # Fixture for shacl/shacl_artsdata_ontology.ttl (see shacl/tests/test_shacl_ontology.py).
 # Must be loaded together with the real vocabulary files under
 # ontology/skos-*.ttl so that adr:K6-200, adr:Arena, adr:TheatrePerformance,
-# adr:AcappellaMusicPerformance and adr:Amphitheatre resolve to real
-# skos:Concept instances (the last one is deprecated, used to exercise the
-# Warning-severity check).
+# adr:AcappellaMusicPerformance, adr:Amphitheatre and adr:ArtMuseum resolve
+# to real skos:Concept instances (adr:AcappellaMusicPerformance is
+# deprecated, used to exercise the Warning-severity check).
 
 # --- Valid LivePerformanceWork ---
 ext:show1 a ado:LivePerformanceWork ;
@@ -64,3 +64,13 @@ ext:venue3 a schema:Place ;
 
 ext:person1 a schema:Person ;
     schema:name "Jane Doe" .
+
+# --- Valid Organization with an organization type from the correct vocabulary ---
+ext:org3 a schema:Organization ;
+    schema:name "City Art Museum" ;
+    ado:hasOrganizationTypeConcept adr:ArtMuseum .
+
+# --- Invalid Organization: organization type from wrong vocabulary (a place type, not an organization type) ---
+ext:org4 a schema:Organization ;
+    schema:name "Bad Org" ;
+    ado:hasOrganizationTypeConcept adr:Arena .

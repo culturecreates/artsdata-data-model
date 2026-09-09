@@ -17,28 +17,29 @@
 # Expresses, as SHACL, the data model defined by the Artsdata Ontology
 # (ontology/artsdata-ontology.ttl): its classes (ado:Thing, ado:LivePerformanceWork,
 # ado:Event) and its properties (ado:hasEventTypeConcept, ado:hasPlaceTypeConcept,
-# ado:usesExpressionOf, ado:hasGenre, ado:managedBy, ado:ownedBy, ado:usedBy,
-# ado:hasResident).
+# ado:hasOrganizationTypeConcept, ado:usesExpressionOf, ado:hasGenre, ado:managedBy,
+# ado:ownedBy, ado:usedBy, ado:hasResident).
 #
 # Artsdata uses HORST (OWL-Horst / pD*) as its OWL profile, so rdfs:domain,
 # rdfs:range and owl:*Cardinality declarations in the ontology are not enforced
 # by the reasoner. Per the "Background Notes" in artsdata-ontology.ttl, this
 # SHACL file is the authoritative source of validation for those constraints.
 #
-# Concept-valued properties (hasEventTypeConcept, hasPlaceTypeConcept, hasGenre)
-# are additionally constrained to concepts declared skos:inScheme the matching
-# controlled vocabulary (ontology/skos-event-types.ttl, skos-place-types.ttl,
-# skos-genres.ttl), and flagged with a Warning if the concept is owl:deprecated.
+# Concept-valued properties (hasEventTypeConcept, hasPlaceTypeConcept,
+# hasOrganizationTypeConcept, hasGenre) are additionally constrained to
+# concepts declared skos:inScheme the matching controlled vocabulary
+# (ontology/skos-event-types.ttl, skos-place-types.ttl,
+# skos-organization-types.ttl, skos-genres.ttl), and flagged with a Warning
+# if the concept is owl:deprecated.
 #
 # This file complements shacl/shacl_artsdata.ttl, which validates the core
 # schema.org Event/Place/Person/Organization/WebPage properties (name,
 # location, startDate, address, etc.). It does not redefine shapes such as
 # ads:NameSh or ads:PlaceShape, and can be loaded alongside that file.
 #
-# Not yet covered: ontology/skos-organization-types.ttl and
-# ontology/skos-membership.ttl are published controlled vocabularies that are
-# not yet bound to a property in artsdata-ontology.ttl, so no shape targets
-# them here.
+# Not yet covered: ontology/skos-membership.ttl is a published controlled
+# vocabulary that is not yet bound to a property in artsdata-ontology.ttl,
+# so no shape targets it here.
 ####################################################
 
 
@@ -106,6 +107,24 @@ ads:GenreConceptShape
         sh:maxCount 0 ;
         sh:severity sh:Warning ;
         sh:message "This genre concept is deprecated; choose a current concept from the Artsdata Genres vocabulary."@en ;
+    ] .
+
+ads:OrganizationTypeConceptShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Organization Type Concept" ;
+    sh:targetObjectsOf ado:hasOrganizationTypeConcept ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue adr:ArtsdataOrganizationTypes ;
+        sh:message "Value must be a skos:Concept in the Artsdata Organization Types vocabulary (adr:ArtsdataOrganizationTypes), see ontology/skos-organization-types.ttl."@en ;
+    ] ;
+    sh:property [
+        sh:path owl:deprecated ;
+        sh:maxCount 0 ;
+        sh:severity sh:Warning ;
+        sh:message "This organization type concept is deprecated; choose a current concept from the Artsdata Organization Types vocabulary."@en ;
     ] .
 
 
@@ -224,3 +243,21 @@ ads:HasResidentSh
     sh:nodeKind sh:IRI ;
     sh:class schema:Organization ;
     sh:message "ado:hasResident must reference a schema:Organization."@en .
+
+
+################
+# schema:Organization ontology extensions
+################
+ads:OrganizationOntologyExtensionShape
+    a sh:NodeShape ;
+    sh:name "Organization Ontology Extension Shape" ;
+    sh:targetClass schema:Organization ;
+    sh:property ads:HasOrganizationTypeConceptSh .
+
+ads:HasOrganizationTypeConceptSh
+    a sh:PropertyShape ;
+    sh:path ado:hasOrganizationTypeConcept ;
+    sh:name "has organization type" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:message "ado:hasOrganizationTypeConcept must reference a Concept from the Artsdata Organization Types controlled vocabulary (see ads:OrganizationTypeConceptShape)."@en .
