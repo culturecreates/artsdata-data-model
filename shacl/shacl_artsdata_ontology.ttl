@@ -1,0 +1,226 @@
+@prefix ado:    <http://kg.artsdata.ca/ontology/> .
+@prefix adr:    <http://kg.artsdata.ca/resource/> .
+@prefix ads:    <http://kg.artsdata.ca/shacl/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+####################################################
+# Artsdata Ontology SHACL Shapes v1.0
+####################################################
+#
+# Description:
+# Expresses, as SHACL, the data model defined by the Artsdata Ontology
+# (ontology/artsdata-ontology.ttl): its classes (ado:Thing, ado:LivePerformanceWork,
+# ado:Event) and its properties (ado:hasEventTypeConcept, ado:hasPlaceTypeConcept,
+# ado:usesExpressionOf, ado:hasGenre, ado:managedBy, ado:ownedBy, ado:usedBy,
+# ado:hasResident).
+#
+# Artsdata uses HORST (OWL-Horst / pD*) as its OWL profile, so rdfs:domain,
+# rdfs:range and owl:*Cardinality declarations in the ontology are not enforced
+# by the reasoner. Per the "Background Notes" in artsdata-ontology.ttl, this
+# SHACL file is the authoritative source of validation for those constraints.
+#
+# Concept-valued properties (hasEventTypeConcept, hasPlaceTypeConcept, hasGenre)
+# are additionally constrained to concepts declared skos:inScheme the matching
+# controlled vocabulary (ontology/skos-event-types.ttl, skos-place-types.ttl,
+# skos-genres.ttl), and flagged with a Warning if the concept is owl:deprecated.
+#
+# This file complements shacl/shacl_artsdata.ttl, which validates the core
+# schema.org Event/Place/Person/Organization/WebPage properties (name,
+# location, startDate, address, etc.). It does not redefine shapes such as
+# ads:NameSh or ads:PlaceShape, and can be loaded alongside that file.
+#
+# Not yet covered: ontology/skos-organization-types.ttl and
+# ontology/skos-membership.ttl are published controlled vocabularies that are
+# not yet bound to a property in artsdata-ontology.ttl, so no shape targets
+# them here.
+####################################################
+
+
+################
+# Controlled Vocabulary Value Shapes
+# Reused wherever an ado: property's range is skos:Concept
+#
+# These are declared as self-targeting shapes (sh:targetObjectsOf) rather than
+# being referenced with sh:node from the property shapes below. sh:node always
+# reports a plain sh:Violation when the referenced shape fails to conform, no
+# matter what severity its internal property constraints declare, which would
+# silently turn the "deprecated concept" Warning below into a hard Violation.
+# Self-targeting keeps each constraint's own severity intact.
+################
+
+ads:EventTypeConceptShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Event Type Concept" ;
+    sh:targetObjectsOf ado:hasEventTypeConcept ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue adr:ArtsdataEventTypes ;
+        sh:message "Value must be a skos:Concept in the Artsdata Event Types vocabulary (adr:ArtsdataEventTypes), see ontology/skos-event-types.ttl."@en ;
+    ] ;
+    sh:property [
+        sh:path owl:deprecated ;
+        sh:maxCount 0 ;
+        sh:severity sh:Warning ;
+        sh:message "This event type concept is deprecated; choose a current concept from the Artsdata Event Types vocabulary."@en ;
+    ] .
+
+ads:PlaceTypeConceptShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Place Type Concept" ;
+    sh:targetObjectsOf ado:hasPlaceTypeConcept ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue adr:ArtsdataPlaceTypes ;
+        sh:message "Value must be a skos:Concept in the Artsdata Place Types vocabulary (adr:ArtsdataPlaceTypes), see ontology/skos-place-types.ttl."@en ;
+    ] ;
+    sh:property [
+        sh:path owl:deprecated ;
+        sh:maxCount 0 ;
+        sh:severity sh:Warning ;
+        sh:message "This place type concept is deprecated; choose a current concept from the Artsdata Place Types vocabulary."@en ;
+    ] .
+
+ads:GenreConceptShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Genre Concept" ;
+    sh:targetObjectsOf ado:hasGenre ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue adr:ArtsdataGenres ;
+        sh:message "Value must be a skos:Concept in the Artsdata Genres vocabulary (adr:ArtsdataGenres), see ontology/skos-genres.ttl."@en ;
+    ] ;
+    sh:property [
+        sh:path owl:deprecated ;
+        sh:maxCount 0 ;
+        sh:severity sh:Warning ;
+        sh:message "This genre concept is deprecated; choose a current concept from the Artsdata Genres vocabulary."@en ;
+    ] .
+
+
+################
+# ado:LivePerformanceWork
+################
+ads:LivePerformanceWorkShape
+    a sh:NodeShape ;
+    sh:name "Live Performance Work Shape" ;
+    sh:targetClass ado:LivePerformanceWork ;
+    sh:property ads:HasGenreSh .
+
+ads:HasGenreSh
+    a sh:PropertyShape ;
+    sh:path ado:hasGenre ;
+    sh:name "has genre" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:message "ado:hasGenre must reference a Concept from the Artsdata Genres controlled vocabulary (see ads:GenreConceptShape)."@en .
+
+
+################
+# schema:CreativeWork
+# ado:usesExpressionOf has domain schema:CreativeWork (broader than just
+# ado:LivePerformanceWork), so both are targeted here.
+################
+ads:CreativeWorkOntologyExtensionShape
+    a sh:NodeShape ;
+    sh:name "Creative Work Ontology Extension Shape" ;
+    sh:targetClass schema:CreativeWork, ado:LivePerformanceWork ;
+    sh:property ads:UsesExpressionOfSh .
+
+ads:UsesExpressionOfSh
+    a sh:PropertyShape ;
+    sh:path ado:usesExpressionOf ;
+    sh:name "uses expression of" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:class schema:CreativeWork ;
+    sh:message "ado:usesExpressionOf must reference another schema:CreativeWork."@en .
+
+
+################
+# ado:Event
+# ado:Event owl:equivalentClass schema:Event, so both are targeted here.
+################
+ads:AdoEventShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Event Ontology Extension Shape" ;
+    sh:targetClass ado:Event, schema:Event ;
+    sh:property ads:HasEventTypeConceptSh .
+
+ads:HasEventTypeConceptSh
+    a sh:PropertyShape ;
+    sh:path ado:hasEventTypeConcept ;
+    sh:name "has event type" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:message "ado:hasEventTypeConcept must reference a Concept from the Artsdata Event Types controlled vocabulary (see ads:EventTypeConceptShape)."@en .
+
+
+################
+# schema:Place ontology extensions
+################
+ads:PlaceOntologyExtensionShape
+    a sh:NodeShape ;
+    sh:name "Place Ontology Extension Shape" ;
+    sh:targetClass schema:Place ;
+    sh:property ads:HasPlaceTypeConceptSh,
+                ads:ManagedBySh,
+                ads:OwnedBySh,
+                ads:UsedBySh,
+                ads:HasResidentSh .
+
+ads:HasPlaceTypeConceptSh
+    a sh:PropertyShape ;
+    sh:path ado:hasPlaceTypeConcept ;
+    sh:name "has place type" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:message "ado:hasPlaceTypeConcept must reference a Concept from the Artsdata Place Types controlled vocabulary (see ads:PlaceTypeConceptShape)."@en .
+
+ads:ManagedBySh
+    a sh:PropertyShape ;
+    sh:path ado:managedBy ;
+    sh:name "managed by" ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:class schema:Organization ;
+    sh:message "ado:managedBy must reference at most one schema:Organization."@en .
+
+ads:OwnedBySh
+    a sh:PropertyShape ;
+    sh:path ado:ownedBy ;
+    sh:name "owned by" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:class schema:Organization ;
+    sh:message "ado:ownedBy must reference a schema:Organization."@en .
+
+ads:UsedBySh
+    a sh:PropertyShape ;
+    sh:path ado:usedBy ;
+    sh:name "used by" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:class schema:Organization ;
+    sh:message "ado:usedBy must reference a schema:Organization."@en .
+
+ads:HasResidentSh
+    a sh:PropertyShape ;
+    sh:path ado:hasResident ;
+    sh:name "has resident" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:class schema:Organization ;
+    sh:message "ado:hasResident must reference a schema:Organization."@en .

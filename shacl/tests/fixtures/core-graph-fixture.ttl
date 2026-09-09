@@ -1,0 +1,129 @@
+@prefix ado:    <http://kg.artsdata.ca/ontology/> .
+@prefix adr:    <http://kg.artsdata.ca/resource/> .
+@prefix ext:    <http://example-provider.com/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+# Fixture for shacl/shacl_artsdata_core.ttl (see shacl/tests/test_shacl_core.py).
+# Exercises schema:Event, ado:LivePerformanceWork, schema:Organization,
+# schema:Place and schema:Person as they appear in the Artsdata CORE graph
+# (adr: subject URIs). Must be loaded together with the real vocabulary
+# files under ontology/skos-*.ttl so that adr:Amphitheatre, adr:K6-100 and
+# adr:TheatrePerformance resolve to real skos:Concept instances.
+
+# ================= VALID FIXTURES =================
+
+# Valid Place (managed by a valid adr: Organization)
+adr:place1 a schema:Place ;
+    schema:name "The Grand Hall"@en, "La Grande Salle"@fr ;
+    ado:hasPlaceTypeConcept adr:Amphitheatre ;
+    ado:managedBy adr:org1 ;
+    schema:address [
+        a schema:PostalAddress ;
+        schema:streetAddress "123 Main St" ;
+        schema:addressLocality "Montreal" ;
+        schema:addressCountry "Canada"
+    ] .
+
+adr:org1 a schema:Organization ;
+    schema:name "Grand Hall Society" ;
+    schema:telephone "+1-514-555-0100" .
+
+# Valid Event
+adr:event1 a schema:Event ;
+    schema:name "Opening Night" ;
+    schema:startDate "2026-10-01T20:00:00"^^xsd:dateTime ;
+    schema:location adr:place1 ;
+    schema:organizer adr:org1 ;
+    ado:hasEventTypeConcept adr:TheatrePerformance ;
+    schema:image [
+        schema:url <https://example.org/img.jpg>
+    ] .
+
+# Valid LivePerformanceWork
+adr:show1 a ado:LivePerformanceWork ;
+    schema:name "The Rite of Spring" ;
+    ado:hasGenre adr:K6-100 ;
+    ado:usesExpressionOf adr:musicalWork1 .
+
+adr:musicalWork1 a schema:CreativeWork ;
+    schema:name "Le Sacre du printemps" .
+
+# Valid Person
+adr:person1 a schema:Person ;
+    schema:name "Jane Doe" ;
+    schema:description "A celebrated choreographer."@en .
+
+# ================= INVALID FIXTURES =================
+
+# Missing name entirely
+adr:place2 a schema:Place .
+
+# Blank/whitespace-only description
+adr:place3 a schema:Place ;
+    schema:name "Empty Desc Place" ;
+    schema:description "   " .
+
+# HTML-only description with no visible text
+adr:place4 a schema:Place ;
+    schema:name "HTML Empty Desc Place" ;
+    schema:description "<p></p>  <br/>" .
+
+# schema:url as a plain string, not an IRI
+adr:place5 a schema:Place ;
+    schema:name "Bad URL Place" ;
+    schema:url "not-a-url" .
+
+# Event with organizer pointing to a non-adr: URI (unreconciled)
+adr:event2 a schema:Event ;
+    schema:name "Unreconciled Organizer Event" ;
+    schema:startDate "2026-11-01T20:00:00"^^xsd:dateTime ;
+    schema:location adr:place1 ;
+    schema:organizer ext:someOrg .
+
+# Event missing required location
+adr:event3 a schema:Event ;
+    schema:name "No Location Event" ;
+    schema:startDate "2026-12-01T20:00:00"^^xsd:dateTime .
+
+# Event hasEventTypeConcept pointing to a non-adr: URI
+adr:event4 a schema:Event ;
+    schema:name "Bad Event Type Event" ;
+    schema:startDate "2026-12-05T20:00:00"^^xsd:dateTime ;
+    schema:location adr:place1 ;
+    ado:hasEventTypeConcept ext:someType .
+
+# Event hasEventTypeConcept pointing to an adr: concept from the WRONG vocabulary (a place type, not event type)
+adr:event5 a schema:Event ;
+    schema:name "Wrong Vocab Event Type Event" ;
+    schema:startDate "2026-12-06T20:00:00"^^xsd:dateTime ;
+    schema:location adr:place1 ;
+    ado:hasEventTypeConcept adr:Amphitheatre .
+
+# Place hasPlaceTypeConcept pointing to a non-adr: URI
+adr:place6 a schema:Place ;
+    schema:name "Bad Place Type Place" ;
+    ado:hasPlaceTypeConcept ext:someType .
+
+# Place managedBy with two organizations (maxCount 1 violation)
+adr:place7 a schema:Place ;
+    schema:name "Two Managers Place" ;
+    ado:managedBy adr:org1, adr:org2 .
+
+adr:org2 a schema:Organization ;
+    schema:name "Other Org" .
+
+# Place managedBy pointing to a Person, not an Organization
+adr:place8 a schema:Place ;
+    schema:name "Manager Is Person Place" ;
+    ado:managedBy adr:person1 .
+
+# LivePerformanceWork usesExpressionOf pointing to a non-adr: URI
+adr:show2 a ado:LivePerformanceWork ;
+    schema:name "Bad Expression Show" ;
+    ado:usesExpressionOf ext:someWork .
+
+# Organization Canadian Business Number wrong pattern
+adr:org3 a schema:Organization ;
+    schema:name "Bad CBN Org" ;
+    <http://www.wikidata.org/prop/direct/P8860> "12345" .
