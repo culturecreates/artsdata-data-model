@@ -8,10 +8,11 @@
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 
 ####################################################
-# Artsdata Events SHACL v4.7
+# Artsdata Events SHACL v4.8
 ####################################################
 #
 # Change history:
+# v4.8: Added schema:ConferenceEvent
 # v4.7: WebPage shape severity changed to sh:Warning
 # v4.6: Allow postalCode to have langeuage tag
 # v4.5: Added ads:Role and ads:RoleNameSh for performer
@@ -107,7 +108,8 @@ ads:EventShape
                     schema:SaleEvent, 
                     schema:SocialEvent, 
                     schema:SportsEvent, 
-                    schema:VisualArtsEvent ;
+                    schema:VisualArtsEvent,
+                    schema:ConferenceEvent ;
 
     
     # Required Properties
