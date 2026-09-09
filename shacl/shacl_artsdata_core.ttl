@@ -526,23 +526,23 @@ ads:CorePostalAddressShape
     sh:property [
         sh:path schema:streetAddress ;
         sh:name "street address" ;
-        sh:minCount 0 ;
+        sh:minCount 1 ;
     ] , [
         sh:path schema:addressLocality ;
         sh:name "address locality" ;
-        sh:minCount 0 ;
+        sh:minCount 1 ;
     ] , [
         sh:path schema:addressRegion ;
         sh:name "address region" ;
-        sh:minCount 0 ;
+        sh:minCount 1 ;
     ] , [
         sh:path schema:postalCode ;
         sh:name "postal code" ;
-        sh:minCount 0 ;
+        sh:minCount 1 ;
     ] , [
         sh:path schema:addressCountry ;
         sh:name "address country" ;
-        sh:minCount 0 ;
+        sh:minCount 1 ;
     ] .
 
 
