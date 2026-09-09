@@ -38,7 +38,7 @@ See [shacl/tests/README.md](shacl/tests/README.md) for what each test file cover
 
 ## Generating the combined MCP schema file
 
-`artsdata-schema.ttl`, at the repo root, merges `shacl/shacl_artsdata_core.ttl` and `shacl/shacl_artsdata_ontology.ttl` into one self-contained Turtle file describing the full data model of the reconciled Artsdata CORE graph. It exists so external tools — e.g. an MCP server's schema tool — can fetch one stable file instead of combining SHACL files themselves. (`shacl/shacl_artsdata.ttl`, which validates raw external submissions to the Databus, targets a different graph and is intentionally not included.)
+`artsdata-schema.ttl`, at the repo root, merges `ontology/artsdata-ontology.ttl`, `shacl/shacl_artsdata_core.ttl` and `shacl/shacl_artsdata_ontology.ttl` into one self-contained Turtle file describing the full data model of the reconciled Artsdata CORE graph: the ontology's classes, properties and vocabulary equivalences, plus the SHACL constraints. It exists so external tools — e.g. an MCP server's schema tool — can fetch one stable file instead of combining files themselves. (`shacl/shacl_artsdata.ttl`, which validates raw external submissions to the Databus, targets a different graph and is intentionally not included.)
 
 It is a generated file — do not edit it directly. A GitHub Actions workflow ([`.github/workflows/generate-mcp-schema.yml`](.github/workflows/generate-mcp-schema.yml)) regenerates and commits it automatically whenever either source file changes. To regenerate it locally:
 

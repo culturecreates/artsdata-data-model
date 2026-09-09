@@ -4,9 +4,10 @@ require_relative "test_helper"
 
 # Tests for shacl/shacl_artsdata_ontology.ttl.
 #
-# Exercises ado:LivePerformanceWork, ado:Event extensions and schema:Place
-# ontology extensions (managedBy/ownedBy/usedBy/hasResident), including the
-# controlled-vocabulary and deprecated-concept checks.
+# Exercises ado:LivePerformanceWork, ado:Event extensions, schema:Place
+# ontology extensions (managedBy/ownedBy/usedBy/hasResident) and
+# schema:Organization ontology extensions (hasOrganizationTypeConcept),
+# including the controlled-vocabulary and deprecated-concept checks.
 #
 # Run with: bundle exec rake test   (from shacl/tests, see README.md)
 class TestShaclOntology < Minitest::Test
@@ -20,7 +21,8 @@ class TestShaclOntology < Minitest::Test
           File.join(ShaclTestHelper::FIXTURES_DIR, "ontology-fixture.ttl"),
           File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-genres.ttl"),
           File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-event-types.ttl"),
-          File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-place-types.ttl")
+          File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-place-types.ttl"),
+          File.join(ShaclTestHelper::ONTOLOGY_DIR, "skos-organization-types.ttl")
         ]
       )
     end
@@ -83,5 +85,17 @@ class TestShaclOntology < Minitest::Test
   def test_managed_by_person_is_violation
     # ado:managedBy must reference a schema:Organization.
     assert_includes violations, ext("venue3")
+  end
+
+  def test_valid_organization_has_no_violations
+    refute_includes violations, ext("org3")
+  end
+
+  def test_organization_type_from_wrong_vocabulary_is_violation
+    # adr:Arena is a place type concept, not an organization type.
+    # ads:OrganizationTypeConceptShape self-targets on the value of
+    # ado:hasOrganizationTypeConcept, so the reported focus node is the
+    # concept itself, not the Organization.
+    assert_includes violations, adr("Arena")
   end
 end
