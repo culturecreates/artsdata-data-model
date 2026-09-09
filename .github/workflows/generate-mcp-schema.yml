@@ -3,6 +3,7 @@ name: Generate MCP schema file
 on:
   push:
     paths:
+      - 'ontology/artsdata-ontology.ttl'
       - 'shacl/shacl_artsdata_core.ttl'
       - 'shacl/shacl_artsdata_ontology.ttl'
       - '_generators/generate_mcp_schema.rb'
