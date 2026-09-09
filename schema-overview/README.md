@@ -1,10 +1,19 @@
+---
+title: Schema Overview
+layout: default
+---
+
 # Artsdata Schema Overview
 
-An interactive webpage listing every class and property in the Artsdata data model: **[index.html](index.html)** (published at [docs.artsdata.ca/schema-overview/](https://docs.artsdata.ca/schema-overview/)).
+Every class and property in the Artsdata data model, extracted from its ontology and SHACL shapes. Click a class to expand it and see its properties -- cardinality, type/range, constraints (patterns, enumerations, controlled-vocabulary membership, deprecation warnings) and definitions.
 
-Each class can be expanded to show its properties in a table, with cardinality, type/range, constraints (patterns, enumerations, controlled-vocabulary membership, deprecation warnings) and definitions -- everything that can be extracted from the ontology and SHACL shapes.
+<a href="index.html" target="_blank" rel="noopener">Open in a full page &rarr;</a>
 
-It is a generated file -- do not edit it directly. It's built from [`../artsdata-schema.ttl`](../artsdata-schema.ttl) alone by [`../_generators/generate_schema_overview.rb`](../_generators/generate_schema_overview.rb), which runs automatically at the end of `generate_mcp_schema.rb` (see the root [README](../README.md#generating-the-combined-mcp-schema-file)), so it always regenerates together with `artsdata-schema.ttl`.
+<iframe src="index.html" title="Artsdata Schema Overview" style="width: 100%; height: 85vh; border: 1px solid #d8dee4; border-radius: 8px;"></iframe>
+
+---
+
+`index.html`, embedded above, is a generated file -- do not edit it directly. It's built from [`../artsdata-schema.ttl`](../artsdata-schema.ttl) alone by [`../_generators/generate_schema_overview.rb`](../_generators/generate_schema_overview.rb), which runs automatically at the end of `generate_mcp_schema.rb` (see the root [README](../README.md#generating-the-combined-mcp-schema-file)), so it always regenerates together with `artsdata-schema.ttl`.
 
 To regenerate it locally:
 
