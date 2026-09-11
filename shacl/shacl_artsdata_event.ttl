@@ -1,0 +1,205 @@
+@prefix ado:    <http://kg.artsdata.ca/ontology/> .
+@prefix adr:    <http://kg.artsdata.ca/resource/> .
+@prefix ads:    <http://kg.artsdata.ca/shacl/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+####################################################
+# schema:Event / ado:Event
+# See shacl_artsdata_common.ttl for the shared shapes referenced below and
+# the file-set header. Must be loaded together with that file (and, for the
+# controlled-vocabulary check below, ontology/skos-event-types.ttl).
+#
+# Source: artsdata-api/app/services/sparqls/mint/event/construct_event_transform.sparql
+#         artsdata-api/app/services/sparqls/mint/transform/K1-209_map_event_types.sparql
+#
+# ado:Event owl:equivalentClass schema:Event, so both are targeted here.
+####################################################
+
+ads:EventShape
+    a sh:NodeShape ;
+    sh:name "Event Shape" ;
+    sh:targetClass schema:Event, ado:Event ;
+    sh:property ads:NameSh,
+                ads:UrlSh,
+                ads:AdditionalTypeSh,
+                ads:StartDateSh,
+                ads:EndDateSh,
+                ads:EventDescriptionSh,
+                ads:LocationSh,
+                ads:EventStatusSh,
+                ads:EventAttendanceModeSh,
+                ads:EventImageSh,
+                ads:HasEventTypeConceptSh,
+                ads:OrganizerSh,
+                ads:PerformerSh,
+                ads:SubEventSh,
+                ads:SuperEventSh .
+
+ads:StartDateSh
+    a sh:PropertyShape ;
+    sh:path schema:startDate ;
+    sh:name "start date" ;
+    sh:minCount 1 ;
+    sh:or (
+        [ sh:datatype xsd:dateTime ; ]
+        [ sh:datatype xsd:date ; ]
+    ) ;
+    sh:message "schema:startDate is required."@en .
+
+ads:EndDateSh
+    a sh:PropertyShape ;
+    sh:path schema:endDate ;
+    sh:name "end date" ;
+    sh:minCount 0 ;
+    sh:or (
+        [ sh:datatype xsd:dateTime ; ]
+        [ sh:datatype xsd:date ; ]
+    ) .
+
+ads:EventDescriptionSh
+    a sh:PropertyShape ;
+    sh:path schema:description ;
+    sh:name "description" ;
+    sh:minCount 0 .
+
+ads:LocationSh
+    a sh:PropertyShape ;
+    sh:path schema:location ;
+    sh:name "location" ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class schema:Place ;
+    sh:message "schema:location is required and must reference an Artsdata-minted (adr:) schema:Place."@en .
+
+ads:EventStatusSh
+    a sh:PropertyShape ;
+    sh:path schema:eventStatus ;
+    sh:name "event status" ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:in ( schema:EventPostponed
+            schema:EventScheduled
+            schema:EventCancelled
+            schema:EventRescheduled
+            schema:EventMovedOnline ) .
+
+ads:EventAttendanceModeSh
+    a sh:PropertyShape ;
+    sh:path schema:eventAttendanceMode ;
+    sh:name "event attendance mode" ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:in ( schema:OfflineEventAttendanceMode
+            schema:OnlineEventAttendanceMode
+            schema:MixedEventAttendanceMode ) .
+
+ads:EventImageSh
+    a sh:PropertyShape ;
+    sh:path schema:image ;
+    sh:name "image" ;
+    sh:minCount 0 ;
+    sh:node ads:EventImageShape .
+
+ads:EventImageShape
+    a sh:NodeShape ;
+    sh:name "Event Image Shape" ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:name "image type" ;
+    ] , [
+        sh:path schema:disambiguatingDescription ;
+        sh:name "image disambiguating description" ;
+        sh:minCount 0 ;
+    ] , [
+        sh:path schema:url ;
+        sh:name "image url" ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "Image schema:url is required and must be a valid URL."@en ;
+    ] , [
+        sh:path schema:usageInfo ;
+        sh:name "image usage info" ;
+        sh:minCount 0 ;
+    ] , [
+        sh:path schema:copyrightNotice ;
+        sh:name "image copyright notice" ;
+        sh:minCount 0 ;
+    ] .
+
+ads:HasEventTypeConceptSh
+    a sh:PropertyShape ;
+    sh:path ado:hasEventTypeConcept ;
+    sh:name "has event type" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class skos:Concept ;
+    sh:message "ado:hasEventTypeConcept must reference an Artsdata-minted (adr:) skos:Concept from the Artsdata Event Types controlled vocabulary (see ads:EventTypeConceptShape)."@en .
+
+ads:OrganizerSh
+    a sh:PropertyShape ;
+    sh:path schema:organizer ;
+    sh:name "organizer" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class schema:Organization ;
+    sh:message "schema:organizer must reference an Artsdata-minted (adr:) schema:Organization."@en .
+
+ads:PerformerSh
+    a sh:PropertyShape ;
+    sh:path schema:performer ;
+    sh:name "performer" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:message "schema:performer must reference an Artsdata-minted (adr:) entity."@en .
+
+ads:SubEventSh
+    a sh:PropertyShape ;
+    sh:path schema:subEvent ;
+    sh:name "sub event" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI .
+
+ads:SuperEventSh
+    a sh:PropertyShape ;
+    sh:path schema:superEvent ;
+    sh:name "super event" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI .
+
+
+################
+# Controlled Vocabulary Value Shape
+# Reused wherever ado:hasEventTypeConcept's range is skos:Concept.
+#
+# Declared as a self-targeting shape (sh:targetObjectsOf) rather than being
+# referenced with sh:node from ads:HasEventTypeConceptSh above -- see the
+# "Controlled-vocabulary concept checks" note in shacl_artsdata_common.ttl
+# for why.
+################
+
+ads:EventTypeConceptShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Event Type Concept" ;
+    sh:targetObjectsOf ado:hasEventTypeConcept ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue adr:ArtsdataEventTypes ;
+        sh:message "Value must be a skos:Concept in the Artsdata Event Types vocabulary (adr:ArtsdataEventTypes), see ontology/skos-event-types.ttl."@en ;
+    ] ;
+    sh:property [
+        sh:path owl:deprecated ;
+        sh:maxCount 0 ;
+        sh:severity sh:Warning ;
+        sh:message "This event type concept is deprecated; choose a current concept from the Artsdata Event Types vocabulary."@en ;
+    ] .

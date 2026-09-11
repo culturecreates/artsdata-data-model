@@ -1,9 +1,9 @@
 # Merges the files that describe the Artsdata CORE graph data model --
-# ontology/artsdata-ontology.ttl, shacl/shacl_artsdata_core.ttl and
-# shacl/shacl_artsdata_ontology.ttl -- into a single self-contained Turtle
-# file at the repo root (artsdata-schema.ttl), so that external tools --
-# e.g. an MCP server's get_schema tool -- can fetch one stable URL instead
-# of combining files themselves.
+# ontology/artsdata-ontology.ttl and the shacl/shacl_artsdata_*.ttl class
+# files (common + one per main class) -- into a single self-contained
+# Turtle file at the repo root (artsdata-schema.ttl), so that external
+# tools -- e.g. an MCP server's get_schema tool -- can fetch one stable URL
+# instead of combining files themselves.
 #
 # shacl/shacl_artsdata.ttl (validates raw external submissions to the
 # Databus) is intentionally NOT included: it targets a different graph.
@@ -20,8 +20,12 @@
 class GenerateMcpSchema
   SOURCE_FILES = %w[
     ../ontology/artsdata-ontology.ttl
-    ../shacl/shacl_artsdata_core.ttl
-    ../shacl/shacl_artsdata_ontology.ttl
+    ../shacl/shacl_artsdata_common.ttl
+    ../shacl/shacl_artsdata_event.ttl
+    ../shacl/shacl_artsdata_liveperformancework.ttl
+    ../shacl/shacl_artsdata_organization.ttl
+    ../shacl/shacl_artsdata_place.ttl
+    ../shacl/shacl_artsdata_person.ttl
   ].freeze
 
   OUTPUT_FILE = '../artsdata-schema.ttl'
@@ -56,10 +60,10 @@ class GenerateMcpSchema
     SOURCE_FILES.each { |path| output << "#   #{path.sub('../', '')}\n" }
     output << "#\n"
     output << "# Combines the Artsdata Ontology (classes, properties, vocabulary\n"
-    output << "# equivalences) with the Artsdata CORE graph SHACL shapes and the\n"
-    output << "# Artsdata Ontology SHACL shapes into one self-contained file, for\n"
-    output << "# consumers (e.g. an MCP server's schema tool) that want the full\n"
-    output << "# data model of the reconciled Artsdata CORE graph in a single fetch.\n\n"
+    output << "# equivalences) with the Artsdata CORE graph SHACL shapes (one file per\n"
+    output << "# main class) into one self-contained file, for consumers (e.g. an MCP\n"
+    output << "# server's schema tool) that want the full data model of the\n"
+    output << "# reconciled Artsdata CORE graph in a single fetch.\n\n"
 
     prefixes.sort.each do |name, uri|
       output << "@prefix #{name}: <#{uri}> .\n"

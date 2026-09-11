@@ -4,13 +4,15 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 
-# Fixture for shacl/shacl_artsdata_core.ttl (see shacl/tests/test_shacl_core.py).
-# Exercises schema:Event, ado:LivePerformanceWork, schema:Organization,
-# schema:Place and schema:Person as they appear in the Artsdata CORE graph
-# (adr: subject URIs). Must be loaded together with the real vocabulary
-# files under ontology/skos-*.ttl so that adr:Amphitheatre, adr:K6-100,
-# adr:TheatrePerformance and adr:ArtMuseum resolve to real skos:Concept
-# instances.
+# Fixture for the shacl/shacl_artsdata_*.ttl class files (see
+# shacl/tests/test_shacl_core.rb). Exercises schema:Event,
+# ado:LivePerformanceWork, schema:Organization, schema:Place and
+# schema:Person as they appear in the Artsdata CORE graph (adr: subject
+# URIs). Must be loaded together with the real vocabulary files under
+# ontology/skos-*.ttl so that adr:Amphitheatre, adr:Arena, adr:K6-100,
+# adr:TheatrePerformance, adr:AcappellaMusicPerformance and adr:ArtMuseum
+# resolve to real skos:Concept instances (adr:AcappellaMusicPerformance is
+# deprecated, used to exercise the Warning-severity check).
 
 # ================= VALID FIXTURES =================
 
@@ -136,3 +138,22 @@ adr:org3 a schema:Organization ;
 adr:org4 a schema:Organization ;
     schema:name "Bad Org Type Org" ;
     ado:hasOrganizationTypeConcept ext:someType .
+
+# LivePerformanceWork hasGenre pointing to an adr: concept from the WRONG
+# vocabulary (a place type, not a genre)
+adr:show3 a ado:LivePerformanceWork ;
+    schema:name "Wrong Vocab Genre Show" ;
+    ado:hasGenre adr:Arena .
+
+# Organization hasOrganizationTypeConcept pointing to an adr: concept from
+# the WRONG vocabulary (a place type, not an organization type)
+adr:org5 a schema:Organization ;
+    schema:name "Wrong Vocab Org Type Org" ;
+    ado:hasOrganizationTypeConcept adr:Arena .
+
+# Event using a deprecated event type concept (Warning expected, not a Violation)
+adr:event6 a schema:Event ;
+    schema:name "Old Style Show" ;
+    schema:startDate "2026-12-10T20:00:00"^^xsd:dateTime ;
+    schema:location adr:place1 ;
+    ado:hasEventTypeConcept adr:AcappellaMusicPerformance .

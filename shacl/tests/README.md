@@ -7,8 +7,7 @@ gem](https://rubygems.org/gems/shacl) (a pure-Ruby SHACL engine from the
 
 | Test file | Validates | Fixture |
 |---|---|---|
-| `test_shacl_ontology.rb` | `shacl/shacl_artsdata_ontology.ttl` | `fixtures/ontology-fixture.ttl` |
-| `test_shacl_core.rb` | `shacl/shacl_artsdata_core.ttl` | `fixtures/core-graph-fixture.ttl` |
+| `test_shacl_core.rb` | `shacl/shacl_artsdata_common.ttl` + `shacl/shacl_artsdata_{event,liveperformancework,organization,place,person}.ttl`, loaded together | `fixtures/core-graph-fixture.ttl` |
 | `test_shacl_combined.rb` | both files loaded together | `fixtures/core-graph-fixture.ttl` |
 
 Each fixture is a small hand-written Turtle graph mixing valid and

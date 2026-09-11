@@ -27,7 +27,7 @@ more info: http://jekyll.github.io/github-metadata/authentication/
 
 ## Running the SHACL shape tests
 
-The SHACL shape files in `shacl/` (`shacl_artsdata.ttl`, `shacl_artsdata_ontology.ttl`, `shacl_artsdata_core.ttl`) have a Ruby/Minitest test suite under `shacl/tests/`, with its own `Gemfile` separate from the one at the repo root (that one is for the Jekyll site).
+The SHACL shape files in `shacl/` (`shacl_artsdata.ttl` and the `shacl_artsdata_*.ttl` class files describing the Artsdata CORE graph: `shacl_artsdata_common.ttl`, `shacl_artsdata_event.ttl`, `shacl_artsdata_liveperformancework.ttl`, `shacl_artsdata_organization.ttl`, `shacl_artsdata_place.ttl`, `shacl_artsdata_person.ttl`) have a Ruby/Minitest test suite under `shacl/tests/`, with its own `Gemfile` separate from the one at the repo root (that one is for the Jekyll site).
 
 1. `cd shacl/tests`
 2. `bundle config set path 'vendor/bundle'`
@@ -38,7 +38,7 @@ See [shacl/tests/README.md](shacl/tests/README.md) for what each test file cover
 
 ## Generating the combined MCP schema file
 
-`artsdata-schema.ttl`, at the repo root, merges `ontology/artsdata-ontology.ttl`, `shacl/shacl_artsdata_core.ttl` and `shacl/shacl_artsdata_ontology.ttl` into one self-contained Turtle file describing the full data model of the reconciled Artsdata CORE graph: the ontology's classes, properties and vocabulary equivalences, plus the SHACL constraints. It exists so external tools — e.g. an MCP server's schema tool — can fetch one stable file instead of combining files themselves. (`shacl/shacl_artsdata.ttl`, which validates raw external submissions to the Databus, targets a different graph and is intentionally not included.)
+`artsdata-schema.ttl`, at the repo root, merges `ontology/artsdata-ontology.ttl` with the `shacl/shacl_artsdata_*.ttl` class files (`shacl_artsdata_common.ttl` plus one file per main class: `shacl_artsdata_event.ttl`, `shacl_artsdata_liveperformancework.ttl`, `shacl_artsdata_organization.ttl`, `shacl_artsdata_place.ttl`, `shacl_artsdata_person.ttl`) into one self-contained Turtle file describing the full data model of the reconciled Artsdata CORE graph: the ontology's classes, properties and vocabulary equivalences, plus the SHACL constraints. It exists so external tools — e.g. an MCP server's schema tool — can fetch one stable file instead of combining files themselves. (`shacl/shacl_artsdata.ttl`, which validates raw external submissions to the Databus, targets a different graph and is intentionally not included.)
 
 It is a generated file — do not edit it directly. A GitHub Actions workflow ([`.github/workflows/generate-mcp-schema.yml`](.github/workflows/generate-mcp-schema.yml)) regenerates and commits it automatically whenever a source file changes. Regenerating it also regenerates [`schema-overview/index.html`](schema-overview/README.md), an interactive webpage listing every class and property, built from `artsdata-schema.ttl` alone. To regenerate both locally:
 
