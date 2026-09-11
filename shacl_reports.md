@@ -8,12 +8,7 @@ The Artsdata.ca Databus uses SHACL shapes to validate input data. The SHACL shap
 
 The default SHACL shapes (when no URL to a SHACL file is passed) are defined by the Artsdata Platform (Artsdata API repo in Github) in a file called `shacl_artsdata.ttl`. The rules can be browsed visualy in Artsdata [here] (https://kg.artsdata.ca/query/show?sparql=https://raw.githubusercontent.com/artsdata-stewards/artsdata-actions/main/queries/artsdata_SHACL_validation_rules.sparql).
 
-Sample event JSON-LD files are available in the samples directory. You can play around with these sample events in the SHACL Playground. 
-
 When calling the Artsdata Databus it is possible to pass in the name of a SHACL shape as a parameter. This will override the default SHACL shape used to validate your data graph.
 
 ### SHACL Playground
-To try out SHACL validation head over to [shacl-playground](https://shacl-playground.zazuko.com) on the zazuko.com website. 
-1. Copy/paste the `shacl_events_shape.ttl` file into the Shape Graph.
-2. Copy/paste one of the sample event JSON-LD files into the Data Graph.
-3. Check out the validation report at the bottom of the playground.
+To try out SHACL validation head over to [shacl-playground](https://shacl-playground.zazuko.com) on the zazuko.com website.
