@@ -55,6 +55,10 @@ module SchemaOverview
     graph.query([subject, predicate, nil]).map(&:object)
   end
 
+  def subjects(graph, predicate, object)
+    graph.query([nil, predicate, object]).map(&:subject).uniq
+  end
+
   def first_object(graph, subject, predicate)
     objects(graph, subject, predicate).first
   end
@@ -220,6 +224,60 @@ module SchemaOverview
   end
 
   # ---- Classes ----
+  #
+  # owl:equivalentClass pairs (e.g. ado:Event / schema:Event) describe one
+  # real-world class, not two: grouped here into a single card via
+  # equivalence_closure, the same way artsdata-mcp-server's
+  # ShaclSchemaCompiler groups them for its digest. Without this, a class
+  # targeted under two equivalent URIs by the same sh:NodeShape would render
+  # as two cards with identical property tables.
+
+  def equivalence_closure(graph, cls)
+    equivalent = RDF::OWL.equivalentClass
+    seen = [cls]
+    queue = [cls]
+    until queue.empty?
+      current = queue.shift
+      (objects(graph, current, equivalent) + subjects(graph, equivalent, current)).each do |other|
+        next if seen.include?(other)
+
+        seen << other
+        queue << other
+      end
+    end
+    seen
+  end
+
+  # Groups class_uris by equivalence, keeping only members actually present
+  # in class_uris (an equivalentClass can point outside that set, e.g. to an
+  # external vocabulary term with no shape and no rdfs:Class typing here).
+  def group_classes_by_equivalence(graph, class_uris)
+    remaining = class_uris.dup
+    groups = []
+    until remaining.empty?
+      group = equivalence_closure(graph, remaining.shift) & class_uris
+      remaining -= group
+      groups << group
+    end
+    groups
+  end
+
+  # The member that carries the ontology's own rdfs:Class definition (label,
+  # comment, subClassOf) represents the card; falling back to whichever
+  # member the most shapes target, then to the group's first member.
+  def pick_primary_class(group, ontology_classes, shapes_by_class)
+    group.find { |c| ontology_classes.include?(c) } ||
+      group.max_by { |c| shapes_by_class[c]&.length || 0 } ||
+      group.first
+  end
+
+  def first_nonempty_literals(graph, members, predicate)
+    members.each do |m|
+      found = literals(graph, m, predicate)
+      return found unless found.empty?
+    end
+    []
+  end
 
   def extract_classes(graph, prefixes)
     node_shapes = graph.query([nil, RDF.type, SH.NodeShape]).map(&:subject).uniq
@@ -233,8 +291,9 @@ module SchemaOverview
     ontology_classes = graph.query([nil, RDF.type, RDF::RDFS.Class]).map(&:subject).uniq
     class_uris = (shapes_by_class.keys + ontology_classes).uniq
 
-    class_uris.map do |cls|
-      shapes = shapes_by_class[cls] || []
+    group_classes_by_equivalence(graph, class_uris).map do |group|
+      primary = pick_primary_class(group, ontology_classes, shapes_by_class)
+      shapes = group.flat_map { |c| shapes_by_class[c] || [] }.uniq
       entries = shapes.flat_map do |shape|
         objects(graph, shape, SH.property).map do |p|
           extract_property(graph, prefixes, p, value_constraints).merge('shape' => compact(shape, prefixes))
@@ -243,12 +302,12 @@ module SchemaOverview
       properties = merge_properties(entries)
 
       {
-        'uri' => cls.to_s,
-        'compact' => compact(cls, prefixes),
-        'label' => literals(graph, cls, RDF::RDFS.label),
-        'comment' => literals(graph, cls, RDF::RDFS.comment),
-        'subClassOf' => objects(graph, cls, RDF::RDFS.subClassOf).map { |c| compact(c, prefixes) },
-        'equivalentClass' => objects(graph, cls, RDF::OWL.equivalentClass).map { |c| compact(c, prefixes) },
+        'uri' => primary.to_s,
+        'compact' => compact(primary, prefixes),
+        'label' => first_nonempty_literals(graph, group, RDF::RDFS.label),
+        'comment' => first_nonempty_literals(graph, group, RDF::RDFS.comment),
+        'subClassOf' => objects(graph, primary, RDF::RDFS.subClassOf).map { |c| compact(c, prefixes) },
+        'equivalentClass' => (group - [primary]).map { |c| compact(c, prefixes) },
         'shapes' => shapes.map { |s| compact(s, prefixes) },
         'properties' => properties
       }
