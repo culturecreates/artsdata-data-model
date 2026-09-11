@@ -1,0 +1,85 @@
+@prefix ado:    <http://kg.artsdata.ca/ontology/> .
+@prefix adr:    <http://kg.artsdata.ca/resource/> .
+@prefix ads:    <http://kg.artsdata.ca/shacl/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+
+####################################################
+# ado:LivePerformanceWork
+# See shacl_artsdata_common.ttl for the shared shapes referenced below and
+# the file-set header. Must be loaded together with that file (and, for the
+# controlled-vocabulary check below, ontology/skos-genres.ttl).
+#
+# Source: artsdata-api/app/services/sparqls/mint/liveperformancework/construct_liveperformancework_transform.sparql
+####################################################
+
+ads:LivePerformanceWorkShape
+    a sh:NodeShape ;
+    sh:name "Live Performance Work Shape" ;
+    sh:targetClass ado:LivePerformanceWork ;
+    sh:property ads:NameSh,
+                ads:UrlSh,
+                ads:SameAsSh,
+                ads:AlternateNameSh,
+                ads:DisambiguatingDescriptionSh,
+                ads:LpwDescriptionSh,
+                ads:UnstructuredImageSh,
+                ads:HasGenreSh,
+                ads:UsesExpressionOfSh .
+
+ads:LpwDescriptionSh
+    a sh:PropertyShape ;
+    sh:path schema:description ;
+    sh:name "description" ;
+    sh:minCount 0 .
+
+ads:HasGenreSh
+    a sh:PropertyShape ;
+    sh:path ado:hasGenre ;
+    sh:name "has genre" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class skos:Concept ;
+    sh:message "ado:hasGenre must reference an Artsdata-minted (adr:) skos:Concept from the Artsdata Genres controlled vocabulary (see ads:GenreConceptShape)."@en .
+
+ads:UsesExpressionOfSh
+    a sh:PropertyShape ;
+    sh:path ado:usesExpressionOf ;
+    sh:name "uses expression of" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class schema:CreativeWork ;
+    sh:message "ado:usesExpressionOf must reference an Artsdata-minted (adr:) schema:CreativeWork. (Not yet confirmed by a mint SPARQL as of this writing -- re-verify once one exists.)"@en .
+
+
+################
+# Controlled Vocabulary Value Shape
+# Reused wherever ado:hasGenre's range is skos:Concept.
+#
+# Declared as a self-targeting shape (sh:targetObjectsOf) rather than being
+# referenced with sh:node from ads:HasGenreSh above -- see the
+# "Controlled-vocabulary concept checks" note in shacl_artsdata_common.ttl
+# for why.
+################
+
+ads:GenreConceptShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Genre Concept" ;
+    sh:targetObjectsOf ado:hasGenre ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue adr:ArtsdataGenres ;
+        sh:message "Value must be a skos:Concept in the Artsdata Genres vocabulary (adr:ArtsdataGenres), see ontology/skos-genres.ttl."@en ;
+    ] ;
+    sh:property [
+        sh:path owl:deprecated ;
+        sh:maxCount 0 ;
+        sh:severity sh:Warning ;
+        sh:message "This genre concept is deprecated; choose a current concept from the Artsdata Genres vocabulary."@en ;
+    ] .

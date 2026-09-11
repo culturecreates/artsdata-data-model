@@ -1,0 +1,94 @@
+@prefix ado:    <http://kg.artsdata.ca/ontology/> .
+@prefix adr:    <http://kg.artsdata.ca/resource/> .
+@prefix ads:    <http://kg.artsdata.ca/shacl/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdt:    <http://www.wikidata.org/prop/direct/> .
+
+####################################################
+# schema:Organization
+# See shacl_artsdata_common.ttl for the shared shapes referenced below and
+# the file-set header. Must be loaded together with that file (and, for the
+# controlled-vocabulary check below, ontology/skos-organization-types.ttl).
+#
+# Source: artsdata-api/app/services/sparqls/mint/organization/construct_organization_transform.sparql
+#         artsdata-api/app/services/sparqls/mint/transform/K1-212_map_organization_types.sparql
+####################################################
+
+ads:OrganizationShape
+    a sh:NodeShape ;
+    sh:name "Organization Shape" ;
+    sh:targetClass schema:Organization ;
+    sh:property ads:NameSh,
+                ads:UrlSh,
+                ads:SameAsSh,
+                ads:AdditionalTypeSh,
+                ads:AlternateNameSh,
+                ads:DisambiguatingDescriptionSh,
+                ads:UnstructuredImageSh,
+                ads:LogoSh,
+                ads:TelephoneSh,
+                ads:CanadianBusinessNumberSh,
+                ads:HasOrganizationTypeConceptSh .
+    # Not shaped: ado:originEC (see shacl_artsdata_common.ttl header) .
+
+ads:HasOrganizationTypeConceptSh
+    a sh:PropertyShape ;
+    sh:path ado:hasOrganizationTypeConcept ;
+    sh:name "has organization type" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class skos:Concept ;
+    sh:message "ado:hasOrganizationTypeConcept must reference an Artsdata-minted (adr:) skos:Concept from the Artsdata Organization Types controlled vocabulary (see ads:OrganizationTypeConceptShape)."@en .
+
+ads:LogoSh
+    a sh:PropertyShape ;
+    sh:path schema:logo ;
+    sh:name "logo" ;
+    sh:minCount 0 .
+
+ads:TelephoneSh
+    a sh:PropertyShape ;
+    sh:path schema:telephone ;
+    sh:name "telephone" ;
+    sh:minCount 0 .
+
+ads:CanadianBusinessNumberSh
+    a sh:PropertyShape ;
+    sh:path wdt:P8860 ;
+    sh:name "Canadian Business Number" ;
+    sh:minCount 0 ;
+    sh:pattern "^\\d{9}$" ;
+    sh:message "Canadian Business Number (wdt:P8860) must be 9 digits."@en .
+
+
+################
+# Controlled Vocabulary Value Shape
+# Reused wherever ado:hasOrganizationTypeConcept's range is skos:Concept.
+#
+# Declared as a self-targeting shape (sh:targetObjectsOf) rather than being
+# referenced with sh:node from ads:HasOrganizationTypeConceptSh above -- see
+# the "Controlled-vocabulary concept checks" note in
+# shacl_artsdata_common.ttl for why.
+################
+
+ads:OrganizationTypeConceptShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Organization Type Concept" ;
+    sh:targetObjectsOf ado:hasOrganizationTypeConcept ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue adr:ArtsdataOrganizationTypes ;
+        sh:message "Value must be a skos:Concept in the Artsdata Organization Types vocabulary (adr:ArtsdataOrganizationTypes), see ontology/skos-organization-types.ttl."@en ;
+    ] ;
+    sh:property [
+        sh:path owl:deprecated ;
+        sh:maxCount 0 ;
+        sh:severity sh:Warning ;
+        sh:message "This organization type concept is deprecated; choose a current concept from the Artsdata Organization Types vocabulary."@en ;
+    ] .
