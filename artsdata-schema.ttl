@@ -45,6 +45,16 @@
 #     - This means that certain OWL features (e.g., owl:disjointWith, owl:cardinality restrictions) are not used in this ontology to ensure compatibility with HORST reasoners.
 #     - Cardinality constraints are expressed in SHACL.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
+# V 1.6.0 (proposed, see Discussion for the data-modelling decision)
+#     - ado:Event changed from owl:equivalentClass schema:Event to rdfs:subClassOf
+#       schema:Event, and ado:Organization, ado:Place, ado:Person added as new
+#       rdfs:subClassOf their schema.org counterparts. Unlike owl:equivalentClass
+#       (symmetric: any schema:X entity from any source would match), these are
+#       asserted only on entities reconciled and minted into the Artsdata CORE
+#       graph, so `?x a ado:Organization` becomes a filter-free way to query
+#       CORE-graph entities of a class, in place of matching on the adr: URI
+#       prefix. See shacl/shacl_artsdata_common.ttl for the corresponding SHACL
+#       shapes.
 # V 1.5.0
 #     - Add ado:hasOrganizationTypeConcept
 # V 1.4.0
@@ -87,8 +97,25 @@ ado:Event rdf:type rdfs:Class ;
     schema:alternateName "performance"@en, "représentation"@fr ;
     rdfs:comment "An event is a happening that occurs at a certain time and location. Examples include and are not limited to a: performance, concert, conference, festival, exhibition and/or social gathering."@en ;
     rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf ado:Thing ;
-    owl:equivalentClass schema:Event .
+    rdfs:subClassOf ado:Thing, schema:Event .
+
+ado:Organization rdf:type rdfs:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "An organization involved in the production, presentation, or support of arts and culture activities."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf ado:Thing, schema:Organization .
+
+ado:Place rdf:type rdfs:Class ;
+    rdfs:label "Place"@en ;
+    rdfs:comment "A physical or virtual location where an event, organization, or person is situated."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf ado:Thing, schema:Place .
+
+ado:Person rdf:type rdfs:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "An individual involved in the production, presentation, or performance of arts and culture activities."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf ado:Thing, schema:Person .
 
 
 ####################
