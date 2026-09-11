@@ -45,6 +45,7 @@ ads:StartDateSh
     sh:path schema:startDate ;
     sh:name "start date" ;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:or (
         [ sh:datatype xsd:dateTime ; ]
         [ sh:datatype xsd:date ; ]
@@ -56,6 +57,7 @@ ads:EndDateSh
     sh:path schema:endDate ;
     sh:name "end date" ;
     sh:minCount 0 ;
+    sh:maxCount 1 ;
     sh:or (
         [ sh:datatype xsd:dateTime ; ]
         [ sh:datatype xsd:date ; ]
@@ -72,6 +74,7 @@ ads:LocationSh
     sh:path schema:location ;
     sh:name "location" ;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
     sh:class schema:Place ;
