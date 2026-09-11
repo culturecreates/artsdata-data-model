@@ -153,6 +153,20 @@ class TestShaclCore < Minitest::Test
     refute_includes violations, adr("AcappellaMusicPerformance")
   end
 
+  def test_concept_labelled_with_schema_name_instead_of_pref_label_is_violation
+    # adr:BadLabelEventType is a valid, current Event Types concept but uses
+    # schema:name instead of skos:prefLabel and has no skos:prefLabel at
+    # all -- both ads:PrefLabelSh (minCount 1) and ads:NoSchemaNameOnConceptSh
+    # (maxCount 0 on schema:name) fire, self-targeting on the concept itself.
+    assert_includes violations, adr("BadLabelEventType")
+  end
+
+  def test_valid_event_type_pref_label_produces_no_violation_on_the_concept_itself
+    # adr:TheatrePerformance is a real, current event type concept labelled
+    # with skos:prefLabel, not schema:name.
+    refute_includes violations, adr("TheatrePerformance")
+  end
+
   def test_place_type_pointing_to_non_adr_uri_is_violation
     assert_includes violations, adr("place6")
   end
