@@ -270,6 +270,25 @@ ads:NameSh
     ) ;
     sh:message "schema:name is required (at least one value; multiple values must each have a distinct language tag)."@en .
 
+ads:PrefLabelSh
+    a sh:PropertyShape ;
+    sh:path skos:prefLabel ;
+    sh:name "pref label" ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+    sh:or (
+        [ sh:datatype rdf:langString ; ]
+        [ sh:datatype xsd:string ; ]
+    ) ;
+    sh:message "skos:prefLabel is required (at least one value; multiple values must each have a distinct language tag)."@en .
+
+ads:NoSchemaNameOnConceptSh
+    a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:name "name (forbidden on concepts)" ;
+    sh:maxCount 0 ;
+    sh:message "skos:Concept entities must be labelled with skos:prefLabel, not schema:name."@en .
+
 ads:UrlSh
     a sh:PropertyShape ;
     sh:path schema:url ;
@@ -523,6 +542,8 @@ ads:EventTypeConceptShape
     sh:targetObjectsOf ado:hasEventTypeConcept ;
     sh:nodeKind sh:IRI ;
     sh:class skos:Concept ;
+    sh:property ads:PrefLabelSh,
+                ads:NoSchemaNameOnConceptSh ;
     sh:property [
         sh:path skos:inScheme ;
         sh:hasValue adr:ArtsdataEventTypes ;
@@ -605,6 +626,8 @@ ads:GenreConceptShape
     sh:targetObjectsOf ado:hasGenre ;
     sh:nodeKind sh:IRI ;
     sh:class skos:Concept ;
+    sh:property ads:PrefLabelSh,
+                ads:NoSchemaNameOnConceptSh ;
     sh:property [
         sh:path skos:inScheme ;
         sh:hasValue adr:ArtsdataGenres ;
@@ -695,6 +718,8 @@ ads:OrganizationTypeConceptShape
     sh:targetObjectsOf ado:hasOrganizationTypeConcept ;
     sh:nodeKind sh:IRI ;
     sh:class skos:Concept ;
+    sh:property ads:PrefLabelSh,
+                ads:NoSchemaNameOnConceptSh ;
     sh:property [
         sh:path skos:inScheme ;
         sh:hasValue adr:ArtsdataOrganizationTypes ;
@@ -873,6 +898,8 @@ ads:PlaceTypeConceptShape
     sh:targetObjectsOf ado:hasPlaceTypeConcept ;
     sh:nodeKind sh:IRI ;
     sh:class skos:Concept ;
+    sh:property ads:PrefLabelSh,
+                ads:NoSchemaNameOnConceptSh ;
     sh:property [
         sh:path skos:inScheme ;
         sh:hasValue adr:ArtsdataPlaceTypes ;
