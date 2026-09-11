@@ -79,7 +79,7 @@ module SchemaOverview
   # ---- Self-targeting shapes (sh:targetObjectsOf) ----
   #
   # e.g. ads:GenreConceptShape, ads:OrganizationTypeConceptShape,
-  # ads:CoreDescriptionShape -- these validate the VALUE of a property
+  # ads:DescriptionShape -- these validate the VALUE of a property
   # (skos:inScheme membership, owl:deprecated, a SPARQL check on
   # schema:description, etc.), not a class. Collected once, then attached
   # as extra notes to any property row whose sh:path matches.
@@ -147,7 +147,7 @@ module SchemaOverview
   end
 
   # A shape referenced only via sh:node (no sh:targetClass of its own),
-  # e.g. ads:CoreImageShape, ads:CorePostalAddressShape.
+  # e.g. ads:EventImageShape, ads:PostalAddressShape.
   def extract_node_shape(graph, prefixes, shape, value_constraints)
     {
       'name' => compact(shape, prefixes),
@@ -179,10 +179,8 @@ module SchemaOverview
 
   # ---- Merging property rows ----
   #
-  # A class is often targeted by more than one sh:NodeShape (e.g. both
-  # ads:CoreOrganizationShape and ads:OrganizationOntologyExtensionShape
-  # target schema:Organization, each with their own property shape for
-  # ado:hasOrganizationTypeConcept). Without merging, the same sh:path
+  # A class can be targeted by more than one sh:NodeShape, each with its own
+  # property shape for the same sh:path. Without merging, the same sh:path
   # would show up as two separate rows in the same table. Group by path
   # and combine into one row per property, keeping each contributing
   # shape's own pattern/message as a separate constraint entry.

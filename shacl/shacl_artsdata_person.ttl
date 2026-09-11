@@ -1,0 +1,37 @@
+@prefix ads:    <http://kg.artsdata.ca/shacl/> .
+@prefix schema: <http://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+
+####################################################
+# schema:Person
+# See shacl_artsdata_common.ttl for the shared shapes referenced below and
+# the file-set header. Must be loaded together with that file.
+#
+# Source: artsdata-api/app/services/sparqls/mint/person/construct_person_transform.sparql
+####################################################
+
+ads:PersonShape
+    a sh:NodeShape ;
+    sh:name "Person Shape" ;
+    sh:targetClass schema:Person ;
+    sh:property ads:NameSh,
+                ads:UrlSh,
+                ads:SameAsSh,
+                ads:AlternateNameSh,
+                ads:DisambiguatingDescriptionSh,
+                ads:PersonDescriptionSh,
+                ads:UnstructuredImageSh,
+                ads:HasOccupationSh .
+    # Not shaped: ado:originEC (see shacl_artsdata_common.ttl header) .
+
+ads:PersonDescriptionSh
+    a sh:PropertyShape ;
+    sh:path schema:description ;
+    sh:name "description" ;
+    sh:minCount 0 .
+
+ads:HasOccupationSh
+    a sh:PropertyShape ;
+    sh:path schema:hasOccupation ;
+    sh:name "has occupation" ;
+    sh:minCount 0 .

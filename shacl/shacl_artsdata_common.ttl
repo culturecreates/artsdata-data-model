@@ -1,0 +1,163 @@
+@prefix ads:    <http://kg.artsdata.ca/shacl/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+####################################################
+# Artsdata CORE Graph SHACL Shapes v2.0
+####################################################
+#
+# Description:
+# Validates the Artsdata CORE graph (the reconciled, Artsdata-minted graph
+# published at kg.artsdata.ca) for Event, LivePerformanceWork, Organization,
+# Place and Person. This is a different graph, with different rules, from
+# what shacl/shacl_artsdata.ttl validates (raw data POSTed by external
+# providers to the Artsdata Databus, per shacl_reports.md).
+#
+# One file per class, all sharing the ads: (http://kg.artsdata.ca/shacl/)
+# namespace and meant to always be loaded together as a single shapes graph:
+#   shacl_artsdata_common.ttl              -- property shapes reused across classes (this file)
+#   shacl_artsdata_event.ttl               -- schema:Event / ado:Event
+#   shacl_artsdata_liveperformancework.ttl -- ado:LivePerformanceWork
+#   shacl_artsdata_organization.ttl        -- schema:Organization
+#   shacl_artsdata_place.ttl               -- schema:Place
+#   shacl_artsdata_person.ttl              -- schema:Person
+# A class file alone is incomplete: it references the shared shapes (name,
+# url, description, ...) declared here, and its controlled-vocabulary
+# concept checks (e.g. ads:EventTypeConceptShape) live alongside its own
+# class shape in that same file. Loading a class file without the others
+# silently drops those constraints rather than erroring.
+#
+# Ground truth: every property shaped here is derived directly from the
+# Artsdata mint pipeline in the artsdata-api repo, not from the aspirational
+# ontology. That pipeline runs in two stages:
+#   1. Initial CONSTRUCT queries, one per class, e.g.
+#      artsdata-api/app/services/sparqls/mint/event/construct_event_transform.sparql
+#      (and .../liveperformancework/, .../organization/, .../place/, .../person/)
+#   2. Subsequent enrichment queries that refine the constructed graph, e.g.
+#      artsdata-api/.../mint/transform/K1-209_map_event_types.sparql,
+#      K1-210_map_place_types.sparql and K1-212_map_organization_types.sparql,
+#      which delete any schema:additionalType value that matches a
+#      controlled-vocabulary mapping and insert ado:hasEventTypeConcept /
+#      ado:hasPlaceTypeConcept / ado:hasOrganizationTypeConcept pointing at
+#      the matching adr: (Artsdata) concept instead. Unmapped additionalType
+#      values are left in place, so both properties can coexist on one entity.
+#      These queries also insert an RDF-star provenance triple on the
+#      new statement (prov:wasGeneratedBy / prov:used) -- that provenance
+#      metadata is intentionally NOT validated by these files.
+#
+# Because the CORE graph is the reconciled graph, every property that
+# references another entity or concept (organizer, performer, location,
+# hasEventTypeConcept, hasPlaceTypeConcept, hasOrganizationTypeConcept,
+# hasGenre, usesExpressionOf, managedBy, ownedBy, usedBy, hasResident) is
+# required to be an Artsdata-minted adr: (kg.artsdata.ca) URI. This is
+# applied uniformly by design, even though today's mint queries only filter
+# for it in some cases (organizer, performer, hasGenre, hasEventTypeConcept,
+# hasPlaceTypeConcept, hasOrganizationTypeConcept) and not others (location,
+# managedBy, ownedBy, usedBy, hasResident) -- a violation on one of the
+# not-yet-filtered properties is a useful signal that the mint query may
+# need to catch up, not necessarily a bad shape. Because of this adr:-only
+# scope, these files intentionally do not validate generic (non-Artsdata-
+# minted) ado: property usage -- that is out of scope for the CORE graph.
+#
+# ado:usesExpressionOf is included even though no enrichment SPARQL mints it
+# yet; its constraints are inferred from the ontology's declared range plus
+# the reconciliation convention above, and should be re-checked once that
+# query exists.
+#
+# Controlled-vocabulary concept checks: the *TypeConceptShape /
+# GenreConceptShape shapes (one per class file that has a controlled-
+# vocabulary property) are declared as self-targeting (sh:targetObjectsOf)
+# node shapes, rather than referenced with sh:node from the property shapes
+# above. sh:node always reports a plain sh:Violation when the referenced
+# shape fails to conform, no matter what severity its internal property
+# constraints declare, which would silently turn the "deprecated concept"
+# Warning into a hard Violation. Self-targeting keeps each constraint's own
+# severity intact, and they apply automatically to the same triples once
+# loaded alongside the property shapes above.
+#
+# Out of scope: ado:originEC appears in the Organization and Person mint
+# queries but is not declared anywhere in ontology/artsdata-ontology.ttl.
+# Its range/vocabulary is unknown, so it is deliberately left unshaped here
+# until it is formalized in the ontology.
+####################################################
+
+
+################
+# Shared property/value shapes, reused across classes
+################
+
+ads:NameSh
+    a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:name "name" ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+    sh:or (
+        [ sh:datatype rdf:langString ; ]
+        [ sh:datatype xsd:string ; ]
+    ) ;
+    sh:message "schema:name is required (at least one value; multiple values must each have a distinct language tag)."@en .
+
+ads:UrlSh
+    a sh:PropertyShape ;
+    sh:path schema:url ;
+    sh:name "url" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:message "schema:url must be a valid URL."@en .
+
+ads:SameAsSh
+    a sh:PropertyShape ;
+    sh:path schema:sameAs ;
+    sh:name "sameAs" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:message "schema:sameAs must be a valid URL."@en .
+
+ads:AdditionalTypeSh
+    a sh:PropertyShape ;
+    sh:path schema:additionalType ;
+    sh:name "additional type" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:message "schema:additionalType must be a URI."@en .
+
+ads:DescriptionShape
+    a sh:NodeShape ;
+    sh:name "Description value (any entity)" ;
+    sh:targetObjectsOf schema:description ;
+    sh:sparql [
+        sh:message "schema:description must not be blank, whitespace-only, or contain only HTML markup with no visible text."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                BIND(REPLACE(STR($this), "<[^>]*>", "") AS ?stripped)
+                FILTER(REGEX(?stripped, "^\\\\s*$"))
+            }
+        """ ;
+    ] .
+
+ads:AlternateNameSh
+    a sh:PropertyShape ;
+    sh:path schema:alternateName ;
+    sh:name "alternate name" ;
+    sh:minCount 0 .
+
+ads:DisambiguatingDescriptionSh
+    a sh:PropertyShape ;
+    sh:path schema:disambiguatingDescription ;
+    sh:name "disambiguating description" ;
+    sh:minCount 0 .
+
+# schema:image / schema:logo are copied through the mint pipeline as opaque
+# nodes with arbitrary properties (?image_p ?image_o), unlike Event's image
+# (see ads:EventImageShape in shacl_artsdata_event.ttl) which has a fixed
+# structure -- so this is deliberately left unconstrained beyond "it must be
+# present if given".
+ads:UnstructuredImageSh
+    a sh:PropertyShape ;
+    sh:path schema:image ;
+    sh:name "image" ;
+    sh:minCount 0 .

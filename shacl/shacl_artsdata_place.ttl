@@ -1,0 +1,181 @@
+@prefix ado:    <http://kg.artsdata.ca/ontology/> .
+@prefix adr:    <http://kg.artsdata.ca/resource/> .
+@prefix ads:    <http://kg.artsdata.ca/shacl/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+
+####################################################
+# schema:Place
+# See shacl_artsdata_common.ttl for the shared shapes referenced below and
+# the file-set header. Must be loaded together with that file (and, for the
+# controlled-vocabulary check below, ontology/skos-place-types.ttl).
+#
+# Source: artsdata-api/app/services/sparqls/mint/place/construct_place_transform.sparql
+#         artsdata-api/app/services/sparqls/mint/transform/K1-210_map_place_types.sparql
+####################################################
+
+ads:PlaceShape
+    a sh:NodeShape ;
+    sh:name "Place Shape" ;
+    sh:targetClass schema:Place ;
+    sh:property ads:NameSh,
+                ads:UrlSh,
+                ads:SameAsSh,
+                ads:AdditionalTypeSh,
+                ads:HasPlaceTypeConceptSh,
+                ads:AlternateNameSh,
+                ads:DisambiguatingDescriptionSh,
+                ads:PlaceDescriptionSh,
+                ads:ContainedInPlaceSh,
+                ads:UnstructuredImageSh,
+                ads:LongitudeSh,
+                ads:LatitudeSh,
+                ads:ManagedBySh,
+                ads:OwnedBySh,
+                ads:UsedBySh,
+                ads:HasResidentSh,
+                ads:AddressSh .
+
+ads:HasPlaceTypeConceptSh
+    a sh:PropertyShape ;
+    sh:path ado:hasPlaceTypeConcept ;
+    sh:name "has place type" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class skos:Concept ;
+    sh:message "ado:hasPlaceTypeConcept must reference an Artsdata-minted (adr:) skos:Concept from the Artsdata Place Types controlled vocabulary (see ads:PlaceTypeConceptShape)."@en .
+
+ads:PlaceDescriptionSh
+    a sh:PropertyShape ;
+    sh:path schema:description ;
+    sh:name "description" ;
+    sh:minCount 0 .
+
+ads:ContainedInPlaceSh
+    a sh:PropertyShape ;
+    sh:path schema:containedInPlace ;
+    sh:name "contained in place" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:class schema:Place .
+
+ads:LongitudeSh
+    a sh:PropertyShape ;
+    sh:path schema:longitude ;
+    sh:name "longitude" ;
+    sh:minCount 0 .
+
+ads:LatitudeSh
+    a sh:PropertyShape ;
+    sh:path schema:latitude ;
+    sh:name "latitude" ;
+    sh:minCount 0 .
+
+ads:ManagedBySh
+    a sh:PropertyShape ;
+    sh:path ado:managedBy ;
+    sh:name "managed by" ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class schema:Organization ;
+    sh:message "ado:managedBy must reference at most one Artsdata-minted (adr:) schema:Organization."@en .
+
+ads:OwnedBySh
+    a sh:PropertyShape ;
+    sh:path ado:ownedBy ;
+    sh:name "owned by" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class schema:Organization ;
+    sh:message "ado:ownedBy must reference an Artsdata-minted (adr:) schema:Organization."@en .
+
+ads:UsedBySh
+    a sh:PropertyShape ;
+    sh:path ado:usedBy ;
+    sh:name "used by" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class schema:Organization ;
+    sh:message "ado:usedBy must reference an Artsdata-minted (adr:) schema:Organization."@en .
+
+ads:HasResidentSh
+    a sh:PropertyShape ;
+    sh:path ado:hasResident ;
+    sh:name "has resident" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class schema:Organization ;
+    sh:message "ado:hasResident must reference an Artsdata-minted (adr:) schema:Organization."@en .
+
+ads:AddressSh
+    a sh:PropertyShape ;
+    sh:path schema:address ;
+    sh:name "address" ;
+    sh:minCount 0 ;
+    sh:node ads:PostalAddressShape .
+
+# Unlike shacl_artsdata.ttl's ads:PostalAddressShape (external submissions,
+# all subfields sh:minCount 1), every subfield here is optional: the mint
+# query's OPTIONAL blocks show a CORE-graph address can legitimately be
+# partial.
+ads:PostalAddressShape
+    a sh:NodeShape ;
+    sh:name "Postal Address Shape" ;
+    sh:property [
+        sh:path schema:streetAddress ;
+        sh:name "street address" ;
+        sh:minCount 1 ;
+    ] , [
+        sh:path schema:addressLocality ;
+        sh:name "address locality" ;
+        sh:minCount 1 ;
+    ] , [
+        sh:path schema:addressRegion ;
+        sh:name "address region" ;
+        sh:minCount 1 ;
+    ] , [
+        sh:path schema:postalCode ;
+        sh:name "postal code" ;
+        sh:minCount 1 ;
+    ] , [
+        sh:path schema:addressCountry ;
+        sh:name "address country" ;
+        sh:minCount 1 ;
+    ] .
+
+
+################
+# Controlled Vocabulary Value Shape
+# Reused wherever ado:hasPlaceTypeConcept's range is skos:Concept.
+#
+# Declared as a self-targeting shape (sh:targetObjectsOf) rather than being
+# referenced with sh:node from ads:HasPlaceTypeConceptSh above -- see the
+# "Controlled-vocabulary concept checks" note in shacl_artsdata_common.ttl
+# for why.
+################
+
+ads:PlaceTypeConceptShape
+    a sh:NodeShape ;
+    sh:name "Artsdata Place Type Concept" ;
+    sh:targetObjectsOf ado:hasPlaceTypeConcept ;
+    sh:nodeKind sh:IRI ;
+    sh:class skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue adr:ArtsdataPlaceTypes ;
+        sh:message "Value must be a skos:Concept in the Artsdata Place Types vocabulary (adr:ArtsdataPlaceTypes), see ontology/skos-place-types.ttl."@en ;
+    ] ;
+    sh:property [
+        sh:path owl:deprecated ;
+        sh:maxCount 0 ;
+        sh:severity sh:Warning ;
+        sh:message "This place type concept is deprecated; choose a current concept from the Artsdata Place Types vocabulary."@en ;
+    ] .

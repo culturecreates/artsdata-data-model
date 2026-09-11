@@ -4,8 +4,12 @@ on:
   push:
     paths:
       - 'ontology/artsdata-ontology.ttl'
-      - 'shacl/shacl_artsdata_core.ttl'
-      - 'shacl/shacl_artsdata_ontology.ttl'
+      - 'shacl/shacl_artsdata_common.ttl'
+      - 'shacl/shacl_artsdata_event.ttl'
+      - 'shacl/shacl_artsdata_liveperformancework.ttl'
+      - 'shacl/shacl_artsdata_organization.ttl'
+      - 'shacl/shacl_artsdata_place.ttl'
+      - 'shacl/shacl_artsdata_person.ttl'
       - '_generators/generate_mcp_schema.rb'
       - '_generators/generate_schema_overview.rb'
   workflow_dispatch:
