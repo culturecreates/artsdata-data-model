@@ -160,13 +160,21 @@ ads:CoreStartDateSh
     sh:path schema:startDate ;
     sh:name "start date" ;
     sh:minCount 1 ;
+    sh:or (
+        [ sh:datatype xsd:dateTime ; ]
+        [ sh:datatype xsd:date ; ]
+    ) ;
     sh:message "schema:startDate is required."@en .
 
 ads:CoreEndDateSh
     a sh:PropertyShape ;
     sh:path schema:endDate ;
     sh:name "end date" ;
-    sh:minCount 0 .
+    sh:minCount 0 ;
+    sh:or (
+        [ sh:datatype xsd:dateTime ; ]
+        [ sh:datatype xsd:date ; ]
+    ) .
 
 ads:CoreEventDescriptionSh
     a sh:PropertyShape ;
