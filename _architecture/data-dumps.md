@@ -4,7 +4,7 @@ layout: architecture-doc
 nav_order: 11
 ---
 
-A data dump is a full serialized export of the Artsdata Core graph — useful when you want to load the entire dataset into your own triplestore or pipeline, instead of querying or dereferencing entities one at a time. Dumps are published periodically in formats such as N-Quads and JSON-LD.
+A data dump is a full serialized export of the Artsdata Core graph — useful when you want to load the entire dataset into your own triplestore or pipeline, instead of querying or dereferencing entities one at a time. Dumps are published periodically in Turtle format.
 
 The current list of Artsdata Core dumps, with their version, description and download URL, is published at:
 
@@ -12,7 +12,7 @@ The current list of Artsdata Core dumps, with their version, description and dow
 
 ## For automated / AI clients
 
-The download URL for a given dump is versioned and changes whenever a new dump is published. Do not hardcode or cache a specific download URL — always resolve the current one from the page above, or from the Artsdata MCP Server, which exposes the same dump metadata programmatically (see this repo's README section ["Generating the combined MCP schema file"](https://github.com/culturecreates/artsdata-data-model#generating-the-combined-mcp-schema-file) for background on the MCP server's role in the Artsdata ecosystem).
+The download URL for a given dump is versioned and changes whenever a new dump is published. Do not hardcode or cache a specific download URL — always resolve the current one from the page above, or from the Artsdata MCP Server, which exposes the same dump metadata programmatically.
 
 ## Alternatives to a static dump
 
