@@ -71,7 +71,7 @@ Artsdata offre plusieurs modes d'accès pour les consommateurs de données dési
 * Appeler l'[API de requête]({{ base }}/architecture/query-api.html) RESTfull d'Artsdata ;
 * S'abonner à un [flux iCalendar](https://kg.artsdata.ca/ical) personnalisé par l'entremise du [serveur iCal]({{ base }}/architecture/ical.html)&nbsp;;
 * Effectuer une requête sur le [terminal SPARQL]({{ base }}/architecture/sparql.html) d'Artsdata ;
-* Télécharger un [fichier cliché]({{ base }}/architecture/data-dumps.html) (c.-à-d., un "dump") sérialisé dans divers formats tels que JSON-LD ou N-Quads.
+* Télécharger un [fichier cliché]({{ base }}/architecture/data-dumps.html) (c.-à-d., un "dump") sérialisé en format Turtle.
 
 Les données déposées sur Artsdata sont sous licence CC0 et peuvent être utilisées dans d'autres applications sans restriction.
 
