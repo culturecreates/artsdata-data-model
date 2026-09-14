@@ -1,0 +1,15 @@
+# Artsdata Documentation
+
+> Documentation for the Artsdata.ca data model, ontology, and architecture — a pan-Canadian knowledge graph for the performing arts.
+
+## Data Dumps
+
+- How to find the current data dump and its download URL: https://docs.artsdata.ca/architecture/data-dumps.html
+- Live list of dumps (downloadURL changes as new dumps are published — do not hardcode it): https://kg.artsdata.ca/en/data-dumps
+
+## Key References
+
+- Data model overview: https://docs.artsdata.ca
+- Architecture / how data flows in and out of Artsdata: https://docs.artsdata.ca/architecture/overview.html
+- SPARQL endpoint: https://docs.artsdata.ca/architecture/sparql.html
+- Combined machine-readable schema (Turtle): https://github.com/culturecreates/artsdata-data-model/blob/master/artsdata-schema.ttl
