@@ -11,9 +11,8 @@ Supported entity types include:
 * Place
 * Person
 * Organization
-* Artsdata Live Performance Work
+* Live Performance Work
 * Agent (Person or Organization/Group)
-* Artsdata Event Type
 * Concept (Event type, Genre, etc.)
 
 Give it a try using the [Reconciliation Service Test Bench 1.0](https://reconciliation-api.github.io/testbench/1.0/#/client/https%3A%2F%2Frecon.artsdata.ca)
