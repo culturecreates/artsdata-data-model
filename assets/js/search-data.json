@@ -64,7 +64,7 @@
   },"9": {
     "doc": "Event",
     "title": "Event",
-    "content": "An Event in Artsdata is defined as: “an organized activity that occurs at a specific time and location”. The ado:Event is deemed an equivalent class to schema:Event. Any single performance, run of performances, or festival edition is deemed an Event or EventSeries type entity in Artsdata. ",
+    "content": "An Event in Artsdata is defined as: “an organized activity that occurs at a specific time and location”. The ado:Event is a subclass of schema:Event, asserted only on events that have been reconciled and minted into the Artsdata CORE graph – so ?x a ado:Event in SPARQL selects CORE-graph events without needing to filter on the kg.artsdata.ca/resource/ URI prefix. Any single performance, run of performances, or festival edition is deemed an Event or EventSeries type entity in Artsdata. ",
     "url": "/classes/event.html",
     
     "relUrl": "/classes/event.html"
