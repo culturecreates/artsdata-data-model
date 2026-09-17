@@ -6,7 +6,7 @@ title: Event
 ---
 
 # Event
-An `Event` in Artsdata is defined as: “an organized activity that occurs at a specific time and location”. The [`ado:Event`](http://kg.artsdata.ca/ontology/Event) is deemed an equivalent class to [`schema:Event`](https://schema.org/Event). 
+An `Event` in Artsdata is defined as: “an organized activity that occurs at a specific time and location”. The [`ado:Event`](http://kg.artsdata.ca/ontology/Event) is a subclass of [`schema:Event`](https://schema.org/Event), asserted only on events that have been reconciled and minted into the Artsdata CORE graph -- so `?x a ado:Event` in SPARQL selects CORE-graph events without needing to filter on the `kg.artsdata.ca/resource/` URI prefix.
 
 Any single performance, run of performances, or festival edition is deemed an `Event` or `EventSeries` type entity in Artsdata.
 
