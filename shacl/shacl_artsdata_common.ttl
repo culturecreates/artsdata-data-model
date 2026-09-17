@@ -2,6 +2,7 @@
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
 @prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 
 ####################################################
@@ -99,6 +100,25 @@ ads:NameSh
         [ sh:datatype xsd:string ; ]
     ) ;
     sh:message "schema:name is required (at least one value; multiple values must each have a distinct language tag)."@en .
+
+ads:PrefLabelSh
+    a sh:PropertyShape ;
+    sh:path skos:prefLabel ;
+    sh:name "pref label" ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+    sh:or (
+        [ sh:datatype rdf:langString ; ]
+        [ sh:datatype xsd:string ; ]
+    ) ;
+    sh:message "skos:prefLabel is required (at least one value; multiple values must each have a distinct language tag)."@en .
+
+ads:NoSchemaNameOnConceptSh
+    a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:name "name (forbidden on concepts)" ;
+    sh:maxCount 0 ;
+    sh:message "skos:Concept entities must be labelled with skos:prefLabel, not schema:name."@en .
 
 ads:UrlSh
     a sh:PropertyShape ;

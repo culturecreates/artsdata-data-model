@@ -11,9 +11,8 @@ Supported entity types include:
 * Place
 * Person
 * Organization
-* Artsdata Live Performance Work
+* Live Performance Work
 * Agent (Person or Organization/Group)
-* Artsdata Event Type
 * Concept (Event type, Genre, etc.)
 
 Give it a try using the [Reconciliation Service Test Bench 1.0](https://reconciliation-api.github.io/testbench/1.0/#/client/https%3A%2F%2Frecon.artsdata.ca)
@@ -53,7 +52,7 @@ For example to add a postal code when reconiling places, add the property id "sc
 
 Users that are logged-in to Artsdata may use the **Artsdata Batch Reconcile** user interface to quickly reconcile large datasets. The datasets must first be loaded into Artsdata in a prior step.
 
-The tool can be accessed via the [kg.artsdata.ca](https://kg.artsdata.ca) main menu (top right). More documentation will be published soon.
+The tool can be accessed via the [kg.artsdata.ca](https://kg.artsdata.ca) main menu (top right). 
 
 ## Batch Reconciliation using Open Refine
 
@@ -65,5 +64,5 @@ OpenRefine (last checked May 2026) only works with API v0.2: `https://api.artsda
 
 The reconciliation service is also used by several features in the Artsdata user interface. For example, a logged-in user may reconcile entities from a previously uploaded data source using the following methods:
 
-* Manually mint/link a top-level entity with the "Minter" feature, if the entity is assigned a URI.
-* Manually add a sameAs to a nested entity as part of the "Mint from blank node" feature, if the entity is a nested blanked node in the uploaded graph. This feature is useful when the same entity comes back frequently within a data source, such as the events location.
+* Manually mint/link a top-level entity with the "Reconcile" feature located in the top menu.
+* Manually add a sameAs to a nested blank node entity as part of the "Reconcile from blank node" feature. This feature is useful when the same blank node entity comes back frequently within a data source, such as the events nested location.

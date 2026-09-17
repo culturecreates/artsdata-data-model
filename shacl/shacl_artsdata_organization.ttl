@@ -81,6 +81,8 @@ ads:OrganizationTypeConceptShape
     sh:targetObjectsOf ado:hasOrganizationTypeConcept ;
     sh:nodeKind sh:IRI ;
     sh:class skos:Concept ;
+    sh:property ads:PrefLabelSh,
+                ads:NoSchemaNameOnConceptSh ;
     sh:property [
         sh:path skos:inScheme ;
         sh:hasValue adr:ArtsdataOrganizationTypes ;

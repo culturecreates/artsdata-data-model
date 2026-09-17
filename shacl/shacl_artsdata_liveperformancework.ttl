@@ -72,6 +72,8 @@ ads:GenreConceptShape
     sh:targetObjectsOf ado:hasGenre ;
     sh:nodeKind sh:IRI ;
     sh:class skos:Concept ;
+    sh:property ads:PrefLabelSh,
+                ads:NoSchemaNameOnConceptSh ;
     sh:property [
         sh:path skos:inScheme ;
         sh:hasValue adr:ArtsdataGenres ;

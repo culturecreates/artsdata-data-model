@@ -2,6 +2,7 @@
 @prefix adr:    <http://kg.artsdata.ca/resource/> .
 @prefix ext:    <http://example-provider.com/> .
 @prefix schema: <http://schema.org/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 
 # Fixture for the shacl/shacl_artsdata_*.ttl class files (see
@@ -157,3 +158,17 @@ adr:event6 a schema:Event ;
     schema:startDate "2026-12-10T20:00:00"^^xsd:dateTime ;
     schema:location adr:place1 ;
     ado:hasEventTypeConcept adr:AcappellaMusicPerformance .
+
+# Event type concept mislabelled with schema:name instead of skos:prefLabel
+# (and missing skos:prefLabel entirely) -- exercises ads:PrefLabelSh /
+# ads:NoSchemaNameOnConceptSh on ads:EventTypeConceptShape. Otherwise a
+# valid, current concept in the right vocabulary.
+adr:BadLabelEventType a skos:Concept ;
+    skos:inScheme adr:ArtsdataEventTypes ;
+    schema:name "Bad Label Type" .
+
+adr:event7 a schema:Event ;
+    schema:name "Bad Label Event Type Event" ;
+    schema:startDate "2026-12-11T20:00:00"^^xsd:dateTime ;
+    schema:location adr:place1 ;
+    ado:hasEventTypeConcept adr:BadLabelEventType .
