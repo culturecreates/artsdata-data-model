@@ -25,16 +25,8 @@
 #     - This means that certain OWL features (e.g., owl:disjointWith, owl:cardinality restrictions) are not used in this ontology to ensure compatibility with HORST reasoners.
 #     - Cardinality constraints are expressed in SHACL.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
-# V 1.6.0 (proposed, see Discussion for the data-modelling decision)
-#     - ado:Event changed from owl:equivalentClass schema:Event to rdfs:subClassOf
-#       schema:Event, and ado:Organization, ado:Place, ado:Person added as new
-#       rdfs:subClassOf their schema.org counterparts. Unlike owl:equivalentClass
-#       (symmetric: any schema:X entity from any source would match), these are
-#       asserted only on entities reconciled and minted into the Artsdata CORE
-#       graph, so `?x a ado:Organization` becomes a filter-free way to query
-#       CORE-graph entities of a class, in place of matching on the adr: URI
-#       prefix. See shacl/shacl_artsdata_common.ttl for the corresponding SHACL
-#       shapes.
+# V 1.6.0 
+#     - See discussion: https://github.com/culturecreates/artsdata-data-model/discussions/470
 # V 1.5.0
 #     - Add ado:hasOrganizationTypeConcept
 # V 1.4.0
@@ -87,7 +79,7 @@ ado:Organization rdf:type rdfs:Class ;
 
 ado:Place rdf:type rdfs:Class ;
     rdfs:label "Place"@en ;
-    rdfs:comment "A physical or virtual location where an event, organization, or person is situated."@en ;
+    rdfs:comment "A physical location where an event, organization, or person is situated."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:subClassOf ado:Thing, schema:Place .
 
@@ -106,7 +98,7 @@ ado:hasEventTypeConcept rdf:type rdf:Property ;
     rdfs:label "has event type"@en ;
     rdfs:comment "Links an Event to an event type concept defined by the Artsdata controlled vocabulary for event types."@en ;
     rdfs:isDefinedBy ado: ;
-    rdfs:domain ado:Event ;
+    rdfs:domain schema:Event ;
     rdfs:subPropertyOf schema:additionalType ;
     rdfs:range skos:Concept .
 
