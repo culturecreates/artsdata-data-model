@@ -58,6 +58,14 @@
          "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
          "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"]
    }],
+   "workPerformed":[{
+      "@type":"CreativeWork",
+      "@id": "--URI constituant un identifiant unique de l'œuvre scénique (spectacle). Optionnel : URI constituting a unique identifier of the live performance work (show). Optional--",
+      "additionalType":"http://kg.artsdata.ca/ontology/LivePerformanceWork",
+      "genre":[
+         "--Genre du spectacle, soit sous forme de chaîne de caractères ou d'URI, par exemple "Danse" ou "http://kg.artsdata.ca/resource/K6-200" : Genre of the show, either as a text string or URI, for example "Dance" or "http://kg.artsdata.ca/resource/K6-200"--",
+         "--Autre genre du spectacle : Other genre of the show--"]
+   }],
    "offers":[{
       "@type":"Offer",
       "availability":"http://schema.org/InStock",
