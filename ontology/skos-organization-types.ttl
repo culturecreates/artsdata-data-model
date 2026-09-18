@@ -81,7 +81,7 @@ adr:ArtsdataOrganizationTypes dcterms:hasFormat <https://raw.githubusercontent.c
 	vann:usageNote <https://docs.artsdata.ca/classes/organization-types.html> ;
 	schema:creator adr:K1-5, adr:K16-211 ;
 	schema:dateCreated "2022-04-01"^^xsd:date ;
-	schema:dateModified "2026-08-21"^^xsd:date ;
+	schema:dateModified "2026-09-18"^^xsd:date ;
 	schema:version "3.2" ;
 	rdf:type skos:ConceptScheme ;
 	rdfs:comment "Third Version"@en, "Troisième version"@fr ;
@@ -237,7 +237,7 @@ adr:TheatreCompany schema:naics "711111"^^xsd:integer ;
 	rdf:type skos:Concept ;
 	skos:altLabel "theatre troupe, theater troupe, theatre group, theater group, theatrical company, theatrical troupe, theatre collective, acting company, acting troupe, dramatic company"@en, "compagnie théâtrale, collectif de théâtre, groupe de théâtre, troupe de théâtre, troupe théâtrale"@fr ;
 	skos:broader adr:PerformingArtsCompany ;
-	skos:closeMatch schema:TheaterGroup, aat:300266039, wd:Q2416217 ;
+	skos:closeMatch schema:TheaterGroup, aat:300266039, wd:Q2416217, wd:Q11812394 ;
 	skos:definition "A group of artists and associated personnel who mainly create, produce and perform plays, puppet shows, and/or similar theatrical performance works."@en, "Un groupe d’artistes et personnel associé qui créent, produisent et exécutent principalement des spectacles de théâtre."@fr ;
 	skos:inScheme adr:ArtsdataOrganizationTypes ;
 	skos:prefLabel "Theatre Company"@en, "Compagnie de théâtre"@fr ;
