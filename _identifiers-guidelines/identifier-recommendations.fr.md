@@ -64,14 +64,14 @@ Il est possible pour des tiers de contribuer à l’assignation d’identifiants
 - Utiliser la fonction « [Réconcilier avec Wikidata](https://kg.artsdata.ca/fr/mint/wikidata) », dans l’interface d’Artsdata, pour charger une entité depuis Wikidata et lui assigner un identifiant Artsdata;
 - Utiliser l’API Mint, depuis une application tierce, pour assigner des identifiants à des entités qui ne sont pas encore chargées dans Artsdata.
 
-<img width="758" height="409" alt="image" src="https://github.com/user-attachments/assets/a8d4054a-871c-4d45-855d-f71fac40be29" />
+<img width="500" height="270" alt="image" src="https://github.com/user-attachments/assets/a8d4054a-871c-4d45-855d-f71fac40be29" />
 
-_Aperçu de la fonction « Réconcilier » dans l'interface de visualisation des ressources._
-
+_La fonction « Réconcilier », dans l'interface de visualisation des ressources, permet à une personne contributrice de réconcilier une entité (c'.-à-d., vérifier dans le graphe central si d'autres entités similaires existent, puit soit de créer et d'attribuer un nouvel identifiant à cette entité, soit de la lier à un identifiant Artsdata existant._
 
 ### Spécifications de l’identifiant Artsdata
 
-- Format de l’URI : `http://kg.artsdata.ca/resource/$1` 
+- Format de l’URI : `http://kg.artsdata.ca/resource/$1`
+- Format CURI : `adr:$1`
 - Regex l’identifiant : `^K\d+-\d+$`
 - Exemple d’URI : `http://kg.artsdata.ca/resource/K12-438`
 - Note : Le format d’URI d’Artsdata n’inclut pas un protocole sécurisé “https”, comme c’est souvent le cas pour les identifiants pérennes avec négociation de contenu.
