@@ -140,8 +140,6 @@ ado:managedBy rdf:type rdf:Property ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Place ;
     rdfs:range schema:Organization ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-	owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:equivalentProperty wdt:P137, dbo:operator .
 
 ado:ownedBy rdf:type rdf:Property ;
@@ -150,7 +148,6 @@ ado:ownedBy rdf:type rdf:Property ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Place ;
     rdfs:range schema:Organization ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
     owl:equivalentProperty wdt:P127 .
 
 ado:usedBy rdf:type rdf:Property ;
