@@ -53,15 +53,25 @@ Coming soon...
 
 ### About the Artsdata Identifier
 
-The Artsdata ID is a globally-unique persistent identifier for any concept or named entity in the Artsdata knowledge graph. It can be assigned to performing arts entity types for which there exists at present no good persistent identifier (for example, an event). Any entity that meets minimal requirements and that passes SHACL validation can be minted an ID.
+The Artsdata ID is a _globally-unique persistent identifier_ for any concept or named entity in the Artsdata knowledge graph. It can be assigned to performing arts entity types for which there exists at present no good persistent identifier (for example, an event). Any entity that meets minimal requirements and that passes SHACL validation can be minted an ID.
+
+The Artsdata ID is also an _opaque_ identifier. It is made up of a series of a letter (the letter "k") and numbers that have no connection with the content of the entity. The first series of digits following the letter "K" designates the source that provided the data record from which the ID was minted. For example, entities whose name begin with "K2" were minted from Wikidata. The second series of digits complements the first series to form the unique name of the entity within the Artsdata domain.
+
+The Artsdata ID is _dereferenceable_: it can be resolved over the web to access the metadata describing the entity. Using content negotiation, Artsdata resources can be accessed in either HTML, JSON-LD, or Turtle format.
 
 Third parties are welcome to contribute to assigning Artsdata IDs. Registered users may:
-- Use the “Minter” feature, in the Artsdata interface, to mint or link an ID to an entity loaded to the knowledge graph;
-- Use the “Mint using Wikidata” feature, in the Artsdata interface, to load an entity from Wikidata and to mint or link an ID for it;
-- Use the Minting API to assign IDs to entities that have not been loaded to Artsdata yet.
+- Use the “Reconcile” feature, in the Artsdata resource interface, to mint or link an ID to an entity loaded to the knowledge graph;
+- Use the “[Batch Reconcile](https://kg.artsdata.ca/en/reconcile/batch)” tool, to reconcile and link or mint resources from an entire dataset in a semi-automated fashion;
+- Use the “[Reconcile with Wikidata](https://kg.artsdata.ca/en/mint/wikidata)” tool to load an entity from Wikidata and to mint or link an ID for it;
+- Use the Minting API via a third-party application to assign IDs to entities that have not been loaded to Artsdata yet.
+
+<img width="592" height="371" alt="image" src="https://github.com/user-attachments/assets/60b60332-aa1c-448b-8600-aa5833702051" />
+
+_The “Reconcile” feature, in the Artsdata resource interface offers an easy means for a data steward to reconcile an entity (i.e., look into the Artsdata core graph for potential duplicates of this entity), and then to either mint a new Artsdata ID or link the entity to an existing Artsdata ID._
 
 #### Specifications
-- URI format: `http://kg.artsdata.ca/resource/$1` 
-- Regex for the ID: `^K\d+-\d+$`
+- URI format: `http://kg.artsdata.ca/resource/$1`
+- CURI format: `adr:$1`
+- Regex (name only): `^K\d+-\d+$`
 - Sample URI: `http://kg.artsdata.ca/resource/K12-438`
 - Note : The URI format doesn’t use a secured “https” protocol, as is often the case for URIs with content negotiation.
