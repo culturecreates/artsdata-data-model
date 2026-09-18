@@ -1,3 +1,4 @@
+@prefix ado:    <http://kg.artsdata.ca/ontology/> .
 @prefix ads:    <http://kg.artsdata.ca/shacl/> .
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
@@ -78,10 +79,13 @@
 # severity intact, and they apply automatically to the same triples once
 # loaded alongside the property shapes above.
 #
-# Out of scope: ado:originEC appears in the Organization and Person mint
-# queries but is not declared anywhere in ontology/artsdata-ontology.ttl.
-# Its range/vocabulary is unknown, so it is deliberately left unshaped here
-# until it is formalized in the ontology.
+# ado:originEC (domain schema:Thing, range skos:Concept, see
+# ontology/artsdata-ontology.ttl) is a deliberate exception to the adr:-only
+# rule above: per the mint queries (artsdata-actions indigenous_agents_wikidata
+# / events_potentially_with_indigenous_agents), its values are Wikidata (wd:)
+# items -- e.g. a subclass, via skos:broader*, of Indigenous peoples
+# (wd:Q103817) -- not Artsdata-minted adr: concepts. ads:OriginECSh enforces
+# that below.
 ####################################################
 
 
@@ -143,6 +147,15 @@ ads:AdditionalTypeSh
     sh:minCount 0 ;
     sh:nodeKind sh:IRI ;
     sh:message "schema:additionalType must be a URI."@en .
+
+ads:OriginECSh
+    a sh:PropertyShape ;
+    sh:path ado:originEC ;
+    sh:name "origin" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://www\\.wikidata\\.org/entity/" ;
+    sh:message "ado:originEC must reference a Wikidata (wd:) item, e.g. a subclass of Indigenous peoples (wd:Q103817)."@en .
 
 ads:DescriptionShape
     a sh:NodeShape ;

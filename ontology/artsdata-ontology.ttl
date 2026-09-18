@@ -25,7 +25,9 @@
 #     - This means that certain OWL features (e.g., owl:disjointWith, owl:cardinality restrictions) are not used in this ontology to ensure compatibility with HORST reasoners.
 #     - Cardinality constraints are expressed in SHACL.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
-# V 1.6.0 
+# V 1.7.0
+#     - Add ado:originEC (see https://github.com/culturecreates/artsdata-data-model/issues/280)
+# V 1.6.0
 #     - See discussion: https://github.com/culturecreates/artsdata-data-model/discussions/470
 # V 1.5.0
 #     - Add ado:hasOrganizationTypeConcept
@@ -38,12 +40,12 @@ ado: rdf:type owl:Ontology ;
     dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage."@en ;
     dcterms:creator "Artsdata Stewardship Team" ;
     dcterms:created "2025-09-30"^^xsd:date ;
-    dcterms:modified "2026-07-03"^^xsd:date ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "ado" ;
     vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
     owl:versionIRI <http://kg.artsdata.ca/ontology/1/> ; # TODO: location = /ontology/1 { return 301 /ontology/; }
-    owl:versionInfo "1.4.0" ;
+    owl:versionInfo "1.7.0" ;
     vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/artsdata-ontology.ttl> ;
     dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
 
@@ -118,6 +120,16 @@ ado:hasOrganizationTypeConcept rdf:type rdf:Property ;
     rdfs:subPropertyOf schema:additionalType ;
     rdfs:range skos:Concept .
 
+ado:originEC rdf:type rdf:Property ;
+    rdfs:label "ethnic or cultural origin"@en ;
+    rdfs:label "origine ethnique ou culturelle"@fr ;
+    rdfs:comment "Links a Person or Organization to a concept identifying its Indigenous or ethnocultural origin, defined by the Artsdata controlled vocabulary derived from Wikidata's Indigenous Peoples of North America (wd:Q15571255) and related concepts."@en ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:domain schema:Thing ;
+    rdfs:subPropertyOf schema:additionalType ;
+    rdfs:range skos:Concept ;
+    owl:equivalentProperty wdt:P1552, wdt:P172 .
+
 ado:usesExpressionOf rdf:type rdf:Property ;
     rdfs:label "uses expression of"@en ;
     rdfs:comment "This property associates an instance of CreativeWork with another instance of CreativeWork that is a creative input to the former. For example, Pina Bausch's \"The Rite of Spring\" (instance of LivePerformanceWork) uses expression of Igor Stravinsky's \"The Rite of Spring\" (instance of musico-dramatic work)."@en ;
@@ -140,8 +152,6 @@ ado:managedBy rdf:type rdf:Property ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Place ;
     rdfs:range schema:Organization ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-	owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:equivalentProperty wdt:P137, dbo:operator .
 
 ado:ownedBy rdf:type rdf:Property ;
@@ -150,7 +160,6 @@ ado:ownedBy rdf:type rdf:Property ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Place ;
     rdfs:range schema:Organization ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
     owl:equivalentProperty wdt:P127 .
 
 ado:usedBy rdf:type rdf:Property ;
