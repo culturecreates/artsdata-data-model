@@ -20,7 +20,7 @@
 ads:OrganizationShape
     a sh:NodeShape ;
     sh:name "Organization Shape" ;
-    sh:targetClass schema:Organization ;
+    sh:targetClass schema:Organization, ado:Organization ;
     sh:property ads:NameSh,
                 ads:UrlSh,
                 ads:SameAsSh,
