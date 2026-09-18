@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-09-18T18:19:23+00:00" />
+<meta property="article:published_time" content="2026-09-18T18:22:57+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Persistent Identifiers Guidelines" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-18T18:19:23+00:00","datePublished":"2026-09-18T18:19:23+00:00","description":"Artsdata Guidelines regarding Persistent Identifiers","headline":"Persistent Identifiers Guidelines","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-18T18:22:57+00:00","datePublished":"2026-09-18T18:22:57+00:00","description":"Artsdata Guidelines regarding Persistent Identifiers","headline":"Persistent Identifiers Guidelines","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -625,14 +625,23 @@ function goBack() {
 </h3>
     
 
-<p>The Artsdata ID is a globally-unique persistent identifier for any concept or named entity in the Artsdata knowledge graph. It can be assigned to performing arts entity types for which there exists at present no good persistent identifier (for example, an event). Any entity that meets minimal requirements and that passes SHACL validation can be minted an ID.</p>
+<p>The Artsdata ID is a <em>globally-unique persistent identifier</em> for any concept or named entity in the Artsdata knowledge graph. It can be assigned to performing arts entity types for which there exists at present no good persistent identifier (for example, an event). Any entity that meets minimal requirements and that passes SHACL validation can be minted an ID.</p>
+
+<p>The Artsdata ID is also an <em>opaque</em> identifier. It is made up of a series of a letter (the letter “k”) and numbers that have no connection with the content of the entity. The first series of digits following the letter “K” designates the source that provided the data record from which the ID was minted. For example, entities whose name begin with “K2” were minted from Wikidata. The second series of digits complements the first series to form the unique name of the entity within the Artsdata domain.</p>
+
+<p>The Artsdata ID is <em>dereferenceable</em>: it can be resolved over the web to access the metadata describing the entity. Using content negotiation, Artsdata resources can be accessed in either HTML, JSON-LD, or Turtle format.</p>
 
 <p>Third parties are welcome to contribute to assigning Artsdata IDs. Registered users may:</p>
 <ul>
-  <li>Use the “Minter” feature, in the Artsdata interface, to mint or link an ID to an entity loaded to the knowledge graph;</li>
-  <li>Use the “Mint using Wikidata” feature, in the Artsdata interface, to load an entity from Wikidata and to mint or link an ID for it;</li>
-  <li>Use the Minting API to assign IDs to entities that have not been loaded to Artsdata yet.</li>
+  <li>Use the “Reconcile” feature, in the Artsdata resource interface, to mint or link an ID to an entity loaded to the knowledge graph;</li>
+  <li>Use the “<a href="https://kg.artsdata.ca/en/reconcile/batch">Batch Reconcile</a>” tool, to reconcile and link or mint resources from an entire dataset in a semi-automated fashion;</li>
+  <li>Use the “<a href="https://kg.artsdata.ca/en/mint/wikidata">Reconcile with Wikidata</a>” tool to load an entity from Wikidata and to mint or link an ID for it;</li>
+  <li>Use the Minting API via a third-party application to assign IDs to entities that have not been loaded to Artsdata yet.</li>
 </ul>
+
+<p><img width="592" height="371" alt="image" src="https://github.com/user-attachments/assets/60b60332-aa1c-448b-8600-aa5833702051" /></p>
+
+<p><em>The “Reconcile” feature, in the Artsdata resource interface offers an easy means for a data steward to reconcile an entity (i.e., look into the Artsdata core graph for potential duplicates of this entity), and then to either mint a new Artsdata ID or link the entity to an existing Artsdata ID.</em></p>
 <h4 id="specifications">
   
   
@@ -643,7 +652,8 @@ function goBack() {
     
 <ul>
   <li>URI format: <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/$1</code></li>
-  <li>Regex for the ID: <code class="language-plaintext highlighter-rouge">^K\d+-\d+$</code></li>
+  <li>CURI format: <code class="language-plaintext highlighter-rouge">adr:$1</code></li>
+  <li>Regex (name only): <code class="language-plaintext highlighter-rouge">^K\d+-\d+$</code></li>
   <li>Sample URI: <code class="language-plaintext highlighter-rouge">http://kg.artsdata.ca/resource/K12-438</code></li>
   <li>Note : The URI format doesn’t use a secured “https” protocol, as is often the case for URIs with content negotiation.</li>
 </ul>
