@@ -121,7 +121,8 @@ ado:hasOrganizationTypeConcept rdf:type rdf:Property ;
     rdfs:range skos:Concept .
 
 ado:originEC rdf:type rdf:Property ;
-    rdfs:label "origin"@en ;
+    rdfs:label "ethnic or cultural origin"@en ;
+    rdfs:label "origine ethnique ou culturelle"@fr ;
     rdfs:comment "Links a Person or Organization to a concept identifying its Indigenous or ethnocultural origin, defined by the Artsdata controlled vocabulary derived from Wikidata's Indigenous Peoples of North America (wd:Q15571255) and related concepts."@en ;
     rdfs:isDefinedBy ado: ;
     rdfs:domain schema:Thing ;
