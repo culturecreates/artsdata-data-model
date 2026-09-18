@@ -1,5 +1,6 @@
 @prefix ads:    <http://kg.artsdata.ca/shacl/> .
 @prefix schema: <http://schema.org/> .
+@prefix ado:    <http://kg.artsdata.ca/ontology/> .
 @prefix sh:     <http://www.w3.org/ns/shacl#> .
 
 ####################################################
@@ -13,7 +14,7 @@
 ads:PersonShape
     a sh:NodeShape ;
     sh:name "Person Shape" ;
-    sh:targetClass schema:Person ;
+    sh:targetClass schema:Person, ado:Person ;
     sh:property ads:NameSh,
                 ads:UrlSh,
                 ads:SameAsSh,

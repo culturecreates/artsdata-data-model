@@ -225,20 +225,50 @@ module SchemaOverview
 
   # ---- Classes ----
   #
-  # owl:equivalentClass pairs (e.g. ado:Event / schema:Event) describe one
+  # owl:equivalentClass pairs (e.g. old-style ado:X / schema:X) describe one
   # real-world class, not two: grouped here into a single card via
   # equivalence_closure, the same way artsdata-mcp-server's
   # ShaclSchemaCompiler groups them for its digest. Without this, a class
   # targeted under two equivalent URIs by the same sh:NodeShape would render
   # as two cards with identical property tables.
-
-  def equivalence_closure(graph, cls)
+  #
+  # Since V1.6.0, ado:Event/Organization/Place/Person are no longer
+  # owl:equivalentClass to their schema.org counterpart -- they're
+  # rdfs:subClassOf it instead (a one-directional "this is the CORE-graph-
+  # reconciled subset" relationship, not "these are the same class"; see the
+  # ontology's V1.6.0 changelog note). But for this overview -- which
+  # documents the CORE graph specifically -- every entity is expected to
+  # carry both types, so they still describe one card, not two. A direct
+  # rdfs:subClassOf edge from an ado: class to an external (non-ado:) class
+  # that is itself shape-targeted is treated as the same kind of merge edge,
+  # with the ado: URI winning as primary (see pick_primary_class) since
+  # that's what denotes CORE-graph membership. This is scoped to non-ado:
+  # targets so it doesn't transitively merge every ado: class through their
+  # shared ado:Thing superclass.
+  def equivalence_closure(graph, cls, ado_ns, shapes_by_class)
     equivalent = RDF::OWL.equivalentClass
     seen = [cls]
     queue = [cls]
     until queue.empty?
       current = queue.shift
-      (objects(graph, current, equivalent) + subjects(graph, equivalent, current)).each do |other|
+      related = objects(graph, current, equivalent) + subjects(graph, equivalent, current)
+
+      if ado_ns && current.to_s.start_with?(ado_ns)
+        objects(graph, current, RDF::RDFS.subClassOf).each do |sup|
+          next if sup.to_s.start_with?(ado_ns)
+          next unless shapes_by_class.key?(sup)
+
+          related << sup
+        end
+      end
+
+      if shapes_by_class.key?(current)
+        subjects(graph, RDF::RDFS.subClassOf, current).each do |sub|
+          related << sub if ado_ns && sub.to_s.start_with?(ado_ns)
+        end
+      end
+
+      related.each do |other|
         next if seen.include?(other)
 
         seen << other
@@ -251,11 +281,11 @@ module SchemaOverview
   # Groups class_uris by equivalence, keeping only members actually present
   # in class_uris (an equivalentClass can point outside that set, e.g. to an
   # external vocabulary term with no shape and no rdfs:Class typing here).
-  def group_classes_by_equivalence(graph, class_uris)
+  def group_classes_by_equivalence(graph, class_uris, ado_ns, shapes_by_class)
     remaining = class_uris.dup
     groups = []
     until remaining.empty?
-      group = equivalence_closure(graph, remaining.shift) & class_uris
+      group = equivalence_closure(graph, remaining.shift, ado_ns, shapes_by_class) & class_uris
       remaining -= group
       groups << group
     end
@@ -290,8 +320,9 @@ module SchemaOverview
 
     ontology_classes = graph.query([nil, RDF.type, RDF::RDFS.Class]).map(&:subject).uniq
     class_uris = (shapes_by_class.keys + ontology_classes).uniq
+    ado_ns = prefixes[:ado]
 
-    group_classes_by_equivalence(graph, class_uris).map do |group|
+    group_classes_by_equivalence(graph, class_uris, ado_ns, shapes_by_class).map do |group|
       primary = pick_primary_class(group, ontology_classes, shapes_by_class)
       shapes = group.flat_map { |c| shapes_by_class[c] || [] }.uniq
       entries = shapes.flat_map do |shape|
@@ -495,7 +526,8 @@ module SchemaOverview
 
           var meta = [];
           if (cls.subClassOf && cls.subClassOf.length) meta.push('subclass of ' + cls.subClassOf.map(esc).join(', '));
-          if (cls.equivalentClass && cls.equivalentClass.length) meta.push('equivalent to ' + cls.equivalentClass.map(esc).join(', '));
+          var alsoDocuments = (cls.equivalentClass || []).filter(function (c) { return !cls.subClassOf || cls.subClassOf.indexOf(c) === -1; });
+          if (alsoDocuments.length) meta.push('this card also documents ' + alsoDocuments.map(esc).join(', '));
           if (cls.shapes && cls.shapes.length) meta.push('shapes: ' + cls.shapes.map(esc).join(', '));
 
           var rows = cls.properties.length

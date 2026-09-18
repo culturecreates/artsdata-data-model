@@ -69,6 +69,19 @@ adr:person1 a schema:Person ;
 # Missing name entirely
 adr:place2 a schema:Place .
 
+# Typed only as the ado: class (no schema: type) -- exercises that
+# EventShape/OrganizationShape/PlaceShape/PersonShape's dual sh:targetClass
+# (schema:X, ado:X) applies to ado:-only-typed entities too, once the mint
+# pipeline starts asserting ado: types alongside schema: (see discussion #470).
+# Missing name on each, same check as adr:place2 above.
+adr:event8 a ado:Event .
+
+adr:org7 a ado:Organization .
+
+adr:place9 a ado:Place .
+
+adr:person3 a ado:Person .
+
 # Blank/whitespace-only description
 adr:place3 a schema:Place ;
     schema:name "Empty Desc Place" ;

@@ -19,7 +19,7 @@
 ads:PlaceShape
     a sh:NodeShape ;
     sh:name "Place Shape" ;
-    sh:targetClass schema:Place ;
+    sh:targetClass schema:Place, ado:Place ;
     sh:property ads:NameSh,
                 ads:UrlSh,
                 ads:SameAsSh,
