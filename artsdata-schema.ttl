@@ -697,7 +697,7 @@ ads:GenreConceptShape
 ads:OrganizationShape
     a sh:NodeShape ;
     sh:name "Organization Shape" ;
-    sh:targetClass schema:Organization ;
+    sh:targetClass schema:Organization, ado:Organization ;
     sh:property ads:NameSh,
                 ads:UrlSh,
                 ads:SameAsSh,
@@ -789,7 +789,7 @@ ads:OrganizationTypeConceptShape
 ads:PlaceShape
     a sh:NodeShape ;
     sh:name "Place Shape" ;
-    sh:targetClass schema:Place ;
+    sh:targetClass schema:Place, ado:Place ;
     sh:property ads:NameSh,
                 ads:UrlSh,
                 ads:SameAsSh,
@@ -967,7 +967,7 @@ ads:PlaceTypeConceptShape
 ads:PersonShape
     a sh:NodeShape ;
     sh:name "Person Shape" ;
-    sh:targetClass schema:Person ;
+    sh:targetClass schema:Person, ado:Person ;
     sh:property ads:NameSh,
                 ads:UrlSh,
                 ads:SameAsSh,
