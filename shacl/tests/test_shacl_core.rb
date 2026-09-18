@@ -87,6 +87,22 @@ class TestShaclCore < Minitest::Test
     assert_includes violations, adr("place2")
   end
 
+  def test_ado_only_typed_event_is_still_shaped
+    assert_includes violations, adr("event8")
+  end
+
+  def test_ado_only_typed_organization_is_still_shaped
+    assert_includes violations, adr("org7")
+  end
+
+  def test_ado_only_typed_place_is_still_shaped
+    assert_includes violations, adr("place9")
+  end
+
+  def test_ado_only_typed_person_is_still_shaped
+    assert_includes violations, adr("person3")
+  end
+
   def test_blank_description_is_violation
     # ads:DescriptionShape self-targets on the value of
     # schema:description (sh:targetObjectsOf), so the reported focus node
