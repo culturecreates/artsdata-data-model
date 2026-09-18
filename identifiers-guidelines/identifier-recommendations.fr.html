@@ -50,11 +50,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.fr.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-09-18T18:22:57+00:00" />
+<meta property="article:published_time" content="2026-09-18T18:32:39+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Lignes directrices sur les identifiants pérennes" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-18T18:22:57+00:00","datePublished":"2026-09-18T18:22:57+00:00","description":"Lignes directrices d’Artsdata à propos des identifiants pérennes","headline":"Lignes directrices sur les identifiants pérennes","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.fr.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.fr.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-18T18:32:39+00:00","datePublished":"2026-09-18T18:32:39+00:00","description":"Lignes directrices d’Artsdata à propos des identifiants pérennes","headline":"Lignes directrices sur les identifiants pérennes","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.fr.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/identifiers-guidelines/identifier-recommendations.fr.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -558,7 +558,7 @@ function goBack() {
   </tbody>
 </table></div>
 
-<p>L’identifiant Artsdata, l’identifiant Wikidata et l’ISNI sont des identifiants pérennes globalement uniques : ils sont destinés à référencés dans plusieurs systèmes d’informations, hors de leurs domaine web. En ce sens, on les désigne parfois d’identifiants « globaux », identifiants « passerelles » ou identifiants « externes ». Dans ces lignes directrices, on les appelle <em>URI externes</em>.</p>
+<p>L’identifiant Artsdata, l’identifiant Wikidata et l’ISNI sont des identifiants pérennes globalement uniques : ils sont destinés à référencés dans plusieurs systèmes d’informations, hors de leurs domaine web. En ce sens, on les désigne parfois d’identifiants « globaux », identifiants « passerelles » ou identifiants « externes ». Dans ces lignes directrices, on les appelle <em>URI externes</em>.</p>
 
 <p>Par opposition, les identifiants « locaux » (par exemple, les clés d’une base de données relationnelle), sont destinés à être référencés à l’interne, à l’intérieur d’un système d’information local. Les identifiants locaux peuvent aussi être exprimés sous la forme d’une URI à l’intérieur du domaine web ou le système d’information est hébergé. Ces <em>URI locales</em> peuvent être réconciliées (c.-à-d. mises en correspondance ou <em>matchées</em>) avec des <em>URI externes</em> afin de préciser que deux URI désignent la même entité du monde réel (par exemple, une personne, un lieu ou un événement).</p>
 
@@ -614,19 +614,21 @@ function goBack() {
 
 <p>L’identifiant Artsdata est un identifiant <em>globalement unique</em> et <em>pérenne</em> pouvant désigner tout concept ou toute entité nommée dans le graphe de connaissances Artsdata. Il peut notamment être assigné à des entités pour lesquelles il n’existe à l’heure actuelle aucun identifiant passerelle approprié, notamment les entités de type Event. Toute entité satisfaisant à une validation SHACL peut se voir assigner un identifiant.</p>
 
-<p>L’identifiant Artsdata est aussi un identifiant <em>opaque</em>. Il est constitué d’une suite d’une lettre (la lettre « K ») et de chiffres sans rapport avec le contenu de l’entité. La première série de chiffre désigne la source à partir de laquelle l’identifiant a été créé. Par exemple, les entités dont le nom débute par « K2 » ont toutes été importées depuis Wikidata. La seconde série de chiffre complète la première pour désigner de façon univoque l’entité.</p>
+<p>L’identifiant Artsdata est aussi un identifiant <em>opaque</em>. Il est constitué d’une suite d’une lettre (la lettre « K ») et de chiffres sans rapport avec le contenu de l’entité. La première série de chiffre désigne la source à partir de laquelle l’identifiant a été créé. Par exemple, les entités dont le nom débute par « K2 » ont toutes été importées depuis Wikidata. La seconde série de chiffre complète la première pour désigner de façon univoque l’entité.</p>
+
+<p>L’identifiant Artsdata est <em>déréférençable</em> : il est possible de le résoudre sur le Web afin d’accéder aux métadonnées de l’entité qu’il identifie. Selon les préférences de l’agent qui accède à la ressources, les métadonnées peuvent être représentées dans trois formats : HTML, JSON-LD, Turtle.</p>
 
 <p>Il est possible pour des tiers de contribuer à l’assignation d’identifiants Artsdata. Les utilisateurs enregistrés peuvent notamment :</p>
 <ul>
-  <li>Utiliser la fonction « Réconcilier », depuis l’interface de visualition d’une ressource, pour assigner ou lier un identifiant à une entité déjà chargée dans Artsdata;</li>
-  <li>Utiliser l’application de « <a href="https://kg.artsdata.ca/fr/reconcile/batch">Rapprochement en lot</a> », pour réconcilier, lier et attribuer des identifiants avec un jeu complet données;</li>
-  <li>Utiliser la fonction « <a href="https://kg.artsdata.ca/fr/mint/wikidata">Réconcilier avec Wikidata</a> », dans l’interface d’Artsdata, pour charger une entité depuis Wikidata et lui assigner un identifiant Artsdata;</li>
+  <li>Utiliser la fonction « Réconcilier », depuis l’interface de visualition d’une ressource, pour assigner ou lier un identifiant à une entité déjà chargée dans Artsdata ;</li>
+  <li>Utiliser l’application de « <a href="https://kg.artsdata.ca/fr/reconcile/batch">Rapprochement en lot</a> », pour réconcilier, lier et attribuer des identifiants avec un jeu complet données ;</li>
+  <li>Utiliser la fonction « <a href="https://kg.artsdata.ca/fr/mint/wikidata">Réconcilier avec Wikidata</a> », dans l’interface d’Artsdata, pour charger une entité depuis Wikidata et lui assigner un identifiant Artsdata ;</li>
   <li>Utiliser l’API Mint, depuis une application tierce, pour assigner des identifiants à des entités qui ne sont pas encore chargées dans Artsdata.</li>
 </ul>
 
 <p><img width="500" height="270" alt="image" src="https://github.com/user-attachments/assets/a8d4054a-871c-4d45-855d-f71fac40be29" /></p>
 
-<p><em>La fonction « Réconcilier », dans l’interface de visualisation des ressources, permet à une personne contributrice de réconcilier une entité (c’.-à-d., vérifier dans le graphe central si d’autres entités similaires existent, puit soit de créer et d’attribuer un nouvel identifiant à cette entité, soit de la lier à un identifiant Artsdata existant.</em></p>
+<p><em>La fonction « Réconcilier », dans l’interface de visualisation des ressources, permet à une personne contributrice de réconcilier une entité (c.-à-d., vérifier dans le graphe central si d’autres entités similaires existent), puis soit de créer et d’attribuer un nouvel identifiant à cette entité, soit de la lier à un identifiant Artsdata existant.</em></p>
 <h3 id="spécifications-de-lidentifiant-artsdata">
   
   
