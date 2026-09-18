@@ -190,4 +190,12 @@ class TestShaclCore < Minitest::Test
   def test_organization_type_pointing_to_non_adr_uri_is_violation
     assert_includes violations, adr("org4")
   end
+
+  def test_organization_origin_ec_pointing_to_non_wikidata_uri_is_violation
+    assert_includes violations, adr("org6")
+  end
+
+  def test_person_origin_ec_pointing_to_non_wikidata_uri_is_violation
+    assert_includes violations, adr("person2")
+  end
 end

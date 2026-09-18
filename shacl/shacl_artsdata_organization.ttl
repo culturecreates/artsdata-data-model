@@ -31,8 +31,8 @@ ads:OrganizationShape
                 ads:LogoSh,
                 ads:TelephoneSh,
                 ads:CanadianBusinessNumberSh,
-                ads:HasOrganizationTypeConceptSh .
-    # Not shaped: ado:originEC (see shacl_artsdata_common.ttl header) .
+                ads:HasOrganizationTypeConceptSh,
+                ads:OriginECSh .
 
 ads:HasOrganizationTypeConceptSh
     a sh:PropertyShape ;

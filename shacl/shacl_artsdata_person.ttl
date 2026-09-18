@@ -21,8 +21,8 @@ ads:PersonShape
                 ads:DisambiguatingDescriptionSh,
                 ads:PersonDescriptionSh,
                 ads:UnstructuredImageSh,
-                ads:HasOccupationSh .
-    # Not shaped: ado:originEC (see shacl_artsdata_common.ttl header) .
+                ads:HasOccupationSh,
+                ads:OriginECSh .
 
 ads:PersonDescriptionSh
     a sh:PropertyShape ;

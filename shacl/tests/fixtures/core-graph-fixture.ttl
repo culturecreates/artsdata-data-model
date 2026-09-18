@@ -3,6 +3,7 @@
 @prefix ext:    <http://example-provider.com/> .
 @prefix schema: <http://schema.org/> .
 @prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd:     <http://www.wikidata.org/entity/> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 
 # Fixture for the shacl/shacl_artsdata_*.ttl class files (see
@@ -34,7 +35,8 @@ adr:place1 a schema:Place ;
 adr:org1 a schema:Organization ;
     schema:name "Grand Hall Society" ;
     schema:telephone "+1-514-555-0100" ;
-    ado:hasOrganizationTypeConcept adr:ArtMuseum .
+    ado:hasOrganizationTypeConcept adr:ArtMuseum ;
+    ado:originEC wd:Q262457 . # Métis People
 
 # Valid Event
 adr:event1 a schema:Event ;
@@ -59,7 +61,8 @@ adr:musicalWork1 a schema:CreativeWork ;
 # Valid Person
 adr:person1 a schema:Person ;
     schema:name "Jane Doe" ;
-    schema:description "A celebrated choreographer."@en .
+    schema:description "A celebrated choreographer."@en ;
+    ado:originEC wd:Q262457 . # Métis People
 
 # ================= INVALID FIXTURES =================
 
@@ -139,6 +142,17 @@ adr:org3 a schema:Organization ;
 adr:org4 a schema:Organization ;
     schema:name "Bad Org Type Org" ;
     ado:hasOrganizationTypeConcept ext:someType .
+
+# Organization originEC pointing to a non-Wikidata URI (must be wd:, unlike
+# the adr:-only properties above)
+adr:org6 a schema:Organization ;
+    schema:name "Bad Origin Org" ;
+    ado:originEC adr:ArtMuseum .
+
+# Person originEC pointing to a non-Wikidata URI
+adr:person2 a schema:Person ;
+    schema:name "Bad Origin Person" ;
+    ado:originEC ext:someEthnicGroup .
 
 # LivePerformanceWork hasGenre pointing to an adr: concept from the WRONG
 # vocabulary (a place type, not a genre)
