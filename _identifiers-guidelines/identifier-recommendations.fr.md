@@ -54,12 +54,20 @@ Voir : [Comment récupérer les URI d’identifiants pérennes]({{ base }}/ident
 
 ## À propos de l’identifiant Artsdata
 
-L'identifiant Artsdata est un identifiant globalement unique et pérenne pouvant désigner tout concept ou toute entité nommée dans le graphe de connaissances Artsdata. Il peut notamment être assigné à des entités pour lesquelles il n'existe à l'heure actuelle aucun identifiant passerelle approprié, notamment les entités de type Event. Toute entité satisfaisant à une validation SHACL peut se voir assigner un identifiant. 
+L'identifiant Artsdata est un identifiant _globalement unique_ et _pérenne_ pouvant désigner tout concept ou toute entité nommée dans le graphe de connaissances Artsdata. Il peut notamment être assigné à des entités pour lesquelles il n'existe à l'heure actuelle aucun identifiant passerelle approprié, notamment les entités de type Event. Toute entité satisfaisant à une validation SHACL peut se voir assigner un identifiant.
+
+L'identifiant Artsdata est aussi un identifiant _opaque_. Il est constitué d’une suite d'une lettre (la lettre « K ») et de chiffres sans rapport avec le contenu de l'entité. La première série de chiffre désigne la source à partir de laquelle l'identifiant a été créé. Par exemple, les entités dont le nom débute par « K2 » ont toutes été importées depuis Wikidata. La seconde série de chiffre complète la première pour désigner de façon univoque l'entité.
 
 Il est possible pour des tiers de contribuer à l’assignation d’identifiants Artsdata. Les utilisateurs enregistrés peuvent notamment : 
-- Utiliser la fonction “Minter”, dans l’interface d’Artsdata, pour assigner ou lier un identifiant à une entité déjà chargée dans Artsdata;
-- Utiliser la fonction “Mint using Wikidata”, dans l’interface d’Artsdata, pour charger une entité depuis Wikidata et lui assigner un identifiant Artsdata; 
-- Utiliser l’API Mint pour assigner des identifiants à des entités qui ne sont pas encore chargées dans Artsdata.
+- Utiliser la fonction « Réconcilier », depuis l’interface de visualition d'une ressource, pour assigner ou lier un identifiant à une entité déjà chargée dans Artsdata;
+- Utiliser l'application de « [Rapprochement en lot](https://kg.artsdata.ca/fr/reconcile/batch) », pour réconcilier, lier et attribuer des identifiants avec un jeu complet données;
+- Utiliser la fonction « [Réconcilier avec Wikidata](https://kg.artsdata.ca/fr/mint/wikidata) », dans l’interface d’Artsdata, pour charger une entité depuis Wikidata et lui assigner un identifiant Artsdata;
+- Utiliser l’API Mint, depuis une application tierce, pour assigner des identifiants à des entités qui ne sont pas encore chargées dans Artsdata.
+
+<img width="758" height="409" alt="image" src="https://github.com/user-attachments/assets/a8d4054a-871c-4d45-855d-f71fac40be29" />
+
+_Aperçu de la fonction « Réconcilier » dans l'interface de visualisation des ressources._
+
 
 ### Spécifications de l’identifiant Artsdata
 
