@@ -347,7 +347,7 @@ ads:AdditionalTypeSh
 ads:OriginECSh
     a sh:PropertyShape ;
     sh:path ado:originEC ;
-    sh:name "origin" ;
+    sh:name "ethnocultural origin" ;
     sh:minCount 0 ;
     sh:nodeKind sh:IRI ;
     sh:pattern "^http://www\\.wikidata\\.org/entity/" ;
