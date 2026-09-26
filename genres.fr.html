@@ -622,7 +622,7 @@ function goBack() {
 </h2>
     
 
-<p>Les concepts de genres d’Artsdata peuvent être employés en guise de valeurs à la propriété <a href="https://schema.org/genre"><code class="language-plaintext highlighter-rouge">schema:genre</code></a>. Les valeurs de <code class="language-plaintext highlighter-rouge">schema:genre</code> peuvent être  des chaînes de texte, des URI ou des objets de type <a href="https://schema.org/DefinedTerm"><code class="language-plaintext highlighter-rouge">schema:DefinedTerm</code></a>. Artsdata peut accepter n’importe laquelle de ces trois représentation ; même les chaînes de caractères peuvent facilement être réconcilés avec les concepts de genres.</p>
+<p>Les concepts de genres d’Artsdata peuvent être employés en guise de valeurs à la propriété <a href="https://schema.org/genre"><code class="language-plaintext highlighter-rouge">schema:genre</code></a>. Les valeurs de <code class="language-plaintext highlighter-rouge">schema:genre</code> peuvent être des soit chaînes de texte, des URI ou des objets de type <a href="https://schema.org/DefinedTerm"><code class="language-plaintext highlighter-rouge">schema:DefinedTerm</code></a>. Artsdata peut charger n’importe laquelle de ces trois représentation. Artsdata peut réconcilier les chaînes de caractères avec les concepts de genres.</p>
 
 <p>Voici un exemple d’objet de type <code class="language-plaintext highlighter-rouge">DefinedTerm</code> représentant le concept de « danse » :</p>
 
@@ -635,7 +635,7 @@ function goBack() {
 
 <p>La propriété <code class="language-plaintext highlighter-rouge">schema:genre</code> peut être utilisé autant dans des objets de premier niveau que dans des objets imbriqués.</p>
 
-<p>Voici un exemple avec, au premier niveau, un objet de type <code class="language-plaintext highlighter-rouge">Event</code> et, au second niveau, un objet <code class="language-plaintext highlighter-rouge">CreativeWork</code> implicite (c.-à-d. dont le type est inféré plutôt que spécifié) défini seulement par son genre :</p>
+<p>Voici un exemple avec, au premier niveau, un objet de type <code class="language-plaintext highlighter-rouge">PerformingArtsEvent</code> (c.-à-d., une « représentation » et, au second niveau, un objet <code class="language-plaintext highlighter-rouge">CreativeWork</code> défini seulement par son genre, dont la valeur est une chaîne de caractère :</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
   "@context": "https://schema.org",
@@ -643,7 +643,8 @@ function goBack() {
   "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent",
   "name": "Une représentation quelconque",
   "workPerformed": {
-    "genre": "Danse"
+    "@type": "CreativeWork",
+    "genre": "Cirque"
     },
   ...
 }
