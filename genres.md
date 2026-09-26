@@ -73,7 +73,7 @@ The list of genres (SKOS concepts) can be consulted in the [concept scheme](http
 
 ## How to use
 
-Artsdata genre concepts can be used as values to the [`schema:genre`](https://schema.org/genre) property. `schema:genre` values can either be text strings, URIs or [`schema:DefinedTerm`](https://schema.org/DefinedTerm) objects. Artsdata can accept any of these three representations. Even text string can easily be reconciled against genre concepts. 
+Artsdata genre concepts can be used as values to the [`schema:genre`](https://schema.org/genre) property. Values for the `schema:genre` property can either be text strings, URIs or [`schema:DefinedTerm`](https://schema.org/DefinedTerm) objects. Artsdata can upload any of these three representations. Artsdata can reconcile text string against genre concepts. 
 
 Here is an example of a `DefinedTerm` object representing the dance genre:
 
@@ -87,7 +87,7 @@ Here is an example of a `DefinedTerm` object representing the dance genre:
 
 The `schema:genre` property can be used in stand-alone `CreativeWork` objects, as well as in nested objects. 
 
-Here is an example of an Event with an implicit nested CreativeWork object defined just by its genre:
+Here is an example of an Event with a nested CreativeWork object defined just by its genre, represented as a text string value:
 
 ```
 {
@@ -96,7 +96,8 @@ Here is an example of an Event with an implicit nested CreativeWork object defin
   "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent",
   "name": "Some Event",
   "workPerformed": {
-    "genre": "Dance"
+    "@type": "CreativeWork",
+    "genre": "Circus"
     },
   ...
 }
@@ -107,5 +108,3 @@ Here is an example of an Event with an implicit nested CreativeWork object defin
 ### Version 1.0
 
 This is the inaugural version of the vocabulary.
-
-
