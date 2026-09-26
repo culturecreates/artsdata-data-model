@@ -77,7 +77,7 @@ La liste des genres (concepts SKOS) peut être consultée dans le [schéma de co
 
 ## Utilisation
 
-Les concepts de genres d'Artsdata peuvent être employés en guise de valeurs à la propriété [`schema:genre`](https://schema.org/genre). Les valeurs de `schema:genre` peuvent être  des chaînes de texte, des URI ou des objets de type [`schema:DefinedTerm`](https://schema.org/DefinedTerm). Artsdata peut accepter n'importe laquelle de ces trois représentation ; même les chaînes de caractères peuvent facilement être réconcilés avec les concepts de genres. 
+Les concepts de genres d'Artsdata peuvent être employés en guise de valeurs à la propriété [`schema:genre`](https://schema.org/genre). Les valeurs de `schema:genre` peuvent être des soit chaînes de texte, des URI ou des objets de type [`schema:DefinedTerm`](https://schema.org/DefinedTerm). Artsdata peut charger n'importe laquelle de ces trois représentation. Artsdata peut réconcilier les chaînes de caractères avec les concepts de genres. 
 
 Voici un exemple d'objet de type `DefinedTerm` représentant le concept de « danse » :
 
@@ -91,7 +91,7 @@ Voici un exemple d'objet de type `DefinedTerm` représentant le concept de « da
 
 La propriété `schema:genre` peut être utilisé autant dans des objets de premier niveau que dans des objets imbriqués. 
 
-Voici un exemple avec, au premier niveau, un objet de type `Event` et, au second niveau, un objet `CreativeWork` implicite (c.-à-d. dont le type est inféré plutôt que spécifié) défini seulement par son genre :
+Voici un exemple avec, au premier niveau, un objet de type `PerformingArtsEvent` (c.-à-d., une « représentation » et, au second niveau, un objet `CreativeWork` défini seulement par son genre, dont la valeur est une chaîne de caractère :
 
 ```
 {
@@ -100,7 +100,8 @@ Voici un exemple avec, au premier niveau, un objet de type `Event` et, au second
   "additionalType": "http://kg.artsdata.ca/resource/PerformingArtsEvent",
   "name": "Une représentation quelconque",
   "workPerformed": {
-    "genre": "Danse"
+    "@type": "CreativeWork",
+    "genre": "Cirque"
     },
   ...
 }
