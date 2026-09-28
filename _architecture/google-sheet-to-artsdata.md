@@ -8,7 +8,7 @@ This [spreadsheet tool](https://docs.google.com/spreadsheets/d/1Xv68jNwc80Mqm3Cb
 
 ![google-sheet-to-artsdata-screenshot](https://github.com/user-attachments/assets/be0ad350-73f9-43e7-9dea-9ed3c593c149)  
 
-[Try it out with this test version]()
+[Try it out with this test version](https://docs.google.com/spreadsheets/d/1NacZsvFwahT3qbnksFcFEiBwK-ou5XJJzyrUyr7QUpc/edit?usp=sharing)
 
 ## How to Get Started  
 
@@ -16,6 +16,7 @@ This [spreadsheet tool](https://docs.google.com/spreadsheets/d/1Xv68jNwc80Mqm3Cb
 2. Enter your contact information in the `“Fill This First”` tab.
 3. Already using an in-house spreadsheet for your event and performance data? Go to the `“Import”` tab to learn how to map your data into the tool.
 4. Otherwise, watch the linked help video on `“Fill This First”` for guidance on manually adding venue and organization information related to your events. Then, do the same on the `“Event Data”` tab for the rest of your event information.
+5. You may hide columns that you are not using to make the tool more user-friendly.
 
 ## Next Steps  
 
