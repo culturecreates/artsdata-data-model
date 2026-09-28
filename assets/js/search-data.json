@@ -386,7 +386,7 @@
   },"55": {
     "doc": "Google Sheet-to-Artsdata Tool",
     "title": "How to Get Started",
-    "content": ". | Open the tool and make your own copy. Ignore the Apps File Script warning – this script needs to be copied to your version of the spreadsheet so that your event information can be converted into structured data. | Enter your contact information in the “Fill This First” tab. | Already using an in-house spreadsheet for your event and performance data? Go to the “Import” tab to learn how to map your data into the tool. | Otherwise, watch the linked help video on “Fill This First” for guidance on manually adding venue and organization information related to your events. Then, do the same on the “Event Data” tab for the rest of your event information. | . ",
+    "content": ". | Open the tool and make your own copy. Ignore the Apps File Script warning – this script needs to be copied to your version of the spreadsheet so that your event information can be converted into structured data. | Enter your contact information in the “Fill This First” tab. | Already using an in-house spreadsheet for your event and performance data? Go to the “Import” tab to learn how to map your data into the tool. | Otherwise, watch the linked help video on “Fill This First” for guidance on manually adding venue and organization information related to your events. Then, do the same on the “Event Data” tab for the rest of your event information. | You may hide columns that you are not using to make the tool more user-friendly. | . ",
     "url": "/architecture/google-sheet-to-artsdata.html#how-to-get-started",
     
     "relUrl": "/architecture/google-sheet-to-artsdata.html#how-to-get-started"
