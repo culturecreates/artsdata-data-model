@@ -1,11 +1,11 @@
 ```
 {
    "@context":"http://schema.org",
-   "@type":"CreativeWork",
+   "@type":"PerformanceWork",
    "@id":"--URI constituant un identifiant unique de l'œuvre spectacle. Optionnel : URI constituting a unique identifier of the live performance work (i.e. show). Optional--",
    "additionalType":[
-      "https://schema.org/PerformanceWork",
-      "http://kg.artsdata.ca/ontology/LivePerformanceWork"
+      "http://kg.artsdata.ca/ontology/LivePerformanceWork",
+      "https://documentation.datascene.ca/references/context.json/Show"
    ],
    "name":"--Titre de l'œuvre : Title of the work--",
    "url":"--URL officiel de la page Web de l'œuvre : Official URL of the work's webpage--",
@@ -52,7 +52,7 @@
       "--URI Artsdata.ca de l'œuvre : Artsdata.ca URI of the work--",
       "--URI Wikidata de l'œuvre au format http://www.wikidata.org/entity/$1 : Wikidata URI of the work in http://www.wikidata.org/entity/$1 format--"
    ],
-   "isPerformedIn":[
+   "performedIn":[
       {
          "@type":"Event",
          "additionalType":[
