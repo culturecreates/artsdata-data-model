@@ -64,11 +64,11 @@
 <meta property="og:url" content="http://docs.artsdata.ca/gabarits-jsonld/liveperformancework.html" />
 <meta property="og:site_name" content="Artsdata Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-10-18T20:47:04+00:00" />
+<meta property="article:published_time" content="2026-10-19T18:28:24+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Live Performance Work Structured Data Templates" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-10-18T20:47:04+00:00","datePublished":"2026-10-18T20:47:04+00:00","description":"Structured Data Templates for Live Performance Works","headline":"Live Performance Work Structured Data Templates","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/gabarits-jsonld/liveperformancework.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/gabarits-jsonld/liveperformancework.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-10-19T18:28:24+00:00","datePublished":"2026-10-19T18:28:24+00:00","description":"Structured Data Templates for Live Performance Works","headline":"Live Performance Work Structured Data Templates","mainEntityOfPage":{"@type":"WebPage","@id":"http://docs.artsdata.ca/gabarits-jsonld/liveperformancework.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://docs.artsdata.ca/assets/images/Artsdata_Logo_Circle.svg"}},"url":"http://docs.artsdata.ca/gabarits-jsonld/liveperformancework.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -491,7 +491,7 @@ function goBack() {
 
 <p>This is an evolving document for a Schema structured data template describing <a href="http://kg.artsdata.ca/ontology/LivePerformanceWork">live performance works</a> (i.e. a show or production).</p>
 
-<p>Note : The <code class="language-plaintext highlighter-rouge">schema:PerformanceWork</code> class and the <code class="language-plaintext highlighter-rouge">schema:isPerformedIn</code> property are approved for creation but awaiting pull request merger in the Schema ontology (<a href="https://github.com/schemaorg/schemaorg/issues/4467">check pending issues</a>).</p>
+<p>Note : The <code class="language-plaintext highlighter-rouge">schema:PerformanceWork</code> class and the <code class="language-plaintext highlighter-rouge">schema:performedIn</code> property are approved for creation but awaiting pull request merger in the Schema ontology (<a href="https://github.com/schemaorg/schemaorg/issues/4467">check pending issues</a>).</p>
 
 <p>If you try out this JSON-LD template please contact Artsdata to let us know. We would love to see your structured data in action.</p>
 <h3 id="preview">
@@ -505,10 +505,9 @@ function goBack() {
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
    "@context":"http://schema.org",
-   "@type":"CreativeWork",
+   "@type":"PerformanceWork",
    "@id":"--URI constituant un identifiant unique de l'œuvre spectacle. Optionnel : URI constituting a unique identifier of the live performance work (i.e. show). Optional--",
    "additionalType":[
-      "https://schema.org/PerformanceWork",
       "http://kg.artsdata.ca/ontology/LivePerformanceWork"
    ],
    "name":"--Titre de l'œuvre : Title of the work--",
