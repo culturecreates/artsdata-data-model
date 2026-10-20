@@ -40,7 +40,7 @@
    "keywords":["--Un mot-clé lié à l'événement : Keyword related to the event--","--Un autre mot-clé lié à l'événement : Another keyword related to the event--",...],
    "organizer":[{
       "@type":"--Utiliser le type 'Organization' si le diffuseur est une compagnie ou un groupe : Use type 'Organization' if the presenter is a company or a group--",
-      "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel : URI constituting a unique identifier of the company. Optional--",
+      "@id":"--URI constituant un identifiant unique du diffuseur. Optionnel : URI constituting a unique identifier of the presenter. Optional--",
       "name":"--Nom du diffuseur : Name of the presenter--",
       "url":"--URL de site ou de la page officielle du diffuseur : URL of presenter's official website--",
       "sameAs":[
@@ -50,16 +50,16 @@
       }],
    "performer":[{
       "@type":"--Utiliser le type 'Organization' si l'interprète est une compagnie ou un groupe, ou 'Person' si l'interprète est un ou des artistes : Use type 'Organization' if the performer is a company or a group, or 'Person' type if the performer is an artist(s)--",
-      "@id":"--URI constituant un identifiant unique de la compagnie. Optionnel : URI constituting a unique identifier of the company. Optional--",
-      "name":"--Nom de la compagnie : Name of the company or organization--",
-      "url":"--URL du site officiel de la compagnie : URL of the company's official website--",
+      "@id":"--URI constituant un identifiant unique de l'interprète. Optionnel : URI constituting a unique identifier of the performer. Optional--",
+      "name":"--Nom de l'interprète : Name of the performer--",
+      "url":"--URL du site officiel de l'interprète : URL of the performer's official website--",
       "sameAs":[
          "--lien vers un ou des comptes de réseaux sociaux, si disponible si disponible : link to one or more social media accounts of the presenter, if available--",
          "--URI Artsdata.ca, obtenu avec l'API de réconciliation ou l'outil de recherche : Artsdata.ca URI, obtained with the Reconciliation API or the search tool--",
          "--URI Wikidata au format http://www.wikidata.org/entity/$1 : Wikidata URI in http://www.wikidata.org/entity/$1 format--"]
    }],
    "workPerformed":[{
-      "@type":"CreativeWork",
+      "@type":"PerformanceWork",
       "@id": "--URI constituant un identifiant unique de l'œuvre scénique (spectacle). Optionnel : URI constituting a unique identifier of the live performance work (show). Optional--",
       "additionalType":"http://kg.artsdata.ca/ontology/LivePerformanceWork",
       "genre":[
