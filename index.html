@@ -556,6 +556,38 @@
   <li>Data feed metadata attached to named graphs. Each data feed source in Artsdata.ca is stored in a separate named graph. The graph’s URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the <strong>Named Graphs</strong> approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data feed was loaded, the software used to collect it and the email of the contributing organization. Each time a data feed is imported, whether by crawling a web site, using an JSON API or loading a spreadsheet, the graph’s provenance metadata is updated.</li>
   <li>Core data annotations with RDF 1.2. Core data in Artsdata for all minted entities have provenance tracked using RDF 1.2 annotations and the Provenance Ontology (using prov:wasDerivedFrom and prov:wasGeneratedBy).</li>
 </ol>
+<h4 id="sources-and-claims-in-the-core-data">
+  
+  
+    <a href="#sources-and-claims-in-the-core-data" class="anchor-heading" aria-labelledby="sources-and-claims-in-the-core-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Sources and claims in the core data
+  
+  
+</h4>
+    
+
+<p>Each statement about a minted entity can be annotated with the source it was derived from: <code class="language-plaintext highlighter-rouge">&lt;&lt;s p o&gt;&gt; prov:wasDerivedFrom ?source</code>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">?source</code> is a record in a source data feed (for example a Wikidata item or a record extracted from a website), which is <code class="language-plaintext highlighter-rouge">void:inDataset</code> of a dataset. The dataset has a <code class="language-plaintext highlighter-rouge">schema:name</code> and optionally a <code class="language-plaintext highlighter-rouge">schema:maintainer</code> (the website of the source). <code class="language-plaintext highlighter-rouge">?source</code> can also be a dataset itself, for example a curated spreadsheet.</li>
+  <li>The statement <code class="language-plaintext highlighter-rouge">s p o</code> is <strong>asserted</strong> only for the value retained by Artsdata. Other sources may <strong>claim</strong> a different value for the same property (for example another spelling of a name or another start date). These claims are annotated like the others but are not asserted.</li>
+  <li>The sources of an entity are the datasets of the records that are <code class="language-plaintext highlighter-rouge">schema:sameAs</code> the entity: <code class="language-plaintext highlighter-rouge">&lt;entity&gt; ^schema:sameAs/void:inDataset ?dataset</code>.</li>
+</ul>
+
+<p>Example SPARQL query listing every value of a property (asserted or only claimed) with its source:</p>
+
+<div class="language-sparql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nn">&lt;http://schema.org/&gt;</span><span class="w">
+</span><span class="k">PREFIX</span><span class="w"> </span><span class="nn">prov:</span><span class="w"> </span><span class="nn">&lt;http://www.w3.org/ns/prov#&gt;</span><span class="w">
+</span><span class="k">PREFIX</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nn">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w">
+</span><span class="k">SELECT</span><span class="w"> </span><span class="nv">?value</span><span class="w"> </span><span class="nv">?asserted</span><span class="w"> </span><span class="nv">?source</span><span class="w"> </span><span class="nv">?datasetName</span><span class="w"> </span><span class="nv">?maintainer</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nn">&lt;&lt;&lt;http://kg.artsdata.ca/resource/K11-192&gt;</span><span class="w"> </span><span class="nn">schema:</span><span class="ss">name</span><span class="w"> </span><span class="nv">?value</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nn">prov:</span><span class="ss">wasDerivedFrom</span><span class="w"> </span><span class="nv">?source</span><span class="w"> </span><span class="p">.</span><span class="w">
+  </span><span class="k">BIND</span><span class="p">(</span><span class="k">EXISTS</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nn">&lt;http://kg.artsdata.ca/resource/K11-192&gt;</span><span class="w"> </span><span class="nn">schema:</span><span class="ss">name</span><span class="w"> </span><span class="nv">?value</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nv">?asserted</span><span class="p">)</span><span class="w">
+  </span><span class="k">OPTIONAL</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">?source</span><span class="w"> </span><span class="nn">void:</span><span class="ss">inDataset</span><span class="w"> </span><span class="nv">?dataset</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="k">BIND</span><span class="p">(</span><span class="nb">COALESCE</span><span class="p">(</span><span class="nv">?dataset</span><span class="p">,</span><span class="w"> </span><span class="nv">?source</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nv">?ds</span><span class="p">)</span><span class="w">
+  </span><span class="k">OPTIONAL</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">?ds</span><span class="w"> </span><span class="nn">schema:</span><span class="ss">name</span><span class="w"> </span><span class="nv">?datasetName</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="k">OPTIONAL</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">?ds</span><span class="w"> </span><span class="nn">schema:</span><span class="ss">maintainer</span><span class="w"> </span><span class="nv">?maintainer</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span></code></pre></div></div>
 <h3 id="data-flow-architecture">
   
   

@@ -10,6 +10,7 @@
 ## Key References
 
 - Data model overview: https://docs.artsdata.ca
+- Provenance (sources of entities, and asserted values vs claims from other sources): https://docs.artsdata.ca/#provenance
 - Architecture / how data flows in and out of Artsdata: https://docs.artsdata.ca/architecture/overview.html
 - SPARQL endpoint: https://docs.artsdata.ca/architecture/sparql.html
 - Combined machine-readable schema (Turtle): https://github.com/culturecreates/artsdata-data-model/blob/master/artsdata-schema.ttl

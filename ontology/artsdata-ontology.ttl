@@ -15,6 +15,8 @@
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix void: <http://rdfs.org/ns/void#> .
 
 
 ####################
@@ -24,7 +26,12 @@
 #     - Artsdata uses HORST (also called OWL-Horst or pD*) as its OWL profile, which is a subset of OWL 2 RL. 
 #     - This means that certain OWL features (e.g., owl:disjointWith, owl:cardinality restrictions) are not used in this ontology to ensure compatibility with HORST reasoners.
 #     - Cardinality constraints are expressed in SHACL.
+#     - Provenance is not modelled with classes or properties of this ontology: it uses the W3C PROV-O (prov:wasDerivedFrom, prov:wasGeneratedBy) and VoID (void:inDataset) vocabularies as RDF 1.2 annotations on statements. See the ontology description and https://docs.artsdata.ca/#provenance.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
+# V 1.7.1
+#     - Document provenance in the ontology description: RDF 1.2 annotations with prov:wasDerivedFrom,
+#       asserted value vs non-asserted claims, and void:inDataset / schema:maintainer of the source.
+#     - Add prov: and void: prefixes.
 # V 1.7.0
 #     - Add ado:originEC (see https://github.com/culturecreates/artsdata-data-model/issues/280)
 # V 1.6.0
@@ -37,15 +44,15 @@
 
 ado: rdf:type owl:Ontology ;
     dcterms:title "Artsdata Ontology"@en ;
-    dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage."@en ;
+    dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage. Provenance: each statement in the CORE graph can carry RDF 1.2 annotations of the form <<s p o>> prov:wasDerivedFrom ?source, where ?source is a source record (void:inDataset a dataset that has a schema:name and optionally a schema:maintainer, the website of the source) or a dataset itself. The triple s p o is asserted only for the retained value; other sources may claim a different value that is not asserted. Check with EXISTS { s p o } whether a claimed value is asserted."@en ;
     dcterms:creator "Artsdata Stewardship Team" ;
     dcterms:created "2025-09-30"^^xsd:date ;
-    dcterms:modified "2026-09-18"^^xsd:date ;
+    dcterms:modified "2026-10-21"^^xsd:date ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "ado" ;
     vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
     owl:versionIRI <http://kg.artsdata.ca/ontology/1/> ; # TODO: location = /ontology/1 { return 301 /ontology/; }
-    owl:versionInfo "1.7.0" ;
+    owl:versionInfo "1.7.1" ;
     vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/artsdata-ontology.ttl> ;
     dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
 
