@@ -561,7 +561,7 @@
   },"80": {
     "doc": "Reconciliation API",
     "title": "Batch Reconciliation using Open Refine",
-    "content": "Third party tools like OpenRefine can be used to batch reconcile with Artsdata. Point the reconciliation tool to the Artsdata reconciliation endpoint. View this screen recording. OpenRefine (last checked May 2026) only works with API v0.2: https://api.artsdata.ca/recon . ",
+    "content": "Third party tools like OpenRefine can be used to batch reconcile with Artsdata. Point the reconciliation tool to the Artsdata reconciliation endpoint. Consult the OpenRefine guide on reconciling: https://openrefine.org/docs/manual/reconciling or view this screen recording. OpenRefine (last checked May 2026) only works with API v0.2: https://api.artsdata.ca/recon . ",
     "url": "/architecture/reconciliation.html#batch-reconciliation-using-open-refine",
     
     "relUrl": "/architecture/reconciliation.html#batch-reconciliation-using-open-refine"
