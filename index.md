@@ -101,6 +101,31 @@ Artsdata.ca tracks data provenance in 2 different ways:
 1. Data feed metadata attached to named graphs. Each data feed source in Artsdata.ca is stored in a separate named graph. The graph's URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the **Named Graphs** approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data feed was loaded, the software used to collect it and the email of the contributing organization. Each time a data feed is imported, whether by crawling a web site, using an JSON API or loading a spreadsheet, the graph's provenance metadata is updated. 
 2. Core data annotations with RDF 1.2. Core data in Artsdata for all minted entities have provenance tracked using RDF 1.2 annotations and the Provenance Ontology (using prov:wasDerivedFrom and prov:wasGeneratedBy). 
 
+#### Sources and claims in the core data
+
+Each statement about a minted entity can be annotated with the source it was derived from: `<<s p o>> prov:wasDerivedFrom ?source`.
+
+* `?source` is a record in a source data feed (for example a Wikidata item or a record extracted from a website), which is `void:inDataset` of a dataset. The dataset has a `schema:name` and optionally a `schema:maintainer` (the website of the source). `?source` can also be a dataset itself, for example a curated spreadsheet.
+* The statement `s p o` is **asserted** only for the value retained by Artsdata. Other sources may **claim** a different value for the same property (for example another spelling of a name or another start date). These claims are annotated like the others but are not asserted.
+* The sources of an entity are the datasets of the records that are `schema:sameAs` the entity: `<entity> ^schema:sameAs/void:inDataset ?dataset`.
+
+Example SPARQL query listing every value of a property (asserted or only claimed) with its source:
+
+```sparql
+PREFIX schema: <http://schema.org/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX void: <http://rdfs.org/ns/void#>
+SELECT ?value ?asserted ?source ?datasetName ?maintainer WHERE {
+  <<<http://kg.artsdata.ca/resource/K11-192> schema:name ?value>> prov:wasDerivedFrom ?source .
+  BIND(EXISTS { <http://kg.artsdata.ca/resource/K11-192> schema:name ?value } AS ?asserted)
+  OPTIONAL { ?source void:inDataset ?dataset }
+  BIND(COALESCE(?dataset, ?source) AS ?ds)
+  OPTIONAL { ?ds schema:name ?datasetName }
+  OPTIONAL { ?ds schema:maintainer ?maintainer }
+}
+LIMIT 100
+```
+
 ### Data Flow Architecture
 
 In principle, anyone can add data to Artsdata.ca as long as certain data requirements are met.  Here is a [diagram]({{ base }}/architecture/overview.html) about how data flows in and out of Artsdata.ca.
