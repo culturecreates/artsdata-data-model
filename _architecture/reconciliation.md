@@ -56,7 +56,9 @@ The tool can be accessed via the [kg.artsdata.ca](https://kg.artsdata.ca) main m
 
 ## Batch Reconciliation using Open Refine
 
-Third party tools like [OpenRefine](https://openrefine.org) can be used to batch reconcile with Artsdata. Point the reconciliation tool to the Artsdata reconciliation endpoint. View this [screen recording](https://youtu.be/VkOncek9iuY).
+Third party tools like [OpenRefine](https://openrefine.org) can be used to batch reconcile with Artsdata. Point the reconciliation tool to the Artsdata reconciliation endpoint. 
+
+Consult the OpenRefine guide on reconciling: https://openrefine.org/docs/manual/reconciling or view this [screen recording](https://youtu.be/VkOncek9iuY).
 
 OpenRefine (last checked May 2026) only works with API v0.2: `https://api.artsdata.ca/recon`
 
