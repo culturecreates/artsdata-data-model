@@ -556,6 +556,17 @@
   <li>Data feed metadata attached to named graphs. Each data feed source in Artsdata.ca is stored in a separate named graph. The graph’s URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the <strong>Named Graphs</strong> approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data feed was loaded, the software used to collect it and the email of the contributing organization. Each time a data feed is imported, whether by crawling a web site, using an JSON API or loading a spreadsheet, the graph’s provenance metadata is updated.</li>
   <li>Core data annotations with RDF 1.2. Core data in Artsdata for all minted entities have provenance tracked using RDF 1.2 annotations and the Provenance Ontology (using prov:wasDerivedFrom, prov:hadPrimarySource and prov:wasGeneratedBy).</li>
 </ol>
+
+<p>Each minted entity also has its own metadata resource, stored separately from the entity and pointing to it with <code class="language-plaintext highlighter-rouge">schema:about</code>. The metadata records when the entity was last modified (<code class="language-plaintext highlighter-rouge">schema:lastModified</code>), when it was generated (<code class="language-plaintext highlighter-rouge">prov:generatedAtTime</code>) and lists all the update activities applied to the entity. Find it with <code class="language-plaintext highlighter-rouge">?metadata schema:about &lt;entity&gt;</code>:</p>
+
+<div class="language-sparql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nn">&lt;http://schema.org/&gt;</span><span class="w">
+</span><span class="k">PREFIX</span><span class="w"> </span><span class="nn">prov:</span><span class="w"> </span><span class="nn">&lt;http://www.w3.org/ns/prov#&gt;</span><span class="w">
+</span><span class="k">SELECT</span><span class="w"> </span><span class="nv">?metadata</span><span class="w"> </span><span class="nv">?lastModified</span><span class="w"> </span><span class="nv">?generatedAtTime</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nv">?metadata</span><span class="w"> </span><span class="nn">schema:</span><span class="ss">about</span><span class="w"> </span><span class="nn">&lt;http://kg.artsdata.ca/resource/K11-192&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+  </span><span class="k">OPTIONAL</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">?metadata</span><span class="w"> </span><span class="nn">schema:</span><span class="ss">lastModified</span><span class="w"> </span><span class="nv">?lastModified</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="k">OPTIONAL</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">?metadata</span><span class="w"> </span><span class="nn">prov:</span><span class="ss">generatedAtTime</span><span class="w"> </span><span class="nv">?generatedAtTime</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 <h4 id="sources-and-claims-in-the-core-data">
   
   
