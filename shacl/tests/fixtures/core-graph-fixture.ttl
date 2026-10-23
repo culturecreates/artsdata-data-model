@@ -2,6 +2,7 @@
 @prefix adr:    <http://kg.artsdata.ca/resource/> .
 @prefix ext:    <http://example-provider.com/> .
 @prefix schema: <http://schema.org/> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
 @prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
 @prefix wd:     <http://www.wikidata.org/entity/> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
@@ -199,3 +200,19 @@ adr:event7 a schema:Event ;
     schema:startDate "2026-12-11T20:00:00"^^xsd:dateTime ;
     schema:location adr:place1 ;
     ado:hasEventTypeConcept adr:BadLabelEventType .
+
+
+# ================= ENTITY METADATA =================
+
+# Valid metadata (points to its entity, with update activity from logs graph)
+adr:person1_dataset a prov:Entity ;
+    schema:about adr:person1 ;
+    schema:dateModified "2026-09-29T19:57:00+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-06-10T19:55:50.818Z"^^xsd:dateTime ;
+    skos:historyNote "Minted Artsdata ID for schema:Person" ;
+    prov:wasInfluencedBy adr:person1_refresh_2026-09-29T19:57:00+00:00 .
+
+# Invalid metadata: schema:about is not an Artsdata-minted URI
+adr:metadata_bad_about a prov:Entity ;
+    schema:about ext:person1 ;
+    prov:generatedAtTime "2026-06-10T19:55:50.818Z"^^xsd:dateTime .

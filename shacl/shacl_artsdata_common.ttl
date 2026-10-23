@@ -25,6 +25,7 @@
 #   shacl_artsdata_organization.ttl        -- schema:Organization
 #   shacl_artsdata_place.ttl               -- schema:Place
 #   shacl_artsdata_person.ttl              -- schema:Person
+#   shacl_artsdata_metadata.ttl            -- per-entity metadata (schema:about)
 # A class file alone is incomplete: it references the shared shapes (name,
 # url, description, ...) declared here, and its controlled-vocabulary
 # concept checks (e.g. ads:EventTypeConceptShape) live alongside its own

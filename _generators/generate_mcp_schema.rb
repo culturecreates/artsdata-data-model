@@ -26,6 +26,7 @@ class GenerateMcpSchema
     ../shacl/shacl_artsdata_organization.ttl
     ../shacl/shacl_artsdata_place.ttl
     ../shacl/shacl_artsdata_person.ttl
+    ../shacl/shacl_artsdata_metadata.ttl
   ].freeze
 
   OUTPUT_FILE = '../artsdata-schema.ttl'
