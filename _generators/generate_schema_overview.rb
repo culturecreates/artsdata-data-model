@@ -350,27 +350,37 @@ module SchemaOverview
   # Shapes with no sh:targetClass that select their focus nodes through
   # sh:targetSubjectsOf (e.g. ads:EntityMetadataShape, which targets the
   # subjects of schema:about) describe a kind of resource that is not a
-  # class. Each gets its own card, so its properties still show up.
+  # class. Each gets its own card, so its properties still show up. Their
+  # constraints may sit in a shape reached through sh:or / sh:node (used to
+  # apply them only to some of the subjects), so those are followed too.
   def extract_subject_target_cards(graph, prefixes, node_shapes, value_constraints)
     node_shapes.filter_map do |shape|
       predicates = objects(graph, shape, SH.targetSubjectsOf)
       next if predicates.empty? || !objects(graph, shape, SH.targetClass).empty?
 
-      entries = objects(graph, shape, SH.property).map do |p|
+      property_shapes = objects(graph, shape, SH.property) + conditional_node_shapes(graph, shape).flat_map { |n| objects(graph, n, SH.property) }
+      entries = property_shapes.map do |p|
         extract_property(graph, prefixes, p, value_constraints).merge('shape' => compact(shape, prefixes))
       end
       targets = predicates.map { |pred| "subjects of #{compact(pred, prefixes)}" }.join(', ')
+      description = first_literal(graph, shape, SH.description) || "Applies to the #{targets}."
 
       {
         'uri' => shape.to_s,
         'compact' => compact(shape, prefixes),
         'label' => [{ 'value' => first_literal(graph, shape, SH.name) || compact(shape, prefixes), 'lang' => nil }],
-        'comment' => [{ 'value' => "Applies to the #{targets}.", 'lang' => 'en' }],
+        'comment' => [{ 'value' => description, 'lang' => 'en' }],
         'subClassOf' => [],
         'equivalentClass' => [],
         'shapes' => [compact(shape, prefixes)],
         'properties' => merge_properties(entries)
       }
+    end
+  end
+
+  def conditional_node_shapes(graph, shape)
+    objects(graph, shape, SH.or).flat_map do |head|
+      RDF::List.new(subject: head, graph: graph).flat_map { |alt| objects(graph, alt, SH.node) }
     end
   end
 

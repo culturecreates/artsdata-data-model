@@ -210,9 +210,18 @@ adr:person1_dataset a prov:Entity ;
     schema:dateModified "2026-09-29T19:57:00+00:00"^^xsd:dateTime ;
     prov:generatedAtTime "2026-06-10T19:55:50.818Z"^^xsd:dateTime ;
     skos:historyNote "Minted Artsdata ID for schema:Person" ;
-    prov:wasInfluencedBy adr:person1_refresh_2026-09-29T19:57:00+00:00 .
+    prov:wasInfluencedBy <http://kg.artsdata.ca/resource/person1_refresh_2026-09-29T19:57:00+00:00> .
 
 # Invalid metadata: schema:about is not an Artsdata-minted URI
-adr:metadata_bad_about a prov:Entity ;
+adr:bad_about_dataset a prov:Entity ;
     schema:about ext:person1 ;
     prov:generatedAtTime "2026-06-10T19:55:50.818Z"^^xsd:dateTime .
+
+# Invalid metadata: URI is not <entity>_dataset
+adr:person1_other_dataset a prov:Entity ;
+    schema:about adr:person1 ;
+    prov:generatedAtTime "2026-06-10T19:55:50.818Z"^^xsd:dateTime .
+
+# Not metadata: schema:about on a source-graph resource (no _dataset suffix)
+# must not be validated by ads:EntityMetadataShape.
+<https://en.wikipedia.org/wiki/Example> schema:about <http://www.wikidata.org/entity/Q1> .
