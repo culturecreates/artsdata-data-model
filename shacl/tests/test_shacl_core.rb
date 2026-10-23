@@ -22,6 +22,7 @@ class TestShaclCore < Minitest::Test
     shacl_artsdata_organization.ttl
     shacl_artsdata_place.ttl
     shacl_artsdata_person.ttl
+    shacl_artsdata_metadata.ttl
   ].freeze
 
   class << self
@@ -81,7 +82,15 @@ class TestShaclCore < Minitest::Test
     refute_includes violations, adr("person1")
   end
 
+  def test_valid_entity_metadata_has_no_violations
+    refute_includes violations, adr("person1_dataset")
+  end
+
   # ---- invalid fixtures: each must be flagged ----
+
+  def test_metadata_about_non_adr_uri_is_violation
+    assert_includes violations, adr("metadata_bad_about")
+  end
 
   def test_missing_name_is_violation
     assert_includes violations, adr("place2")

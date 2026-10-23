@@ -10,6 +10,7 @@ on:
       - 'shacl/shacl_artsdata_organization.ttl'
       - 'shacl/shacl_artsdata_place.ttl'
       - 'shacl/shacl_artsdata_person.ttl'
+      - 'shacl/shacl_artsdata_metadata.ttl'
       - '_generators/generate_mcp_schema.rb'
       - '_generators/generate_schema_overview.rb'
   workflow_dispatch:
