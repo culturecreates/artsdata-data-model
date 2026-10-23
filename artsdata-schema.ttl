@@ -718,6 +718,8 @@ ads:OrganizationShape
                 ads:TelephoneSh,
                 ads:CanadianBusinessNumberSh,
                 ads:HasOrganizationTypeConceptSh,
+                ads:OrganizationLocationSh,
+                ads:OrganizationAddressSh,
                 ads:OriginECSh .
 
 ads:HasOrganizationTypeConceptSh
@@ -749,6 +751,53 @@ ads:CanadianBusinessNumberSh
     sh:minCount 0 ;
     sh:pattern "^\\d{9}$" ;
     sh:message "Canadian Business Number (wdt:P8860) must be 9 digits."@en .
+
+# Named Organization* because ads:LocationSh / ads:AddressSh / ads:PostalAddressShape
+# are already declared (with different cardinalities) for Event and Place.
+ads:OrganizationLocationSh
+    a sh:PropertyShape ;
+    sh:path schema:location ;
+    sh:name "location" ;
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^http://kg\\.artsdata\\.ca/resource/" ;
+    sh:class schema:Place ;
+    sh:message "schema:location must reference an Artsdata-minted (adr:) schema:Place."@en .
+
+ads:OrganizationAddressSh
+    a sh:PropertyShape ;
+    sh:path schema:address ;
+    sh:name "address" ;
+    sh:minCount 0 ;
+    sh:class schema:PostalAddress ;
+    sh:node ads:OrganizationPostalAddressShape ;
+    sh:message "schema:address must be a schema:PostalAddress."@en .
+
+# Every subfield is optional.
+ads:OrganizationPostalAddressShape
+    a sh:NodeShape ;
+    sh:name "Organization Postal Address Shape" ;
+    sh:property [
+        sh:path schema:streetAddress ;
+        sh:name "street address" ;
+        sh:minCount 0 ;
+    ] , [
+        sh:path schema:addressLocality ;
+        sh:name "address locality" ;
+        sh:minCount 0 ;
+    ] , [
+        sh:path schema:addressRegion ;
+        sh:name "address region" ;
+        sh:minCount 0 ;
+    ] , [
+        sh:path schema:postalCode ;
+        sh:name "postal code" ;
+        sh:minCount 0 ;
+    ] , [
+        sh:path schema:addressCountry ;
+        sh:name "address country" ;
+        sh:minCount 0 ;
+    ] .
 
 
 ################
@@ -901,10 +950,10 @@ ads:AddressSh
     sh:minCount 0 ;
     sh:node ads:PostalAddressShape .
 
-# Unlike shacl_artsdata.ttl's ads:PostalAddressShape (external submissions,
-# all subfields sh:minCount 1), every subfield here is optional: the mint
-# query's OPTIONAL blocks show a CORE-graph address can legitimately be
-# partial.
+# Like shacl_artsdata.ttl's ads:PostalAddressShape (external submissions),
+# every subfield here is mandatory (sh:minCount 1). Organization addresses
+# are looser: see ads:OrganizationPostalAddressShape, where all subfields
+# are optional.
 ads:PostalAddressShape
     a sh:NodeShape ;
     sh:name "Postal Address Shape" ;
