@@ -101,16 +101,23 @@ Artsdata.ca tracks data provenance in 2 different ways:
 1. Data feed metadata attached to named graphs. Each data feed source in Artsdata.ca is stored in a separate named graph. The graph's URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the **Named Graphs** approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data feed was loaded, the software used to collect it and the email of the contributing organization. Each time a data feed is imported, whether by crawling a web site, using an JSON API or loading a spreadsheet, the graph's provenance metadata is updated. 
 2. Core data annotations with RDF 1.2. Core data in Artsdata for all minted entities have provenance tracked using RDF 1.2 annotations and the Provenance Ontology (using prov:wasDerivedFrom, prov:hadPrimarySource and prov:wasGeneratedBy). 
 
-Each minted entity also has its own metadata resource, stored separately from the entity and pointing to it with `schema:about`. The metadata records when the entity was last modified (`schema:lastModified`), when it was generated (`prov:generatedAtTime`) and lists all the update activities applied to the entity. Find it with `?metadata schema:about <entity>`:
+Each minted entity also has its own metadata resource (a `prov:Entity`), stored separately from the entity and pointing to it with `schema:about`. Its URI is the entity URI followed by `_dataset` (for example `http://kg.artsdata.ca/resource/K23-10735_dataset`). The metadata records when the entity was last modified (`schema:dateModified`), when it was generated (`prov:generatedAtTime`) and a history note on how it was minted (`skos:historyNote`). It lists all the update activities applied to the entity with `prov:wasInfluencedBy`. Each activity is a `prov:Activity` with a start time (`prov:startedAtTime`), the agent that ran it (`prov:wasAssociatedWith`) and a comment listing the claims that were updated (`rdfs:comment`). The activities are stored in the `http://kg.artsdata.ca/logs` named graph, the metadata itself in `http://kg.artsdata.ca/core`.
 
 ```sparql
 PREFIX schema: <http://schema.org/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-SELECT ?metadata ?lastModified ?generatedAtTime WHERE {
-  ?metadata schema:about <http://kg.artsdata.ca/resource/K11-192> .
-  OPTIONAL { ?metadata schema:lastModified ?lastModified }
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?metadata ?dateModified ?generatedAtTime ?activity ?startedAtTime ?comment WHERE {
+  ?metadata schema:about <http://kg.artsdata.ca/resource/K23-10735> .
+  OPTIONAL { ?metadata schema:dateModified ?dateModified }
   OPTIONAL { ?metadata prov:generatedAtTime ?generatedAtTime }
+  OPTIONAL {
+    ?metadata prov:wasInfluencedBy ?activity .
+    ?activity prov:startedAtTime ?startedAtTime .
+    OPTIONAL { ?activity rdfs:comment ?comment }
+  }
 }
+LIMIT 100
 ```
 
 #### Sources and claims in the core data
