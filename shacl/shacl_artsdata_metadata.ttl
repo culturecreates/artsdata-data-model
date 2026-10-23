@@ -14,7 +14,9 @@
 # Every minted entity has its own metadata resource in the core graph. Its
 # URI is the entity URI followed by "_dataset"
 # (e.g. adr:K23-10735_dataset) and it points to the entity with schema:about.
-# It has no schema:Thing type, so it is targeted by its use of schema:about.
+# schema:about is also used in source (non-core) graphs, e.g. from Wikidata or
+# web pages, so the shape does not target every subject of schema:about: a
+# SPARQL target selects only the "<adid>_dataset" resources.
 #
 # Update activities: the metadata lists each prov:Activity applied to the
 # entity with prov:wasInfluencedBy. Those triples and the activities
@@ -27,7 +29,28 @@
 ads:EntityMetadataShape
     a sh:NodeShape ;
     sh:name "Entity Metadata Shape" ;
+    sh:description "Metadata resource <adid>_dataset of a minted entity, pointing to it with schema:about."@en ;
     sh:targetSubjectsOf schema:about ;
+    sh:or (
+        [ sh:not [ sh:pattern "_dataset$" ] ; ]
+        [ sh:node ads:EntityMetadataBodyShape ; ]
+    ) .
+
+# The constraints that apply to resources whose URI ends in _dataset. Kept in
+# its own shape, selected through the sh:or above, instead of a SPARQL target
+# (sh:target / sh:SPARQLTarget), which is SHACL-AF and not supported by every
+# validator.
+ads:EntityMetadataBodyShape
+    a sh:NodeShape ;
+    sh:name "Entity Metadata Body Shape" ;
+    sh:sparql [
+        sh:message "The metadata URI must be the URI of the entity it is about followed by _dataset."@en ;
+        sh:select """
+            SELECT $this WHERE {
+                $this <http://schema.org/about> ?entity .
+                FILTER(STR($this) != CONCAT(STR(?entity), "_dataset"))
+            }""" ;
+    ] ;
     sh:property ads:MetadataTypeSh,
                 ads:AboutSh,
                 ads:MetadataDateModifiedSh,

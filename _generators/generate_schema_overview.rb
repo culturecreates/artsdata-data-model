@@ -322,7 +322,7 @@ module SchemaOverview
     class_uris = (shapes_by_class.keys + ontology_classes).uniq
     ado_ns = prefixes[:ado]
 
-    group_classes_by_equivalence(graph, class_uris, ado_ns, shapes_by_class).map do |group|
+    cards = group_classes_by_equivalence(graph, class_uris, ado_ns, shapes_by_class).map do |group|
       primary = pick_primary_class(group, ontology_classes, shapes_by_class)
       shapes = group.flat_map { |c| shapes_by_class[c] || [] }.uniq
       entries = shapes.flat_map do |shape|
@@ -342,7 +342,46 @@ module SchemaOverview
         'shapes' => shapes.map { |s| compact(s, prefixes) },
         'properties' => properties
       }
-    end.sort_by { |c| c['label'].first&.fetch('value', nil) || c['compact'] }
+    end
+    (cards + extract_subject_target_cards(graph, prefixes, node_shapes, value_constraints))
+      .sort_by { |c| c['label'].first&.fetch('value', nil) || c['compact'] }
+  end
+
+  # Shapes with no sh:targetClass that select their focus nodes through
+  # sh:targetSubjectsOf (e.g. ads:EntityMetadataShape, which targets the
+  # subjects of schema:about) describe a kind of resource that is not a
+  # class. Each gets its own card, so its properties still show up. Their
+  # constraints may sit in a shape reached through sh:or / sh:node (used to
+  # apply them only to some of the subjects), so those are followed too.
+  def extract_subject_target_cards(graph, prefixes, node_shapes, value_constraints)
+    node_shapes.filter_map do |shape|
+      predicates = objects(graph, shape, SH.targetSubjectsOf)
+      next if predicates.empty? || !objects(graph, shape, SH.targetClass).empty?
+
+      property_shapes = objects(graph, shape, SH.property) + conditional_node_shapes(graph, shape).flat_map { |n| objects(graph, n, SH.property) }
+      entries = property_shapes.map do |p|
+        extract_property(graph, prefixes, p, value_constraints).merge('shape' => compact(shape, prefixes))
+      end
+      targets = predicates.map { |pred| "subjects of #{compact(pred, prefixes)}" }.join(', ')
+      description = first_literal(graph, shape, SH.description) || "Applies to the #{targets}."
+
+      {
+        'uri' => shape.to_s,
+        'compact' => compact(shape, prefixes),
+        'label' => [{ 'value' => first_literal(graph, shape, SH.name) || compact(shape, prefixes), 'lang' => nil }],
+        'comment' => [{ 'value' => description, 'lang' => 'en' }],
+        'subClassOf' => [],
+        'equivalentClass' => [],
+        'shapes' => [compact(shape, prefixes)],
+        'properties' => merge_properties(entries)
+      }
+    end
+  end
+
+  def conditional_node_shapes(graph, shape)
+    objects(graph, shape, SH.or).flat_map do |head|
+      RDF::List.new(subject: head, graph: graph).flat_map { |alt| objects(graph, alt, SH.node) }
+    end
   end
 
   # ---- Rendering ----

@@ -89,7 +89,15 @@ class TestShaclCore < Minitest::Test
   # ---- invalid fixtures: each must be flagged ----
 
   def test_metadata_about_non_adr_uri_is_violation
-    assert_includes violations, adr("metadata_bad_about")
+    assert_includes violations, adr("bad_about_dataset")
+  end
+
+  def test_metadata_uri_not_entity_uri_plus_dataset_is_violation
+    assert_includes violations, adr("person1_other_dataset")
+  end
+
+  def test_schema_about_outside_dataset_resources_is_not_validated
+    refute_includes violations, RDF::URI("https://en.wikipedia.org/wiki/Example")
   end
 
   def test_missing_name_is_violation
