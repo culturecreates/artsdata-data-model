@@ -101,6 +101,18 @@ Artsdata.ca tracks data provenance in 2 different ways:
 1. Data feed metadata attached to named graphs. Each data feed source in Artsdata.ca is stored in a separate named graph. The graph's URI is used as the subject of the provenance metadata.  This technique to track provenance is generally called the **Named Graphs** approach.  Each named graph URI is a prov:Entity and is linked to provenance metadata including the date when the data feed was loaded, the software used to collect it and the email of the contributing organization. Each time a data feed is imported, whether by crawling a web site, using an JSON API or loading a spreadsheet, the graph's provenance metadata is updated. 
 2. Core data annotations with RDF 1.2. Core data in Artsdata for all minted entities have provenance tracked using RDF 1.2 annotations and the Provenance Ontology (using prov:wasDerivedFrom, prov:hadPrimarySource and prov:wasGeneratedBy). 
 
+Each minted entity also has its own metadata resource, stored separately from the entity and pointing to it with `schema:about`. The metadata records when the entity was last modified (`schema:lastModified`), when it was generated (`prov:generatedAtTime`) and lists all the update activities applied to the entity. Find it with `?metadata schema:about <entity>`:
+
+```sparql
+PREFIX schema: <http://schema.org/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?metadata ?lastModified ?generatedAtTime WHERE {
+  ?metadata schema:about <http://kg.artsdata.ca/resource/K11-192> .
+  OPTIONAL { ?metadata schema:lastModified ?lastModified }
+  OPTIONAL { ?metadata prov:generatedAtTime ?generatedAtTime }
+}
+```
+
 #### Sources and claims in the core data
 
 Each statement about a minted entity can be annotated with the source it was derived from: `<<s p o>> prov:wasDerivedFrom ?source` or `<<s p o>> prov:hadPrimarySource ?source`.
