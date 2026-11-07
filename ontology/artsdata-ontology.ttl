@@ -82,6 +82,13 @@ ado:Event rdf:type rdfs:Class ;
     rdfs:isDefinedBy ado: ;
     rdfs:subClassOf ado:Thing, schema:Event .
 
+ado:EventSeries rdf:type rdfs:Class ;
+    rdfs:label "Event Series"@en, "Série d'événements"@fr ;
+    rdfs:comment "A coherent series of individual events, shows, gatherings, and/or performances with organizational continuity."@en ,
+        "Une série cohérente d'événements individuels, de spectacles, de rassemblements et/ou de performances avec une continuité organisationnelle."@fr ;
+    rdfs:isDefinedBy ado: ;
+    rdfs:subClassOf ado:Event .
+
 ado:Organization rdf:type rdfs:Class ;
     rdfs:label "Organization"@en ;
     rdfs:comment "An organization involved in the production, presentation, or support of arts and culture activities."@en ;
