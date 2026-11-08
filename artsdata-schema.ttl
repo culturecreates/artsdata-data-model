@@ -49,6 +49,8 @@
 #     - Cardinality constraints are expressed in SHACL.
 #     - Provenance is not modelled with classes or properties of this ontology: it uses the W3C PROV-O (prov:wasDerivedFrom, prov:hadPrimarySource, prov:wasGeneratedBy) and VoID (void:inDataset) vocabularies as RDF 1.2 annotations on statements. See the ontology description and https://docs.artsdata.ca/#provenance.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
+# V 1.8.0
+#     - Add ado:EventSeries as a subclass of ado:Event (see https://github.com/culturecreates/artsdata-data-model/issues/506)
 # V 1.7.2
 #     - Mention prov:hadPrimarySource, which also annotates the source of a statement, next to prov:wasDerivedFrom.
 # V 1.7.1
@@ -70,12 +72,12 @@ ado: rdf:type owl:Ontology ;
     dcterms:description "The Artsdata Ontology is designed to model and represent data related to arts, culture, and heritage. Provenance: each statement in the CORE graph can carry RDF 1.2 annotations of the form <<s p o>> prov:wasDerivedFrom ?source (or prov:hadPrimarySource ?source), where ?source is a source record (void:inDataset a dataset that has a schema:name and optionally a schema:maintainer, the website of the source) or a dataset itself. The triple s p o is asserted only for the retained value; other sources may claim a different value that is not asserted. Check with EXISTS { s p o } whether a claimed value is asserted."@en ;
     dcterms:creator "Artsdata Stewardship Team" ;
     dcterms:created "2025-09-30"^^xsd:date ;
-    dcterms:modified "2026-10-22"^^xsd:date ;
+    dcterms:modified "2026-11-08"^^xsd:date ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "ado" ;
     vann:preferredNamespaceUri "http://kg.artsdata.ca/ontology/" ;
     owl:versionIRI <http://kg.artsdata.ca/ontology/1/> ; # TODO: location = /ontology/1 { return 301 /ontology/; }
-    owl:versionInfo "1.7.2" ;
+    owl:versionInfo "1.8.0" ;
     vann:changes <https://github.com/culturecreates/artsdata-data-model/commits/master/ontology/artsdata-ontology.ttl> ;
     dcterms:hasFormat <https://raw.githubusercontent.com/culturecreates/artsdata-data-model/refs/heads/master/ontology/artsdata-ontology.ttl> .
 
