@@ -7,7 +7,6 @@ on:
         required: true
         type: choice
         options:
-          - artsdata-ontology
           - skos-genres
           - skos-event-types
           - skos-place-types

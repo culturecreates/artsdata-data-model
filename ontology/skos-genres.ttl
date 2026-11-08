@@ -148,7 +148,7 @@ adr:K6-309 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-300 ;
 	skos:editorialNote "See: https://github.com/culturecreates/artsdata-data-model/issues/196"@en, "Voir : https://github.com/culturecreates/artsdata-data-model/issues/196"@fr ;
 	skos:inScheme adr:ArtsdataGenres ;
-	skos:prefLabel ""@en, "Chanson"@fr .
+	skos:prefLabel "Chanson"@en, "Chanson"@fr .
 
 adr:K6-310 rdf:type ado:Genre, skos:Concept ;
 	skos:broader adr:K6-300 ;
