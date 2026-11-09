@@ -50,7 +50,7 @@
 #     - Provenance is not modelled with classes or properties of this ontology: it uses the W3C PROV-O (prov:wasDerivedFrom, prov:hadPrimarySource, prov:wasGeneratedBy) and VoID (void:inDataset) vocabularies as RDF 1.2 annotations on statements. See the ontology description and https://docs.artsdata.ca/#provenance.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
 # V 1.8.0
-#     - Add ado:EventSeries as a subclass of ado:Event (see https://github.com/culturecreates/artsdata-data-model/issues/506)
+#     - Add ado:EventSeries as a subclass of ado:Event and schema:EventSeries (see https://github.com/culturecreates/artsdata-data-model/issues/506)
 # V 1.7.2
 #     - Mention prov:hadPrimarySource, which also annotates the source of a statement, next to prov:wasDerivedFrom.
 # V 1.7.1
@@ -110,7 +110,7 @@ ado:EventSeries rdf:type rdfs:Class ;
     rdfs:comment "A coherent series of individual events, shows, gatherings, and/or performances with organizational continuity."@en ,
         "Une série cohérente d'événements individuels, de spectacles, de rassemblements et/ou de performances avec une continuité organisationnelle."@fr ;
     rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf ado:Event .
+    rdfs:subClassOf ado:Event, schema:EventSeries .
 
 ado:Organization rdf:type rdfs:Class ;
     rdfs:label "Organization"@en ;
@@ -235,7 +235,7 @@ ado:hasResident rdf:type rdf:Property ;
 # One file per class, all sharing the ads: (http://kg.artsdata.ca/shacl/)
 # namespace and meant to always be loaded together as a single shapes graph:
 #   shacl_artsdata_common.ttl              -- property shapes reused across classes (this file)
-#   shacl_artsdata_event.ttl               -- schema:Event / ado:Event
+#   shacl_artsdata_event.ttl               -- schema:Event / ado:Event (and EventSeries)
 #   shacl_artsdata_liveperformancework.ttl -- ado:LivePerformanceWork
 #   shacl_artsdata_organization.ttl        -- schema:Organization
 #   shacl_artsdata_place.ttl               -- schema:Place
@@ -416,7 +416,7 @@ ads:UnstructuredImageSh
 ####################################################
 
 ####################################################
-# schema:Event / ado:Event
+# schema:Event / ado:Event, schema:EventSeries / ado:EventSeries
 # See shacl_artsdata_common.ttl for the shared shapes referenced below and
 # the file-set header. Must be loaded together with that file (and, for the
 # controlled-vocabulary check below, ontology/skos-event-types.ttl).
@@ -424,7 +424,9 @@ ads:UnstructuredImageSh
 # Source: artsdata-api/app/services/sparqls/mint/event/construct_event_transform.sparql
 #         artsdata-api/app/services/sparqls/mint/transform/K1-209_map_event_types.sparql
 #
-# ado:Event owl:equivalentClass schema:Event, so both are targeted here.
+# ado:Event rdfs:subClassOf schema:Event (ontology V1.6.0). Both are targeted
+# because sh:targetClass only follows rdfs:subClassOf when the ontology is in
+# the data graph, which it isn't during validation.
 ####################################################
 
 ads:EventShape
@@ -444,8 +446,17 @@ ads:EventShape
                 ads:HasEventTypeConceptSh,
                 ads:OrganizerSh,
                 ads:PerformerSh,
-                ads:SubEventSh,
                 ads:SuperEventSh .
+
+# schema:subEvent is only used on event series in the CORE graph, so it is
+# described here and not on ads:EventShape. A series may have 0 subEvents.
+# ado:EventSeries rdfs:subClassOf ado:Event, schema:EventSeries: both are
+# targeted, like ads:EventShape targets ado:Event and schema:Event.
+ads:EventSeriesShape
+    a sh:NodeShape ;
+    sh:name "Event Series Shape" ;
+    sh:targetClass schema:EventSeries, ado:EventSeries ;
+    sh:property ads:SubEventSh .
 
 ads:StartDateSh
     a sh:PropertyShape ;

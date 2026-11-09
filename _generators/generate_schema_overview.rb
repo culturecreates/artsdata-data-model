@@ -262,7 +262,11 @@ module SchemaOverview
         end
       end
 
-      if shapes_by_class.key?(current)
+      # Only the reverse of the edge above: an external class pulls in its
+      # ado: subclasses. An ado: class does not pull in its ado: subclasses
+      # (e.g. ado:EventSeries rdfs:subClassOf ado:Event), which are classes
+      # of their own, not other names for it.
+      if shapes_by_class.key?(current) && !(ado_ns && current.to_s.start_with?(ado_ns))
         subjects(graph, RDF::RDFS.subClassOf, current).each do |sub|
           related << sub if ado_ns && sub.to_s.start_with?(ado_ns)
         end
