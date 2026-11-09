@@ -50,6 +50,15 @@ adr:event1 a schema:Event ;
         schema:url <https://example.org/img.jpg>
     ] .
 
+# Valid EventSeries with a subEvent
+adr:series1 a schema:EventSeries, ado:EventSeries ;
+    schema:name "Fall Season" ;
+    schema:subEvent adr:event1 .
+
+# Valid EventSeries with no subEvent (0 is allowed)
+adr:series2 a ado:EventSeries ;
+    schema:name "Winter Season" .
+
 # Valid LivePerformanceWork
 adr:show1 a ado:LivePerformanceWork ;
     schema:name "The Rite of Spring" ;
@@ -82,6 +91,11 @@ adr:org7 a ado:Organization .
 adr:place9 a ado:Place .
 
 adr:person3 a ado:Person .
+
+# EventSeries with a subEvent that is a literal, not an IRI
+adr:series3 a ado:EventSeries ;
+    schema:name "Spring Season" ;
+    schema:subEvent "Opening Night" .
 
 # Blank/whitespace-only description
 adr:place3 a schema:Place ;
