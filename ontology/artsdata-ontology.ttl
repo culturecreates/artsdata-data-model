@@ -29,7 +29,7 @@
 #     - Provenance is not modelled with classes or properties of this ontology: it uses the W3C PROV-O (prov:wasDerivedFrom, prov:hadPrimarySource, prov:wasGeneratedBy) and VoID (void:inDataset) vocabularies as RDF 1.2 annotations on statements. See the ontology description and https://docs.artsdata.ca/#provenance.
 #     - rdfs:Class is used instead of owl:Class in order to be more honest about what the reasoner will actually do with it.
 # V 1.8.0
-#     - Add ado:EventSeries as a subclass of ado:Event (see https://github.com/culturecreates/artsdata-data-model/issues/506)
+#     - Add ado:EventSeries as a subclass of ado:Event and schema:EventSeries (see https://github.com/culturecreates/artsdata-data-model/issues/506)
 # V 1.7.2
 #     - Mention prov:hadPrimarySource, which also annotates the source of a statement, next to prov:wasDerivedFrom.
 # V 1.7.1
@@ -89,7 +89,7 @@ ado:EventSeries rdf:type rdfs:Class ;
     rdfs:comment "A coherent series of individual events, shows, gatherings, and/or performances with organizational continuity."@en ,
         "Une série cohérente d'événements individuels, de spectacles, de rassemblements et/ou de performances avec une continuité organisationnelle."@fr ;
     rdfs:isDefinedBy ado: ;
-    rdfs:subClassOf ado:Event .
+    rdfs:subClassOf ado:Event, schema:EventSeries .
 
 ado:Organization rdf:type rdfs:Class ;
     rdfs:label "Organization"@en ;

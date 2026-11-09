@@ -74,6 +74,14 @@ class TestShaclCore < Minitest::Test
     refute_includes violations, adr("event1")
   end
 
+  def test_valid_event_series_has_no_violations
+    refute_includes violations, adr("series1")
+  end
+
+  def test_event_series_without_sub_event_has_no_violations
+    refute_includes violations, adr("series2")
+  end
+
   def test_valid_live_performance_work_has_no_violations
     refute_includes violations, adr("show1")
   end
@@ -106,6 +114,10 @@ class TestShaclCore < Minitest::Test
 
   def test_ado_only_typed_event_is_still_shaped
     assert_includes violations, adr("event8")
+  end
+
+  def test_event_series_sub_event_literal_is_violation
+    assert_includes violations, adr("series3")
   end
 
   def test_ado_only_typed_organization_is_still_shaped

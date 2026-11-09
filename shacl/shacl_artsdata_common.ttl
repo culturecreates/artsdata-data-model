@@ -20,7 +20,7 @@
 # One file per class, all sharing the ads: (http://kg.artsdata.ca/shacl/)
 # namespace and meant to always be loaded together as a single shapes graph:
 #   shacl_artsdata_common.ttl              -- property shapes reused across classes (this file)
-#   shacl_artsdata_event.ttl               -- schema:Event / ado:Event
+#   shacl_artsdata_event.ttl               -- schema:Event / ado:Event (and EventSeries)
 #   shacl_artsdata_liveperformancework.ttl -- ado:LivePerformanceWork
 #   shacl_artsdata_organization.ttl        -- schema:Organization
 #   shacl_artsdata_place.ttl               -- schema:Place
