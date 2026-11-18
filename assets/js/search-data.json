@@ -547,7 +547,7 @@
   },"78": {
     "doc": "Query API",
     "title": "Query API",
-    "content": "There are several APIs to query Artsdata. List of APIs to query Artsdata: . | Artsdata MCP Server | Query API wrapper for SPARQ | [Event Search API (deprecated)] | . ",
+    "content": "There are several APIs to query Artsdata. List of APIs to query Artsdata: . | Artsdata MCP Server | Query API wrapper for SPARQL | [Event Search API (deprecated)] | . ",
     "url": "/architecture/query-api.html",
     
     "relUrl": "/architecture/query-api.html"
