@@ -6,7 +6,7 @@ nav_order: 13
 There are several APIs to query Artsdata.
 
 List of APIs to query Artsdata:
-- [Query API wrapper for SPARQ](#query-api-wrapper-for-sparql)
+- [Query API wrapper for SPARQL](#query-api-wrapper-for-sparql)
 - [Event Search API (deprecated)]
 
 For AI agents and LLM-based tools, see the [Artsdata MCP Server](mcp-server.html).
