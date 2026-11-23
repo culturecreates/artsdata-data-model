@@ -6,30 +6,10 @@ nav_order: 13
 There are several APIs to query Artsdata.
 
 List of APIs to query Artsdata:
-- [Artsdata MCP Server](#artsdata-mcp-server)
 - [Query API wrapper for SPARQ](#query-api-wrapper-for-sparql)
 - [Event Search API (deprecated)]
 
-# Artsdata MCP Server
-Artsdata is live in the official [MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=ca.artsdata/mcp). 
-
-The Artsdata MCP Server exposes the [Artsdata](https://artsdata.ca) knowledge
-graph to AI agents and LLM-based tools via the
-[Model Context Protocol](https://modelcontextprotocol.io) (MCP). It lets an
-agent search for entities (organizations, people, places), fetch full entity
-details, and search for events — all backed by Artsdata's linked-data
-knowledge graph.
-
-## Endpoint
-
-```text
-https://mcp.artsdata.ca/mcp
-```
-
-## See also
-
-- [Artsdata mcp-server doc](https://github.com/culturecreates/artsdata-mcp-server/blob/main/docs/mcp-server.md) 
-- [Model Context Protocol specification](https://modelcontextprotocol.io)
+For AI agents and LLM-based tools, see the [Artsdata MCP Server](mcp-server.html).
 
 # Query API wrapper for SPARQL
 A RESTful API to query anything in Artsdata including events, people, places, organizations and vocabularies...
