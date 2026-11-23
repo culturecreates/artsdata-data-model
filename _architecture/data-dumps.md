@@ -12,7 +12,7 @@ The current list of Artsdata Core dumps, with their version, description and dow
 
 ## For automated / AI clients
 
-The download URL for a given dump is versioned and changes whenever a new dump is published. Do not hardcode or cache a specific download URL — always resolve the current one from the page above, or from the Artsdata MCP Server, which exposes the same dump metadata programmatically.
+The download URL for a given dump is versioned and changes whenever a new dump is published. Do not hardcode or cache a specific download URL — always resolve the current one from the page above, or from the [Artsdata MCP Server](mcp-server.html), which exposes the same dump metadata programmatically.
 
 ## Alternatives to a static dump
 
