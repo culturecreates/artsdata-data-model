@@ -1,4 +1,8 @@
-## Reconcile with Wikidata
+---
+title: Reconcile with Wikidata
+layout: architecture-doc
+nav_order: 15
+---
 
 The Reconcile with Wikidata tool allows registered Artsdata users to load an existing Wikidata entity into Artsdata and assign it an Artsdata ID. Use it when a person, organization, place, or other relevant entity already has a Wikidata record. The tool lets you check for a corresponding entity in Artsdata, link the Wikidata entity to an existing Artsdata ID when a match is found, or mint a new Artsdata ID when needed.
 
